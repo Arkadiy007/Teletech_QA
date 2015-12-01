@@ -1,0 +1,211 @@
+<apex:page controller="ClaimFormController" sidebar="false" showHeader="false" applyHtmlTag="false" applyBodyTag="false" renderAs="pdf">
+  <style>
+      .tabcolumn{
+          padding-left:50px;
+      }
+      .signColumn{
+          font-family:sans-serif;
+      }
+     
+  </style>
+     <center>
+        <apex:image url="{!URLFOR($Resource.NissanGreyLogo)}" width="50" height="50"/> 
+        <apex:outputLabel style="font-size: 20px; ">
+          <p><strong>  {!$Label.Claim_Form_Header_1}<br/>
+            {!$Label.Claim_Form_Header_2} <br/>
+            {!$Label.Claim_Form_Header_3} </strong> </p>
+        </apex:outputLabel>
+    </center>
+     <apex:pageBlock id="mainPageBlock">
+         <apex:pageBlockSection title="Customer Information"/>
+         <table  width="100%">
+          <tr>
+              <td class="tabcolumn">          
+                 <apex:outputLabel value="First Name"></apex:outputLabel> 
+              </td>  
+              <td class="tabcolumn">           
+                 <apex:outputText id="fName" value="{!fName}"/>
+              </td>          
+              <td class="tabcolumn">
+                 <apex:outputLabel value="Last Name"></apex:outputLabel>
+              </td>  
+              <td class="tabcolumn"> 
+                 <apex:outputText id="lName" value="{!lName}"/>
+             </td>
+          </tr>
+          <tr>
+              <td class="tabcolumn">
+                 <apex:outputLabel value="Address 1:"></apex:outputLabel>
+              </td>  
+              <td class="tabcolumn"> 
+                 <apex:outputText id="Address1" value="{!Address1}"/>
+              </td>
+              <td class="tabcolumn">
+                 <apex:outputLabel value="Address 2:"></apex:outputLabel>
+              </td>  
+              <td class="tabcolumn"> 
+                 <apex:outputText id="Address2" value="{!Address2}"/>
+              </td>
+          </tr> 
+          
+           <tr>
+              <td class="tabcolumn">
+                 <apex:outputLabel value="City"></apex:outputLabel>
+              </td>  
+              <td class="tabcolumn"> 
+                 <apex:outputText id="city" value="{!city}"/>
+             </td>         
+             <td class="tabcolumn">
+              <apex:outputLabel value="State"></apex:outputLabel>
+             </td>  
+             <td class="tabcolumn"> 
+                 <apex:outputText id="state" value="{!state}"/>
+            </td>
+          </tr>
+          <tr>
+              <td class="tabcolumn">
+                 <apex:outputLabel value="Zip Code"></apex:outputLabel>
+              </td>  
+              <td class="tabcolumn"> 
+                 <apex:outputText id="zipCode" value="{!zipCode}"/>
+              </td>         
+              <td class="tabcolumn">
+                 <apex:outputLabel value="Daytime Phone"></apex:outputLabel>
+              </td>  
+              <td class="tabcolumn"> 
+                 <apex:outputText id="dPhone" value="{!dayPhone}"/>
+             </td>
+          </tr>
+          <tr>
+             <td class="tabcolumn">
+                 <apex:outputLabel value="Evening Phone"></apex:outputLabel>
+             </td>  
+             <td class="tabcolumn"> 
+                 <apex:outputText id="ePhone" value="{!ePhone}"/>
+             </td>         
+             <td class="tabcolumn">
+                 <apex:outputLabel value="Email Address"></apex:outputLabel>
+             </td>  
+             <td class="tabcolumn"> 
+                 <apex:outputText id="email" value="{!email}"/>
+             </td>
+          </tr>          
+      </table> 
+      
+       <hr/>
+        <apex:pageBlockSection title="Vehicle Information"/>
+         <table  width="100%">
+           <tr>
+              <td class="tabcolumn">
+                 <apex:outputLabel value="Vehicle Model"></apex:outputLabel>
+              </td>  
+              <td class="tabcolumn"> 
+                 <apex:outputText id="vehModel" value="{!vehModel}"/>
+              </td>          
+              <td class="tabcolumn">
+                 <apex:outputLabel value="Model Year:"></apex:outputLabel>
+              </td>  
+              <td class="tabcolumn"> 
+                 <apex:outputText id="modelYr" value="{!modelYr}" />
+              </td>
+           </tr>
+           <tr>
+              <td class="tabcolumn">              
+                 <apex:outputLabel value="VIN:"></apex:outputLabel>
+              </td>  
+              <td class="tabcolumn"> 
+                 <apex:outputText id="vin" value="{!vinEncrypted}"/>
+              </td>
+           </tr>
+       </table>
+       <br/>
+       <hr/>
+       
+      <apex:pageBlockSection title="Certification" collapsible="false"/>
+       <table width="100%">
+           <tr>
+              <td>
+                  I (We), &nbsp;<apex:outputText id="usrName" value="{!userName}"/>, hereby submit this form requesting reimbursement for expenses incurred in connection with a repair/replacement coil springs on my 2007 to 2011 Versa Sedan or 2007 to 2012 Versa Hatchback. I certify that these repairs have been made to this vehicle and that they were not previously paid for, in whole or in part, by Nissan. I request reimbursement in the amount of $ <apex:outputText id="amount" value="{!amount}"/> . True and correct copies of documents in support of this request are attached. I (we) understand that this document is signed under penalty of perjury.
+              </td>              
+          </tr>
+        </table>  
+          <br/>
+        <table  width="100%">
+          <tr>
+              <td style="width:25%;"> 
+                  <span style="font-family: sans-serif; font-size: 9pt;"> OWNER SIGNATURE:</span>                 
+              </td>  
+              <td style="width:20%;">
+                 <span style="font-family: sans-serif; font-size: 10pt;">{!ownerSign} </span>  
+                  
+              </td>
+              <td style="width:40%;">
+                    <span style="font-family: sans-serif; font-size: 8pt;">{!$Label.Agree_Terms}</span>
+              </td>          
+              <td style="width:15%;"> 
+                  <span style="font-family: sans-serif; font-size: 10pt;">Date: {!date1}</span>  
+              </td>
+          </tr>
+           <tr>
+              <td style="width:25%;"> 
+                  <span style="font-family: sans-serif; font-size: 9pt;"> CO-OWNER SIGNATURE:</span>
+              </td>  
+              <td style="width:20%;"> 
+                 <span style="font-family: sans-serif; font-size: 10pt;"> {!coOwnerSign}</span>
+               </td>
+               <td style="width:40%;">
+                   <span style="font-family: sans-serif; font-size: 8pt;">{!$Label.Agree_Terms}</span>
+                 <!--<apex:outputLabel value=""></apex:outputLabel>-->
+               </td>
+               <td style="width:15%;"> 
+                   <span style="font-family: sans-serif; font-size: 10pt;">Date: {!date1}</span>                 
+               </td>
+          </tr>
+          </table>
+          <apex:pageBlockSection title="Instructions:" collapsible="false"/>
+          <table style="align:center;">
+               <tr>
+                  <td>
+                     <b>
+                      {!$Label.Fill_out_completely} <BR/>
+                      {!$Label.Provide_documents} <font color="red">{!$Label.Required}</font> {!$Label.Process_request}  <br/>
+                       {!$Label.Mark_Personal_Numbers} 
+                        <ul>
+                           <li>     {!$Label.Copy_Repair_Order}</li>
+                           <li>     {!$Label.Proof_of_Payment} </li>
+                            <li>  <ul>
+                                   <li>        {!$Label.Copy_Credit_Card} </li>
+                                   <li>        {!$Label.Copy_Credit_Card_Statement} </li>
+                                   <li>        {!$Label.Copy_Checking_Statement} </li>
+                                   </ul>
+                             </li>
+                        </ul>
+                     </b>
+                  </td>
+               </tr>
+               <br/>
+               <tr>
+               <td>
+                   <table frame="box">
+                       <tr>
+                           <td style="border:1px; font-weight: bold;">
+                               <apex:outputLabel value="{!$Label.Estimated_time}"></apex:outputLabel>
+                           </td>
+                       </tr>
+                   </table>
+               </td>
+               </tr>
+           </table>
+          <!--Attachments table-->
+            <div style="page-break-inside:avoid; text-align:center; column-rule-style: solid;">
+                <h3 class="title">List of Attached files<br />
+                </h3>
+    
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!attachments}" var="item" style="border:1px solid; width:100%;">
+                        <apex:column value="{!item.name}" headerValue="File Name" style="text-align:left;border:1px solid;" /> 
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </div>
+     </apex:pageblock>
+</apex:page>

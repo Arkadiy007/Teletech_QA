@@ -1,0 +1,6 @@
+<apex:page standardController="Monetary_Claim__c" extensions="MCEscalateExtension" action="{!escalate}">
+  <apex:form >
+      <apex:pageMessages /><br/>
+      <apex:commandButton value="Back" action="{!back}"/>
+  </apex:form>
+</apex:page>

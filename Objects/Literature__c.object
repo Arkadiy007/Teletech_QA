@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Inventory of Materials / Documentation that NNA Customers request that NNA fulfills</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the Literature Inventory item is ACTIVE or INACTIVE.  Users shall only be able to select ACTIVE Literature Inventory items.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Item_Description__c</fullName>
+        <description>Full Name of Owner&apos;s Literature.</description>
+        <externalId>false</externalId>
+        <label>Item Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Number__c</fullName>
+        <description>Identifier of Owner&apos;s Literature. External ID links to external Nissan data source.</description>
+        <externalId>true</externalId>
+        <label>Item Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Make__c</fullName>
+        <description>Make attribute of Owner&apos;s Literature.</description>
+        <externalId>false</externalId>
+        <label>Make</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Year__c</fullName>
+        <description>Model Year attribute of Owner&apos;s Literature.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Customer requests Literature for Vehicle that is over 5 Years Old, please advise Customer to call IMS at 1-800-247-5321 and advise Customer there will be a charge for the Literature.</inlineHelpText>
+        <label>Model Year</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model__c</fullName>
+        <description>Model attribute of Owner&apos;s Literature.</description>
+        <externalId>false</externalId>
+        <label>Model</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Literature Inventory</label>
+    <listViews>
+        <fullName>All_Literatures</fullName>
+        <columns>NAME</columns>
+        <columns>Item_Description__c</columns>
+        <columns>Item_Number__c</columns>
+        <columns>Make__c</columns>
+        <columns>Model_Year__c</columns>
+        <columns>Model__c</columns>
+        <columns>Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Literatures</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>L{00000}</displayFormat>
+        <label>Literature #</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Literature Inventory</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Item_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Item_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Make__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Model__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Model_Year__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Item_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Item_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Make__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Model__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Model_Year__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Item_Description__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Item_Number__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Make__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Model__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Model_Year__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Item_Description__c</searchFilterFields>
+        <searchFilterFields>Item_Number__c</searchFilterFields>
+        <searchFilterFields>Make__c</searchFilterFields>
+        <searchFilterFields>Model__c</searchFilterFields>
+        <searchFilterFields>Model_Year__c</searchFilterFields>
+        <searchResultsAdditionalFields>Item_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Item_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Make__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Model__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Model_Year__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

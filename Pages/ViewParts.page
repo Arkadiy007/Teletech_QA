@@ -1,0 +1,114 @@
+<apex:page controller="ChangesHistoryController" doctype="html-5.0" sidebar="false">
+    <style>
+        .pbTitle {
+            width: 100% !important;
+        }
+
+        .errorMsg {
+            font-weight: bold;
+            color: red;
+            font-size: 14pt;
+            text-align: center;
+        }
+
+        .tdColumn {
+            vertical-align: top;
+            height: 100% !important;
+            position: relative;
+        }
+
+        .pager {
+        }
+
+        .inputField {
+            font-weight: bold;
+        }
+
+        .column {
+            vertical-align: top;
+        }
+
+        .pageColumn {
+            line-height: 25px;
+        }
+    </style>
+    <apex:form id="page">
+        <apex:actionfunction name="refreshrows" action="{!refresh}" status="fetchStatus" rerender="pb" /> 
+        <apex:actionfunction name="exportToXLS" action="{!redirectToExcel}" rerender="page" status="busyCursor">
+            
+        </apex:actionfunction>
+        <table width="100%" border="0">
+           
+            <tr>
+                <td style="width:220px" class="tdColumn">
+                    <apex:pageblock id="searchParams" title="Search Parameters">
+
+                        <apex:pageblocksection columns="1" collapsible="false" showheader="false" title="">
+                            <apex:selectlist value="{!objectName}" size="1" label="Object Name">
+                                <apex:selectoptions value="{!objectNames}"></apex:selectoptions>
+                            </apex:selectlist>
+                            <apex:inputtext value="{!recordName}" label="Record Name" size="20"/>
+                                <apex:panelgrid columns="2">
+                                    <apex:commandbutton value="Search" title="Search" action="{!refresh}" status="fetchStatus" />
+                                    <apex:commandbutton value="Clear" title="Clear" action="{!clear}" />
+                                </apex:panelgrid>
+
+                        </apex:pageblocksection>
+                    </apex:pageblock>
+                </td>
+                <td class="tdColumn colAccounts">
+                    <div class="holder">
+                        <apex:outputpanel id="op2" style="color:#4AA02C;font-weight:bold">
+                            <apex:actionstatus id="fetchStatus2" starttext="Fetching..." stoptext="" />
+                        </apex:outputpanel>
+
+                        <apex:pageblock id="pb" title="History">
+                            <apex:pageblocksection columns="1" collapsible="true" showheader="false" title="">
+                                <apex:pagemessages ></apex:pagemessages>
+                                <apex:outputtext rendered="{!recordsFound==false && initialSearch==true}"><div class="errorMsg">Unable to find history objects which match the search criteria</div></apex:outputtext>
+                                
+                                <apex:pageblocktable id="tblAccounts" value="{!historyRecords}" var="record" rendered="{!recordsFound}">
+                                    <apex:column headervalue="Object Name" value="{!record.objectName}"/>
+                                    <apex:column headervalue="Record Name">
+                                        <a href="/{!record.recordId}" target="_blank">{!record.recordName}</a>
+                                    </apex:column>
+                                    <apex:column headervalue="Details" >
+                                        <apex:outputtext value="{!record.description}" escape="false" />
+                                    </apex:column>
+                                    <apex:column headervalue="Modified By">
+                                        <a href="/{!record.modifiedById}" target="_blank">{!record.modifiedByName}</a>
+                                    </apex:column>
+                                    <apex:column headervalue="Modification Date" value="{!record.modificationDate}" />
+
+                                </apex:pageblocktable>
+                                
+                                <apex:panelgrid columns="9" columnclasses="pageColumn" rendered="{!recordsFound}" styleclass="pager">
+                                    <apex:commandbutton status="fetchStatus" rerender="pb" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page" />
+                                    <apex:commandbutton status="fetchStatus" rerender="pb" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page" />
+                                    <apex:commandbutton status="fetchStatus" rerender="pb" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page" />
+                                    <apex:commandbutton status="fetchStatus" rerender="pb" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page" />
+                                    <apex:selectlist id="rows" value="{!size}" onchange="refreshrows()" size="1" style="margin-top:3px">
+                                        <apex:selectoption itemlabel="5 History Records" itemvalue="5" />
+                                        <apex:selectoption itemlabel="10 History Records" itemvalue="10" />
+                                        <apex:selectoption itemlabel="15 History Records" itemvalue="15" />
+                                        <apex:selectoption itemlabel="20 History Records" itemvalue="20" />
+                                        <apex:selectoption itemlabel="25 History Records" itemvalue="25" />
+                                        <apex:selectoption itemlabel="30 History Records" itemvalue="30" />
+                                        <apex:selectoption itemlabel="100 History Records" itemvalue="100" />
+                                    </apex:selectlist>
+                                    <apex:outputtext >Page {!pageNumber} of {!noOfPages}, </apex:outputtext>
+                                    <apex:outputtext >Showing Records {!(pageNumber * size)+1-size}-{!IF((pageNumber * size)>noOfRecords, noOfRecords,(pageNumber * size))} of {!noOfRecords}</apex:outputtext>
+                                    <apex:outputpanel style="color:#4AA02C;font-weight:bold">
+                                        <apex:actionstatus id="fetchStatus" starttext="Fetching..." stoptext="" />
+                                    </apex:outputpanel>
+                                    <apex:commandbutton value="Export to .xls" action="{!redirectToExcel}"  />
+                                </apex:panelgrid>
+                               
+                            </apex:pageblocksection>
+                        </apex:pageblock>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </apex:form>
+</apex:page>

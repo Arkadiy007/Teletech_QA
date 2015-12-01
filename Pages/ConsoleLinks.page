@@ -1,0 +1,31 @@
+<apex:page sidebar="false" showHeader="false" controller="ConsoleLinksController">
+<apex:includeScript value="/support/console/28.0/integration.js" />
+  <apex:form >
+     
+      <apex:pageBlock >
+          <apex:pageBlockSection columns="1" title="INFINITI" collapsible="false">
+           <apex:outputPanel layout="block"  style="overflow:auto; height:100px;">
+              <apex:pageBlockTable value="{!infinitiConLinks}" var="inf">
+              <apex:column >
+              <apex:commandLink target="_blank" action="{!launchNissan}" value="{!inf.MasterLabel}">
+                  <apex:param name="link" value="{!inf.Link_URL__c}" assignTo="{!linkUrl}"/>
+              </apex:commandLink>
+              </apex:column>
+             </apex:pageBlockTable>
+            </apex:outputPanel>
+          </apex:pageBlockSection> 
+          <apex:pageBlockSection columns="1" title="NISSAN" collapsible="false"> 
+           <apex:outputPanel layout="block" style="overflow:auto; height:150px;"> 
+              <apex:pageBlockTable value="{!nissanConLinks}" var="nis">
+              <apex:column >
+              <apex:commandLink target="_blank" action="{!launchNissan}" value="{!nis.MasterLabel}">
+                  <apex:param name="link" value="{!nis.Link_URL__c}" assignTo="{!linkUrl}"/>
+              </apex:commandLink> 
+              </apex:column>
+             </apex:pageBlockTable> 
+            </apex:outputPanel>            
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+      
+  </apex:form>
+</apex:page>

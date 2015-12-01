@@ -1,0 +1,163 @@
+<apex:page standardController="Vehicle__c"
+    extensions="WarrantyInformationSectionController" sidebar="false"
+    showHeader="true" action="{!onLoad}" tabStyle="Warranty_Information__c">
+    
+    <apex:includeScript value="/support/console/28.0/integration.js" />
+    <apex:includeScript value="/soap/ajax/28.0/connection.js" />
+
+    <script type="text/javascript">
+        var primaryTabId;
+        var desc;
+        var title;
+        var bCode;
+        var expDate;
+        var modelYr;
+        var expMiles;
+        var wrtyRecType;
+        var vehIdentNo;
+        var wrtyInfBusId;
+        var wrtyExclCode;
+        var wrtyExclName;
+        var state;
+        var polkDt;
+
+        function testOpenSubtab(WrtyDesc, WrtyTitle, BrandedCode, WrtyExpDate,
+                WrtyModelYr, WrtyMiles, RecType, vin, busId, exclCode, exclName, stCode, plkdt) {
+            desc = WrtyDesc;
+            title = WrtyTitle;
+            bCode = BrandedCode;
+            expDate = WrtyExpDate;
+            modelYr = WrtyModelYr;
+            expMiles = WrtyMiles;
+            wrtyRecType = RecType;
+            vehIdentNo = vin;
+            wrtyInfBusId = busId;
+            wrtyExclCode = exclCode;
+            wrtyExclName = exclName;
+            state = stCode;
+            polkDt = plkdt;
+
+            if (sforce.console.isInConsole()){
+            //First find the ID of the primary tab to put the new subtab in
+            sforce.console.getEnclosingPrimaryTabId(findtab);
+            }else{
+             window.parent.location = '/apex/WarrantyInformationDetail?desc=' + desc + '&title='
+                            + title + '&bCode=' + bCode + '&expDate=' + expDate
+                            + '&modelYr=' + modelYr + '&expMiles=' + expMiles
+                            + '&wrtyRecType=' + wrtyRecType + '&vehIdentNo='
+                            + vehIdentNo + '&wrtyInfBusId=' + wrtyInfBusId
+                            + '&wrtyExclCode=' + wrtyExclCode
+                            + '&wrtyExclName=' + wrtyExclName + '&state='+state+'&polkDt='+plkdt;
+            }
+        }
+
+        var findtab = function findtab(result) {
+            //Now that we have the primary tab ID, we can open a new subtab in it
+            primaryTabId = result.id;
+            sforce.console.getEnclosingTabId(openSubtab);
+
+        };
+
+        var openSubtab = function openSubtab(result) {
+            //Now that we have the primary tab ID, we can open a new subtab in it
+
+            sforce.console.openSubtab(primaryTabId,
+                    '/apex/WarrantyInformationDetail?desc=' + desc + '&title='
+                            + title + '&bCode=' + bCode + '&expDate=' + expDate
+                            + '&modelYr=' + modelYr + '&expMiles=' + expMiles
+                            + '&wrtyRecType=' + wrtyRecType + '&vehIdentNo='
+                            + vehIdentNo + '&wrtyInfBusId=' + wrtyInfBusId
+                            + '&wrtyExclCode=' + wrtyExclCode
+                            + '&wrtyExclName=' + wrtyExclName, true,
+                    'Warranty Detail', null, openSuccess, 'salesforceSubtab');
+        };
+
+        var openSuccess = function openSuccess(result) {
+            //Report whether we succeeded in opening the subtab
+            if (result.success == true) {
+                // alert('subtab successfully opened');
+            } else {
+                // alert('subtab cannot be opened');
+            }
+        };
+        
+        var openAllListSubtab = function openAllListSubtab(result) {
+            //Now that we have the primary tab ID, we can open a new subtab in it
+            primaryTabId = result.id;
+            sforce.console.openSubtab(primaryTabId,
+                    '/apex/WarrantyInformationSection?id={!vehObj.Id}&searchAll=Yes', true,
+                    '{!vehObj.Name}', null, openSuccess, 'allrecsSubtab');
+            
+                                
+            
+        };
+        
+        function openGoToListTab(){
+            if (sforce.console.isInConsole()){
+            sforce.console.getEnclosingPrimaryTabId(openAllListSubtab);
+            }else{
+                window.parent.location = '/apex/WarrantyInformationSection?id={!vehObj.Id}&searchAll=Yes';
+            }
+        }
+    </script>  
+     <apex:sectionHeader title="Warranty Information" subtitle="{!vehObj.Name}" rendered="{!searchAll}"/>                
+    <apex:form > 
+        <apex:pageblock >           
+            <apex:pageMessages />                          
+            <apex:pageblocksection columns="1"
+                rendered="{!lstWarranties.size > 0}" id="wrtyResblock">
+                <apex:pageblockTable value="{!lstWarranties}" var="v">
+                    <apex:column id="SNo" headerValue="S No.">
+                        <apex:commandlink onclick="testOpenSubtab('{!v.warrantyInfo.Warranty_Description__c}','{!v.warrantyInfo.Title_Number__c}', '{!v.warrantyInfo.Branded_Code__c}', '{!v.warrantyInfo.Warranty_Expiration_Date__c}', '{!v.warrantyInfo.Model_Year__c}', '{!v.warrantyInfo.Warranty_Expiration_Miles__c}', '{!v.warrantyInfo.WS_Warranty_Record_Type__c}', '{!v.warrantyInfo.Vehicle_Identification_Number__c}', '{!v.warrantyInfo.Warranty_Information_Business_ID__c}', '{!v.warrantyInfo.Warranty_Exclusion_Code__c}', '{!v.warrantyInfo.Warranty_Exclusion_Name__c}', '{!v.warrantyInfo.State_Code__c}', '{!v.warrantyInfo.Polk_Run_Date__c}'); return false;">
+                      {!v.sNo}                          
+                    </apex:commandLink>
+                    </apex:column>
+                    <apex:column id="Description"
+                        value="{!v.warrantyInfo.Warranty_Description__c}" />
+                    <apex:column id="Warranty_Expiration_Date"
+                        headerValue="Warranty Expiration Date">
+                        <apex:outputField value="{!v.warrantyInfo.Warranty_Expiration_Date__c}" />
+                    </apex:column>
+                    
+                    <apex:column id="Warranty_Expiration_Miles"
+                        value="{!v.warrantyInfo.Warranty_Expiration_Miles__c}" rendered="{!!Contains($UserRole.Name,'NCI')}"/>
+                    <apex:column id="Warranty_Expiration_Kilometers" headerValue="Warranty Expiration Kilometers" 
+                        value="{!v.warrantyInfo.Warranty_Expiration_Miles__c}" rendered="{!Contains($UserRole.Name,'NCI')}"/>
+                           
+                        
+                    <apex:column id="ExclCode"
+                        value="{!v.warrantyInfo.Warranty_Exclusion_Code__c}" />
+                    <apex:column id="ExclName"
+                        value="{!v.warrantyInfo.Warranty_Exclusion_Name__c}" />
+                    <apex:column id="BrandedDesc"
+                        value="{!v.warrantyInfo.Branded_Description__c}" />                    
+                    <apex:column id="BrandedState" headerValue="Branded State"
+                        value="{!v.warrantyInfo.State_Code__c}" />
+                    <apex:column id="BrandedDate" headerValue="Branded Date"
+                        value="{!v.warrantyInfo.Polk_Run_Date__c}" />
+
+                </apex:pageblockTable>
+                <apex:outputPanel id="thePanel"
+                    rendered="{! (NOT(ISNULL(lstWarranties)) && !searchAll)}">
+                    <apex:commandButton action="{!Beginning}" title="Beginning"
+                        value="First" disabled="{!disablePrev}"
+                        reRender="wrtyResblock, thePanel" status="loadStatus" />
+                    <apex:commandButton action="{!Previous}" title="Previous"
+                        value="Previous" disabled="{!disablePrev}"
+                        reRender="wrtyResblock, thePanel" status="loadStatus" />
+                     Page ({!PageNumber}) of {!TotalPages} 
+                    <apex:commandButton action="{!Next}" title="Next"
+                        value="Next" disabled="{!disableNext}"
+                        reRender="wrtyResblock, thePanel" status="loadStatus" />
+                    <apex:commandButton action="{!End}" title="Last" value="Last"
+                        disabled="{!disableNext}" reRender="wrtyResblock, thePanel"
+                        status="loadStatus" /> &nbsp;
+                    <apex:commandLink value="Go to List ({!iTotal_size})" onclick="openGoToListTab();return false;"
+                        title="Go to LIST ({!iTotal_size})"
+                        target="_blank" />
+                </apex:outputPanel>
+            </apex:pageblocksection>
+        </apex:pageblock>
+        <c:LoadingBox />
+    </apex:form>
+</apex:page>

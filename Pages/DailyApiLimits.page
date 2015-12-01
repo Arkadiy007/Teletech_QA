@@ -1,0 +1,19 @@
+<apex:page controller="DailyApiLimits_Controller">
+   <apex:pageBlock title="Daily Api Limits"/>
+   <apex:pageBlock title="Api Limits">
+      <apex:pageBlockTable value="{!apiLimits}" var="apiLimitItem">
+         <apex:column >
+            <apex:facet name="header">Limit Name</apex:facet>
+			<apex:outputText value="{!apiLimitItem.limitName}"/>
+         </apex:column> 
+         <apex:column >
+             <apex:facet name="header">Max Allowed</apex:facet>
+			 <apex:outputText value="{!apiLimitItem.limitMax}"/>
+         </apex:column>
+         <apex:column >
+             <apex:facet name="header">Remaining</apex:facet>
+			 <apex:outputText value="{!apiLimitItem.limitReamain}"/>
+         </apex:column>
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,104 @@
+<apex:page controller="Controller_PreCall_Forms" showheader="false" cache="true" expires="600"  doctype="html-5.0" action="{!limitsProcessing}">
+    <style type="text/css">
+        .detailList {
+            margin-left: 120px;
+        }
+
+        .bPageBlock {
+            background-image: url('{!$Resource.PreCall_Forms_Background_2}') !important;
+            background-position: top !important;
+            width: 650px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            min-height: 810px;
+        }
+
+        td {
+            padding-bottom: 5px !important;
+        }
+
+        .bPageBlock .labelCol {
+            font-size: 14px;
+        }
+
+        body {
+            font-size: 14px !important;
+        }
+        /*.bPageBlock .detailList .labelCol {
+            width: 60% !important;
+        }*/
+        textarea {
+            width: 385px !important;
+        }
+
+        b {
+            font-size: 14px;
+        }
+    </style>
+    <script type="text/javascript">
+        function indexOf(obj, str) {
+            if (obj != null && obj.length != 0) {
+                var strLength = str.length;
+                var objLength = obj.length;
+                if (objLength < strLength) {
+                    return -1;
+                }
+                for(var i = 0; i<objLength ; i++) {
+                    var iPlusStrLength = i + strLength;
+                    if (iPlusStrLength > objLength) {
+                        return -1;
+                    }
+                        if (obj.substring(i,iPlusStrLength) == str) {
+                        return i;
+                    }
+                }
+            }
+            return -1;
+        }
+
+
+        document.onreadystatechange = function(e) {
+            if (document.readyState === 'interactive'){
+               var finishBtn = document.getElementById("j_id0:j_id2:i:f:pb:pbb:finish");
+                if (null != finishBtn) {
+                    finishBtn.value = "Next";
+                }
+
+                var divs = document.getElementsByTagName("span");
+                for (var i = 0, len = divs.length; i < len; i++) {
+                    var item = divs[i];
+                    if (item.id && indexOf(item.id,"warrantyCaseRecordExistaText") > -1 ) {
+                        var detailList = document.getElementsByClassName("detailList");
+                        detailList[0].style.width = '65%';
+                        finishBtn.value = "Finish";
+                    } else if (item.id && indexOf(item.id,"ThisIsNotYourApproval") > -1) {
+                        item.style.color = "#FF0000";
+                        item.style.fontWeight = "bold";
+                    } else if (item.id && indexOf(item.id,"PLEASEREADTHEFOLLOWINGINFORMATIONCAREFULLY") > -1) {
+                        var detailList = document.getElementsByClassName("detailList");
+                        detailList[0].style.width = '65%';
+                        var labelCol = document.getElementsByClassName("last labelCol");
+                        for (var i = 0, len = labelCol.length; i < len; i++) {
+                            labelCol[i].style.width = '90%';
+                            labelCol[i].style.textAlign  = 'left';
+                        }
+
+                    }
+                }
+
+                   //Shift red bold text to the left
+                    var ps = document.getElementsByTagName("b");
+                    for (var i = 0, len = ps.length; i < len; i++) {
+                        var item = ps[i];
+                        if (indexOf(item.textContent,"Please ") > -1 ) {
+                            item.style.marginLeft = "-30px";
+                            item.style.float = "left";
+
+                        }
+                    }
+            }
+        };
+
+    </script>
+    <flow:interview name="PreCall_Forms" interview="{!myflow}" buttonlocation="bottom" finishlocation="{!OID}" />
+</apex:page>

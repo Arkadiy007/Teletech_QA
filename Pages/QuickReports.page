@@ -1,0 +1,151 @@
+<apex:page controller="QuickReportsController" doctype="html-5.0" sidebar="false" id="quickRepPage">
+    <style>
+        .pbTitle {
+            width: 100% !important;
+        }
+        .empty-column-content {
+            display: none;
+        }
+
+     .errorMsg {
+        font-weight: bold;
+        color: red;
+        font-size: 14pt;
+        text-align: center;
+    }
+
+        .tdColumn {
+            vertical-align: top;
+            height: 100% !important;
+            position: relative;
+        }
+
+        .pager {
+        }
+
+        .inputField {
+            font-weight: bold;
+        }
+
+        .column {
+            vertical-align: top;
+        }
+
+        .pageColumn {
+            line-height: 25px;
+        }
+
+
+
+    </style>
+
+     <script type="text/javascript" language="javascript">
+          function busyCursorOn() {
+             document.getElementById('blockbckanim').style.display="block";
+             document.getElementById('quickRepPage:page').style.cursor="wait";
+
+             j$('.btn').attr("disabled", "disabled");
+
+          }
+
+          function busyCursorOff() {
+             document.getElementById('blockbckanim').style.display="none";
+             document.getElementById('quickRepPage:page').style.cursor="auto";
+
+            j$('.btn').removeAttr("disabled");
+          }
+
+    </script>
+
+
+
+    <apex:form id="page">
+        <apex:actionFunction name="exportToXLS" action="{!redirectToExcel}" rerender="page" status="busyCursor">
+            <apex:param name="p1" value="" assignTo="{!seletedReportForExport}"/>
+        </apex:actionFunction>
+        <apex:actionfunction name="refreshrows" action="{!refresh}" status="busyCursor" rerender="pb" />
+        <apex:actionStatus id="busyCursor" onStart="busyCursorOn()" onStop="busyCursorOff()"/>
+        
+
+
+        <table width="100%" border="0">
+            <tr>
+                <td style="width:200px !important" class="tdColumn">
+                    <apex:pageblock id="repName" title="Report Name">
+                        <apex:pageblocksection columns="1" collapsible="false" showheader="false" title="" >
+                 
+                            <apex:selectlist value="{!reportName}" size="1" label="Report Name" style="width: 200px !important" >
+                              <!-- <apex:actionSupport event="onchange" action="{!clear}" reRender="searchParamsBlock"/>-->
+                                <apex:selectoptions value="{!reportNames}"></apex:selectoptions>
+                            </apex:selectlist>
+                            <apex:commandbutton value="Select" title="Select" action="{!getParamsForSelectedReport}"  status="busyCursor" rerender="page"  style="width: 70px;" />
+                         
+                        </apex:pageblocksection>
+                    </apex:pageblock>
+                </td>
+            
+          
+           
+                <td  class="tdColumn">
+                    <apex:pageblock id="searchParamsBlock" title="Search Parameters" rendered="{!paramsFound}">
+                        <apex:pageblocksection columns="2" collapsible="false" showheader="false" title="">
+                            <apex:repeat value="{!stringReportFilters}" var="stringLabel">
+                                <apex:inputText value="{!stringReportFilters[stringLabel]}" label="{!stringLabel}" size="20"/>  
+                            </apex:repeat>
+                            <apex:repeat value="{!prefilledReportFilters}" var="pStringLabel">
+                                <apex:outputText value="{!prefilledReportFilters[pStringLabel]}" label="{!pStringLabel}" />  
+                            </apex:repeat>
+
+
+                            <apex:repeat value="{!booleanReportFilters}" var="boolLabel">
+                                <apex:inputcheckbox value="{!booleanReportFilters[boolLabel]}" label="{!boolLabel}" />
+                            </apex:repeat>
+
+                        </apex:pageblocksection>
+                        <apex:pageblocksection columns="2" collapsible="false" showheader="false" title="" rendered="{!dateFiltersOptions.size!=0}">
+                            <apex:selectlist value="{!selectedDateFieldAPIName}" size="1" label="Date Range" style="width: 200px !important">
+                                <apex:selectoptions value="{!dateFiltersOptions}"></apex:selectoptions>
+                            </apex:selectlist>
+                            <apex:outputLabel value=""/>
+                            <apex:input label="Start Time" value="{! startTimeFilter }" type="auto"/>
+                            <apex:input label="End Time" value="{! endTimeFilter }" type="auto"/>
+                        </apex:pageblocksection>
+                            <apex:commandbutton value="Search" title="Search" action="{!refresh}"  status="busyCursor"  style="width: 70px;" rerender="page"/>
+                            <apex:commandbutton value="Clear" title="Clear" action="{!clear}" status="busyCursor" style="width: 70px;" rerender="page"/>
+                         
+                          
+                    </apex:pageblock>
+                </td>
+             </tr>
+            
+            </table>
+            
+            <div id="blockbckanim" style="width: 100%; height: 100%; display: none; position: relative; z-index: 5; ">
+                <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; margin: 0; text-align: center;">
+                    <img id="apimgld" style="" src="/img/loading32.gif" />
+                </div>
+            </div>
+
+            <table width="100%" border="0" id="searchResults">
+            <tr>
+                <td class="tdColumn colAccounts">
+                    <div class="holder"> 
+                        <apex:repeat value="{!searchResults}" var="searchResult">
+                        <apex:pageBlock id="pb" rendered="{!searchResult.recordsFound}" title="{!searchResult.reportName}s">
+                        <c:QuickReportsResultComponent SetReportObject="{!searchResult.setCon}" Name="Results" displayFieldsList="{!searchResult.displayFieldsList}" rendered="{!searchResult.recordsFound}" recordsNumber="{!searchResult.noOfRecords}" pagesNumber="{!searchResult.noOfPages}" recordsSize="{!searchResult.size}"/>
+                        
+                            <apex:commandbutton value="Export to .xls" onclick="exportToXLS('{!searchResult.reportName}');" oncomplete=" busyCursorOff();" /> 
+                        </apex:pageBlock>
+                        <apex:pageBlock id="pb_false" rendered="{!!searchResult.recordsFound}" title="{!searchResult.reportName}s">
+<apex:outputtext ><div class="errorMsg">Unable to find records which match the search criteria</div></apex:outputtext>
+
+                        </apex:pageBlock>
+                        </apex:repeat>
+                    </div>
+                </td>
+            </tr>
+
+
+        </table>
+    </apex:form>
+</apex:page>

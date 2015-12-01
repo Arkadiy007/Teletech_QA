@@ -1,0 +1,21 @@
+<apex:page standardController="Warranty_Case__c" extensions="WarrantyComments_Controller">
+<apex:form >
+<apex:pageblock >
+    <apex:pageblockButtons >
+        <apex:commandButton value="Save" Action="{!go}"/>
+        <apex:commandButton value="Cancel" Action="{!oncancel}"/>
+    </apex:pageblockButtons>
+    <apex:pageblockSection >
+        <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Comment Type" for="name"/>
+                  <apex:selectList value="{!commentType}" id="name" size="1">
+                      <apex:selectOptions value="{!options}"/>
+                  </apex:selectlist>    
+        </apex:pageBlockSectionItem>
+    </apex:pageblockSection>
+    <apex:pageblockSection >
+        <apex:inputTextarea label="Comments" value="{!cmts}" rows="10" style="width:100%"/>
+    </apex:pageblockSection>
+</apex:pageblock>
+</apex:form>
+</apex:page>

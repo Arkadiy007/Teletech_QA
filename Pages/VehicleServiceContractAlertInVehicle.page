@@ -1,0 +1,3 @@
+<apex:page standardController="Vehicle__c" extensions="VehicleServiceContractAlertInVehicleExt">
+    <c:vehicleServiceContractAlert rendered="{!dispVehServContrs}" displtext="{!$Label.Vehicle_Service_Contract_Message}"/>
+</apex:page>

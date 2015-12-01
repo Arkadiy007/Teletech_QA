@@ -1,0 +1,154 @@
+<apex:page standardController="Vehicle__c" extensions="NCI_VehicleWebService" >
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  
+<style>
+td.valueClass {
+    width: 25%;
+    padding-left: 25px;
+    margin: 10px;
+}
+td.titleClass {
+    text-align: right;
+    width: 25%;
+    font-weight: bold;
+}
+  label {
+    display: inline-block;
+    width: 5em;
+  }
+  
+div.ui-tooltip { 
+      width: 350px;
+  }
+div.ui-tooltip-content {
+     font-size: 8pt;
+}
+  
+</style>
+  <apex:form >   
+    <apex:actionFunction name="getvehicleinfo" action="{!initialize}" rerender="out" status="counterStatus">
+     <apex:param name="vehId" value="{!Vehicle__c.Id}"/>
+    </apex:actionFunction>
+  
+   
+   
+   <apex:pageblock id="out">
+      <apex:outputPanel rendered="{!hasRecalls}">
+      
+       <div style="width: 98%; display: inline-block; padding: 10px; border: solid 1px red;">
+       
+      <div style="float: left; width: 75%;vertical-align: middle  ">
+        <img src="/img/msg_icons/error24.png" /> &nbsp; &nbsp; <b><span class="" style="color: #C11428;font-size: 1.2em;">One or more recalls exist for this vehicle:</span></b><br/> <br/>
+       <apex:repeat var="vrs" value="{!vehicleRecalls}">
+           {!vrs} <br/>
+       </apex:repeat>
+       </div><div style="float: right; width: 25%; text-align: right;">This will be Branded Indicator</div>
+       </div>
+       <br /><br />
+       </apex:outputPanel>
+   
+   
+    <apex:pageMessages ></apex:pageMessages>
+            <apex:actionStatus id="counterStatus">                   
+          <apex:facet name="start">
+              <div class="waitingSearchDiv waitingSearchDivOpacity" style="width: 100%; height: 100%; display: block;opacity: 0.60;"/>
+              <div id="loading_image" class="waitingSearchDiv" style="width: 100%; height: 100%; display: block;">
+              <div class="waitingHolder" style="top: 85px; width: 20px;background:#fff;">
+                  <img class="waitingImage" src="/img/loading.gif" style="background:#fff;"/>
+                  <span class="waitingDescription">Loading...</span>
+              </div>
+              </div>
+          </apex:facet>
+          <apex:facet name="stop"/>
+        </apex:actionStatus> 
+         <apex:pageblocksection collapsible="false" id="out_consent" title="Vehicle Information - {!vehicle.Make_Model__c} - {!vehicle.Vehicle_identification_Number__c}" columns="1">
+         <apex:pageBlockSectionItem >
+                <apex:outputPanel layout="none">    
+        <table width="85%" cellspacing="2" cellpadding="2">
+        <tr><td class='titleClass'>Vehicle Make/Model</td><td  class='valueClass'>{!vehicle.Make_Model__c}</td><td class='titleClass'>VIN</td><td class='valueClass'>{!vehicle.Vehicle_identification_Number__c} </td></tr>
+        <tr><td class='titleClass'>Latest Mileage</td><td  class='valueClass'>{!vehicle.Latest_Recorded_Mileage_Number__c}</td><td class='titleClass'>Model Year</td><td class='valueClass'>{!vehicle.Model_Year__c}</td></tr>
+        <tr><td class='titleClass'>Latest Recorded Mileage</td><td class='valueClass'>{!vehicle.Latest_Recorded_Mileage_Units__c}</td><td class='titleClass'>Make Name</td><td class='valueClass'>{!vehicle.Make_Name__c}</td></tr>
+        <tr><td class='titleClass'>In Service Date</td><td class='valueClass'><apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!vehicle.In_Service_Date__c}" /></apex:outputText></td><td class='titleClass'>Manufacturer Date</td><td class='valueClass'><apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!vehicle.Manufacturer_Date__c}" /></apex:outputText></td></tr>
+        <tr><td class='titleClass'>NCI Model Name</td><td class='valueClass'>{!vehicle.NCI_Model_Name__c}</td><td class='titleClass'>MSRP Amount</td><td class='valueClass'>{!vehicle.MSRP_Amount__c}</td></tr>
+        <tr><td class='titleClass'>Model Series</td><td class='valueClass'>{!vehicle.Model_Series__c}</td><td class='titleClass'>EIM Code</td><td class='valueClass'>{!vehicle.End_Item_Model_Code__c}</td></tr>
+        <tr><td class='titleClass'>Model Line Series</td><td class='valueClass'>{!vehicle.Model_Line_Series__c}</td><td class='titleClass'>NCI Wholesale Date</td><td class='valueClass'><apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!vehicle.NCI_Wholesale_Date__c}" /></apex:outputText></td></tr>
+        <tr><td class='titleClass'>NCI Model Code</td><td class='valueClass'>{!vehicle.NCI_Model_Code__c}</td><td class='titleClass'>Model Option Description</td><td class='valueClass'>{!vehicle.Option_Group__c}</td></tr>
+        <tr><td class='titleClass'>Vehicle Type</td><td class='valueClass'>{!vehicle.Vehicle_Type__c}</td><td class='titleClass'>Option Group Code</td><td class='valueClass'>{!vehicle.Option_Group_Code__c}</td></tr>
+        <tr><td class='titleClass'>Trim Code</td><td class='valueClass'>{!vehicle.Trim_Type__c}</td><td class='titleClass'>Branded Title</td><td class='valueClass'> <apex:inputCheckbox disabled="true" value="{!vehicle.Branded_Title__c}"/></td></tr>
+        <tr><td class='titleClass'>Exterior Color Type</td><td class='valueClass'>{!vehicle.Exterior_Color_Type__c}</td><td class='titleClass'>Company Vehicle Indicator</td><td class='valueClass'>  <apex:inputCheckbox disabled="true" value="{!vehicle.Company_Vehicle_Indicator__c}"/></td></tr>
+        <tr><td class='titleClass'>Cylinders</td><td class='valueClass'>{!vehicle.Cylinders_Count__c}</td><td class='titleClass'>Original Retail Type</td><td class='valueClass'>{!vehicle.Retail_Type__c}</td></tr>
+        <tr><td class='titleClass'>Emissions Type</td><td class='valueClass'>{!vehicle.Emissions_Type__c}</td></tr>
+        
+        
+        </table>
+</apex:outputPanel>
+
+ </apex:pageBlockSectionItem>
+ </apex:pageblocksection>
+
+
+ <apex:pageblocksection id="out_ownership" title="Service Contracts" columns="1">
+         <apex:pageBlockSectionItem >
+         <apex:outputPanel layout="none">
+         
+          <table  width="100%">
+         <tr><th valign="top">Policy Number</th><th>Plan Code/Features</th><th>Plan Description</th><th>Type Desc</th><th>Effective Date</th><th>Expire Date</th><th>End Odometer</th></tr>
+        
+              
+    <apex:repeat value="{!theseVSC}" var="vsc" id="theVehicleServiceContracts">
+              <tr>
+              <td>
+              
+              <a href="#" onClick="focusbyName('{!URLFOR($Action.Vehicle_Service_Contract__c.View, vsc.Id)}','{!vsc.Id}','{!vsc.Policy_Number__c}')">{!vsc.Policy_Number__c}</a></td>
+              
+              <td> <apex:outputText escape="false" value="{!vsc.Plan_Features__c}" /></td>
+              
+              <td><apex:outputText escape="false" value="{!vsc.Plan_Description__c}"/></td>
+              <td><apex:outputText escape="false" value="{!vsc.Plan_Code_Type__c}"/></td>
+              <td><apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!vsc.Effective_Date__c}" /></apex:outputText></td>
+              <td><apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!vsc.Expire_Date__c}" /></apex:outputText></td>
+              <td><apex:outputText value="{!vsc.End_Odometer__c}" /></td>
+              
+               </tr>
+            </apex:repeat>
+            </table>
+         </apex:outputPanel>
+         </apex:pageBlockSectionItem>
+         </apex:pageblocksection>
+</apex:pageblock>
+   </apex:form>
+        <apex:includeScript value="/support/console/22.0/integration.js"/>
+        <script type="text/javascript">
+
+$(document).tooltip({ 
+  content: function(callback) { 
+     callback($(this).prop('title').replace(/\|/g, '<br />')); 
+  }
+});
+
+        navtoo = '';
+        thislbl = '';
+        
+           function focusbyName(where,id,lbl) {
+               navtoo = where;
+               thislbl = lbl;
+             //  alert(where);
+                if (sforce.console.isInConsole()){
+                     sforce.console.openPrimaryTab(undefined, navtoo, true,thislbl);
+                } else {
+                    window.top.location = where;
+                }
+            }
+
+             
+      </script>
+   
+    
+   <script>
+     getvehicleinfo();
+   </script>
+</apex:page>

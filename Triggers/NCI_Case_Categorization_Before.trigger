@@ -1,0 +1,1 @@
+trigger NCI_Case_Categorization_Before on NCI_Case_Categorization__c (before insert)  { }

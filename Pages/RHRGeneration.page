@@ -1,0 +1,15 @@
+<apex:page standardController="Case" extensions="RHRGeneration_Extensions" action="{!CallRepairOrder}">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageMessages ></apex:pageMessages>
+                <apex:pageBlockButtons location="top">
+                    <apex:commandButton id="CreateRHR" value="Create RHR" onclick="window.open('https://www.appextremes.com/apps/Conga/PointMerge.aspx?sessionId={!$API.Session_ID}&serverUrl={!$API.Partner_Server_URL_80}&id={!casObj.Id}'
+                                                      +'&templateid=a0zF0000002ubew&qvar0id=a10F0000001Qe40?pv0={!casObj.Id}&queryid=a10F0000001Qe4B?pv0={qvar0},a10F0000001Qe4G,a10f00000014sHj&fp0=0' 
+                                                      +'&ds7=1&LG0=0&LG3=2&LG4=0&BML=Building+RHR&AttachmentParentID={!casObj.Id}&ofn=RHR+Template-{!casObj.Servicing_Dealer_Region__c}+Case+{!casObj.CaseNumber}+{!casObj.ContactId}','_blank', 
+                                                      +'toolbar=yes, scrollbars=yes, resizable=yes, top=50, left=300, width=700, height=525' ); return false;"/>
+                    <apex:commandButton id="Retry" value="Retry for Repair Orders" />
+                    <apex:commandButton id="CancelId" value="Cancel" />
+                </apex:pageBlockButtons>                
+        </apex:pageblock>
+    </apex:form>  
+</apex:page>

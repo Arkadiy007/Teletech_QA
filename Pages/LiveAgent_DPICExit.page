@@ -1,0 +1,116 @@
+<apex:page showHeader="false">
+    <apex:stylesheet value="{!URLFOR($Resource.NissanStyle, 'DPIC_Nissan.css')}" />
+    
+    <script type="text/javascript">
+                     var loaded=false;
+        var bypass=false;
+        var lastResize;
+        var timer = null;
+        var counter = 0;
+        var flag = false;
+        var widthDiff =0;
+        var heightDiff=0;
+        
+        document.onreadystatechange = function(e)
+        {
+            if (document.readyState === 'interactive')
+            {
+                loaded=true;
+                bypass=true;
+                widthDiff = eval('window.outerWidth - window.innerWidth');
+                heightDiff = eval('window.outerHeight - window.innerHeight');
+                resize(500,516);
+            }
+        };
+        
+
+
+
+        window.onresize = function()
+        {
+            if (!loaded)
+                return;
+
+                if (flag) {
+                    flag = false; return; }
+
+                if (timer==null)
+                {
+                    flag = false;
+                    counter=0;
+                    if (bypass) 
+                    {
+                        bypass=false;
+                        delayResize();
+                    } else {
+                        timer = setTimeout(function(){delayResize();}, 200);
+                    }
+                    
+                } else {
+                    counter++;
+                }
+        };   
+
+        function delayResize() {
+            timer = null;
+            if (counter==0) {
+                flag=true;
+                if (!resize(500,516))
+                    flag = false;
+            } else {
+                    flag = false;
+                    counter=0;
+                    timer = setTimeout(function(){delayResize();}, 200);
+            }
+        }
+
+        function resize(width, height) {
+            var innerWidth = document.documentElement.clientWidth || window.innerWidth || document.body.clientWidth;
+            var innerHeight = document.documentElement.clientHeight || window.innerHeight || document.body.clientHeight;
+            var targetWidth = width;
+            var targetHeight = height;
+            var heightBy = targetHeight-innerHeight;
+            var widthBy = targetWidth-innerWidth;
+
+            if (widthBy == 0 && heightBy==0)
+            {
+                return false;
+            }
+            else
+            {
+                if (window.outerWidth==innerWidth)
+                {
+                    widthBy+=widthDiff;
+                    heightBy+=heightDiff-(window.outerHeight - window.innerHeight);
+                }
+                
+                window.resizeBy(widthBy, heightBy);
+                return true;
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        document.title = 'Nissan Chat';
+    </script>
+    <apex:form >
+        <div style="width: 100%;" class="livechat_header_postchat"></div>
+        <div >
+            <div style="height: 360px; width:480px;">
+                <div
+                    style="width: 100%; text-align: center; padding-top: 70px; font-family: Verdana, Geneva, sans-serif;">
+                    <b>THANK YOU FOR PARTICIPATING <br />IN OUR EXIT SURVEY</b>
+                    <div style="padding: 15px 65px 30px 55px; padding-right: ">Your
+                        opinions are very important to us and we appreciate you taking the
+                        time to share them with us.</div>
+                    <button type="button" id="btnClose"
+                        style="cursor: pointer; border: none !important"
+                        onclick="javascript:window.close()">
+                        <img
+                            src="{!URLFOR($Resource.NissanStyle, 'img/LiveAgent_DPIC_Resized_Close.png')}" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </apex:form>
+</apex:page>

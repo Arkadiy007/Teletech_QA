@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>SortingReportItemEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>SortingReportItemEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Export_Part_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sorting_Report__r.Part__r.Part_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Export Part</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mixed_Part_Costs__c</fullName>
+        <externalId>false</externalId>
+        <label>Mixed Part Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mixed_Part__c</fullName>
+        <externalId>false</externalId>
+        <label>Mixed Part</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Good_Material_Costs__c</fullName>
+        <externalId>false</externalId>
+        <label>No Good Material Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>No_Good__c</fullName>
+        <externalId>false</externalId>
+        <label>No Good</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PIR_Customer__c</fullName>
+        <externalId>false</externalId>
+        <formula>Part_Incident_Report__r.Customer__r.Name</formula>
+        <label>PIR Customer</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PIR_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Part_Incident_Report__r.PIR_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PIR Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PIR_Part_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Part_Incident_Report__r.Part_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PIR Part Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Incident_Report__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>PIR has Sorting Required checked and Status not equal to Closed.</inlineHelpText>
+        <label>Part Incident Report</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>PIR does not exist or does not match filter criteria.</errorMessage>
+            <filterItems>
+                <field>Part_Incident_Report__c.Sorting_Required__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>Part_Incident_Report__c.PIR_Status__c</field>
+                <operation>notEqual</operation>
+                <value>Closed</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Part_Incident_Report__c</referenceTo>
+        <relationshipLabel>Sorting Report Items</relationshipLabel>
+        <relationshipName>Sorting_Report_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Part_Incident_Report__r.Reason_for_Defect__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rework_Costs__c</fullName>
+        <externalId>false</externalId>
+        <label>Rework Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Reworked__c</fullName>
+        <externalId>false</externalId>
+        <label>Reworked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sorting_Costs__c</fullName>
+        <externalId>false</externalId>
+        <label>Sorting Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sorting_Report__c</fullName>
+        <externalId>false</externalId>
+        <label>Sorting Report</label>
+        <referenceTo>Sorting_Report__c</referenceTo>
+        <relationshipLabel>Sorting Report Items</relationshipLabel>
+        <relationshipName>Sorting_Report_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Total_Costs__c</fullName>
+        <externalId>false</externalId>
+        <formula>Mixed_Part_Costs__c +  No_Good_Material_Costs__c  +  Rework_Costs__c  +  Sorting_Costs__c  +  Wrong_Part_Costs__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Quantity_Sorted__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Quantity Sorted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wrong_Part_Costs__c</fullName>
+        <externalId>false</externalId>
+        <label>Wrong Part Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Wrong_Part__c</fullName>
+        <externalId>false</externalId>
+        <label>Wrong Part</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Sorting Report Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SRI-{0000000000}</displayFormat>
+        <label>Sorting Report Item</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sorting Report Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Part_Number_Must_Match_Sorting_Report</fullName>
+        <active>true</active>
+        <errorConditionFormula>Part_Incident_Report__r.Part_Number__c  &lt;&gt;  Export_Part_Number__c</errorConditionFormula>
+        <errorMessage>Part Number must match the Part Number on the the Sorting Report.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Qty_and_Amount_Can_Not_Be_Added</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR(
+ISPICKVAL(Sorting_Report__r.Supplier_Response__c, &apos;Accept&apos;),
+ISPICKVAL(Sorting_Report__r.Supplier_Response__c, &apos;Partial Acceptance&apos;) 
+),
+ISNEW() 
+)</errorConditionFormula>
+        <errorMessage>Quantities and Amounts can&apos;t be added after Supplier accepts.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Qty_and_Amount_Can_Not_Change</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR(
+ISPICKVAL(Sorting_Report__r.Supplier_Response__c, &apos;Accept&apos;),
+ISPICKVAL(Sorting_Report__r.Supplier_Response__c, &apos;Partial Acceptance&apos;)
+),
+OR( 
+ISCHANGED(  Rework_Costs__c  ), 
+ISCHANGED( Reworked__c  ), 
+ISCHANGED(   No_Good__c   ), 
+ISCHANGED(  No_Good_Material_Costs__c   ), 
+ISCHANGED(   Mixed_Part__c   ), 
+ISCHANGED( Mixed_Part_Costs__c   ),
+ISCHANGED(    Wrong_Part__c    ), 
+ISCHANGED(  Wrong_Part_Costs__c   )
+)
+)</errorConditionFormula>
+        <errorMessage>Quantities and Amounts can&apos;t be changed after Supplier accepts.</errorMessage>
+    </validationRules>
+</CustomObject>

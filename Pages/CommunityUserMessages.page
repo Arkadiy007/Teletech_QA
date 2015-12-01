@@ -1,0 +1,52 @@
+<apex:page sidebar="false" standardController="Li_Community_User__c" extensions="LithiumUserMessageExtCls">
+<apex:form id="communityMessageForm">
+	<apex:outputPanel rendered="{!hasComUser}" style="overflow:auto;relative:absolute;background-color:#F3F3EC;height:300px;width:100%">
+        <div class="bPageBlock" style="border:none;background-image:none;background-color: #F3F3EC;"  ><!--style="border:none;background-image:none;background-color: #F3F3EC;"-->
+            <div class="pbBody">
+                <apex:outputPanel rendered="{!hasMessages}" styleClass="pbSubsection">
+                	<!-- <b>Messages posted recently</b> -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="100%" valign="top">
+                                <table class="list" width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    <thead>
+                                      <tr class="headerRow">
+                                        <th scope="col" id="postSubjectHeader" width="75%">Subject</th>
+                                        <th scope="col" id="postTimeHeader" width="21%">Post Date</th>
+                                        <th scope="col" id="postViewsHeader">Views</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                    	<apex:repeat value="{!postedMsgs}" var="msg">
+                                    		<tr>
+	                                    		<td><a href="{!msg.url}">{!msg.subject}</a></td>
+	                                    		<td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}"><apex:param value="{!msg.postTime}"/></apex:outputText></td>
+	                                    		<td>{!msg.views}</td>
+	                                    	</tr>
+                                    	</apex:repeat>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!NOT(hasMessages)}" styleClass="pbSubsection">
+                	<div class="pbSubsection">
+	                	<center> <b> No recent posts by this user</b> </center>
+                	</div>
+                </apex:outputPanel>
+            </div>
+        </div>  
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!NOT(hasComUser)}" style="overflow:auto;relative:absolute;background-color:#F3F3EC;height:300px;width:100%">
+        <div class="bPageBlock" style="border:none;background-image:none;background-color: #F3F3EC;"  ><!--style="border:none;background-image:none;background-color: #F3F3EC;"-->
+            <div class="pbBody">
+                <div class="pbSubsection">
+	                <b>User Details</b><br/>
+	                <center> <b> No Community User found</b> </center>
+                </div>
+            </div>
+        </div>  
+    </apex:outputPanel>
+</apex:form>   
+</apex:page>

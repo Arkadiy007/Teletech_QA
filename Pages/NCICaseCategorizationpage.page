@@ -1,0 +1,54 @@
+<apex:page standardController="NCI_Case_Categorization__c" extensions="Controller_NCICaseCategorization" sidebar="false" title=" NCI Case Categorizations" showHeader="false">
+    <c:LoadingBox />
+    <script type="text/javascript">
+    function onChangingLineItemSlection(inProcess) {
+        var x = document.getElementsByTagName("select");
+        for (i =0; i < x.length; i++) {
+            x[i].disabled=inProcess;
+        }
+
+        document.getElementById('{!$Component.theForm.divCategorization.divButtonSection.btnSave}').disabled=inProcess;
+    }
+    </script>
+    
+    <apex:sectionHeader title="Edit Case Categorization" subtitle="{!IF(ISBLANK(NCI_Case_Categorization__c.Case__c), '', 'Case - ' + theCase.CaseNumber)}" />
+    <apex:form id="theForm" style="width:1550px;">
+        <apex:pageMessages /> 
+        <apex:pageBlock id="divCategorization" mode="edit" >
+            <apex:pageBlockButtons id="divButtonSection" >
+                <apex:commandButton id="btnSave" value="Save" action="{!doSaveCategorization}"  disabled="{!NOT(lineItemsPopulated)}" status="loadStatus" rerender="theForm"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+            <apex:facet name="footer">
+                <apex:commandButton immediate="true" rendered="{!NumberOfMoreCategories > 0}" value="Add {!NumberOfMoreCategories} More Categories" action="{!doAddMoreCategories}" reRender="divCategorization"/>
+            </apex:facet>
+            
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!NCI_Case_Categorization__c.Case__c}" rendered="{!NCI_Case_Categorization__c.Case__c == null}">
+                    <apex:actionSupport event="onchange" action="{!resetCaseCategorizations}"/>
+                </apex:inputField>
+
+                 <apex:panelGrid columns="9" >
+                    <!--<apex:outputLabel >Category: {!IF(ISBLANK(CaseCategorizationController.CaseCategorizations[Index].Name), Index+1, CaseCategorizationController.CaseCategorizations[Index].Name)}</apex:outputLabel>-->
+                    <apex:outputLabel style="display: block; width:80px;" />
+                    <apex:outputLabel value="Concern" style="display: block; width:256px;font-weight:bold" />
+                    <apex:outputLabel value="Category" style="display: block; width:252px;font-weight:bold" />
+                    <apex:outputLabel value="Subcategory" style="display: block; width:252px;font-weight:bold" />
+                    <apex:outputLabel value="Symptom" style="display: block; width:254px;font-weight:bold" />
+                
+                </apex:panelGrid>
+
+                <c:NCICaseCategorizationLineItem allConcerns="{!AllConcerns}" index1="0" rendered="{!CurrentLineCounts > 0}" caseCategorizationController1="{!this}" ></c:NCICaseCategorizationLineItem>
+                <c:NCICaseCategorizationLineItem allConcerns="{!AllConcerns}" index1="1" rendered="{!CurrentLineCounts > 1}" caseCategorizationController1="{!this}" ></c:NCICaseCategorizationLineItem>
+                <c:NCICaseCategorizationLineItem allConcerns="{!AllConcerns}" index1="2" rendered="{!CurrentLineCounts > 2}" caseCategorizationController1="{!this}" ></c:NCICaseCategorizationLineItem>
+                <c:NCICaseCategorizationLineItem allConcerns="{!AllConcerns}" index1="3" rendered="{!CurrentLineCounts > 3}" caseCategorizationController1="{!this}" ></c:NCICaseCategorizationLineItem>
+                <c:NCICaseCategorizationLineItem allConcerns="{!AllConcerns}" index1="4" rendered="{!CurrentLineCounts > 4}" caseCategorizationController1="{!this}" ></c:NCICaseCategorizationLineItem>
+                <c:NCICaseCategorizationLineItem allConcerns="{!AllConcerns}" index1="5" rendered="{!CurrentLineCounts > 5}" caseCategorizationController1="{!this}" ></c:NCICaseCategorizationLineItem>
+                <c:NCICaseCategorizationLineItem allConcerns="{!AllConcerns}" index1="6" rendered="{!CurrentLineCounts > 6}" caseCategorizationController1="{!this}" ></c:NCICaseCategorizationLineItem>
+                <c:NCICaseCategorizationLineItem allConcerns="{!AllConcerns}" index1="7" rendered="{!CurrentLineCounts > 7}" caseCategorizationController1="{!this}" ></c:NCICaseCategorizationLineItem>
+                <c:NCICaseCategorizationLineItem allConcerns="{!AllConcerns}" index1="8" rendered="{!CurrentLineCounts > 8}" caseCategorizationController1="{!this}" ></c:NCICaseCategorizationLineItem>
+                <c:NCICaseCategorizationLineItem allConcerns="{!AllConcerns}" index1="9" rendered="{!CurrentLineCounts > 9}" caseCategorizationController1="{!this}" ></c:NCICaseCategorizationLineItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

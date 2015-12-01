@@ -1,0 +1,78 @@
+<apex:page action="{!RunWebService}" showHeader="false" standardController="Lead" extensions="Account_Webservices" >
+    <style>
+        .alignCenter {
+            width:50%,
+            text-align:center,
+            border-style: outset
+        };
+    </style>
+    <table styleClass="alignCenter" broder="1">
+    <apex:pageBlock >
+        <apex:pageblockSection >
+            <apex:pageBlockSectionItem >
+                <apex:outputPanel rendered="{!isSimpleRecord }" styleClass="alignCenter">
+                    <apex:pageblockTable value="{!records}" var="r">
+                        <apex:column value="{!r.param}" headerValue="Parameter" headerClass="alignCenter" styleClass="alignCenter"/>
+                        <apex:column value="{!r.value}" headerValue="Value" headerClass="alignCenter" styleClass="alignCenter"/>
+                    </apex:pageblockTable>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+                        
+            <apex:pageBlockSectionItem >
+                <apex:outputPanel rendered="{!isServiceResponse }" styleClass="alignCenter">
+                    <apex:repeat value="{!serviceResponses}" var="res">
+                        <apex:pageblockTable value="{!res.records}" var="r">
+                            <apex:column value="{!r.param}" headerValue="Parameter" headerClass="alignCenter" styleClass="alignCenter"/>
+                            <apex:column value="{!r.value}" headerValue="Value" headerClass="alignCenter" styleClass="alignCenter"/>
+                        </apex:pageblockTable>
+                        Services -- 
+                        <apex:dataList value="{!res.services}" var="service">
+                            <apex:outputText value="{!service}"/>
+                        </apex:dataList>
+                        -----------------------------------------------------
+                    </apex:repeat>
+                </apex:outputPanel>
+             </apex:pageBlockSectionItem>
+             
+             <apex:pageBlockSectionItem >
+                <apex:outputPanel rendered="{!isServiceHistoryResponse}" styleClass="alignCenter">
+                    
+                    <apex:repeat value="{!serviceHistoryResponses}" var="res">
+                        <apex:pageblockTable value="{!res.records}" var="rec">
+                            <apex:column value="{!rec.param}" headerValue="Parameter"/>
+                            <apex:column value="{!rec.value}" headerValue="Value"/>
+                        </apex:pageblockTable>
+                        <apex:outputText value=" ---- Details -----"/>
+                         <apex:repeat value="{!res.details}" var="detail">
+                                <apex:pageblockTable value="{!detail}" var="val">
+                                    <apex:column value="{!val.param}" headerValue="Parameter"/>
+                                    <apex:column value="{!val.value}" headerValue="Value"/>
+                                </apex:pageblockTable>
+                         </apex:repeat>
+                         ----------------------------------------------------------------------
+                         <br/><br/><br/>
+                    </apex:repeat>
+                </apex:outputPanel>
+             </apex:pageBlockSectionItem>
+             
+             <apex:pageBlockSectionItem >
+                <apex:outputPanel rendered="{!isListOfRecords}" styleClass="alignCenter">
+                    <apex:repeat value="{!listOfRecords}" var="records">
+                        <apex:pageBlockTable value="{!records}" var="r">
+                            <apex:column value="{!r.param}" headerValue="Parameter" headerClass="alignCenter" styleClass="alignCenter"/>
+                            <apex:column value="{!r.value}" headerValue="Value" headerClass="alignCenter" styleClass="alignCenter"/>
+                        </apex:pageBlockTable>
+                    </apex:repeat>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+             <apex:pageBlockSectionItem >
+                  <apex:outputPanel rendered="{!isError}">
+                    <apex:outputText value="{!error}" />
+                  </apex:outputPanel>
+             </apex:pageBlockSectionItem>
+        </apex:pageblockSection>
+    </apex:pageBlock>
+    </table>
+</apex:page>

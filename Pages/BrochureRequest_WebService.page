@@ -1,0 +1,15 @@
+<apex:page showHeader="false" standardController="Brochure_Request__c" extensions="BrochureRequest_Webservices" action="{!SubmitRecord}">
+
+<apex:outputPanel rendered="{!!isError}">
+Result of Infiniti_Both: {!infinitiBoth}<br/>
+Result of InfinitiOnly: {!infinitiOnly}<br/>
+Result of InfinitiOnlyResend: {!infinitiOnlyResend}<br/>
+Result of Nissan_Both: {!nissanBoth}<br/>
+Result of NissanOnly: {!nissanOnly}<br/>
+Result of NissanOnlyResend: {!nissanOnlyResend}<br/>
+</apex:outputPanel>
+
+<apex:outputPanel rendered="{!isError}">
+{!error}
+</apex:outputPanel>
+</apex:page>

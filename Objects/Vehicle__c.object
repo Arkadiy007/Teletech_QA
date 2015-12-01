@@ -1,0 +1,4567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Compact_Layout_for_DTS_App</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Compact_Layout_for_DTS_App</fullName>
+        <fields>Vehicle_identification_Number__c</fields>
+        <fields>Latest_Recorded_Mileage_Number__c</fields>
+        <fields>In_Service_Date__c</fields>
+        <fields>Model_Year__c</fields>
+        <fields>Model_Series__c</fields>
+        <fields>Exterior_Color_Type__c</fields>
+        <label>Compact Layout for DTS App</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Represents a Nissan or Infiniti vehicle.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Body_Style_Code__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Body Style Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Body_Style_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Body Style Type</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Branded_Title__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>US633  Name:FDD Derived-System Needs an Identifier on Vehicle Record for Branded</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies if vehicle is currently &quot;branded&quot; under warranty information</inlineHelpText>
+        <label>Branded Title</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Channel_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel_Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Colour_Code__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Colour Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company_Vehicle_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Company Vehicle Flag</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Country_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Country Code</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cylinders_Count__c</fullName>
+        <description>The number of cylinders in the vehicle</description>
+        <externalId>false</externalId>
+        <label>Cylinders</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Invoice_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Invoice</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Dealer_Net_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Net</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drive_Train_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Drive Train Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EIM_Code__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>EIM Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Emissions_Certification__c</fullName>
+        <externalId>false</externalId>
+        <label>Emissions Certification</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Emissions_Type_Code__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Emissions Type Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Emissions_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Emissions Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Emissions1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Type 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Type 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>End_Item_Model_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>End Item Model Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Engine_4_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Engine Code 4</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Engine_8_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Engine Code 8</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Engine_Number__c</fullName>
+        <description>created for TECHLINE</description>
+        <externalId>false</externalId>
+        <label>Engine Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Exterior_Color_Type__c</fullName>
+        <description>ID of the Exterior Color representing the color of the vehicle product</description>
+        <externalId>false</externalId>
+        <label>Exterior Color</label>
+        <picklist>
+            <picklistValues>
+                <fullName>40TH QUARTZ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ADRIATIC BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIRSTREAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIRTECH BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMBER MINT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMETHYST BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMETHYST GRAY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ANCIENT BRONZE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ANODIZED ORANGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ARCTIC BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ARCTIC BLUE MET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ARCTIC GREEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ARCTIC WHITE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ASGARD GREY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ASPEN PEARL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ASPEN WHITE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ATHENS BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ATOMIC GOLD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AUTUMN BRONZE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AUTUMN COPPER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AUTUMN RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZTEC RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BALI BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BAYSHORE BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BITTER CHOCOLAT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLACK/QUICKSILV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLACK/TITANIUM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLACK AMETHYST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLACK CHERRY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLACK OBSIDIAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLACK ROSE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLACK SOLID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLUEBERRY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLUE DUSK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLUE LIGHTNING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLUE OCEAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BLUE ONYX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BORDEAUX BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BRILLIANT BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BRILLIANTSILVER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BRUSHED NICKEL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BRUSHED PEWTER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAFE MOCHA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CANTEEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CARBON SILVER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CARMINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CASPIAN SEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAYENNE RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CHAMPAGNE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CHARCOAL MIST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CHESTNUT BRONZE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CHESTNUT PEARL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CHOCOLATE SPICE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CHROME SILVER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COOL WATER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CORAL SAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COSMIC BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CRIMSON BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CRIMSON ROULETT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CRYSTAL BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DARK CURRANT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DARK OLIVE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DARK SLATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DAYTONA BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DEEP BLUE PEARL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DEEP SAPPHIRE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DEEP WATER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DESERT PLATINUM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DESERT SAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DIAMOND GRAPHIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DIAMOND SILVER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DIAMOND SLATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DRIFTWOOD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EBONY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ELECTRIC BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ELECTRIC INDIGO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMERALD GRAPHIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ESPRESSO BEAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ESPRESSO BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FIRECRACKER RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FRESH POWDER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FROSTED STEEL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GALAXY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GALAXY BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GARNET EMBER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GARNET FIRE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GLACIER PEARL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GLACIER WHITE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GRAPHITE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GRAPHITE BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GREEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GREEN PEARL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GREY QUARTZ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GUN METALLIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HAGANE BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HAKONE WHITE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HARBOUR BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEMATITE GREY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICELANDIC PEARL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICE PEARL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IGNITION RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>INK BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IRIDIUM GRAPHIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IVORY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IVORY PEARL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JADE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JAVA METALLIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JET BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KNIGHT ARMOUR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KONA BEAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LAKESHORE BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LAKESHORE SLATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LAVA RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LIGHT SILVER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LIQ METAL GREY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MAGMA RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MAGNETIC BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MAGNETIC GRAY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MAGNETIC GREY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MAJESTIC BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MALBEC BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MATADOR RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MERLOT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>METALLIC BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>METALLIC BRONZE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>METALLIC ICE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>METALLIC JADE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>METALLIC PEACOC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>METALLIC SLATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>METEORITE BROWN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MIDNIGHT BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MIDNIGHT GARNET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MIDNIGHT JADE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MIDNIGHT METALL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MIDNIGHT MOCHA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MIDNIGHT SKY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MILLEN. BRONZE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MOCHA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MOCHA STONE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MOJAVE COOPER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MONTEREY GREEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MOONLIGHT WHITE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MORNINGSKY BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MYSTIC JADE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MYSTIC SAGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NAVY BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NÉVÉ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NEW DARK GREEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NEW RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NIAGARA GREY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NIGHT ARMOUR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NORDIC WHITE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OCEAN GREY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OCEAN SURF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OCEAN WASH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OLIVE/BEIGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OLIVE SLATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORANGE ALLOY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PACIFIC SUNSET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PEARL WHITE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PEBBLE BEACH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PEWTER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PHANTOM BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLASMA RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLATINUM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLATINUM GRAPHI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLATINUM ICE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLATINUM MET.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>POLISHED GRANIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PRECISION GREY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PROSPECT GOLD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PRUSSIAN BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PYRITE GREY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QUICKSILVER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RAIN FOREST GRN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RED ALERT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RED BRICK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RED LAVA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>REDLINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RED SPICE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ROOT BEER BROWN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAFARI GREEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAGE MIST GREEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAHARA BEIGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAHARAN STONE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SANDROCK BEIGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SANDSTONE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SANDSTONE METAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SANGRIA RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAN MARINO BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAPPHIRE BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAPPHIRE BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAPPHIRE BLUE O</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SATIN WHITE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SATSUMA YELLOW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SCARLET SILVER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SERENGETI SAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SHERWOOD GREEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SIERRA SILVER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SILVER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SILVER FROST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SILVER MIST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SILVER SAGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SILVERSTONE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SILVERSTONEBLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SIRIUS BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SLATE BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SMOKE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SMOKE GREY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SNOW CAP WHITE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SOLAR ORANGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SOLAR YELLOW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SOLID BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SOLID RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SONOMA SUNSET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SORREL GREEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SPARKLE RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SPICED CURRANT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>STERLING MIST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>STORM BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>STORM FRONT GRE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>STORM GRAY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>STORM GREY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SUNBURST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SUNLIT COPPER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SUNLIT SAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SUNSET BEIGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SUPER BLACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SUPER SILVER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TIDEWATER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TIMBERLINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TINTED BRONZE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TITANIUM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TITANIUM BEIGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TOASTED ALMOND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TOFFEE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TOREADOR RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TRAIL GREEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TUSCAN BEIGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TUSCAN SUN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TWILIGHT BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ULTRAMARIN BLUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UMBRIA TWILIGHT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VAIL WHITE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VENETIAN RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VENETIAN RUBY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WHITE/SILVER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WHITE PEARL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WHITE SATIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WOODLAND BROWN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Factory_Installed_Options_Descriptions__c</fullName>
+        <externalId>false</externalId>
+        <label>Factory Installed Options Descriptions</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Factory_Installed_Options__c</fullName>
+        <externalId>false</externalId>
+        <label>Factory Installed Options</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fleet_Sales_Type_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Fleet Sales Type Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Head_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Head Unit</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>In_Service_Date__c</fullName>
+        <description>The last known date the vehicle was last in service</description>
+        <externalId>false</externalId>
+        <label>In Service Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Key_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Key Code</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Claim_Retrieve_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Claim Retrieve Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Recall_Retrieve_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Recall Retrieve Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_RepairOrder_Retrieve_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last RepairOrder Retrieve Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_VSC_Retrieve_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last VSC Retrieve Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Warranty_Retrieve_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Warranty Retrieve Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Latest_Owner__c</fullName>
+        <description>This field is managed by a Workflow Field Update from the Vehicle Ownership object. Displays the latest reported Vehicle Owner. 
+
+*This is a BETA field because not all Vehicles have this populated, only records that have a Vehicle Ownership record created since Feb 20 2013.</description>
+        <externalId>false</externalId>
+        <label>Latest Owner (BETA)</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Latest_Recorded_Mileage_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Latest Recorded Mileage</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Latest_Recorded_Mileage_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Latest Recorded Mileage Units</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSRP_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>MSRP</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>M_F_Plant__c</fullName>
+        <description>Name of plant where vehicle was manufactured originally.</description>
+        <externalId>false</externalId>
+        <label>Plant Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Make_Model__c</fullName>
+        <externalId>false</externalId>
+        <formula>Model_Year__c &amp; &apos; &apos; &amp;  Make_Name__c &amp; &apos; &apos; &amp; Model_Line_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Make/Model</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Make_Name__c</fullName>
+        <description>&quot;Make&quot; or generic brand name of vehicle.  (i.e. Infinity, Nissan)</description>
+        <externalId>false</externalId>
+        <label>Make</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manufacturer_Date__c</fullName>
+        <description>The date the car was manufactured</description>
+        <externalId>false</externalId>
+        <label>Manufacturer Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Manufacturing_Plant_Code__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Manufacturing Plant Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manufacturing_Plant__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Manufacturing Plant</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Match__c</fullName>
+        <externalId>false</externalId>
+        <label>Match</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Model Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_ID__c</fullName>
+        <description>End Item Master (EIM), 18-digit string that identifies the components of the Vehicle.
+**As of 5/14/13, this is NOT provided by the Vehicle Master.**</description>
+        <externalId>false</externalId>
+        <label>Model ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Line_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Model Line Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Line_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Model Line</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Line_Series__c</fullName>
+        <description>created for Techline</description>
+        <externalId>false</externalId>
+        <label>Model Line Series</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Model Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Series__c</fullName>
+        <description>Model Series, 5-digit code.</description>
+        <externalId>false</externalId>
+        <label>Model Series</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Model Year</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NCI_Model_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>NCI Model Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NCI_Model_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>NCI Model Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NCI_Wholesale_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>NCI Wholesale Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>NML_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>NML Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Recall__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>IUC 1619: Synchronize SF with Recall Master: Mock Up</description>
+        <externalId>false</externalId>
+        <label>Open Recall</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Option_Group_Code__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Option Group Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Option_Group__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Option Group</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PDI_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>PDI Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PMG_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>PMG Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>heavy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>light</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Polk_Disposed_Date__c</fullName>
+        <description>Date of branded title</description>
+        <externalId>false</externalId>
+        <label>Polk Disposed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Request_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Retail_Type_Code__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Retail Type Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Retail_Type__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Retail Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Type_Code__c</fullName>
+        <description>The code that represents the type of sale</description>
+        <externalId>false</externalId>
+        <label>Sales Type Code</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transmission_Type_Code__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Transmission Type Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transmission_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Transmission Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trim_Code__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Trim Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trim_Level_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Trim Level Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trim_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Trim Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Trim1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trim2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Level 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>US_Specification_Indicator__c</fullName>
+        <description>A flag to indicate if the vehicle is built to be sold or leased within the US.</description>
+        <externalId>false</externalId>
+        <label>US Specification Indicator</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Ownership_Count__c</fullName>
+        <description>Displays number of Vehicle Ownership records that are related to this Vehicle record.</description>
+        <externalId>false</externalId>
+        <label>Vehicle Ownership Count</label>
+        <summaryForeignKey>Vehicle_Ownership_History__c.Vehicle__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_identification_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Unique identification for a vehicle</description>
+        <externalId>true</externalId>
+        <label>VIN</label>
+        <length>17</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Exclusion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Warranty Exclusion</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Start_Date__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Warranty Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Wholesale_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Wholesale Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Wholesale_Type_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Wholesale Type Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wholesale_Type__c</fullName>
+        <description>NCI Required Vehicle field</description>
+        <externalId>false</externalId>
+        <label>Wholesale Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>trimVIN__c</fullName>
+        <externalId>false</externalId>
+        <formula>RIGHT(Name, 6)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>trimVIN</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Vehicle</label>
+    <listViews>
+        <fullName>All_Q50_s</fullName>
+        <columns>NAME</columns>
+        <columns>Model_Line_Name__c</columns>
+        <columns>Model_Name__c</columns>
+        <columns>Model_Year__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Model_Line_Name__c</field>
+            <operation>equals</operation>
+            <value>titan</value>
+        </filters>
+        <filters>
+            <field>Model_Year__c</field>
+            <operation>equals</operation>
+            <value>2015</value>
+        </filters>
+        <label>All Q50&apos;s</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Social_Support</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NCI_Infiniti_Vehicles</fullName>
+        <columns>NAME</columns>
+        <columns>Make_Name__c</columns>
+        <columns>Model_Name__c</columns>
+        <columns>Model_Year__c</columns>
+        <columns>Manufacturer_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Make_Name__c</field>
+            <operation>equals</operation>
+            <value>Infiniti</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Vehicle__c.NCI_Infiniti</value>
+        </filters>
+        <label>NCI Infiniti Vehicles</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>NCI_Frontline</group>
+            <group>NCI_Managers_and_Corporate</group>
+            <group>NCI_Senior_Agents_and_Up</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NCI_Vehicles</fullName>
+        <columns>NAME</columns>
+        <columns>Make_Name__c</columns>
+        <columns>Model_Name__c</columns>
+        <columns>Model_Year__c</columns>
+        <columns>Manufacturer_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Vehicle__c.NCI_Nissan</value>
+        </filters>
+        <filters>
+            <field>Make_Name__c</field>
+            <operation>equals</operation>
+            <value>Nissan</value>
+        </filters>
+        <label>NCI Nissan Vehicles</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>NCI_Frontline</group>
+            <group>NCI_Managers_and_Corporate</group>
+            <group>NCI_Senior_Agents_and_Up</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Vehicles_Created_Today</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Vehicles Created Today</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Vehicles_with_Open_recall</fullName>
+        <columns>NAME</columns>
+        <columns>Last_Recall_Retrieve_Date__c</columns>
+        <columns>Open_Recall__c</columns>
+        <columns>Vehicle_identification_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Open_Recall__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Vehicles with Open recall</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CAManager</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>VIN</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Vehicles</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Infiniti</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Compact_Layout_for_DTS_App</compactLayoutAssignment>
+        <label>Infiniti</label>
+        <picklistValues>
+            <picklist>Emissions_Type__c</picklist>
+            <values>
+                <fullName>Type 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Type 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exterior_Color_Type__c</picklist>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PMG_Type__c</picklist>
+            <values>
+                <fullName>heavy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>light</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Trim_Type__c</picklist>
+            <values>
+                <fullName>Level 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NCI_Infiniti</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Compact_Layout_for_DTS_App</compactLayoutAssignment>
+        <label>NCI - Infiniti</label>
+        <picklistValues>
+            <picklist>Emissions_Type__c</picklist>
+            <values>
+                <fullName>Emissions1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Type 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Type 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exterior_Color_Type__c</picklist>
+            <values>
+                <fullName>40TH QUARTZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ADRIATIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AIRSTREAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AIRTECH BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMBER MINT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMETHYST BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMETHYST GRAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ANCIENT BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ANODIZED ORANGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ARCTIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ARCTIC BLUE MET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ARCTIC GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ARCTIC WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ASGARD GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ASPEN PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ASPEN WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ATHENS BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ATOMIC GOLD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUTUMN BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUTUMN COPPER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUTUMN RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZTEC RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BALI BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BAYSHORE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BITTER CHOCOLAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK AMETHYST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK CHERRY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK OBSIDIAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK ROSE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK SOLID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK%2FQUICKSILV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK%2FTITANIUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLUE DUSK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLUE LIGHTNING</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLUE OCEAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLUE ONYX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLUEBERRY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BORDEAUX BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRILLIANT BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRILLIANTSILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRUSHED NICKEL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRUSHED PEWTER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAFE MOCHA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CANTEEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CARBON SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CARMINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CASPIAN SEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAYENNE RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHAMPAGNE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHARCOAL MIST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHESTNUT BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHESTNUT PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHOCOLATE SPICE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHROME SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COOL WATER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CORAL SAND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COSMIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRIMSON BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRIMSON ROULETT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRYSTAL BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DARK CURRANT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DARK OLIVE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DARK SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DAYTONA BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEEP BLUE PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEEP SAPPHIRE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEEP WATER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DESERT PLATINUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DESERT SAND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DIAMOND GRAPHIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DIAMOND SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DIAMOND SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRIFTWOOD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EBONY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ELECTRIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ELECTRIC INDIGO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMERALD GRAPHIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ESPRESSO BEAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ESPRESSO BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FIRECRACKER RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FRESH POWDER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FROSTED STEEL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GALAXY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GALAXY BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GARNET EMBER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GARNET FIRE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GLACIER PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GLACIER WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GRAPHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GRAPHITE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GREEN PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GREY QUARTZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GUN METALLIC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAGANE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAKONE WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HARBOUR BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HEMATITE GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICE PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICELANDIC PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IGNITION RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INK BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIDIUM GRAPHIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IVORY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IVORY PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JADE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JAVA METALLIC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JET BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KNIGHT ARMOUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KONA BEAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LAKESHORE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LAKESHORE SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LAVA RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIGHT SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIQ METAL GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAGMA RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAGNETIC BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAGNETIC GRAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAGNETIC GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAJESTIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MALBEC BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MATADOR RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MERLOT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC ICE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC JADE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC PEACOC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METEORITE BROWN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT GARNET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT JADE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT METALL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT MOCHA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT SKY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MILLEN%2E BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MOCHA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MOCHA STONE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MOJAVE COOPER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MONTEREY GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MOONLIGHT WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MORNINGSKY BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MYSTIC JADE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MYSTIC SAGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAVY BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEW DARK GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEW RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NIAGARA GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NIGHT ARMOUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NORDIC WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NÉVÉ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCEAN GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCEAN SURF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCEAN WASH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLIVE SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLIVE%2FBEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ORANGE ALLOY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PACIFIC SUNSET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PEARL WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PEBBLE BEACH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PEWTER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHANTOM BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLASMA RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLATINUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLATINUM GRAPHI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLATINUM ICE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLATINUM MET%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POLISHED GRANIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRECISION GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROSPECT GOLD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRUSSIAN BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PYRITE GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QUICKSILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RAIN FOREST GRN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RED ALERT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RED BRICK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RED LAVA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RED SPICE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REDLINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ROOT BEER BROWN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAFARI GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAGE MIST GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAHARA BEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAHARAN STONE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAN MARINO BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SANDROCK BEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SANDSTONE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SANDSTONE METAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SANGRIA RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAPPHIRE BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAPPHIRE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAPPHIRE BLUE O</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SATIN WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SATSUMA YELLOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCARLET SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SERENGETI SAND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHERWOOD GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIERRA SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVER FROST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVER MIST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVER SAGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVERSTONE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVERSTONEBLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIRIUS BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLATE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMOKE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMOKE GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SNOW CAP WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOLAR ORANGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOLAR YELLOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOLID BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOLID RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SONOMA SUNSET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SORREL GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPARKLE RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPICED CURRANT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STERLING MIST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STORM BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STORM FRONT GRE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STORM GRAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STORM GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUNBURST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUNLIT COPPER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUNLIT SAND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUNSET BEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUPER BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUPER SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TIDEWATER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TIMBERLINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TINTED BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TITANIUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TITANIUM BEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOASTED ALMOND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOFFEE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOREADOR RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRAIL GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TUSCAN BEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TUSCAN SUN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TWILIGHT BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ULTRAMARIN BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UMBRIA TWILIGHT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VAIL WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VENETIAN RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VENETIAN RUBY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WHITE PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WHITE SATIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WHITE%2FSILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WOODLAND BROWN</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PMG_Type__c</picklist>
+            <values>
+                <fullName>heavy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>light</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Trim_Type__c</picklist>
+            <values>
+                <fullName>Level 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trim1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trim2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NCI_Nissan</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Compact_Layout_for_DTS_App</compactLayoutAssignment>
+        <label>NCI - Nissan</label>
+        <picklistValues>
+            <picklist>Emissions_Type__c</picklist>
+            <values>
+                <fullName>Emissions1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Type 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Type 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exterior_Color_Type__c</picklist>
+            <values>
+                <fullName>40TH QUARTZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ADRIATIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AIRSTREAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AIRTECH BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMBER MINT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMETHYST BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMETHYST GRAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ANCIENT BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ANODIZED ORANGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ARCTIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ARCTIC BLUE MET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ARCTIC GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ARCTIC WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ASGARD GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ASPEN PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ASPEN WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ATHENS BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ATOMIC GOLD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUTUMN BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUTUMN COPPER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUTUMN RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZTEC RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BALI BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BAYSHORE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BITTER CHOCOLAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK AMETHYST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK CHERRY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK OBSIDIAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK ROSE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK SOLID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK%2FQUICKSILV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLACK%2FTITANIUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLUE DUSK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLUE LIGHTNING</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLUE OCEAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLUE ONYX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLUEBERRY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BORDEAUX BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRILLIANT BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRILLIANTSILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRUSHED NICKEL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRUSHED PEWTER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAFE MOCHA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CANTEEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CARBON SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CARMINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CASPIAN SEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAYENNE RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHAMPAGNE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHARCOAL MIST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHESTNUT BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHESTNUT PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHOCOLATE SPICE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHROME SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COOL WATER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CORAL SAND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COSMIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRIMSON BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRIMSON ROULETT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRYSTAL BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DARK CURRANT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DARK OLIVE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DARK SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DAYTONA BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEEP BLUE PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEEP SAPPHIRE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEEP WATER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DESERT PLATINUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DESERT SAND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DIAMOND GRAPHIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DIAMOND SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DIAMOND SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRIFTWOOD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EBONY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ELECTRIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ELECTRIC INDIGO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMERALD GRAPHIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ESPRESSO BEAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ESPRESSO BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FIRECRACKER RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FRESH POWDER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FROSTED STEEL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GALAXY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GALAXY BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GARNET EMBER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GARNET FIRE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GLACIER PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GLACIER WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GRAPHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GRAPHITE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GREEN PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GREY QUARTZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GUN METALLIC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAGANE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAKONE WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HARBOUR BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HEMATITE GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICE PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICELANDIC PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IGNITION RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INK BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IRIDIUM GRAPHIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IVORY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IVORY PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JADE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JAVA METALLIC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JET BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KNIGHT ARMOUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KONA BEAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LAKESHORE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LAKESHORE SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LAVA RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIGHT SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIQ METAL GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAGMA RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAGNETIC BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAGNETIC GRAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAGNETIC GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAJESTIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MALBEC BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MATADOR RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MERLOT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC ICE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC JADE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC PEACOC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METALLIC SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>METEORITE BROWN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT GARNET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT JADE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT METALL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT MOCHA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDNIGHT SKY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MILLEN%2E BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MOCHA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MOCHA STONE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MOJAVE COOPER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MONTEREY GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MOONLIGHT WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MORNINGSKY BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MYSTIC JADE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MYSTIC SAGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAVY BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEW DARK GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEW RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NIAGARA GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NIGHT ARMOUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NORDIC WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NÉVÉ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCEAN GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCEAN SURF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCEAN WASH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLIVE SLATE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLIVE%2FBEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ORANGE ALLOY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PACIFIC SUNSET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PEARL WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PEBBLE BEACH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PEWTER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHANTOM BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLASMA RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLATINUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLATINUM GRAPHI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLATINUM ICE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLATINUM MET%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POLISHED GRANIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRECISION GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROSPECT GOLD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRUSSIAN BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PYRITE GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QUICKSILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RAIN FOREST GRN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RED ALERT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RED BRICK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RED LAVA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RED SPICE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REDLINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ROOT BEER BROWN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAFARI GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAGE MIST GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAHARA BEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAHARAN STONE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAN MARINO BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SANDROCK BEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SANDSTONE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SANDSTONE METAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SANGRIA RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAPPHIRE BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAPPHIRE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAPPHIRE BLUE O</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SATIN WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SATSUMA YELLOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCARLET SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SERENGETI SAND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHERWOOD GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIERRA SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVER FROST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVER MIST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVER SAGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVERSTONE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SILVERSTONEBLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIRIUS BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLATE BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMOKE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMOKE GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SNOW CAP WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOLAR ORANGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOLAR YELLOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOLID BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOLID RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SONOMA SUNSET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SORREL GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPARKLE RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPICED CURRANT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STERLING MIST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STORM BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STORM FRONT GRE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STORM GRAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STORM GREY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUNBURST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUNLIT COPPER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUNLIT SAND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUNSET BEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUPER BLACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUPER SILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TIDEWATER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TIMBERLINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TINTED BRONZE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TITANIUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TITANIUM BEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOASTED ALMOND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOFFEE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOREADOR RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRAIL GREEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TUSCAN BEIGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TUSCAN SUN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TWILIGHT BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ULTRAMARIN BLUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UMBRIA TWILIGHT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VAIL WHITE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VENETIAN RED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VENETIAN RUBY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WHITE PEARL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WHITE SATIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WHITE%2FSILVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WOODLAND BROWN</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PMG_Type__c</picklist>
+            <values>
+                <fullName>heavy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>light</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Trim_Type__c</picklist>
+            <values>
+                <fullName>Level 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trim1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trim2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Nissan</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Compact_Layout_for_DTS_App</compactLayoutAssignment>
+        <label>Nissan</label>
+        <picklistValues>
+            <picklist>Emissions_Type__c</picklist>
+            <values>
+                <fullName>Type 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Type 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exterior_Color_Type__c</picklist>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PMG_Type__c</picklist>
+            <values>
+                <fullName>heavy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>light</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Trim_Type__c</picklist>
+            <values>
+                <fullName>Level 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>User_Created</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Compact_Layout_for_DTS_App</compactLayoutAssignment>
+        <description>Vehicle records created by an Agent or User</description>
+        <label>User Created</label>
+        <picklistValues>
+            <picklist>Emissions_Type__c</picklist>
+            <values>
+                <fullName>Emissions1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Type 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Type 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exterior_Color_Type__c</picklist>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PMG_Type__c</picklist>
+            <values>
+                <fullName>heavy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>light</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Trim_Type__c</picklist>
+            <values>
+                <fullName>Level 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trim1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trim2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>In_Service_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Make_Model__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Model_Year__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Latest_Recorded_Mileage_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Open_Recall__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Branded_Title__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Model_Year__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Make_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Model_Line_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Manufacturer_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Latest_Recorded_Mileage_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>UPDATEDBY_USER</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Vehicle_identification_Number__c</searchFilterFields>
+        <searchFilterFields>Make_Name__c</searchFilterFields>
+        <searchFilterFields>Model_Name__c</searchFilterFields>
+        <searchFilterFields>Model_Year__c</searchFilterFields>
+        <searchFilterFields>In_Service_Date__c</searchFilterFields>
+        <searchFilterFields>Manufacturer_Date__c</searchFilterFields>
+        <searchFilterFields>Polk_Disposed_Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>Model_Year__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Make_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Model_Line_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>In_Service_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Latest_Owner__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Make_Must_Be_Nissan_Infiniti_Blank</fullName>
+        <active>true</active>
+        <description>For User Created record types, Make Must Be Nissan,Infiniti, Blank</description>
+        <errorConditionFormula>AND(
+RecordType.Name = &apos;User Created&apos;,
+NOT(
+OR(
+Make_Name__c = &apos;Nissan&apos;,
+Make_Name__c = &apos;Infiniti&apos;,
+Make_Name__c = &apos;NISSAN&apos;,
+Make_Name__c = &apos;INFINITI&apos;,
+Make_Name__c = &apos;&apos;
+)
+)
+)</errorConditionFormula>
+        <errorMessage>Make must be Nissan, Infiniti, or blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Model_Year_Must_have_4_Digits</fullName>
+        <active>true</active>
+        <description>When a Vehicle is created by a user Model Year must have 4 digits.</description>
+        <errorConditionFormula>AND( 
+RecordTypeId = &quot;012F0000000yCuR&quot;, 
+
+NOT (OR( 
+LEN(Model_Year__c) = 4, 
+AND(LEN (Model_Year__c) =6, RIGHT(Model_Year__c, 2) = &quot;.0&quot;), 
+AND(LEN (Model_Year__c) =6, RIGHT(Model_Year__c, 2) = &quot;.5&quot;) 
+)) 
+)</errorConditionFormula>
+        <errorDisplayField>Model_Year__c</errorDisplayField>
+        <errorMessage>Model Year Must have 4 Digits.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_have_Odometer_Units</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISBLANK(Latest_Recorded_Mileage_Units__c )
+			, NOT(ISBLANK( Latest_Recorded_Mileage_Number__c )))</errorConditionFormula>
+        <errorDisplayField>Latest_Recorded_Mileage_Units__c</errorDisplayField>
+        <errorMessage>You must enter &quot;M&quot; for Miles or &quot;K&quot; for Kilometers.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VIN_Must_be_14_or_17_Characters</fullName>
+        <active>false</active>
+        <description>When a Vehicle is created by a user it must have 14 or 17 characters.</description>
+        <errorConditionFormula>AND( 
+RecordTypeId = &quot;012F0000000yCuR&quot; 
+, 
+LEN( Name ) &lt;&gt; 14 
+, 
+LEN( Name ) &lt;&gt; 17 
+)</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>You may only enter VINs that have 14 or 17 characters</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VIN_Validation</fullName>
+        <active>true</active>
+        <description>VIN Validation for user entered VINs.</description>
+        <errorConditionFormula>AND(
+RecordType.Name = &apos;User Created&apos;,
+OR(
+LEN(  Vehicle_identification_Number__c  ) &lt;&gt; 17,
+NOT(REGEX(RIGHT(Vehicle_identification_Number__c ,6),&quot;\\d{6}?&quot;)) 
+)
+)</errorConditionFormula>
+        <errorMessage>VIN must be 17 digits in length with the last six being numeric.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Vehicle</fullName>
+        <availability>online</availability>
+        <description>Opens a create New Vehicle page from the Search Results page</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Vehicle</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>if (typeof(srcUp) == &apos;function&apos;) {
+   srcUp(&apos;/a0G/e?retURL=/a0G/o&amp;RecordType=012A0000000OfXh&apos;);
+}
+else {
+   window.open(&apos;/a0G/e?retURL=/a0G/o&amp;RecordType=012A0000000OfXh&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>VIN_Decoder</fullName>
+        <availability>online</availability>
+        <description>Accesses third party website to decode VIN</description>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>VIN Decoder</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if (typeof(srcUp) == &apos;function&apos;) {
+   srcUp(&apos;http://www.decodethis.com/Default.aspx?tabid=65&amp;vin={!Vehicle__c.Name}&apos;);
+}
+else {
+   window.open(&apos;http://www.decodethis.com/Default.aspx?tabid=65&amp;vin={!Vehicle__c.Name}&apos;);
+}</url>
+    </webLinks>
+</CustomObject>

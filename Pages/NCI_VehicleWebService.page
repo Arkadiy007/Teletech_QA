@@ -1,0 +1,3 @@
+<apex:page standardController="Vehicle__c" extensions="NCI_VehicleWebService" action="{!initialize}" rendered="{!isAdmin}">
+    <apex:outputLabel value="{!responseJSON}"/>
+</apex:page>

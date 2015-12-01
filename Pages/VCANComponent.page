@@ -1,0 +1,105 @@
+<apex:page standardController="Warranty_Case__c" extensions="VCANComponent" action="{!refreshVCAN}">
+   <apex:includeScript value="/support/console/28.0/integration.js" />
+   <apex:includeScript value="/soap/ajax/28.0/connection.js" />
+
+    <script>
+       
+       var recId;
+       var recName; 
+       function testOpenSubtab(Id, Name) {
+           
+			recId = Id;
+			recName = Name;
+            if (sforce.console.isInConsole()){
+			//First find the ID of the primary tab to put the new subtab in
+			sforce.console.getEnclosingPrimaryTabId(findtab);
+			}else{
+			 window.open('/'+ recId,'_blank');  //window.location = '/'+ recId;
+			}
+        }
+
+        var findtab = function findtab(result) {
+            //Now that we have the primary tab ID, we can open a new subtab in it
+            primaryTabId = result.id;
+            sforce.console.getEnclosingTabId(openSubtab);
+
+        };
+
+        var openSubtab = function openSubtab(result) {
+            //Now that we have the primary tab ID, we can open a new subtab in it
+
+            sforce.console.openSubtab(primaryTabId,
+                    '/'+recId, true,
+                    recName, null, openSuccess, recName);
+        };
+
+        var openSuccess = function openSuccess(result) {
+            //Report whether we succeeded in opening the subtab
+            if (result.success == true) {
+                // alert('subtab successfully opened');
+            } else {
+                // alert('subtab cannot be opened');
+            }
+        };
+        
+    </script>
+    <apex:form id="frmMain">
+        <!-- Field Filters for the Search -->
+        <apex:pageBlock id="pbMain">
+            <apex:pageMessages />
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Create VCAN" action="{!createVCAN}"
+                                    tabindex="6" rendered="{!canCreate}"/>
+                <apex:commandButton value="Delete VCAN" action="{!deleteVCAN}"
+                                    tabindex="8" rendered="{!showDelete}"/>
+            <apex:commandButton value="Manage HOST Password" action="{!changePassword}" rendered="{!hasPassword}"/>                
+            </apex:pageBlockButtons>
+            <div style="text-align: center;">
+                <apex:outputText value="{!errorMessage}" style="font-weight:bold;{!errorColor}"
+                                 rendered="{!showErrorMessage}" />
+            </div>     
+            <apex:pageBlockSection title="Dealer/VIN Alerts" rendered="{!DealerVINAlert}" columns="1" collapsible="false">
+                <apex:pageBlockSectionItem >
+                <apex:image url="{!URLFOR($Resource.CommonIcons, 'exclamation-point.png')}" width="30" height="30"/>
+                <apex:outputText value="{!$Label.Dealer_VIN_Alert}" style="font-size:medium; color:red; font-weight:bold;display:block;padding-top:5px" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="" showHeader="false" rendered="{!DealerVINAlert}" collapsible="false" columns="1">
+                <apex:pageblockTable value="{!dealerVINAlerts}" var="d">
+                    <apex:column value="{!d.Type__c}"
+                        headerValue="Type" headerClass="alignCenter" />
+                    <apex:column headerClass="alignCenter">
+                        <apex:facet name="header">VIN</apex:facet>
+                        <apex:outputLink onclick="testOpenSubtab('{!d.VIN__c}', '{!d.VIN__r.Name}'); return false;" target="_blank">{!d.VIN__r.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerClass="alignCenter">
+                        <apex:facet name="header">Dealer</apex:facet>
+                        <apex:outputLink onclick="testOpenSubtab('{!d.Dealer__c}', '{!d.Dealer__r.Name}'); return false;" target="_blank">{!d.Dealer__r.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!d.Alert_Comments__c}" headerValue="Alert Comments"
+                        headerClass="alignCenter" />
+                    <apex:column value="{!d.Special_Instructions__c}" headerValue="Special Instructions"
+                        headerClass="alignCenter" />
+                </apex:pageblockTable>                
+            </apex:pageBlockSection>   
+            <apex:pageBlockSection id="VCANInfo" title="VCAN Information" collapsible="false" columns="2">
+                <apex:outputText value="{!HostReferenceNumber}" label="HOST Reference Number"/>               
+                <apex:outputText value="{!ApprovalStatus}" label="Approval Status"/>
+                <apex:outputText value="{!HostErrorMessage}" label="Last HOST Message"/>
+                <apex:outputText value="{!LastModifiedByName}" label="Last Updated By"/>  
+                <apex:outputText label="VCAN Comment" value="{!warrantyCase.Approval_Information__c}"/>
+                <apex:outputText label="HOST Comments" value="{!HostComments}" escape="false"></apex:outputText>
+            </apex:pageBlockSection>            
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!allowPasswordEntry}">
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{!savePassword}"
+                                    tabindex="10" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Host Password" collapsible="false" columns="1">
+            <apex:outputText value="Enter your Host Bridge password and click save. Passwords changed in Salesforce will not be changed in the HOST system." />
+            <apex:inputText value="{!newVCANPassword}" label="Host Password" tabindex="9" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

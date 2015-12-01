@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>CaseCategorization</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>CaseCategorization</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Follow the path of individual case categories being used.  The case categories follow the hierarchy defined in Case Categorization Dependency table. Up to ten related categorizations are applied to a single case. Initially 3 categorization lines will be shown with the addition of 3 more and then 4 more up to a total of 10.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>CaseWasClosed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Hidden field to check if Case Category was added before Case is Closed</description>
+        <externalId>false</externalId>
+        <label>CaseWasClosed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Case_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Case_Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Case_DocumentID__c</fullName>
+        <externalId>true</externalId>
+        <label>Case DocumentID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <description>Lookup field to case.</description>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Case Categorizations</relationshipLabel>
+        <relationshipName>Case_Categorizations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Category_Code__c</fullName>
+        <description>External ID field. Used to link to the code table and populate Category__c field.</description>
+        <externalId>true</externalId>
+        <label>Category Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category_Date__c</fullName>
+        <description>Date on which the Major Component Code was determined</description>
+        <externalId>false</externalId>
+        <label>Category Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Category_Description__c</fullName>
+        <description>Formula field. Retrieve Category Code Description from code table.</description>
+        <externalId>false</externalId>
+        <formula>Category__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Category Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup field to the category codes in code table.</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Code__c.Type__c</field>
+                <operation>equals</operation>
+                <value>Category</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Code__c</referenceTo>
+        <relationshipLabel>Case Categorization (Category)</relationshipLabel>
+        <relationshipName>Case_Categorization_Category</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Concern_Code__c</fullName>
+        <description>External ID field. Used to link to the code table and populate Concern__c field.</description>
+        <externalId>true</externalId>
+        <label>Concern Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concern_Description__c</fullName>
+        <description>Formula field. Retrieve Concern Code Description from code table.</description>
+        <externalId>false</externalId>
+        <formula>Concern__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Concern Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concern__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup field to the concern codes in code table.</description>
+        <externalId>false</externalId>
+        <label>Concern</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Code__c.Type__c</field>
+                <operation>equals</operation>
+                <value>Concern</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Code__c</referenceTo>
+        <relationshipLabel>Case Categorization (Concern)</relationshipLabel>
+        <relationshipName>Case_Categorization_Concern</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Major_Component_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Major Component Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Root_Cause__c</fullName>
+        <externalId>false</externalId>
+        <label>Root Cause</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage_Status__c</fullName>
+        <description>The status of the record that determines whether it needs to be processed by a batch job to populate the Stage_Case_Detail object for backfeed to ZCA1.</description>
+        <externalId>false</externalId>
+        <label>Stage Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Processing Needed</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Add Processing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Update Processing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Done Processing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subcategory_Code__c</fullName>
+        <description>External ID field. Used to link to the code table and populate Subcategory__c field.</description>
+        <externalId>false</externalId>
+        <label>Subcategory Code</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subcategory_Description__c</fullName>
+        <description>Formula field. Retrieve Subcategory Code Description from code table.</description>
+        <externalId>false</externalId>
+        <formula>Subcategory__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Subcategory Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subcategory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup field to the subcategory codes in code table.</description>
+        <externalId>false</externalId>
+        <label>Subcategory</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Code__c.Type__c</field>
+                <operation>equals</operation>
+                <value>Subcategory</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Code__c</referenceTo>
+        <relationshipLabel>Case Categorization (Subcategory)</relationshipLabel>
+        <relationshipName>Case_Categorization_Subcategory</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Symptom_Code__c</fullName>
+        <description>External ID field. Used to link to the code table and populate Symptom__c field.</description>
+        <externalId>true</externalId>
+        <label>Symptom Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Symptom_Description__c</fullName>
+        <description>Formula field. Retrieve Symptom Code Description from code table.</description>
+        <externalId>false</externalId>
+        <formula>Symptom__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Symptom Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Symptom__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup field to the symptom codes in code table.</description>
+        <externalId>false</externalId>
+        <label>Symptom</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Code__c.Type__c</field>
+                <operation>equals</operation>
+                <value>Symptom</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Code__c</referenceTo>
+        <relationshipLabel>Case Categorization (Symptom)</relationshipLabel>
+        <relationshipName>Case_Categorization_Symptom</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User_Defined_Date_1__c</fullName>
+        <externalId>false</externalId>
+        <label>User Defined Date 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>User_Defined_Number_1__c</fullName>
+        <externalId>false</externalId>
+        <label>User Defined Number 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Defined_Text_1__c</fullName>
+        <externalId>false</externalId>
+        <label>User Defined Text 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Defined_Text_2__c</fullName>
+        <externalId>false</externalId>
+        <label>User Defined Text 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Defined_Text_3__c</fullName>
+        <externalId>false</externalId>
+        <label>User Defined Text 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Case Categorization</label>
+    <nameField>
+        <displayFormat>CC-{0}</displayFormat>
+        <label>Case Categorization #</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Case Categorizations</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Case__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Concern_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Category_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Subcategory_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Symptom_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Major_Component_Code__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Case__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Concern_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Category_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Subcategory_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Symptom_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Major_Component_Code__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Case__c</searchFilterFields>
+        <searchFilterFields>Concern_Description__c</searchFilterFields>
+        <searchFilterFields>Category_Description__c</searchFilterFields>
+        <searchFilterFields>Subcategory_Description__c</searchFilterFields>
+        <searchFilterFields>Symptom_Description__c</searchFilterFields>
+        <searchFilterFields>Major_Component_Code__c</searchFilterFields>
+        <searchResultsAdditionalFields>Case__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Concern_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Category_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Subcategory_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Symptom_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Major_Component_Code__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>NewCaseCategorizationCA</fullName>
+        <availability>online</availability>
+        <description>Custom New Case Categorization button first validates that the Case.FollowUpDate is today or in the future by comparing FollowUpTimeframe field to zero. 
+
+If fails, gives alert popup text instructing user to first change the Follow Up Date. 
+
+Otherwise brings user to the CaseCategorization Visualforce page if valid.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Case Categorization</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/support/console/28.0/integration.js&quot;)}
+var categorizations = &apos;{!Case.Categorizations__c}&apos;;
+if(categorizations &lt;= 10){
+   if (typeof(srcUp) == &apos;function&apos;) {
+			if(window.location.pathname == &apos;/emptyHtmlDoc.html&apos;) {
+				window.parent.location = &apos;/apex/CaseCategorization?CF00NF0000008NMG0={!Case.CaseNumber}&amp;CF00NF0000008NMG0_lkid={!Case.Id}&amp;scontrolCaching=1&amp;retURL=%2F{!Case.Id}&amp;sfdc.override=1&apos;; 
+			}
+			else {
+				srcSelf(&apos;/apex/CaseCategorization?CF00NF0000008NMG0={!Case.CaseNumber}&amp;CF00NF0000008NMG0_lkid={!Case.Id}&amp;scontrolCaching=1&amp;retURL=%2F{!Case.Id}&amp;sfdc.override=1&apos;);
+			} 
+		
+   }else { 
+      window.parent.location = &apos;/apex/CaseCategorization?CF00NF0000008NMG0={!Case.CaseNumber}&amp;CF00NF0000008NMG0_lkid={!Case.Id}&amp;scontrolCaching=1&amp;retURL=%2F{!Case.Id}&amp;sfdc.override=1&apos;; 
+   }
+}else{
+	alert(&apos;This Case has more than 10 Case Categorizations, page cannot be displayed&apos;);
+}</url>
+    </webLinks>
+</CustomObject>

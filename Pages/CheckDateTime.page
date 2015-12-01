@@ -1,0 +1,20 @@
+<apex:page controller="TMS_Webservices_Utility">
+<table>
+<apex:form >
+<apex:pageBlock >
+
+<apex:pageblockSection columns="1">
+<apex:pageblockSectionItem >
+<apex:outputText value="Enter value in form MM/DD/YYYY" />
+<apex:inputText value="{!appointmentDate}" required="true"/>
+</apex:pageblockSectionItem>
+<apex:pageblockSectionItem >
+<apex:outputText value="Enter value in form HH:MM:SS" />
+<apex:inputText value="{!appointmentTime}" required="true"/>
+</apex:pageblockSectionItem>
+</apex:pageblockSection>
+<apex:commandButton value="Check Date" action="{!checkAppointmentDate}"/>
+</apex:pageBlock>
+</apex:form>
+</table>
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page standardController="Case" extensions="DTSRequest_Controller" title="DTS Request" >
+<apex:form >
+
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!go}" />
+            <apex:commandButton value="Back to Case" action="{!oncancel}" />
+            
+        </apex:pageBlockButtons>
+        <apex:pagemessages />
+        
+        <apex:pageblockSection columns="1"> 
+           <apex:selectList label="DTS Request Type" value="{!requestType}" multiselect="false" size="1" id="itemlist" rendered="{!items.size > 0}">
+            <apex:selectOptions value="{!items}"/>
+           </apex:selectList>           
+           
+<!--            <apex:inputField value="{!c.DTS_Request_Type__c}"/> -->
+           <apex:inputfield value="{!c.DTS_Notes__c}" style="width:100%; height:150px" />
+        </apex:pageblockSection>
+    
+    </apex:pageBlock>
+
+</apex:form>
+</apex:page>

@@ -1,0 +1,8 @@
+<apex:page controller="Controller_StateListPage" sidebar="false" showHeader="false">
+	<apex:pageBlock >
+        <apex:pageBlockTable value="{!states}" var="state">
+            <apex:column value="{!state.Name__c}"/>
+            <apex:column value="{!state.name}"/>
+        </apex:pageBlockTable> 
+	</apex:pageBlock>
+</apex:page>

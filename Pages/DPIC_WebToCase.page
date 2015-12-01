@@ -1,0 +1,80 @@
+<apex:page controller="DPIC_WebToCase" tabStyle="Account"
+	showHeader="false" sidebar="false">
+	<table>
+		<tr>
+			<td style="width: 80px !important; padding-left: 10px;" rowspan="2">
+				<div class="main-logo"></div>
+			</td>
+			<td
+				style="width: 250px !important; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; text-align: left; vertical-align: bottom; padding-left: 10px;">
+				DPIC <!-- <apex:sectionHeader title="DPIC" subtitle="Web To Case" />  -->
+
+			</td>
+		</tr>
+		<tr>
+			<td
+				style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; text-align: left; vertical-align: top; padding-left: 10px;">Web
+				To Case</td>
+		</tr>
+	</table>
+	<apex:stylesheet value="{!urlStyle}" />
+	<apex:form id="frmMain">
+		<apex:pageMessages />
+		<apex:pageBlock id="pbMain" rendered="{!showMainForm}">
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="Submit" action="{!submit}" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title="Fields" collapsible="false" columns="1">
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Dealer Code *" />
+					<apex:inputText value="{!dealerCode}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="First Name *" />
+					<apex:inputText value="{!firstName}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Last Name *" />
+					<apex:inputText value="{!lastName}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Phone *" />
+					<apex:inputText value="{!webCase.SuppliedPhone}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Email *" />
+					<apex:inputText value="{!webCase.SuppliedEmail}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Part Number 1" />
+					<apex:inputText value="{!webCase.Part_Number_1__c}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Part Number 2" />
+					<apex:inputText value="{!webCase.Part_Number_2__c}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Part Number 3" />
+					<apex:inputText value="{!webCase.Part_Number_3__c}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Part Number 4" />
+					<apex:inputText value="{!webCase.Part_Number_4__c}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Part Number 5" />
+					<apex:inputText value="{!webCase.Part_Number_5__c}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Comments *" />
+					<apex:inputTextArea value="{!webCase.Description}" cols="100"
+						rows="15" />
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<div style="text-align: center;">
+				<apex:outputText value="{!errorMessage}" style="color: red;"
+					rendered="{!showErrorMessage}" />
+			</div>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:component controller="InfinitiSiteLoginController" id="loginComponent">
+  <apex:form id="loginForm" forceSSL="true">
+    <apex:outputPanel layout="block">
+      <apex:pageMessages id="error"/>
+      <apex:panelGrid columns="2" style="margin-top:1em;">
+        <apex:outputLabel style="color:white" value="{!$Label.site.username}" for="username"/>
+        <apex:inputText id="username" value="{!username}"/>
+        <apex:outputLabel style="color:white" value="{!$Label.site.password}" for="password"/>
+        <apex:inputSecret id="password" value="{!password}"/>
+        <apex:outputLabel style="color:white" value="Dealer Code" for="dealerCode"/>
+        <apex:inputText id="dealerCode" value="{!dealerCode}"/>
+        <apex:outputText value=""/>
+        <apex:commandButton action="{!login}" value="{!$Label.site.login_button}" id="loginButton"/>
+      </apex:panelGrid> 
+    </apex:outputPanel>
+  </apex:form>
+</apex:component>

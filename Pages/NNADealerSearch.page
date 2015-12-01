@@ -1,0 +1,7 @@
+<apex:page controller="NNADealerSearchController"  action="{!updateCaseAndRedicect}" docType="html-5.0">
+    <apex:form >
+        <apex:pageMessages escape="false"/>
+        <apex:commandButton action="{!updateCaseAndRedicect}" value="Resend" style="margin-left: 20px;" rendered="{!showResend}"/>
+        <apex:commandButton action="{!redirectToCase}" value="Back" id="theBackButton" />
+    </apex:form>
+</apex:page>

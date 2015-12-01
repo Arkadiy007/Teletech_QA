@@ -1,0 +1,41 @@
+<apex:page controller="VehicleRepairOrderDetailController" tabStyle="Service_Repair_History__c">
+     <apex:form >
+     <apex:sectionHeader title="Service History"/>
+     <apex:pageBlock title="Service History Detail">
+         <apex:pageBlockSection columns="2" title="Information">             
+                 <apex:outputfield id="Vehicle_Mileage_Number" value="{!servInfo.Vehicle_Mileage_Number__c}"/>
+                 <apex:outputfield id="Diagnosis_Description" value="{!servInfo.Diagnosis_Description__c}"/>  
+                 <apex:outputfield id="Dealer_Number" value="{!servInfo.Dealer_Number__c}"/>  
+                 <apex:outputfield id="Primary_Failed_Part" value="{!servInfo.Primary_Failed_Part__c}"/>    
+                 <apex:outputfield id="Work_Order_Number" value="{!servInfo.Work_Order_Number__c}"/>
+                 <apex:outputfield id="PNC_Code" value="{!servInfo.PNC_Code__c}"/>  
+                 <apex:outputfield id="Claim_Line_Number" value="{!servInfo.Claim_Line_Number__c}"/>  
+                 <apex:outputfield id="PNC_Code_Description" value="{!servInfo.PNC_Code_Description__c}"/> 
+                 <apex:outputfield id="Claim_Approved_Coverage_Code" value="{!servInfo.Claim_Approved_Coverage_Code__c}"/>
+                 <apex:outputfield id="Primary_Operation_Code" value="{!servInfo.Primary_Operation_Code__c}"/>  
+                 <apex:outputfield id="Vehicle_Repair_Open_Date" value="{!servInfo.Vehicle_Repair_Open_Date__c}"/>  
+                 <apex:outputfield id="Complaint_Description" value="{!servInfo.Primary_Operation_Code_Description__c}"/>    
+                 <apex:outputfield id="Vehicle_Repair_Close_Date" value="{!servInfo.Vehicle_Repair_Close_Date__c}"/>
+                 <apex:outputfield id="Claim_Service_Tech_Number" value="{!servInfo.Claim_Service_Tech_Number__c}"/>  
+                 <apex:outputfield id="Disposition_Code" value="{!servInfo.Disposition_Code__c}"/>  
+                 <apex:outputfield id="Vehicle_Claim_Authorization_Number" value="{!servInfo.Vehicle_Claim_Authorization_Number__c}"/>  
+                 <apex:outputfield id="Work_Order_Line_Status_Code" value="{!servInfo.Work_Order_Line_Status_Code__c}"/>
+                 <apex:outputfield id="Claim_Type_Code" value="{!servInfo.Claim_Type_Code__c}"/>  
+                 <apex:outputfield id="Original_Purchase_Date" value="{!servInfo.Original_Purchase_Date__c}"/>  
+                 <apex:outputfield id="Dealer_ID" value="{!servInfo.Dealer_ID__c}"/>    
+                 <apex:outputfield id="Original_Purchase_Miles" value="{!servInfo.Original_Purchase_Miles__c}"/>
+                 <apex:outputfield id="Service_Technician_Identifier" value="{!servInfo.Service_Technician_Identifier__c}"/>  
+                 <apex:outputfield id="Customer" value="{!servInfo.Customer__c}"/>           
+                 <apex:outputfield id="Claim_Customer_First_Name" value="{!servInfo.Claim_Customer_First_Name__c}"/> 
+                 <apex:outputfield id="Contract_Policy_Number" value="{!servInfo.Contract_Policy_Number__c}"/>           
+                 <apex:outputfield id="Claim_Customer_Last_Name" value="{!servInfo.Claim_Customer_Last_Name__c}"/>           
+                 <apex:outputfield id="Claim_Customer_Street_Address1" value="{!servInfo.Claim_Customer_Street_Address1__c}"/>
+                 <apex:outputfield id="Claim_Customer_Street_Address2" value="{!servInfo.Claim_Customer_Street_Address2__c}"/>
+                 <apex:outputfield id="Claim_Customer_City" value="{!servInfo.Claim_Customer_City__c}"/>                 
+                 <apex:outputfield id="Claim_Customer_Phone" value="{!servInfo.Claim_Customer_Phone__c}"/>
+                 <apex:outputfield id="Claim_Customer_State_Province" value="{!servInfo.Claim_Customer_State_Province__c}"/>
+                 <apex:outputfield id="Claim_Customer_Zip" value="{!servInfo.Claim_Customer_Zip__c}"/>
+         </apex:pageBlockSection>
+     </apex:pageBlock>     
+    </apex:form>
+</apex:page>

@@ -1,0 +1,129 @@
+<apex:page controller="DealerBackfeedCS_Controller" doctype="html-5.0">
+
+    <style>
+        body.wait, body.wait * {
+            cursor: wait !important;
+        }
+    </style>
+
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.jQueryDataTables, 'js/jquery.js')}"></script>
+    <script type="text/javascript" language="javascript">
+ 
+      var j$ = jQuery.noConflict();
+
+      var busyCursorOn = function() {
+        j$('.button').attr("disabled", "disabled");
+        j$('body').addClass('wait');
+      };
+
+      var busyCursorOff = function() {
+        j$('.button').removeAttr('disabled');
+        j$('body').removeClass('wait');
+      };
+
+    </script>
+
+    <apex:actionstatus id="busyCursor" onstart="busyCursorOn()" onstop="busyCursorOff()" />
+
+    <apex:tabpanel switchtype="client" selectedtab="XMLEnabled" id="theTabPanel">
+        <apex:tab label="Dealer Backfeed XML Enabled" name="XMLEnabled" id="XMLEnabled_Tab">
+
+            <apex:form >
+                <apex:pageblock title="Dealer Backfeed XML Enabled" id="XMLEnabled_pgblock">
+                    <apex:pagemessages />
+                    <apex:outputlabel value="Dealer Backfeed XML Enabled: " /><apex:inputcheckbox label="Dealer Backfeed XML Enabled" value="{!xmlEnabledCS.Enabled__c}" />
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Save" action="{!SaveXMLEnable}" rerender="XMLEnabled_pgblock" status="busyCursor" />
+                    </apex:pageblockbuttons>
+                </apex:pageblock>
+            </apex:form>
+
+        </apex:tab>
+
+        <apex:tab label="Dealer Backfeed Business Rules" name="BusinessRules" id="BusinessRules_Tab">
+
+            <apex:form >
+                <apex:pageblock title="Dealer Backfeed Business Rules" id="BusRule_pgblock">
+                    <apex:pagemessages />
+                    <apex:pageblocktable value="{! dealerBackfeedBusinessRulesCS_Wrapped }" var="cs" id="BusRule_table">
+
+                        <apex:column >
+                            <apex:commandlink action="{!Del}" value="delete" rerender="BusRule_pgblock" onclick="if(!confirm('Are you sure?')){return};" status="busyCursor">
+                                <apex:param name="BusinessRulesCSId_toDel" value="{!cs.csid}" assignto="{!CSId_toDel}" />
+                                <apex:param name="BusinessRulesCSName_toDel" value="{!cs.name}" assignto="{!CSName_toDel}" />
+                                <apex:param name="csType1" value="Dealer_Backfeed_Business_Rules__c" assignto="{!csType}" />
+                            </apex:commandlink>
+                        </apex:column>
+
+                        <!--
+                        <apex:column headervalue="Name">
+                            <apex:outputtext value="{!cs.name}" />
+                        </apex:column>
+                        -->
+
+                        <apex:column headervalue="Case Record Type">
+                            <apex:selectlist value="{!cs.recordTypeValue}" size="1">
+                                <apex:selectoptions value="{!RecTypeList}" />
+                            </apex:selectlist>
+                        </apex:column>
+
+                        <apex:column headervalue="Case Origin">
+                            <apex:input type="text" value="{!cs.originValue }" />
+                        </apex:column>
+
+                        <apex:column headervalue="Provider Service Name">
+                            <apex:input type="text" value="{!cs.serviceNameValue }" />
+                        </apex:column>
+
+                        <apex:column headervalue="Provider Name">
+                            <apex:input type="text" value="{!cs.nameValue }" />
+                        </apex:column>
+
+                    </apex:pageblocktable>
+
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Add" action="{!Add}" rerender="BusRule_table" status="busyCursor" />
+                        <apex:commandbutton value="Save" action="{!Save}" rerender="BusRule_pgblock" status="busyCursor" />
+                        <apex:commandbutton value="Cancel" action="{!Cancel}" immediate="true" rerender="BusRule_pgblock" status="busyCursor" />
+                    </apex:pageblockbuttons>
+
+                </apex:pageblock>
+            </apex:form>
+
+        </apex:tab>
+        <apex:tab label="USW Case Mappings" name="USWCaseMappings" id="USWCaseMappings_Tab">
+
+            <apex:form >
+                <apex:pageblock title="USW Case Mappings" id="USW_pgblock">
+                    <apex:pagemessages />
+                    <apex:pageblocktable value="{! uswCaseMappingsCS_Wrapped }" var="usw_cs" id="USW_table">
+                        <apex:column >
+                            <apex:commandlink action="{!Del}" value="delete" rerender="USW_pgblock" onclick="if(!confirm('Are you sure?')){return};" status="busyCursor">
+                                <apex:param name="uswCSId_toDel" value="{!usw_cs.csid}" assignto="{!CSId_toDel}" />
+                                <apex:param name="uswCSName_toDel" value="{!usw_cs.name}" assignto="{!CSName_toDel}" />
+                                <apex:param name="csType2" value="USW_Case_Mappings__c" assignto="{!csType}" />
+                            </apex:commandlink>
+                        </apex:column>
+                        <apex:column headervalue="Case Record Type">
+                            <apex:selectlist value="{!usw_cs.caseRecordType}" size="1">
+                                <apex:selectoptions value="{!devRecTypeList}" />
+                            </apex:selectlist>
+                        </apex:column>
+                        <apex:column headervalue="SF Field Name">
+                            <apex:input type="text" value="{!usw_cs.sfFieldName }" />
+                        </apex:column>
+                        <apex:column headervalue="US Field Name">
+                            <apex:input type="text" value="{!usw_cs.usFieldName }" />
+                        </apex:column>
+                    </apex:pageblocktable>
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Add" action="{!AddUSW}" rerender="USW_table" status="busyCursor" />
+                        <apex:commandbutton value="Save" action="{!SaveUSW}" rerender="USW_pgblock" status="busyCursor" />
+                        <apex:commandbutton value="Cancel" action="{!Cancel}" immediate="true" rerender="USW_pgblock" status="busyCursor" />
+                    </apex:pageblockbuttons>
+                </apex:pageblock>
+            </apex:form>
+    
+        </apex:tab>
+    </apex:tabpanel>
+</apex:page>

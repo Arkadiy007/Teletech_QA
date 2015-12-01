@@ -1,0 +1,3 @@
+<apex:page controller="WebToCaseNissan" action="{!submitNissanForm}">
+	<apex:pageMessages id="msg" escape="false" />
+</apex:page>

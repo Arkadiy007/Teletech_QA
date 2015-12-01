@@ -1,0 +1,106 @@
+<apex:page controller="ChangesHistoryController" contenttype="application/vnd.ms-excel#extract.xls"
+           cache="true" sidebar="false" >
+    <apex:outputtext value="{!xlsHeader}" />
+ 
+    <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" 
+              xmlns:v="urn:schemas-microsoft-com:vml" 
+              xmlns:o="urn:schemas-microsoft-com:office:office" 
+              xmlns:x="urn:schemas-microsoft-com:office:excel" 
+              xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" 
+              xmlns:html="http://www.w3.org/TR/REC-html40">
+         <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+            <AllowPNG/>
+         </OfficeDocumentSettings>
+      
+            <Styles>
+                <Style ss:ID="Default">
+                    <Alignment/> 
+                    <Borders/> 
+                    <Font ss:Bold="0" ss:Color="#008000"/> 
+                    <Interior ss:bgColor= "#008000" ss:Pattern="Solid" /> 
+                    <NumberFormat/> 
+                    <Protection/>
+                </Style>
+                <Style ss:ID="FirstTableHeader">
+                    <Alignment ss:Vertical="Top" ss:WrapText="1"/ >
+                    <Interior ss:Color="#0070c0" ss:Pattern="Solid"/ >
+                    <Font ss:Bold="1" ss:FontName="Calibri" ss:Color="#ffffff"/ > 
+                    <Borders > 
+                        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/ > 
+                        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/ > 
+                        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/ > 
+                        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/ > 
+                    </Borders >
+                </Style>
+                <Style ss:ID="NormalText">
+                    <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1"/ > 
+                    <Borders > 
+                        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/ > 
+                    </Borders > <Font ss:FontName="Calibri" x:Family="Swiss"/ > 
+                    <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/ > 
+                    <NumberFormat/ > 
+                    <Protection/ >
+                </Style>
+                <Style ss:ID="Title">
+                   <Alignment ss:Vertical="Bottom"/>
+                   <Borders/>
+                   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="14" ss:Bold="1"/>
+                   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+                   <NumberFormat/>
+                   <Protection/>
+                </Style>
+                <Style ss:ID="SubTitle">
+                   <Alignment ss:Vertical="Bottom"/>
+                   <Borders/>
+                   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Bold="1"/>
+                   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+                   <NumberFormat/>
+                   <Protection/>
+                </Style>
+                <Style ss:ID="SecondTable">
+                    <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1"/>
+                    <Borders>
+                        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
+                        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"/>
+                        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"/>
+                        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2"/>
+                    </Borders>
+                    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+                    <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+                </Style>
+
+            </Styles>
+
+            <Worksheet ss:Name="History Objects">
+                    <Table x:FullColumns="1" x:FullRows="1">
+                        <Column ss:Width="100" />
+                        <Column ss:Width="165" />
+                        <Column ss:Width="100" />
+                        <Column ss:Width="90" />
+                        <Column ss:Width="90" />
+
+                        <Row>
+                            <Cell ss:StyleID="Title"><Data ss:Type="String">History Objects</Data></Cell>
+                        </Row>
+                       
+                        
+
+                         <apex:repeat value="{!AllHistoryObjects}" var="historyRecord">
+                        <Row>
+                                 <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!historyRecord.objectName}</Data></Cell>
+                                 <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!historyRecord.recordName}</Data></Cell>
+                                 <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!historyRecord.description}</Data></Cell>
+                                 <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!historyRecord.modifiedByName}</Data></Cell>
+                                 <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!historyRecord.modificationDate}</Data></Cell>
+                         
+                        </Row>
+                    </apex:repeat>
+
+              
+                    </Table>
+                    
+         
+            </Worksheet>
+           
+        </Workbook>
+</apex:page>

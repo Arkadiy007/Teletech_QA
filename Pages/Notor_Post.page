@@ -1,0 +1,20 @@
+﻿<apex:page controller="Notor_Post" action="{!submitNotor}">
+	<apex:pageMessages escape="false" />
+	<apex:includeScript value="/support/console/22.0/integration.js" />
+	<script type="text/javascript">
+		function initialActions() {
+			//popUp the Account tab if this page has been open from the Console
+			srcUp('/a1jc0000000FGM0');
+		}
+          
+		﻿var pageLoad = window.onload;
+		﻿window.onload = function() {
+			﻿if (pageLoad) {
+				pageLoad();
+			﻿}
+			
+			initialActions();
+		}
+     </script>
+	
+</apex:page>

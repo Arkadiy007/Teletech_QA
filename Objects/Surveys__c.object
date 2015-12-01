@@ -1,0 +1,3600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Survey response data gathered from various sources</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Ability_to_Answer_Questions__c</fullName>
+        <externalId>false</externalId>
+        <label>Ability to Answer Questions</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Alternate_transportation_offered__c</fullName>
+        <externalId>false</externalId>
+        <label>Alternate transportation offered</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount_of_time_to_pick_up_vehicle__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount of time to pick up vehicle</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Appointment_Flexibility_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Appointment Flexibility Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Area_Full_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Area Full Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Area</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BELL_Q4_of_Contacts__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 # of Contacts</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Action_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Action Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Agent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Agent</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Surveys</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BEL_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Close_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Close Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BEL_Concern__c</fullName>
+        <externalId>false</externalId>
+        <label>Concern</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Date_of_Return__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Return</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BEL_District__c</fullName>
+        <externalId>false</externalId>
+        <label>District</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_ENTY_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>ENTY_ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Model_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Model Year</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Model</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Orig_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Orig Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email to Case - Tier 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Letter/ Fax</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BEL_Q10A_Why_rating_of_X_on_amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Q10A Why rating of X on amount of effort</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q10_Effort_to_get_Request_Handled__c</fullName>
+        <externalId>false</externalId>
+        <label>Q10 Effort to get Request Handled</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q1A_Likely_to_Recommend__c</fullName>
+        <externalId>false</externalId>
+        <label>Q1A Likely to Recommend</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q1B_What_liked_disliked_about_exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Q1B What liked/disliked about experience</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q2_Likely_to_Return__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 Likely to Return</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q3_Concern_Resolved__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 Concern Resolved</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q5A_Dealer_Refer_to_CA__c</fullName>
+        <externalId>false</externalId>
+        <label>Q5A Dealer Refer to CA</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q5_Dealer_Attempted_to_Resolve__c</fullName>
+        <externalId>false</externalId>
+        <label>Q5 Dealer Attempted to Resolve</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q6A_Time_on_Hold__c</fullName>
+        <externalId>false</externalId>
+        <label>Q6A Time on Hold</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q6B_Automated_Phone_System__c</fullName>
+        <externalId>false</externalId>
+        <label>Q6B Automated Phone System</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q6C_Times_Transferred__c</fullName>
+        <externalId>false</externalId>
+        <label>Q6C Times Transferred</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q7A_Courtesy__c</fullName>
+        <externalId>false</externalId>
+        <label>Q7A Courtesy</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q7B_Listening_and_Showing_Concern__c</fullName>
+        <externalId>false</externalId>
+        <label>Q7B Listening and Showing Concern</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q7C_Doing_Their_Best_to_Help__c</fullName>
+        <externalId>false</externalId>
+        <label>Q7C Doing Their Best to Help</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q7D_Ability_to_Answer_Questions__c</fullName>
+        <externalId>false</externalId>
+        <label>Q7D Ability to Answer Questions</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q7E_Overall_Timeliness_Resolving_I__c</fullName>
+        <externalId>false</externalId>
+        <label>Q7E Overall Timeliness Resolving Issue</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q7F_Following_Through_on_Promises__c</fullName>
+        <externalId>false</externalId>
+        <label>Q7F Following Through on Promises</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q7G_Length_of_Time_on_Hold__c</fullName>
+        <externalId>false</externalId>
+        <label>Q7G Length of Time on Hold</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Q8_Overall_Satisfaction_with_Process__c</fullName>
+        <externalId>false</externalId>
+        <label>Q8 Overall Satisfaction with Process</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Root_Cause__c</fullName>
+        <externalId>false</externalId>
+        <label>Root Cause</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Sub_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEL_Symptom__c</fullName>
+        <externalId>false</externalId>
+        <label>Symptom</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Brand__c</fullName>
+        <externalId>false</externalId>
+        <label>Brand</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>Case Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Number_Discussed_with_TT__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Number Discussed with TT</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Owner__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Owner</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Surveys (Case)</relationshipLabel>
+        <relationshipName>Surveys</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CastIron_ETL_Status__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether or not this record has been extracted by Cast Iron and included in the XML output.</description>
+        <externalId>false</externalId>
+        <label>CastIron_ETL_Status</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CastIron_FF_Status__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CastIron FF Status</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cleanliness__c</fullName>
+        <externalId>false</externalId>
+        <label>Cleanliness</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Convenience_of_parking__c</fullName>
+        <externalId>false</externalId>
+        <label>Convenience of parking</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Customer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Surveys Completed</relationshipLabel>
+        <relationshipName>Surveys1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DQR_Dealer_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>DQR Dealer Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DQR_Dealer_Contacted__c</fullName>
+        <externalId>false</externalId>
+        <label>DQR Dealer Contacted</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DQR_Dealer_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>DQR Dealer Rating</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Day_of_Sale__c</fullName>
+        <externalId>false</externalId>
+        <label>Day of Sale</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Dealer</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>You must select a Dealer Account</errorMessage>
+            <filterItems>
+                <field>Account.RecordType.Id</field>
+                <operation>equals</operation>
+                <value>012A0000000OfI0</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Surveys</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EPSurveyPlaceholderField1__c</fullName>
+        <externalId>false</externalId>
+        <label>EPSurveyPlaceholderField1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EPSurveyPlaceholderField2__c</fullName>
+        <externalId>false</externalId>
+        <label>EPSurveyPlaceholderField2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EPSurveyPlaceholderField3__c</fullName>
+        <externalId>false</externalId>
+        <label>EPSurveyPlaceholderField3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EPSurveyPlaceholderField4__c</fullName>
+        <externalId>false</externalId>
+        <label>EPSurveyPlaceholderField4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EPSurveyPlaceholderField5__c</fullName>
+        <externalId>false</externalId>
+        <label>EPSurveyPlaceholderField5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ease_of_driving_in_out_of_facility__c</fullName>
+        <externalId>false</externalId>
+        <label>Ease of driving in/out of facility</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ease_of_pickup__c</fullName>
+        <externalId>false</externalId>
+        <label>Ease of pickup</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_1_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee 1 Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_1_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee 1 Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_2_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee 2 Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_2_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee 2 Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EpErrors__c</fullName>
+        <externalId>false</externalId>
+        <label>EpErrors</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EpSurveyKey__c</fullName>
+        <externalId>false</externalId>
+        <label>EpSurveyKey</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EpSurveyLang__c</fullName>
+        <externalId>false</externalId>
+        <label>EpSurveyLang</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EpSurveyResponseDatetime__c</fullName>
+        <externalId>false</externalId>
+        <label>Ep Survey Response Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EpSurveySendDatetime__c</fullName>
+        <externalId>false</externalId>
+        <label>Ep Survey Sent Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EpSurveyVersion__c</fullName>
+        <externalId>false</externalId>
+        <label>EpSurveyVersion</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Epsilon_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Epsilon Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Surveys (Epsilon Case)</relationshipLabel>
+        <relationshipName>Epsilon_Surveys</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Evening_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Evening Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Event_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Experience_TT__c</fullName>
+        <externalId>false</externalId>
+        <label>Experience TT</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Much better</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Somewhat better</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slightly better</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>About what was expected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slightly worse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Somewhat worse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Much worse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Explaining_all_work_to_be_performed__c</fullName>
+        <externalId>false</externalId>
+        <label>Explaining all work to be performed</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Explanation_of_work__c</fullName>
+        <externalId>false</externalId>
+        <label>Explanation of work</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fairness_of_the_charges__c</fullName>
+        <externalId>false</externalId>
+        <label>Fairness of the charges</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Feedback_TT__c</fullName>
+        <externalId>false</externalId>
+        <label>Feedback TT</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Home_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Home Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Hot_Alert_Created__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Hot Alert Created</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Hot_Alert_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Hot Alert Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hot_Flag__c</fullName>
+        <externalId>false</externalId>
+        <label>Hot Flag</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Household_Key__c</fullName>
+        <externalId>false</externalId>
+        <label>Household Key</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>How_helpful_TT__c</fullName>
+        <externalId>false</externalId>
+        <label>How helpful TT</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Extremely helpful</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very helpful</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderately helpful</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slightly helpful</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not helpful at all</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>How_knowledgeable_TT__c</fullName>
+        <externalId>false</externalId>
+        <label>How knowledgeable TT</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Extremely knowledgeable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very knowledgeable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderately knowledgeable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slightly knowledgeable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not knowledgeable at all</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Kept_informed_of_vehicle_status__c</fullName>
+        <externalId>false</externalId>
+        <label>Kept informed of vehicle status</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Language_Completed__c</fullName>
+        <externalId>false</externalId>
+        <label>Language Completed</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Creation_to_Survey_Sent__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Survey_Created_Date_Time__c -  SurveyGizmoCase__r.CreatedDate) * 24</formula>
+        <label>Lead Creation to Survey Sent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level_of_Courtesy__c</fullName>
+        <externalId>false</externalId>
+        <label>Level of Courtesy</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Likely_to_Recommend_Interaction__c</fullName>
+        <externalId>false</externalId>
+        <label>Likely to Recommend: Interaction</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Likes_or_Dislikes_with_Brand__c</fullName>
+        <externalId>false</externalId>
+        <label>Likes or Dislikes with Brand</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Listened_and_Showed_Concern__c</fullName>
+        <externalId>false</externalId>
+        <label>Listened and Showed Concern</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Agent_Chat_Session_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Chat Session Start Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Live_Agent_Concern_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Live Agent Concern Comments</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Live_Agent_Concern_Satisfied__c</fullName>
+        <description>It saves the response for the following question:
+&apos;Has the question or concern related to this chat been resolved to your satisfaction?&apos;</description>
+        <externalId>false</externalId>
+        <label>Live Agent Concern Satisfied</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Agent_Experience_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Live Agent Experience Comments</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Live_Agent_Experience_Satisfied__c</fullName>
+        <description>It saves the response for the following question:
+Were you satisfied with your Live Chat experience today?</description>
+        <externalId>false</externalId>
+        <label>Live Agent Experience Satisfied</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Agent_Recommended_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Live Agent Recommended Comments</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Live_Agent_Recommended__c</fullName>
+        <description>It saves the response for the following question:
+&apos;How likely are you to recommend Infiniti to a friend or colleague?&apos;
+10 = Extremely likely  / 0 = Not at all likely</description>
+        <externalId>false</externalId>
+        <label>Live Agent Recommended</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Agent_Visitor_IP__c</fullName>
+        <externalId>false</externalId>
+        <label>Visitor IP</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Chat_Transcript__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Live Chat Transcript</label>
+        <referenceTo>LiveChatTranscript</referenceTo>
+        <relationshipLabel>Surveys</relationshipLabel>
+        <relationshipName>Surveys</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lounge_Area_Amenities__c</fullName>
+        <externalId>false</externalId>
+        <label>Lounge Area Amenities</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mailing_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Mailing Address</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mailing_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Mailing City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mailing_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Mailing State</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mailing_Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Mailing Zip</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Mobile Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>NPS_Brand_Sales_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>NPS Brand Sales Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPS_Brand_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>NPS Brand Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPS_Brand__c</fullName>
+        <externalId>false</externalId>
+        <label>NPS Brand</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPS_Dealer_Sales_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>NPS Dealer Sales Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPS_Dealer_Sales__c</fullName>
+        <externalId>false</externalId>
+        <label>NPS Dealer Sales</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPS_Dealer_Service_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>NPS Dealer Service Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPS_Dealer_Service__c</fullName>
+        <externalId>false</externalId>
+        <label>NPS Dealer Service</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Not_Satisfied_had_to_Return__c</fullName>
+        <externalId>false</externalId>
+        <label>Not Satisfied had to Return</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OverallSatisfactionNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Satisfaction</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Comfort__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Comfort</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Drop_Off_Efficiency_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Drop Off Efficiency Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Drop_Off_Efficiency__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Drop Off Efficiency</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Satisfaction_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Satisfaction Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Satisfaction_Yes_No_Yes_but__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Satisfaction Yes/No/Yes but</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Satisfaction__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Satisfaction</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Scheduling_Ease_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Scheduling Ease Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Scheduling_Ease__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Scheduling Ease</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Time_Taken_Rating_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Time Taken Rating Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Time_Taken_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Time Taken Rating</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Vehicle_Delivery_Rating_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Vehicle Delivery Rating Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Vehicle_Delivery_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Vehicle Delivery Rating</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Workmanship_Rating_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Workmanship Rating Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Workmanship_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Workmanship Rating</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_cleanliness__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall cleanliness</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Part Number</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Pressure_Tactics_Flag__c</fullName>
+        <externalId>false</externalId>
+        <label>Pressure Tactics Flag</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Provision_of_accurate_completion_estimat__c</fullName>
+        <externalId>false</externalId>
+        <label>Provision of accurate completion estimat</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Provision_of_accurate_cost_estimate__c</fullName>
+        <externalId>false</externalId>
+        <label>Provision of accurate cost estimate</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Question_resolved_TT__c</fullName>
+        <externalId>false</externalId>
+        <label>Question resolved TT</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Questionnaire_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Questionnaire Description</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RDR_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>RDR Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Receipt_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Receipt Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Removal_Reason_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Removal Reason Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Repurchase_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Repurchase State</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Response__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( DQR_Dealer_Contacted__c = &quot;&quot;, 0, 1)</formula>
+        <label>Response</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SG_Lead_Creation_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATETIMEVALUE(
+IF(
+VALUE(
+TRIM(RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)),5)))&lt;10,
+&quot;0&quot;&amp;TRIM(RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)),5)),
+TRIM(RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)),5)))
+&amp; &quot;-&quot; &amp;
+IF(
+VALUE(
+LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot;/&quot;, SurveyGizmoCase__r.Lead_Date__c)-1))&lt;10,
+&quot;0&quot;&amp;LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot;/&quot;, SurveyGizmoCase__r.Lead_Date__c)-1),
+LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot;/&quot;, SurveyGizmoCase__r.Lead_Date__c)-1))
+&amp; &quot;-&quot; &amp;
+IF(
+NOT(ISNUMBER(
+RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)-6),2))),
+&quot;0&quot;&amp;SUBSTITUTE(RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)-6),2),&quot;/&quot;,&quot;&quot;),
+RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)-6),2))
+&amp;&quot; &quot;&amp;
+IF(CONTAINS(SurveyGizmoCase__r.Lead_Date__c, &quot;AM&quot;), 
+IF(NOT(ISNUMBER(LEFT(
+TRIM(SUBSTITUTE(
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; AM&quot;,&quot;&quot;)),2))),
+&quot;0&quot;&amp;TRIM(SUBSTITUTE(
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; AM&quot;,&quot;&quot;)),
+TRIM(SUBSTITUTE(
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; AM&quot;,&quot;&quot;))),
+
+IF(NOT(ISNUMBER(LEFT(
+TRIM(SUBSTITUTE(
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; PM&quot;,&quot;&quot;)),2))),
+
+TEXT(VALUE(LEFT(
+&quot;0&quot;&amp;TRIM(SUBSTITUTE(
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; PM&quot;,&quot;&quot;)),2))+12)
+&amp;
+RIGHT(TRIM(&quot;0&quot;&amp;SUBSTITUTE(
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; PM&quot;,&quot;&quot;)),6)
+,
+
+IF(
+VALUE(LEFT(
+TRIM(SUBSTITUTE(
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; PM&quot;,&quot;&quot;)),2))= 12,
+TEXT(VALUE(
+LEFT(
+TRIM(SUBSTITUTE(
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; PM&quot;,&quot;&quot;)),2)))
+&amp;
+RIGHT(TRIM(SUBSTITUTE(
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; PM&quot;,&quot;&quot;)),6),
+TEXT(VALUE(
+LEFT(
+TRIM(SUBSTITUTE(
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; PM&quot;,&quot;&quot;)),2))+12)
+&amp;
+RIGHT(TRIM(SUBSTITUTE(
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; PM&quot;,&quot;&quot;)),6)))
+
+
+)
+)+ (1/6)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SG Lead Creation Date/Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SG_Lead_Creation_to_Survey_Creation_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SurveyGizmoDateSent__c -  SurveyGizmoCase__r.SurveyGizmoLeadCreationtime__c)*24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SG Lead Creation to Survey Creation Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SG_Lead_to_Survey_Sent_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SurveyGizmoDateSent__c - DATETIMEVALUE( 
+IF( 
+VALUE( 
+TRIM(RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)),5)))&lt;10, 
+&quot;0&quot;&amp;TRIM(RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)),5)), 
+TRIM(RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)),5))) 
+&amp; &quot;-&quot; &amp; 
+IF( 
+VALUE( 
+LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot;/&quot;, SurveyGizmoCase__r.Lead_Date__c)-1))&lt;10, 
+&quot;0&quot;&amp;LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot;/&quot;, SurveyGizmoCase__r.Lead_Date__c)-1), 
+LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot;/&quot;, SurveyGizmoCase__r.Lead_Date__c)-1)) 
+&amp; &quot;-&quot; &amp; 
+IF( 
+NOT(ISNUMBER( 
+RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)-6),2))), 
+&quot;0&quot;&amp;SUBSTITUTE(RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)-6),2),&quot;/&quot;,&quot;&quot;), 
+RIGHT(LEFT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)-6),2)) 
+&amp;&quot; &quot;&amp; 
+IF(CONTAINS(SurveyGizmoCase__r.Lead_Date__c, &quot;AM&quot;), 
+IF(NOT(ISNUMBER(LEFT( 
+TRIM(SUBSTITUTE( 
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; AM&quot;,&quot;&quot;)),2))), 
+&quot;0&quot;&amp;TRIM(SUBSTITUTE( 
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; AM&quot;,&quot;&quot;)), 
+TRIM(SUBSTITUTE( 
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; AM&quot;,&quot;&quot;))), 
+
+IF(NOT(ISNUMBER(LEFT( 
+TRIM(SUBSTITUTE( 
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; PM&quot;,&quot;&quot;)),2))), 
+&quot;0&quot;&amp;TRIM(SUBSTITUTE( 
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; PM&quot;,&quot;&quot;)), 
+TRIM(SUBSTITUTE( 
+RIGHT(SurveyGizmoCase__r.Lead_Date__c, FIND(&quot; &quot;, SurveyGizmoCase__r.Lead_Date__c)+1),&quot; PM&quot;,&quot;&quot;))) 
+
+) 
+))*24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SG Lead to Survey Sent Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SG_Survey_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>SG Survey Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Satisfaction_with_Resolution_Process__c</fullName>
+        <externalId>false</externalId>
+        <label>Satisfaction with Resolution Process</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scheduling_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Scheduling Method</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sent_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Sent Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_Advisor_Rating_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Advisor Rating Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Advisor_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Advisor Rating</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Index_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Index Score</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Staff_courtesy_on_pickup__c</fullName>
+        <externalId>false</externalId>
+        <label>Staff courtesy on pickup</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SurveyGizmoCase__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SurveyGizmo Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>SurveyGizmo Surveys</relationshipLabel>
+        <relationshipName>SurveyGizmoSurveys</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SurveyGizmoDateSent__c</fullName>
+        <description>Date the survey was sent to the eu.</description>
+        <externalId>false</externalId>
+        <label>SurveyGizmoDateSent</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SurveyGizmoExpireDateTime__c</fullName>
+        <externalId>false</externalId>
+        <label>SurveyGizmoExpireDateTme</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SurveyGizmo_Response_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>SurveyGizmo Response Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SurveyStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>SurveyStatus</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Created_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Survey Created Date/Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Survey_Record__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Used for reporting</description>
+        <externalId>false</externalId>
+        <label>Survey Records</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Sent_to_Completion_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CreatedDate - SurveyGizmoDateSent__c)*24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Survey Sent to Completion Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Submitted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Survey Submitted</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Survey_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Version__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Version</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Surveys_Answered_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(DQR_Dealer_Contacted__c = &quot;No&quot;, 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Surveys Answered &apos;No&apos;</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Surveys_Answered_Yes__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(DQR_Dealer_Contacted__c = &quot;Yes&quot;, 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Surveys Answered &apos;Yes&apos;</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>System_Key_Main__c</fullName>
+        <externalId>false</externalId>
+        <label>System Key Main</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Their_friendliness_and_courtesy__c</fullName>
+        <externalId>false</externalId>
+        <label>Their friendliness and courtesy</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Their_overall_responsiveness__c</fullName>
+        <externalId>false</externalId>
+        <label>Their overall responsiveness</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thoroughness_of_Work_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Thoroughness of Work Score</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thoroughness_of_Work__c</fullName>
+        <externalId>false</externalId>
+        <label>Thoroughness of Work</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tiger_Team_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tiger Team Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Tiger Team Surveys</relationshipLabel>
+        <relationshipName>TigerTeamSurveys</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Ready__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Ready</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Still_Owned__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Still Owned</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Vehicle</label>
+        <referenceTo>Vehicle__c</referenceTo>
+        <relationshipName>Surveys</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_condition_on_pickup__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle condition on pickup</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_older_than_7_years__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle older than 7 years</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wait_time_for_TT__c</fullName>
+        <externalId>false</externalId>
+        <label>Wait time for TT</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Extremely long</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very long</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderately long</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slightly long</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not long at all</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Waited_for_Car__c</fullName>
+        <externalId>false</externalId>
+        <label>Waited for Car</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year_Make_Model__c</fullName>
+        <externalId>false</externalId>
+        <formula>Vehicle__r.Make_Model__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Year Make Model</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>dealerName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Dealer__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>dealerName</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Survey</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Survey_Type__c</columns>
+        <columns>Survey_Version__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Vehicle__c</columns>
+        <columns>Receipt_Date__c</columns>
+        <columns>DQR_Dealer_Contacted__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Surveys_received_LM</fullName>
+        <columns>NAME</columns>
+        <columns>Survey_Type__c</columns>
+        <columns>Survey_Version__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Vehicle__c</columns>
+        <columns>Receipt_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Receipt_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_MONTH</value>
+        </filters>
+        <label>All Surveys received LM</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Surveys_received_TM</fullName>
+        <columns>NAME</columns>
+        <columns>Survey_Type__c</columns>
+        <columns>Survey_Version__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Vehicle__c</columns>
+        <columns>Receipt_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Receipt_Date__c</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>All Surveys received TM</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Live_Agent_Surveys</fullName>
+        <columns>NAME</columns>
+        <columns>Live_Agent_Visitor_IP__c</columns>
+        <columns>Live_Chat_Transcript__c</columns>
+        <columns>Live_Agent_Chat_Session_Start_Time__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Surveys__c.Live_Agent</value>
+        </filters>
+        <label>Live Agent Surveys</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Sales_All</fullName>
+        <columns>NAME</columns>
+        <columns>Survey_Type__c</columns>
+        <columns>Survey_Version__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Vehicle__c</columns>
+        <columns>Receipt_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Survey_Type__c</field>
+            <operation>equals</operation>
+            <value>Sales</value>
+        </filters>
+        <label>Sales All</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Sales_LM</fullName>
+        <columns>NAME</columns>
+        <columns>Survey_Type__c</columns>
+        <columns>Survey_Version__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Vehicle__c</columns>
+        <columns>Receipt_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Survey_Type__c</field>
+            <operation>equals</operation>
+            <value>Sales</value>
+        </filters>
+        <filters>
+            <field>Receipt_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_MONTH</value>
+        </filters>
+        <label>Sales LM</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Sales_TM</fullName>
+        <columns>NAME</columns>
+        <columns>Survey_Type__c</columns>
+        <columns>Survey_Version__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Vehicle__c</columns>
+        <columns>Receipt_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Survey_Type__c</field>
+            <operation>equals</operation>
+            <value>Sales</value>
+        </filters>
+        <filters>
+            <field>Receipt_Date__c</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>Sales TM</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Service_All</fullName>
+        <columns>NAME</columns>
+        <columns>Survey_Type__c</columns>
+        <columns>Survey_Version__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Vehicle__c</columns>
+        <columns>Receipt_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Survey_Type__c</field>
+            <operation>equals</operation>
+            <value>Service</value>
+        </filters>
+        <label>Service All</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Service_LM</fullName>
+        <columns>NAME</columns>
+        <columns>Survey_Type__c</columns>
+        <columns>Survey_Version__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Vehicle__c</columns>
+        <columns>Receipt_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Survey_Type__c</field>
+            <operation>equals</operation>
+            <value>Service</value>
+        </filters>
+        <filters>
+            <field>Receipt_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_MONTH</value>
+        </filters>
+        <label>Service LM</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Service_TM</fullName>
+        <columns>NAME</columns>
+        <columns>Survey_Type__c</columns>
+        <columns>Survey_Version__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Vehicle__c</columns>
+        <columns>Receipt_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Survey_Type__c</field>
+            <operation>equals</operation>
+            <value>Service</value>
+        </filters>
+        <filters>
+            <field>Receipt_Date__c</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>Service TM</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000000}</displayFormat>
+        <label>Survey</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Surveys</pluralLabel>
+    <recordTypes>
+        <fullName>Bellomy_Survey</fullName>
+        <active>true</active>
+        <description>This record type is for Bellomy Survey Responses</description>
+        <label>Bellomy Survey</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case - Tier 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Experience_TT__c</picklist>
+            <values>
+                <fullName>About what was expected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat worse</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_helpful_TT__c</picklist>
+            <values>
+                <fullName>Extremely helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not helpful at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very helpful</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_knowledgeable_TT__c</picklist>
+            <values>
+                <fullName>Extremely knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not knowledgeable at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very knowledgeable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Question_resolved_TT__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wait_time_for_TT__c</picklist>
+            <values>
+                <fullName>Extremely long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not long at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very long</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DPIC</fullName>
+        <active>true</active>
+        <description>RecordType for DPIC surveys</description>
+        <label>DPIC</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Experience_TT__c</picklist>
+            <values>
+                <fullName>About what was expected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat worse</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_helpful_TT__c</picklist>
+            <values>
+                <fullName>Extremely helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not helpful at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very helpful</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_knowledgeable_TT__c</picklist>
+            <values>
+                <fullName>Extremely knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not knowledgeable at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very knowledgeable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Question_resolved_TT__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wait_time_for_TT__c</picklist>
+            <values>
+                <fullName>Extremely long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not long at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very long</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Epsilon_Survey</fullName>
+        <active>true</active>
+        <description>Used by Epsilon Survey</description>
+        <label>Epsilon Survey</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Live_Agent</fullName>
+        <active>true</active>
+        <description>Record type for Live Agent feature</description>
+        <label>Live Agent</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NCISurvey</fullName>
+        <active>true</active>
+        <label>NCISurvey</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Experience_TT__c</picklist>
+            <values>
+                <fullName>About what was expected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat worse</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_helpful_TT__c</picklist>
+            <values>
+                <fullName>Extremely helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not helpful at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very helpful</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_knowledgeable_TT__c</picklist>
+            <values>
+                <fullName>Extremely knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not knowledgeable at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very knowledgeable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Question_resolved_TT__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wait_time_for_TT__c</picklist>
+            <values>
+                <fullName>Extremely long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not long at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very long</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NCISurveyA</fullName>
+        <active>true</active>
+        <label>NCISurveyA</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case - Tier 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Experience_TT__c</picklist>
+            <values>
+                <fullName>About what was expected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat worse</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_helpful_TT__c</picklist>
+            <values>
+                <fullName>Extremely helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not helpful at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very helpful</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_knowledgeable_TT__c</picklist>
+            <values>
+                <fullName>Extremely knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not knowledgeable at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very knowledgeable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Question_resolved_TT__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wait_time_for_TT__c</picklist>
+            <values>
+                <fullName>Extremely long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not long at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very long</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Quality_Connection</fullName>
+        <active>true</active>
+        <description>ff_quality_connect</description>
+        <label>Quality Connection</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sales_CC_Online</fullName>
+        <active>true</active>
+        <description>ff_cc_onlinesls_extract</description>
+        <label>Sales - CC Online</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Service_CES</fullName>
+        <active>true</active>
+        <description>ff_ces_srv_vi_extract</description>
+        <label>Service - CES</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SurveyGizmoSurvey</fullName>
+        <active>true</active>
+        <label>SurveyGizmoSurvey</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Tech_Line_Test</fullName>
+        <active>true</active>
+        <label>Tech Line Test</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Experience_TT__c</picklist>
+            <values>
+                <fullName>About what was expected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat worse</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_helpful_TT__c</picklist>
+            <values>
+                <fullName>Extremely helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not helpful at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very helpful</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_knowledgeable_TT__c</picklist>
+            <values>
+                <fullName>Extremely knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not knowledgeable at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very knowledgeable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Question_resolved_TT__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wait_time_for_TT__c</picklist>
+            <values>
+                <fullName>Extremely long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not long at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very long</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>TigerTeam_Survey</fullName>
+        <active>true</active>
+        <label>TigerTeam Survey</label>
+        <picklistValues>
+            <picklist>BEL_Orig_Code__c</picklist>
+            <values>
+                <fullName>Data Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email to Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter%2F Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Experience_TT__c</picklist>
+            <values>
+                <fullName>About what was expected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Much worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly worse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat better</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat worse</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_helpful_TT__c</picklist>
+            <values>
+                <fullName>Extremely helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not helpful at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly helpful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very helpful</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_knowledgeable_TT__c</picklist>
+            <values>
+                <fullName>Extremely knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not knowledgeable at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly knowledgeable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very knowledgeable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Question_resolved_TT__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wait_time_for_TT__c</picklist>
+            <values>
+                <fullName>Extremely long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not long at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very long</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Survey_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Survey_Version__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Dealer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Vehicle__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Survey_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Survey_Version__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Customer__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Dealer__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Vehicle__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Survey_Type__c</searchFilterFields>
+        <searchFilterFields>Survey_Version__c</searchFilterFields>
+        <searchFilterFields>Customer__c</searchFilterFields>
+        <searchFilterFields>Dealer__c</searchFilterFields>
+        <searchFilterFields>Vehicle__c</searchFilterFields>
+        <searchFilterFields>CREATED_DATE</searchFilterFields>
+        <searchResultsAdditionalFields>Survey_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Survey_Version__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Customer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Dealer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Vehicle__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

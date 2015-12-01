@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>CA UC#1625-Search for Warranty Coverage by VIN:  As a Agent I want to lookup a warranty entitlements by VIN so I can determine what coverage a vehicle has 
+
+IUC#1626-Synchronize Warranty Coverage Headers:  As a System Admin I want to syncronize warranty entitlement headers for warranties so that warranty detail can be looked up in real time</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Branded_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Branded Code</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Branded_Description__c</fullName>
+        <description>test</description>
+        <externalId>false</externalId>
+        <label>Branded Description</label>
+        <length>35</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Branded_Override_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Branded Override Indicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Branded_Title_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Branded Title Indicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Coverage_Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Coverage Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Duplicate_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Duplicate Code</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GL_Code__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>FW: UNASSIGNED Request Task TASK0109262 is awaiting assignment from your Group
+SFDC #: 19314279</description>
+        <externalId>false</externalId>
+        <label>GL Code</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>You must select a GL Code</errorMessage>
+            <filterItems>
+                <field>Code__c.Type__c</field>
+                <operation>equals</operation>
+                <value>GL_Code</value>
+            </filterItems>
+            <filterItems>
+                <field>Code__c.Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <infoMessage>Type &quot;CODE&quot; to view complete list of options</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Code__c</referenceTo>
+        <relationshipLabel>Warranty Information</relationshipLabel>
+        <relationshipName>Warranty_Information</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Last_Update_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last_Update_Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_User_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Last_User_ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Model Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Expire_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Override Expire Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Polk_Run_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Polk Run Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Type Code</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_ID_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Source ID Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_Last_Update_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Source Last Update Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Source_Record_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Source Record Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>State_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>State Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Title Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_ID__c</fullName>
+        <description>FDD I Mock Up:
+
+UC#1625-Search for Warranty Coverage by VIN:  As a Agent I want to lookup a warranty entitlements by VIN so I can determine what coverage a vehicle has</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Vehicle / VIN warranty information is related to</inlineHelpText>
+        <label>Vehicle ID</label>
+        <referenceTo>Vehicle__c</referenceTo>
+        <relationshipLabel>Warranty Information</relationshipLabel>
+        <relationshipName>Warranties</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Identification_Number__c</fullName>
+        <externalId>true</externalId>
+        <label>Vehicle Identification Number</label>
+        <length>17</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WS_Warranty_Record_Type__c</fullName>
+        <description>3 values: ApplicableWarranty, WarrantyExclusions and BrandedInfo</description>
+        <externalId>false</externalId>
+        <label>WS Warranty Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Exclusion_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Exclusion Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Exclusion_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Exclusion Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Expiration_Date__c</fullName>
+        <description>FDD Mock Up: IUC#1625-Search for Warranty Coverage by VIN:  As a Agent I want to lookup a warranty entitlements by VIN so I can determine what coverage a vehicle has 
+
+IUC#1626-Synchronize Warranty Coverage Headers:  As a System Admin I want to syncronize warranty entitlement headers for warranties so that warranty detail can be looked up in real time</description>
+        <externalId>false</externalId>
+        <label>Warranty Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Expiration_Kilometers__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( TEXT(Warranty_Expiration_Miles__c) &lt;&gt; &quot;&quot;, TEXT(Warranty_Expiration_Miles__c) ,&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Warranty Expiration Kilometers</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Expiration_Miles__c</fullName>
+        <description>FDD Mock Up: IUC#1625-Search for Warranty Coverage by VIN:  As a Agent I want to lookup a warranty entitlements by VIN so I can determine what coverage a vehicle has 
+
+IUC#1626-Synchronize Warranty Coverage Headers:  As a System Admin I want to syncronize warranty entitlement headers for warranties so that warranty detail can be looked up in real time</description>
+        <externalId>false</externalId>
+        <label>Warranty Expiration Miles</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Information_Business_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID in the format of Type aw_VIN_Description for ApplicableWarranty, we_VIN_Description for WarrantyExclusions and bi_VIN_StateCode_SourceIDCode for BrandedInfo</description>
+        <externalId>true</externalId>
+        <label>Warranty Information Business ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Warranty Information</label>
+    <listViews>
+        <fullName>Warranty_Records</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Vehicle_Identification_Number__c</columns>
+        <columns>WS_Warranty_Record_Type__c</columns>
+        <columns>NAME</columns>
+        <columns>Record_Type_Code__c</columns>
+        <columns>Title_Number__c</columns>
+        <columns>Coverage_Record_Type__c</columns>
+        <columns>Warranty_Description__c</columns>
+        <columns>Warranty_Exclusion_Code__c</columns>
+        <columns>Warranty_Exclusion_Name__c</columns>
+        <columns>Warranty_Expiration_Date__c</columns>
+        <columns>Warranty_Expiration_Miles__c</columns>
+        <columns>State_Code__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>WS_Warranty_Record_Type__c</field>
+            <operation>equals</operation>
+            <value>ApplicableWarranty</value>
+        </filters>
+        <label>Warranty Detail Records</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>WR-{0000000}</displayFormat>
+        <label>Warranty Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Warranty Information</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Vehicle_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Vehicle_Identification_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Warranty_Information_Business_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>WS_Warranty_Record_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Warranty_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Warranty_Exclusion_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Branded_Description__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Vehicle_ID__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Vehicle_Identification_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Warranty_Information_Business_ID__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>WS_Warranty_Record_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>UPDATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Warranty_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Warranty_Exclusion_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Branded_Description__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Vehicle_ID__c</searchFilterFields>
+        <searchFilterFields>Vehicle_Identification_Number__c</searchFilterFields>
+        <searchFilterFields>Warranty_Information_Business_ID__c</searchFilterFields>
+        <searchFilterFields>WS_Warranty_Record_Type__c</searchFilterFields>
+        <searchFilterFields>CREATEDBY_USER</searchFilterFields>
+        <searchFilterFields>UPDATEDBY_USER</searchFilterFields>
+        <searchFilterFields>Warranty_Description__c</searchFilterFields>
+        <searchFilterFields>Warranty_Exclusion_Name__c</searchFilterFields>
+        <searchFilterFields>Branded_Description__c</searchFilterFields>
+        <searchResultsAdditionalFields>Vehicle_ID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Vehicle_Identification_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Warranty_Information_Business_ID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>WS_Warranty_Record_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Warranty_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Warranty_Exclusion_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Branded_Description__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

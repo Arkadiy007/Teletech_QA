@@ -1,0 +1,23 @@
+<apex:page controller="LiveAgent_UploadFile">
+	<apex:sectionHeader title="Live Agent" subtitle="File Uploader" />
+	<apex:form >
+		<apex:pageMessages id="pmPrincipal" escape="false" />
+		<apex:pageBlock id="pbUpload">
+			<apex:outputPanel rendered="{!showUploadControl}">
+				<apex:outputText value="Welcome to the File Uploader. Please, select a file and press Upload" />
+				<br />
+				<apex:inputFile id="file_File" value="{!fileBody}"
+					filename="{!fileName}" />
+				<br />
+				<br />
+				<apex:commandButton value="Submit" action="{!processUpload}" />
+			</apex:outputPanel>
+			<apex:outputPanel rendered="{!showThanksMessage}">
+				<apex:outputText value="Thank you for uploading the file" />
+			</apex:outputPanel>
+			<apex:outputPanel rendered="{!showInvalidURL}">
+				<apex:outputText value="The URL is not valid" />
+			</apex:outputPanel>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,36 @@
+<apex:page >
+    <apex:stylesheet id="jqueryuicss" value="{!URLFOR($Resource.INS_jQuery, '/css/inspirato_theme/jquery-ui-1.10.3.custom.min.css')}" />
+	<apex:stylesheet id="mhStyles" value="{!URLFOR($Resource.INS_NotificationsManager, 'notification_center.css')}" />
+    <apex:includeScript value="/support/console/25.0/integration.js"/>
+    <apex:includeScript value="/soap/ajax/28.0/connection.js"/>
+	<apex:includeScript value="/soap/ajax/28.0/apex.js"/>
+    <apex:includeScript value="{!URLFOR($Resource.INS_jQuery, '/js/jquery-1.9.1.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.INS_cometd, 'json2.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.INS_cometd, 'cometd.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.INS_cometd, 'jquery_cometd.min.js')}"/>
+    <apex:includeScript value="{!$Resource.INS_jquery_playsound}"/>
+    <apex:includeScript value="{!URLFOR($Resource.INS_NotificationsManager, 'NotificationsManager.js')}"/>
+     <apex:includeScript value="{!URLFOR($Resource.INS_NotificationCenter, 'NotificationCenter_viewall.js')}"/>
+
+	<script type="text/javascript">
+	    var userId = '{!$User.Id}';
+	    var sessionId = '{!$Api.Session_ID}';
+	    
+	    var $jq = jQuery.noConflict();
+	    
+	    (function($jq){
+	        $jq(document).ready(function() {
+				initPage()
+	        });
+	    })(jQuery)
+	        
+	</script>
+
+	<body>
+		<div class="nc_title_all">Your Notifications</div>
+		<br/>
+		<br/>
+		<div class="nc_content_all">			
+		</div>
+	</body>
+</apex:page>

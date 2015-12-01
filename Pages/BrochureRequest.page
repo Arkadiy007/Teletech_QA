@@ -1,0 +1,54 @@
+<apex:page standardController="Brochure_Request__c" extensions="Controller_BrochureRequest" title="Brochure Request">
+    <apex:sectionHeader title="Brochure Request"/>
+    <apex:form >
+    	<apex:pageMessages />
+        <apex:pageBlock id="brochureSelect" mode="edit" >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!doSaveBrochureRequest}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="" title="Information">
+				<apex:inputField value="{!brochureRequest.Account_Name__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" title="Which brochure(s) would you like to receive?">
+			    <apex:pageBlockSectionItem >
+		        	<apex:outputLabel value="1st Nissan Model" for="selectNissan1"/>
+		        	<apex:selectList id="selectNissan1" size="1" value="{!brochureRequest.Nissan_Model_1__c}" >
+			            <apex:selectOptions value="{!NissanBrochures}"></apex:selectOptions>
+		        	</apex:selectList>
+		        </apex:pageBlockSectionItem>
+			    <apex:pageBlockSectionItem >
+		        	<apex:outputLabel value="1st Infiniti Model" for="selectInfiniti1"/>
+		        	<apex:selectList id="selectInfiniti1" size="1" value="{!brochureRequest.Infiniti_Model_1__c}" >
+			            <apex:selectOptions value="{!InfinitiBrochures}"></apex:selectOptions>
+		        	</apex:selectList>
+		        </apex:pageBlockSectionItem>
+			    <apex:pageBlockSectionItem >
+		        	<apex:outputLabel value="2nd Nissan Model" for="selectNissan2"/>
+		        	<apex:selectList id="selectNissan2" size="1" value="{!brochureRequest.Nissan_Model_2__c}" >
+			            <apex:selectOptions value="{!NissanBrochures}"></apex:selectOptions>
+		        	</apex:selectList>
+		        </apex:pageBlockSectionItem>
+			    <apex:pageBlockSectionItem >
+		        	<apex:outputLabel value="2nd Infiniti Model" for="selectInfiniti2"/>
+		        	<apex:selectList id="selectInfiniti2" size="1" value="{!brochureRequest.Infiniti_Model_2__c}" >
+			            <apex:selectOptions value="{!InfinitiBrochures}"></apex:selectOptions>
+		        	</apex:selectList>
+		        </apex:pageBlockSectionItem>
+		        <apex:pageBlocksectionItem />
+		        <apex:inputField value="{!brochureRequest.Vehicle_Identification_Number__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Send Me Updates">
+            	<apex:inputField value="{!brochureRequest.Keep_me_informed_Nissan_Indicator__c}"/>
+            	<apex:inputField value="{!brochureRequest.Keep_me_informed_Infiniti_Indicator__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Email Updates">
+            	<apex:inputField value="{!brochureRequest.Send_Nissan_Email_Indicator__c}"/>
+            	<apex:inputField value="{!brochureRequest.Send_Infiniti_Email_Indicator__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Resend Request">
+            	<apex:inputField value="{!brochureRequest.Resend_Request_Indicator__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

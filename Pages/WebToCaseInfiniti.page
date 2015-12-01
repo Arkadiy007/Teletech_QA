@@ -1,0 +1,3 @@
+<apex:page controller="WebToCaseInfiniti" action="{!submitInfinitiForm}">
+	<apex:pageMessages id="msg" escape="false" />
+</apex:page>

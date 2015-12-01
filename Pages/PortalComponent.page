@@ -1,0 +1,16 @@
+<apex:page >
+    <script type="text/javascript">
+        function testOpenNewTab(url) {
+            window.open(url, '_blank');
+       }
+    </script>
+  <apex:form >
+    <apex:pageBlock >
+        <apex:pageblockSection columns="1">
+            <apex:commandLink id="infinitiOp" onclick="testOpenNewTab('https://owners.infinitiusa.com/iowners/admin');">Infiniti OP</apex:commandLink>
+            <apex:commandLink id="nissanOp" onclick="testOpenNewTab('https://owners.nissanusa.com/nowners/admin'); return false;">Nissan OP</apex:commandLink>
+            <apex:commandLink id="leafOp" onclick="testOpenNewTab('https://www.nissanusa.com/owners/login'); return false;">LEAF OP</apex:commandLink>
+        </apex:pageblockSection>
+    </apex:pageBlock>     
+  </apex:form>
+</apex:page>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <articleTypeChannelDisplay>
+        <articleTypeTemplates>
+            <channel>App</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Prm</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Csp</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Pkb</channel>
+            <template>Toc</template>
+        </articleTypeTemplates>
+    </articleTypeChannelDisplay>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>SOP documents for CA Agents</description>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <fields>
+        <fullName>Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Chat_Answer__c</fullName>
+        <description>Allows agents to include Knowledge Articles in chats.</description>
+        <externalId>false</externalId>
+        <label>Chat Answer</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Detailed description of procedure or reference materials</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Detailed description of procedure or reference materials</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description_cont__c</fullName>
+        <externalId>false</externalId>
+        <label>Description (cont.)</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Document1__c</fullName>
+        <description>Related Document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Document</inlineHelpText>
+        <label>Document</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Document2__c</fullName>
+        <description>Related Document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Document</inlineHelpText>
+        <label>Document</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Document3__c</fullName>
+        <description>Related Document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Document</inlineHelpText>
+        <label>Document</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Document4__c</fullName>
+        <description>Related Document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Document</inlineHelpText>
+        <label>Document</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Document5__c</fullName>
+        <description>Related Document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Document</inlineHelpText>
+        <label>Document</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Document_10__c</fullName>
+        <description>Related Document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Document</inlineHelpText>
+        <label>Document</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Document_6__c</fullName>
+        <description>Related Document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Document</inlineHelpText>
+        <label>Document</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Document_7__c</fullName>
+        <description>Related Document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Document</inlineHelpText>
+        <label>Document</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Document_8__c</fullName>
+        <description>Related Document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Document</inlineHelpText>
+        <label>Document</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Document_9__c</fullName>
+        <description>Related Document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Document</inlineHelpText>
+        <label>Document</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Review_Status__c</fullName>
+        <description>Tracks Knowledge Manager&apos;s review of the Article</description>
+        <externalId>false</externalId>
+        <label>Review Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Submitted</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Revised__c</fullName>
+        <externalId>false</externalId>
+        <label>Revised</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <label>SOP</label>
+    <pluralLabel>SOPs</pluralLabel>
+</CustomObject>

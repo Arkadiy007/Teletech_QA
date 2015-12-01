@@ -1,0 +1,1158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Compact_Layout_for_DTS_App</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Compact_Layout_for_DTS_App</fullName>
+        <fields>Vehicle_Mileage_Number__c</fields>
+        <fields>Service_Technician_Identifier__c</fields>
+        <fields>Complaint_Description__c</fields>
+        <fields>Cause_Description__c</fields>
+        <fields>Diagnosis_Description__c</fields>
+        <fields>Disposition_Code__c</fields>
+        <fields>Error_Description__c</fields>
+        <fields>Service_Date__c</fields>
+        <label>Compact Layout for DTS App</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>CDIID__c</fullName>
+        <externalId>false</externalId>
+        <label>CDIID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cause_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Cause Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Approved_Coverage_Code__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>FW : FACT-WARR  
+PD : PRE-DELIV-IN
+SC : SERV-CONT
+TR : TRANSPORTATI
+TP : THIRD-PARTY
+CM : CAMPAIGN
+DI : DLR-INTRNL
+RC : RECOND-VEH
+CP : CUST-PAY
+PJ : PROJECT
+FG : FACT-GOODWIL</inlineHelpText>
+        <label>Coverage Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Coverage_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim Coverage Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Customer_City__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>City of Customer</inlineHelpText>
+        <label>Claim Customer City</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Customer_Email_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim Customer Email Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Customer_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer First Name</inlineHelpText>
+        <label>Customer First Name</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Customer_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Last Name</inlineHelpText>
+        <label>Customer Last Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Customer_Middle_Intial__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim Customer Middle Intial</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Customer_Phone__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Home Phone of Customer</inlineHelpText>
+        <label>Customer Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Claim_Customer_State_Province__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>State of Customer</inlineHelpText>
+        <label>Claim Customer State Province</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Customer_Street_Address1__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Address of Customer</inlineHelpText>
+        <label>Claim Customer Street Address1</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Customer_Street_Address2__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Address of Customer</inlineHelpText>
+        <label>Claim Customer Street Address2</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Customer_Work_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim Customer Work Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Claim_Customer_Zip__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Zip Code of Customer</inlineHelpText>
+        <label>Claim Customer Zip</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Deny_Reason_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim Deny Reason Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Line_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim Line #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Service_Tech_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim Service Tech Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_Type_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim Type Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Complaint_Description_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Complaint Description for RHR</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Complaint_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Complaint Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Policy_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Policy Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Correction_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Correction Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Coverage_Code_Pay_Type__c</fullName>
+        <description>created per case 11911348</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Claim_Approved_Coverage_Code__c), Pay_Type__c, Claim_Approved_Coverage_Code__c)</formula>
+        <label>Coverage Code/Pay Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomerName__c</fullName>
+        <description>Concatenation of Claim Customer First Name &amp; Claim Customer Last Name</description>
+        <externalId>false</externalId>
+        <formula>Claim_Customer_First_Name__c &amp; &quot; &quot; &amp; Claim_Customer_Last_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Identifier__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Name_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Name Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Customer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Service_Repairs_History_Customer</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DRO_Work_Order_Number__c</fullName>
+        <description>created per case 11911348</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Dealer_Repair_Order_Number__c), Work_Order_Number__c , Dealer_Repair_Order_Number__c)</formula>
+        <label>Work Order #</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DealerCodeLink__c</fullName>
+        <description>URL hyperlink to the Dealer Account record within Salesforce. Displays the Dealer code.</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; Dealer_ID__r.Id , Dealer_Number__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Dealer Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Dealer ID</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Service_Repairs_History</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Dealer_Number__c</fullName>
+        <externalId>true</externalId>
+        <label>Dealer Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Phone__c</fullName>
+        <description>The Phone number from the related Dealer record</description>
+        <externalId>false</externalId>
+        <formula>Dealer_ID__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Dealer Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Repair_Order_Number__c</fullName>
+        <externalId>true</externalId>
+        <label>Dealer Repair Order Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Diagnosis_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Diagnosis Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disposition_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Disposition Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Domain_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Domain Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Error_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Error Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Integration_Identifier__c</fullName>
+        <externalId>false</externalId>
+        <label>Integration Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Labor_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Labor Amount</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NCI_Dealer_Code_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; NCI_Dealer_ID__r.Id , NCI_Dealer_Code__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NCI Dealer Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NCI_Dealer_Code__c</fullName>
+        <externalId>true</externalId>
+        <label>NCI Dealer Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NCI_Dealer_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>NCI Dealer ID</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Dealer, NCI - Dealer</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Service History (NCI Dealer ID)</relationshipLabel>
+        <relationshipName>Service_History</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Number_Days_Down__c</fullName>
+        <description>Calculates number of days vehicle was out of service based on Vehicle Repair Close Date minus Vehicle Repair Open Date</description>
+        <externalId>false</externalId>
+        <formula>CEILING( Vehicle_Repair_Close_Date__c  -  Vehicle_Repair_Open_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number Days Down</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Purchase_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Original Purchase Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Original_Purchase_Miles__c</fullName>
+        <externalId>false</externalId>
+        <label>Original Purchase Miles</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Owner Indicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PNC_Code_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>PNC Code Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PNC_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>PNC Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Paid_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Paid Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Parts_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Parts Amount</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Pay Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Port_Modification__c</fullName>
+        <externalId>false</externalId>
+        <label>Port Modification</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Failed_Part_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Failed Part Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Failed_Part__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Failed Part</label>
+        <length>30000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Primary_Operation_Code_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Operation Code Description</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Primary_Operation_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Operation Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Repair_Order_Total_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Repair Order Total Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Service_Repair_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Repair Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Technician_Identifier__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Technician Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitted_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Submitted Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Customer_Labor_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Pay Labor Amount</inlineHelpText>
+        <label>Total Customer Labor Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Customer_Misc_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Pay Misc Amount</inlineHelpText>
+        <label>Total Customer Misc Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Customer_Parts_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Pay Parts Amount</inlineHelpText>
+        <label>Total Customer Parts Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Internal_Labor_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Internal Pay Labor Amount</inlineHelpText>
+        <label>Total Internal Labor Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Internal_Misc_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Internal Pay Misc Amount</inlineHelpText>
+        <label>Total Internal Misc Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Internal_Parts_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Internal Pay Parts Amount</inlineHelpText>
+        <label>Total Internal Parts Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Warranty_Labor_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Warranty Pay Labor Amount</inlineHelpText>
+        <label>Total Warranty Labor Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Warranty_Misc_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Warranty Pay Misc Amount</inlineHelpText>
+        <label>Total Warranty Misc Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Warranty_Parts_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Warranty Pay Parts Amount</inlineHelpText>
+        <label>Total Warranty Parts Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TransactionDateTranslated__c</fullName>
+        <description>Translates integration &apos;Transaction Date&apos; DateTime Value into a Date Value</description>
+        <externalId>false</externalId>
+        <formula>DATEVALUE( Transaction_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Transaction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Transaction_Date_VR_Close_Date__c</fullName>
+        <description>created per case 11911348</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK( TransactionDateTranslated__c ), DATEVALUE(Vehicle_Repair_Close_Date__c), TransactionDateTranslated__c)</formula>
+        <label>Transaction Date/VR Close Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Transaction_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Transaction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Transaction_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Transaction Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Claim_Authorization_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Claim Authorization Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle ID</label>
+        <referenceTo>Vehicle__c</referenceTo>
+        <relationshipName>Service_Repairs_History</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Identification_Number__c</fullName>
+        <externalId>true</externalId>
+        <label>Vehicle Identification Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Mileage_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Mileage</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Repair_Close_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Repair Close Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Repair_Open_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Repair Open Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>WS_SRH_Record_Type__c</fullName>
+        <description>2 values: Claim, Repair Order</description>
+        <externalId>false</externalId>
+        <label>WS SRH Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warranty_Claim_Line_Business_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID in the format of DealerCode_WorkOrderNumber_VIN_LINENO for Claims and
+DealerCode_RepairOrderNumber_VIN_CODENO for Repair Orders</description>
+        <externalId>true</externalId>
+        <label>Warranty Claim Line Business ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Work_Order_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Work Order ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Work_Order_Line_Status_Code__c</fullName>
+        <description>A - Approved
+D - Denied
+S - Suspended
+R – Rejected</description>
+        <externalId>false</externalId>
+        <label>Work Order Line Status Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Work_Order_Number__c</fullName>
+        <externalId>true</externalId>
+        <label>Work Order #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Work_Order__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(TRIM(Claim_Line_Number__c)), DRO_Work_Order_Number__c , DRO_Work_Order_Number__c  &amp; &apos; / &apos; &amp; Claim_Line_Number__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Work Order #/Claim Line #</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Service History</label>
+    <listViews>
+        <fullName>This_Week</fullName>
+        <columns>NAME</columns>
+        <columns>Claim_Type_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>This Week</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>SRH-{0000000}</displayFormat>
+        <label>SRH Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Service History</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Vehicle_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Claim_Customer_First_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Claim_Customer_Last_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Claim_Customer_Phone__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Claim_Approved_Coverage_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Claim_Type_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Repair_Order_Total_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Paid_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Transaction_Date__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Vehicle_ID__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Claim_Customer_First_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Claim_Customer_Last_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Claim_Customer_Phone__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Claim_Approved_Coverage_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Claim_Type_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Repair_Order_Total_Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Paid_Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Transaction_Date__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Vehicle_ID__c</searchFilterFields>
+        <searchFilterFields>Claim_Customer_First_Name__c</searchFilterFields>
+        <searchFilterFields>Claim_Customer_Last_Name__c</searchFilterFields>
+        <searchFilterFields>Claim_Customer_Phone__c</searchFilterFields>
+        <searchFilterFields>Claim_Approved_Coverage_Code__c</searchFilterFields>
+        <searchFilterFields>Claim_Type_Code__c</searchFilterFields>
+        <searchFilterFields>Repair_Order_Total_Amount__c</searchFilterFields>
+        <searchFilterFields>Paid_Amount__c</searchFilterFields>
+        <searchFilterFields>Transaction_Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>Vehicle_ID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Claim_Customer_First_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Claim_Customer_Last_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Claim_Customer_Phone__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Claim_Approved_Coverage_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Claim_Type_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Repair_Order_Total_Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Paid_Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Transaction_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Create_VCAN_2</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create VCAN/General Inquiry</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>{!URLFOR($Action.Warranty_Case__c.New)}&amp;cancelUrl=%2F{!Service_Repair_History__c.Id}&amp;isdtp=vw&amp;retUrl=%2F{!Service_Repair_History__c.Id}&amp;00NF000000Ce2Kt={!Service_Repair_History__c.Claim_Line_Number__c}&amp;00NF000000Ce2LB={!DATEVALUE(Service_Repair_History__c.Vehicle_Repair_Open_Date__c)}&amp;CF00NF000000Ce2KP={!Service_Repair_History__c.Dealer_ID__c}&amp;CF00NF000000Ce2KP_lkid={!Service_Repair_History__c.Dealer_IDId__c}&amp;00NF000000Ce2LC={!Service_Repair_History__c.Work_Order_Number__c}&amp;00NF000000Ce2KN={!Service_Repair_History__c.Claim_Customer_First_Name__c}%20{!Service_Repair_History__c.Claim_Customer_Last_Name__c}&amp;CF00NF000000Ce2LV_lkid={!Service_Repair_History__c.Vehicle_IDId__c}&amp;CF00NF000000Ce2LV={!Service_Repair_History__c.Vehicle_ID__c}&amp;00NF000000Ce2LU={!Service_Repair_History__c.Vehicle_Mileage_Number__c}&amp;00NF000000Ce2L7={!IF(ISNULL( Service_Repair_History__c.Primary_Failed_Part__c) , Service_Repair_History__c.Primary_Operation_Code__c ,Service_Repair_History__c.Primary_Failed_Part__c )}</url>
+    </webLinks>
+</CustomObject>

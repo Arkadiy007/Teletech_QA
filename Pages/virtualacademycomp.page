@@ -1,0 +1,60 @@
+<apex:page controller="Controller_virtualacademycomp" tabStyle="Account" showHeader="false" >
+<style>
+body .bPageBlock {
+    height:370px !important;
+            }
+     table th.hideheader{
+     border: none !important;
+     visibility:hidden !important;
+     background-image: none !important;
+     }       
+            </style>
+           
+ <div style="background-color:#e4f3f7!important; height:415px">
+ <br/>
+<apex:form >
+    <div style="width:85%; margin-right:auto; margin-left:auto" >
+    <apex:pageblock >
+        <apex:pageBlockSection columns="1">
+            <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Dealer Code" style="display:block;width:75px;float:left;margin-left:10px;margin-top:7px"/>
+                 <apex:inputText value="{!DealerCode}" style="width:80%;"/>
+             </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Last Name" style="display:block;width:75px;float:left;margin-left:10px;margin-top:7px"/>
+                 <apex:inputText value="{!lastname}" style="width:80%;"/>
+             </apex:pageBlockSectionItem>             
+         </apex:pageBlockSection>
+         <br/>
+             <div style="width: 100%; text-align: center;">
+             <apex:commandButton value="Search" action="{!techrecord}" style="width:75px;" />&nbsp;&nbsp;
+             <apex:commandButton value="Clear" action="{!clear}" style="width:75px;"/>&nbsp;&nbsp;<br/><br/>
+            <apex:outputText id="error" value="{!error}" style="Color:red" rendered="{!showerror}"/>    
+            </div>
+            
+         <apex:pageBlockSection columns="1" title="Results" rendered="{!showindvrecords}" collapsible="false" >
+          
+          <apex:outputPanel layout="block" style="font-size:12px; width:100%; overflow:scroll; height:190px" >
+                        <apex:pageblockTable value="{!indvas}" var="v" style="width:100%" >
+                            <apex:column value="{!v.Full_Name__c}" headerValue="Name"/>
+                            <apex:column headerValue="Proficiency Level" value="{!v.Technician_Proficiency_Level__c}"/>
+                            <apex:column headervalue="Specialties" width="35%">
+                       
+                      <apex:DataTable value="{!v.Specialties__r}" var="db" headerClass="hideheader" width="100%" >
+                         <apex:column >
+                            <apex:outputtext value="{!db.Specialty__c}"/>
+                         </apex:column>
+                         </apex:Datatable> 
+                          </apex:column>
+                            
+                                                
+                        </apex:pageblocktable>               
+                    </apex:outputPanel>
+                    
+         </apex:pageBlockSection>
+    </apex:pageblock>
+     </div>
+     
+</apex:form>
+</div>
+</apex:page>

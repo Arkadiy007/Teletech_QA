@@ -1,0 +1,140 @@
+<apex:page controller="Techline_CaseCreation"
+	tabStyle="Case_Creation__tab">
+
+	<apex:sectionHeader title="Techline" subtitle="Case Creation" />
+	<script type="text/javascript">
+	function redirectToPage() {
+		if (typeof(srcUp) == 'function') {
+			srcUp("{!redirectURL}");
+		}
+		else {
+			window.location = "{!redirectURL}";
+		}
+	}
+    </script>
+	<apex:form id="frmMain">
+		<!-- Field Filters for the Search -->
+		<apex:pageBlock id="pbMain">
+			<apex:pageMessages />
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="Search" action="{!searchDealerCase}"
+					tabindex="6" />
+				<apex:commandButton value="Clear" action="{!clearParameters}"
+					tabindex="7" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title="Fields" collapsible="false" columns="2">
+				<apex:inputField value="{!paramAccount.Dealer_Code__c}"
+					taborderhint="1" />
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Case Number" />
+					<apex:inputText value="{!caseNumber}" maxlength="12" tabindex="5" />
+				</apex:pageBlockSectionItem>
+				<apex:inputField value="{!paramCase.Caller_Name__c}"
+					taborderhint="2" />
+				<apex:pageBlockSectionItem />
+				<apex:inputField value="{!paramVehicle.Name}" taborderhint="3" />
+				<apex:pageBlockSectionItem />
+				<apex:inputField value="{!paramCase.Current_Mileage__c}"
+					taborderhint="4" />
+			</apex:pageBlockSection>
+			<div style="text-align: center;">
+				<apex:outputText value="{!errorMessage}" style="color: red;"
+					rendered="{!showErrorMessage}" />
+			</div>
+		</apex:pageBlock>
+
+		<!-- Results -->
+		<apex:pageBlock id="pbResults"
+			rendered="{!showVehicleDetails || showDealerDetails || (paramVehicle.Name != null && paramVehicle.Name != '')}">
+
+			<!-- Vehicle Information -->
+			<apex:pageBlockSection title="Vehicle" collapsible="false"
+				rendered="{!showVehicleDetails}">
+				<apex:outputField value="{!selectedVehicle.Name}" />
+				<apex:outputField value="{!selectedVehicle.Open_Recall__c}" />
+				<apex:outputField value="{!selectedVehicle.Model_Year__c }" />
+				<apex:outputField value="{!selectedVehicle.Branded_Title__c}" />
+				<apex:outputField value="{!selectedVehicle.Model_Line_Name__c}" />
+				<apex:pageBlockSectionItem />
+				<apex:outputField value="{!selectedVehicle.Make_Name__c}" />
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="Vehicle" collapsible="false"
+				columns="1"
+				rendered="{!!showVehicleDetails && paramVehicle.Name != null && paramVehicle.Name != ''}">
+				<apex:outputText value="There is no vehicle associated to the entered VIN"
+					style="color: red;" />
+			</apex:pageBlockSection>
+
+			<!-- Cases related to the Vehicle -->
+			<apex:pageBlockSection title="Related Cases" collapsible="false"
+				columns="1" rendered="{!showVehicleDetails && showRelatedCases}">
+				<apex:pageblockTable value="{!relatedCases}" var="c">
+					<apex:column headerClass="alignCenter">
+						<apex:facet name="header">Number</apex:facet>
+						<apex:outputLink value="../{!c.Id}">{!c.CaseNumber}</apex:outputLink>
+					</apex:column>
+					<apex:column value="{!c.RecordType.Name}" headerValue="Type"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.Subject}" headerValue="Subject"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.Description}" headerValue="Description"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.CreatedDate}" headerValue="Open Date"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.ClosedDate}" headerValue="Closed Date"
+						headerClass="alignCenter" />
+				</apex:pageblockTable>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="Related Cases" collapsible="false"
+				columns="1" rendered="{!showVehicleDetails && !showRelatedCases}">
+				<apex:outputText value="There are no cases associated to the entered VIN"
+					style="color: red;" />
+			</apex:pageBlockSection>
+
+			<!-- Dealer Information -->
+			<apex:pageBlockSection title="Dealers" collapsible="false"
+				columns="1" rendered="{!showDealerDetails}">
+				<apex:pageblockTable value="{!dealers}" var="d">
+					<apex:column width="10%" headerClass="alignCenter"
+						styleClass="alignCenter">
+						<apex:facet name="header">Action</apex:facet>
+						<apex:commandLink action="{!selectDealer}">
+							<apex:param value="{!d.Id}" name="assignvalue"
+								assignTo="{!selectedDealerId}" />
+                  Create New Case </apex:commandLink>
+					</apex:column>
+
+					<apex:column value="{!d.Name}" headerValue="Name"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.Dealer_Inactive_Indicator__c}"
+						headerValue="Inactive" headerClass="alignCenter" />
+
+					<apex:column value="{!d.BillingStreet}" headerValue="Street"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.BillingCity}" headerValue="City"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.BillingState}" headerValue="State"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.BillingPostalCode}" headerValue="ZIP"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.Phone}" headerValue="Phone"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.DTS_A_Stage_User__r.Full_Name__c}"
+						headerValue="DTS User Name" headerClass="alignCenter" />
+					<apex:column value="{!d.DTS_A_Stage_User__r.Email__c}"
+						headerValue="DTS Email" headerClass="alignCenter" />
+					<apex:column value="{!d.DTS_A_Stage_User__r.Cell_Phone__c}"
+						headerValue="DTS Cell Phone" headerClass="alignCenter" />
+					<apex:column value="{!d.DTS_A_Stage_User__r.Office_Phone__c}"
+						headerValue="DTS Office Phone" headerClass="alignCenter" />
+				</apex:pageblockTable>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+
+		<apex:outputPanel rendered="{!redirectToPage}">
+			<script>
+				redirectToPage();
+            </script>
+		</apex:outputPanel>
+	</apex:form>
+</apex:page>

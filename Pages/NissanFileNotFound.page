@@ -1,0 +1,17 @@
+<apex:page showHeader="false" title="{!$Label.site.file_not_found}" cache="false">
+  <apex:composition template="{!$Site.Template}">
+    <apex:define name="body">
+     <apex:outputText styleClass="title" value="{!$Label.site.page_not_found_detail}">
+      <apex:param value="{!$Site.OriginalUrl}"/>
+     </apex:outputText>
+     <br/>
+     <br/>
+     <apex:outputText value="{!$Label.site.stay_tuned}"/>
+     <apex:outputText escape="false" value=" {!$Label.site.get_in_touch}">
+      <apex:param value="mailto:{!$Site.AdminEmailAddress}"/>
+      <apex:param value="{!$Label.site.email_us}"/>
+     </apex:outputText>
+    </apex:define>
+  </apex:composition>
+  <site:previewAsAdmin />
+</apex:page>

@@ -1,0 +1,145 @@
+<apex:page controller="Controller_PreCall_Forms_For_Attachment" showHeader="false" id="page">  
+    <!--<apex:includeScript value="{!URLFOR($Resource.INS_jQuery, '/js/jquery-1.9.1.js')}" />-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"> </script>
+    <apex:includeScript value="{!URLFOR($Resource.SurveyForce, 'jquery.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, '/jquery.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, '/jquery-ui.min.js')}" />-->  
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" />
+
+
+    <style type="text/css" >
+
+        .bPageBlock {
+            background-image: url('{!$Resource.PreCall_Forms_Background_Long_2}') !important;
+            background-position: top !important;
+            width: 650px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            min-height: 810px;
+            background-size: cover;
+        }
+    
+        .pbHeader {
+            margin-top: 100px !important;
+        }
+        body {
+            font-size: 14px;
+        }
+        body.wait, body.wait * { 
+            cursor: wait !important; 
+        }
+    </style>
+    <script>
+        var onClickFunkImg = function() {
+            var fileName = document.getElementById('page:form:pageBlock:block1:fileNamePageBlockSectionItem:fileName');
+            if(fileName.value.length == 0) {
+                alert('Please, set the file name before uploading');
+                return;
+            }            
+            
+            document.body.style.cursor = 'wait';  
+            var inputs = document.getElementsByTagName('input'); 
+            for (i = 0; i < inputs.length; i++) { 
+                inputs[i].style.cursor = 'wait'; 
+                //inputs[i].disabled = true;
+            }
+            document.getElementById('page:form:pageBlock:block1:inputFilePageBlockSectionItem:file').style.cursor = 'wait';
+
+            var div = document.getElementById('waitDiv');
+            div.style.display = 'block';    
+            div.style.cursor = 'wait';
+
+            upload();
+        }     
+    </script>
+    <script>
+        /*Cleare value of apex:inputFile when Next button is pressed */
+        var clearInputFile = function() {
+            var file = window.getElementByIdCS("page:form:pageBlock:block1:inputFilePageBlockSectionItem:file");
+            file.value = "";
+        }
+    </script>
+
+  <apex:form enctype="multipart/form-data" id="form">
+    <apex:inputHidden id="extensionInput" value="{!extension}" />
+     <script>
+            function check(obj_inpf)
+            {
+                var name = obj_inpf.value;
+                var index = name.lastIndexOf('.');
+                var extension = name.substring(index+1, name.length);
+
+                if(index > 0) {
+                    var size = obj_inpf.files[0].size;
+                    var maxSize = 26214400;
+                    //alert('obj_inpf.files[0].size ' + size);
+                    if (size > maxSize) {
+                        obj_inpf.value = null;
+                        alert('File size is too large.  Attachment size should be less than 25MB');
+                    } else {
+                            document.getElementById('page:form:extensionInput').value = extension;
+                    }
+                } else {
+                    obj_inpf.value = null;
+                    alert('This file doesn\'t have an extension. Please attach a file with extension');
+                }
+            }
+     </script>
+
+    <apex:pageMessages />
+    <apex:pageBlock title="Upload an Attachment" id="pageBlock">
+        
+      <apex:pageBlockButtons location="bottom" >
+          <apex:outputLabel value="{!messageBeforeNextButton}" for="DownloadButton" style="font-weight: bold; font-size: 14px;"/>
+          <apex:commandButton action="{!Next}" value="Next" style="font-size: 14px;" onclick="clearInputFile()"/>
+      </apex:pageBlockButtons>
+
+      <apex:pageBlockSection showHeader="false" columns="1" id="block0">
+        <apex:pageBlockSectionItem >
+          <apex:outputText value="{!instruction}" style="font-weight: bold; font-size: 14px;"/>       
+        </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+
+      <apex:actionFunction name="upload" action="{!upload}"/>
+
+      <apex:pageBlockSection showHeader="false" columns="2" id="block1">
+
+        <apex:pageBlockSectionItem id="fileNamePageBlockSectionItem">
+          <apex:outputLabel value="File Name" for="fileName" style="font-size: 14px;"/>
+          <apex:outputPanel layout="block" styleClass="requiredInput" style="font-size: 14px;" id="fileNameOutputPanel">
+               <apex:outputPanel layout="block" styleClass="requiredBlock" style="font-size: 14px;"/>
+               <apex:inputText value="{!fileName}" id="fileName" style="width: 166px;" />
+          </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+
+        <apex:pageBlockSectionItem id="inputFilePageBlockSectionItem">
+          <apex:outputLabel value="File" for="file" style="font-size: 14px;"/>
+          <apex:inputFile value="{!attachment.body}"  id="file" fileSize="{!fileSize}" onchange="check(this)" style="font-size: 14px;" fileName="{!intrnalFileName}"/>  
+        </apex:pageBlockSectionItem>
+
+        <apex:pageBlockSectionItem >
+          <!--<apex:outputLabel value="Description" for="description" style="font-size: 14px;"/>
+          <apex:inputTextarea value="{!attachment.description}" id="description" style="resize: none;" cols="21"/>-->
+        </apex:pageBlockSectionItem>
+
+        <apex:pageBlockSectionItem id="pageBlockSectionItem">
+          <apex:commandButton value="Save Attachment" style="margin-left: 84px; font-size: 14px;" onClick="onClickFunkImg();return false;" disabled="false" id="commandButtonsave"/>
+        </apex:pageBlockSectionItem>
+
+      </apex:pageBlockSection>
+
+      <apex:pageBlockSection showHeader="false" columns="1" id="block2">
+      <apex:pageBlockSectionItem >
+            <apex:pageBlockTable value="{!attachments}" var="item" style="table-layout: fixed;">
+                    <apex:facet name="caption"> <b>Existing attachments for the Warranty Case record</b> </apex:facet>
+                    <apex:column value="{!item.name}" style="word-wrap:break-word; font-size: 14px;"/> 
+                   
+            </apex:pageBlockTable> 
+        </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+
+    </apex:pageBlock>
+  </apex:form>
+    <div id="waitDiv" style="display: none; height: 100%; width: 100%; position: absolute; z-index: 5 !important; opacity: 0.8; filter: alpha(opacity = 80); top: 0px; left: 0px;">
+    </div>
+</apex:page>

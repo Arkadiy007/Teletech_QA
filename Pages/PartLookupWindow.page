@@ -1,0 +1,38 @@
+<apex:page controller="PartLookupWindow" title="Search" showheader="false" sidebar="false" tabStyle="Part__c" id="pg">
+    <apex:form >
+        <apex:pageblock title="Lookup">
+            <apex:outputpanel id="page" layout="block" style="margin:5px;padding:10px;padding-top:2px;">
+                <apex:actionregion >
+                    <apex:outputpanel id="top" layout="block" style="margin:5px;padding:10px;padding-top:2px;">
+                        <apex:outputlabel value="Search" style="font-weight:Bold;padding-right:10px;" for="txtSearch" />
+                        <apex:inputtext id="txtSearch" value="{!searchString}" />
+                        <span style="padding-left:5px"><apex:commandbutton id="btnGo" value="Go" action="{!Search}" rerender="searchResults"></apex:commandbutton></span>
+                    </apex:outputpanel>
+                    <apex:outputpanel id="pnlSearchResults" style="margin:10px;height:350px;overflow-Y:auto;" layout="block">
+                        <apex:pageblock id="searchResults">
+                            <apex:pageblocktable value="{!results}" var="p" id="tblResults">
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputpanel >Name</apex:outputpanel>
+                                    </apex:facet>
+                                    <apex:outputlink value="javascript:top.window.opener.lookupPick2('{!FormTag}','{!TextBox}_lkid','{!TextBox}','{!p.Id}','{!p.Name}', false)" rendered="{!NOT(ISNULL(p.Id))}">{!p.Name}</apex:outputlink>
+                                </apex:column>
+                                <apex:column value="{!p.Part_Name__c}" headervalue="Part Name" />
+                                <apex:column value="{!p.Part_Number__c}" >
+                                    <apex:facet name="header">
+                                        <apex:commandLink action="{!sortPartNumber}" value="Part Number" id="sortCommandLink" rerender="pnlSearchResults"/>
+                                    </apex:facet>
+                                </apex:column>
+                                <apex:facet name="footer">
+                                    <apex:outputpanel layout="block" rendered="{!results.SIZE = 0}">
+                                        <apex:outputpanel style="color: gray;font: normal 11px Arial,Helvetica,sans-serif;">No records to display.</apex:outputpanel>
+                                    </apex:outputpanel>
+                                </apex:facet>
+                            </apex:pageblocktable>
+                        </apex:pageblock>
+                    </apex:outputpanel>
+                </apex:actionregion>
+            </apex:outputpanel>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

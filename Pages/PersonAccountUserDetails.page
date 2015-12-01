@@ -1,0 +1,45 @@
+<apex:page sidebar="false" standardController="Account" extensions="LithiumUserDetialsExtCls">
+<apex:form id="communityUserDetailForm"> 
+  <apex:outputPanel rendered="{!hasDetail}" style="overflow:auto;relative:absolute;background-color:#F3F3EC;height:300px;width:100%">
+        <div class="bPageBlock" style="border:none;background-image:none;background-color: #F3F3EC;"  ><!--style="border:none;background-image:none;background-color: #F3F3EC;"-->
+            <div class="pbBody">
+                <div class="pbSubsection">
+                <b>User Details</b><br/>
+                    <table class="detailList" width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td class="labelCol">Community Avatar</td>
+                            <td class="dataCol"><apex:image value="{!iconUrl}"/></td>
+                            <td class="labelCol" >&nbsp;</td>
+                            <td class="dataCol" >&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol">First Name</td>
+                            <td class="dataCol" id="firstName"><apex:outputField value="{!liUser.First_Name__c}"/>&nbsp;</td>
+                            <td class="labelCol">User Rank</td>
+                            <td class="dataCol" id="rank"><apex:outputField value="{!liUser.Rank__c}"/>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol">Last Name</td>
+                            <td class="dataCol" id="lastName"><apex:outputField value="{!liUser.Last_Name__c}"/>&nbsp;</td>
+                            <td class="labelCol">Roles</td>
+                            <td class="dataCol" id="roles"><apex:outputField value="{!liUser.Roles__c}"/>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>  
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!NOT(hasDetail)}" style="overflow:auto;relative:absolute;background-color:#F3F3EC;height:300px;width:100%">
+        <div class="bPageBlock" style="border:none;background-image:none;background-color: #F3F3EC;"  ><!--style="border:none;background-image:none;background-color: #F3F3EC;"-->
+            <div class="pbBody">
+                <div class="pbSubsection">
+                    <b>User Details</b><br/>
+                    <center> <b> No Community User found</b> </center>
+                </div>
+            </div>
+        </div>  
+    </apex:outputPanel>
+</apex:form>    
+</apex:page>

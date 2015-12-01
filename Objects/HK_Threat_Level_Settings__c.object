@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Request Type, HK Request Type and Threat Level dependencies</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>HK_Request_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>HK Request Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Threat_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Threat Level</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>HK Threat Level Settings</label>
+    <visibility>Protected</visibility>
+</CustomObject>

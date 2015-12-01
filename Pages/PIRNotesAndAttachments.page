@@ -1,0 +1,87 @@
+<apex:page standardcontroller="Part_Incident_Report__c" extensions="NotesAndAttachments" id="page">
+    <style>
+        
+        input[name=newNote] {
+            display: none !important;
+        }
+
+    </style>
+
+    <apex:relatedlist list="CombinedAttachments">
+        <apex:facet name="body"> 
+            <apex:form >
+                <apex:outputPanel id="tableOutput">
+            <apex:pageMessages id="pgMsg"/>
+            <apex:pageblock >
+                
+                <apex:pageblockTable value="{!indexes}" var="index" id="table">
+                    <apex:column rendered="{!areAttachmentsUpdatable}">
+                        <apex:facet name="header">Actions</apex:facet>
+                        <apex:outputLink value="/{!attachmentsList[index].id}/e" target="_top">
+                            Edit
+                        </apex:outputLink>
+                        <apex:outputtext value=" | "/>
+                        <apex:outputLink value="/servlet/servlet.FileDownload?file={!attachmentsList[index].id}">
+                           View
+                        </apex:outputLink>
+                        <apex:outputtext value=" | "/> 
+                        <apex:commandLink action="{!delAttacment}" rerender="tableOutput, pgMsg">
+                             <apex:param value="{!index}" assignTo="{!currentIndex}" name="currentIndex" />  
+                           Del
+                        </apex:commandLink>
+                    </apex:column>
+
+                    <apex:column >
+                        <apex:facet name="header">Type</apex:facet>
+                        <apex:outputtext value="Attachment"/>
+                    </apex:column>
+
+                    <apex:column >
+                        <apex:facet name="header">Title</apex:facet>
+                        <apex:outputLink value="/servlet/servlet.FileDownload?file={!attachmentsList[index].id}" target="_blank">
+                           {!attachmentsList[index].name}
+                        </apex:outputLink>
+                    </apex:column>
+
+                    <apex:column >
+                        <apex:facet name="header">Last Modified</apex:facet>
+                        <apex:outputtext value="{!attachmentsList[index].LastModifiedDate}"/>
+                    </apex:column>
+
+                    <apex:column >
+                        <apex:facet name="header">Created By</apex:facet>
+                        <apex:outputtext value="{!attacIdsToOwnersNamesMap[attachmentsList[index].Id]}"/>
+                    </apex:column>
+
+                </apex:pageblockTable>
+                
+            </apex:pageblock>
+                </apex:outputPanel>
+            </apex:form>
+        </apex:facet>
+    </apex:relatedlist>
+
+    <script type="text/javascript">
+        var acc = document.getElementsByName('newNote')[0];
+        acc.setAttribute('style', 'display:visible !important');
+
+
+        var attached = document.getElementsByName('attachFile')[0];
+        attached.onclick = function(){
+            window.open("/p/attach/NoteAttach?pid={!Part_Incident_Report__c.Id}&parentname={!Part_Incident_Report__c.Name}&retURL=%2F{!Part_Incident_Report__c.Id}", "_blank");
+        }
+
+        var viewAll = document.getElementsByName('viewAll')[0];
+        if(viewAll !== undefined){
+            viewAll.onclick = function(){
+            window.open("/ui/content/ViewAllNotesPage?id={!Part_Incident_Report__c.Id}&retURL=%2F{!Part_Incident_Report__c.Id}", "_top");
+        }
+        }
+
+        var linkList = document.querySelectorAll('a');
+
+        for(var i in linkList){
+         linkList[i].setAttribute('target', '_blank');
+        }
+    </script>
+</apex:page>

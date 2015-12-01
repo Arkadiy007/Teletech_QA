@@ -1,0 +1,97 @@
+<apex:page controller="Executive_Case_Tracker_Report_Controller" doctype="html-5.0" action="{!getSettings}" id="page" cache="true">
+    <!--<apex:includeScript value="{!URLFOR($Resource.INS_jQuery, '/js/jquery-1.9.1.js')}" />-->
+    <apex:includescript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+    <style type="text/css">
+        #blockbckanim {
+            background: rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 9999;
+            rgba(0, 0, 0, 0.71);
+            cursor: wait;
+        }
+
+        #apimgld {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+
+    <script type="text/javascript" language="javascript">
+          function busyCursorOn() {
+             document.getElementById('blockbckanim').style.display="block";
+             document.getElementById('page:form').style.cursor="wait";
+             document.getElementById('page:form:pageblock:pageblockbuttons:generateReportBtn').style.cursor="wait";
+
+             j$('.btn').attr("disabled", "disabled");
+
+          }
+
+          function busyCursorOff() {
+             document.getElementById('blockbckanim').style.display="none";
+             document.getElementById('page:form').style.cursor="auto";
+             document.getElementById('page:form:pageblock:pageblockbuttons:generateReportBtn').style.cursor="auto";
+
+            j$('.btn').removeAttr("disabled");
+          }
+
+    </script>
+
+    <apex:form id="form">
+        <apex:outputpanel id="errmsg">
+            <apex:pagemessages />
+        </apex:outputpanel>
+
+        <apex:actionfunction name="exportToXLS" action="{!generateReport}" rerender="form" status="busyCursor">
+        </apex:actionfunction>
+        <apex:actionstatus id="busyCursor" onstart="busyCursorOn()" onstop="busyCursorOff()" />
+
+        <apex:pageblock title="Executive Case Tracker Report" id="pageblock">
+
+            <apex:pageblockbuttons location="bottom" id="pageblockbuttons">
+                <apex:commandbutton onclick="exportToXLS();" value="Generate Report" oncomplete=" busyCursorOff();" id="generateReportBtn" styleclass="btn" />
+                <apex:commandbutton action="{!revertSettings}" value="Cancel" />
+
+            </apex:pageblockbuttons>
+
+            <apex:pageblocksection columns="1" title="Please set the Case filters below and generate report Executive Case Tracker Report">
+                <!--Record Type Filter-->
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Record Types" />
+                    <apex:selectlist value="{!recordTypes}" multiselect="true" size="15">
+                        <apex:selectoptions value="{!recordTypesSO}" />
+                    </apex:selectlist>
+                </apex:pageblocksectionitem>
+
+                <div id="blockbckanim" style="width: 100%; height: 100%; display: none; position: relative; z-index: 5; ">
+                    <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; margin: 0; text-align: center;">
+                        <img id="apimgld" style="" src="/img/loading32.gif" />
+                    </div>
+                </div>
+                <!--Executive Referral Flag Filter-->
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Executive Referral" />
+                    <apex:inputcheckbox value="{!executiveFlag}" />
+                </apex:pageblocksectionitem>
+
+                <!--Last Modified Date Filter-->
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Last Modified Date From" />
+                    <apex:input value="{!settingProxyDate.lastModifiedDateFilterFrom}" type="auto" />
+                </apex:pageblocksectionitem>
+
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Last Modified Date To" />
+                    <apex:input value="{!settingProxyDate.lastModifiedDateFilterTo}" type="auto" />
+                </apex:pageblocksectionitem>
+
+            </apex:pageblocksection>
+        </apex:pageblock>
+
+    </apex:form>
+
+</apex:page>

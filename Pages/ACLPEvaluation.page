@@ -1,0 +1,2 @@
+<apex:page standardController="Contact" extensions="ACLPEvaluation" action="{!Redirect}">
+</apex:page>

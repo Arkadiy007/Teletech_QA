@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>MCC_Case_recordTypes__c</fullName>
+        <defaultValue>&quot;CCC,Lease Loyalty,Retail Loyalty,Customer Connection Follow Up,Sales &amp; Service Record Type,NOTOR&quot;</defaultValue>
+        <description>Notification about updating Case records with MCC RecordTypes should be sent only to the users listed in &apos;Users Who Can View MCC Updates&apos; field. RecordTypes should be listed separated by comma without spaces.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Notification about updating Case records with MCC RecordTypes should be sent only to the users listed in &apos;Users Who Can View MCC Updates&apos; field. RecordTypes should be listed separated by comma without spaces.</inlineHelpText>
+        <label>MCC Case recordTypes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Users_Who_Can_View_MCC_Updates__c</fullName>
+        <defaultValue>&quot;Adam Cross,Bharath Tadipatri,Steven Kitchen,Margaret Adams,Kevin Barry,Kathleen Konzen&quot;</defaultValue>
+        <description>This field contains list of names of users who can receive notifications about updating of Case records with RecordType listed in &apos;MCC Case recordTypes&apos; field. The Names should be listed separated by comma without spaces.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains list of names of users who can receive notifications about updating of Case records with RecordType listed in &apos;MCC Case recordTypes&apos; field. The Names should be listed separated by comma without spaces.</inlineHelpText>
+        <label>Users Who Can View MCC Updates</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>MCC Custom Setting</label>
+    <visibility>Public</visibility>
+</CustomObject>

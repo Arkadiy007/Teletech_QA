@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AFFILIATE_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliate Code</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APPR_CD_DESC__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Code Description</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APPR_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Code</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CVRD_BY_BLNK_IN__c</fullName>
+        <externalId>false</externalId>
+        <label>Covered By Blanket Indicator</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DESC_TX__c</fullName>
+        <externalId>false</externalId>
+        <label>Limit Category</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERR_MSG_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>Error Message Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>External_ID</label>
+        <length>20</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FCLTY_NO__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LAST_UPDT_DT__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Modified Date</label>
+        <length>26</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LAST_USER_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Modified By</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MAJ_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>Major Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MAX_LMT_QT__c</fullName>
+        <externalId>false</externalId>
+        <label>Maximum Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MKT_CHAN_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>Marketing Channel Code</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MNR_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>Minor Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSG_DESC_TX__c</fullName>
+        <externalId>false</externalId>
+        <label>Error Message Description</label>
+        <length>33</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RGN_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>Region Code</label>
+        <length>26</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SKILL_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>Skill Code</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVC_DSTRCT_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>District Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sort_Order__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( DESC_TX__c , 
+&apos;WARRANTY CLAIM AMOUNT&apos;, 1,
+&apos;SERVICE CONTRACT CLAIM AMOUNT&apos;, 2,
+&apos;CLAIM AMOUNT - IN-STOCK VEHICLE&apos;, 3, 
+&apos;SOFT TRIM CLAIM AMOUNT&apos;, 4,
+&apos;GLASS CLAIM AMOUNT&apos;, 5,
+&apos;PAINT/RUST CLAIM AMOUNT&apos;, 6,
+&apos;STRAIGHT TIME HOURS&apos;, 7,
+&apos;GOODWILL CLAIM AMOUNT&apos;, 8,
+&apos;GOODWILL RENTAL AMOUNT&apos;, 9,
+&apos;GOODWILL TOWING AMOUNT&apos;, 10,
+&apos;GOODWILL COVERAGE - MILEAGE&apos;, 11,
+&apos;GOODWILL COVERAGE - TIME(MONTHS)&apos;, 12
+,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sort Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UNIT_MEAS_CD__c</fullName>
+        <externalId>false</externalId>
+        <label>Unit of Measure Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WAR_LAB_RATE_AM__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Labor Rate Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Warranty DCAL Limit</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>FCLTY_NO__c</columns>
+        <columns>MAJ_CD__c</columns>
+        <columns>MNR_CD__c</columns>
+        <columns>MAX_LMT_QT__c</columns>
+        <columns>UNIT_MEAS_CD__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Approval_Codes</fullName>
+        <columns>NAME</columns>
+        <columns>APPR_CD__c</columns>
+        <columns>APPR_CD_DESC__c</columns>
+        <columns>CVRD_BY_BLNK_IN__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Warranty_DCAL_Limit__c.Approval_Codes</value>
+        </filters>
+        <label>Approval Codes</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Dealer_DCAL_Limits</fullName>
+        <columns>NAME</columns>
+        <columns>FCLTY_NO__c</columns>
+        <columns>MAJ_CD__c</columns>
+        <columns>MNR_CD__c</columns>
+        <columns>DESC_TX__c</columns>
+        <columns>MAX_LMT_QT__c</columns>
+        <columns>UNIT_MEAS_CD__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Warranty_DCAL_Limit__c.Dealer_DCAL_Limits</value>
+        </filters>
+        <label>Dealer DCAL Limits</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Dealer_DCAL_Limits1</fullName>
+        <columns>NAME</columns>
+        <columns>FCLTY_NO__c</columns>
+        <columns>DESC_TX__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Warranty_DCAL_Limit__c.Dealer_DCAL_Limits</value>
+        </filters>
+        <label>Dealer DCAL Limits</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Dealer_Labor_Rates</fullName>
+        <columns>NAME</columns>
+        <columns>FCLTY_NO__c</columns>
+        <columns>Effective_Date__c</columns>
+        <columns>SKILL_CD__c</columns>
+        <columns>WAR_LAB_RATE_AM__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Warranty_DCAL_Limit__c.Dealer_Labor_Rates</value>
+        </filters>
+        <label>Dealer Labor Rates</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>District_DCAL_Limits</fullName>
+        <columns>NAME</columns>
+        <columns>MAJ_CD__c</columns>
+        <columns>MNR_CD__c</columns>
+        <columns>MKT_CHAN_CD__c</columns>
+        <columns>RGN_CD__c</columns>
+        <columns>SVC_DSTRCT_CD__c</columns>
+        <columns>DESC_TX__c</columns>
+        <columns>MAX_LMT_QT__c</columns>
+        <columns>UNIT_MEAS_CD__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Warranty_DCAL_Limit__c.District_DCAL_Limits</value>
+        </filters>
+        <label>District DCAL Limits</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>National_DCAL_Limits</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>MAJ_CD__c</columns>
+        <columns>MNR_CD__c</columns>
+        <columns>MAX_LMT_QT__c</columns>
+        <columns>UNIT_MEAS_CD__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Warranty_DCAL_Limit__c.National_DCAL_Limits</value>
+        </filters>
+        <label>National DCAL Limits</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Regional_DCAL_Limits</fullName>
+        <columns>NAME</columns>
+        <columns>MAJ_CD__c</columns>
+        <columns>MNR_CD__c</columns>
+        <columns>MKT_CHAN_CD__c</columns>
+        <columns>DESC_TX__c</columns>
+        <columns>MAX_LMT_QT__c</columns>
+        <columns>UNIT_MEAS_CD__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Warranty_DCAL_Limit__c.Regional_DCAL_Limits</value>
+        </filters>
+        <label>Regional DCAL Limits</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>User_Approval_Limits</fullName>
+        <columns>OWNER.ALIAS</columns>
+        <columns>DESC_TX__c</columns>
+        <columns>UNIT_MEAS_CD__c</columns>
+        <columns>MAX_LMT_QT__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>MAX_LMT_QT__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>User Approval Limits</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Warranty DCAL Limit Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Warranty DCAL Limits</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Approval_Codes</fullName>
+        <active>true</active>
+        <label>Approval Codes</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Dealer_DCAL_Limits</fullName>
+        <active>true</active>
+        <label>Dealer DCAL Limits</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Dealer_Labor_Rates</fullName>
+        <active>true</active>
+        <label>Dealer Labor Rates</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>District_DCAL_Limits</fullName>
+        <active>true</active>
+        <label>District DCAL Limits</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Error_Codes_for_Approvals</fullName>
+        <active>true</active>
+        <label>Error Codes for Approvals</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>National_DCAL_Limits</fullName>
+        <active>true</active>
+        <label>National DCAL Limits</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Regional_DCAL_Limits</fullName>
+        <active>true</active>
+        <label>Regional DCAL Limits</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

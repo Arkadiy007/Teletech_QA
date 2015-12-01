@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ButtonFromEmail__c</fullName>
+        <description>The Email address used in the button in setting the from address from the drop down.</description>
+        <externalId>false</externalId>
+        <label>ButtonFromEmail</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <description>The name of this set of settings for the Email Service</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>createActivity__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>When this checkbox is checked, an activity history record will be created for the inbound email and any replies to the email.</description>
+        <externalId>false</externalId>
+        <label>Create Activity?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>createContact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When this checkbox is checked, a contact will be created if it does not exist for the inbound email address.</description>
+        <externalId>false</externalId>
+        <label>Create Contact?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>emailReferenceIdString__c</fullName>
+        <defaultValue>&quot;re&quot;</defaultValue>
+        <description>Contains the string that wraps the id used to create outbound emails and process inbound emails.</description>
+        <externalId>false</externalId>
+        <label>Email Reference Id</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>emailSubjectPrefix__c</fullName>
+        <description>Text to be added to the beginning of outbound emails from this service.</description>
+        <externalId>false</externalId>
+        <label>Email Subject Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>queueName__c</fullName>
+        <description>The name of the queue used by the inbound handler to assign the owner to.</description>
+        <externalId>false</externalId>
+        <label>Queue Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>replyToEmail__c</fullName>
+        <description>The email address used in the reply-to section of any auto-reply</description>
+        <externalId>false</externalId>
+        <label>Reply-To Email</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sendAutoReplies__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>sendAutoReplies</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>senderDisplayName__c</fullName>
+        <description>The name used in outbound emails for this email service.</description>
+        <externalId>false</externalId>
+        <label>Sender Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>templateId__c</fullName>
+        <externalId>false</externalId>
+        <label>Template Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>inboundEmailSettings</label>
+    <visibility>Public</visibility>
+</CustomObject>

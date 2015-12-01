@@ -1,0 +1,40 @@
+<apex:page controller="AlertsCtrl" showHeader="false" sidebar="false">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{!SUBSTITUTE(SUBSTITUTE(URLFOR($Resource.KnowledgeCSS), '?isdtp=vw',''),'?isdtp=nv','')}"/>        
+    </head>
+    <html>
+        <body>
+            <div class="main">
+                <ul>
+                    <apex:outputText rendered="{!articles.size == 0}">
+                        <li>
+                            <div class="sysstat-wrapper secondary">
+                                <div class="sysstat-system">
+                                    <apex:outputText value="{!$Label.KBNoAlerts}"/>
+                                </div>
+                            </div>
+                        </li>                       
+                    </apex:outputText>
+                    <apex:repeat value="{!articles}" var="article">
+                        <li>
+                            <div class="sysstat-wrapper {!article.Criticality__c}">
+                                <div class="sysstat-system">
+                                    <a href="/articles/CA_Specialist_Reference/{!article.URLName}" target="_blank">
+                                        <apex:outputText value="{!IF(LEN(article.title) > maxTitle, LEFT(article.title, maxTitle - 4)&'....', article.title)}"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </apex:repeat>
+                    <apex:outputText rendered="{!articles.size != 0}">
+                        <li>
+                            <a href="/knowledge/knowledgeHome.apexp?articleType_Alert__kav=on" target="_blank">
+                                <apex:outputText value="Click here to see all Alerts"/>
+                            </a>
+                        </li>                       
+                    </apex:outputText>
+                </ul>
+            </div>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,174 @@
+@charset "utf-8";
+/* CSS boa Document */
+
+/* ------------------BUTTONS------------------------ */
+
+.nissan-btn-chat {
+	background-image:url(img/btn_livechat_normal.png);
+	width:115px;
+	height:20px;
+	border:none!important;
+}
+.nissan-btn-chat:hover {
+	background-image:url(img/btn_livechat_hover.png);
+	background-position: 0 0!important;
+}
+.nissan-btn-chatoffline {
+	background-image:url(img/btn_livechat_offline.png);
+	width:115px;
+	height:20px;
+	border:none!important;
+}
+.btn_livechat_offline:hover {
+	background-image:url(img/btn_livechat_offline_hover.png);
+	background-position: 0 0!important;
+}
+.nissan-btn-startchat {
+	background-image:url(img/nissan_start_chat.gif)!important;
+	width:135px;
+	height:30px;
+	border:none!important;
+}
+.nissan-btn-startchat:hover {
+	background-image:url(img/nissan_start_chat.gif)!important;
+	background-position: 0 0!important;
+}
+
+.infiniti-btn-startchat {
+	background-image:url(img/infiniti_start_chat.gif)!important;
+	width:117px;
+	height:30px;
+	border:none!important;
+}
+.infiniti-btn-startchat:hover {
+	background-image:url(img/infiniti_start_chat.gif)!important;
+	background-position: 0 0!important;
+}
+
+.infiniti-btn-submit {
+	background-image:url(img/infiniti_submit.gif)!important;
+	width:117px;
+	height:30px;
+	border:none!important;
+}
+.infiniti-btn-submit:hover {
+	background-image:url(img/infiniti_submit.gif)!important;
+	background-position: 0 0!important;
+}
+
+.infiniti-btn-close {
+	background-image:url(img/infiniti_close_window.gif)!important;
+	width:117px;
+	height:30px;
+	border:none!important;
+}
+.infiniti-btn-close:hover {
+	background-image:url(img/infiniti_close_window.gif)!important;
+	background-position: 0 0!important;
+}
+
+.livechat_endsession {
+	background:url(img/nissan_end_session.png) no-repeat;
+	width:75px;
+	height:12px;
+	margin: 15px 0px 0 400px;
+	position:absolute;
+	border-width:0px;
+	border:#000;
+	cursor: hand;
+	cursor:pointer;
+}
+
+
+/* ------------------HEADERS------------------------ */
+.livechat_header {
+	background:url(img/nissan_header.gif) no-repeat;
+	height:77px;
+	width:300px;
+	text-align:right;
+}
+
+.livechat_infiniti_header {
+	background:url(img/infiniti_header.jpg) no-repeat;
+	height:77px;
+	width:300px;
+	text-align:right;
+}
+
+
+/* ------------------BACKGROUNDS------------------------ */
+.livechat_bg {
+	background:url(img/livechat_bg.png) repeat-x;
+	width:100%;
+	height:438px;
+}
+
+.livechat_bg_no_footer {
+	background:url(img/livechat_bg_no_footer.png) repeat-x;
+	width:100%;
+	height:438px;
+}
+
+.livechat_infiniti_bg {
+	background:url(img/livechat_infinity_bg.png) repeat-x;
+	width:100%;
+	height:438px;
+}
+
+.livechat_infiniti_bg_no_footer {
+	background:url(img/livechat_infinity_bg_no_footer.png) repeat-x;
+	width:100%;
+	height:438px;
+}
+
+/* ------------------TEXTs------------------------ */
+.livechat_txt {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:13px;
+	color:#333;
+	text-align:center;
+	padding:15px 0 15px 0;
+}
+.livechat_footer_txt {
+	font:Verdana, Geneva, sans-serif;
+	font-size:9px;
+	color:#889999!important;
+}
+.livechat_footer_txt a {
+	color:#cccccc!important;
+}
+.livechat_footer_txt a:hover {
+	color:#FFF!important;
+}
+
+
+/* ------------------General------------------------ */
+body .bPageBlock {
+	border-width:0px!important;
+}
+.bPageBlock.secondaryPalette {
+	background:none!important;
+	border:none!important;
+}
+.apexp .apexDefaultPageBlock.bPageBlock .pbBody {
+	margin:0!important;
+}
+.bPageBlock .detailList TR TD {
+	border:none!important;
+}
+
+.bPageBlock .detailList TR TH {
+	border-bottom:none!important;
+}
+
+.bPageBlock .labelCol {
+	font:bold 13px Verdana!important;
+	color:#000!important;
+}
+.bPageBlock .detailList .labelCol {
+	width:30%!important;
+}
+
+body .bPageBlock .pbBody .labelCol, body .bPageBlock .pbBody .dataCol, body .bPageBlock .pbBody .data2Col {
+	padding-top:3px!important;
+}

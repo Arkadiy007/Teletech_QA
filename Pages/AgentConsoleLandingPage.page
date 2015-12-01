@@ -1,0 +1,26 @@
+<apex:page standardController="Contact" title="Contact" extensions="Controller_AgentConsoleLandingPage">
+<apex:includeScript value="/support/console/31.0/integration.js"/>
+<apex:include pageName="{!IncludeString}"/>
+    
+    <script type="text/javascript">
+    
+    window.onload = function()
+    {
+        sforce.console.getEnclosingPrimaryTabId(renameTab);
+        //alert("Onload fired");
+    };
+    
+    function renameTab(result) 
+    {
+         //Now that we have the primary tab ID, we can rename it
+         var tabId = result.id;
+         sforce.console.setTabTitle("{!contact.name}", tabId);
+    };
+    
+    </script>
+    
+    
+
+
+
+</apex:page>

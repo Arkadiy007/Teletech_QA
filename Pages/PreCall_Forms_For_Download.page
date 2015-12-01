@@ -1,0 +1,37 @@
+<apex:page controller="Controller_PreCall_Forms_For_Download" showHeader="false">  
+    <style type="text/css">
+
+    .bPageBlock {
+        background-image: url('{!$Resource.PreCall_Forms_Background_2}') !important;
+        background-position: top !important;
+        width: 650px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        min-height: 810px;
+    }
+    
+    .pbHeader {
+        margin-top: 100px !important;
+    }
+
+    </style>
+
+    
+  <apex:form enctype="multipart/form-data">
+    <apex:pageMessages />
+    <apex:pageBlock title="Upload an Attachment">
+
+      <apex:pageBlockSection showHeader="false" columns="1" id="block0">
+        
+      </apex:pageBlockSection>
+      <apex:pageBlockButtons location="top" >
+
+      
+      </apex:pageBlockButtons>
+
+    </apex:pageBlock>
+    
+        
+    
+  </apex:form>
+</apex:page>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>This custom setting retains information about filters on Executive Case Tracker Reports Page</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Highlighted_Persons__c</fullName>
+        <defaultValue>&apos;Jose Munoz,Carlos Ghosn&apos;</defaultValue>
+        <description>The Case Description is highlighted when some of the users in this set is mentioned. Original requirement was that the Case Description is highlighted when Jose Munoz (orange) or Carlos Ghosn (red) is mentioned. Type comma separated Names in without spaces. For example: Jose Munoz,Carlos Ghosn</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Case Description is highlighted when some of the users in this set is mentioned. Original requirement was that the Case Description is highlighted when Jose Munoz (orange) or Carlos Ghosn (red) is mentioned. Type comma separated Names in without space</inlineHelpText>
+        <label>Highlighted Persons</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Highlighting_Colors__c</fullName>
+        <defaultValue>&apos;orange,red&apos;</defaultValue>
+        <description>List of colors for highlighting the Case Descriptions with mentioned users which are in the Highlighted Persons field. Applied in the same order. Type comma separated colors in hex format with # character or name without spaces. For example: #FF0000,green</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of colors for highlighting the Case Descriptions with mentioned users which are in the Highlighted Persons field. Applied in the same order. Type comma separated colors in hex format with # character or name without spaces. For example: #FF0000,green</inlineHelpText>
+        <label>Highlighting Colors</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Modified_Date_Filter_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Modified Date Filter From</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Modified_Date_Filter_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Modified Date Filter To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Record_Types_Set_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Types Set 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Types_Set_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Types Set 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Executive Case Tracker Report Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,309 @@
+             /* Descktop (portrait and landscape) ----------- */
+       @media screen 
+        
+        {
+            [id*=inputTextField] {
+                max-width: 200px;
+            }
+            .bPageBlock .labelCol, body .print .topics-label {
+            padding-right: 2px;
+            }
+            /*Buttons*/
+            .buttonPosition {
+                position: absolute; 
+                top: 410px; 
+                left: 290px;
+            }
+            .pleaseWaitPosition {
+                position: absolute; 
+                top: 410px; 
+                left: 290px; 
+                color: #666666 !important; 
+                font-style: italic;
+            }
+            /**/
+            .contentInputLable {
+                height: 305px; 
+                padding-top: 35px;
+            }
+            /*Texts*/
+			.livechat_footer_txt {
+                position:absolute;
+                top: 450px;
+                text-align:left; 
+                width:470px;
+            }
+            .livechat_footer_txt_policy {
+                position:absolute;
+                top: 480px;
+                text-align:right; 
+                width:465px;
+            }
+            /*Div*/
+            .inputAreaDesktop {
+                display: block;
+            }
+            body {
+                overflow: hidden;
+                touch-action: pan-y;
+            }
+            .btn-startchat {
+                text-indent:-9999px;
+            }
+        }
+
+        /* Smartphones (landscape) ----------- */
+        @media screen 
+        and (min-aspect-ratio: 1/1)
+        and (min-device-width : 605px)
+        and (max-device-width : 640px),
+             
+        screen and (min-aspect-ratio: 1/1)
+        and (max-device-width : 599px)    
+        {
+            [id*=inputTextField] {
+                max-width: 170px !important;
+                width:170px !important;
+            }
+            
+            .bPageBlock .labelCol, body .print .topics-label {
+            padding-right: 2px;
+            }
+            .data2Coll {
+                padding-left: 0px !important;
+            }
+            
+             /*Buttons*/
+            .buttonPosition {
+                position: absolute; 
+                top: 90px; 
+                left: 315px;
+            }
+            
+            .pleaseWaitPosition {
+                position: absolute; 
+                top: 90px; 
+                left: 315px; 
+                color: #666666 !important; 
+                font-style: italic;
+            }
+            
+            /**/
+            .livechat_header {
+                background: url(img/NewInfiniti_header_Mobile_cuted.png) no-repeat !important;
+                height:67px !important;
+                width:100%;
+                text-align:right;
+            }
+            /**/
+            .contentInputLable {
+                height: 305px; 
+                padding-top: 0px;
+            }
+            /*Texts*/
+			.livechat_footer_txt {
+                position:absolute !important;
+                top: 140px !important;
+                left:295px !important;
+                text-align:center !important; 
+                width:150px !important;
+            }
+			.livechat_footer_txt_policy {
+                display:block !important;  
+                position: absolute !important;
+                left: 325px !important;
+                top:250px !important;       
+                text-align: center;
+                width: 100px !important;
+                font: Verdana, Geneva, sans-serif;
+                font-size:9px ;
+                vertical-align:text-top;
+                padding-left:0px !important;
+            }
+            .livechat_txt {
+                padding-top:0px !important;
+                padding-bottom:0px !important;
+            }
+			.error_message {
+				top: 270px !important; 
+				left: 25px !important;
+			}
+            .bPageBlock .labelCol { /*overwrite standart*/
+                text-align: left;
+                padding-left: 8px;
+            }
+            .bPageBlock .detailList .labelCol { /*overwrite standart*/
+                width: 21%!important;
+            }
+            .bPageBlock .detailList .data2Col { /*overwrite standart*/
+                padding-left: 0px;
+            }
+            .radioButtonPositionDesktop {
+                display: none;
+            }
+            .radioButtonPositionMobilePortrait {
+                display: none;   
+            }
+            .radioButtonPositionMobileLandscape { 
+                display:block !important;
+                position:absolute;
+                top:125px;
+                left:250px;
+            }
+            /*Div*/
+            .inputAreaDesktop {
+                padding-top: 0px !important;
+                display:block !important;
+                width:480px !important;
+            }
+
+            .livechat_bg{
+                background:none !important;
+                width:100%;
+                height:100px !important;
+            }
+            .contentInputLable{
+                height: 230px !important;
+                padding-top: 0px !important;
+            }
+            .divOperationHoursArea {
+                height: 340px !important;
+            }
+            .divOperationHoursText {
+                width: 380px !important;
+                left: 15px !important;
+            }
+            .btn-startchat {
+                text-indent:-9999px;
+            }
+			body {
+                overflow: visible !important;
+            }
+        }      
+        
+         /* Smartphones (portrait) ----------- */
+        @media screen  
+        and (min-width : 320px)
+        and (max-width : 479px)
+        {
+            [id*=inputTextField] {
+                width: 185px;
+                max-width: 185px;
+            }
+            
+            .bPageBlock .labelCol, body .print .topics-label {
+                padding-right: 2px;
+            }
+            .bPageBlock .detailList .dataCol {
+                width:90%;
+            }
+
+            /*Buttons*/
+            .buttonPosition {
+                position: absolute; 
+                top: 337px; 
+                left: 90px;
+            }
+             
+            .pleaseWaitPosition {
+                position:absolute;
+                left:90px;
+                top:337px;
+                color: #666666 !important; 
+                font-style: italic;
+            }
+            
+            .livechat_header {
+                background: url(img/NewInfiniti_header_Mobile.png) no-repeat !important;
+                height:77px;
+                width:100%;
+                text-align:right;
+            }
+            /**/
+            .contentInputLable {
+                height: auto; 
+                padding-top: 35px;
+            }
+			.livechat_footer_txt_Table {
+				width: 320px !important;
+			}
+            /*Texts*/
+            .livechat_txt {
+                padding-top:0px !important;
+                padding-bottom:0px !important;
+            }
+			.livechat_footer_txt {
+                position:absolute !important;
+                top:380px !important;
+                left:10px !important;
+                text-align:center !important; 
+                width:280px !important;
+            }
+			.livechat_footer_txt_policy {
+                display:block !important;
+                position:absolute;
+                top:430px !important;
+                left:115px !important;
+                text-align: center;
+                width: 100px !important;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size:9px !important;
+                padding-bottom:0px !important;
+                padding-left:0px !important;
+            }
+			.error_message {
+				top: 300px !important; 
+				left: 25px !important;
+			}
+            .radioButtonPositionDesktop {
+                display: none;
+            }
+            .radioButtonPositionMobileLandscape {
+                
+                position:absolute;
+                top:77px;
+                left:95px;
+                display: none;
+            }
+            .radioButtonPositionMobilePortrait {
+                display:block !important;
+            }
+            .selectRadio {
+                width:auto !important;
+            }
+            .bPageBlock .detailList .labelCol { /*increase standart width of input labels*/
+                width: 29% !important;
+            }
+            .bPageBlock .detailList .dataCol {
+                width: 100%;
+            }
+            /*Div*/
+            .inputAreaDesktop {                
+                display:block !important;
+                width:auto !important;
+				max-width:320px !important;
+            }
+
+            .livechat_bg{
+                background:none !important;
+                width:100%;
+                height:100px;
+            }
+            .contentInputLable{
+                padding-top: 0px !important;
+            }
+            .divOperationHoursArea {
+                height: 480px !important;
+                width: 350px !important;
+            }
+            .divOperationHoursText {
+                width: 270px !important;
+                left: 15px !important;
+            }
+            .btn-startchat {
+                text-indent:-9999px;
+            }
+			body {
+                overflow: visible !important;
+            }
+        }

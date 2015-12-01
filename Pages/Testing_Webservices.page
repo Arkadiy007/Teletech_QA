@@ -1,0 +1,125 @@
+<apex:page showHeader="false" standardController="Case" extensions="TESTING_WEBSERVICES" >
+<apex:pageblock >
+<apex:form >
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.GetDealerInfo}" action="{!RunGetDealerInfo}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!dealerInfo}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.CheckAppointmentTime}" action="{!RunCheckAppointmentTime}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!appointmentTime}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.GetLog}" action="{!RunGetLog}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!log}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.GetServicesDue}"  action="{!RunGetServicesDue}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!ServicesDue}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.GetPrimaryContactInfo}" action="{!RunGetPrimaryContactInfo}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!PrimaryContactInfo}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.Ping}" action="{!RunPing}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!Ping}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.CheckAppointment}" action="{!RunCheckAppointment}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!Appointment}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.CallResolution}"  action="{!RunCallResolution}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!CallResolution}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.GetServiceHistory}" action="{!RunGetServiceHistory}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!ServiceHistory}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.GetCommunicationHistory}" action="{!RunGetCommunicationHistory}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!CommunicationHistory}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.GetSecurityToken}"  action="{!RunGetSecurityToken}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!securityToken}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.GetAppointmentSubscribeURL}" action="{!RunGetAppointmentSubscribeURL}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!appointmentSubscribeURL}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.GetAssociatedCustomers}" action="{!RunGetAssociatedCustomers}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!associatedCustomers}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.SearchDealer}" action="{!RunSearchDealer}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!dealers}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.GetVersion}" action="{!RunGetVersion}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!version}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.SearchCustomer}" action="{!RunSearchCustomer}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!customers}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="2">
+<apex:pageblocksectionitem >
+<apex:commandButton value="{!$Label.Getassociated_dcno_id}" action="{!RunGetassociated_dcno_id}" />
+</apex:pageblocksectionitem>
+<apex:outputText value="{!associated_dcno_id}"/>
+</apex:pageblocksection>
+
+</apex:form>
+</apex:pageblock>
+</apex:page>

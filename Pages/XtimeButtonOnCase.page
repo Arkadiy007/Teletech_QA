@@ -1,0 +1,6 @@
+<apex:page controller="XtimeButtonOnCase_Controller" showHeader="false" action="{!ifSuccess}">
+    <apex:pageBlock >
+        <apex:outputText value="{!xtimeLink}"/>
+
+    </apex:pageBlock>
+</apex:page>

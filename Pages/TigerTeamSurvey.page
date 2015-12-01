@@ -1,0 +1,71 @@
+<apex:page standardcontroller="Surveys__c" extensions="TigerTeamSurveyController" sidebar="false" showheader="false" action="{!checkSubmitted}" cache="false">
+    <apex:stylesheet value="{!$Page.labs_survey_css}" />
+    <style>
+        .logo_header {
+            background: url("{!URLFOR($Resource.TigerTeamNissanInfinitiLogo)}") no-repeat;
+            height: 100px;
+            width: 300px;
+            text-align: right;
+        }
+
+        .text_header {
+            margin-left: 10px;
+            background-color: #073592;
+            width: 99%;
+            display: inline-block;
+            color: #FFF;
+            height: 40px;
+            line-height: 21px;
+            font-size: 20px;
+            font-family: verdana;
+        }
+
+        .text_question {
+            margin-left: 10px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+
+    <apex:includescript value="{!URLFOR($Resource.SurveyForce, 'jquery.js')}" />
+    <script src="/soap/ajax/18.0/connection.js" type="text/javascript"></script>
+    <script src="/soap/ajax/18.0/apex.js" type="text/javascript"></script>
+    <script>sforce.connection.sessionId = '{!$Api.Session_ID}'; </script>
+    <apex:form >
+
+        <div style="width: 100%;" class="logo_header"></div>
+
+        <div class="text_header"><h1 class="sg-title " style="position: relative; top: 11px; left:7px">Nissan Tiger Team Survey</h1></div><br /><br />
+        <apex:pagemessages id="messages" />
+        <apex:outputlabel value="Brief survey to measure the success of dealer Tiger Team experience " style="margin-left: 10px; font-size: 14px;"></apex:outputlabel><br /><br />
+
+        <apex:outputlabel value="1. Case number you discussed with the Tiger Team " for="caseNumber" style="margin-left: 10px; font-weight: bold; font-size: 16px; "></apex:outputlabel><br /><br />
+        <apex:outputlabel id="caseNumber" value="{!Surveys__c.Case_Number_Discussed_with_TT__c}" style="margin-left:20px;"></apex:outputlabel><br /><br />
+        <apex:outputlabel value="2. How long did you have to wait before a technical support representative at the Tiger Team began to help you? " for="wait" styleclass="text_question"></apex:outputlabel>
+        <apex:selectradio id="wait" value="{!Surveys__c.Wait_time_for_TT__c}" layout="pageDirection">
+            <apex:selectoptions value="{!waitTime}" />
+        </apex:selectradio>
+        <apex:outputlabel value="3. How knowledgeable were the technical support representatives at the Tiger Team? " for="knowledge" styleclass="text_question"></apex:outputlabel>
+        <apex:selectradio id="knowledge" value="{!Surveys__c.How_knowledgeable_TT__c}" layout="pageDirection">
+            <apex:selectoptions value="{!knowledgeLevel}" />
+        </apex:selectradio>
+        <apex:outputlabel value="4. How helpful were the technical support representatives at the Tiger Team? " for="helpful" styleclass="text_question"></apex:outputlabel>
+        <apex:selectradio id="helpful" value="{!Surveys__c.How_helpful_TT__c}" layout="pageDirection">
+            <apex:selectoptions value="{!helpfulLevel}" />
+        </apex:selectradio>
+        <apex:outputlabel value="5. Was your experience with technical support at the Tiger Team better than you expected it to be, worse than you expected it to be, or about what you expected it to be? " for="exp" styleclass="text_question"></apex:outputlabel>
+        <apex:selectradio id="exp" value="{!Surveys__c.Experience_TT__c}" layout="pageDirection">
+            <apex:selectoptions value="{!experience}" />
+        </apex:selectradio>
+        <apex:outputlabel value="6. Thinking about the question or concern that led you to contact the Tiger Team, has the question or concern been resolved? " for="resolve" styleclass="text_question"></apex:outputlabel>
+        <apex:selectradio id="resolve" value="{!Surveys__c.Question_resolved_TT__c}" layout="pageDirection">
+            <apex:selectoptions value="{!resolved}" />
+        </apex:selectradio>
+        <apex:outputlabel value="7. Is there any feedback you would like to provide regarding the Tiger Team? " for="feedback" styleclass="text_question"></apex:outputlabel><br /><br />
+        <apex:inputfield id="feedback" value="{!Surveys__c.Feedback_TT__c}" style="margin-left: 10px; display: block; width: 350px; height: 50px; resize: none; "></apex:inputfield><br /><br />
+        <apex:outputpanel >
+            <apex:actionfunction name="checkSixthQuestion" action="{!checkSixthQuest}" rerender="refresh,messages,msg" status="Sending" />
+            <apex:commandbutton value="Submit response >>" action="{!quicksave}" rerender="msg,messages" oncomplete="checkSixthQuestion()" style="margin-left: auto; margin-right: auto; margin-top: -20px; width: 150px; height: 32px; font-size: small; " /><br /><br />
+        </apex:outputpanel>
+    </apex:form>
+</apex:page>

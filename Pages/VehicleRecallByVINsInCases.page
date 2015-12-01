@@ -1,0 +1,9 @@
+<apex:page standardController="Case" extensions="VehicleRecallByVINsInCasesExtension">
+    <apex:outputPanel id="op1" rendered="{!showPowerCust}">
+        <apex:image url="{!URLFOR($Resource.CommonIcons, 'JDPowerLogo.png')}" width="30" height="30"/>
+        <apex:outputText value="{!$Label.Vehicle_Recall_Message2}" style="font-size:medium; color:red; font-weight:bold"/>  <br/>
+    </apex:outputPanel>
+    <apex:outputPanel id="op2" rendered="{!showF1Dealer}">    	
+        <apex:outputText value="{!$Label.F1_Dealer_Message}" style="font-size:medium; color:red; font-weight:bold; padding-left:30px;"/>
+    </apex:outputPanel>
+</apex:page>

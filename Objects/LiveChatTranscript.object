@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Abandoned</fullName>
+    </fields>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AverageResponseTimeOperator</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>AverageResponseTimeVisitor</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Body</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Browser</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>BrowserLanguage</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Call_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Reason</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CaseId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ChatDuration</fullName>
+    </fields>
+    <fields>
+        <fullName>Chat_accepted_in_ms__c</fullName>
+        <externalId>false</externalId>
+        <label>Chat accepted in ms</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Chat_requested_time_in_ms__c</fullName>
+        <externalId>false</externalId>
+        <label>Chat requested time in ms</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Chat_routed_in_ms__c</fullName>
+        <externalId>false</externalId>
+        <label>Chat routed in ms</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Support_Feedback__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Support Feedback</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very good</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not enough available information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Good</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not so good</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Detailed_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Status , 
+&apos;Missed&apos;, &apos;Missed&apos;, 
+&apos;Dropped&apos;, &apos;Missed&apos;,
+&apos;Completed&apos;, (IF ( Queue_Time__c &lt;= 40, 
+                  &apos;Met SLA&apos;, 
+                  &apos;No Met SLA&apos;)
+             ), 
+&apos;Other&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Detailed Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disposition_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Disposition Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>All Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brochure Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Dropped Chat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer Related Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>E-mail transfer to Dealer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Escalate to RCAS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Product Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Product Inquiry - Post-sale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Product Inquiry - Pre-sale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Goodwill Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Literature Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non Nissan/Infiniti request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spam/Abusive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer or refer to LCN/RA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to MCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Nissan CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to NMAC/IFS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Other Department</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Owner Services/Vehicle Connected Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Roadside Assistance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to VCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unrelated Subject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VSC Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <description>It calculates the duration in seconds of the chat</description>
+        <externalId>false</externalId>
+        <formula>(EndTime -  StartTime) * 86400</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EndTime</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>End_Time_2s__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(RIGHT(TEXT( EndTime-(6/24)), 9), 8)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>End Time (2s)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(RIGHT(TEXT( EndTime ), 9), 8)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>End Time (s)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EndedBy</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Final_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Comments</label>
+        <length>1000</length>
+        <trackHistory>true</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <description>It stores the First Name filled in the pre-chat form</description>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IpAddress</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <description>It stores the Last Name filled in the pre-chat form</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LeadId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LiveChatButtonId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LiveChatDeploymentId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LiveChatVisitorId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Location</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>MCC_SLA_10_sec__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Status , 
+&apos;Missed&apos;, &apos;Missed&apos;, 
+&apos;Dropped&apos;, &apos;Missed&apos;, 
+&apos;Completed&apos;, (IF ( Queue_Time__c &lt;= 10, 
+&apos;Met SLA&apos;, 
+&apos;No Met SLA&apos;) 
+), 
+&apos;Other&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MCC SLA 10 sec</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MCC_SLA_12_sec__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Status , 
+&apos;Missed&apos;, &apos;Missed&apos;, 
+&apos;Dropped&apos;, &apos;Missed&apos;, 
+&apos;Completed&apos;, (IF ( Queue_Time__c &lt;= 12, 
+&apos;Met SLA&apos;, 
+&apos;No Met SLA&apos;) 
+), 
+&apos;Other&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MCC SLA 12 sec</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MaxResponseTimeOperator</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>MaxResponseTimeVisitor</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OperatorMessageCount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <description>It stores the Phone filled in the pre-chat form</description>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Platform</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Pre_Chat_Data__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Pre Chat Data</label>
+        <referenceTo>Pre_Chat_Data__c</referenceTo>
+        <relationshipLabel>Live Chat Transcripts</relationshipLabel>
+        <relationshipName>Live_Chat_Transcripts</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Queue_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (
+( BLANKVALUE (StartTime, EndTime) - RequestTime ) &lt; 0, 
+null, 
+( BLANKVALUE (StartTime, EndTime) - RequestTime ) * 86400)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Queue Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReferrerUri</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>RequestTime</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Request_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(RIGHT(TEXT( RequestTime ), 9), 8)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Request Time (s)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Request_Time_s2__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(RIGHT(TEXT( RequestTime-(6/24) ), 9), 8)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Request Time (s2)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ScreenResolution</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Session_Id__c</fullName>
+        <description>This fiels stores the session Id of the Pre Chat Data value</description>
+        <externalId>false</externalId>
+        <label>Session Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SkillId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>StartTime</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (LEN(TEXT(StartTime)) &gt; 8, LEFT(RIGHT(TEXT( StartTime ), 9), 8), &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start Time (s)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Time_s2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (LEN(TEXT(StartTime-(6/24))) &gt; 8, LEFT(RIGHT(TEXT( StartTime-(6/24)), 9), 8), &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start Time (s2)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SupervisorTranscriptBody</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Survey__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Survey</label>
+        <referenceTo>Surveys__c</referenceTo>
+        <relationshipLabel>Live Chat Transcripts</relationshipLabel>
+        <relationshipName>Live_Chat_Transcripts</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Upload_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;http://nna.force.com/upload?id=&quot; &amp; Id &amp; &quot;&amp;Account_lkid=&quot; &amp; Account.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Upload Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UserAgent</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>VisitorMessageCount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>WaitTime</fullName>
+    </fields>
+    <fields>
+        <fullName>X30_Mins_Interval_2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (
+VALUE(RIGHT(LEFT (TEXT( RequestTime -(4/24) ), 16),2)) &lt; 30
+,
+RIGHT(LEFT (TEXT( RequestTime -(4/24) ), 13),2) + &apos;:00-&apos; + RIGHT(LEFT (TEXT( RequestTime -(4/24)), 13),2) + &apos;:30&apos;
+,
+RIGHT(LEFT (TEXT( RequestTime -(4/24)), 13),2) + &apos;:30-&apos; + TEXT(VALUE(RIGHT(LEFT (TEXT( RequestTime -(4/24)), 13),2)) + 1) + &apos;:00&apos;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>30 Mins Interval (2)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X30_Mins_Interval__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (
+VALUE(RIGHT(LEFT (TEXT( RequestTime ), 16),2)) &lt; 30
+,
+RIGHT(LEFT (TEXT( RequestTime ), 13),2) + &apos;:00-&apos; + RIGHT(LEFT (TEXT( RequestTime ), 13),2) + &apos;:30&apos;
+,
+RIGHT(LEFT (TEXT( RequestTime ), 13),2) + &apos;:30-&apos; + TEXT(VALUE(RIGHT(LEFT (TEXT( RequestTime ), 13),2)) + 1) + &apos;:00&apos;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>30 Mins Interval</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <description>It stores the Zip Code informed at the pre-chat form</description>
+        <externalId>false</externalId>
+        <label>Zip Code</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Name</columns>
+        <columns>LiveChatVisitor</columns>
+        <columns>StartTime</columns>
+        <columns>EndTime</columns>
+        <columns>Status</columns>
+        <columns>Account</columns>
+        <columns>Case</columns>
+        <columns>VisitorMessageCount</columns>
+        <columns>Disposition_Code__c</columns>
+        <columns>Owner</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Infiniti_Consumer_Affairs_Chat</fullName>
+        <columns>Name</columns>
+        <columns>LiveChatVisitor</columns>
+        <columns>StartTime</columns>
+        <columns>EndTime</columns>
+        <columns>Status</columns>
+        <columns>Owner</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Owner</field>
+            <operation>contains</operation>
+            <value>INF-</value>
+        </filters>
+        <label>Infiniti Consumer Affairs Chat</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CAEmailInfiniti</group>
+            <group>CAManager</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Unassociated_Chats</fullName>
+        <columns>Name</columns>
+        <columns>LiveChatVisitor</columns>
+        <columns>StartTime</columns>
+        <columns>EndTime</columns>
+        <columns>Status</columns>
+        <columns>Account</columns>
+        <columns>Case</columns>
+        <columns>CreatedDate</columns>
+        <columns>Owner</columns>
+        <columns>Skill</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Account</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Unassociated Chats</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>LiveChatVisitor</customTabListAdditionalFields>
+        <customTabListAdditionalFields>StartTime</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EndTime</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>LiveChatVisitor</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>StartTime</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EndTime</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LiveChatVisitor</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>StartTime</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EndTime</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>00NF0000008qfry</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>LiveChatVisitor</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>StartTime</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EndTime</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Search_Customers</fullName>
+        <availability>online</availability>
+        <description>Takes user to the Global Search page</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Search Customers</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/_ui/search/ui/UnifiedSearchResults?searchType=2&amp;str={!LiveChatTranscript.First_Name__c}&amp;&quot; &quot;&amp;{!LiveChatTranscript.Last_Name__c}</url>
+    </webLinks>
+</CustomObject>

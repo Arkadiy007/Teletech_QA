@@ -1,0 +1,71 @@
+<apex:page >
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{!SUBSTITUTE(SUBSTITUTE(URLFOR($Resource.CAJumpPageCSS), '?isdtp=vw',''),'?isdtp=nv','')}"/>
+</head>
+<body>
+<div class="main">
+  <!-- Custom setting, admin interface -->
+  <apex:pageBlock title="Customer Care Resources">
+  <table class="outer">
+    <tr>
+      <td>
+        <table>
+          <tr valign="top">
+            <td>
+              <ul>
+                <li> <a class="vlink" href="http://www.autotrader.com/" target="_blank">AutoTrader.com</a> </li>
+                <li> <a class="vlink" href="http://www.infinitiusa.com/bluetooth" target="_blank">Bluetooth: Infiniti</a> </li>
+                <li> <a class="vlink" href="http://www.nissanusa.com/bluetooth" target="_blank">Bluetooth: Nissan</a> </li>
+                <li> <a class="vlink" href="http://reports.carfax.com/" target="_blank">CARFAX.com</a> </li>
+                <li> <a class="vlink" href="http://www.cars.com/" target="_blank">Cars.com</a> </li>
+                <li> <a class="vlink" href="http://www.choosenissan.com/" target="_blank">ChooseNissan.com</a> </li>
+                <li> <a class="vlink" href="http://www.oanda.com/currency/converter/" target="_blank">Currency Converter</a> </li>
+                <li> <a class="vlink" href="http://www.edmunds.com/" target="_blank">Edmunds.com</a> </li>
+                <li> <a class="vlink" href="http://www.fueleconomy.gov/" target="_blank">Fueleconomy.gov</a> </li>
+                <li> <a class="vlink" href="http://infinitinews.com/en-US/infiniti/usa" target="_blank">Infiniti Newsroom</a> </li>
+                <li> <a class="vlink" href="http://www.infinitipersonalassistant.com" target="_blank">Infiniti Personal Assistant</a> </li>
+              </ul>
+            </td>
+            <td width="10">&nbsp;</td>
+            <td>
+              <ul>
+                <li> <a class="vlink" href="http://www.infinitiusa.com/" target="_blank">Infiniti USA</a> </li>
+                <li> <a class="vlink" href="http://www.nhtsa.gov/cars/problems" target="_blank">National Highway Traffic Safety Administration</a> </li>
+                <li> <a class="vlink" href="http://here.com/navteq-redirect/?lang=en-US" target="_blank">Navigation - HERE</a> </li>
+                <li> <a class="vlink" href="http://www.nissan-global.com/GCC/WD/alp_a/alp_a_index.html" target="_blank">Nissan International Affiliates</a> </li>
+                <li> <a class="vlink" href="http://nissannews.com/en-US/nissan/usa/" target="_blank">Nissan Newsroom</a> </li>
+                <li> <a class="vlink" href="https://www.nissanonetoonerewards.com/" target="_blank">Nissan One To One Rewards Program</a> </li>
+                <li> <a class="vlink" href="http://www.nissanusa.com/" target="_blank">Nissan USA</a> </li>
+                <li> <a class="vlink" href="https://www.nnanet.com/wps/portal/nnanet" target="_blank">NNANet (Flat Rate Manuals)</a> </li>
+                <li> <a class="vlink" href="https://owners.infinitiusa.com/iowners/navigation/totalOwnership" target="_blank">Owner Portal: Infiniti</a> </li>
+                <li> <a class="vlink" href="https://owners.nissanusa.com/" target="_blank">Owner Portal: Nissan</a> </li>
+                <li> <a class="vlink" href="http://www.safercar.gov/" target="_blank">Safercars.gov</a> </li>
+                
+              </ul>
+            </td>
+            <td width="10">&nbsp;</td>
+            <td>
+              <ul>
+                <li> <a class="vlink" href="https://servicedesk.na.nissan.biz/sdcxuser/csc/reg/register.asp?loginname=guest&CSCControlsChecked=yes" target="_blank">Service Desk Online</a> </li>
+                <li> <a class="vlink" href="http://cs.nna/Technical_Publications/ESM/WIN_SM.htm" target="_blank">Service Manuals</a> </li>
+                <li> <a class="vlink" href="http://www.siriusxm.com" target="_blank">SiriusXM Satellite Radio</a> </li>
+                <li> <a class="vlink" href="http://www.infinitiusa.com/ownership/snug-kids.html" target="_blank">Snug Kids: Infiniti</a> </li>
+                <li> <a class="vlink" href="http://www.nissanusa.com/snugkids/" target="_blank">Snug Kids: Nissan</a> </li>
+                <li> <a class="vlink" href="http://www.infiniti-techinfo.com/Home.aspx" target="_blank">Technical Publications: Infiniti</a> </li>
+                <li> <a class="vlink" href="http://www.nissan-techinfo.com/" target="_blank">Technical Publications: Nissan</a> </li>
+                <li> <a class="vlink" href="http://www.insidenissan.com/" target="_blank">Vehicle Purchase Program</a> </li>
+                <li> <a class="vlink" href="https://lms.nnanet.com/Main/login.asp" target="_blank">Virtual Academy</a> </li>
+                <li> <a class="vlink" href="http://w1.nissan.biz/winkaizen/portal/" target="_blank">WIN</a> </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  </apex:pageBlock>
+  </div>
+</body>
+</html>
+</apex:page>

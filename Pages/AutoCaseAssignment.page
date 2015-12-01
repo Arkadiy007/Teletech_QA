@@ -1,0 +1,27 @@
+<apex:page standardController="Case" extensions="AutoCaseAssignmentExtensions" showHeader="true" sidebar="false">
+  <apex:form >
+      <apex:pageMessages id="msg"/>
+      <apex:pageblock id="mainblock">
+       <apex:actionPoller action="{!loadQueueData}" reRender="mainblock" interval="10"/>
+          <apex:pageblockSection columns="1">
+              <apex:panelGrid columns="3">
+                  <apex:outputLabel value="{!$Label.CA_Email_Nissan}--({!caNissanCases})"></apex:outputLabel>
+                  <apex:commandButton id="assignbtn" value="Pull Case" action="{!assignCase}" reRender="mainblock, msg"/>
+                  <apex:commandButton id="refreshbtn" value="Refresh" action="{!loadQueueData}" reRender="mainblock, msg"/>
+              </apex:panelGrid> 
+               
+          </apex:pageblockSection>
+          <br/><br/>
+          <apex:pageBlock >
+              <apex:pageBlockSection title="My Assigned Cases" columns="1">
+                  <apex:pageBlockTable value="{!myTotalAssignedCases}" var="cas">
+                      <apex:column headerValue="Case Number">
+                          <apex:outputlink value="/{!cas.Id}">{!cas.CaseNumber}</apex:outputlink>
+                      </apex:column>
+                      <apex:column value="{!cas.Status}" headerValue="Status"/>
+                  </apex:pageBlockTable>
+              </apex:pageBlockSection>
+          </apex:pageBlock>
+      </apex:pageblock>
+  </apex:form>
+</apex:page>

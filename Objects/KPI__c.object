@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>NNA Management Committee Meeting Monthly Reporting Metrics</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>KPI__c</fullName>
+        <externalId>false</externalId>
+        <label>KPI</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Appointment Conversion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Appointment Stick Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attrition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CS English SVL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CS French SVL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Perception Index</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer Call Backs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DPIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>First Call Resolutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inbound Service Level - Infiniti</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inbound Service Level - Infiniti (Callback)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inbound Service Level - Nissan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inbound Service Level - Nissan (Callback)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti English SVL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti French SVL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NCI Service Level English</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NCI Service Level French</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSC Response Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outbound - Leads and Hot Alerts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SVL LEAF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SVL Telematics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U.S. Service Level English</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality-Inbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality-Outbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Abandonment Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outbound-Leads (DQR&apos;s)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outbound-Hot Alerts (Customer Connection)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Level-Inbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Level-Callback</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Service Level</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chat LEAF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chat Telematics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MCM__c</fullName>
+        <externalId>false</externalId>
+        <label>MCM</label>
+        <referenceTo>MCM__c</referenceTo>
+        <relationshipLabel>KPIs</relationshipLabel>
+        <relationshipName>KPIs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Month__c</fullName>
+        <externalId>false</externalId>
+        <label>Month</label>
+        <picklist>
+            <picklistValues>
+                <fullName>01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Performance__c</fullName>
+        <externalId>false</externalId>
+        <label>Performance (%)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Text__c</fullName>
+        <description>IF(ISPICKVAL(KPI__c,&quot;Attrition&quot;),(IF(Status_Value__c &lt;= 0, &quot;GREEN&quot;, (IF( AND (Status_Value__c &lt;= 5,Status_Value__c&gt;0), &quot;YELLOW&quot;, &quot;RED&quot;)))),(IF(Status_Value__c &gt;= 0, &quot;GREEN&quot;, (IF( AND (Status_Value__c &gt;= -5,Status_Value__c&lt;0), &quot;YELLOW&quot;, (IF(ISBLANK( Performance__c ), &quot; &quot;,&quot;RED&quot;)))))))</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(KPI__c,&quot;Attrition&quot;),(IF(Status_Value__c &lt;= 0, &quot;GREEN&quot;, (IF( AND (Status_Value__c &lt;= 5,Status_Value__c&gt;0), &quot;YELLOW&quot;, &quot;RED&quot;)))),(IF(Status_Value__c &gt;= 0, &quot;GREEN&quot;, (IF( AND (Status_Value__c &gt;= -5,Status_Value__c&lt;0), &quot;YELLOW&quot;, (IF(ISBLANK( Performance__c ), &quot; &quot;,&quot;RED&quot;)))))))</formula>
+        <inlineHelpText>Based on Status Value outputs Green, Yellow, Red</inlineHelpText>
+        <label>Status Text</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>Performance__c  -  Target__c</formula>
+        <label>Status Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target__c</fullName>
+        <externalId>false</externalId>
+        <label>Target (%)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YY_MM__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Year__c) &amp; TEXT(Month__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>YY-MM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>KPI</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>K{000}</displayFormat>
+        <label>#</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>KPIs</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>KPI__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Month__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Target__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Performance__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status_Text__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>KPI__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Month__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Target__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Performance__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status_Text__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>KPI__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Month__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Target__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Performance__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status_Text__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>KPI__c</searchFilterFields>
+        <searchFilterFields>Month__c</searchFilterFields>
+        <searchFilterFields>Target__c</searchFilterFields>
+        <searchFilterFields>Performance__c</searchFilterFields>
+        <searchFilterFields>Status_Text__c</searchFilterFields>
+        <searchResultsAdditionalFields>KPI__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Month__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Target__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Performance__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status_Text__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Performance_Not_Greater_than_100</fullName>
+        <active>true</active>
+        <description>Performance value can not exceed 100</description>
+        <errorConditionFormula>Performance__c  &gt; 100</errorConditionFormula>
+        <errorDisplayField>Performance__c</errorDisplayField>
+        <errorMessage>Performance value can not exceed 100</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Target_Not_Greater_than_100</fullName>
+        <active>true</active>
+        <description>Target value can not exceed 100</description>
+        <errorConditionFormula>Target__c  &gt; 100</errorConditionFormula>
+        <errorDisplayField>Target__c</errorDisplayField>
+        <errorMessage>Target value can not exceed 100</errorMessage>
+    </validationRules>
+</CustomObject>

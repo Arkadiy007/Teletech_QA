@@ -1,0 +1,14 @@
+<apex:page controller="Notor_Redirect">
+    <!-- action="{!getUrlForRedirecting}" -->
+    <apex:pageMessages escape="false" />
+    <br />
+    <br />
+    <!-- 
+    <button onclick="window.open('http://www.someurl.com/page?NotorId=123456','Notor page','scrollbars=no,resizable=no,width=500,height=516');">Launch External App</button><br/>
+     -->
+    <div style="width: 100%; text-align: center;">
+        <!-- <button onclick="window.open('{!redirectUrl}','NOTOR Website','scrollbars=no,resizable=no,width=500,height=516,location=no');">Launch Maritz App</button>  -->
+        <button onclick="window.open('{!redirectUrl}','NOTORWebsite');">NOTOR Member Lookup App</button>
+        <br />
+    </div>
+</apex:page>

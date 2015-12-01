@@ -1,0 +1,23 @@
+<apex:page >
+    
+    <h1>Infiniti Live Agent</h1>
+    <br />
+    <br />
+
+
+<img id="liveagent_button_online_573F00000008OTY" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('573F00000008OTY')" src="https://nna.secure.force.com/transfer/resource/1371682948000/LiveAgentButton" /><img id="liveagent_button_offline_573F00000008OTY" style="display: none; border: 0px none; " src="https://nna.secure.force.com/transfer/resource/1371682974000/LiveAgentButtonNotAvailable" />
+<script type="text/javascript">
+if (!window._laq) { window._laq = []; }
+window._laq.push(function(){liveagent.showWhenOnline('573F00000008OTY', document.getElementById('liveagent_button_online_573F00000008OTY'));
+liveagent.showWhenOffline('573F00000008OTY', document.getElementById('liveagent_button_offline_573F00000008OTY'));
+});</script>
+
+<script type='text/javascript' src='https://c.la1w1.salesforceliveagent.com/content/g/deployment.js'></script>
+<script type='text/javascript'>
+liveagent.setChatWindowHeight(516);
+liveagent.setChatWindowWidth(500);
+liveagent.init('https://d.la1w1.salesforceliveagent.com/chat', '572F00000008OT9', '00DA00000009j8L');
+</script>
+
+
+</apex:page>

@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS boa Document */
+
+/* ------------------BUTTONS------------------------ */
+
+body .bPageBlock {
+	border-width:0px!important;
+}
+.bPageBlock.secondaryPalette {
+	background:none!important;
+	border:none!important;
+}
+.apexp .apexDefaultPageBlock.bPageBlock .pbBody {
+	margin:0!important;
+}
+.bPageBlock .detailList TR TD {
+	border:none!important;
+}
+
+.bPageBlock .detailList .labelCol {
+	width:5%!important;
+	white-space: normal!important;
+}
+
+.rich-tab-header {
+	font-size: 10px!important;
+}
+
+/* label*/
+.bPageBlock .labelCol {
+	font-size:9px!important;
+	color:#000!important;
+}
+
+/* textbox */
+.bPageBlock .data2Col {
+	padding-left: 0px!important;
+}
+
+.customsearch_bg {
+	background-color:#CFEEF8!important;
+	width:100%;
+	height:330px;
+}
+
+.WaitDiv {
+	  background: url(img/load.gif) center no-repeat !important;
+	  background-color:#F8F8F8!important;
+	  text-align:center!important;
+	  height: 300px; 
+	  width: 188px;
+	  position: absolute;
+	  display: none;
+	  z-index: 1!important;
+}
+  
+.WaitDiv span {
+	 color:#09C;
+	 font:bold 11px Arial!important;
+	 padding-top: 120px;
+}
+
+.bPageBlock .list{
+	width: 180px!important;
+}

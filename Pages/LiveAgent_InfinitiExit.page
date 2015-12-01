@@ -1,0 +1,39 @@
+<apex:page showHeader="false">
+    <apex:stylesheet value="{!URLFOR($Resource.NissanStyle, 'NissanStyle.css')}" />
+    <apex:form >
+        <div style="width: 100%;" class="livechat_infiniti_header"></div>
+        <div Class="livechat_infiniti_bg">
+            <div style="height: 375px;">
+                <div
+                    style="width: 100%; text-align: center; padding-top: 100px; font-family: Verdana, Geneva, sans-serif;">
+                    <b>THANK YOU FOR PARTICIPATING IN OUR EXIT SURVEY</b>
+                    <div style="padding: 15px 65px 30px 55px; padding-right: ">Your
+                        opinions are very important to us and we appreciate you taking the
+                        time to share them with us.</div>
+                    <button type="button" id="btnClose" style="cursor: pointer;"
+                        onclick="javascript:window.close()" class="infiniti-btn-close">
+                    </button>
+                </div>
+            </div>
+            <table width="90%" align="center">
+                <tr>
+                    <td class="livechat_footer_txt" valign="top">For additional
+                        assistance, please contact us at 800.662.6200 or visit <a
+                        href="http://www.infinitiusa.com/iapps/contactus" target="_blank"
+                        style="color: white">www.infinitiusa.com/iapps/contactus</a>
+                    </td>
+                    <!-- 
+                    <td class="livechat_footer_txt" valign="top">If you have a
+                        concern or issue with your Infiniti vehicle that you would like us
+                        to address, we want to help, but we cannot help you from this
+                        forum.</td>
+                    <td class="livechat_footer_txt" valign="top"
+                        style="padding-left: 20px;">Please contact us at 800.662.6200
+                        or visit: <a href="www.infinitiusa.com/iapps/contactus"
+                        target="_blank" style="color: white">www.infinitiusa.com/iapps/contactus</a>
+                    </td>-->
+                </tr>
+            </table>
+        </div>
+    </apex:form>
+</apex:page>

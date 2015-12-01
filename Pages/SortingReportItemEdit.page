@@ -1,0 +1,37 @@
+<apex:page standardcontroller="Sorting_Report_Item__c" extensions="SRIEditExtension" sidebar="false">
+    <apex:sectionheader title="Sorting Report Item Edit" subtitle="{!Sorting_Report_Item__c.name}" />
+    <apex:form >
+        <apex:pageblock title="Sorting Report Item Edit" id="thePageBlock" mode="edit">
+            <apex:pagemessages />
+            <apex:pageblockbuttons >
+                <apex:commandbutton value="Save" action="{!save}" />
+                <apex:commandbutton value="Save And New" action="{!saveAndNew}" />
+                <apex:commandbutton value="Cancel" action="{!cancel}" />
+            </apex:pageblockbuttons>
+                <apex:pageblocksection columns="2" title="Information">
+                    <apex:inputfield value="{!Sorting_Report_Item__c.Part_Incident_Report__c}" required="true" rendered="{!ISBLANK(Sorting_Report_Item__c.Part_Incident_Report__c)}"/>
+                    <apex:outputField value="{!Sorting_Report_Item__c.Part_Incident_Report__c}"  rendered="{!!ISBLANK(Sorting_Report_Item__c.Part_Incident_Report__c)}"/>
+                    <apex:inputfield value="{!Sorting_Report_Item__c.Sorting_Report__c}" required="true"/>
+                            <apex:outputText value=""/> 
+                            <apex:inputfield value="{!Sorting_Report_Item__c.Sorting_Costs__c}" />                    
+           
+                    <apex:inputfield value="{!Sorting_Report_Item__c.Reworked__c}" />
+       
+
+                    <apex:inputfield value="{!Sorting_Report_Item__c.Rework_Costs__c}" />
+                    <apex:inputfield value="{!Sorting_Report_Item__c.No_Good__c}" />
+                    <apex:inputfield value="{!Sorting_Report_Item__c.No_Good_Material_Costs__c}" />
+                    <apex:inputfield value="{!Sorting_Report_Item__c.Mixed_Part__c}" />
+
+                    <apex:inputfield value="{!Sorting_Report_Item__c.Mixed_Part_Costs__c}" />
+                    
+                    <apex:inputfield value="{!Sorting_Report_Item__c.Wrong_Part__c}" />
+
+                    <apex:inputfield value="{!Sorting_Report_Item__c.Wrong_Part_Costs__c}" />
+                    
+                    <apex:outputText value="" label=""/>
+                    <apex:outputfield value="{!Sorting_Report_Item__c.Total_Costs__c}" rendered="{!NOT(ISBLANK(Sorting_Report_Item__c.Id))}" />
+                </apex:pageblocksection>
+            </apex:pageblock>
+    </apex:form>
+</apex:page>

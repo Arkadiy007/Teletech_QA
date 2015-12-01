@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <articleTypeChannelDisplay>
+        <articleTypeTemplates>
+            <channel>App</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Prm</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Csp</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Pkb</channel>
+            <template>Toc</template>
+        </articleTypeTemplates>
+    </articleTypeChannelDisplay>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <description>Content to support the Social Team that resolves Customer issues reported through Social Media channels.</description>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <fields>
+        <fullName>Attachment01__c</fullName>
+        <description>For Social Support Articles, enables attachment of a file.</description>
+        <externalId>false</externalId>
+        <label>Attachment</label>
+        <required>false</required>
+        <type>File</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Social Support Article Description</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>2000</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <label>Social Support</label>
+    <pluralLabel>Social Support</pluralLabel>
+</CustomObject>

@@ -1,0 +1,247 @@
+<apex:page controller="SurveyBuilderToolController" showHeader="false" standardStylesheets="true" sidebar="false">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+<style>
+
+textarea {width: 340px; height: 40px; resize: none; }
+.selectstyle {min-width: 120px;}
+</style>
+<apex:outputPanel id="thisone">
+
+<apex:form id="myForm">
+    <apex:outputPanel rendered="{!!previewModeOn}">
+     
+    <apex:actionFunction action="{!populateSurvey}" name="checkRecordTypes" rerender="outputpanels"/>
+    <div style="position: absolute; left: 0; top: 0;">
+        <img src="{!URLFOR($Resource.sbuilder)}" />
+    </div>
+    
+    <center>
+    <span>Available Surveys__c Record Types:
+    <apex:selectList value="{!selectedSurvey}"  multiselect="false" size="1" onChange="checkRecordTypes()">
+        <apex:selectOptions value="{!recordTypeOptions}" />
+        
+        
+    </apex:selectList> 
+    &nbsp; &nbsp; &nbsp;
+    
+    Available Languages:   
+    <apex:selectList value="{!selectedLanguage}"  multiselect="false" size="1"  onChange="checkRecordTypes()">
+        <apex:selectOptions value="{!availableLanguages}" />
+    </apex:selectList> 
+    &nbsp; &nbsp; &nbsp; 
+    <apex:commandLink action="{!previewMode}" rerender="thisone" title="Preview">
+             <i class="fa fa-thumbs-up" style="color: green;">Preview</i>
+         </apex:commandLink>
+    </span>
+    </center>
+    </apex:outputPanel>
+    
+    &nbsp;&nbsp; {!testRecordId} 
+    <apex:commandLink style="float: right;" action="{!endPreviewMode}" rendered="{!previewModeOn}" rerender="thisone" title="End Preview">
+             <i class="fa fa-thumbs-up" style="color: green;">End Preview</i>
+     </apex:commandLink>
+   
+    
+
+
+ <script>
+ function checktypes() {
+     checkRecordTypes();
+ }
+ </script>
+ 
+<apex:pageBlock id="outputpanels">
+
+
+
+<apex:outputPanel rendered="{!haveRecords}">
+<apex:outputPanel rendered="{!previewModeOn}">
+<apex:iframe src="https://c.cs16.visual.force.com/apex/SurveyBuilderPage?sid={!testRecordId}" scrolling="true" id="theIframe"/>
+</apex:outputPanel>
+<apex:outputPanel rendered="{!!previewModeOn}">
+<center>Survey Title:  <apex:inputText value="{!surveyTitle}" size="40" /></center> <br />
+
+<div style="float: right;">
+<apex:commandButton action="{!save}" value="Save Changes" />
+<apex:commandButton action="{!addQuestion}" value="Add question" />
+</div>
+<script>
+
+    function flip(w,which) {
+        if (which.value == 'Show Choices ->') {
+            which.value = '<- Hide Choices';
+            document.getElementById(w).style.display = 'block';
+        } else {
+            which.value = 'Show Choices ->';
+            document.getElementById(w).style.display = 'none';
+        }
+     }
+    function flip2(w,which) {
+        if (which.value == 'Show Conditions ->') {
+            which.value = '<- Hide Conditions';
+            document.getElementById(w).style.display = 'block';
+        } else {
+            which.value = 'Show Conditions ->';
+            document.getElementById(w).style.display = 'none';
+        }
+     }
+    
+</script>
+<table cellspacing="10" cellpadding="10">
+
+<tr>
+
+       <td></td>
+        <td>#</td>
+        <td>req.</td>
+        
+       <td>Text Value</td>
+       <td>Type</td>
+       <td>Surveys__c field</td>
+       <td>Visibility</td>
+       <td>Default Value</td>
+    </tr>
+    
+
+<br />
+
+<apex:repeat value="{!surveyQuestions}" var="thisquestion">
+<tr>
+
+<td>
+          <apex:commandLink action="{!moveUp}" rerender="thisone" title="Move order up">
+             <i class="fa fa-chevron-circle-up" style="color: blue;"></i>
+            <apex:param value="{!thisquestion.questionNumber}" name="questionNumber" assignTo="{!questionNumber}" />
+         </apex:commandLink>
+         <apex:commandLink action="{!moveDown}" rerender="thisone" title="Move order down">
+          <i class="fa fa-chevron-circle-down" style="color: blue;"></i>
+            <apex:param value="{!thisquestion.questionNumber}" name="questionNumber" assignTo="{!questionNumber}" />
+         </apex:commandLink>
+         <apex:commandLink action="{!deleteQuestion}" rerender="thisone" title="Delete question" onClick="if(!confirm('Really delete this question?')){return;}">
+          <i class="fa fa-minus-circle" style="color: red;"></i>
+            <apex:param value="{!thisquestion.questionNumber}" name="questionNumber" assignTo="{!questionNumber}" />
+         </apex:commandLink>
+         
+</td>
+  <td>
+        <apex:outputText value="{!thisquestion.questionNumber}" /><br />
+         
+</td>
+   <td>
+         <apex:inputCheckBox value="{!thisquestion.isRequired}" />
+    </td>
+    
+   <td>
+        <apex:inputTextArea value="{!thisquestion.questionText}"/><br />
+    </td>
+
+    <td>
+        <apex:selectList value="{!thisquestion.questionType}" size="1">
+            <apex:selectOptions value="{!questionTypeOptions}" />
+        </apex:selectList><br />
+        <apex:outputPanel rendered="{!OR(thisquestion.isChoice,thisquestion.isRadioChoice,thisquestion.isVerticalRadioChoice)}">
+           <input type="button" id="choicebutton{!thisquestion.questionNumber}" class="btn" onclick="flip('choiceshow{!thisquestion.questionNumber}',this);" value="Show Choices ->" />
+   
+        
+        <div id="choiceshow{!thisquestion.questionNumber}" style="display: none;">
+            <apex:selectList styleClass="selectstyle" value="{!thisquestion.selectedChoice}" size="4" >
+            <apex:selectOptions value="{!thisquestion.qChoices}" />
+            </apex:selectList>
+            
+            <br />
+            <apex:inputText value="{!thisquestion.newChoiceValue}" size="10"/>
+            <br />
+            <apex:commandButton styleClass="btn" value="Add option" action="{!addOption}" rerender="thisone">
+            <apex:param value="{!thisquestion.questionNumber}" name="questionNumber" assignTo="{!questionNumber}" />
+            </apex:commandButton>
+            
+            <apex:commandButton styleClass="btn" value="Delete option" action="{!deleteOption}" rerender="thisone">
+            <apex:param value="{!thisquestion.questionNumber}" name="questionNumber" assignTo="{!questionNumber}" />
+            </apex:commandButton>
+            
+            <br/>
+        
+        </div>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!thisquestion.recentlyEdited}">
+        
+        <script>
+        document.getElementById('choicebutton{!thisquestion.questionNumber}').click();
+        </script>
+        </apex:outputPanel>
+    </td>
+
+
+
+
+<td>
+
+<apex:inputText value="{!thisquestion.destinationField}" size="20" /><br />
+
+</td>
+
+
+
+<td>
+
+<apex:inputCheckbox value="{!thisquestion.visible}"/> 
+<apex:outputPanel rendered="{!thisquestion.visible}"> Visible</apex:outputPanel>
+<apex:outputPanel rendered="{!!thisquestion.visible}">Appears conditionally: 
+<input type="button" id="visibilitybutton{!thisquestion.questionNumber}" class="btn" onclick="flip2('visibilityshow{!thisquestion.questionNumber}',this);" value="Show Conditions ->" />
+   </apex:outputPanel>
+        
+
+  <div id="visibilityshow{!thisquestion.questionNumber}" style="display: none;">
+            <apex:selectList styleClass="selectstyle" value="{!thisquestion.selectedCondition}" size="4" >
+            <apex:selectOptions value="{!thisquestion.qvisibilityConditions}" />
+            </apex:selectList>
+            
+            <br />
+            <apex:selectList size="1" value="{!thisquestion.newConditionQuestionNum}">
+                <apex:selectOptions value="{!questionNumbers}" />
+            </apex:selectList>
+            <apex:selectList size="1" value="{!thisquestion.newConditionQuestionOperator}">
+                <apex:selectOptions value="{!questionOperators}" />
+            </apex:selectList><apex:inputText value="{!thisquestion.newConditionValue}" size="10"/>
+            
+            <br />
+            <apex:commandButton styleClass="btn" value="Add condition" action="{!addCondition}" rerender="thisone">
+            <apex:param value="{!thisquestion.questionNumber}" name="questionNumber" assignTo="{!questionNumber}" />
+            </apex:commandButton>
+            
+            <apex:commandButton styleClass="btn" value="Delete condition" action="{!deleteCondition}" rerender="thisone">
+            <apex:param value="{!thisquestion.questionNumber}" name="questionNumber" assignTo="{!questionNumber}" />
+            </apex:commandButton>
+            
+            <br/>
+        
+        </div>
+</td>
+
+<td>
+<apex:inputText value="{!thisquestion.defaultValue}" size="20" /><br />
+
+</td>
+
+</tr>
+
+
+</apex:repeat>
+</table>
+<div style="float: right;">
+<apex:commandButton action="{!save}" value="Save Changes" />
+<apex:commandButton action="{!addQuestion}" value="Add question" />
+</div>
+
+
+</apex:outputPanel>
+</apex:outputPanel>
+
+</apex:pageBlock>
+
+</apex:form>
+</apex:outputPanel>
+
+
+</apex:page>

@@ -1,0 +1,89 @@
+<apex:page showHeader="false" controller="LiveAgent_Direct_PreChat">
+    <script type='text/javascript'
+        src='{!$Label.LiveAgent_ServerURL}/content/g/js/29.0/prechat.js'></script>
+
+    <script type="text/javascript">
+(function() { 
+  function handlePageLoad() {
+    var endpointMatcher = new RegExp("[\\?\\&]endpoint=([^&#]*)");
+    document.getElementById('prechatForm').setAttribute('action',
+    decodeURIComponent(endpointMatcher.exec(document.location.search)[1]));
+  } 
+  if (window.addEventListener) {
+    window.addEventListener('load', handlePageLoad, false);
+  } else { 
+    window.attachEvent('onload', handlePageLoad, false);
+  }
+})();
+    
+    function setAction() {
+        document.getElementById('preChatForm').setAttribute('action', decodeURIComponent(document.getElementById('preChatForm').value));
+        document.getElementById('preChatForm').submit();
+    }
+    
+    function getPreChatInfo(details) {
+        //alert('executed');
+        for(var key in details['customDetails']){
+            if (details['customDetails'][key]['label'] == 'CustomSessionId') {
+                document.getElementById('preChatForm').value = details['customDetails'][key]['value'];
+                retrieveParameters();
+                break;
+            }
+        }
+    } 
+    </script>
+
+        <apex:form id="preChatForm">
+        <apex:actionFunction name="retrieveParameters"
+            action="{!retrievePreChatInfo}">
+        </apex:actionFunction>
+
+        <div
+            style="color: #888888 !important; font-style: italic; text-align: center;">
+            Connecting... <br />
+        </div>
+
+        <apex:inputHidden value="{!sessionKey}" id="hdnSessionKey" />
+        <apex:inputHidden value="{!setToAction}" id="hdnSetToAction" />
+
+        <input type='hidden' name='liveagent.prechat:First Name'
+            value="{!firstName}" />
+        <input type="hidden" name="liveagent.prechat.save:First Name"
+            value="First_Name__c" />
+        <input type='hidden' name='liveagent.prechat:Last Name'
+            value="{!lastName}" />
+        <input type="hidden" name="liveagent.prechat.save:Last Name"
+            value="Last_Name__c" />
+        <input type='hidden' name='liveagent.prechat:Zip Code'
+            value="{!zipCode}" />
+        <input type="hidden" name="liveagent.prechat.save:Zip Code"
+            value="Zip_Code__c" />
+        <input type='hidden' name='{!parameterDealerCode}'
+            value="{!dealerCode}" />
+        <input type="hidden" name="{!parameterDealerCodeSave}"
+            value="Dealer_Code__c" />
+        <input type='hidden' name='liveagent.prechat:Email'
+            value="{!emailAddress}" />
+        <input type="hidden" name="liveagent.prechat.save:Email"
+            value="Email__c" />
+        <input type='hidden' name='liveagent.prechat:Phone' value="{!phone}" />
+        <input type="hidden" name="liveagent.prechat.save:Phone"
+            value="Phone__c" />
+        <input type='hidden' name='liveagent.prechat.name' id='prechat_field'
+            value="{!firstName}" />
+        <input type='hidden' name='{!parameterSkill}' value="{!buttonSkillId}" />
+        <input type='hidden' name='liveagent.prechat:Pre Chat Data Id'
+            value="{!preChatDataId}" />
+        <input type="hidden" name="liveagent.prechat.save:Pre Chat Data Id"
+            value="Pre_Chat_Data__c" />
+        <input type='hidden' name='{!parameterAccount}' value="{!accountId}" />
+        <input type="hidden" name="{!parameterSaveAccount}" value="Account" />
+
+        <apex:outputPanel rendered="{!isSuccess}">
+            <script>
+                setAction();
+            </script>
+        </apex:outputPanel>
+
+    </apex:form>
+</apex:page>

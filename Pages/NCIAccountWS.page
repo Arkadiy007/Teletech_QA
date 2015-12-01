@@ -1,0 +1,290 @@
+<apex:page standardController="Account" extensions="Controller_NCIAccountComponentController" >
+  <apex:form >
+  
+     <apex:commandButton action="{!changeedit}" value="Edit" rendered="{!!editMode}" style="float: right;"/>
+    <apex:commandButton action="{!confirmedit}" value="Save Changes" rendered="{!editMode}" style="float: right;"/>
+    <br />
+    
+    <apex:actionFunction name="getaccountinfo" action="{!getaccountinfo}" rerender="out" status="counterStatus" rendered="{!!editMode}">
+     <apex:param name="accId" value="{!Account.Id}"/>
+    </apex:actionFunction>
+  
+      <apex:actionStatus id="counterStatus">                   
+          <apex:facet name="start">
+              <div class="waitingSearchDiv waitingSearchDivOpacity" style="width: 100%; height: 100%; display: block;opacity: 0.60;"/>
+              <div id="loading_image" class="waitingSearchDiv" style="width: 100%; height: 100%; display: block;">
+              <div class="waitingHolder" style="top: 85px; width: 20px;background:#fff;">
+                  <img class="waitingImage" src="/img/loading.gif" style="background:#fff;"/>
+                  <span class="waitingDescription">Loading...</span>
+              </div>
+              </div>
+          </apex:facet>
+          <apex:facet name="stop"/>
+        </apex:actionStatus>
+   
+   <apex:pageblock id="out">
+   
+     <apex:outputPanel rendered="{!hasRecalls}">
+      
+       <div style="width: 98%; display: inline-block; padding: 10px; border: solid 1px red;">
+       
+      <div style="float: left; width: 85%;vertical-align: middle  ">
+        <img src="/img/msg_icons/error24.png" /> &nbsp; &nbsp; <b><span class="" style="color: #C11428;font-size: 1.2em;">One or more recalls exist for this customer:</span></b><br/> <br/>
+       <apex:repeat var="vrs" value="{!vehicleRecalls}">
+           {!vrs} <br/>
+       </apex:repeat>
+       </div><div style="float: right; width: 15%; text-align: right;">This will be Branded Indicator</div>
+       </div>
+       <br /><br />
+       </apex:outputPanel>
+   
+   <apex:pageMessages ></apex:pageMessages>
+      
+       
+       <apex:pageblocksection id="out_account" title="Account Information" columns="2">
+          <apex:outputField value="{!acc.Name}" rendered="{!!editMode}"/>
+          <apex:inputField value="{!acc.Name}" rendered="{!editMode}"/>
+          
+          <apex:outputField value="{!acc.NCI_Customer_ID__c}"/>
+          
+          <apex:outputField value="{!acc.Language_Preference__c}" rendered="{!!editMode}"/>
+           <apex:inputField value="{!acc.Language_Preference__c}" rendered="{!editMode}"/>
+        </apex:pageblocksection>
+        
+        
+         <apex:pageblocksection id="out_address" title="Address Information" columns="2">
+         
+          <apex:pageBlockSectionItem >    <!--  rendered="{!!editMode}" -->
+          <apex:outputLabel value="Mailing Address" for="maddress"/>
+          <apex:outputText escape="false" value="{!acc.PersonMailingStreet}<br>{!acc.PersonMailingCity},  {!acc.PersonMailingState}  {!acc.PersonMailingPostalCode}<br>{!acc.PersonMailingCountry} " id="maddress"/>
+          </apex:pageBlockSectionItem>
+         <!-- 
+            <apex:inputField value="{!acc.PersonMailingStreet}" rendered="{!editMode}"/>
+            <apex:inputField value="{!acc.PersonMailingCity}" rendered="{!editMode}"/>
+            <apex:inputField value="{!acc.PersonMailingState}" rendered="{!editMode}"/>
+            <apex:inputField value="{!acc.PersonMailingPostalCode}" rendered="{!editMode}"/>
+            <apex:inputField value="{!acc.PersonMailingCountry}" rendered="{!editMode}"/> -->
+            
+        </apex:pageblocksection>
+        
+         <apex:pageblocksection id="out_contact" title="Contact Information" columns="2">
+                  <apex:outputField value="{!acc.Phone}" rendered="{!!editmode}"/>
+                  <apex:outputField value="{!acc.PersonEmail}" rendered="{!!editmode}"/>
+                  <apex:outputField value="{!acc.PersonMobilePhone}" rendered="{!!editmode}"/>
+                  <apex:outputField value="{!acc.Alternate_Email__c }" rendered="{!!editmode}"/>
+                  <apex:outputField value="{!acc.Work_Phone__c}" rendered="{!!editmode}"/>
+                  
+                  
+                  <apex:inputField value="{!acc.Phone}" rendered="{!editmode}"/>
+                  <apex:inputField value="{!acc.PersonEmail}" rendered="{!editmode}"/>
+                  <apex:inputField value="{!acc.PersonMobilePhone}" rendered="{!editmode}"/>
+                  <apex:inputField value="{!acc.Alternate_Email__c }" rendered="{!editmode}"/>
+                  <apex:inputField value="{!acc.Work_Phone__c}" rendered="{!editmode}"/>
+                  
+                  
+         </apex:pageblocksection>
+         
+         <apex:pageblocksection id="out_consent" title="Consent Information" columns="1" rendered="{!!editMode}">
+         <apex:pageBlockSectionItem >
+                <apex:outputPanel layout="none">
+                      <table  width="100%">
+         <tr><td valign="top" width="33%">
+            <apex:outputPanel rendered="{!acc.Nissan_Mail__c}">Nissan mail is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Nissan_Email__c}">Nissan email is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Nissan_Text_Message__c}">Nissan text messages are allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Nissan_Call_Home_Phone__c}">Nissan home phone is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Nissan_Call_Work_Phone__c}">Nissan work phone is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Nissan_Call_Mobile_Phone__c}">Nissan mobile phone is allowed<br/></apex:outputPanel>
+
+         </td>
+         <td valign="top" width="33%">
+            <apex:outputPanel rendered="{!acc.Infiniti_Mail__c}">Infiniti mail is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Infiniti_Email__c}">Infiniti email is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Infiniti_Text_Message__c}">Infiniti text messages are allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Infiniti_Call_Home_Phone__c}">Infiniti home phone is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Infiniti_Call_Work_Phone__c}">Infiniti work phone is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Infiniti_Call_Mobile_Phone__c}">Infiniti mobile phone is allowed<br/></apex:outputPanel>
+            
+         </td><td valign="top" width="33%">
+            <apex:outputPanel rendered="{!acc.Dealer_Mail__c}">Dealer mail is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Dealer_Email__c}">Dealer email is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Dealer_Text_Message__c}">Dealer text messages are allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Dealer_Call_Home_Phone__c}">Dealer home phone is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Dealer_Call_Work_Phone__c}">Dealer work phone is allowed<br/></apex:outputPanel>
+            <apex:outputPanel rendered="{!acc.Dealer_Call_Mobile_Phone__c}">Dealer mobile phone is allowed<br/></apex:outputPanel>    
+
+         </td></tr></table>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+
+         </apex:pageblocksection>
+             
+         <apex:pageblocksection id="out_consent_edit" title="Consent Information" columns="1" rendered="{!editMode}">
+         <apex:pageBlockSectionItem >
+                <apex:outputPanel layout="none">
+                      <table  width="100%">
+         <tr><td valign="top" width="33%">
+            <apex:inputField value="{!acc.Nissan_Mail__c}"/>  Nissan mail<br/>
+            <apex:inputField value="{!acc.Nissan_Email__c}"/>  Nissan email<br/>
+            <apex:inputField value="{!acc.Nissan_Text_Message__c}"/>  Nissan text message<br/>
+            <apex:inputField value="{!acc.Nissan_Call_Home_Phone__c}"/>  Nissan home phone<br/>
+            <apex:inputField value="{!acc.Nissan_Call_Work_Phone__c}"/>  Nissan work phone<br/>
+            <apex:inputField value="{!acc.Nissan_Call_Mobile_Phone__c}"/>  Nissan mobile phone<br/>
+
+         </td>
+         <td valign="top" width="33%">
+            <apex:inputField value="{!acc.Infiniti_Mail__c}"/>  Infiniti mail <br/>
+            <apex:inputField value="{!acc.Infiniti_Email__c}"/>  Infiniti email <br/>
+            <apex:inputField value="{!acc.Infiniti_Text_Message__c}"/>  Infiniti text messages<br/>
+            <apex:inputField value="{!acc.Infiniti_Call_Home_Phone__c}"/>  Infiniti home phone <br/>
+            <apex:inputField value="{!acc.Infiniti_Call_Work_Phone__c}"/>  Infiniti work phone <br/>
+            <apex:inputField value="{!acc.Infiniti_Call_Mobile_Phone__c}"/>  Infiniti mobile phone <br/>
+            
+         </td><td valign="top" width="33%">
+            <apex:inputField value="{!acc.Dealer_Mail__c}"/>  Dealer mail <br/>
+            <apex:inputField value="{!acc.Dealer_Email__c}"/>  Dealer email <br/>
+            <apex:inputField value="{!acc.Dealer_Text_Message__c}"/>  Dealer text messages<br/>
+            <apex:inputField value="{!acc.Dealer_Call_Home_Phone__c}"/>  Dealer home phone <br/>
+            <apex:inputField value="{!acc.Dealer_Call_Work_Phone__c}"/>  Dealer work phone <br/>
+            <apex:inputField value="{!acc.Dealer_Call_Mobile_Phone__c}"/>  Dealer mobile phone <br/>    
+
+         </td></tr></table>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+
+         </apex:pageblocksection>
+         
+         
+         
+         <apex:pageblocksection id="out_ownership" title="Vehicle Ownership" columns="1">
+         <apex:pageBlockSectionItem >
+         <apex:outputPanel layout="none">
+         
+          <table  width="100%">
+         <tr><th valign="top">Vehicle Ownership Name</th><th>VIN</th><th>New Case</th><th>Make/Model</th><th>Owner Type</th><th>Retail Type</th><th>Current Owner</th><th>Retail Dealer</th><th>Servicing Dealer</th><th>Latest Mileage</th></tr>
+        
+              
+    <apex:repeat value="{!tvohs}" var="vohs" id="theOwnership">
+              <tr><td>
+              <apex:outputPanel >
+              <apex:outputText escape="false"><a href="#" onClick="focusbyName('{!URLFOR($Action.Vehicle_Ownership_History__c.View, vohs.Id)}','{!vohs.Id}','{!vohs.Name}')">{!vohs.Name}</a></apex:outputText>
+              </apex:outputPanel>
+              </td>
+              <td>
+              <apex:outputPanel >
+              <apex:outputText escape="false"><a href="#" onClick="focusbyName('{!URLFOR($Action.Vehicle__c.View, vohs.Vehicle__r.Id)}','{!vohs.Id}','{!vohs.Vehicle__r.Vehicle_identification_Number__c}')">{!vohs.Vehicle__r.Vehicle_identification_Number__c}</a></apex:outputText>
+              </apex:outputPanel>
+              </td>
+              <td>
+              <apex:outputPanel >
+              
+              <apex:outputText escape="false"><a href="#" onClick="focusbyName('/500/e?RecordType={!$Label.NCI_Case_RecordType}&cas4={!acc.FirstName}%20{!acc.LastName}&cas4_lkid={!acc.Id}&cas8=N/A&00Nf00000015KdD={!vohs.Owner_Type_Decoded__c}&CF00NA00000070W35={!vohs.Vehicle__r.Name}&CF00NA00000070W35_lkid={!vohs.Vehicle__r.Id}&CF00NF0000008ODHT={!acc.Servicing_Dealer__r.Name}&CF00NF0000008ODHT_lkid={!acc.Servicing_Dealer__r.Id}&00NF0000008NeI5={!vohs.Vehicle_Make__c}&00NF0000008NeKU={!acc.Vehicles_Owned__c}','','New Case')">New Case with Vehicle</a></apex:outputText>
+              
+              <!-- 
+              <apex:commandLink action="{!newCase}">
+              <apex:param assignTo="{!newCaseAccountId}" name="newCaseAccountId" value="{!acc.id}" />
+              <apex:param assignTo="{!newCaseVehicleId}" name="newCaseVehicleId" value="{!vohs.Vehicle__r.Id}" />
+              <apex:param assignTo="{!newCaseServicingDealerId}" name="newCaseServicingDealerId" value="{!acc.Servicing_Dealer__r.Id}" />
+              <apex:param assignTo="{!newCaseVehicleMake}" name="newCaseVehicleMake" value="{!vohs.Vehicle_Make__c}" />
+              <apex:param assignTo="{!newCaseVehiclesOwned}" name="newCaseVehiclesOwned" value="{!acc.Vehicles_Owned__c}" />
+              <apex:param assignTo="{!newCaseOwnerType}" name="newCaseOwnerType" value="{!vohs.Owner_Type_Decoded__c}" />
+              <apex:param assignTo="{!newCasePersonContactId}" name="newCasePersonContactId" value="{!acc.PersonContactId}" />
+              
+              New Case with Vehicle
+              </apex:commandLink>
+              -->
+              </apex:outputPanel>
+              </td>
+             <td>
+              <apex:outputPanel >
+              <apex:outputText escape="false" value="{!vohs.Vehicle__r.Model_Year__c + ' ' + vohs.Vehicle_Make__c + ' ' + vohs.Vehicle__r.Model_Line_Name__c}"/>
+              </apex:outputPanel>
+              </td>
+              <td>
+              <apex:outputPanel >
+              <apex:outputText escape="false" value="{!vohs.Owner_Type_Decoded__c}"/>
+              </apex:outputPanel>
+              </td><td>
+              <apex:outputPanel >
+              <apex:outputText escape="false" value="{!vohs.Original_Retail_Type_Desc__c}"/>
+              </apex:outputPanel>
+              </td><td>
+              <apex:outputPanel >
+              <apex:outputText escape="false" value="{!vohs.Current_Driver_Indicator__c}"/>
+              </apex:outputPanel>
+              </td>
+               <!--
+               <td>
+              <apex:outputPanel >
+              <apex:outputText escape="false" value="{!vohs.Begin_Date__c}"/>
+              </apex:outputPanel>
+              </td>
+               <td>
+              <apex:outputPanel >
+              <apex:outputText escape="false" value="{!vohs.End_Date__c}"/>
+              </apex:outputPanel>
+              </td>
+              -->
+               <td>
+              <apex:outputPanel >
+              <a href="{!CASE(UPPER(vohs.Vehicle_Make__c),'INFINITI','http://www.infiniti.ca/infinitiretailers/locate/printRetailerInfo?retailerId=','http://www.nissan.ca/nissandealers/locate/printDealerInfo?dealerId=')+vohs.Retail_Dealer__r.Dealer_Code__c}" target="_blank">
+              <apex:outputText escape="false" value="{!vohs.Retail_Dealer__r.Name}"/>
+              </a>
+              
+              </apex:outputPanel>
+              </td>
+               <td>
+              <apex:outputPanel >
+               <a href="{!CASE(UPPER(vohs.Vehicle_Make__c),'INFINITI','http://www.infiniti.ca/infinitiretailers/locate/printRetailerInfo?retailerId=','http://www.nissan.ca/nissandealers/locate/printDealerInfo?dealerId=')+vohs.Servicing_Dealer__r.Dealer_Code__c}" target="_blank" >
+              <apex:outputText escape="false" value="{!vohs.Servicing_Dealer__r.Name}"/>
+              </a>
+              </apex:outputPanel>
+             
+              
+              </td>
+              
+               <td>
+              <apex:outputPanel >
+              <apex:outputText escape="false" value="{!vohs.Vehicle__r.Latest_Recorded_Mileage_Number__c}"/>
+              </apex:outputPanel>
+              </td>
+              
+            </tr>
+            </apex:repeat>
+            </table>
+         </apex:outputPanel>
+         </apex:pageBlockSectionItem>
+         </apex:pageblocksection>
+         
+         
+         
+    </apex:pageblock>
+    
+    
+   </apex:form>
+        <apex:includeScript value="/support/console/22.0/integration.js"/>
+        <script type="text/javascript">
+           navtoo = '';
+           thislbl = '';
+        
+           function focusbyName(where,id,lbl) {
+               navtoo = where;
+             thislbl = lbl;
+               //alert(where);
+               //alert(sforce.console.isInConsole());
+               
+                if (sforce.console.isInConsole()){
+                     sforce.console.openPrimaryTab(undefined, navtoo, true,thislbl);
+                } else {
+                    window.top.location = where;
+                }
+            }
+
+             
+      </script>
+   
+    
+   <script>
+   getaccountinfo();
+   </script>
+</apex:page>

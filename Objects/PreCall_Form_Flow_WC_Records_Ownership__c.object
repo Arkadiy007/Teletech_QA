@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Owner_Of_CVT_Records_Service_Contracts__c</fullName>
+        <externalId>false</externalId>
+        <label>Owner Of CVT Records (Service Contracts)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner_Of_CVT_Records__c</fullName>
+        <externalId>false</externalId>
+        <label>Owner Of CVT Records</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner_Of_Engine_Records__c</fullName>
+        <externalId>false</externalId>
+        <label>Owner Of Engine Records</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner_Of_LEAF_Records__c</fullName>
+        <externalId>false</externalId>
+        <label>Owner Of LEAF Records</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>PreCall Form Flow WC Records Ownership</label>
+    <visibility>Public</visibility>
+</CustomObject>

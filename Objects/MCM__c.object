@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>NNA Management Committee Meeting Monthly Reporting Records</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Accomplishment_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Accomplishment 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Accomplishment_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Accomplishment 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Accomplishment_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Accomplishment 3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Accomplishment_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Accomplishment 4</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Cause_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Cause 1</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cause_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Cause 2</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cause_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Cause 3</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cause_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Cause 4</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concern_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Concern 1</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concern_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Concern 2</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concern_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Concern 3</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concern_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Concern 4</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Countermeasure_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Countermeasure 1</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Countermeasure_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Countermeasure 2</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Countermeasure_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Countermeasure 3</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Countermeasure_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Countermeasure 4</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date_Status_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date/Status 1</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date_Status_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date/Status 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date_Status_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date/Status 3</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date_Status_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date/Status 4</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date_Status_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date/Status 5</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date_Status_6__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date/Status 6</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPIs__c</fullName>
+        <externalId>false</externalId>
+        <label># KPIs</label>
+        <summaryForeignKey>KPI__c.MCM__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>LOB__c</fullName>
+        <externalId>false</externalId>
+        <label>LOB</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Consumer Affairs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CRM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Contact Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DPIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IT Infrastructure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LEAF PreSales / Telematics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NCF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NCI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NMAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MCM_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>MCM Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Next_Step_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Step 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Next_Step_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Step 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Next_Step_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Step 3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Next_Step_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Step 4</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Next_Step_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Step 5</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Next_Step_6__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Step 6</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Nissan_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>Nissan Lead</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Status_Lamp__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Overall_Status__c, &quot;GREEN&quot;), IMAGE(&quot;/servlet/servlet.FileDownload?file=015F00000019FvY&quot;, &quot;GREEN&quot;),
+(IF( ISPICKVAL(Overall_Status__c, &quot;YELLOW&quot;), IMAGE(&quot;/servlet/servlet.FileDownload?file=015F00000019Fvd&quot;, &quot;YELLOW&quot;),
+(IF( ISPICKVAL(Overall_Status__c, &quot;RED&quot;), IMAGE(&quot;/servlet/servlet.FileDownload?file=015F00000019Fvi&quot;, &quot;RED&quot;), &quot; &quot;)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Overall Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Status Text</label>
+        <picklist>
+            <picklistValues>
+                <fullName>GREEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YELLOW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Performance_Average__c</fullName>
+        <externalId>false</externalId>
+        <formula>Performance_Total__c / KPIs__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Performance Average</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Performance_Total__c</fullName>
+        <externalId>false</externalId>
+        <label>Performance Total</label>
+        <summarizedField>KPI__c.Performance__c</summarizedField>
+        <summaryForeignKey>KPI__c.MCM__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Reporting_Periodfrom__c</fullName>
+        <externalId>false</externalId>
+        <label>Reporting Period from</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Reporting_Periodto__c</fullName>
+        <externalId>false</externalId>
+        <label>Reporting Period to</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TeleTech_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>TeleTech Lead</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>MCM</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>MCM_Date__c</columns>
+        <columns>Overall_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>MCM</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>MCMs</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>MCM_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Overall_Status__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>MCM_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Overall_Status__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>MCM_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Overall_Status__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>MCM_Date__c</searchFilterFields>
+        <searchFilterFields>Overall_Status__c</searchFilterFields>
+        <searchResultsAdditionalFields>MCM_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Overall_Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

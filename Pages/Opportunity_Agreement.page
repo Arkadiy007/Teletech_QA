@@ -1,0 +1,49 @@
+<apex:page standardController="Opportunity" extensions="Opportunity_Agreement_Controller" id="page">
+  <apex:form id="form">
+        <script type="text/javascript">
+            function getSalutation(){
+                var a = document.getElementById('page:form:pageBlock:blueSection:salutationPageBlockSectionItem:salutationSelectList').value ;
+                return a;
+            }
+            function getTemplate(){
+                var a = document.getElementById('page:form:pageBlock:blueSection:templatesPageBlockSectionItem:templateSelectList').value ;
+                return a;
+            }
+        </script>
+        <apex:pagemessages />
+        <apex:pageblock id="pageBlock" >
+            <apex:pageblockbuttons location="bottom">
+                <apex:actionregion >
+                    <apex:commandbutton action="{!back}" value="Back" />
+                    <apex:commandbutton onclick="window.open('https://composer.congamerge.com?SessionId={!$Api.Session_ID}&ServerUrl={!$Api.Partner_Server_URL_210}&id={!oppId}'
+                                        + '&ContactId={!contactId}&DV0=' + getSalutation() + '&DV1={!abbrName}&DV2={!quantityVal}&LG3=0&LG4=0&DefaultPDF=0&TemplateId=' + getTemplate()
+                                        + '&FP0=0&OFN=Account+Agreement+for+{!accountName}&DS7=13&AC0=1&SC0=1&SC1=Attachments&AttachmentParentID={!oppId}','_blank','toolbar=yes, scrollbars=yes, resizable=yes, top=50, left=300, width=700, height=525' ); return false;"
+                                         value="Generate Agreement" rendered="{!!hasError}"/>
+                </apex:actionregion>
+            </apex:pageblockbuttons>
+            <apex:pageblocksection title="Please choose appropriate template and salutation below to generate the Agreement" id="blueSection" columns="1" rendered="{!!hasError}">
+                <!-- Templates-->
+                <apex:pageblocksectionitem id="templatesPageBlockSectionItem">
+                    <apex:outputtext value="Templates:" />
+                    <apex:selectlist value="{!congaTemplate}" multiselect="false" size="1" id="templateSelectList">
+                        <apex:selectoptions value="{!congaTemplateSO}" />
+                    </apex:selectlist>
+                </apex:pageblocksectionitem>
+                <!--Salutation-->
+                <apex:pageblocksectionitem id="salutationPageBlockSectionItem">
+                    <apex:outputtext value="Salutation:" />
+                    <apex:selectlist value="{!salutation}" multiselect="false" size="1" id="salutationSelectList">
+                        <apex:selectoptions value="{!salutationSO}" />
+                    </apex:selectlist>
+                </apex:pageblocksectionitem>
+
+                <script>
+                        var pageblock = document.getElementById("{!$Component.blueSection}");
+                        if (pageblock != null) {
+                            pageblock.firstChild.style.cssText = 'background-color: #1BA7D4;' ;
+                        }
+                </script>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,19 @@
+<apex:page showHeader="false" title="{!$Label.site.authorization_required}" id="NissanUnauthorized" cache="false">
+  <apex:composition template="{!$Site.Template}">
+    <apex:define name="body">
+      <br/>
+      <apex:outputText styleClass="title" value="{!$Label.site.authorization_required}"/>
+      <br/>
+      <br/>
+      <apex:outputText value="{!$Label.site.login_or_register_first}"/>
+      <br/>
+      <br/>
+      <apex:outputText value=""/>
+      <apex:outputText value=""/>
+      <c:NissanSiteLogin rendered="{!$Site.LoginEnabled && ISPICKVAL($User.UserType,'Guest')}" id="nissanSiteLogin"/>
+      <br/>
+      <br/>
+    </apex:define>
+  </apex:composition>
+  <site:previewAsAdmin />
+</apex:page>

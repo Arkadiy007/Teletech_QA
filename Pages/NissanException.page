@@ -1,0 +1,19 @@
+<apex:page showHeader="false" title="{!$Label.site.error2}" cache="false">
+  <apex:composition template="{!$Site.Template}">
+    <apex:define name="body">
+      <apex:outputText styleClass="title" value="{!$Label.site.error}">
+       <apex:param value="{!$Site.ErrorMessage}"/>
+       <!-- this parameter needs to be italic in the site.error label -->
+      </apex:outputText>
+      <br/>
+      <br/>
+      <apex:outputText escape="false" value=" {!$Label.site.get_in_touch}">
+       <apex:param value="mailto:{!$Site.AdminEmailAddress}"/>
+       <apex:param value="{!$Label.site.email_us}"/>
+      </apex:outputText>
+      <br/>
+      <apex:messages />
+      <br/>
+    </apex:define>
+  </apex:composition>
+</apex:page>

@@ -1,0 +1,363 @@
+<apex:page doctype="html-5.0" controller="LiveAgent_Direct" showheader="false"
+    sidebar="false" title="Live Chat" id="thePage">
+    
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+     <script type="text/javascript">
+                     var loaded=false;
+        var bypass=false;
+        var lastResize;
+        var timer = null;
+        var counter = 0;
+        var flag = false;
+        var widthDiff =0;
+        var heightDiff=0;
+        
+        document.onreadystatechange = function(e)
+        {
+            if (document.readyState === 'interactive')
+            {
+                initResize();
+            }
+        };
+        
+        function initResize() {
+            if (window.outerWidth==0 || window.outerHeight==0)
+                setTimeout(initResize,50);
+            else {
+                loaded=true;
+                bypass=true;                
+                widthDiff = eval('window.outerWidth - window.innerWidth');
+                heightDiff = eval('window.outerHeight - window.innerHeight');
+                resize(500,516);
+            }
+        }
+
+
+        window.onresize = function()
+        {
+            if (!loaded)
+                return;
+
+                if (flag) {
+                    flag = false; return; }
+
+                if (timer==null)
+                {
+                    flag = false;
+                    counter=0;
+                    if (bypass) 
+                    {
+                        bypass=false;
+                        delayResize();
+                    } else {
+                        timer = setTimeout(function(){delayResize();}, 200);
+                    }
+                    
+                } else {
+                    counter++;
+                }
+        };   
+
+        function delayResize() {
+            timer = null;
+            if (counter==0) {
+                flag=true;
+                if (!resize(500,516))
+                    flag = false;
+            } else {
+                    flag = false;
+                    counter=0;
+                    timer = setTimeout(function(){delayResize();}, 200);
+            }
+        }
+
+        function resize(width, height) {
+            var innerWidth = document.documentElement.clientWidth || window.innerWidth || document.body.clientWidth;
+            var innerHeight = document.documentElement.clientHeight || window.innerHeight || document.body.clientHeight;
+            var targetWidth = width;
+            var targetHeight = height;
+            var heightBy = targetHeight-innerHeight;
+            var widthBy = targetWidth-innerWidth;
+
+            if (widthBy == 0 && heightBy==0)
+            {
+                return false;
+            }
+            else
+            {
+                if (window.outerWidth==innerWidth)
+                {
+                    widthBy+=widthDiff;
+                    heightBy+=heightDiff-(window.outerHeight - window.innerHeight);
+                }
+                
+                window.resizeBy(widthBy, heightBy);
+                return true;
+            }
+        }
+    </script> 
+    <apex:stylesheet value="{!URLFOR($Resource.NissanStyle, 'LeafStyle.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.LiveAgent_PreChat_Style, 'NewLeafDirect_Adaptive.css')}" />
+
+    <apex:form id="frmMain">
+        <apex:inputHidden id="parentSiteName" value="{!parentSiteURL}" />
+        <apex:actionFunction name="doProcessParentSiteInformation" action="{!processParentSiteInformation}" rerender=""/>
+        <script>
+               window.onload=function()
+               { 
+                 try {  
+                     var parentSite =  window.opener;
+                     var parentSiteName = document.getElementById('thePage:frmMain:parentSiteName');
+
+                     parentSiteName.value = parentSite.location.href;
+                 } catch (e) {
+                 }
+                 doProcessParentSiteInformation();
+               };
+        </script>
+        <apex:pageMessages id="msgMain" escape="false" />
+        <div class="livechat_header">          
+        </div>
+        <div class="livechat_leaf_bg">
+            <apex:pageblock >
+                <div >
+                    <div class="livechat_txt">Chat now with a Nissan LEAF®
+                        Support Team Member</div>
+                    <div class="livechat_txt_required"
+                        style="padding-left: 130px; padding-top:20px;font: Verdana, Geneva, sans-serif;">
+                        <span style="color: #c71331 !important;">* required</span>
+                    </div>
+                    <div class="inputAreaDesktop" style="padding-top: 5px; padding-left: 10px; width:470px;">
+                        <apex:pageblockSection collapsible="false" columns="1" >
+                            <apex:pageblockSectionItem labelStyleClass="livechat_field_label_txt">
+                                <apex:outputLabel value="FIRST NAME *" 
+                                    styleClass="livechat_txt_main_fields" style="white-space: nowrap;" />
+                                <apex:input id="inputTextField" value="{!firstName}" styleClass="livechat_textbox"  html-placeholder="First Name" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem labelStyleClass="livechat_field_label_txt">
+                                <apex:outputLabel value="LAST NAME" styleClass="livechat_txt_main_fields" />
+                                <apex:input id="inputTextField" value="{!lastName}" styleClass="livechat_textbox"  html-placeholder="Last Name" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem labelStyleClass="livechat_field_label_txt">
+                                <apex:outputLabel value="ZIP CODE" styleClass="livechat_txt_main_fields"  />
+                                <apex:input id="inputTextField" value="{!zipCode}" styleClass="livechat_textbox"  html-placeholder="12345" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem labelStyleClass="livechat_field_label_txt">
+                                <apex:outputLabel value="EMAIL" styleClass="livechat_txt_main_fields" />
+                                <apex:input id="inputTextField" value="{!emailAddress}" styleClass="livechat_textbox"  html-placeholder="user@gmail.com" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem labelStyleClass="livechat_field_label_txt">
+                                <apex:outputLabel value="PHONE" styleClass="livechat_txt_main_fields" />
+                                <apex:input id="inputTextField" value="{!phone}" styleclass="livechat_textbox" html-placeholder="XXX-XXX-XXXX" />
+                            </apex:pageblockSectionItem>
+                        </apex:pageblockSection>
+                    </div>
+
+                    <apex:outputPanel id="opErrorMessage" styleclass="error_message"
+                        style="position: absolute; top: 430px; left: 25px;">
+                        <apex:outputLabel value="{!errorMessage}"
+                            style="color:#c71331; font-weight:bold; font-family:Verdana, Geneva, sans-serif;"
+                            rendered="{!showErrorMessage}" />
+                    </apex:outputPanel>
+
+                    <div class="pleaseWaitPosition" >
+                        Please wait...</div>
+
+                    <div class="buttonPosition">
+                        <!-- Skill with Priority 1 -->
+                        <div id="liveagent_button_online_{!buttonId}"
+                            style="display: none">
+                            <!-- skill 1  -->
+                            <apex:commandButton action="{!submitForm}"
+                                reRender="opErrorMessage,opSuccess"
+                                styleClass="nissan-btn-startchat">
+                                <apex:param value="button1" assignTo="{!chatButtonPressed}" />
+                            </apex:commandButton>
+                        </div>
+
+
+                        <!-- Skill with Priority 2 -->
+                        <div id="divSkill2" style="display: none;">
+                            <div id="liveagent_button_online_{!buttonId2}"
+                                style="display: none">
+                                <!-- skill 2  -->
+                                <apex:commandButton action="{!submitForm}"
+                                    reRender="opErrorMessage,opSuccess"
+                                    styleClass="nissan-btn-startchat">
+                                    <apex:param value="button2" assignTo="{!chatButtonPressed}" />
+                                </apex:commandButton>
+                            </div>
+
+                            <!-- Skill with Priority 3 -->
+                            <div id="divSkill3" style="display: none;">
+                                <div id="liveagent_button_online_{!buttonId3}"
+                                    style="display: none">
+                                    <!-- skill 3  -->
+                                    <apex:commandButton action="{!submitForm}"
+                                        reRender="opErrorMessage,opSuccess"
+                                        styleClass="nissan-btn-startchat">
+                                        <apex:param value="button3" assignTo="{!chatButtonPressed}" />
+                                    </apex:commandButton>
+                                </div>
+
+
+                                <!-- Skill for the Queue -->
+                                <div id="divQueue" style="display: none;">
+                                    <div id="liveagent_button_online_{!buttonIdQueue}"
+                                        style="display: none">
+                                        <!-- Queue  -->
+                                        <apex:commandButton action="{!submitForm}"
+                                            reRender="opErrorMessage,opSuccess"
+                                            styleClass="nissan-btn-startchat">
+                                            <apex:param value="buttonQueue"
+                                                assignTo="{!chatButtonPressed}" />
+                                        </apex:commandButton>
+                                    </div>
+
+                                    <!-- Offline Div -->
+                                    <div id="liveagent_button_offline_{!buttonIdQueue}" style="display: none; ">
+                                        <img src="{!URLFOR($Resource.NissanStyle, 'img/NewNissan_offline.png')}" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="footer_table" width="480px" align="left">
+                    <tr>
+                        <td class="livechat_footer_privacy_txt" valign="top" align="right"
+                            style="padding-left: 5px; font: Verdana, Geneva, sans-serif; font-size: 9px;">
+                            <a href="http://www.Nissanusa.com/global/privacy.html" target="_blank">Privacy Policy</a>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </apex:pageblock>
+        </div>
+
+        <apex:outputPanel id="opSuccess">
+            <script>
+                if ({!isSuccess}) {
+                    switch('{!chatButtonPressed}') {
+                        case 'button1': 
+                            liveagent.startChatWithWindow('{!buttonId}', window.name);
+                            break;
+                        case 'button2': 
+                            liveagent.startChatWithWindow('{!buttonId2}', window.name);
+                            break;
+                        case 'button3': 
+                            liveagent.startChatWithWindow('{!buttonId3}', window.name);
+                            break;
+                        case 'buttonQueue': 
+                            liveagent.startChatWithWindow('{!buttonIdQueue}', window.name);
+                            break;
+                    }
+                }
+            </script>
+        </apex:outputPanel>
+
+    </apex:form>
+
+    <!-- Operation Hours Message -->
+    <div id="divOperationHours" style="display: none;">
+        <div class="divOperationHoursArea"
+            style="opacity: 0.8; filter: alpha(opacity =   80); background-color: #F0F0F0 !important; height: 100%; width: 100%; position: absolute; z-index: 5 !important; top: 0px; left: 0px;">
+        </div>
+        <div class="divOperationHoursText"
+            style="text-align: center !important; z-index: 6 !important; color: #09C; font: bold 14px Arial !important; width: 370px; background-color: #d7e3ec !important; position: absolute; top: 160px; left: 75px;">
+            <apex:outputText escape="false" value="{!afterHoursMessage}" />
+        </div>
+    </div>
+
+
+    <!-- Initialization Code -->
+    <script type="text/javascript">
+        if (!{!isDepartmentOpen}) {
+            var divOH = document.getElementById("divOperationHours");
+            divOH.style.display = 'block';
+        }
+        else {
+            if('{!buttonId}' != '') {
+                if (!window._laq) { window._laq = []; }
+                window._laq.push(function(){
+                    liveagent.showWhenOnline('{!buttonId}', document.getElementById('liveagent_button_online_{!buttonId}'));
+                    liveagent.showWhenOffline('{!buttonId}', document.getElementById('divSkill2'));
+                });
+            }
+            else {
+                document.getElementById('divSkill2').style.display = 'block';
+            }
+            
+            if('{!buttonId2}' != '') { 
+                if (!window._laq) { window._laq = []; }
+                window._laq.push(function(){
+                    liveagent.showWhenOnline('{!buttonId2}', document.getElementById('liveagent_button_online_{!buttonId2}'));
+                    liveagent.showWhenOffline('{!buttonId2}', document.getElementById('divSkill3'));
+                });
+            }
+            else {
+                document.getElementById('divSkill3').style.display = 'block';
+            }
+            
+            if('{!buttonId3}' != '') {
+                if (!window._laq) { window._laq = []; }
+                window._laq.push(function(){
+                    liveagent.showWhenOnline('{!buttonId3}', document.getElementById('liveagent_button_online_{!buttonId3}'));
+                    liveagent.showWhenOffline('{!buttonId3}', document.getElementById('divQueue'));
+                });
+            }
+            else {
+                document.getElementById('divQueue').style.display = 'block';
+            }
+            
+            if('{!buttonIdQueue}' != '') {
+                if (!window._laq) { window._laq = []; }
+                window._laq.push(function(){
+                    liveagent.showWhenOnline('{!buttonIdQueue}', document.getElementById('liveagent_button_online_{!buttonIdQueue}'));
+                    liveagent.showWhenOffline('{!buttonIdQueue}', document.getElementById('liveagent_button_offline_{!buttonIdQueue}'));
+                });
+            }
+            else {
+                document.getElementById('liveagent_button_offline_{!buttonIdQueue}').style.display = 'block';
+            }
+        }
+    </script>
+
+    <script type='text/javascript'
+        src='https://c.la8cs.salesforceliveagent.com/content/g/deployment.js'>
+    </script>
+    <script type='text/javascript'>
+        window.name = 'LiveAgent';
+        document.title = '{!chatWindowTitle}';
+        var routingGroup = getUrlVars()["routingGroup"];
+        
+        if ({!isSandbox}) {
+            liveagent.init('{!$Label.LiveAgentInit_Dev}', '{!deploymentId}', '{!$Organization.Id}'.substring(0,15));
+        } else {
+            liveagent.init('{!$Label.LiveAgentInit_Prod}', '{!deploymentId}', '{!$Organization.Id}'.substring(0,15));
+        }
+        
+        liveagent.addCustomDetail('CustomSessionId','{!customSessionId}').map('Pre_Chat_Data__c','Session_Id__c',true,true,false).saveToTranscript('Session_Id__c');
+        liveagent.addCustomDetail('Routing Group', routingGroup);
+        
+        // Read a page's GET URL variables and return them as an associative array.
+        function getUrlVars()
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+    </script>
+
+</apex:page>

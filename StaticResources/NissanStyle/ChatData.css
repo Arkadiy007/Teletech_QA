@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS boa Document */
+
+/* ------------------BUTTONS------------------------ */
+
+
+/* ------------------HEADERS------------------------ */
+
+
+/* ------------------BACKGROUNDS------------------------ */
+
+.WaitDiv {
+	  background: url(img/load.gif) center no-repeat !important;
+	  background-color:#FDFDFD!important;
+	  text-align:center!important;
+	  height: 80px; 
+	  width: 20%;
+	  position: absolute;
+	  display: none;
+	  z-index: 1!important;
+	  top: 380px;
+	  left:40%;
+}
+  
+.WaitDiv span {
+	 color:#09C;
+	 font:bold 11px Arial!important;
+	 padding-top: 120px;
+}

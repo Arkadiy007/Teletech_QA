@@ -1,0 +1,242 @@
+<apex:page controller="NCIAccountController" docType="html-5.0">
+    <style>
+        .pbTitle {width:100% !important}
+        .errorMsg {font-weight:bold; color:red;font-size:14pt;text-align:center}
+        .tdColumn {vertical-align:top;height:100% !important;position:relative}
+        .pager{
+        }
+        .inputField {font-weight:bold}
+        .column {vertical-align:top}
+        .pageColumn
+        {
+        line-height:25px;
+        }
+        
+    </style>
+    <apex:form id="page">                
+                          
+        <apex:actionFunction name="refreshrows" action="{!refresh}" status="fetchStatus" reRender="pb"/>  
+        <apex:actionFunction name="updateColumns" action="{!updateColumns}" reRender="cols"/> 
+        
+        <table width="100%" border="0">
+            <tr>
+                <td align="right">
+                    <apex:commandLink id="clFields" action="{!customizeSearch}" rendered="{!allowCustomize}">Customize Search</apex:commandLink>
+                </td>
+                <td align="right">
+                    <apex:commandLink id="clColumns" action="{!customizeDisplay}" rendered="{!allowCustomize}">Customize Columns</apex:commandLink>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:220px" class="tdColumn">
+                    <apex:pageBlock id="searchParams" title="Search Parameters" rendered="{!!showAvailableFields}">
+                    
+
+                        <apex:pageBlockSection columns="1" collapsible="false" showHeader="false" title="">
+                            <apex:repeat value="{!lstSearchFields}" var="field">
+                                <apex:outputText styleClass="inputField">
+                                    <b>{!field['label']}</b><br/>
+                                    <apex:inputText maxlength="80" value="{!searchValues[field['name']]}" rendered="{!if(field['type']=='DATE', false, true)}"/>
+                                    <apex:input type="{!if(field['type']=='DATE', "date", "text")}" value="{!searchValues[field['name']]}" rendered="{!if(field['type']=='DATE', true, false)}" />
+                                </apex:outputText>
+                            </apex:repeat>
+                            
+                            <apex:outputText ><br/><b>Owner/Case Search</b></apex:outputText>
+                            <apex:outputText styleClass="inputField">
+                                <b>VIN</b><br/>
+                                <apex:inputText maxlength="80" value="{!vin}"/>
+                            </apex:outputText>   
+                            <apex:outputText styleClass="inputField">
+                                <b>Case Number</b><br/>
+                                <apex:inputText maxlength="80" value="{!casenumber}"/>
+                            </apex:outputText>   
+                            <apex:outputText styleClass="inputField">
+                                <b>Dealer</b><br/>
+                                <apex:inputText maxlength="80" value="{!dealerNumber}"/>
+                            </apex:outputText>   
+                            <apex:panelGrid columns="2">                           
+                                <apex:commandButton value="Search" title="Search" action="{!refresh}" status="fetchStatus"/>
+                                <apex:commandButton value="Clear" title="Clear" action="{!clear}"/>
+                            </apex:panelGrid>
+                           
+                            <apex:outputText rendered="{!showAvailableFields}"><br/><b>Customize Search (Max 6)</b></apex:outputText>
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>
+                    <apex:pageBlock title="Customize Search (Max 6)" rendered="{!showAvailableFields}">
+                        <apex:selectCheckboxes id="searchFields" value="{!searchChoices}" rendered="{!showAvailableFields}" layout="pageDirection">
+                                <apex:selectOptions value="{!availableFields}" />
+                            </apex:selectCheckboxes>
+                        <apex:panelGrid columns="2">
+                            <apex:commandButton value="Save" title="Save" action="{!saveSearch}" rendered="{!showAvailableFields}" reRender="page"/>                            
+                            <apex:commandButton value="Cancel" title="Cancel" action="{!cancelSaveSearch}" rendered="{!showAvailableFields}" reRender="page"/>                            
+                        </apex:panelGrid>
+                    </apex:pageBlock>
+                </td>
+                <td class="tdColumn colAccounts">
+                    <div class="holder">
+                    <apex:outputPanel id="op2" style="color:#4AA02C;font-weight:bold">
+                                        <apex:actionStatus id="fetchStatus2" startText="Fetching..." stopText=""/>
+                                    </apex:outputPanel>
+                   
+                        <apex:pageBlock id="pb" title="Accounts" rendered="{!!showAvailableColumns}">    
+                            <apex:pageBlockSection columns="1" collapsible="true" showHeader="false" title="" >
+                            <apex:pageMessages ></apex:pageMessages>
+                             <apex:actionStatus id="checkCxStatus" startText="Please wait while the account is accessed..." stopText=""/>
+                                <apex:outputText value="{!queryString}" rendered="{!showQuery}"></apex:outputText>
+                                <apex:outputText rendered="{!recordsFound==false && initialSearch==true}"><div class="errorMsg">Unable to find accounts which match the search criteria</div></apex:outputText>
+                                <apex:pageBlockTable id="tblAccounts" value="{!Accounts}" var="a" rendered="{!recordsFound}" >
+                                      
+                                            
+                                    <apex:repeat value="{!lstColumns}" var="column">
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:commandLink action="{!sortCol}" rerender="pb">
+                                                    <apex:param name="sortField" value="{!column['name']}" assignTo="{!sortField}"/>
+                                                    <apex:outputText style="text-decoration:underline" value="{!column['label']}"></apex:outputText>
+                                                    <apex:outputText rendered="{!if(column['name']==sortField && sortDir=='Desc', true, false)}" style="text-decoration:none !important"> ▼</apex:outputText>
+                                                    <apex:outputText rendered="{!if(column['name']==sortField && sortDir=='Asc', true, false)}"> ▲</apex:outputText>
+                                                </apex:commandLink>
+                                            </apex:facet>  
+                                          <!--  <apex:outputText value="{!a[substitute(column['name'],'__c','')]}" rendered="{!if(column['namefield']=='false', true, false)}"/> -->
+                                            <!-- 
+                                            <apex:outputLink value="/{!a.Id}" rendered="{!if(column['namefield']=='true', true, false)}">
+                                                {!a[column['name']]}                                                  
+                                            </apex:outputLink>-->
+                                            
+                                            <apex:commandLink action="{!checkCustomerList}" rerender="pb" status="checkCxStatus" onComplete="popWin()">
+                                                    <apex:param name="Customer_Id" value="{!a.Customer_Id}" assignTo="{!Customer_Id}"/>
+                                                    <apex:param name="trackingNumber" value="{!a.trackingNumber}" assignTo="{!trackingNumber}"/>
+                                                    <apex:param name="CxName" value="{!a.name}" assignTo="{!CxName}"/>
+                                                    
+                                                  {!a[column['name']]}
+                                            </apex:commandLink>
+                                          
+                                             <apex:includeScript value="/support/console/22.0/integration.js"/>
+                                            <script type="text/javascript">
+                                            navtoo = '';
+                                            thislbl = '';
+                                            
+                                            function popWin() {
+                                                //alert('running popwin for {!returnedId} ');
+                                                focusbyName('/' + '{!returnedId}','','{!accountName}');
+                                                
+                                            }
+                                            
+                                               function focusbyName(where,id,lbl) {
+                                                   navtoo = where;
+                                                   thislbl = lbl;
+                                                 //  alert(where);
+                                                    if (sforce.console.isInConsole()){
+                                                         sforce.console.openPrimaryTab(undefined, navtoo, true,thislbl);
+                                                    } else {
+                                                        window.top.location = where;
+                                                    }
+                                                }
+                                    
+                                     
+                                            </script>
+                                          
+                                            
+                                        </apex:column>
+                                    </apex:repeat>                                   
+                                </apex:pageBlockTable>
+                                <apex:panelGrid columns="9" columnClasses="pageColumn" rendered="{!recordsFound}" styleClass="pager">
+                                    <apex:commandButton status="fetchStatus" reRender="pb" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page"/>
+                                    <apex:commandButton status="fetchStatus" reRender="pb" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page"/>
+                                    <apex:commandButton status="fetchStatus" reRender="pb" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page"/>
+                                    <apex:commandButton status="fetchStatus" reRender="pb" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page"/>
+                                    <apex:selectList id="rows" value="{!size}" onchange="refreshrows()" size="1" style="margin-top:3px">
+                                        <apex:selectOption itemLabel="5 Accounts" itemValue="5" />
+                                        <apex:selectOption itemLabel="10 Accounts" itemValue="10" />
+                                        <apex:selectOption itemLabel="15 Accounts" itemValue="15" />
+                                        <apex:selectOption itemLabel="20 Accounts" itemValue="20" />
+                                        <apex:selectOption itemLabel="25 Accounts" itemValue="25" />
+                                        <apex:selectOption itemLabel="30 Accounts" itemValue="30" />
+                                        <apex:selectOption itemLabel="100 Accounts" itemValue="100" />
+                                    </apex:selectList>
+                                    <apex:outputText >Page {!pageNumber} of {!noOfPages}, </apex:outputText>
+                                    <apex:outputText >Showing Records {!(pageNumber * size)+1-size}-{!IF((pageNumber * size)>noOfRecords, noOfRecords,(pageNumber * size))} of {!noOfRecords}</apex:outputText>
+                                    <apex:commandButton status="fetchStatus" reRender="pb" value="Refresh" action="{!refresh}" title="Refresh Page" rendered="{!showQuery}"/>
+                                    <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                                        <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                                    </apex:outputPanel>
+                                </apex:panelGrid>
+                            </apex:pageBlockSection>            
+                        </apex:pageBlock>
+                        
+                        <apex:pageBlock id="pbVin" title="Cases" rendered="{!vinSearch}">    
+                            <apex:pageBlockSection columns="1" collapsible="true" showHeader="false" title="" >                                
+                                <apex:pageBlockTable id="tblvinCases" value="{!vinCases}" var="vc">          
+                                 
+                                 <apex:column ><apex:facet name="header">Casenumber</apex:facet><apex:outputLink value="{!URLFOR($Action.Case.View,vc.Id)}">{!vc.CaseNumber}</apex:outputLink></apex:column>
+                                 <apex:column ><apex:facet name="header">Account Name</apex:facet>{!vc.Account.Name}</apex:column>
+                                 <apex:column ><apex:facet name="header">Subject</apex:facet>{!vc.Subject}</apex:column>
+                                 <apex:column ><apex:facet name="header">Description</apex:facet>{!vc.Description}</apex:column>
+                                 <apex:column ><apex:facet name="header">Created Date</apex:facet><apex:outputText value="{0,date,MM/dd/yyyy}"> <apex:param value="{!vc.CreatedDate}" /> </apex:outputText></apex:column>
+                                 <apex:column ><apex:facet name="header">Dealer</apex:facet>{!vc.Dealer__r.Name}</apex:column>
+                                 <apex:column ><apex:facet name="header">Service Dealer</apex:facet>{!vc.Servicing_dealer__r.Name}</apex:column>
+                                 
+                                 </apex:pageBlockTable>
+                             </apex:pageBlockSection>
+                         </apex:pageBlock>
+                            <apex:pageBlock id="pbOnlyVin" title="Vehicle" rendered="{!onlyvinSearch}">    
+                            <apex:pageBlockSection columns="1" collapsible="true" showHeader="false" title="" >                                
+                                <apex:outputPanel >
+                                 <apex:outputLink value="{!URLFOR($Action.Vehicle__c.View,tempVehicle)}">{!vin}</apex:outputLink>
+                                 </apex:outputPanel>
+                             </apex:pageBlockSection>
+                         </apex:pageBlock>
+                        <!-- <apex:pageBlock id="pbAccVin" title="Accounts by VIN" rendered="{!onlyvinSearch && !onlyCaseSearch}">    
+                            <apex:pageBlockSection columns="1" collapsible="true" showHeader="false" title="" >                                
+                                <apex:pageBlockTable id="tblvinAccounts" value="{!vinVohs}" var="va">          
+                                 
+                                 <apex:column ><apex:facet name="header">Name</apex:facet><apex:outputLink value="{!URLFOR($Action.Account.View,va.Owner__c)}">{!va.Owner__r.Name}</apex:outputLink></apex:column>
+                                 <apex:column ><apex:facet name="header">VIN</apex:facet><apex:outputLink value="{!URLFOR($Action.Vehicle__c.View,va.Vehicle__c)}">{!va.VIN__c}</apex:outputLink></apex:column>
+                                 
+                                 <apex:column ><apex:facet name="header">City</apex:facet>{!va.Owner__r.PersonMailingCity}</apex:column>
+                                 <apex:column ><apex:facet name="header">Phone</apex:facet>{!va.Owner__r.Phone}</apex:column>
+
+                                 </apex:pageBlockTable>
+                             </apex:pageBlockSection>
+                         </apex:pageBlock>-->
+                         
+                                     
+                                            
+                        
+                        <apex:pageBlock title="Customize Display Columns" rendered="{!showAvailableColumns}">
+                            <apex:panelGrid id="ColumnSelector" columns="3" rendered="{!showAvailableColumns}" columnClasses="column">
+                                <apex:panelGrid columns="1">
+                                    <apex:outputText ><br/><b>Choose Columns (Max 15)</b></apex:outputText>
+                                    <apex:selectCheckboxes id="displayColumns" onchange="updateColumns()" value="{!columnChoices}" layout="pageDirection">
+                                        <apex:selectOptions value="{!availableColumns}"  />
+                                    </apex:selectCheckboxes>
+                                </apex:panelGrid>
+                                <div style="width:30px">
+                                    &#160;
+                                </div>
+                                <apex:panelGrid columns="1">
+                                    <apex:outputText ><br/><b>Display Order</b><br/></apex:outputText>
+                                    <apex:selectList size="15" id="cols" value="{!moveValue}">
+                                        <apex:selectOptions value="{!selectedColumns}"/>
+                                    </apex:selectList>
+                                    <apex:panelGrid columns="2">
+                                        <apex:commandButton value="Move Up" action="{!moveUp}" reRender="cols" />
+                                        <apex:commandButton value="Move Down" action="{!moveDown}" reRender="cols" />
+                                    </apex:panelGrid>                           
+                                </apex:panelGrid>
+                                <apex:panelGrid columns="2">
+                                    <apex:commandButton value="Save" title="Save" action="{!saveColumns}" status="fetchStatus" rendered="{!showAvailableColumns}" reRender="page"/> 
+                                    <apex:commandButton value="Cancel" title="Cancel" action="{!cancelSaveColumns}" rendered="{!showAvailableColumns}" reRender="page"/> 
+                                </apex:panelGrid>
+                            </apex:panelGrid>
+                        </apex:pageBlock> 
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        
+        
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,34 @@
+<apex:page controller="Controller_ShareCaseWithDealer">
+    <apex:sectionHeader title="Share Case with Dealer"/>
+    <apex:form >
+        <apex:pageBlock mode="edit" >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockButtons location="bottom" >
+                <apex:commandButton value="Share Case with Dealer" status="shareStatus" action="{!shareAction}"/>
+                <apex:commandButton value="Cancel" status="cancelStatus" action="{!cancelAction}"/>
+            </apex:pageBlockButtons>
+            <apex:actionSupport >
+            <apex:pageBlockSection id="dealerPageBlockSection" columns="1" title="Share Case with Dealer" collapsible="false">
+                <apex:inputField value="{!screenCase.Servicing_Dealer__c}" label="Share Case with Dealer">
+                    <apex:actionSupport event="onchange"  action="{!updateDealerCode}"  rerender="dealerPageBlockSection"/>
+                </apex:inputField>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Dealer Code" for="dealerCodeTxt"/>
+                    <apex:outputText id="dealerCodeTxt" value="{!dealerCode}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            </apex:actionSupport>
+            <apex:pageBlockSection columns="1" title="Send Email Notification to Dealer:" collapsible="false">
+                <apex:inputCheckbox value="{!emailServiceManager}" label="Service Manager"/>
+                <apex:inputCheckbox value="{!emailSalesManager}" label="Sales Manager"/>
+                <apex:inputCheckbox value="{!emailPartsManager}" label="Parts Manager"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Send Email Notification to NNA Regional Staff:" collapsible="false">
+                <apex:inputCheckbox value="{!emailDOM}" label="DOM"/>
+                <apex:inputCheckbox value="{!emailFOM}" label="FOM"/>
+                <apex:inputCheckbox value="{!emailCSM}" label="CEM"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <c:CaseComments CaseId="{!dbCase.Id}"/>
+</apex:page>

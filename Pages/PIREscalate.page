@@ -1,0 +1,6 @@
+<apex:page standardController="Part_Incident_Report__c" extensions="PIREscalateExtension" action="{!escalate}">
+  <apex:form >
+      <apex:pageMessages /><br/>
+      <apex:commandButton value="Back" action="{!back}"/>
+  </apex:form>
+</apex:page>

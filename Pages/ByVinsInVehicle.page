@@ -1,0 +1,5 @@
+<apex:page standardController="Vehicle__c" extensions="Controller_ByVinsInVehicle" action="{!doSearch}">
+	<apex:form >
+        <apex:outputText value="{!ResponseOutput}" />
+    </apex:form>
+</apex:page>

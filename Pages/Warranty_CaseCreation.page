@@ -1,0 +1,669 @@
+<apex:page controller="Warranty_CaseCreation" id="thePage"
+    tabStyle="Warranty_Case_Creation__tab">
+
+    <apex:sectionHeader title="Warranty" subtitle="Case Creation" />
+    <script type="text/javascript">
+        function redirectToPage() {
+            if (typeof (srcUp) == 'function') {
+                srcUp("{!redirectURL}");
+            } else {
+                window.location = "{!redirectURL}";
+            }
+        }
+    </script>
+    <apex:form id="frmMain">
+
+        <apex:outputPanel id="testPanel" rendered="{!showDealerSection}">
+
+            <div style="text-align: center;">
+                <apex:outputPanel rendered="{!!dealerSusCall}">
+                    <center>
+                        <table>
+                            <tr>
+                                <td><apex:outputText escape="false" style="color: red;"
+                                        value="Retrieving latest Dealer suspended claims..."
+                                        rendered="{!!dealerSusCall}" /></td>
+                                <td><img src="/img/loading.gif" alt="Loading graphic" /></td>
+                            </tr>
+                        </table>
+                    </center>
+                </apex:outputPanel>
+
+            </div>
+
+        </apex:outputPanel>
+
+        <!-- Field Filters for the Search -->
+        <apex:pageBlock id="pbMain" rendered="{!showSearch}"
+            title="Search Fields">
+            <apex:pageMessages />
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Search" action="{!initialSearch}"
+                    tabindex="6" />
+                <apex:commandButton value="Clear" action="{!clearParameters}"
+                    tabindex="7" />
+                <!--<apex:commandButton value="VCAN" action="{!searchVCAN}"/>-->
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection title="Search Fields" showHeader="false"
+                collapsible="false" columns="2">
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Dealer Code" />
+                    <apex:inputText value="{!paramDealerCode}" maxlength="12"
+                        tabindex="1" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="VIN" />
+                    <apex:outputPanel >
+                        <apex:inputText value="{!paramVIN}" maxlength="20" tabindex="4" />
+                        <!--<apex:outputText value="{!VINErrorMessage}" style="color:red; font-weight:strong;" rendered="{!LEN(VINErrorMessage)>0}"/>-->
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Work Order" />
+                    <apex:inputText value="{!paramWorkOrderNumber}" maxlength="50"
+                        tabindex="2" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Warranty Case Number" />
+                    <apex:inputText value="{!paramCaseNumber}" maxlength="12"
+                        tabindex="5" />
+                </apex:pageBlockSectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="Work Order Line Number" />
+                    <apex:inputtext value="{!paramWOLine}" tabindex="3" />
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="HOST Reference Number" />
+                    <apex:inputtext value="{!paramHOSTRefNum}" tabindex="6" />
+                </apex:pageblocksectionItem>
+            </apex:pageBlockSection>
+
+            <div style="text-align: center;">
+                <apex:outputText value="{!errorMessage}" style="color: red;"
+                    rendered="{!showErrorMessage}" />
+            </div>
+        </apex:pageBlock>
+        <!-- Results -->
+        <apex:pageBlock id="pbResults" title="Search Results"
+            rendered="{!showVehicleSection || showDealerSection || showWorkOrderSection || showReferenceSection || (paramVIN != null && paramVIN != '')}">
+
+            <apex:pageBlockSection title="NESNA/VIN Alerts"
+                rendered="{!DealerVINAlert}" columns="1" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <apex:image url="{!URLFOR($Resource.CommonIcons, 'exclamation-point.png')}"
+                        width="30" height="30" />
+                    <apex:outputText value="{!$Label.Dealer_VIN_Alert}"
+                        style="font-size:medium; color:red; font-weight:bold;display:block;padding-top:5px" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="" showHeader="false"
+                rendered="{!DealerVINAlert}" collapsible="false" columns="1">
+                <apex:pageblockTable value="{!dealerVINAlerts}" var="d">
+                    <apex:column value="{!d.Type__c}" headerValue="Type"
+                        headerClass="alignCenter" />
+                    <apex:column headerClass="alignCenter">
+                        <apex:facet name="header">VIN</apex:facet>
+                        <apex:outputLink value="../{!d.VIN__c}">{!d.VIN__r.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerClass="alignCenter">
+                        <apex:facet name="header">Dealer</apex:facet>
+                        <apex:outputLink value="../{!d.Dealer__c}">{!d.Dealer__r.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!d.Alert_Comments__c}"
+                        headerValue="Alert Comments" headerClass="alignCenter" />
+                    <apex:column value="{!d.Special_Instructions__c}"
+                        headerValue="Special Instructions" headerClass="alignCenter" />
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Dealer Comments" showHeader="true"
+                rendered="{!showDealerComments}" collapsible="false" columns="1">
+                <apex:pageblockTable value="{!dealerComments}" var="d">
+                    <apex:column value="{!d.Type__c}" headerValue="Type"
+                        headerClass="alignCenter" />
+                    <apex:column headerClass="alignCenter">
+                        <apex:facet name="header">VIN</apex:facet>
+                        <apex:outputLink value="../{!d.VIN__c}">{!d.VIN__r.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerClass="alignCenter">
+                        <apex:facet name="header">Dealer</apex:facet>
+                        <apex:outputLink value="../{!d.Dealer__c}">{!d.Dealer__r.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!d.Alert_Comments__c}"
+                        headerValue="Alert Comments" headerClass="alignCenter" />
+                    <apex:column value="{!d.Special_Instructions__c}"
+                        headerValue="Special Instructions" headerClass="alignCenter" />
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+
+            <!-- Vehicle Information -->
+            <apex:pageBlockSection title="Vehicle" collapsible="false"
+                columns="1" rendered="{!showVehicleSection}">
+                <apex:pageBlockSectionItem rendered="{!(foundVehicle.Branded_Title__c || foundVehicle.Warranty_Exclusion__c)}">
+                    <apex:image url="{!URLFOR($Resource.CommonIcons, 'exclamation-point.png')}"
+                        width="30" height="30" />
+                    <apex:outputText value="{!brandedMsg}"
+                        style="font-size:medium; color:red; font-weight:bold;display:block;padding-top:5px" />
+                </apex:pageBlockSectionItem>
+                <apex:pageblockTable value="{!foundVehicle}" var="v">
+                    <apex:column headerClass="alignCenter" styleClass="alignCenter">
+                        <apex:facet name="header">Name</apex:facet>
+                        <apex:outputLink value="../{!v.Id}">{!v.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Open Recall" value="{!v.Open_Recall__c}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="Model Year" value="{!v.Model_Year__c}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="Model Line"
+                        value="{!v.Model_Line_Name__c}" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column headerValue="Make" value="{!v.Make_Name__c}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="Branded Title"
+                        value="{!v.Branded_Title__c}" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+            <!--apex:pageBlockSection title="Vehicle" collapsible="false"
+                columns="1"
+                rendered="false">
+                <apex:outputText value="There is no vehicle associated to the entered VIN"
+                    style="color: red;" />
+            </apex:pageBlockSection-->
+            <!-- Vin Suspended Claims -->
+            <apex:outputPanel id="vinsus">
+                <!-- Vehicle Warranty Cases -->
+                <apex:pageBlockSection title="Vehicle Warranty Cases"
+                    collapsible="false" columns="1"
+                    rendered="{!showVehicleSection && showVehicleRelatedWarrantyCases}">
+                    <apex:pageblockTable value="{!vehicleRelatedWarrantyCases}" var="c">
+                        <apex:column headerClass="alignCenter" styleClass="alignCenter">
+                            <apex:facet name="header">Number</apex:facet>
+                            <apex:outputLink value="../{!c.Id}">{!c.Name}</apex:outputLink>
+                        </apex:column>
+                        <apex:column headerValue="Work Order"
+                            value="{!c.Repair_Work_Order__c}" headerClass="alignCenter"
+                            styleClass="alignCenter" />
+                        <apex:column headerValue="Line Number"
+                            value="{!c.Job_Line_Number__c}" headerClass="alignCenter"
+                            styleClass="alignCenter" />
+                        <apex:column headerValue="VCAN Reference Number"
+                            value="{!c.HOST_Reference_Number__c}" headerClass="alignCenter"
+                            styleClass="alignCenter" />
+                        <apex:column value="{!c.Dealer_Code__c}" headerValue="Dealer Code"
+                            headerClass="alignCenter" styleClass="alignCenter" />
+                        <apex:column headerValue="Case Owner" value="{!c.Owner.Name}"
+                            headerClass="alignCenter" styleClass="alignCenter" />
+                        <apex:column headerValue="Case Created Date"
+                            value="{!c.CreatedDate}" headerClass="alignCenter"
+                            styleClass="alignCenter" />
+                        <!--apex:column value="{!c.Parts__c}" headerValue="Parts" headerClass="alignCenter" styleClass="alignCenter" /-->
+                        <!--apex:column value="{!c.Expenses__c}" headerValue="Expenses" headerClass="alignCenter" styleClass="alignCenter" /-->
+                        <!--apex:column value="{!c.Total_Amount_Approved__c}" headerValue="Total Approved Amount" headerClass="alignCenter" styleClass="alignCenter" /-->
+                    </apex:pageblockTable>
+                </apex:pageBlockSection>
+
+                <apex:pageBlockSection title="Dealer Suspended Claims"
+                    collapsible="false" columns="1" id="dealerclaims"
+                    rendered="{!lstDealerSusClaimsPage.size > 0}">
+                    <c:LoadingBox />
+                    <apex:pageblockTable value="{!lstDealerSusClaimsPage}" var="d">
+                        <apex:column headerClass="alignCenter" styleClass="alignCenter">
+                             <apex:outputLink target="_blank"
+                                value="{!URLFOR($Action.Warranty_Case__c.New)}&cancelUrl=%2F&00NF000000Ce2Kt={!d.Claim_Line_Number__c}&00NF000000Ce2LB={!DATEVALUE(d.Vehicle_Repair_Open_Date__c)}&00NF000000Ce2LC={!d.Work_Order_Number__c}&00NF000000Ce2KN={!d.Claim_Customer_First_Name__c}%20{!d.Claim_Customer_Last_Name__c}&CF00NF000000Ce2KP={!d.Dealer_Number__c}&CF00NF000000Ce2KP_lkid={!d.Dealer_ID__c}&CF00NF000000Ce2LV={!d.Vehicle_Identification_Number__c}&CF00NF000000Ce2LV_lkid={!d.Vehicle_ID__c}&00NF000000Ce2LU={!d.Vehicle_Mileage_Number__c}&00NF000000Ce2L7={!IF(ISNULL(d.Primary_Failed_Part__c) , d.Primary_Operation_Code__c ,d.Primary_Failed_Part__c)}">Create Warranty Case</apex:outputLink>
+                        </apex:column>
+                        <apex:column headerValue="Work Order Number"
+                            value="{!d.Work_Order_Number__c}" styleClass="alignCenter" />
+                        <apex:column headerValue="Claim Line Number"
+                            value="{!d.Claim_Line_Number__c}" headerClass="alignCenter"
+                            styleClass="alignCenter" />
+                        <apex:column headerValue="VIN#"
+                            value="{!d.Vehicle_Identification_Number__c}"
+                            headerClass="alignCenter" styleClass="alignCenter" />
+                        <apex:column headerValue="Vehicle Repair Open Date"
+                            headerclass="alignCenter" styleClass="alignCenter">
+                            <apex:outputText value="{0,date,MM/dd/yyyy HH:mm}">
+                                <apex:param value="{!d.Vehicle_Repair_Open_Date__c}" />
+                            </apex:outputText>
+                        </apex:column>
+                        <apex:column headervalue="Claim Type Code"
+                            value="{!d.Claim_Type_Code__c}" headerclass="alignCenter"
+                            styleClass="alignCenter" />
+                        <apex:column headerValue="Work Order Line Status Code"
+                            value="{!d.Work_Order_Line_Status_Code__c}"
+                            headerclass="alignCenter" styleClass="alignCenter" />
+                        <apex:column headerValue="Miles"
+                            value="{!d.Vehicle_Mileage_Number__c}" headerclass="alignCenter"
+                            styleClass="alignCenter" />
+
+                    </apex:pageblockTable>
+
+                    <apex:outputPanel id="thePanel"
+                        rendered="{! NOT(ISNULL(lstDealerSusClaimsPage))}">
+                        <apex:commandButton action="{!Beginning}" title="Beginning"
+                            value="First" disabled="{!disablePrev}"
+                            reRender="dealerclaims, thePanel" status="loadStatus" />
+                        <apex:commandButton action="{!Previous}" title="Previous"
+                            value="Previous" disabled="{!disablePrev}"
+                            reRender="dealerclaims, thePanel" status="loadStatus" />
+                     Page ({!PageNumber}) of {!TotalPages} 
+                    <apex:commandButton action="{!Next}" title="Next"
+                            value="Next" disabled="{!disableNext}"
+                            reRender="dealerclaims, thePanel" status="loadStatus" />
+                        <apex:commandButton action="{!End}" title="Last" value="Last"
+                            disabled="{!disableNext}" reRender="dealerclaims, thePanel"
+                            status="loadStatus" />
+                    </apex:outputPanel>
+
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+
+            <!-- Recalls for Current Vehicle-->
+            <!--apex:pageblocksection title="Vehicle Related Recalls"
+            collapsible="false" columns="1" rendered="{!showRecall}" >
+                <apex:pageblocktable value="{!foundRecall}" var="fv" >
+                    <apex:column headerclass="alignCenter" styleClass="alignCenter">
+                         <apex:facet name="header">Recall ID</apex:facet>
+                        <apex:outputLink value="../{!fv.Id}">{!fv.Recall_Identifier__c}</apex:outputLink>    
+                    </apex:column>
+                    <apex:column value="{!fv.Campaign_Type__c}" headerValue="Recall Type" 
+                        headerclass="alignCenter" styleClass="alignCenter"/>
+                    <apex:column value="{!fv.Campaign_Primary_Description__c}" headerValue="Recall Primary Description" 
+                        headerclass="alignCenter" styleClass="alignCenter"/>
+                    <apex:column value="{!fv.Recall_Secondary_Description__c}" headerValue="Recall Secondary Description" 
+                        headerclass="alignCenter" styleClass="alignCenter"/>
+                    <apex:column value="{!fv.Effective_Date__c}" headerValue="Effective Date" 
+                        headerclass="alignCenter" styleClass="alignCenter"/>
+                    <apex:column value="{!fv.TSB_Number__c}" headerValue="TSB Number" 
+                        headerclass="alignCenter" styleClass="alignCenter"/>
+                    <apex:column value="{!fv.GL_Code__c}" headerValue="GL Code" 
+                        headerclass="alignCenter" styleClass="alignCenter"/>
+                    <apex:column value="{!fv.Recall_Status__c}" headerValue="Status" 
+                        headerclass="alignCenter" styleClass="alignCenter"/>
+                    <apex:column value="{!fv.name}" headerValue="Vehicle Recall Number" headerclass="alignCenter" styleClass="alignCenter"/>
+                </apex:pageblocktable>
+            </apex:pageblocksection-->
+
+            <!-- VCAN Info -->
+            <apex:pageBlockSection title="VCAN Information" collapsible="false"
+                columns="2" rendered="{!showHOSTVCANSection}">
+                <apex:outputText value="{!oResponse.VCANRefNumber}"
+                    label="HOST Reference Number" />
+                <apex:outputText value="{!oResponse.ApprovalStatus}"
+                    label="Approval Status" />
+                <apex:outputText value="{!oResponse.ApprDate}" label="Approval Date" />
+                <apex:outputText value="{!oResponse.ApprByName}" label="Approved By" />
+                <apex:outputText value="{!oResponse.CallerName}"
+                    label="Requestor's Name" />
+                <apex:outputText value="{!oResponse.CallerPhone}"
+                    label="Requestor's Phone" />
+                <apex:outputText value="{!oResponse.CustomerName}"
+                    label="Customer Name" />
+                <apex:outputText value="{!oResponse.Miles}" label="Miles" />
+                <apex:outputText value="{!oResponse.WOOpenDate}"
+                    label="Work Order Open Date" />
+                <apex:outputText value="{!oResponse.PFPPO}" label="PFP/PO" />
+                <apex:outputText value="{!oResponse.PartsAtCost}"
+                    label="Parts At Cost" />
+                <apex:outputText value="{!oResponse.ForceGoodwill}"
+                    label="Force Good Will Coverage" />
+                <apex:outputText value="{!oResponse.Parts}" label="Parts" />
+                <apex:outputText value="{!oResponse.LBR}" label="Labor" />
+                <apex:outputText value="{!oResponse.Expense}" label="Expense" />
+                <apex:outputText value="{!oResponse.NormalApproval}"
+                    label="Normal Approval" />
+                <apex:outputText value="{!oResponse.RepairReview}"
+                    label="Repeat/Related Repair Review" />
+                <apex:outputText value="{!oResponse.MileageProgressReview}"
+                    label="Mileage Progression Reviewed" />
+                <apex:outputText value="{!oResponse.CampaignDiffDealer}"
+                    label="Duplicate Campaign / Different Dealer" />
+                <apex:outputText value="{!oResponse.GoodwillApproval}"
+                    label="Goodwill Approval" />
+                <apex:outputText label="HOST Comments"
+                    value="{!oResponse.ApprovalComments}" escape="false"></apex:outputText>
+                <apex:outputText value="{!oResponse.ChangedByName}"
+                    label="Last Updated By" />
+            </apex:pageBlockSection>
+            <!-- Host Reference Numbers Cases -->
+            <apex:pageBlockSection title="Reference Number Warranty Cases"
+                collapsible="false" columns="1"
+                rendered="{!showReferenceSection && showReferenceRelatedWarrantyCases}">
+                <apex:pageblockTable value="{!hostRelatedWarrantyCases}" var="c">
+                    <apex:column headerClass="alignCenter" styleClass="alignCenter">
+                        <apex:facet name="header">Number</apex:facet>
+                        <apex:outputLink value="../{!c.Id}">{!c.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Work Order"
+                        value="{!c.Repair_Work_Order__c}" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column headerValue="Line Number"
+                        value="{!c.Job_Line_Number__c}" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column headerValue="VCAN Reference Number"
+                        value="{!c.HOST_Reference_Number__c}" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column value="{!c.Dealer_Code__c}" headerValue="Dealer Code"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="Case Owner" value="{!c.Owner.Name}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="Case Created Date"
+                        value="{!c.CreatedDate}" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <!--apex:column value="{!c.Parts__c}" headerValue="Parts" headerClass="alignCenter" styleClass="alignCenter" /-->
+                    <!--apex:column value="{!c.Expenses__c}" headerValue="Expenses" headerClass="alignCenter" styleClass="alignCenter" /-->
+                    <!--apex:column value="{!c.Total_Amount_Approved__c}" headerValue="Total Approved Amount" headerClass="alignCenter" styleClass="alignCenter" /-->
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+            <!--apex:pageBlockSection title="Reference Number Warranty Cases"
+                collapsible="false" columns="1"
+                rendered="{!showReferenceSection && !showReferenceRelatedWarrantyCases}">
+                <apex:outputText value="There are no cases associated to the entered HOST Reference Number"
+                    style="color: black;" />
+            </apex:pageBlockSection-->
+            <!-- Dealer Warranty Cases -->
+            <apex:pageBlockSection title="Dealer Warranty Cases"
+                collapsible="false" columns="1"
+                rendered="{!showDealerSection && showDealerRelatedCases && dealerRelatedCases.size > 0}">
+                <apex:pageblockTable value="{!dealerRelatedCases}" var="c">
+                    <apex:column headerClass="alignCenter" styleClass="alignCenter">
+                        <apex:facet name="header">Number</apex:facet>
+                        <apex:outputLink value="../{!c.Id}">{!c.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Work Order"
+                        value="{!c.Repair_Work_Order__c}" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column headerValue="Line Number"
+                        value="{!c.Job_Line_Number__c}" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column headerValue="VIN" value="{!c.Vehicle__r.Name}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="VCAN Reference Number"
+                        value="{!c.HOST_Reference_Number__c}" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column value="{!c.Dealer_Code__c}" headerValue="Dealer Code"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="Case Owner" value="{!c.Owner.Name}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="Case Created Date"
+                        value="{!c.CreatedDate}" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <!--apex:column value="{!c.Parts__c}" headerValue="Parts" headerClass="alignCenter" styleClass="alignCenter" /-->
+                    <!--apex:column value="{!c.Expenses__c}" headerValue="Expenses" headerClass="alignCenter" styleClass="alignCenter" /-->
+                    <!--apex:column value="{!c.Total_Amount_Approved__c}" headerValue="Total Approved Amount" headerClass="alignCenter" styleClass="alignCenter" /-->
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+            <!--apex:pageBlockSection title="Dealer Warranty Cases"
+                collapsible="false" columns="1"
+                rendered="{!showDealerSection && !showDealerRelatedCases}">
+                <apex:outputText value="There are no cases associated to the entered Dealer"
+                    style="color: black;" />
+            </apex:pageBlockSection-->
+            <!-- Dealer Information -->
+            <apex:pageBlockSection title="Dealers" collapsible="false"
+                columns="1" rendered="{!showDealerSection && dealers.size > 0}">
+                <apex:pageblockTable value="{!dealers}" var="d">
+                    <apex:column headerClass="alignCenter" styleClass="alignCenter">
+                        <apex:facet name="header">Name</apex:facet>
+                        <apex:outputLink value="../{!d.Id}">{!d.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Inactive"
+                        value="{!d.Dealer_Inactive_Indicator__c}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="City" value="{!d.BillingCity}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="State" value="{!d.BillingState}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="Phone" value="{!d.Phone}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="FOM User Name"
+                        value="{!d.FOM_Stage_User__r.Full_Name__c}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="FOM Email"
+                        value="{!d.FOM_Stage_User__r.Email__c}" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column headerValue="FOM Cell Phone"
+                        value="{!d.FOM_Stage_User__r.Cell_Phone__c}"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerClass="alignCenter" styleClass="alignCenter">
+                        <apex:facet name="header">Dealer Labor Rates</apex:facet>
+                        <apex:outputLink value="../{!$Label.VCAN_Dealer_Labor_Rates_report}?pv0={!d.Dealer_Code__c}">Labor Rate</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerClass="alignCenter" styleClass="alignCenter">
+                        <apex:facet name="header">Dealer Limit</apex:facet>
+                        <apex:outputLink value="../{!$Label.VCAN_Dealer_Limit}?pv0={!d.Dealer_Code__c}">Dealer Limit</apex:outputLink>
+                    </apex:column>
+                    <!--apex:column headerValue="Dealer Limit" value="{!d.Dealer_Limit__c}" headerClass="alignCenter" styleClass="alignCenter" /-->
+                    <!--apex:column headerValue="Street" value="{!d.BillingStreet}" headerClass="alignCenter" styleClass="alignCenter" /-->
+                    <!--apex:column headerValue="ZIP" value="{!d.BillingPostalCode}" headerClass="alignCenter" styleClass="alignCenter" /-->
+                    <!--apex:column headerValue="FOM Office Phone" value="{!d.FOM_Stage_User__r.Office_Phone__c}" headerClass="alignCenter" styleClass="alignCenter" /-->
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+            <!-- CA & Techline cases -->
+            <apex:pageBlockSection title="CA & TECH LINE Cases"
+                collapsible="false" columns="1"
+                rendered="{!showVehicleSection && showVehicleRelatedCases}">
+                <apex:pageblockTable value="{!vehicleRelatedCases}" var="c">
+                    <apex:column headerClass="alignCenter" styleClass="alignCenter">
+                        <apex:facet name="header">Number</apex:facet>
+                        <apex:outputLink value="../{!c.Id}">{!c.CaseNumber}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!c.Recordtype.Name}" headervalue="Type"
+                        headerclass="alignCenter" styleClass="alignCenter" />
+                    <apex:column value="{!c.Subject}" headerValue="Subject"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column value="{!c.Description}" headerValue="Description"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column value="{!c.CreatedDate}" headerValue="Open Date"
+                        headerclass="alignCenter" styleClass="alignCenter" />
+                    <apex:column value="{!c.ClosedDate}" headervalue="Closed Date"
+                        headerclass="alignCenter" styleClass="alignCenter" />
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+            <!--apex:pageBlockSection title="CA & TECH LINE Cases" collapsible="false"
+                columns="1"
+                rendered="{!showVehicleSection && !showVehicleRelatedCases}">
+                <apex:outputText value="There are no cases associated to the entered VIN"
+                    style="color: red;" />
+            </apex:pageBlockSection-->
+            <!-- Work Orders -->
+            <!-- <apex:pageBlockSection title="Work Order"
+                collapsible="false" columns="1"
+                rendered="{!showWorkOrderSection}">
+                <apex:pageblockTable value="{!workorder}" var="w">
+                    <apex:column headerClass="alignCenter" styleClass="alignCenter">
+                        <apex:facet name="header">Work Order Number</apex:facet>
+                        <apex:outputLink value="../{!w.Id}">{!w.Work_Order_Number__c}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Claim Line Number" value="{!w.Claim_Line_Number__c}" headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="Dealer Code" value="{!w.Dealer_Number__c}" headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column headerValue="Vehicle Repair Open Date" value="{!w.Vehicle_Repair_Open_Date__c}" headerclass="alignCenter" styleClass="alignCenter"/> 
+                    <apex:column headervalue="Claim Type Code" value="{!w.Claim_Type_Code__c}" headerclass="alignCenter" styleClass="alignCenter"/>  
+                    <apex:column headervalue="Work Order Line Status Code" value="{!w.Work_Order_Line_Status_Code__c}" headerclass="alignCenter" styleClass="alignCenter"/>
+                    <apex:column headerValue="Miles" value="{!w.Vehicle_Mileage_Number__c}"  headerclass="alignCenter" styleClass="alignCenter"/>
+                    <apex:column headerValue="Last Modified By" value="{!w.LastModifiedBy.Name}" headerclass="alignCenter" styleClass="alignCenter"/>   
+                    <apex:column headerValue="Last Modified Date" value="{!w.LastModifiedDate}" headerclass="alignCenter" styleClass="alignCenter"/>         
+                            
+                </apex:pageblockTable>
+            </apex:pageBlockSection>-->
+            <!-- Cases -->
+            <apex:pageblocksection title="Cases" collapsible="false"
+                rendered="{!showCaseSection}">
+
+                <apex:pageblocktable value="{!warrantyCases}" var="c">
+                    <apex:column value="{!c.Name}" headerValue="Number"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+            <!-- VCAN -->
+            <apex:pageBlockSection title="Vehicle Claim Authorization Numbers"
+                collapsible="false" columns="1" rendered="{!showVCANSection}">
+                <apex:pageblockTable value="{!VCAN}" var="v">
+                    <apex:column value="{!v.Vehicle_Claim_Authorization_Number__c}"
+                        headerValue="VCAN" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column value="{!v.Work_Order_Number__c}"
+                        headerValue="Work Order" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column value="{!v.Claim_Line_Number__c}"
+                        headerValue="Claim Line Number" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column value="{!v.Work_Order_Line_Status_Code__c}"
+                        headerValue="Status" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column value="{!v.Vehicle_ID__c}" headerValue="VIN"
+                        headerClass="alignCenter" styleClass="alignCenter" />
+                    <apex:column value="{!v.Dealer_Number__c}"
+                        headerValue="Dealer Code" headerClass="alignCenter"
+                        styleClass="alignCenter" />
+                    <apex:column value="{!v.Complaint_Description__c}"
+                        headervalue="Description" headerclass="alignCenter"
+                        styleClass="alignCenter" />
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!showSummary}" id="mainblock"
+            title="Warranty Case Information">
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Create General Inquiry Case"
+                    action="{!newCase}" rendered="{!allowGeneralInquiry}" />
+                <apex:commandButton value="Create VCAN Case" action="{!newVCANCase}" onclick="return validatefields();"/>
+                <apex:commandButton value="Clear" action="{!clearCaseInformation}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2" title="Warranty Case Information" id="pbs1"
+                collapsible="false" showHeader="false">
+                <apex:pageblocksectionItem id="pbsi1">
+                    <apex:outputLabel value="Requestor's Name" />
+                    <apex:inputtext value="{!wc.Requestor_s_Name__c}" tabIndex="8" />
+                </apex:pageblocksectionItem>
+                <apex:pageBlockSectionItem id="pbsi2">
+                    <apex:outputLabel value="Reason" />
+                    <apex:inputField value="{!wc.Reason__c}" taborderhint="13" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi3">
+                    <apex:outputLabel value="Requestor's Title" />
+                    <apex:inputField value="{!wc.Requestor_Title__c}" taborderhint="9" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi4">
+                    <apex:outputLabel value="Subreason" />
+                    <apex:inputField value="{!wc.Subreason__c}" taborderhint="14" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi5">
+                    <apex:outputLabel value="Requestor's Phone Number" />
+                    <apex:inputField value="{!wc.Requestor_s_Phone_Number__c}"
+                        taborderhint="10" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi6">
+                    <apex:outputLabel value="Error Code" />
+                    <apex:inputField value="{!wc.Error_Code__c}" taborderhint="15" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi7">
+                    <apex:outputLabel value="Customer Name" />
+                    <apex:inputField value="{!wc.Customer_Name__c}" taborderhint="11" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi8">
+                    <apex:outputLabel value="VCAN Type" />
+                    <apex:inputField value="{!wc.VCAN_Type__c}" id="vcanType" taborderhint="17" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Status" id="pbsi9"/>
+                    <apex:inputField value="{!wc.Status__c}" taborderhint="12" />
+                </apex:pageBlockSectionItem>                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection showHeader="false" columns="1">
+                <apex:pageblocksectionItem id="pbsi11">
+                    <apex:outputLabel value="Notes" />
+                    <apex:inputtextarea cols="150" rows="5" value="{!paramNotes}"
+                        tabindex="171" />
+                </apex:pageblocksectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <!--VCAN DEBUG-->
+        <apex:pageblock rendered="{!showVCANResult}">
+            <apex:outputText value="{!VCANRefNumber}" />
+            <br />
+            <apex:outputText value="{!AffiliateCode}" />
+            <br />
+            <apex:outputText value="{!WONumber}" />
+            <br />
+            <apex:outputText value="{!WOLine}" />
+            <br />
+            <apex:outputText value="{!ServiceFacility}" />
+            <br />
+            <apex:outputText value="{!VIN}" />
+            <br />
+            <apex:outputText value="{!WOOpenDate}" />
+            <br />
+            <apex:outputText value="{!Miles}" />
+            <br />
+            <apex:outputText value="{!PFPPO}" />
+            <br />
+            <apex:outputText value="{!CallerName}" />
+            <br />
+            <apex:outputText value="{!CallerPhone}" />
+            <br />
+            <apex:outputText value="{!CallerExt}" />
+            <br />
+            <apex:outputText value="{!CustomerName}" />
+            <br />
+            <apex:outputText value="{!PartsAtCost}" />
+            <br />
+            <apex:outputText value="{!ApprovalComments}" />
+            <br />
+            <apex:outputText value="{!ForceGoodwill}" />
+            <br />
+            <apex:outputText value="{!ApprovalStatus}" />
+            <br />
+            <apex:outputText value="{!ApprId}" />
+            <br />
+            <apex:outputText value="{!ApprDate}" />
+            <br />
+            <apex:outputText value="{!EnteredByUserId}" />
+            <br />
+            <apex:outputText value="{!EnteredDate}" />
+            <br />
+            <apex:outputText value="{!ChangedByUserId}" />
+            <br />
+            <apex:outputText value="{!ChangedDate}" />
+            <br />
+            <apex:outputText value="{!LanId}" />
+            <br />
+            <apex:outputText value="{!Message}" />
+            <br />
+            <apex:outputText style="font-weight:800" value="{!ExecutionTime}" />
+        </apex:pageblock>
+
+        <apex:outputPanel rendered="{!redirectToPage}">
+            <script>
+                redirectToPage();
+            </script>
+        </apex:outputPanel>
+
+        <apex:actionFunction name="refreshDealerjs"
+            action="{!refreshDealerInfo}" reRender="testPanel,pbResults, pbMain">
+            </apex:actionfunction>
+    </apex:form>
+    <apex:outputPanel rendered="{!showDealerSection}">
+        <script>
+            refreshDealerjs();
+            
+            function validatefields(){
+                var x = document.getElementById('thePage:frmMain:mainblock:pbs1:pbsi8:vcanType').value;
+                
+                if('{!$Profile.Name}' == 'PCC Agent' || '{!$Profile.Name}' == 'PCC Manager' ){
+                if(x == null || x == ""){
+                    alert('{!$Label.Select_VCAN_Type}');
+                    return false;
+                }
+                }
+                
+                return true;
+            }
+        </script>
+    </apex:outputPanel>
+</apex:page>

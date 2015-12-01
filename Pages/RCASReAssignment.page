@@ -1,0 +1,79 @@
+<apex:page standardController="Account" extensions="RCASSearchExtension" sidebar="false">
+
+  <apex:form >  
+      <apex:pageBlock title="RCAS Search" id="MainBlock">  
+        <apex:pageMessages />     
+          <apex:pageBlock id="SearchBlock"> 
+              <apex:pageblockSection columns="2">
+                 <apex:pageBlockSectionItem >
+                      <apex:outputLabel for="RegionId" value="Region Code"></apex:outputLabel>
+                      <apex:inputtext id="RegionId" value="{!regionCode}"/>                      
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem >              
+                      <apex:outputLabel for="DistrictId" value="District Code"></apex:outputLabel>
+                      <apex:inputtext id="DistrictId" value="{!districtCode}"/> 
+                  </apex:pageBlockSectionItem>  
+                   <apex:inputField id="rcasLookupId" value="{!userAcct.RCAS__c}"/>         
+              </apex:pageblockSection> 
+              <apex:pageBlockButtons location="bottom">
+                   <apex:commandButton id="RCASSearch" value="RCASSearch" action="{!search}" rerender="MainBlock" status="counterStatus"/> &nbsp; &nbsp;
+                   <apex:commandButton id="RCASAssignment" value="Reassign" action="{!reAssignAccounts}" rerender="MainBlock" status="counterStatus" oncomplete="uncheckSelectAll();"/>                   
+              </apex:pageBlockButtons>
+              
+          </apex:pageBlock>  
+          <apex:pageBlock id="ResultsBlock" rendered="{!acctList.size > 0}">
+              <apex:pageBlockTable id="pbt" value="{!acctList}" var="wrap">
+                  <apex:column id="selectBoxId">
+                       <apex:facet name="header">
+                        <apex:inputCheckbox id="selectAllId">
+                            <apex:actionSupport event="onclick" onsubmit="checkAll(this)" rerender="ResultsBlock"/>
+                        </apex:inputCheckbox>
+                       </apex:facet>
+                        <apex:inputCheckbox value="{!wrap.selAcct}" id="checkedone"/>
+
+                  </apex:column>
+                  <apex:column id="dealerCodeid" value="{!wrap.acctObj.Dealer_Code__c}"/>
+                  <apex:column id="districtCodeid" value="{!wrap.acctObj.District_Code__c}"/>
+                  <apex:column id="acctName" headerValue="Account Name">
+                      <apex:outputlink value="/{!wrap.acctObj.Id}"> {!wrap.acctObj.Name}</apex:outputLink>
+                  </apex:column>
+                  <apex:column id="rcasName" value="{!wrap.acctObj.RCAS__c}"/>
+              </apex:pageBlockTable>                      
+          </apex:pageBlock>        
+      </apex:pageBlock>
+      <apex:actionStatus id="counterStatus">                   
+      <apex:facet name="start">
+          <div class="waitingSearchDiv waitingSearchDivOpacity" style="width: 100%; height: 100%; display: block;opacity: 0.60;"/>
+          <div id="loading_image" class="waitingSearchDiv" style="width: 100%; height: 100%; display: block;">
+          <div class="waitingHolder" style="top: 85px; width: 20px;background:#fff;">
+              <img class="waitingImage" src="/img/loading.gif" style="background:#fff;"/>
+              <span class="waitingDescription">Loading...</span>
+          </div>
+          </div>
+      </apex:facet>
+      <apex:facet name="stop"/>
+    </apex:actionStatus>
+  </apex:form>
+  
+   <script>
+        function checkAll(cb)
+        {
+            var inputElem = document.getElementsByTagName("input");
+            for(var i=0; i<inputElem.length; i++)
+            {
+                if(inputElem[i].id.indexOf("checkedone")!=-1)
+                inputElem[i].checked = cb.checked;
+            }
+        }
+        
+        function uncheckSelectAll()
+        {
+           var inputElem = document.getElementsByTagName("input");
+            for(var i=0; i<inputElem.length; i++)
+            {               
+                inputElem[i].checked = false;
+            }
+        }
+    </script>
+
+</apex:page>

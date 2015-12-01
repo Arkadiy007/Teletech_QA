@@ -1,0 +1,34 @@
+<apex:page controller="WarrantyInformationDetailController" tabStyle="Warranty_Information__c">
+   <apex:form >
+     <apex:sectionHeader title="Warranty Information"/>
+     <apex:pageBlock title="Warranty Information Detail">
+         <apex:pageBlockSection columns="2" title="Information">             
+                 <apex:outputfield id="Branded_Code" value="{!wrtyInfo.Branded_Code__c}"/>
+              <!--   <apex:outputfield id="Vehicle_ID" value="{!wrtyInfo.Vehicle_ID__c}"/>  -->
+                 <apex:outputfield id="Branded_Description" value="{!wrtyInfo.Branded_Description__c}"/>  
+                 <apex:outputfield id="Warranty_Information_Business_ID" value="{!wrtyInfo.Warranty_Information_Business_ID__c}"/>    
+                 <apex:outputfield id="Branded_Override_Indicator" value="{!wrtyInfo.Branded_Override_Indicator__c}"/>
+                 <apex:outputfield id="Source_Record_Date" value="{!wrtyInfo.Source_Record_Date__c}"/>  
+                 <apex:outputfield id="Branded_Title_Indicator" value="{!wrtyInfo.Branded_Title_Indicator__c}"/>  
+                 <apex:outputfield id="State_Code" value="{!wrtyInfo.State_Code__c}" label="Branded State"/> 
+                 <apex:outputfield id="Coverage_Record_Type__c" value="{!wrtyInfo.Coverage_Record_Type__c}"/>
+                 <apex:outputfield id="Title_Number" value="{!wrtyInfo.Title_Number__c}"/>  
+                 <apex:outputfield id="Duplicate_Code" value="{!wrtyInfo.Duplicate_Code__c}"/>  
+                 <apex:outputfield id="Vehicle_Identification_Number" value="{!wrtyInfo.Vehicle_Identification_Number__c}"/>    
+                 <apex:outputfield id="Last_Update_Date" value="{!wrtyInfo.Last_Update_Date__c}"/>
+                 <apex:outputfield id="Warranty_Description" value="{!wrtyInfo.Warranty_Description__c}"/>  
+                 <apex:outputfield id="Last_User_ID" value="{!wrtyInfo.Last_User_ID__c}"/>  
+                 <apex:outputfield id="Warranty_Exclusion_Code" value="{!wrtyInfo.Warranty_Exclusion_Code__c}"/>  
+                 <apex:outputfield id="Model_Year" value="{!wrtyInfo.Model_Year__c}"/>
+                 <apex:outputfield id="Warranty_Exclusion_Name" value="{!wrtyInfo.Warranty_Exclusion_Name__c}"/>  
+                 <apex:outputfield id="Override_Expire_Date" value="{!wrtyInfo.Override_Expire_Date__c}"/>  
+                 <apex:outputfield id="Warranty_Expiration_Date" value="{!wrtyInfo.Warranty_Expiration_Date__c}"/>    
+                 <apex:outputfield id="Polk_Run_Date" value="{!wrtyInfo.Polk_Run_Date__c}" label="Branded Date"/>
+                 <apex:outputfield id="Warranty_Expiration_Miles" value="{!wrtyInfo.Warranty_Expiration_Miles__c}"/>  
+                 <apex:outputfield id="Record_Type_Code" value="{!wrtyInfo.Record_Type_Code__c}"/>  
+                 <apex:outputfield id="WS_Warranty_Record_Type" value="{!wrtyInfo.WS_Warranty_Record_Type__c}"/>           
+                 <apex:outputfield id="Source_ID_Code" value="{!wrtyInfo.Source_ID_Code__c}"/>  
+         </apex:pageBlockSection>
+     </apex:pageBlock>     
+    </apex:form>
+</apex:page>

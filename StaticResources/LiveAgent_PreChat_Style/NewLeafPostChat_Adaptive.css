@@ -1,0 +1,103 @@
+ /* Descktop (portrait and landscape) ----------- */
+       @media screen 
+        {
+            .textarea {
+                resize: none;
+            }
+            body {
+                overflow: hidden;
+                touch-action: pan-y;
+            }
+            .td_extremely_desktop {
+                 width:25% !important;
+            }
+            .div_extremely {
+                display: inline-table;
+            }
+            .td_rate {
+                padding-left: 30px !important;
+            }
+        }
+
+        /* iPhone 5,6 ----------- */
+        /* Smartphones (landscape) ----------- */
+        @media screen 
+        and (min-aspect-ratio: 1/1)
+        and (min-device-width : 605px)
+        and (max-device-width : 640px),
+             
+        screen and (min-aspect-ratio: 1/1)
+        and (max-device-width : 599px)  
+        {
+            .table_style {
+                width:480px !important;
+            }
+            .button_style {
+                top:500px !important;
+                left:210px !important;
+            } 
+            .textarea {
+                resize: none;
+            }
+            .tr_desktop {
+                display:none;
+            }
+            .tr_mobile {
+                display: block !important;
+            }
+            .div_radio_scale {
+                width: 260px !important;
+            }
+            .text_style{
+                -webkit-text-size-adjust: 100%;
+            }
+            body {
+                overflow: visible !important;
+            }
+            .extremely_selectRadio {
+                width: 380px !important;
+            }
+            .td_rate {
+                padding-left: 15px !important;
+            }
+        }      
+        
+        /* Smartphones (portrait) ----------- */
+        @media screen  
+        and (min-width : 320px)
+        and (max-width : 479px)
+        {
+            .div_radio_scale {
+                width: 130px !important;
+            }
+            .extremely_span {
+                padding-left:120px;
+            }
+            .table_style {
+                width:320px !important;
+            }
+            .tr_desktop {
+                display:none;
+            }
+            .tr_mobile {
+                display: block !important;
+            }
+            .button_style {
+                top:555px !important;
+                left:110px !important;
+            }
+            .textarea {
+                resize: none;
+            }
+            body {
+                overflow: visible !important;
+            }
+            .td_rate {
+                padding-left: 0px !important;
+                padding-right: 15px;
+            }
+            .extremely_selectRadio {
+                width: 300px !important;
+            }
+        }
+        

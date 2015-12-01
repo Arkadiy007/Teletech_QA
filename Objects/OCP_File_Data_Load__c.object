@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>DefectorMonthlyExtract_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>DefectorMonthlyExtract Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DefectorMonthlyExtract_Subject__c</fullName>
+        <externalId>false</externalId>
+        <label>DefectorMonthlyExtract Subject</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OCP_Description__c</fullName>
+        <defaultValue>&quot;Existing Owner&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>OCP Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OCP_Subject__c</fullName>
+        <defaultValue>&quot;Owner Loyalty&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>OCP Subject</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>OCP File Data Load</label>
+    <visibility>Public</visibility>
+</CustomObject>

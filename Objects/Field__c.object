@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Documentation of the Nissan NA Configurations within the Salesforce environment for standard and custom Fields.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>API_Name__c</fullName>
+        <description>The Salesforce Coded name for the field, object, or item.</description>
+        <externalId>false</externalId>
+        <label>API Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Sensitive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Must the item be comparitively case sensitive.</description>
+        <externalId>false</externalId>
+        <label>Case Sensitive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Code__c</fullName>
+        <description>The default value, formula, or custom code programmed into the item.</description>
+        <externalId>false</externalId>
+        <label>Code</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Custom_Field__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates that the field is a custom or non-standard field.</description>
+        <externalId>false</externalId>
+        <label>Custom Field</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Data_Type__c</fullName>
+        <description>The format of the item.</description>
+        <externalId>false</externalId>
+        <label>Data Type</label>
+        <picklist>
+            <controllingField>Type__c</controllingField>
+            <picklistValues>
+                <fullName>Auto Number</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Checkbox</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Currency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Date</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Date/Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Formula</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Geolocation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lookup</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Master-Detail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Number</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Percent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Picklist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Picklist (Multi-Select)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roll-Up Summary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Text</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Text (Encrypted)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Text Area</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Text Area (Long)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Text Area (Rich)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>URL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Detail Page Button</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Detail Page Link</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>List Button</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Override Standard Button</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Default_Value__c</fullName>
+        <description>The Field&apos;s Default Value or Formula to calculate Default Value</description>
+        <externalId>false</externalId>
+        <label>Default Value</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>The definition and details of the item.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Digits__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>For Numeric fields, the allowable number of digits to the right of the decimal point</description>
+        <externalId>false</externalId>
+        <label>Digits</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this item set as an identifier for an external system.</description>
+        <externalId>false</externalId>
+        <label>External ID</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FieldTypeTranslated__c</fullName>
+        <description>Translates the Salesforce supplied Field Type into a user-friendly value.</description>
+        <externalId>false</externalId>
+        <formula>IF(Formula__c = TRUE,
+&quot;Formula&quot;,
+CASE( Type__c ,
+&quot;boolean&quot;, &quot;Checkbox&quot;,
+&quot;currency&quot;, &quot;Currency&quot;,
+&quot;date&quot;, &quot;Date&quot;,
+&quot;datetime&quot;, &quot;Date/Time&quot;,
+&quot;double&quot;, &quot;Formula or Roll-Up Summary&quot;,
+&quot;email&quot;, &quot;Email&quot;,
+&quot;id&quot;, &quot;Lookup&quot;,
+&quot;int&quot;, &quot;Number&quot;,
+&quot;multipicklist&quot;, &quot;Picklist (Multi-Select)&quot;,
+&quot;phone&quot;, &quot;Phone&quot;,
+&quot;picklist&quot;, &quot;Picklist&quot;,
+&quot;reference&quot;, &quot;Lookup or Reference&quot;,
+&quot;string&quot;, &quot;Text&quot;,
+&quot;string (ext id.)&quot;, &quot;Text&quot;,  
+&quot;textarea&quot;, &quot;Text Area&quot;,
+&quot;url&quot;, &quot;URL&quot;,
+&quot;Other&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Field Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Formula__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates the field is a formula field or calculated field.</description>
+        <externalId>false</externalId>
+        <label>Formula</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Help_Text__c</fullName>
+        <description>Instructional wording that is displayed to the user when hovering over the field.</description>
+        <externalId>false</externalId>
+        <label>Help Text</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Label__c</fullName>
+        <description>The Salesforce field, object, or item label.</description>
+        <externalId>false</externalId>
+        <label>Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Length__c</fullName>
+        <description>The number of allowable characters for the item.</description>
+        <externalId>false</externalId>
+        <label>Length</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <description>The Salesforce field, object, or item name.</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Object__c</fullName>
+        <description>The related Object that the Field exists on.</description>
+        <externalId>false</externalId>
+        <label>Object</label>
+        <referenceTo>Object__c</referenceTo>
+        <relationshipLabel>Fields</relationshipLabel>
+        <relationshipName>Fields</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Picklist_Values__c</fullName>
+        <description>The options available on a picklist field. These should be entered in this field in comma separated format.</description>
+        <externalId>false</externalId>
+        <label>Picklist Values</label>
+        <length>10000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reference_To__c</fullName>
+        <description>For Reference/Lookup Fields, which Object(s) can the record be related to.</description>
+        <externalId>false</externalId>
+        <label>Reference To</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is the item required for record save.</description>
+        <externalId>false</externalId>
+        <label>Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Salesforce_ID__c</fullName>
+        <description>The 15-digit record identifier for the item.</description>
+        <externalId>false</externalId>
+        <label>Salesforce ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Track_Field_History__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicate if Field History Tracking is turned on for the field or object.</description>
+        <externalId>false</externalId>
+        <label>Track Field History</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>The type of Salesforce Field.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>boolean</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>currency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>date</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>datetime</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>double</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>id</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>int</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>multipicklist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>picklist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>reference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>string</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>string (ext id.)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>textarea</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>url</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>URL__c</fullName>
+        <description>The URL of the configuration item. Only needed if Salesforce ID is not populated.</description>
+        <externalId>false</externalId>
+        <label>URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unique__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Must the item entered be a unique value.</description>
+        <externalId>false</externalId>
+        <label>Unique</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Field</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Label__c</columns>
+        <columns>Type__c</columns>
+        <columns>Data_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Configurations</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Formula_Fields</fullName>
+        <columns>NAME</columns>
+        <columns>Label__c</columns>
+        <columns>Object__c</columns>
+        <columns>Description__c</columns>
+        <columns>Type__c</columns>
+        <columns>Reference_To__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Formula__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Formula Fields</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Lookup_Fields</fullName>
+        <columns>NAME</columns>
+        <columns>Label__c</columns>
+        <columns>Object__c</columns>
+        <columns>Description__c</columns>
+        <columns>Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>reference</value>
+        </filters>
+        <label>Lookup Fields</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Object_Case_Categorizations</fullName>
+        <columns>NAME</columns>
+        <columns>Label__c</columns>
+        <columns>Description__c</columns>
+        <columns>Type__c</columns>
+        <columns>Data_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Object - Case Categorizations</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Object_Schema</fullName>
+        <columns>NAME</columns>
+        <columns>Label__c</columns>
+        <columns>Description__c</columns>
+        <columns>Type__c</columns>
+        <columns>Data_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Object - Schema</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>F{00000}</displayFormat>
+        <label>Field</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Fields</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Label__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Data_Type__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Label__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Data_Type__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Label__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Data_Type__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Type__c</searchFilterFields>
+        <searchFilterFields>Data_Type__c</searchFilterFields>
+        <searchResultsAdditionalFields>Label__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Data_Type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Go_to_Field</fullName>
+        <availability>online</availability>
+        <description>Routes user to the Salesforce field in Setup.
+
+1) If Schema.Salesforce_ID &amp; Schema.URL are both blank, alerts user there is nothing to link to. 
+
+2) If Schema.Salesforce_ID is blank, routes user to URL. 
+
+3) If Schema.Salesforce_ID is not blank, routes user to Salesforce ID.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Go to Field</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/23.0/connection.js&quot;)};
+
+var sfid = &apos;{!Field__c.Salesforce_ID__c}&apos;;
+
+if ( sfid.length == 0 )
+
+{
+alert(&quot;There is no Salesforce ID entered to route to.&quot;)
+}
+
+else
+{
+window.parent.location.href = &quot;/{!Field__c.Salesforce_ID__c}&quot;;
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Field</fullName>
+        <availability>online</availability>
+        <description>Opens a new Field record in edit mode related to the same Object.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Field</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a0A/e?CF00NF0000008PgVH={!Field__c.Object__c}&amp;CF00NF0000008PgVH_lkid={!Field__c.ObjectId__c}</url>
+    </webLinks>
+</CustomObject>

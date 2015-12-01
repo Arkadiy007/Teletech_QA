@@ -1,0 +1,391 @@
+<apex:page standardController="Warranty_Case__c" extensions="Controller_PreCall_Forms_PDF" showHeader="false" id="page" renderAs="PDF" >
+  <!-- Begin Default Content REMOVE THIS -->
+    
+    <body>
+        <apex:stylesheet value="{!URLFOR($Resource.PreCall_Forms_PDF_Styles, 'PreCall_Forms_PDF_Styles.css')}" />
+         <!--<img src="{!$Resource.PreCall_Forms_PDF_Background_2}" style="position: fixed; left: 0cm; top:0cm; z-index:-1; opacity: 0.2;" width="21cm"/>-->
+        <img src="{!$Resource.PreCall_Forms_PDF_Background_2}" style="position: fixed; left: 0cm; top:0cm; z-index:-1; opacity: 0.2;" width="19cm"/>
+        <h1 class="title" style="font-size:22pt">Powertrain Call Center<br /> 
+            Call (800-973-9992) <br />
+            Pre-call form for the <br />
+           Warranty Case {!Warranty_Case__c.name} <br />
+        </h1>
+        <h1 class="title" style="font-size:28pt">
+            This is not your approval. <br />
+        </h1>
+        <h4 class="title">
+            {!currentTime}
+        </h4>
+
+        <table>
+            <!-- Common for Engine, CVT, LEAF fields-->
+            <tr>
+                <td class="labelColumn">
+                    Dealer Code:
+                </td>
+                <td>
+                    {!Warranty_Case__c.dealer_code__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    17 Digit VIN:
+                </td>
+                <td>
+                    {!vin}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Repair/WO Number:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Repair_Work_Order__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Job/line number:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Job_Line_Number__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Repair Order Open Date:
+                </td>
+                <td>
+                    {!repairWorkOrderOpenDate}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Vehicle Mileage:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Vehicle_Mileage__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Requestor's Name:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Requestor_s_Name__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Customer's First and Last Name:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Customer_Name__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Tech's Name (if different from above):
+                </td>
+                <td>
+                    {!Warranty_Case__c.Technician_Name__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Technician's Mobile Phone Number:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Requestor_s_Phone_Number__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Send a copy of this form to:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Send_a_copy_of_this_form_to__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    If a TSB applies, list the TSB number:
+                </td>
+                <td>
+                    {!Warranty_Case__c.If_Yes_or_Maybe_TSB__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Customer's Concern:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Customer_Concern__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Engine Type:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Engine_Type__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Parts:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Parts__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Labor:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Labor__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Expenses:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Expenses__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Was customer's concern verified?
+                </td>
+                <td>
+                    {!Warranty_Case__c.Was_the_customer_concern_verified__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    List All, If Any DTCs Stored:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Please_list_all_DTC_codes_here__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    List All, If Any Vehicle Modifications:
+                </td>
+                <td>
+                    {!Warranty_Case__c.List_all_if_any_vehicle_modifications__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    List All, If Any Signs of Vehicle Abuse:
+                </td>
+                <td>
+                    {!Warranty_Case__c.List_all_if_any_signs_of_vehicle_abuse__c}
+                </td>
+            </tr>
+
+            <!--Engine fields-->
+            <tr>
+                <td class="labelColumn">
+                    Under what condition does the concern occur?
+                </td>
+                <td>
+                    {!Warranty_Case__c.Under_What_Condition_The_Concern_Occur__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    If Erased, When do the DTC(s) Return?
+                </td>
+                <td>
+                    {!Warranty_Case__c.If_erased_when_do_the_DTC_s_return__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Noises - Please Select From the Description Provided:
+                </td>
+                <td>
+                    {!Warranty_Case__c.If_any_what_type_of_noise_is_present__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Under What Condition Does the Noise Occur?
+                </td>
+                <td>
+                    {!Warranty_Case__c.What_conditions_trigger_the_noise__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    What is the Oil Level?
+                </td>
+                <td>
+                    {!Warranty_Case__c.What_is_the_Oil_Level__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Describe Oil Condition:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Describe_Oil_Level_and_Condition_Here__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Any Oil Leaks Present?
+                </td>
+                <td>
+                    {!AnyOilLeaksPresent}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Has Dye Been Installed to Isolate Leak?
+                </td>
+                <td>
+                    {!Warranty_Case__c.Has_dye_been_installed_to_isolate_leak__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Where is the Fluid Leaking From?
+                </td>
+                <td>
+                    {!Warranty_Case__c.Where_is_the_fluid_leaking_from__c}
+                </td>
+            </tr>
+            <!-- -->
+            <tr>
+                <td class="labelColumn">
+                    Are There any Coolant Leaks?
+                </td>
+                <td>
+                    {!AreThereAnyCoolantLeaks}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Has a Coolant Pressure Test Been Performed?
+                </td>
+                <td>
+                    {!CoolantPressureTestPerformed}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Where is the Coolant Leaking From?
+                </td>
+                <td>
+                    {!Warranty_Case__c.Where_is_the_coolant_leaking_from__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Is the Coolant/Oil Mixed?
+                </td>
+                <td>
+                    {!IsTheCoolantOilMixed}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Did the Vehicle Overheat?
+                </td>
+                <td>
+                    {!DidTheVehicleOverheat}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    What is the Max Temp Shown in the Freeze Frame Data?
+                </td>
+                <td>
+                    {!Warranty_Case__c.Max_Temp_in_the_Freeze_Frame_Data__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Please Provide Oil Consumption Test Results:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Results_of_Oil_Consumption_Test__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Is There Trauma to the Cylinder Head/Valve Train?
+                </td>
+                <td>
+                    {!ExternalTraumaToEngineComponents}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Please provide compression test results (PSI) if performed:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Results_of_Compression_Test__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Please provide cylinder leak down test results (PSI) if performed:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Results_of_Cylinder_Leak_Down_Test__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Please provide cylinder power balance test results (PSI) if performed:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Results_of_Cylinder_Power_Balance_Test__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Is There Any Sign of External Trauma to the Engine or Components?
+                </td>
+                <td>
+                    {!TraumaToTheCylinderHeadValveTrain}
+                </td>
+            </tr>
+        </table>
+
+        <!--Attachments table-->
+        <div style="page-break-inside:avoid;">
+            <h2 class="title">List of attached files<br />
+            </h2>
+
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!attachmentsList}" var="item" styleClass="attachmentTable">
+                    <apex:column headerValue="File Name" > 
+                        <apex:outputText value="{!item.name}" styleClass="attachmentColumn" />
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </div>
+
+        <!--Notes table-->
+        <div style="page-break-inside:avoid;">
+            <h2 class="title">Notes<br />
+            </h2>
+
+            <table>
+                <tr>
+                    <td style="height: 120px;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+
+</apex:page>

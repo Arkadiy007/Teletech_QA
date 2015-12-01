@@ -1,0 +1,269 @@
+<apex:page standardController="Warranty_Case__c" extensions="Controller_PreCall_Forms_PDF" showHeader="false"  docType="html-5.0" renderAs="pdf">
+  <!-- Begin Default Content REMOVE THIS -->
+    
+    <body>
+        
+        <apex:stylesheet value="{!URLFOR($Resource.PreCall_Forms_PDF_Styles, 'PreCall_Forms_PDF_Styles.css')}" />
+         <img src="{!$Resource.PreCall_Forms_PDF_Background_2}" style="position: fixed; left: 0cm; top:0cm; z-index:-1; opacity: 0.2;" width="19cm"/>
+        <h1 class="title" style="font-size:22pt">Powertrain Call Center<br /> 
+            Call (800-973-9992) <br />
+            Pre-call form for the <br />
+           Warranty Case {!Warranty_Case__c.name} <br />
+        </h1>
+        <h1 class="title" style="font-size:28pt">
+            This is not your approval. <br />
+        </h1>
+        <h4 class="title">
+            {!currentTime}
+        </h4>
+        <table>
+            <!-- Common for Engine, CVT, LEAF fields-->
+            <tr>
+                <td class="labelColumn">
+                    Dealer Code:
+                </td>
+                <td>
+                    {!Warranty_Case__c.dealer_code__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    17 Digit VIN:
+                </td>
+                <td>
+                    {!vin}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Repair/WO Number:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Repair_Work_Order__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Job/line number:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Job_Line_Number__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Repair Order Open Date:
+                </td>
+                <td>
+                    {!repairWorkOrderOpenDate}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Vehicle Mileage:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Vehicle_Mileage__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Requestor's Name:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Requestor_s_Name__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Customer's First and Last Name:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Customer_Name__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Tech's Name (if different from above):
+                </td>
+                <td>
+                    {!Warranty_Case__c.Technician_Name__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Technician's Mobile Phone Number:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Requestor_s_Phone_Number__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Send a copy of this form to:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Send_a_copy_of_this_form_to__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    If a TSB applies, list the TSB number:
+                </td>
+                <td>
+                    {!Warranty_Case__c.If_Yes_or_Maybe_TSB__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Customer's Concern:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Customer_Concern__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Was customer's concern verified?
+                </td>
+                <td>
+                    {!Warranty_Case__c.Was_the_customer_concern_verified__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    List All, If Any DTCs Stored:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Please_list_all_DTC_codes_here__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    List All, If Any Vehicle Modifications:
+                </td>
+                <td>
+                    {!Warranty_Case__c.List_all_if_any_vehicle_modifications__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    List All, If Any Signs of Vehicle Abuse:
+                </td>
+                <td>
+                    {!Warranty_Case__c.List_all_if_any_signs_of_vehicle_abuse__c}
+                </td>
+            </tr>
+
+            <!--LEAF fields-->
+            <tr>
+                <td class="labelColumn">
+                    Customer Email Address:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Customer_Email_Address__c
+}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Service Manager / Parts Manager Email Address:
+                </td>
+                <td>
+                    {!Warranty_Case__c.Service_Manager_Parts_Manager_Email_Ad__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Is Replacement Warranty or Customer Pay?
+                </td>
+                <td>
+                    {!Warranty_Case__c.Is_Replacement_Warranty_or_Customer_Pay__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Is This Accident Related?
+                </td>
+                <td>
+                    {!IsThisAccidentRelated}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Is The Vehicle at The Dealership?
+                </td>
+                <td>
+                    {!IsTheVehicleAtTheDealership}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Is Battery Showing Less Than 8 Bars?
+                </td>
+                <td>
+                    {!IsBatteryShowingLessThan8Bars}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Is Technician LEAF Certified?
+                </td>
+                <td>
+                    {!IsTechnicianLEAFCertified}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    Does Technician Have All The Aappropriate HV Tools?
+                </td>
+                <td>
+                    {!DoesTechnicianHaveAappropriateHVTools}
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelColumn">
+                    Has The Technician Printed Out The Battery Info Sheet?
+                </td>
+                <td>
+                    {!HasTechnicianPrintedOutBatteryInfoSheet}
+                </td>
+            </tr>
+            <tr>
+                <td class="labelColumn">
+                    List Any and All Additional Details/Info/Diagnosis:
+                </td>
+                <td>
+                    <apex:outputText value="{!anyAdditionalDetails}" escape="false" />
+                </td>
+            </tr>
+        </table>
+
+        <!--Attachments table-->
+        <div style="page-break-inside:avoid;">
+            <h2 class="title">List of attached files<br />
+            </h2>
+
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!attachmentsList}" var="item">
+                    <apex:column value="{!item.name}" headerValue="File Name"/> 
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </div>
+        
+        <!--Notes table-->
+        <div style="page-break-inside:avoid;">
+            <h2 class="title">Notes<br />
+            </h2>
+
+            <table>
+                <tr>
+                    <td style="height: 120px;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+
+</apex:page>

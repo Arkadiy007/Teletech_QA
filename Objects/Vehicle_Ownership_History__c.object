@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Begin_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Begin Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Claimed_Owner_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Claimed Owner</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Current_Driver_Indicator__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Current Driver Indicator</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Owner_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Current Owner</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Model_Code__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Model Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Year__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Model Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NMAC_Lease_Loan_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>NMAC Lease / Loan Flag</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NewCaseCA__c</fullName>
+        <description>Creates a new Case with Person Account and Vehicle and other fields such as Servicing Dealer, Vehicles Owned, Related Vehicle Make defaulted</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/500/e?RecordType=012F0000000y9y7&amp;cas4=&quot; &amp;  Owner__r.FirstName &amp; &quot;%20&quot; &amp;  Owner__r.LastName &amp; &quot;&amp;cas4_lkid=&quot; &amp; Owner__r.Id &amp; &quot;&amp;cas8=N/A&quot; &amp; &quot;&amp;CF00NA00000070W35=&quot; &amp; Vehicle__r.Name &amp; &quot;&amp;CF00NA00000070W35_lkid=&quot; &amp; Vehicle__r.Id &amp; &quot;&amp;CF00NF0000008ODHT=&quot; &amp;  Owner__r.Servicing_Dealer__r.Name  &amp; &quot;&amp;CF00NF0000008ODHT_lkid=&quot; &amp; Owner__r.Servicing_Dealer__r.Id &amp; &quot;&amp;00NF0000008NeI5=&quot; &amp; Vehicle_Make__c &amp; &quot;&amp;00NF0000008NeKU=&quot; &amp; TEXT(Owner__r.Vehicles_Owned__c) , &quot;New Case with Vehicle&quot;,&quot;_blank&quot; )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open New Case:</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NewSocialCase__c</fullName>
+        <description>Creates a new Social Support Case with Person Account and Vehicle and other fields such as Servicing Dealer, Vehicles Owned, Related Vehicle Make defaulted</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/500/e?RecordType=012F0000000yDw2&amp;cas4=&quot; &amp; Owner__r.FirstName &amp; &quot;%20&quot; &amp; Owner__r.LastName &amp; &quot;&amp;cas4_lkid=&quot; &amp;Owner__r.Id &amp; &quot;&amp;cas8=N/A&quot; &amp; &quot;&amp;CF00NA00000070W35=&quot; &amp; Vehicle__r.Name &amp; &quot;&amp;CF00NA00000070W35_lkid=&quot; &amp; Vehicle__r.Id &amp;&quot;&amp;CF00NF0000008ODHT=&quot; &amp; Owner__r.Servicing_Dealer__r.Name &amp; &quot;&amp;CF00NF0000008ODHT_lkid=&quot; &amp;Owner__r.Servicing_Dealer__r.Id &amp; &quot;&amp;00NF0000008NeI5=&quot; &amp; Vehicle_Make__c &amp; &quot;&amp;00NF0000008NeKU=&quot; &amp;TEXT(Owner__r.Vehicles_Owned__c) , &quot;New Case with Vehicle&quot;,&quot;_self&quot;  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open New Social Case:</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NewVCSCase__c</fullName>
+        <description>Creates a new VCS Support Case with Person Account and Vehicle and other fields such as Servicing Dealer, Vehicles Owned, Related Vehicle Make defaulted</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/500/e?RecordType=012F0000000yFNi&amp;cas4=&quot; &amp; Owner__r.FirstName &amp; &quot;%20&quot; &amp; Owner__r.LastName &amp; &quot;&amp;cas4_lkid=&quot; &amp; Owner__r.Id &amp; &quot;&amp;cas8=N/A&quot; &amp; &quot;&amp;CF00NA00000070W35=&quot; &amp; Vehicle__r.Name &amp; &quot;&amp;CF00NA00000070W35_lkid=&quot; &amp; Vehicle__r.Id &amp;&quot;&amp;CF00NF0000008ODHT=&quot; &amp; Owner__r.Servicing_Dealer__r.Name &amp; &quot;&amp;CF00NF0000008ODHT_lkid=&quot; &amp;Owner__r.Servicing_Dealer__r.Id &amp; &quot;&amp;00NF0000008NeI5=&quot; &amp; Vehicle_Make__c &amp; &quot;&amp;00NF0000008NeKU=&quot; &amp;TEXT(Owner__r.Vehicles_Owned__c) , &quot;New VCS Case with Vehicle&quot; )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open New VCS Case:</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_New_Case__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/500/e?RecordType=012f00000008xiI&amp;cas4=&quot; &amp;  Owner__r.FirstName &amp; &quot;%20&quot; &amp;  Owner__r.LastName &amp; &quot;&amp;cas4_lkid=&quot; &amp; Owner__r.Id &amp; &quot;&amp;cas8=N/A&quot; &amp; &quot;&amp;CF00NA00000070W35=&quot; &amp; Vehicle__r.Name &amp; &quot;&amp;CF00NA00000070W35_lkid=&quot; &amp; Vehicle__r.Id &amp; &quot;&amp;CF00NF0000008ODHT=&quot; &amp;  Owner__r.Servicing_Dealer__r.Name  &amp; &quot;&amp;CF00NF0000008ODHT_lkid=&quot; &amp; Owner__r.Servicing_Dealer__r.Id &amp; &quot;&amp;00NF0000008NeI5=&quot; &amp; Vehicle_Make__c &amp; &quot;&amp;00NF0000008NeKU=&quot; &amp; TEXT(Owner__r.Vehicles_Owned__c) , &quot;New Case with Vehicle&quot;,&quot;_self&quot; )</formula>
+        <label>Open New Case:</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_New_PreSales_Case__c</fullName>
+        <description>Creates a new LEAF PreSales Case with Person Account and Vehicle defaulted</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/500/e?RecordType=012A0000000xeks&amp;cas4=&quot; &amp; Owner__r.FirstName &amp; &quot;%20&quot; &amp; Owner__r.LastName &amp; &quot;&amp;cas4_lkid=&quot; &amp; Owner__r.Id &amp; &quot;&amp;cas8=N/A&quot; &amp; &quot;&amp;CF00NA00000070W35=&quot; &amp; Vehicle__r.Name &amp; &quot;&amp;CF00NA00000070W35_lkid=&quot; &amp; Vehicle__r.Id , &quot;New PreSales Case with Vehicle&quot; )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open New PreSales Case:</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Option_Group_Code__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Option Group Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Owner_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Registered Owner</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Original_Retail_Type_Code__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Original Retail Type Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Retail_Type_Desc__c</fullName>
+        <externalId>false</externalId>
+        <label>Original Retail Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner_Type_Code__c</fullName>
+        <description>NCI Required field</description>
+        <externalId>false</externalId>
+        <label>Owner Type</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner_Type_Decoded__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(Owner_Type_Code__c, &apos;1&apos;, &apos;Original Owner&apos;, &apos;2&apos;, &apos;Current Owner&apos;,&apos;3&apos;, &apos;Lessee&apos;,&apos;4&apos;, &apos;Previous Owner&apos;,&apos;5&apos;, &apos;Current Service Customer&apos;,&apos;6&apos;, &apos;Previous Service Customer&apos;,&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <externalId>false</externalId>
+        <label>Owner</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Vehicle_Ownership_Historys</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Primary_Owner_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Primary Driver</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Retail_Dealer_Code__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Retail Dealer Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Retail_Dealer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Retail Dealer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Vehicle Ownership (Retail Dealer)</relationshipLabel>
+        <relationshipName>Vehicle_Ownership</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Retail_Purchase_Date__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Retail Purchase Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Rewind_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Vehicle_Retail_Sale_Id__r.Rewind_Indicator__c = TRUE, &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rewind Indicator</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Series_Code__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Series Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Maintainer_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Service Maintainer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Service_Survey_1_Date__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Service Survey 1 Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_Survey_2_Date__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Service Survey 2 Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Servicing_Dealer_Code__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Servicing Dealer Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Servicing_Dealer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Servicing Dealer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Vehicle Ownership (Servicing Dealer)</relationshipLabel>
+        <relationshipName>Vehicle_Ownership1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Transfer_From_Customer_Number__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Transfer From Customer Number</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VIN__c</fullName>
+        <description>The VIN from the related Vehicle</description>
+        <externalId>false</externalId>
+        <formula>Vehicle__r.Name</formula>
+        <label>VIN</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Make__c</fullName>
+        <description>Brand from the related Vehicle (Nissan or Infintii)</description>
+        <externalId>false</externalId>
+        <formula>CASE(UPPER(Vehicle__r.Make_Name__c),
+&quot;NISSAN&quot;, &quot;Nissan&quot;,
+&quot;INFINITI&quot;, &quot;Infiniti&quot;,
+&quot;--None--&quot;)</formula>
+        <label>Vehicle Make</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Match__c</fullName>
+        <description>Retrieves the Vehicle.Match__c field value. Used for matchback manual vlookup mapping.</description>
+        <externalId>false</externalId>
+        <formula>Vehicle__r.Match__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Vehicle Match</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Retail_Sale_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Vehicle Retail Sale</label>
+        <referenceTo>Vehicle_Retail_Sale__c</referenceTo>
+        <relationshipName>Vehicle_Ownership_Historys</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle__c</fullName>
+        <description>ID of the Vehicle representing the Vehicle associated
+			with the RDR</description>
+        <externalId>false</externalId>
+        <label>Vehicle</label>
+        <referenceTo>Vehicle__c</referenceTo>
+        <relationshipName>Retail_Delivery_Reports</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Warranty_Start_Date__c</fullName>
+        <description>NCI Required Field</description>
+        <externalId>false</externalId>
+        <label>Warranty Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Year_Make_Model__c</fullName>
+        <description>Retrieves Vehicle.Year&amp;Make&amp;Model</description>
+        <externalId>false</externalId>
+        <formula>Vehicle__r.Model_Year__c &amp; &quot; &quot; &amp;  Vehicle__r.Make_Name__c  &amp; &quot; &quot; &amp;   Vehicle__r.Model_Line_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Year Make Model</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>trimVIN__c</fullName>
+        <externalId>false</externalId>
+        <formula>RIGHT( Vehicle__r.Name ,6)</formula>
+        <label>trimVIN</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Vehicle Ownership</label>
+    <nameField>
+        <displayFormat>V-{00000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Vehicle Ownership</pluralLabel>
+    <searchLayouts>
+        <searchFilterFields>VIN__c</searchFilterFields>
+        <searchFilterFields>Vehicle_Make__c</searchFilterFields>
+        <searchFilterFields>Owner__c</searchFilterFields>
+        <searchResultsAdditionalFields>Vehicle__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Vehicle_Make__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Owner__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

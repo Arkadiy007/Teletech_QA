@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Defines the valid combination of the case category codes - Concern, Category, Subcategory, Symptom and Major Component Code.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Category_Code__c</fullName>
+        <description>Formula field. Retrieve Category Code from code table.</description>
+        <externalId>false</externalId>
+        <formula>Category__r.Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Category Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category_Description__c</fullName>
+        <description>Formula field. Retrieve Category Code Description from code table.</description>
+        <externalId>false</externalId>
+        <formula>Category__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Category Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup field to the category codes in code table.</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <referenceTo>Code__c</referenceTo>
+        <relationshipLabel>CaseCategory Dependencies (Category)</relationshipLabel>
+        <relationshipName>Case_Category_Codes_Category</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Concern_Code__c</fullName>
+        <description>Formula field. Retrieve Concern Code from code table.</description>
+        <externalId>false</externalId>
+        <formula>Concern__r.Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Concern Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concern_Description__c</fullName>
+        <description>Formula field. Retrieve Concern Code Description from code table.</description>
+        <externalId>false</externalId>
+        <formula>Concern__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Concern Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concern__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup field to the concern codes in code table.</description>
+        <externalId>false</externalId>
+        <label>Concern</label>
+        <referenceTo>Code__c</referenceTo>
+        <relationshipLabel>CaseCategory Dependencies (Concern)</relationshipLabel>
+        <relationshipName>Case_Category_Codes_Concern</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Major_Component_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Major Component Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subcategory_Code__c</fullName>
+        <description>Formula field. Retrieve Subcategory Code from code table.</description>
+        <externalId>false</externalId>
+        <formula>Subcategory__r.Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Subcategory Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subcategory_Description__c</fullName>
+        <description>Formula field. Retrieve Subcategory Code Description from code table.</description>
+        <externalId>false</externalId>
+        <formula>Subcategory__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Subcategory Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subcategory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup field to the subcategory codes in code table.</description>
+        <externalId>false</externalId>
+        <label>Subcategory</label>
+        <referenceTo>Code__c</referenceTo>
+        <relationshipLabel>CaseCategory Dependencies (Subcategory)</relationshipLabel>
+        <relationshipName>Case_Category_Codes_Subcategory</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Symptom_Code__c</fullName>
+        <description>Formula field. Retrieve Symptom Code from code table.</description>
+        <externalId>false</externalId>
+        <formula>Symptom__r.Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Symptom Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Symptom_Description__c</fullName>
+        <description>Formula field. Retrieve Symptom Code Description from code table.</description>
+        <externalId>false</externalId>
+        <formula>Symptom__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Symptom Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Symptom__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup field to the symptom codes in code table.</description>
+        <externalId>false</externalId>
+        <label>Symptom</label>
+        <referenceTo>Code__c</referenceTo>
+        <relationshipLabel>CaseCategory Dependencies (Symptom)</relationshipLabel>
+        <relationshipName>Case_Category_Codes_Symptom</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>CaseCategory Dependency</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>OBJECT_ID</columns>
+        <columns>NAME</columns>
+        <columns>Category_Code__c</columns>
+        <columns>Category_Description__c</columns>
+        <columns>Concern_Code__c</columns>
+        <columns>Concern_Description__c</columns>
+        <columns>Subcategory__c</columns>
+        <columns>Subcategory_Code__c</columns>
+        <columns>Symptom_Code__c</columns>
+        <columns>Symptom_Description__c</columns>
+        <columns>Major_Component_Code__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>CC Dependency Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CaseCategory Dependencies</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Concern_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Concern_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Category_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Category_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Subcategory_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Subcategory_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Symptom_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Symptom_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Major_Component_Code__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Concern_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Concern_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Category_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Category_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Subcategory_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Subcategory_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Symptom_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Symptom_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Major_Component_Code__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Concern_Code__c</searchFilterFields>
+        <searchFilterFields>Concern_Description__c</searchFilterFields>
+        <searchFilterFields>Category_Code__c</searchFilterFields>
+        <searchFilterFields>Category_Description__c</searchFilterFields>
+        <searchFilterFields>Subcategory_Code__c</searchFilterFields>
+        <searchFilterFields>Subcategory_Description__c</searchFilterFields>
+        <searchFilterFields>Symptom_Code__c</searchFilterFields>
+        <searchFilterFields>Symptom_Description__c</searchFilterFields>
+        <searchFilterFields>Major_Component_Code__c</searchFilterFields>
+        <searchResultsAdditionalFields>Concern_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Concern_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Category_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Category_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Subcategory_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Subcategory_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Symptom_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Symptom_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Major_Component_Code__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

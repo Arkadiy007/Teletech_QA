@@ -1,0 +1,163 @@
+<apex:page controller="WarrantySearch" tabStyle="Account">
+
+	<apex:sectionHeader subtitle="Warranty Search" />
+	<script type="text/javascript">
+	function redirectToPage() {
+		if (typeof(srcUp) == 'function') {
+			srcUp("{!redirectURL}");
+		}
+		else {
+			window.location = "{!redirectURL}";
+		}
+	}
+    </script>
+	<apex:form id="frmMain">
+		<!-- Field Filters for the Search -->
+		<apex:pageBlock id="pbMain">
+			<apex:pageMessages />
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="Search" action="{!searchWarranty}"
+					tabindex="6" />
+				<apex:commandButton value="Clear" action="{!clear}"
+					tabindex="7" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title="Fields" collapsible="false" columns="2">
+				<apex:inputField value="{!paramAccount.Dealer_Code__c}"
+					taborderhint="1" />
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Case Number" />
+					<apex:inputText value="{!caseNumber}" maxlength="12" tabindex="5" />
+				</apex:pageBlockSectionItem>
+				<apex:inputField value="{!paramVehicle.Name}" taborderhint="2" />
+			</apex:pageBlockSection>
+			<div style="text-align: center;">
+				<apex:outputText value="{!errorMessage}" style="color: red;"
+					rendered="{!showErrorMessage}" />
+			</div>
+		</apex:pageBlock>
+
+		<!-- Results -->
+		<apex:pageBlock id="pbResults"
+			rendered="{!showVehicleSection || showDealerSection}">
+
+			<!-- Vehicle Information -->
+			<apex:pageBlockSection title="Vehicle" collapsible="false"
+				rendered="{!showVehicleSection}">
+				<apex:outputField value="{!paramVehicle.Name}" />
+				<apex:outputField value="{!paramVehicle.Open_Recall__c}" />
+				<apex:outputField value="{!paramVehicle.Model_Year__c }" />
+				<apex:outputField value="{!paramVehicle.Branded_Title__c}" />
+				<apex:outputField value="{!paramVehicle.Model_Line_Name__c}" />
+				<apex:pageBlockSectionItem />
+				<apex:outputField value="{!paramVehicle.Make_Name__c}" />
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="Vehicle" collapsible="false"
+				columns="1"
+				rendered="{!!showVehicleSection &&paramVehicle.Name != null}">
+				<apex:outputText value="There is no vehicle associated to the entered VIN"
+					style="color: red;" />
+			</apex:pageBlockSection>
+
+			<!-- Cases related to the Vehicle -->
+			<apex:pageBlockSection title="Vehicle Related Cases"
+				collapsible="false" columns="1"
+				rendered="{!showVehicleSection && showVehicleRelatedCases}">
+				<apex:pageblockTable value="{!vehicleRelatedCases}" var="c">
+					<apex:column headerClass="alignCenter">
+						<apex:facet name="header">Number</apex:facet>
+						<apex:outputLink value="../{!c.Id}">{!c.CaseNumber}</apex:outputLink>
+					</apex:column>
+					<apex:column value="{!c.RecordType.Name}" headerValue="Type"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.Subject}" headerValue="Subject"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.Description}" headerValue="Description"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.CreatedDate}" headerValue="Open Date"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.ClosedDate}" headerValue="Closed Date"
+						headerClass="alignCenter" />
+				</apex:pageblockTable>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="Vehicle Related Cases" collapsible="false"
+				columns="1"
+				rendered="{!showVehicleSection && !showVehicleRelatedCases}">
+				<apex:outputText value="There are no cases associated to the entered VIN"
+					style="color: red;" />
+			</apex:pageBlockSection>
+
+			<!-- Dealer Information -->
+			<apex:pageBlockSection title="Dealers" collapsible="false"
+				columns="1" rendered="{!showDealerSection}">
+				<apex:pageblockTable value="{!dealers}" var="d">
+					<apex:column value="{!d.Name}" headerValue="Name"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.Dealer_Inactive_Indicator__c}"
+						headerValue="Inactive" headerClass="alignCenter" />
+
+					<apex:column value="{!d.BillingStreet}" headerValue="Street"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.BillingCity}" headerValue="City"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.BillingState}" headerValue="State"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.BillingPostalCode}" headerValue="ZIP"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.Phone}" headerValue="Phone"
+						headerClass="alignCenter" />
+					<apex:column value="{!d.DTS_A_Stage_User__r.Full_Name__c}"
+						headerValue="DTS User Name" headerClass="alignCenter" />
+					<apex:column value="{!d.DTS_A_Stage_User__r.Email__c}"
+						headerValue="DTS Email" headerClass="alignCenter" />
+					<apex:column value="{!d.DTS_A_Stage_User__r.Cell_Phone__c}"
+						headerValue="DTS Cell Phone" headerClass="alignCenter" />
+					<apex:column value="{!d.DTS_A_Stage_User__r.Office_Phone__c}"
+						headerValue="DTS Office Phone" headerClass="alignCenter" />
+				</apex:pageblockTable>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="Dealers" collapsible="false"
+				columns="1"
+				rendered="{!!showDealerSection && paramAccount.Dealer_Code__c != null}">
+				<apex:outputText value="There is no dealer with the entered code"
+					style="color: red;" />
+			</apex:pageBlockSection>
+
+			<!-- Cases related to the Dealer -->
+			<apex:pageBlockSection title="Dealer Warranty Cases"
+				collapsible="false" columns="1"
+				rendered="{!showDealerSection && showDealerRelatedCases}">
+				<apex:pageblockTable value="{!dealerRelatedCases}" var="c">
+					<apex:column headerClass="alignCenter">
+						<apex:facet name="header">Number</apex:facet>
+						<apex:outputLink value="../{!c.Id}">{!c.CaseNumber}</apex:outputLink>
+					</apex:column>
+					<apex:column value="{!c.RecordType.Name}" headerValue="Type"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.Subject}" headerValue="Subject"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.Description}" headerValue="Description"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.CreatedDate}" headerValue="Open Date"
+						headerClass="alignCenter" />
+					<apex:column value="{!c.ClosedDate}" headerValue="Closed Date"
+						headerClass="alignCenter" />
+				</apex:pageblockTable>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="Dealer Warranty Cases"
+				collapsible="false" columns="1"
+				rendered="{!showDealerSection && !showDealerRelatedCases}">
+				<apex:outputText value="There are no cases associated to the entered Dealer"
+					style="color: red;" />
+			</apex:pageBlockSection>
+
+		</apex:pageBlock>
+
+
+
+		<apex:outputPanel rendered="{!redirectToPage}">
+			<script>
+				redirectToPage();
+            </script>
+		</apex:outputPanel>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,1 @@
+<apex:page standardController="Brochure_Request__c" extensions="Controller_LiteratureRequestLandingPage" action="{!getRedir}"/>

@@ -1,0 +1,39 @@
+<apex:page controller="Controller_CreateNewContact" >
+  <apex:form >
+    <apex:pageMessages />
+    <apex:pageBlock title="Associated Customers">
+      <apex:pageBlockSection showHeader="false" columns="1">
+        <apex:dataList value="{!associatedAccountList}" var="customer">
+            <apex:commandLink action="{!fillContactInfo}" value="{!customer.FirstName} {!customer.LastName}">
+              <apex:param name="associatedCustomer" value="{!customer.FirstName} {!customer.LastName}"/>
+            </apex:commandLink>
+        </apex:dataList>  
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:pageBlock title="Contact Info">
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!save}" value="Save"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection showHeader="false" columns="2">
+     	<apex:pageBlockSectionItem >
+     	<apex:outputLabel value="First Name" for="firstname" />
+		<apex:inputText value="{!account.FirstName}" id="firstname"/>  
+		</apex:pageBlockSectionItem>   
+		<apex:pageBlockSectionItem >
+     	<apex:outputLabel value="Last Name" for="lastname" />
+		<apex:inputText value="{!account.LastName}" id="lastname"/>  
+		</apex:pageBlockSectionItem>   
+		<apex:inputField value="{!account.PersonOtherPhone}"/>
+		<apex:inputField value="{!account.Phone}"/>
+		<apex:inputField value="{!account.PersonEmail}"/>
+		<apex:inputField value="{!account.PersonHomePhone}"/>
+		<apex:inputField value="{!account.Preferred_Dealer_Id__c}"/>
+		<apex:inputField value="{!account.PersonMailingCity}" required="true"/>
+		<apex:inputField value="{!account.PersonMailingCountry}" required="true"/>
+		<apex:inputField value="{!account.PersonMailingPostalCode}" required="true"/>
+		<apex:inputField value="{!account.PersonMailingState}" required="true"/>
+		<apex:inputField value="{!account.PersonMailingStreet}" required="true"/>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

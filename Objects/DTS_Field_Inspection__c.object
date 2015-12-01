@@ -1,0 +1,1533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Compact_Layout_for_DTS_App</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Compact_Layout_for_DTS_App</fullName>
+        <fields>Status__c</fields>
+        <fields>Dealer__c</fields>
+        <fields>VIN__c</fields>
+        <fields>Related_Support_Case__c</fields>
+        <fields>Customer_Name__c</fields>
+        <fields>DTS_Inspection_Date__c</fields>
+        <fields>Did_DTS_and_customer_meet__c</fields>
+        <fields>Did_DTS_meet_with_Dealer__c</fields>
+        <label>Compact Layout for DTS App</label>
+    </compactLayouts>
+    <compactLayouts>
+        <fullName>Test</fullName>
+        <fields>VIN__c</fields>
+        <fields>Status__c</fields>
+        <fields>Dealer__c</fields>
+        <label>Test</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Age__c</fullName>
+        <description>This Field is to calculate the age of a DTS Field Inspection.</description>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( Request_Date__c ) , 
+IF( ISBLANK( Report_Date__c ) , 
+TODAY() - DATEVALUE( CreatedDate ) , 
+Report_Date__c - DATEVALUE( CreatedDate ) ), 
+IF( ISBLANK( Report_Date__c ) , 
+TODAY() - Request_Date__c , 
+Report_Date__c - Request_Date__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of days this DTS Field Inspection is / was open.</inlineHelpText>
+        <label>Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Any additional comments</inlineHelpText>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Condition_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Condition Description</label>
+        <length>180</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Mileage__c</fullName>
+        <description>Displays the current vehicle mileage from the Related Support Case</description>
+        <externalId>false</externalId>
+        <formula>Related_Support_Case__r.Current_Mileage__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays the current vehicle mileage from the Related Support Case</inlineHelpText>
+        <label>Current Mileage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Meeting_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Meeting Summary</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Customer_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Displays the Customer&apos;s name who owns the vehicle or brought it in for service.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays the Customer&apos;s name who owns the vehicle or brought it in for service.</inlineHelpText>
+        <label>Customer Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Customer does not exist, please check your spelling or create a new Customer Account.</errorMessage>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Maritz</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>DTS Field Inspections (Customer Name)</relationshipLabel>
+        <relationshipName>DTS_Field_Inspections</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Representative__c</fullName>
+        <description>Tracks who the DTS spoke with</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If yes, then who?</inlineHelpText>
+        <label>Customer Representative</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customers_Concern__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer&apos;s Concern</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DTS_A_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Dealer__r.DTS_A_Stage_User__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DTS A Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DTS_Inspection_Date_Set__c</fullName>
+        <description>Stores the date that the DTS set the initial &quot;DTS Inspection Date&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the date that the DTS set the initial &quot;DTS Inspection Date&quot;</inlineHelpText>
+        <label>DTS Inspection Date Set</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DTS_Inspection_Date__c</fullName>
+        <description>Displays the date and time of the scheduled inspection</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays the date and time of the scheduled inspection</inlineHelpText>
+        <label>DTS Inspection Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DTS_Inspection_Task_Assigned__c</fullName>
+        <description>Stores the date the DTS was assigned the task to set an inspection date by TECH LINE/CA</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the date the DTS was assigned the task to set an inspection date by TECH LINE/CA</inlineHelpText>
+        <label>DTS Inspection Task Assigned</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DTS_Team__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.DTS_Team__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DTS Team</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_to_Inspect__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(DTS_Inspection_Date__c- DTS_Inspection_Task_Assigned__c &gt;=0, DTS_Inspection_Date__c- DTS_Inspection_Task_Assigned__c , NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days to Inspect</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_to_Report__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Report_Date__c-DATEVALUE(DTS_Inspection_Date__c)&gt;=0,Report_Date__c-DATEVALUE(DTS_Inspection_Date__c),NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days to Report</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_to_Respond__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(DTS_Inspection_Date_Set__c - DTS_Inspection_Task_Assigned__c&gt;=0, DTS_Inspection_Date_Set__c - DTS_Inspection_Task_Assigned__c, NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days to Respond</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Action_Observation__c</fullName>
+        <description>Maps to the Case Description field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays the description of the issue that is being reported.</inlineHelpText>
+        <label>Dealer Action/Observation</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Dealer_Address__c</fullName>
+        <description>Displays the Dealer&apos;s Address information</description>
+        <externalId>false</externalId>
+        <formula>Dealer__r.BillingStreet  &amp; BR()
+&amp;  Dealer__r.BillingCity &amp; &quot;, &quot; &amp;  Dealer__r.BillingState &amp; &quot; &quot; &amp;  Dealer__r.BillingPostalCode  &amp; BR()
+&amp;  Dealer__r.BillingCountry</formula>
+        <inlineHelpText>Displays the Dealer&apos;s Address information</inlineHelpText>
+        <label>Dealer Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Code__c</fullName>
+        <description>Displays the related Dealer&apos;s Dealer Code</description>
+        <externalId>false</externalId>
+        <formula>Dealer__r.Dealer_Code__c</formula>
+        <inlineHelpText>Displays the related Dealer&apos;s Dealer Code</inlineHelpText>
+        <label>Dealer Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Fax_Number__c</fullName>
+        <description>Displays the Dealer&apos;s Fax Number</description>
+        <externalId>false</externalId>
+        <formula>Dealer__r.Fax</formula>
+        <inlineHelpText>Displays the Dealer&apos;s Fax Number</inlineHelpText>
+        <label>Dealer Fax Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Findings__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Findings</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Dealer_Phone_Number__c</fullName>
+        <description>Displays the Dealer&apos;s Phone Number</description>
+        <externalId>false</externalId>
+        <formula>Dealer__r.Phone</formula>
+        <inlineHelpText>Displays the Dealer&apos;s Phone Number</inlineHelpText>
+        <label>Dealer Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Region__c</fullName>
+        <description>Displays the related Dealer&apos;s Region Code</description>
+        <externalId>false</externalId>
+        <formula>Dealer__r.Region_Code__c</formula>
+        <inlineHelpText>Displays the related Dealer&apos;s Region Code</inlineHelpText>
+        <label>Dealer Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Representative__c</fullName>
+        <description>Tracks who the DTS met with at the Dealership</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If yes, then who?</inlineHelpText>
+        <label>Dealer Representative</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Stores the Dealer name to be visited.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the Dealer name to be visited.</inlineHelpText>
+        <label>Dealer</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>This is not a valid Dealer Name, please ensure the Dealer is Active or verify that the Dealer Name is accurate.</errorMessage>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Dealer</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.Dealer_Inactive_Indicator__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>DTS Field Inspections</relationshipLabel>
+        <relationshipName>DTS_Field_Inspections_del</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Did_DTS_and_customer_meet__c</fullName>
+        <externalId>false</externalId>
+        <label>Did DTS and customer meet?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Did_DTS_meet_with_Dealer__c</fullName>
+        <externalId>false</externalId>
+        <label>Did DTS meet with Dealer?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Did_you_Road_Test__c</fullName>
+        <description>RITM0080907</description>
+        <externalId>false</externalId>
+        <label>Did you Road Test?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ETA__c</fullName>
+        <externalId>false</externalId>
+        <label>ETA</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ending_Mileage__c</fullName>
+        <externalId>false</externalId>
+        <label>Ending Mileage</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>External Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Goodwill_Offered__c</fullName>
+        <description>Pulls over the status of the &quot;Goodwill Offered&quot; field from the related CA case</description>
+        <externalId>false</externalId>
+        <formula>Related_Support_Case__r.Goodwill_Offered__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Pulls over the status of the &quot;Goodwill Offered&quot; field from the related CA case</inlineHelpText>
+        <label>Goodwill Offered?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Goodwill_Processed__c</fullName>
+        <description>Pulls over the &quot;Goodwill Offered&quot; field from the related CA case</description>
+        <externalId>false</externalId>
+        <formula>Related_Support_Case__r.Goodwill_Processed__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Pulls over the &quot;Goodwill Offered&quot; field from the related CA case</inlineHelpText>
+        <label>Goodwill Processed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HK_Request_Type__c</fullName>
+        <description>stores groupings for HK reportings, created for DTS</description>
+        <externalId>false</externalId>
+        <label>HK Request Type</label>
+        <picklist>
+            <controllingField>Request_Type__c</controllingField>
+            <picklistValues>
+                <fullName>CBB</fullName>
+                <controllingFieldValues>Auction Inspection</controllingFieldValues>
+                <controllingFieldValues>CBB</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consumer</fullName>
+                <controllingFieldValues>CA Inspection</controllingFieldValues>
+                <controllingFieldValues>DRT Inspection</controllingFieldValues>
+                <controllingFieldValues>DRT Inspection ATTY</controllingFieldValues>
+                <controllingFieldValues>DTS CA</controllingFieldValues>
+                <controllingFieldValues>DTS Region</controllingFieldValues>
+                <controllingFieldValues>DTS TL</controllingFieldValues>
+                <controllingFieldValues>Dealer Request</controllingFieldValues>
+                <controllingFieldValues>EXEC Request</controllingFieldValues>
+                <controllingFieldValues>IIR</controllingFieldValues>
+                <controllingFieldValues>Legal Hearing</controllingFieldValues>
+                <controllingFieldValues>Legal Inspection</controllingFieldValues>
+                <controllingFieldValues>Region Request</controllingFieldValues>
+                <controllingFieldValues>TECH LINE Request</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hearing</fullName>
+                <controllingFieldValues>DRT Hearing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Special Request</fullName>
+                <controllingFieldValues>Special Request</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Consumer</fullName>
+                <controllingFieldValues>DTS Dealer</controllingFieldValues>
+                <controllingFieldValues>DTS Hot Alert</controllingFieldValues>
+                <controllingFieldValues>EDR</controllingFieldValues>
+                <controllingFieldValues>SPR</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Recommendation__c</fullName>
+        <description>Displays the TECH LINE Agent&apos;s Initial Recommendations</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays the TECH LINE Agent&apos;s Initial Recommendations</inlineHelpText>
+        <label>Initial Recommendation</label>
+        <length>1300</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Inspection_Time_Notes__c</fullName>
+        <description>Stores the DTS Inspection Time and any notes the DTS has for the Case Owner.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Appointment time with time zone and notes for related case owner</inlineHelpText>
+        <label>Inspection Time/Notes</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Internal_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Latest_Update__c</fullName>
+        <description>Displays the most recent Case Comment attached to the Related Support Case</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays the most recent Case Comment attached to the Related Support Case</inlineHelpText>
+        <label>Latest Update</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Legacy_Requested_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy Requested Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Non_OE_Mod_s_or_Accy_s__c</fullName>
+        <externalId>false</externalId>
+        <label>Non OE  Mod&apos;s or Accy&apos;s</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Problem_Analysis__c</fullName>
+        <description>Displays the Problem Analysis information provided by TECH LINE</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays the Problem Analysis information provided by TECH LINE</inlineHelpText>
+        <label>Problem Analysis</label>
+        <length>1300</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Related_Support_Case_Subject__c</fullName>
+        <description>Displays the Subject of the Related Support Case</description>
+        <externalId>false</externalId>
+        <formula>Related_Support_Case__r.Subject</formula>
+        <inlineHelpText>Displays the Subject of the Related Support Case</inlineHelpText>
+        <label>Related Support Case Subject</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_Support_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Displays the related TECH LINE/CA case the DTS Field Inspection was created from.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays the related TECH LINE/CA case the DTS Field Inspection was created from.</inlineHelpText>
+        <label>Related Support Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>DTS Field Inspections</relationshipLabel>
+        <relationshipName>DTS_Field_Inspections</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Repair_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Repair Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Report_Date__c</fullName>
+        <description>Tracks the date the field inspection report was closed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tracks the date the field inspection report was closed.</inlineHelpText>
+        <label>Report Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Request_Date__c</fullName>
+        <description>Tracks the date the field inspection was requested by TECH LINE/CA</description>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( Legacy_Requested_Date__c ),DATEVALUE(CreatedDate),DATEVALUE(Legacy_Requested_Date__c)  )</formula>
+        <inlineHelpText>Tracks the date the field inspection was requested by TECH LINE/CA</inlineHelpText>
+        <label>Request Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Request_Type__c</fullName>
+        <description>Pulls over the Request Type from the case/ determines the request type based on the Severity Level</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Pulls over the Request Type from the case/ determines the request type based on the Severity Level</inlineHelpText>
+        <label>Request Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Auction Inspection</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA Inspection</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CBB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DRT Hearing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DRT Inspection</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DRT Inspection ATTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DTS CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DTS Dealer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DTS Hot Alert</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DTS Region</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DTS TL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EDR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EXEC Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IIR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal Hearing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal Inspection</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Region Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Special Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SPR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TECH LINE Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Requesting_Agent_Phone_Number__c</fullName>
+        <description>Displays the agent who requested the DTS inspection&apos;s phone number if available</description>
+        <externalId>false</externalId>
+        <formula>Requesting_Agent__r.Phone</formula>
+        <inlineHelpText>Displays the agent who requested the DTS inspection&apos;s phone number if available</inlineHelpText>
+        <label>Requesting Agent Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requesting_Agent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Stores the TECH LINE/CA agent who requested the DTS inspection</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the TECH LINE/CA agent who requested the DTS inspection</inlineHelpText>
+        <label>Requesting Agent</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The user is not active or does not have a full salesforce license.</errorMessage>
+            <filterItems>
+                <field>User.IsActive</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>User.UserType</field>
+                <operation>equals</operation>
+                <value>Standard</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>DTS_Field_Inspections</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Starting_Mileage__c</fullName>
+        <externalId>false</externalId>
+        <label>Starting Mileage</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Engineering Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software Update Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WCB Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WCB Decline</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Request_Type__c</fullName>
+        <description>Specifies a special project</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifies a special project</inlineHelpText>
+        <label>Sub-Request Type</label>
+        <picklist>
+            <controllingField>Request_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Survey</fullName>
+                <controllingFieldValues>Special Request</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auto Show</fullName>
+                <controllingFieldValues>Special Request</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer Managed</fullName>
+                <controllingFieldValues>CBB</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DTS Managed</fullName>
+                <controllingFieldValues>CBB</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Technician_Name__c</fullName>
+        <description>Displays the Dealer Technician who called in&apos;s name</description>
+        <externalId>false</externalId>
+        <formula>Related_Support_Case__r.Caller_Name__c</formula>
+        <inlineHelpText>Displays the Dealer Technician who called in&apos;s name</inlineHelpText>
+        <label>Technician Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Threat_Level__c</fullName>
+        <description>Determines the severity of the request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines the severity of the request</inlineHelpText>
+        <label>Threat Level</label>
+        <picklist>
+            <controllingField>Request_Type__c</controllingField>
+            <picklistValues>
+                <fullName>0</fullName>
+                <controllingFieldValues>Auction Inspection</controllingFieldValues>
+                <controllingFieldValues>CBB</controllingFieldValues>
+                <controllingFieldValues>SPR</controllingFieldValues>
+                <controllingFieldValues>Special Request</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <controllingFieldValues>DTS Dealer</controllingFieldValues>
+                <controllingFieldValues>DTS Hot Alert</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <controllingFieldValues>DTS CA</controllingFieldValues>
+                <controllingFieldValues>DTS Region</controllingFieldValues>
+                <controllingFieldValues>DTS TL</controllingFieldValues>
+                <controllingFieldValues>Dealer Request</controllingFieldValues>
+                <controllingFieldValues>TECH LINE Request</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <controllingFieldValues>CA Inspection</controllingFieldValues>
+                <controllingFieldValues>EXEC Request</controllingFieldValues>
+                <controllingFieldValues>Region Request</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <controllingFieldValues>DRT Hearing</controllingFieldValues>
+                <controllingFieldValues>DRT Inspection</controllingFieldValues>
+                <controllingFieldValues>DRT Inspection ATTY</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <controllingFieldValues>EDR</controllingFieldValues>
+                <controllingFieldValues>IIR</controllingFieldValues>
+                <controllingFieldValues>Legal Hearing</controllingFieldValues>
+                <controllingFieldValues>Legal Inspection</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>VCAN__c</fullName>
+        <description>Indicates whether there is a  related &quot;VCAN&quot; to the Vehicle</description>
+        <externalId>false</externalId>
+        <formula>Related_Support_Case__r.VCAN__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Indicates whether there is a  related &quot;VCAN&quot; to the Vehicle</inlineHelpText>
+        <label>VCAN</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VIN__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Displays the VIN that needs to be investigated</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays the VIN that needs to be investigated</inlineHelpText>
+        <label>VIN</label>
+        <referenceTo>Vehicle__c</referenceTo>
+        <relationshipLabel>DTS Field Inspections</relationshipLabel>
+        <relationshipName>DTS_Field_Inspections</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Condition_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Condition Description</label>
+        <length>180</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Condition__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Condition</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Good</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Average</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Findings__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Findings</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Service_Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Pulls over a related Vehicle Service Contract from a related CA case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Pulls over a related Vehicle Service Contract from a related CA case.</inlineHelpText>
+        <label>Vehicle Service Contract</label>
+        <referenceTo>Vehicle_Service_Contract__c</referenceTo>
+        <relationshipLabel>DTS Field Inspections</relationshipLabel>
+        <relationshipName>DTS_Field_Inspections</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Was_DTS_able_to_duplicate_concerns__c</fullName>
+        <externalId>false</externalId>
+        <label>Was DTS able to duplicate concerns?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Year_Model__c</fullName>
+        <description>Displays the Vehicles Model Year and Model Line</description>
+        <externalId>false</externalId>
+        <formula>VIN__r.Model_Year__c &amp; &quot; &quot; &amp;  VIN__r.Model_Line_Name__c</formula>
+        <inlineHelpText>Displays the Vehicles Model Year and Model Line</inlineHelpText>
+        <label>Year/Model</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>DTS Field Inspection</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Related_Support_Case__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Dealer_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CR_Field_Inspections</fullName>
+        <columns>Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Related_Support_Case__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>DTS_Team__c</columns>
+        <columns>DTS_Inspection_Date__c</columns>
+        <columns>Report_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Cancelled</value>
+        </filters>
+        <filters>
+            <field>DTS_Team__c</field>
+            <operation>equals</operation>
+            <value>CR</value>
+        </filters>
+        <label>CR Field Inspections</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Dealer_Technical_Support</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MWR_Field_Inspections</fullName>
+        <columns>Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Related_Support_Case__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>DTS_Team__c</columns>
+        <columns>DTS_Inspection_Date__c</columns>
+        <columns>Report_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Cancelled</value>
+        </filters>
+        <filters>
+            <field>DTS_Team__c</field>
+            <operation>equals</operation>
+            <value>MWR</value>
+        </filters>
+        <label>MWR Field Inspections</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Dealer_Technical_Support</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Completed_Inspections</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Related_Support_Case__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>DTS_Team__c</columns>
+        <columns>DTS_Inspection_Date__c</columns>
+        <columns>Report_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </filters>
+        <label>*My Completed Inspections</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Dealer_Technical_Support</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Field_Inspections</fullName>
+        <columns>Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Related_Support_Case__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>DTS_Team__c</columns>
+        <columns>DTS_Inspection_Date__c</columns>
+        <columns>Report_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Cancelled</value>
+        </filters>
+        <label>*My Field Inspections</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Dealer_Technical_Support</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NER_Field_Inspections</fullName>
+        <columns>Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Related_Support_Case__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>DTS_Team__c</columns>
+        <columns>DTS_Inspection_Date__c</columns>
+        <columns>Report_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Cancelled</value>
+        </filters>
+        <filters>
+            <field>DTS_Team__c</field>
+            <operation>equals</operation>
+            <value>NER</value>
+        </filters>
+        <label>NER Field Inspections</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Dealer_Technical_Support</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SER_Field_Inspections</fullName>
+        <columns>Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Related_Support_Case__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>DTS_Team__c</columns>
+        <columns>DTS_Inspection_Date__c</columns>
+        <columns>Report_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Cancelled</value>
+        </filters>
+        <filters>
+            <field>DTS_Team__c</field>
+            <operation>equals</operation>
+            <value>SER</value>
+        </filters>
+        <label>SER Field Inspections</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Dealer_Technical_Support</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>WR_Field_Inspections</fullName>
+        <columns>Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Related_Support_Case__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>DTS_Team__c</columns>
+        <columns>DTS_Inspection_Date__c</columns>
+        <columns>Report_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Cancelled</value>
+        </filters>
+        <filters>
+            <field>DTS_Team__c</field>
+            <operation>equals</operation>
+            <value>WR</value>
+        </filters>
+        <label>WR Field Inspections</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Dealer_Technical_Support</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Title</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>DTS Field Inspections</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Related_Support_Case__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.FIRST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.LAST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DTS_Team__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DTS_Inspection_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Report_Date__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Related_Support_Case__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.LAST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DTS_Team__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DTS_Inspection_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Report_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>CBB_Request_Type</fullName>
+        <active>false</active>
+        <description>If Request Type equals &quot;CBB&quot; Sub-Request Type cannot be empty.</description>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Status__c, &quot;Completed&quot;), 
+ISPICKVAL(Request_Type__c ,&quot;CBB&quot;), ISPICKVAL(Sub_Request_Type__c,&quot;&quot;))</errorConditionFormula>
+        <errorMessage>Please enter a Sub-Request Type.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Condition_Description</fullName>
+        <active>true</active>
+        <description>If Non EO Mod&apos;s or Accy&apos;s = Yes, Condition Description is required.</description>
+        <errorConditionFormula>AND (
+ISPICKVAL( Non_OE_Mod_s_or_Accy_s__c , &quot;Yes&quot;),
+ISBLANK(Condition_Description__c)
+)</errorConditionFormula>
+        <errorMessage>If Non EO Mod&apos;s or Accy&apos;s is equal to Yes, Condition Description is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DTS_Completed</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(
+      ISPICKVAL(Status__c , &quot;Completed&quot;),
+OR(
+     ISPICKVAL(Did_DTS_and_customer_meet__c, &quot;&quot;), 
+     ISPICKVAL(Did_DTS_meet_with_Dealer__c, &quot;&quot;),               ISPICKVAL(Was_DTS_able_to_duplicate_concerns__c ,&quot;&quot;)
+)
+)</errorConditionFormula>
+        <errorMessage>In order to mark this request as completed, please ensure you have indicated whether you have spoke to the Customer and the Dealer and whether you were able to duplicate the concern.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ETA</fullName>
+        <active>true</active>
+        <description>If Repair Status = In Process, ETA is required.</description>
+        <errorConditionFormula>AND (
+ISPICKVAL(Repair_Status__c  , &quot;In Process&quot;),
+ISBLANK(ETA__c)
+)</errorConditionFormula>
+        <errorMessage>If Repair Status is equal to In Process, ETA is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Veh_Condition_Repair_Status_and_Non_OE</fullName>
+        <active>true</active>
+        <description>If VIN is populated, Vehicle Condition, Repair Status and Non EO Mod&apos;s or Accy&apos;s fields are required, to mark the status of the field inspection as completed.</description>
+        <errorConditionFormula>OR(
+ ISPICKVAL( Vehicle_Condition__c,&quot;&quot;), 
+ ISPICKVAL( Repair_Status__c,&quot;&quot;),
+ ISPICKVAL( Non_OE_Mod_s_or_Accy_s__c ,&quot;&quot;)
+  )
+&amp;&amp;
+ NOT(ISBLANK( VIN__c ))
+&amp;&amp;
+ ISPICKVAL( Status__c,&quot;Completed&quot;)</errorConditionFormula>
+        <errorMessage>To save this DTS Field Inspection as &quot;Completed&quot; you must first enter Vehicle Condition, Repair Status and Non EO Mod&apos;s or Accy&apos;s.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Vehicle_Condition_Description</fullName>
+        <active>true</active>
+        <description>If Vehicle Condition = Poor, Vehicle Condition Description is required.</description>
+        <errorConditionFormula>AND (
+ISPICKVAL(Vehicle_Condition__c, &quot;Poor&quot;),
+ISBLANK(Vehicle_Condition_Description__c)
+)</errorConditionFormula>
+        <errorMessage>If Vehicle Condition is equal to Poor, Vehicle Condition Description is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>dealer_action_observation_limit_2000</fullName>
+        <active>true</active>
+        <description>The limit of characters allowed is 32,000 on the dealer_action_observation_c field.</description>
+        <errorConditionFormula>LEN( Dealer_Action_Observation__c ) &gt; 32000</errorConditionFormula>
+        <errorDisplayField>Dealer_Action_Observation__c</errorDisplayField>
+        <errorMessage>Dealer Action/Observation field cannot be more than 32,000 characters.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Add_Comments</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Add Comments</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/DTSComments?Id={!DTS_Field_Inspection__c.Id}</url>
+    </webLinks>
+</CustomObject>

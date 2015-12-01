@@ -1,0 +1,72 @@
+<apex:page standardController="Brochure_Request__c" extensions="Controller_LiteratureRequest" title="Literature Request" action="{!changeAccount}">
+    <apex:sectionHeader title="Literature Request"/>
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock id="literatureSelect" mode="edit" >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!doSaveLiteratureRequest}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection columns="1" title="Information">
+                <apex:inputField value="{!literatureRequest.Account_Name__c}">
+                    <apex:actionSupport event="onchange" action="{!changeAccount}" reRender="mailingStreet, mailingCity, mailingState, mailingZip, email" status="status"/>
+                </apex:inputField>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Literature Request   (For Models older than 5 years, please have Customer call IMS 1-800-247-5321. There will be a charge to the Customer.)">
+                <apex:actionStatus id="status" startText="Processing request. Please wait..."/>
+                <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Make" for="selectMake"/>
+                        <apex:selectList id="selectMake" size="1" value="{!selectedMake}" >
+                            <apex:selectOptions value="{!Makes}"></apex:selectOptions>
+                            <apex:actionSupport event="onchange" reRender="selectYear, selectModel, selectLiterature" status="status"/>
+                        </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Model Year" for="selectYear"/>
+                    <apex:selectList id="selectYear" size="1" value="{!selectedYear}" >
+                        <apex:selectOptions value="{!Years}"></apex:selectOptions>
+                        <apex:actionSupport event="onchange" reRender="selectModel, selectLiterature" status="status"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Model" for="selectModel"/>
+                    <apex:selectList id="selectModel" size="1" value="{!selectedModel}" >
+                        <apex:selectOptions value="{!Models}"></apex:selectOptions>
+                        <apex:actionSupport event="onchange" reRender="selectLiterature" status="status"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Literature" for="selectLiterature"/>
+                    <apex:selectList id="selectLiterature" value="{!selectedLiterature}" size="1" >
+                        <apex:selectOptions value="{!Literatures}" ></apex:selectOptions>
+                        <apex:actionSupport event="onchange" action="{!populateEntries}" status="status"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Ship to Address">
+                <apex:inputField id="mailingStreet" value="{!literatureRequest.Mailing_Street__c}"/>
+                <apex:inputField id="mailingCity" value="{!literatureRequest.Mailing_City__c}"/>
+                <apex:inputField id="mailingState" value="{!literatureRequest.Mailing_State_Province__c}"/>
+                <apex:inputField id="mailingZip" value="{!literatureRequest.Mailing_Zip__c}"/>
+                <apex:inputField id="email" value="{!literatureRequest.Email__c}"/>
+                <apex:inputField value="{!literatureRequest.Use_this_to_Update_Customer_s_Info__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Mail Updates">
+                <apex:inputField value="{!literatureRequest.Keep_me_informed_Nissan_Indicator__c}"/>
+                <apex:inputField value="{!literatureRequest.Keep_me_informed_Infiniti_Indicator__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Email Updates">
+                <apex:inputField value="{!literatureRequest.Send_Nissan_Email_Indicator__c}"/>
+                <apex:inputField value="{!literatureRequest.Send_Infiniti_Email_Indicator__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Resend Request">
+                <apex:inputField value="{!literatureRequest.Resend_Request_Indicator__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" title="Delivery Information">
+                <apex:outputField value="{!literatureRequest.Shipped_By__c}"/>
+                <apex:outputField value="{!literatureRequest.Tracking_Number__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

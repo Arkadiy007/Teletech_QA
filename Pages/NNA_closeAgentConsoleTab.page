@@ -1,0 +1,22 @@
+<apex:page showHeader="false" sidebar="false">
+    <apex:includeScript value="/support/console/31.0/integration.js"/>
+    
+    
+    <script type="text/javascript">
+    
+    window.onload = function()
+    {
+        sforce.console.getEnclosingPrimaryTabId(closeTab);
+        //alert("Onload fired");
+    };
+    
+    function closeTab(result) 
+    {
+         //Now that we have the primary tab ID, we can close it
+         var tabId = result.id;
+         sforce.console.closeTab(tabId);
+    };
+    
+    </script>
+    
+</apex:page>

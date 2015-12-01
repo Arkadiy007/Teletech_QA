@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Related Managed Services or Development Case associated to research or deliver the Idea.</description>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Ideas</relationshipLabel>
+        <relationshipName>Ideas</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Categories</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer Care Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CRM System</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Innovation!</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Closed__c</fullName>
+        <description>Workflow Rule updates this value when Idea.Status is changed</description>
+        <externalId>false</externalId>
+        <label>Closed</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Elapsed__c</fullName>
+        <description>Calculates either Today - Created Date if Closed is blank, else Closed - Created Date.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Closed__c),
+Today() - DATEVALUE(CreatedDate),
+DATEVALUE(Closed__c) - DATEVALUE(CreatedDate))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Open</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Implemented</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Action Planned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Future Consideration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Need More Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle__c</fullName>
+        <description>Related Vehicle Make &amp; Model</description>
+        <externalId>false</externalId>
+        <label>Vehicle</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Nissan Altima</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Altima Coupe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Altima Hybrid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Armada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan cube</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Frontier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan GT-R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan JUKE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Maxima</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Murano</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Murano CrossCabriolet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan LEAF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Pathfinder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Quest</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Rogue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Sentra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Titan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Versa Hatchback</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Versa Sedan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Xterra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Z</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Z Nismo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan Z Roadster</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti EX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti FX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti G Convertible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti G Coupe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti G Sedan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti JX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti M</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti QX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>IDEA.TITLE</columns>
+        <columns>IDEA.BODY</columns>
+        <columns>IDEA.STATUS</columns>
+        <columns>VOTE_STATS.WEIGHTED_SUM</columns>
+        <columns>IDEA.CREATED_BY_NICKNAME</columns>
+        <columns>IDEA.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ideas_Last_7_Days</fullName>
+        <columns>IDEA.CREATED_DATE</columns>
+        <columns>IDEA.TITLE</columns>
+        <columns>IDEA.CREATED_BY_NICKNAME</columns>
+        <columns>VOTE_STATS.WEIGHTED_SUM</columns>
+        <columns>IDEA.NUM_COMMENTS</columns>
+        <columns>IDEA.STATUS</columns>
+        <columns>IDEA.CATEGORIES</columns>
+        <columns>COMMUNITY.NAME</columns>
+        <columns>IDEA.IDEA_THEME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IDEA.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>Last 7 Days</label>
+    </listViews>
+    <listViews>
+        <fullName>This_Month_Last_Month</fullName>
+        <columns>IDEA.CREATED_DATE</columns>
+        <columns>IDEA.STATUS</columns>
+        <columns>IDEA.TITLE</columns>
+        <columns>IDEA.CREATED_BY_NICKNAME</columns>
+        <columns>IDEA.NUM_COMMENTS</columns>
+        <columns>VOTE_STATS.WEIGHTED_SUM</columns>
+        <columns>IDEA.CATEGORIES</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IDEA.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH,LAST_MONTH</value>
+        </filters>
+        <label>This Month &amp; Last Month</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>X1_Open</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>IDEA.TITLE</columns>
+        <columns>IDEA.BODY</columns>
+        <columns>IDEA.CREATED_BY_NICKNAME</columns>
+        <columns>VOTE_STATS.WEIGHTED_SUM</columns>
+        <columns>IDEA.CREATED_DATE</columns>
+        <columns>Elapsed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IDEA.STATUS</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>IDEA.STATUS</field>
+            <operation>equals</operation>
+        </filters>
+        <label>1. Open</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X2_Need_More_Info</fullName>
+        <columns>IDEA.TITLE</columns>
+        <columns>IDEA.BODY</columns>
+        <columns>Case__c</columns>
+        <columns>IDEA.CREATED_BY_NICKNAME</columns>
+        <columns>IDEA.CREATED_DATE</columns>
+        <columns>Elapsed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IDEA.STATUS</field>
+            <operation>equals</operation>
+            <value>Need More Info</value>
+        </filters>
+        <label>2. Need More Info</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X3_Under_Review</fullName>
+        <columns>IDEA.TITLE</columns>
+        <columns>IDEA.BODY</columns>
+        <columns>Case__c</columns>
+        <columns>IDEA.CREATED_DATE</columns>
+        <columns>Elapsed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IDEA.STATUS</field>
+            <operation>equals</operation>
+            <value>Under Review</value>
+        </filters>
+        <label>3. Under Review</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X4_Planned</fullName>
+        <columns>IDEA.TITLE</columns>
+        <columns>IDEA.BODY</columns>
+        <columns>Case__c</columns>
+        <columns>IDEA.CREATED_DATE</columns>
+        <columns>Elapsed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IDEA.STATUS</field>
+            <operation>equals</operation>
+            <value>Planned</value>
+        </filters>
+        <label>4. Planned</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X5_Implemented</fullName>
+        <columns>IDEA.TITLE</columns>
+        <columns>IDEA.BODY</columns>
+        <columns>Case__c</columns>
+        <columns>IDEA.CREATED_DATE</columns>
+        <columns>Closed__c</columns>
+        <columns>Elapsed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IDEA.STATUS</field>
+            <operation>equals</operation>
+            <value>Implemented</value>
+        </filters>
+        <label>5. Implemented</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X6_Future_Consideration</fullName>
+        <columns>IDEA.TITLE</columns>
+        <columns>IDEA.BODY</columns>
+        <columns>Case__c</columns>
+        <columns>IDEA.CREATED_DATE</columns>
+        <columns>Elapsed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IDEA.STATUS</field>
+            <operation>equals</operation>
+            <value>Future Consideration</value>
+        </filters>
+        <label>6. Future Consideration</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X7_No_Action_Planned</fullName>
+        <columns>IDEA.TITLE</columns>
+        <columns>IDEA.BODY</columns>
+        <columns>Case__c</columns>
+        <columns>IDEA.CREATED_DATE</columns>
+        <columns>Closed__c</columns>
+        <columns>Elapsed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IDEA.STATUS</field>
+            <operation>equals</operation>
+            <value>No Action Planned</value>
+        </filters>
+        <label>7. No Action Planned</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <recordTypes>
+        <fullName>InternalIdeasIdeaRecordType</fullName>
+        <active>true</active>
+        <description>Record Type used to associate ideas with a specific community</description>
+        <label>Internal Community: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Future Consideration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need More Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Action Planned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Vehicle__c</picklist>
+            <values>
+                <fullName>Infiniti EX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti FX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti G Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti G Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti G Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti JX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti QX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Altima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Altima Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan JUKE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan LEAF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Murano CrossCabriolet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Versa Hatchback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Z Nismo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan cube</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_for_community_09aF0000000PDHUIA4_entity_Idea</fullName>
+        <active>true</active>
+        <description>Record type used to associate Idea with a specific community</description>
+        <label>Customer Care: Idea Record Type</label>
+        <picklistValues>
+            <picklist>Categories</picklist>
+            <values>
+                <fullName>CRM System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Care Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Innovation%21</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Future Consideration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implemented</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need More Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Action Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Vehicle__c</picklist>
+            <values>
+                <fullName>Infiniti EX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti FX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti G Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti G Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti G Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti JX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti QX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Altima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Altima Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan JUKE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan LEAF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Murano CrossCabriolet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Versa Hatchback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Z Nismo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan cube</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>IDEA.TITLE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.BODY</customTabListAdditionalFields>
+        <customTabListAdditionalFields>COMMUNITY.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.CREATED_BY_NICKNAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.NUM_COMMENTS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VOTE.HAS_VOTED</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.CATEGORIES</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.STATUS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IDEA.LAST_COMMENT_DATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>IDEA.TITLE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IDEA.BODY</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IDEA.CATEGORIES</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IDEA.CREATED_BY_NICKNAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IDEA.NUM_COMMENTS</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IDEA.STATUS</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IDEA.CREATED_DATE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IDEA.TITLE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IDEA.BODY</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IDEA.CATEGORIES</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IDEA.CREATED_BY_NICKNAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IDEA.NUM_COMMENTS</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IDEA.STATUS</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IDEA.CREATED_DATE</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.TITLE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.BODY</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.CATEGORIES</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.CREATED_BY_NICKNAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.NUM_COMMENTS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IDEA.CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Vehicle_Ideas_must_Select_Vehicle</fullName>
+        <active>false</active>
+        <description>If Category is &quot;Vehicles&quot;, user must select a Vehicle Make/Model</description>
+        <errorConditionFormula>INCLUDES( Categories , &quot;Vehicles&quot;)
+&amp;&amp;
+ISBLANK(TEXT( Vehicle__c ))</errorConditionFormula>
+        <errorMessage>For &quot;Vehicles&quot; Ideas, you must select a Vehicle from the dropdown list</errorMessage>
+    </validationRules>
+</CustomObject>

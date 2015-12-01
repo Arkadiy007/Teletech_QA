@@ -1,0 +1,118 @@
+<apex:page standardController="Account" extensions="Customer_Loyalty_Component" title="Loyalty Component">
+
+<style>
+.liststyle { margin: 0px auto; width: 800px; padding: 0px; border: 0px solid red; }
+.list-row { margin: 0px auto; width: 100%; height: 20px; display:inline-block; border: 0px solid blue;}
+.list-left { width: 135px;  padding:0px; float:left; border: 0px solid yellow;}
+.list-right {width: 100px; padding:0px;float:right;border: 0px solid orange;}
+.list-rest { padding:0px;float:left;border: 0px solid orange;}
+
+</style>
+<apex:form >
+
+<apex:actionFunction action="{!performRefresh}" name="refreshPage" rerender="allpage" />
+<script>
+
+function performdoitthing() {
+    refreshPage();
+    setTimeout( performdoitthing, 38000); 
+}
+
+
+
+setTimeout( performdoitthing, 8000); ;
+</script>
+</apex:form>
+<apex:outputPanel id="allpage">
+
+
+
+               <br /> <span>
+                    <apex:outputPanel rendered="{!reapeatCustomer}"><span style="font-size: 20px; color: green;">&#x25CF;</span></apex:outputPanel>
+                    <apex:outputPanel rendered="{!!reapeatCustomer}"><span style="font-size: 20px; color: red;">&#x25CC;</span></apex:outputPanel>
+                    Repeat Customer
+                </span>
+
+               <br /> <span>
+                    <apex:outputPanel rendered="{!FleetCustomer}"><span style="font-size: 20px; color: green;">&#x25CF;</span></apex:outputPanel>
+                    <apex:outputPanel rendered="{!!FleetCustomer}"><span style="font-size: 20px; color: red;">&#x25CC;</span></apex:outputPanel>
+                    Fleet
+                </span>
+
+               <br /> <span>
+                    <apex:outputPanel rendered="{!NCFCustomer}"><span style="font-size: 20px; color: green;">&#x25CF;</span></apex:outputPanel>
+                    <apex:outputPanel rendered="{!!NCFCustomer}"><span style="font-size: 20px; color: red;">&#x25CC;</span></apex:outputPanel>
+                    NCF/ICF
+                </span>
+
+               <br /> <span>
+                    <apex:outputPanel rendered="{!VPPCustomer}"><span style="font-size: 20px; color: green;">&#x25CF;</span></apex:outputPanel>
+                    <apex:outputPanel rendered="{!!VPPCustomer}"><span style="font-size: 20px; color: red;">&#x25CC;</span></apex:outputPanel>
+                    VPP
+                </span>
+  
+  
+               <br /> <span>
+                    <apex:outputPanel rendered="{!SocialCustomer}"><span style="font-size: 20px; color: green;">&#x25CF;</span></apex:outputPanel>
+                    <apex:outputPanel rendered="{!!SocialCustomer}"><span style="font-size: 20px; color: red;">&#x25CC;</span></apex:outputPanel>
+                   Social Influencer
+                </span>
+
+               <br /> <span>
+                    <apex:outputPanel rendered="{!WarrantyCustomer}"><span style="font-size: 20px; color: green;">&#x25CF;</span></apex:outputPanel>
+                    <apex:outputPanel rendered="{!!WarrantyCustomer}"><span style="font-size: 20px; color: red;">&#x25CC;</span></apex:outputPanel>
+                    Warranty History
+                </span>
+   
+               <br /> <span>
+                    <apex:outputPanel rendered="{!TechlineCustomer}"><span style="font-size: 20px; color: green;">&#x25CF;</span></apex:outputPanel>
+                    <apex:outputPanel rendered="{!!TechlineCustomer}"><span style="font-size: 20px; color: red;">&#x25CC;</span></apex:outputPanel>
+                    TECH LINE
+                </span>
+
+               <br /> <span>
+                    <apex:outputPanel rendered="{!PreOwnedCustomer}"><span style="font-size: 20px; color: green;">&#x25CF;</span></apex:outputPanel>
+                    <apex:outputPanel rendered="{!!PreOwnedCustomer}"><span style="font-size: 20px; color: red;">&#x25CC;</span></apex:outputPanel>
+                    Certified Pre-Owned
+                </span>
+   
+               <br /> <span>
+                    <apex:outputPanel rendered="{!CustomerPayCustomer}"><span style="font-size: 20px; color: green;">&#x25CF;</span></apex:outputPanel>
+                    <apex:outputPanel rendered="{!!CustomerPayCustomer}"><span style="font-size: 20px; color: red;">&#x25CC;</span></apex:outputPanel>
+                    Customer Pay
+                </span>
+    <br />
+    <center>
+        <apex:outputPanel rendered="{!hasNissan}"><apex:image url="{!URLFOR($Resource.Customer_Loyalty_Component, 'Nissan_Emblem_Logo.gif')}" alt="Nissan" width="75" height="75"/> </apex:outputPanel>
+        <apex:outputPanel rendered="{!!hasNissan}"><apex:image style="opacity: .2;" url="{!URLFOR($Resource.Customer_Loyalty_Component, 'Nissan_Emblem_Logo.gif')}" alt="Nissan" width="75" height="75"/></apex:outputPanel>
+       <br />
+        <apex:outputPanel rendered="{!hasInfiniti}"> <apex:image url="{!URLFOR($Resource.Customer_Loyalty_Component, 'Infiniti_Emblem.png')}" alt="Infiniti" width="75" height="75"/></apex:outputPanel>
+        <apex:outputPanel rendered="{!!hasInfiniti}"> <apex:image style="opacity: .2;" url="{!URLFOR($Resource.Customer_Loyalty_Component, 'Infiniti_Emblem.png')}" alt="Infiniti" width="75" height="75"/></apex:outputPanel>
+       <br />
+        <apex:outputPanel rendered="{!hasLeaf}">  <apex:image url="{!URLFOR($Resource.Customer_Loyalty_Component, 'zeroEmissionwhite.png')}" alt="Leaf" width="75" height="75"/></apex:outputPanel>
+        <apex:outputPanel rendered="{!!hasLeaf}">  <apex:image style="opacity: .2;" url="{!URLFOR($Resource.Customer_Loyalty_Component, 'zeroEmissionwhite.png')}" alt="Leaf" width="75" height="75"/></apex:outputPanel>
+</center>
+
+    
+
+    
+<!-- 
+
+[{"lbl":"Repeat Customer", value: "{!reapeatCustomer}"},
+                     {"lbl":"NMAC", value: "{!NMACCustomer}"},
+                     {"lbl":"NESNA", value: "{!NESNACustomer}"},
+                     {"lbl":"NOTOR", value: "{!NOTORCustomer}"},
+                     {"lbl":"VPP", value: "{!VPPCustomer}"},
+                     {"lbl":"Social Influencer", value: "{!SocialCustomer}"},
+                     {"lbl":"Warranty History", value: "{!WarrantyCustomer}"},
+                     {"lbl":"TECH LINE", value: "{!TechlineCustomer}"},
+                     {"lbl":"Certified Pre-Owned", value: "{!PreOwnedCustomer}"},
+                     {"lbl":"Customer Pay", value: "{!CustomerPayCustomer}"}
+                     //,{"lbl":"Propensity to Re-Purchase", value: "{!Repurchase}"},
+                     //{"lbl":"Propensity to Defect", value: "{!Defect}"}
+                     ];
+                     
+                     -->
+          </apex:outputPanel>
+                     
+</apex:page>

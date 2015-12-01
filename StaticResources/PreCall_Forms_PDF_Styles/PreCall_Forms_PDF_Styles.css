@@ -1,0 +1,42 @@
+
+.title {
+    text-align:center;
+}
+table {
+    width: 18.6cm;
+    max-width: 18.6cm !important;
+    border: 1px solid gray;
+    table-layout: fixed;
+}
+tr {
+    border: 1px solid gray;
+}
+td {
+    max-width: 9.3cm;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    border: 1px solid gray;
+    vertical-align: top;
+    font-size: 14pt;
+}
+.labelColumn {
+    font-weight:bold;
+    text-align:left;
+}
+@page {
+    @bottom-center {
+        content: "Page " counter(page) " of " counter(pages);
+        font-family: sans-serif;
+        font-size: 80%;
+    }
+}
+.attachmentTable {
+    table-layout:fixed;
+}
+.attachmentColumn {
+    word-wrap:break-word;
+}
+
+          
+

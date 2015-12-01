@@ -1,0 +1,222 @@
+<apex:page controller="LiveAgent_Direct_Complete" showHeader="false"
+    sidebar="false" title="Infiniti Chat">
+    <apex:stylesheet value="{!URLFOR($Resource.NissanStyle, 'NewNissan.css')}" />
+
+    <apex:form id="frmMain">
+        <apex:pageMessages escape="false" />
+        <div class="livechat_header"></div>
+
+        <div class="livechat_bg">
+            <apex:pageblock >
+
+                <div style="height: 345px; padding-top: 15px;">
+                    <div
+                        style="padding-left: 135px; font-family: Verdana, Geneva, sans-serif;"
+                        class="livechat_txt">*required</div>
+
+                    <div style="padding-top: 2px; padding-left: 10px;">
+                        <apex:pageblockSection collapsible="false" columns="1">
+                            <apex:pageblockSectionItem labelStyle="width:23%;"
+                                labelStyleClass="livechat_field_label_txt">
+                                <apex:outputLabel value="First Name *"
+                                    style="font-family: Verdana, Geneva, sans-serif" />
+                                <apex:inputText value="{!firstName}" maxlength="30"
+                                    styleClass="livechat_textbox" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem labelStyleClass="livechat_field_label_txt">
+                                <apex:outputLabel value="Last Name"
+                                    style="font-family: Verdana, Geneva, sans-serif" />
+                                <apex:inputText value="{!lastName}" maxlength="30"
+                                    styleClass="livechat_textbox" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem labelStyle="text-align:left;">
+                                <apex:outputLabel value="ZIP Code"
+                                    style="font-family: Verdana, Geneva, sans-serif" />
+                                <apex:inputText value="{!zipCode}" maxlength="10"
+                                    styleClass="livechat_textbox" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem labelStyle="text-align:left;">
+                                <apex:outputLabel value="Email"
+                                    style="font-family: Verdana, Geneva, sans-serif" />
+                                <apex:inputText value="{!emailAddress}" maxlength="80"
+                                    styleClass="livechat_textbox" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem labelStyle="text-align:left;">
+                                <apex:outputLabel value="Phone"
+                                    style="font-family: Verdana, Geneva, sans-serif" />
+                                <apex:inputText value="{!phone}" maxlength="25"
+                                    styleClass="livechat_textbox" />
+                            </apex:pageblockSectionItem>
+
+                        </apex:pageblockSection>
+
+                    </div>
+
+
+                    <div style="padding-left: 70px; padding-top: 5px;">
+                        <apex:pageblockSection >
+                            <apex:selectRadio value="{!selectedDepartment}"
+                                layout="pageDirection"
+                                style="width:300px; font: 13px Verdana!important;">
+                                <apex:selectOption itemValue="NissanWebsite"
+                                    itemLabel="A new Nissan Vehicle or current offers<br/><span style='font-size:10px; padding-left:25px;'>Mon-Fri  8:00am–7:00pm, Sat 9:00AM–3:00PM CT<br/></span>"
+                                    itemEscaped="false" />
+                                <apex:selectOption itemValue="NissanConnect"
+                                    itemLabel="NissanConnect or Nissan Owner Services<br/><span style='font-size:10px; padding-left:25px;'>Mon-Sat  7:00am-11:00pm CT<br/></span>"
+                                    itemEscaped="false" />
+                            </apex:selectRadio>
+                        </apex:pageblockSection>
+                    </div>
+
+
+                    <apex:outputPanel id="opErrorMessage" styleclass="livechat_txt"
+                        style="position: absolute; top: 410px; left: 25px; ">
+                        <apex:outputLabel value="{!errorMessage}"
+                            rendered="{!showErrorMessage}" />
+                    </apex:outputPanel>
+
+
+
+                    <div
+                        style="position: absolute; top: 400px; left: 290px; color: #666666 !important; font-style: italic;">
+                        Please wait...</div>
+
+                    <div style="position: absolute; top: 400px; left: 290px;">
+                        <!-- Department 1 - chat button -->
+                        <div id="liveagent_button_online_{!buttonId}"
+                            style="display: none">
+                            <apex:commandButton action="{!submitForm}"
+                                reRender="opErrorMessage,opSuccess" styleClass="btn-startchat">
+                                <apex:param value="button1" assignTo="{!chatButtonPressed}" />
+                            </apex:commandButton>
+                        </div>
+
+
+                        <!-- Department 2 - chat button -->
+                        <div id="divSkill2" style="display: none;">
+                            <div id="liveagent_button_online_{!nissanButtonId2}"
+                                style="display: none">
+                                <apex:commandButton action="{!submitForm}"
+                                    reRender="opErrorMessage,opSuccess" styleClass="btn-startchat">
+                                    <apex:param value="button2" assignTo="{!chatButtonPressed}" />
+                                </apex:commandButton>
+                            </div>
+
+                            <!-- Offline Div -->
+                            <div id="liveagent_button_offline_{!nissanButtonId2}"
+                                style="display: none;">
+                                <apex:commandButton action="{!showClosedMessage}"
+                                    reRender="opErrorMessage,opSuccess" styleClass="btn-startchat">
+                                    <apex:param value="buttonError" assignTo="{!chatButtonPressed}" />
+                                </apex:commandButton>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table width="95%" align="center">
+                    <tr>
+                        <td class="livechat_footer_txt" valign="top"
+                            style="padding-left: 5px;">If you have a concern or issue
+                            with your Nissan vehicle that you would like us to address, we
+                            want to help, but we cannot help you from this forum. Please
+                            contact us at (800) 647-7261 Mon-Fri 7am-7pm CT or visit<br /> <a
+                            href="http://www.nissanusa.com/apps/contactus" target="_blank">http://www.nissanusa.com/apps/contactus</a>
+                        </td>
+                    </tr>
+                </table>
+
+            </apex:pageblock>
+        </div>
+
+        <apex:outputPanel id="opSuccess">
+            <script>
+                if ({!isSuccess}) {
+                    switch('{!chatButtonPressed}') {
+                        case 'button1': 
+                            liveagent.startChatWithWindow('{!buttonId}', window.name);
+                            break;
+                        case 'button2': 
+                            liveagent.startChatWithWindow('{!nissanButtonId2}', window.name);
+                            break;
+                    }
+                }
+                
+                if (!{!isDepartmentOpen}) {
+                    var divOH = document.getElementById("divOperationHours");
+                    divOH.style.display = 'block';
+                }
+                
+                if ({!showAwayMessage}) {
+                    var divOH = document.getElementById("divAwayMessage");
+                    divOH.style.display = 'block';
+                }
+            </script>
+
+            <!-- Operation Hours Message -->
+            <div id="divOperationHours" style="display: none;">
+                <div
+                    style="opacity: 0.8; filter: alpha(opacity = 80); background-color: #F0F0F0 !important; height: 100%; width: 100%; position: absolute; z-index: 5 !important; top: 0px; left: 0px;">
+                </div>
+                <div
+                    style="text-align: center !important; z-index: 6 !important; color: #09C; font: bold 14px Arial !important; width: 70%; background-color: #404040 !important; position: absolute; top: 160px; left: 75px;">
+                    <apex:outputText escape="false" value="{!afterHoursMessage}" />
+                </div>
+            </div>
+
+            <!-- Agents "away" status but still in HOOP -->
+            <div id="divAwayMessage" style="display: none;">
+                <div
+                    style="opacity: 0.8; filter: alpha(opacity = 80); background-color: #F0F0F0 !important; height: 100%; width: 100%; position: absolute; z-index: 5 !important; top: 0px; left: 0px;">
+                </div>
+                <div
+                    style="text-align: center !important; z-index: 6 !important; color: #09C; font: bold 14px Arial !important; width: 70%; background-color: #404040 !important; position: absolute; top: 160px; left: 75px;">
+                    <apex:outputText escape="false" value="{!awayAgentsMessage}" />
+                </div>
+            </div>
+
+        </apex:outputPanel>
+    </apex:form>
+
+    <!-- Initialization Code -->
+    <script type="text/javascript">
+        if('{!buttonId}' != '') {
+            if (!window._laq) { window._laq = []; }
+            window._laq.push(function(){
+                liveagent.showWhenOnline('{!buttonId}', document.getElementById('liveagent_button_online_{!buttonId}'));
+                liveagent.showWhenOffline('{!buttonId}', document.getElementById('divSkill2'));
+            });
+        }
+        else {
+            document.getElementById('divSkill2').style.display = 'block';
+        }
+        
+        if('{!nissanButtonId2}' != '') { 
+            if (!window._laq) { window._laq = []; }
+            window._laq.push(function(){
+                liveagent.showWhenOnline('{!nissanButtonId2}', document.getElementById('liveagent_button_online_{!nissanButtonId2}'));
+                liveagent.showWhenOffline('{!nissanButtonId2}', document.getElementById('liveagent_button_offline_{!nissanButtonId2}'));
+            });
+        }
+        else {
+            document.getElementById('liveagent_button_offline_{!nissanButtonId2}').style.display = 'block';
+        }
+    </script>
+
+    <script type='text/javascript'
+        src='https://c.la8cs.salesforceliveagent.com/content/g/deployment.js'>
+    </script>
+    <script type='text/javascript'>
+        window.name = 'LiveAgent';
+        document.title = 'Nissan Chat';
+        
+        //DEV
+        //liveagent.init('https://d.la8cs.salesforceliveagent.com/chat', '{!deploymentId}', '{!$Organization.Id}'.substring(0,15));
+        
+        //PROD
+        liveagent.init('https://d.la1w1.salesforceliveagent.com/chat', '{!deploymentId}', '{!$Organization.Id}'.substring(0,15));
+        
+        liveagent.addCustomDetail('CustomSessionId','{!customSessionId}').map('Pre_Chat_Data__c','Session_Id__c',true,true,false).saveToTranscript('Session_Id__c');
+    </script>
+</apex:page>

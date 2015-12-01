@@ -1,0 +1,259 @@
+/* Descktop (portrait and landscape) ----------- */
+       @media screen {
+            [id*=inputTextField] {
+                max-width: 200px;
+            }
+            .bPageBlock .labelCol, body .print .topics-label {
+            padding-right: 2px;
+            }
+            /*Buttons*/
+            .buttonPosition {
+                position: absolute; 
+                top: 420px; 
+                left: 255px;
+            }
+            .pleaseWaitPosition {
+                position: absolute; 
+                top: 420px; 
+                left: 255px; 
+                color: #666666 !important; 
+                font-style: italic;
+            }
+            /**/
+            .contentInputLable {
+                height: 305px; 
+                padding-top: 45px;
+            }
+            /*Texts*/
+            .livechat_footer_txt {
+                text-align:left; 
+                width:483px;
+            }
+			.livechat_footer_privacy_txt {
+                position:absolute;
+                top: 495px;
+                text-align:right; 
+                width:451px;
+            }
+            /*Div*/
+            .inputAreaDesktop {
+                display: block;
+            }
+            body {
+                overflow: hidden;
+                touch-action: pan-y;
+            }
+            .nissan-btn-startchat {
+                text-indent:-9999px;
+            }
+        } 
+        
+       /* Smartphones (landscape) ----------- */
+        @media screen 
+        and (min-aspect-ratio: 1/1)
+        and (min-device-width : 605px)
+        and (max-device-width : 640px),
+             
+        screen and (min-aspect-ratio: 1/1)
+        and (max-device-width : 599px)     
+        {
+            [id*=inputTextField] {
+                max-width: 200px !important;
+                width:200px;
+            }
+            
+            .bPageBlock .detailList .labelCol { /*increase standart width of input labels*/
+                width: 18% !important;
+            }
+
+            .data2Col {
+                padding-left: 0px;
+            }
+
+            .bPageBlock .labelCol, body .print .topics-label {
+            padding-right: 2px;
+            }
+
+              /*Buttons*/
+            .buttonPosition {
+                position: absolute; 
+                top: 163px; 
+                left: 330px;
+            }
+            
+            .pleaseWaitPosition {
+                position: absolute; 
+                top: 163px; 
+                left: 330px; 
+                color: #666666 !important; 
+                font-style: italic;
+            }
+
+            .livechat_header {
+                background:url(img/NewLeaf_header.png) no-repeat !important;
+                height:96px;
+                width:100%;
+                text-align:right;
+            }
+            /**/
+            .contentInputLable {
+                height: auto; 
+                padding-top: 1px;
+            }
+            /*Texts*/
+            .livechat_footer_txt {
+                text-align:center; 
+                position:absolute;
+                top: 175px; 
+                left:320px;
+                width:150px;
+            }
+            .livechat_footer_privacy_txt {
+                text-align:center !important; 
+                position:absolute !important;
+                padding-top:100px !important;
+                top: 175px !important; 
+                left:315px !important;
+                width:150px !important;
+            }
+			
+            .error_message {
+				top: 310px !important; 
+				left: 25px !important;
+			}
+            .livechat_txt_required {
+                padding-top:5px !important;
+            }
+
+            /*Div*/
+            .inputAreaDesktop {
+                display:block !important;
+                width:480px !important;
+            }
+
+            .livechat_leaf_bg {
+                background:none !important;
+                width:auto;
+                height:auto;
+            }
+
+            .divOperationHoursArea {
+                height: 340px !important;
+            }
+            .divOperationHoursText {
+                -webkit-text-size-adjust: 100%;
+                width: 430px !important;
+                left: 25px !important;
+            }
+            .nissan-btn-startchat {
+                text-indent:-9999px;
+            }
+			body {
+                overflow: visible !important;
+            }
+        }
+        
+         /* Smartphones (portrait) ----------- */
+        @media screen  
+        and (min-width : 320px)
+        and (max-width : 479px)
+        {
+            [id*=inputTextField] {
+                width: 170px;
+                max-width: 170px;
+            }
+            
+            .bPageBlock .detailList .labelCol { /*increase standart width of input labels*/
+                width: 30% !important;
+            }
+
+            .bPageBlock .labelCol, body .print .topics-label {
+            padding-right: 2px;
+            }
+
+            /*Buttons*/
+            .buttonPosition {
+                position: absolute; 
+                top: 350px; 
+                left: 120px;
+            }
+             
+            .pleaseWaitPosition {
+                position: absolute; 
+                top: 350px; 
+                left: 120px; 
+                color: #666666 !important; 
+                font-style: italic;
+            }
+
+            .livechat_header {
+                background:url(img/NewLeaf_header.png) no-repeat !important;
+                height:96px;
+                width:100%;
+                text-align:right;
+            }
+            /**/
+            .contentInputLable {
+                height: auto; 
+                padding-top: 5px;
+            }
+            /*Texts*/
+            .livechat_footer_txt {
+                text-align:center; 
+                position:absolute;
+                top: 390px; 
+                width:auto;
+                max-width:315px;
+            }
+
+			.livechat_footer_privacy_txt {
+                text-align:center !important; 
+                position:absolute;
+                padding-left:0px !important; 
+                left:137px !important;
+                width:100px !important;
+                top: 400px !important; 
+                padding-bottom:0px !important;
+                padding-top:0px !important;
+            }
+            .error_message {
+				top: 325px !important; 
+				left: 25px !important;
+			}
+            /*Div*/
+            .inputAreaDesktop {                
+                display:block !important;
+                width:320px !important;
+            }
+             .livechat_txt {
+                width: 280px !important;
+             }
+            .livechat_txt_required {
+                padding-top:5px !important;
+            }
+
+            .livechat_leaf_bg {
+                background:none !important;
+                width:100%;
+                height:320px;
+            }
+
+            .footer_table {
+                width:auto !important;
+            }
+
+            .divOperationHoursArea {
+                height: 480px !important;
+                width: 320px !important;
+            }
+            .divOperationHoursText {
+                width: 270px !important;
+                left: 25px !important;
+            }
+            .nissan-btn-startchat {
+                text-indent:-9999px;
+            }
+			body {
+                overflow: visible !important;
+            }
+        }

@@ -1,0 +1,90 @@
+<apex:page controller="Controller_DealerSearch" >
+    <apex:sectionHeader title="Dealer Search"/>
+    <apex:form >
+        <apex:pageBlock mode="edit" >
+            <apex:pageBlockButtons location="bottom" >
+                <apex:commandButton value="Search" status="stSearchStatus" action="{!searchAction}" reRender="lstResult"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" title="Search By" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Dealer Code" for="txtCode"></apex:outputLabel>
+                    <apex:inputText id="txtCode" size="20" value="{!Code}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Brand" for="brandId"></apex:outputLabel>
+                    <apex:selectList size="1" id="brandId" value="{!SelectedBrand}">
+                        <apex:selectOptions value="{!BrandList}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Exclude Inactives" for="chkInactive"></apex:outputLabel>
+                    <apex:inputCheckbox id="chkInactive" value="{!ExcludeInactive}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Dealer Name" for="txtName"></apex:outputLabel>
+                    <apex:inputText id="txtName" size="60" value="{!DealerName}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="City" for="txtCity"></apex:outputLabel>
+                    <apex:inputText id="txtSCity" size="60" value="{!City}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="State" for="lstState"></apex:outputLabel>
+                    <apex:selectList size="1" id="lstState" value="{!SelectedState}">
+                        <apex:selectOptions value="{!StateList}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Zip" for="txtZip"></apex:outputLabel>
+                    <apex:inputText id="txtZip" size="20" value="{!Zip}"/>
+                </apex:pageBlockSectionItem>
+           </apex:pageBlockSection>
+           <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Electric Vehicle" for="chkEV"></apex:outputLabel>
+                    <apex:inputCheckbox id="chkEV" value="{!ElectricVehicle}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Commercial Vehicle" for="chkCV"></apex:outputLabel>
+                    <apex:inputCheckbox id="chkCV" value="{!CommercialVehicle}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="GTR" for="chkGTR"></apex:outputLabel>
+                    <apex:inputCheckbox id="chkGTR" value="{!GTR}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Fleet" for="chkRental"></apex:outputLabel>
+                    <apex:inputCheckbox id="chkRental" value="{!Rental}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock id="lstResult" title="Search Results" >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:actionStatus id="stSearchStatus" startText="Processing...">
+                <apex:facet name="stop">
+                    <apex:pageBlockTable value="{!SearchResults}" var="account" rendered="{!ShowResultList}">
+                        <apex:column headerValue="Dealer Name">
+                            <apex:outputLink value="{!$Site.Prefix}/{!account.Id}">{!account.Name}</apex:outputLink>
+                        </apex:column>
+
+                        <apex:column headerValue="Dealer Code" value="{!account.Dealer_Code__c}"/>
+                        <apex:column headerValue="Brand" value="{!account.Make_Name__c}"/>
+                        <apex:column headerValue="Dealer Inactive" value="{!account.Dealer_Inactive_Indicator__c}"/>
+                        <apex:column headerValue="Street" value="{!account.BillingStreet}"/>
+                        <apex:column headerValue="City" value="{!account.BillingCity}"/>
+                        <apex:column headerValue="State" value="{!account.BillingState}"/>
+                        <apex:column headerValue="Zip" value="{!account.BillingPostalCode}"/>
+                        <apex:column headerValue="Phone" value="{!account.Phone}"/>
+                        <apex:column headerValue="EV" value="{!account.Electric_Vehicle_Dealer__c}"/>
+                        <apex:column headerValue="LCV" value="{!account.Nissan_Commercial_Vehicle_Dealer__c }"/>
+                        <apex:column headerValue="GTR" value="{!account.Nissan_GTR_Dealer__c}"/>
+                        <apex:column headerValue="Fleet" value="{!account.Nissan_Rental_Car_Dealer__c}"/>
+                    </apex:pageBlockTable>
+                </apex:facet>
+            </apex:actionStatus>
+
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

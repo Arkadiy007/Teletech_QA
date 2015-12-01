@@ -1,0 +1,52 @@
+<apex:component controller="QuickReportsResultController" >
+    <style>
+        .empty-column-content {
+            display: none;
+        }
+    </style>
+
+    <apex:attribute type="SetReportObjectClass" name="SetReportObject" description="records to display set" assignTo="{!setCon}"/>
+    <apex:attribute type="String" name="Name" description="report displayable name" assignTo="{!ReportName}"/>
+    <apex:attribute type="String[]" name="displayFieldsList" description="field list displayed on columns"/>
+
+      <apex:attribute type="Integer" name="recordsNumber" description="records to display on one page" assignTo="{!noOfRecords}"/>
+      <apex:attribute type="Integer" name="pagesNumber" description="pages number" assignTo="{!noOfPages}"/>
+      <apex:attribute type="Integer" name="recordsSize" description="all records size" assignTo="{!size}"/>
+
+    <apex:actionfunction name="refreshrows" action="{!refresh}" status="fetchStatus" />
+    
+    <apex:outputpanel id="op2" style="color:#4AA02C;font-weight:bold">
+              <apex:actionstatus id="fetchStatus2" starttext="Fetching..." stoptext="" />
+    </apex:outputpanel>
+    
+                            <apex:pageblocksection columns="1" collapsible="true" showheader="false" title="{!ReportName}"  id="ResultsBlockId">
+                                <apex:pagemessages ></apex:pagemessages>
+                               <!--  -->
+                                <apex:pageblocktable id="tblAccounts" value="{!reportRecords}" var="record" rows="{!realSize}">
+                                    <apex:repeat value="{!record.fieldsList}" var="actualField">
+                                        <apex:column value="{!actualField.value}" rendered="{!!actualField.isLookup}" />
+                                        <apex:column rendered="{!actualField.isLookup}">
+                                            <a href="/{!actualField.lookupId}" target="_blank">{!actualField.value}</a>
+                                        </apex:column>
+
+                                    </apex:repeat>
+                                    <apex:repeat value="{!displayFieldsList}" var="fieldLabel">
+                                        <apex:column headervalue="{!fieldLabel}" styleclass="empty-column-content" />
+                                    </apex:repeat>
+                                </apex:pageblocktable>
+                                <apex:panelgrid columns="9" columnclasses="pageColumn" styleclass="pager">
+                                    <apex:commandbutton status="fetchStatus" rerender="pb" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page" />
+                                    <apex:commandbutton status="fetchStatus" rerender="pb" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page" />
+                                    <apex:commandbutton status="fetchStatus" rerender="pb" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page" />
+                                    <apex:commandbutton status="fetchStatus" rerender="pb" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page" />
+                                   
+                                    <apex:outputtext >Page {!pageNumber} of {!noOfPages}, </apex:outputtext>
+                                    <apex:outputtext >Showing Records {!(pageNumber * realSize)+1-realSize}-{!IF((pageNumber * realSize)>noOfRecords, noOfRecords,(pageNumber * realSize))} of {!noOfRecords}</apex:outputtext>
+                                    <apex:outputpanel style="color:#4AA02C;font-weight:bold">
+                                        <apex:actionstatus id="fetchStatus" starttext="Fetching..." stoptext="" />
+                                    </apex:outputpanel>
+                               
+                                </apex:panelgrid>
+                            </apex:pageblocksection>
+                        
+</apex:component>

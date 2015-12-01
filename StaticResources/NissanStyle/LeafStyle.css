@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS boa Document */
+
+/* ------------------BUTTONS------------------------ */
+
+.nissan-btn-startchat {
+	background-image:url(img/nissan_start_chat.gif)!important;
+	width:135px;
+	height:30px;
+	border:none!important;
+}
+.nissan-btn-startchat:hover {
+	background-image:url(img/nissan_start_chat.gif)!important;
+	background-position: 0 0!important;
+}
+
+.livechat_endsession {
+	background:url(img/nissan_end_session.png) no-repeat;
+	width:75px;
+	height:12px;
+	margin: 15px 0px 0 400px;
+	position:absolute;
+	border-width:0px;
+	border:#000;
+	cursor: hand;
+	cursor:pointer;
+}
+
+.btn-submit {
+	background-image:url(img/LiveAgent_Resized_Submit.png)!important;
+	background-position: 0 0!important;
+	width:96px;
+	height:28px;
+	border:none!important;
+}
+.btn-submit:hover {
+	background-image:url(img/LiveAgent_Resized_Submit.png)!important;
+	background-position: 0 0!important;
+	width:96px;
+	height:28px;
+	border:none!important;
+}
+
+
+/* ------------------HEADERS------------------------ */
+.livechat_header {
+	background:url(img/NewLeaf_header.png) no-repeat;
+	height:97px;
+	width:300px;
+	text-align:right;
+}
+
+
+/* ------------------BACKGROUNDS------------------------ */
+.livechat_leaf_bg {
+	background:url(img/leaf_bg.png) no-repeat;
+	width:100%;
+	height:418px;
+}
+
+.livechat_bg_blank {
+	background:url(img/leaf_bg_cases.png) no-repeat;
+	width:100%;
+	height:514px;
+}
+
+/* ------------------TEXTs------------------------ */
+.livechat_txt {
+	color:#000;
+	font:bold 13px Verdana!important;
+	padding:5px 0 15px 20px;
+}
+
+.livechat_txt_error {
+	color:#c71331;
+	font:13px Verdana!important;
+	padding:5px 0 15px 20px;
+}
+
+.livechat_footer_txt {
+	font:Verdana, Geneva, sans-serif;
+	font-size:9px;
+	color:#889999!important;
+}
+.livechat_footer_txt a {
+	color:#cccccc!important;
+}
+.livechat_footer_txt a:hover {
+	color:#FFF!important;
+}
+
+.livechat_textbox_comments {
+	width:235px!important; 
+	background-color:#E2E2E2!important; 
+	border: 0px solid!important; 
+	height:25px!important;
+}
+
+.livechat_textboxarea {
+	width:230px!important;
+	background-color:#E2E2E2!important;
+	border: 0px solid!important; 
+	height:180px!important;
+}
+
+
+/* ------------------ DIVs ------------------------ */
+.div_case {
+	padding-top: 100px; 
+	/*padding-left: 5px;*/
+}
+
+/* ------------------General------------------------ */
+body .bPageBlock {
+	border-width:0px!important;
+}
+.bPageBlock.secondaryPalette {
+	background:none!important;
+	border:none!important;
+}
+.apexp .apexDefaultPageBlock.bPageBlock .pbBody {
+	margin:0!important;
+}
+.bPageBlock .detailList TR TD {
+	border:none!important;
+}
+
+.bPageBlock .detailList TR TH {
+	border-bottom:none!important;
+}
+
+.bPageBlock .labelCol {
+	font:bold 11px Verdana!important;
+	color:#000!important;
+}
+.bPageBlock .detailList .labelCol {
+	width:24%!important;
+}
+
+body .bPageBlock .pbBody .labelCol, body .bPageBlock .pbBody .dataCol, body .bPageBlock .pbBody .data2Col {
+	padding-top:3px!important;
+}

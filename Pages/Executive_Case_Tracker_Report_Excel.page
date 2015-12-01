@@ -1,0 +1,180 @@
+<apex:page controller="Executive_Case_Tracker_Report_Controller" contenttype="application/vnd.ms-excel#Executive_Case_Tracker_Report.xls"
+           cache="true" sidebar="false" action="{!initializeDataWrapper}">
+    <apex:outputtext value="{!xlsHeader}" />
+ 
+    <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" 
+              xmlns:v="urn:schemas-microsoft-com:vml" 
+              xmlns:o="urn:schemas-microsoft-com:office:office" 
+              xmlns:x="urn:schemas-microsoft-com:office:excel" 
+              xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" 
+              xmlns:html="http://www.w3.org/TR/REC-html40">
+         <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+            <AllowPNG/>
+         </OfficeDocumentSettings>
+      
+            <Styles>
+                <Style ss:ID="Default">
+                    <Alignment/> 
+                    <Borders/> 
+                    <Font ss:Bold="0" ss:Color="#008000"/> 
+                    <Interior ss:bgColor= "#008000" ss:Pattern="Solid" /> 
+                    <NumberFormat/> 
+                    <Protection/>
+                </Style>
+                <Style ss:ID="FirstTableHeader">
+                    <Alignment ss:Vertical="Top" ss:Horizontal="Center" ss:WrapText="1"/ >
+                    <Interior ss:Color="#0070c0" ss:Pattern="Solid"/ >
+                    <Font ss:Bold="1" ss:FontName="Calibri" ss:Color="#ffffff"/ > 
+                    <Borders > 
+                        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/ > 
+                        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/ > 
+                        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/ > 
+                        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/ > 
+                    </Borders >
+                </Style>
+                <Style ss:ID="NormalText">
+                    <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1"/ > 
+                    <Borders > 
+                        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/ > 
+                    </Borders > <Font ss:FontName="Calibri" x:Family="Swiss"/ > 
+                    <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/ > 
+                    <NumberFormat/ > 
+                    <Protection/ >
+                </Style>
+                <Style ss:ID="NormalTextLeftAlignment">
+                    <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/ > 
+                    <Borders > 
+                        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/ > 
+                    </Borders > <Font ss:FontName="Calibri" x:Family="Swiss"/ > 
+                    <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/ > 
+                    <NumberFormat/ > 
+                    <Protection/ >
+                </Style>
+                <Style ss:ID="Title">
+                   <Alignment ss:Vertical="Bottom"/>
+                   <Borders/>
+                   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="14" ss:Bold="1"/>
+                   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+                   <NumberFormat/>
+                   <Protection/>
+                </Style>
+                <Style ss:ID="SubTitle">
+                   <Alignment ss:Vertical="Bottom"/>
+                   <Borders/>
+                   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Bold="1"/>
+                   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+                   <NumberFormat/>
+                   <Protection/>
+                </Style>
+                <Style ss:ID="SecondTable">
+                    <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1"/>
+                    <Borders>
+                        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
+                        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"/>
+                        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"/>
+                        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2"/>
+                    </Borders>
+                    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+                    <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+                </Style>
+
+                <apex:repeat value="{!stylesList}" var="style">
+                     <apex:outputtext value="{!style}" escape="false" />
+                </apex:repeat>
+
+            </Styles>
+
+            <Worksheet ss:Name="Cases">
+                    <Table x:FullColumns="1" x:FullRows="1">
+                        <Column ss:Width="100" />
+                        <Column ss:Width="165" />
+                        <Column ss:Width="100" />
+                        <Column ss:Width="90" />
+                        <Column ss:Width="90" />
+                        <Column ss:Width="100" />
+                        <Column ss:Width="150" />
+                        <Column ss:Width="150" />
+                        <Column ss:Width="200" />
+                        <Column ss:Width="200" />
+
+                        <Row>
+                            <Cell ss:StyleID="Title"><Data ss:Type="String">Executive Case Tracker</Data></Cell>
+                        </Row>
+                        <Row >
+                            <Cell ss:StyleID="SubTitle"><Data ss:Type="String">Weekly Report</Data></Cell>
+                        </Row>
+                        <Row >
+                            <Cell ss:StyleID="SubTitle"><Data ss:Type="String">Week of {!weekDate}</Data></Cell>
+                        </Row>
+
+                        <Row ss:Index="5" ss:Height="50">
+                            <Cell ss:StyleID="FirstTableHeader"><Data ss:Type="String">Customer Name</Data></Cell>
+                            <Cell ss:StyleID="FirstTableHeader"><Data ss:Type="String">Dealer</Data></Cell>
+                            <Cell ss:StyleID="FirstTableHeader"><Data ss:Type="String">Region</Data></Cell>
+                            <Cell ss:StyleID="FirstTableHeader"><Data ss:Type="String">Exec-Received-Date</Data></Cell>
+                            <Cell ss:StyleID="FirstTableHeader"><Data ss:Type="String">Date Closed</Data></Cell>
+                            <Cell ss:StyleID="FirstTableHeader"><Data ss:Type="String">{!myModelMileageColumnName}</Data></Cell>
+                            <Cell ss:StyleID="FirstTableHeader"><Data ss:Type="String">Concern Description</Data></Cell>
+                            <Cell ss:StyleID="FirstTableHeader"><Data ss:Type="String">Subcategory Description</Data></Cell>
+                            <Cell ss:StyleID="FirstTableHeader"><Data ss:Type="String">Case Description</Data></Cell>
+                            <Cell ss:StyleID="FirstTableHeader"><Data ss:Type="String">Executive Actions To Resolve</Data></Cell>
+                        </Row>
+                        <apex:repeat value="{!casesReportData}" var="data">
+                            <Row>
+                                <apex:outputtext value="{!rowFirstPart}{!data.customerName}{!rowSecondPart}" escape="false" />
+                                    
+
+                                <!--<Cell ss:StyleID="NormalText"><Data ss:Type="String">{!data.customerName}</Data></Cell>-->
+                                <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!data.dealer}</Data></Cell>
+                                <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!data.region}</Data></Cell>
+                                <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!data.execRecievedDate}</Data></Cell>
+                                <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!data.dateClosed}</Data></Cell>
+                                <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!data.myModelMileage}</Data></Cell>
+                                <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!data.concernDescription}</Data></Cell>
+                                <Cell ss:StyleID="NormalText"><Data ss:Type="String">{!data.subcategoryDescription}</Data></Cell>
+                                <apex:outputtext value="{!data.caseDescriptionWithXMLMarkup}" escape="false" />
+                                <!--<Cell ss:StyleID="NormalText"><Data ss:Type="String">{!data.caseDescription}</Data></Cell>-->
+                                <Cell ss:StyleID="NormalTextLeftAlignment"><Data ss:Type="String">{!data.executiveActionsToResolve}</Data></Cell>
+                            </Row>
+                        </apex:repeat>
+                        <!--
+                        <Row ss:Index="{!secondTableRowIndex}" ss:Height="13.5">
+                            <Cell ss:Index="2" ss:StyleID="SecondTable"><Data ss:Type="String">Total Cases for the week of {!weekDate}: {!casesReportData.size}</Data></Cell>
+                        </Row>
+                        <Row ss:Height="250.5">
+                            <Cell ss:Index="2" ss:StyleID="SecondTable"><Data ss:Type="String">{!statisticString}</Data></Cell>
+                        </Row>
+                            -->
+                    </Table>
+                    
+                 <apex:outputtext value="{!worksheetOptionsOpenTag}" escape="false" />
+                     
+           <Print>
+            <ValidPrinterInfo></ValidPrinterInfo>
+            <HorizontalResolution>600</HorizontalResolution>
+            <VerticalResolution>600</VerticalResolution>
+           </Print>
+           <Selected></Selected>
+           <FreezePanes></FreezePanes>
+           <FrozenNoSplit></FrozenNoSplit>
+           <SplitHorizontal>5</SplitHorizontal>
+           <TopRowBottomPane>5</TopRowBottomPane>
+           <ActivePane>2</ActivePane>
+           <Panes>
+            <Pane>
+             <Number>3</Number>
+            </Pane>
+            <Pane>
+             <Number>2</Number>
+             <RangeSelection>R6</RangeSelection>
+            </Pane>
+           </Panes>
+           <ProtectObjects>False</ProtectObjects>
+           <ProtectScenarios>False</ProtectScenarios>
+                     
+          <apex:outputtext value="{!worksheetOptionsCloseTag}" escape="false" />
+                        
+            </Worksheet>
+           
+        </Workbook>
+</apex:page>

@@ -1,0 +1,496 @@
+ /* Descktop (portrait and landscape) ----------- */
+       @media screen 
+        
+        {
+            [id*=inputTextField] {
+                max-width: 200px;
+            }
+            .bPageBlock .labelCol, body .print .topics-label {
+            padding-right: 2px;
+            }
+            /*Buttons*/
+            .buttonPosition {
+                position: absolute; 
+                top: 348px;
+                left: 247px;
+            } 
+            .pleaseWaitPosition {
+                position: absolute; 
+                top: 348px;
+                left: 247px; 
+                color: #666666 !important; 
+                font-style: italic;
+            }
+            /**/
+            .contentInputLable {
+                height: 305px; 
+                padding-top: 35px;
+            }
+            /*Texts*/
+            .livechat_footer_txt {
+                position:absolute;
+                top: 390px;
+                text-align:left; 
+                width:470px;
+            }
+            .livechat_footer_txt_policy {
+               position: absolute;
+			   top: 425px;
+			   left: -2px;
+               text-align:right; 
+               width:465px;
+            }
+            .livechat_txt_required {
+                padding-top: 25px;
+            }
+ 		.divOperationHoursArea {
+                height: 380px !important;
+                width: 500px !important;
+				opacity: 0.8; filter: alpha(opacity = 80); 
+				background-color: #F0F0F0 !important; 
+				height: 100%; 
+				width: 100%; 
+				position: absolute; 
+				z-index: 5 !important; 
+				top: 0px; 
+				left: 0px;
+            }
+            .divOperationHoursText {
+                width: 380px !important;
+                left: 48px !important;
+		text-align: center !important; 
+		z-index: 6 !important; 
+		color: #09C; 
+		font: bold 14px Arial !important; 
+		width: 370px; 
+		background-color: #d7e3ec !important; 
+		position: absolute; 
+		top: 103px; 
+		padding: 15px 10px 5px 10px;
+            }
+            /*Div*/
+            .inputAreaDesktop {
+                display: block;
+            }
+            body {
+                overflow: hidden;
+                touch-action: pan-y;
+            }
+            .radioButtonPositionDesktop {
+		position: absolute;
+    		left: 88px;
+            }
+
+	    .radioButtonPositionDesktop_Mini{
+		position: absolute;
+    		left: 88px;
+				margin-top: 17px;
+	     }
+            .selectRadio {
+		margin-left: -14px;
+                width:300px; 
+                font: 13px Verdana!important;
+            }
+            .btn-startchat {
+                text-indent:-9999px;
+            }
+        }
+
+        /* Smartphones (landscape) ----------- */
+        @media screen 
+        and (min-aspect-ratio: 1/1)
+        and (min-device-width : 605px)
+        and (max-device-width : 640px),
+             
+        screen and (min-aspect-ratio: 1/1)
+        and (max-device-width : 599px)   
+        {
+            [id*=inputTextField] {
+                max-width: 170px !important;
+                width:170px;
+            }
+            
+            .bPageBlock .labelCol, body .print .topics-label {
+                padding-right: 2px;
+            }
+            .data2Coll {
+                padding-left: 0px !important;
+            }
+            
+             /*Buttons*/
+            .buttonPosition {
+                position: absolute; 
+                top: 250px; 
+                left: 309px;
+            }
+            
+            .pleaseWaitPosition {
+                position: absolute; 
+                top: 263px; 
+                left: 309px; 
+                color: #666666 !important; 
+                font-style: italic;
+            }
+            
+            /**/
+            .livechat_header {
+                background:url(img/NewNissan_header.png) no-repeat !important;
+                height:97px !important;
+                width:100%;
+                text-align:right;
+            }
+            /**/
+            .contentInputLable {
+                height: 305px; 
+                padding-top: 0px;
+            }
+            /*Texts*/
+            .livechat_footer_txt {
+                position:absolute;
+                top: 300px;
+                left:390px;
+                text-align:right; 
+                width:70px;
+                
+            }
+            .livechat_txt {
+                padding-top:0px !important;
+                padding-bottom:0px !important;
+            }
+            .error_message {
+				top: 265px !important; 
+				left: 12px !important;
+			}
+			
+			.error_message_mini {
+				top: 148px !important; 
+				left: 18px !important;
+			}
+			
+            .livechat_txt_required {
+                padding-top: 0px !important;
+            }
+            .bPageBlock .labelCol { /*overwrite standart*/
+                text-align: left;
+                padding-left: 8px;
+            }
+            .bPageBlock .detailList .labelCol { /*overwrite standart*/
+                width: 23%!important;
+            }
+            .bPageBlock .detailList .data2Col { /*overwrite standart*/
+                padding-left: 0px;
+            }
+            .radioButtonPositionDesktop {
+                position:absolute !important;
+                top:104px !important;
+                left:295px !important;
+                padding-left: 0px !important;
+            }
+            .radioButtonPositionDesktop_Mini{
+				position:absolute !important;
+                top:152px !important;
+                left:32px !important;
+				margin-top: 0px !important;
+                padding-left: 0px !important;
+	     }
+            .selectRadio {
+                width:180px !important;
+                font: 13px Verdana !important;
+            }
+            
+            .livechat_footer_txt_Rejection {
+                -webkit-text-size-adjust: 100%;
+                display:block !important;
+                text-align: center;
+				position: absolute !important;
+				top: 325px !important;
+                width: 440px;
+                padding-left:20px !important;
+                /*font: Verdana, Geneva, sans-serif;*/
+                font-family: Verdana, Geneva, sans-serif;
+                font-size:9px !important;
+                vertical-align:text-top;
+            }
+			
+			.livechat_footer_txt_Rejection_mini {
+                -webkit-text-size-adjust: 100%;
+                display:block !important;
+                text-align: center;
+				position: absolute !important;
+				top: 120px !important;
+				left: 309px !important;
+                width: 200px;
+               
+                font-family: Verdana, Geneva, sans-serif;
+                font-size:9px !important;
+                vertical-align:text-top;
+            }
+			
+            .livechat_footer_txt_Polocy {
+                display:block !important;         
+                text-align: center;
+				position: absolute !important;
+				top: 365px !important;
+                width: 100px;
+                font: Verdana, Geneva, sans-serif;
+                font-size:9px ;
+                vertical-align:text-top;
+                padding-left:200px;
+            }
+           
+			.livechat_footer_txt_Polocy_mini {
+                display:block !important;         
+                text-align: center;
+				position: absolute !important;
+				top: 210px !important;
+				left: 355px !important;
+                width: 100px;
+                font: Verdana, Geneva, sans-serif;
+                font-size:9px ;
+                vertical-align:text-top;
+            }
+			
+            .livechat_footer_txt_Table {
+                display:none !important;
+            }
+            
+            /*Div*/
+            .inputAreaDesktop {
+                padding-top: 0px;
+                display:block !important;
+                width:480px !important;
+            }
+
+            .livechat_bg{
+                background:none !important;
+                width:100%;
+                height:100px !important;
+            }
+            .inputAreaContainer{
+                padding-top: 0px !important;
+            }
+            .divOperationHoursArea {
+                height: 550px !important;
+                width: 600px !important;
+				opacity: 0.8; filter: alpha(opacity = 80); 
+				background-color: #F0F0F0 !important; 
+				height: 100%; 
+				width: 100%; 
+				position: absolute; 
+				z-index: 5 !important; 
+				top: 0px; 
+				left: 0px;
+            }
+            .divOperationHoursText {
+                width: 420px !important;
+                left: 70px !important;
+		text-align: center !important; 
+		z-index: 6 !important; 
+		color: #09C; 
+		font: bold 12px Arial !important; 
+
+		background-color: #d7e3ec !important; 
+		position: absolute; 
+		top: 15px !important; 
+
+		padding: 15px 10px 5px 10px;
+            }
+            .btn-startchat {
+                text-indent:-9999px;
+            }
+			body {
+                overflow: visible !important;
+            }
+        }      
+        
+        /* Smartphones (portrait) ----------- */
+        @media screen  
+        and (min-width : 320px)
+        and (max-width : 479px)
+        {
+            [id*=inputTextField] {
+                width: 175px;
+                max-width: 175px;
+            }
+            
+            .bPageBlock .labelCol, body .print .topics-label {
+                padding-right: 2px;
+            }
+            .bPageBlock .detailList .dataCol {
+                width:90%;
+            }
+
+            /*Buttons*/
+            .buttonPosition {
+                position: absolute; 
+                top: 410px; 
+                left: 100px;
+            }
+             
+            .pleaseWaitPosition {
+                position:absolute;
+                left:100px;
+                top:415px;
+                color: #666666 !important; 
+                font-style: italic;
+            }
+            
+            .livechat_header {
+                background: url(img/NewNissan_header_Mobile_Portrait.png) no-repeat !important;
+                height:97px;
+                width:100%;
+                text-align:right;
+            }
+            /**/
+            .contentInputLable {
+                height: auto; 
+                padding-top: 35px;
+            }
+            /*Texts*/
+            .livechat_txt {
+                padding-top:0px !important;
+                padding-bottom:0px !important;
+            }
+            .livechat_footer_txt {
+                position:absolute;
+                top:460px;
+                left:240px;
+                text-align:right; 
+                width:70px;
+                
+            }
+            .error_message {
+				top: 265px !important; 
+				left: 12px !important;
+			}
+			
+			.error_message_mini {
+				top: 265px !important; 
+				left: 12px !important;
+			}
+			
+            .livechat_txt_required {
+                padding-top: 0px !important;
+            }
+            .radioButtonPositionDesktop {
+                position:absolute !important;
+                top:305px !important;
+                left:30px !important;
+                padding-left: 0px !important;
+            }
+			.radioButtonPositionDesktop_Mini{
+				position:absolute !important;
+                top:275px !important;
+                left:30px !important;
+				margin-top: 0px !important;
+                padding-left: 0px !important;
+	     }
+            .selectRadio {
+                width:270px !important;
+                font: 13px Verdana!important;
+            }
+            .bPageBlock .detailList .labelCol { /*increase standart width of input labels*/
+                width: 20% !important;
+            }
+            .bPageBlock .detailList .dataCol {
+                width: 100%;
+            }
+            
+            .livechat_footer_txt_Rejection {
+                -webkit-text-size-adjust: 100%;
+                display:block !important;
+                position:absolute;
+                top:455px;
+                left:15px;
+                text-align: center;
+                width: 300px;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size:9px !important;                
+            }
+			
+			.livechat_footer_txt_Rejection_mini {
+                -webkit-text-size-adjust: 100%;
+                display:block !important;
+                position:absolute;
+                top:455px;
+                left:15px;
+                text-align: center;
+                width: 300px;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size:9px !important;                
+            }
+            .livechat_footer_txt_Polocy {
+                display:block !important;
+                position:absolute;
+                top:515px !important;
+                left:115px !important;
+                text-align: center;
+                width: 100px !important;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size:9px !important;
+                padding-bottom:5px;
+                padding-left:0px !important;
+            }
+			
+			.livechat_footer_txt_Polocy_mini {
+                display:block !important;
+                position:absolute;
+                top:515px !important;
+                left:115px !important;
+                text-align: center;
+                width: 100px !important;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size:9px !important;
+                padding-bottom:5px;
+                padding-left:0px !important;
+            }
+			
+            .livechat_footer_txt_Table {
+                display:none !important;
+            }
+            /*Div*/
+            .inputAreaDesktop {
+                display:block !important;
+                width:320px !important;
+            }
+
+            .livechat_bg{
+                background:none !important;
+                width:100%;
+                height:100px;
+            }
+            .inputAreaContainer{
+                padding-top: 0px !important;
+            }
+            .divOperationHoursArea {
+                height: 540px !important;
+                width: 340px !important;
+				opacity: 0.8; filter: alpha(opacity = 80); 
+				background-color: #F0F0F0 !important; 
+				height: 100%; 
+				width: 100%; 
+				position: absolute; 
+				z-index: 5 !important; 
+				top: 0px; 
+				left: 0px;
+            }
+            .divOperationHoursText {
+                width: 270px !important;
+                left: 15px !important;
+		text-align: center !important; 
+		z-index: 6 !important; 
+		color: #09C; 
+				font: bold 14px Arial !important; 
+				width: 370px; 
+				background-color: #d7e3ec !important; 
+				position: absolute; 
+				top: 55px; 
+				padding: 15px 10px 5px 10px;
+            }
+            .btn-startchat {
+                text-indent:-9999px;
+            }
+			body {
+                overflow: visible !important;
+            }
+        }

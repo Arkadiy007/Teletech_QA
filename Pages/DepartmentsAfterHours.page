@@ -1,0 +1,40 @@
+<apex:page StandardController="Department__c" extensions="DepartmentsAfterHours_Controller" id="depPage">
+
+    <apex:form id="form">
+          <apex:actionRegion >
+        <apex:pageBlock title="Departments hours and After Hours message">
+            <apex:pageMessages id="messages"/>
+            <apex:pageBlockSection title="Department" columns="2">
+                <apex:selectList value="{!depa}" size="1" required="true" multiselect="false">
+                    <apex:selectOptions value="{!items}" />
+                    <apex:actionSupport event="onchange" reRender="Results,messages" action="{!onPicklistChange}" />
+                </apex:selectList>
+            </apex:pageBlockSection>
+       </apex:pageBlock>
+
+
+        <apex:outputPanel id="Results" >
+            <apex:outputPanel >
+                <apex:outputLabel value="After Hours Message: " style="display: block; width:150px;"></apex:outputLabel>
+                <apex:inputField value="{!Department__c.After_Hours_Message__c}" style="display: block; width:500px; height:100px; resize:none;" ></apex:inputField><br />
+                <apex:outputLabel value="Operation Hours Monday: " style="display: block; width:150px;"></apex:outputLabel>
+                <apex:inputField value="{!Department__c.Operation_Hours_Monday__c}" style="display: block; width:150px;"></apex:inputField><br />
+                <apex:outputLabel value="Operation Hours Tuesday: " style="display: block; width:150px;"></apex:outputLabel>
+                <apex:inputField value="{!Department__c.Operation_Hours_Tuesday__c}" style="display: block; width:150px;"></apex:inputField><br />
+                <apex:outputLabel value="Operation Hours Wednesday: " style="display: block; width:150px;"></apex:outputLabel>
+                <apex:inputField value="{!Department__c.Operation_Hours_Wednesday__c}" style="display: block; width:150px;"></apex:inputField><br />
+                <apex:outputLabel value="Operation Hours Thursday: " style="display: block; width:150px;"></apex:outputLabel>
+                <apex:inputField value="{!Department__c.Operation_Hours_Thursday__c}" style="display: block; width:150px;"></apex:inputField><br />
+                <apex:outputLabel value="Operation Hours Friday: " style="display: block; width:150px;"></apex:outputLabel>
+                <apex:inputField value="{!Department__c.Operation_Hours_Friday__c}" style="display: block; width:150px;"></apex:inputField><br />
+                <apex:outputLabel value="Operation Hours Saturday: " style="display: block; width:150px;"></apex:outputLabel>
+                <apex:inputField value="{!Department__c.Operation_Hours_Saturday__c}" style="display: block; width:150px;"></apex:inputField><br />
+                <apex:outputLabel value="Operation Hours Sunday: " style="display: block; width:150px;"></apex:outputLabel>
+                <apex:inputField value="{!Department__c.Operation_Hours_Sunday__c}" style="display: block; width:150px;"></apex:inputField><br />
+                <apex:commandButton value="Save" action="{!quicksave}" rerender="messages,Results" />
+
+            </apex:outputPanel>
+        </apex:outputPanel>
+                </apex:actionRegion>
+    </apex:form>
+</apex:page>

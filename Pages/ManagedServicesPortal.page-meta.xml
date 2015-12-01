@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>27.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Opens up a popup window with the Managed Services Portal login page (Self-Service Portal login page). 
+
+As soon as this tab is clicked, Salesforce logs the user out of Salesforce, so they will need to log back in to access internal Salesforce pages.</description>
+    <label>ManagedServicesPortal</label>
+</ApexPage>

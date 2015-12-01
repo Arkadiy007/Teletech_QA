@@ -1,0 +1,461 @@
+<apex:page sidebar="false" showHeader="false" controller="NNA_EyeQRecordingSearch">
+ <apex:includeScript value="/soap/ajax/31.0/connection.js"/>
+ <apex:includeScript value="/support/console/32.0/integration.js"/>
+ <apex:includeScript value="{!URLFOR($Resource.cnx__CnxSfdcResources,'js/ConnectsIntegrationAPI.min.js')}"/>
+    
+ <script type="text/javascript">
+    
+    window.onload = function()
+    {
+        console.log("CTI enhancement toolbar has loaded.");
+    };
+    
+    //We use the onCtiDataUpdate event to trigger the screenpop for outbound campaign calls. Because this event is called 
+    //multiple times over the course of a call we use the 'obFirstRun' variable to help make sure that the screenpop only
+    //happens when the event runs the first time.
+    var obFirstRun = "true";
+    
+    //this var is used to determine whether or not the outbound call was connected. If false at the of the workItemEnd
+    //event and the wrapped timestamp is null then the call info is saved in a new task.
+    var callConnected = "false";
+    
+    //used in the onActivitySave event
+    var hasCon = "false";
+    var hasCamp = "false";
+    var contactID = "";
+    var contactName = "";
+    var cidArray = "";
+    var campID = "";
+    var globalContactID = "";
+    
+    //This function will catch outbound calls not delivered to the customer, and create a task to record the the call details
+    //including a disposition of "No Answer (7 Rings)".
+    ConnectsIntegrationAPI.onWorkItemEnd = function(event) 
+    {
+        console.log("Global Contact ID: " + globalContactID);
+        
+        if(event.item.Direction == "outbound" && event.item.WrapedupTimeStamp == null && callConnected == "false")
+        {
+            console.log("--Call Info Should Be Saved--");
+            
+            sforce.connection.sessionId = '{!$Api.Session_ID}';
+            
+            var Task = new sforce.SObject("Task");
+            Task.WhoId = globalContactID;
+            Task.ActivityDate = getDateTime();
+            Task.Call_Start_Time__c = getDateTime();
+            Task.Call_End_Time__c = getDateTime();
+            Task.subject = "ReservationCall " + getSubject();
+            Task.status = "Completed";
+            Task.CallDurationInSeconds = 0;
+            Task.CallDisposition__c = "No Answer (7 Rings)";
+            Task.CallObject = event.item.UniqueId;
+            Task.CallType = event.item.Direction;
+            Task.FailedCall__c = true;
+            Task.DialedNumber__c = event.item.AgentId;
+            Task.DNIS__c = event.item.Sender;
+            var result = sforce.connection.create([Task]); 
+            
+            if (result[0].getBoolean("success")) 
+            {
+               console.log("task with id " + result[0].id + " created.");
+            } 
+            else 
+            {
+                console.log("failed to create task " + result[0]);
+            }
+            
+            obFirstRun = "true";
+        }
+        
+        if(event.item.Direction == "outbound" && event.item.WrapedupTimeStamp != null && callConnected == "true")
+        {
+            callConnected = "false";
+            console.log("--callConnected Var Reset to False--");
+        }
+        
+    
+    };
+    
+    //This function handles the screenpop for inbound calls, and updates task fields for both Inbound and Outbound.
+    //This event fires when the agent is connected to the customer, and when they leave the wrapup state to take the next call.
+    ConnectsIntegrationAPI.onActivitySave= function(event) 
+    {
+        try 
+        {
+            if (event.created) 
+            {
+                if(event.item.Direction == "inbound")
+                {
+                    var cxUnformattedPhone = event.item.Sender;
+                    var cxFormattedPhone = phoneFormat(event.item.Sender);
+                    cxFormattedPhone = cxFormattedPhone.toString();
+                }
+                else
+                {
+                    var cxUnformattedPhone = event.item.DialedNumber;
+                    var cxFormattedPhone = phoneFormat(event.item.DialedNumber);
+                    cxFormattedPhone = cxFormattedPhone.toString();
+                }
+                
+                console.log("Customer Phone:" + cxFormattedPhone);
+                
+                sforce.connection.sessionId = '{!$Api.Session_ID}';
+                
+                //Query contact object for customer record. Query using the contact ID for outbound,
+                //and query using the ANI for inbound calls.
+                if(event.item.Direction == 'inbound')
+                {
+                    var contactResult = sforce.connection.query("SELECT id, name FROM Contact WHERE (homePhone='" + cxFormattedPhone + 
+                                                            "' OR homePhone='" + cxUnformattedPhone + "') OR (Phone='" + cxFormattedPhone + 
+                                                            "' OR Phone='" + cxUnformattedPhone + "') OR ( MobilePhone='" + cxFormattedPhone + 
+                                                            "' OR MobilePhone='" + cxUnformattedPhone + "') OR (OtherPhone='" + cxFormattedPhone + 
+                                                            "' OR OtherPhone='" + cxUnformattedPhone + "')  ORDER BY LastModifiedDate DESC LIMIT 5");
+                    
+                    var contactRecords = contactResult.getArray("records");
+                    
+                    //only populate contact variables IF there were any results to the query
+                    if (contactRecords[0] != null)
+                    {
+                        var conRecordNum = contactRecords.length;
+                        
+                        console.log("(IB:onActivitySave) Total Contact Records: " + conRecordNum);
+                        
+                        if(conRecordNum > 1)
+                        {
+                            cidArray = getConIdArray(contactRecords);
+                            console.log("(IB:onActivitySave) Contact ID Array: " + cidArray);
+                            
+                            var campResult = sforce.connection.query("Select id, ContactId, Contact.Name FROM CampaignMember WHERE ContactId IN " + cidArray + 
+                                                                     " AND CampaignMember.Campaign.isActive= TRUE ORDER BY LastModifiedDate DESC LIMIT 15" );
+                            var campRecords = campResult.getArray("records");
+                            var campRecordNum = campRecords.length;
+                        
+                            console.log("(IB:onActivitySave) Total Campaign Records: " + campRecordNum);
+                            
+                            if (campRecords[0] != null)
+                            {	
+                                for(i=0; i < conRecordNum; i++)
+                                {	
+                                     for(j=0; j < campRecordNum; j++)
+                                     {  
+                                        if(contactRecords[i].Id == campRecords[j].ContactId)
+                                        {
+                                            campID = campRecords[j].Id;
+                                            globalContactID = campRecords[j].ContactId;
+                                            contactName = campRecords[j].Contact.Name;
+                                            hasCon = 'true';
+                                            hasCamp = 'true';
+                                            console.log("(IB:onActivitySave) CampID: " + campID);
+                                            console.log("(IB:onActivitySave) Camp Records: " + campRecords);
+                                            console.log("(IB:onActivitySave) Contact ID: " + campRecords[j].ContactId + " Contact Name: " + campRecords[j].Contact.Name);
+                                    
+                                            break;
+                                        }
+                                     }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            globalContactID = contactRecords[0].Id;
+                            contactName = contactRecords[0].Name;
+                            hasCon = 'true';
+                            
+                            var campResult = sforce.connection.query("Select id FROM CampaignMember WHERE ContactId ='" + contactID + 
+                                                                    "' AND CampaignMember.Campaign.isActive= TRUE ORDER BY LastModifiedDate DESC LIMIT 15" );
+                            var campRecords = campResult.getArray("records");
+                            if (campRecords[0] != null)
+                            {
+                                var campID = campRecords[0].Id;
+                                console.log("(IB:onActivitySave) CampID: " + campID);
+                                hasCamp = 'true';
+                            }
+                        }
+                    }
+                }
+                
+                
+                //Find task created by the gadget to log current interaction
+                var task = sforce.connection.retrieve("Description", "Task", [event.recordId])[0];
+                
+                //Customize subject to match format. Prefix with 'Inbound' for inbound calls, and 
+                //'ReservationCall' for outbound calls, then set additional task fields for update
+                if (event.item.Direction == 'inbound')
+                {
+                    task.Subject = 'Inbound ' + getSubject();
+                }
+                else
+                {
+                	task.Subject = 'ReservationCall ' +  getSubject();   
+                }
+                
+                task.ANI__c = cxFormattedPhone;
+                task.DialedNumber__c = cxUnformattedPhone;
+                task.DNIS__c = cxUnformattedPhone;
+                task.Call_Start_Time__c = getDateTime();
+                var result = sforce.connection.update([task]);
+                
+                //Check results of task update
+                if (result[0].getBoolean("success")) 
+            	{
+            		console.log("(onActivitySave) Task with id " + result[0].id + " updated.");
+            	} 
+            	else 
+            	{
+            		console.log("(onActivitySave) Failed to update task " + result[0]);
+            	}
+                
+                //Opens screenpop for inbound calls. Opens AgentConsole_CM_LandingPage if both campaignMenmber, 
+                //and contact ID's are present. If only contact is present then we screenpop to the account page.
+                if(event.item.Direction == 'inbound')
+                {    
+                    console.log("(IB:onActivitySave) hasCon: " + hasCon + " hasCamp: " + hasCamp);
+                    if (hasCon == 'true' && hasCamp == 'false')
+                    {
+                        var agentConsoleURL = '/' + globalContactID;
+                        sforce.console.openPrimaryTab(null, agentConsoleURL, true,contactName, 'salesforceTab');
+                    }
+                    else if (hasCon == 'true' && hasCamp == 'true')
+                    {
+                        var agentConsoleURL = '/apex/AgentConsole_CM_LandingPage?id=' + campID
+                        sforce.console.openPrimaryTab(null, agentConsoleURL, true, contactName, 'salesforceTab');
+                    }
+                }
+                
+                //Retrieves the EyeQ recording ID
+                //setTimeout(getRecordingId(event.recordId), 2000);
+                getRecordingId(event.recordId);
+            }
+            else//Code in here only fires when the agent selects a status from wrap-up
+            {
+                //Sets call end time when the task record is updated at the end of the call 
+                sforce.connection.sessionId = '{!$Api.Session_ID}';
+                var task = sforce.connection.retrieve("Description", "Task", [event.recordId])[0];
+                
+                task.Call_End_Time__c = getDateTime();
+                task.CallObject = event.item.UniqueId;
+                
+                console.log("(onActivitySave) Task end time: " + task.Call_End_Time__c);
+                console.log("(onActivitySave) Set Who ID: " + hasCon);
+                
+                //populate who ID if contact ID exists
+                if (hasCon == 'true')
+                {    
+                	task.WhoId = globalContactID;
+                    console.log("(onActivitySave) Who ID: " + globalContactID);
+                }
+                
+                
+                var result = sforce.connection.update([task]);
+                
+                //reset vars for next call
+                hasCon = 'false';
+                hasCamp = 'false';
+                contactID = '';
+                contactName = '';
+                campID = "";
+                cidArray = "";
+                globalContactID = "";
+                
+                if(event.item.EndedTimeStamp != null)
+                {
+                	obFirstRun = 'true';
+                	console.log("(onActivitySave) obFirstRun: " + obFirstRun);
+                }
+                
+            }
+        }
+        catch (ex) 
+        {
+            ConnectsIntegrationAPI.showError("USER","Update problem",
+            "Could not update activity record, exception: " + ex);
+            //saveToDebug(event.recordId, "Failed on Activity Update", ex);
+        }
+    };
+    
+    //Used for outbound campaign screen pops
+    ConnectsIntegrationAPI.onCtiDataUpdate = function(event) 
+    {
+        console.log("(OB:onCtiDataUpdate) Channel State: " + event.ctiData.Channels[0].State);
+        console.log("(OB:onCtiDataUpdate) Num Items: " + event.ctiData.Channels[0].Items.length);
+        
+        //Sets the callConnected var. This var is used to determine whether a call was answered or not
+        //so we can create a 'No Answer (7 rings)' record for calls that do not get connected.
+        if(event.ctiData.Channels[0].Items.length > 1)
+        {
+        	if(event.ctiData.Channels[0].Items[1].State == "ACCEPTED")
+            {
+            	console.log("--THIS PHONE CALL CONNECTED--");
+                callConnected = "true";
+            }
+        }
+                
+        if(obFirstRun == "true")
+        {
+            if(event.ctiData.Channels[0].Items[0].Direction == 'outbound')
+            {
+                var nvLength = event.ctiData.Channels[0].Items[0].NamedVariables.length;
+                globalContactID = "";
+                
+                //Loop through the named variables array to ensure we have the correct index for the 'BAAccountNumber' variable. 
+                for(i = 0; i < nvLength; i++)
+                {
+                    if(event.ctiData.Channels[0].Items[0].NamedVariables[i].Key == "BAAccountNumber")
+                    {
+                        globalContactID = event.ctiData.Channels[0].Items[0].NamedVariables[i].Value;
+                        console.log("(OB:onCtiDataUpdate) Contact ID: " + globalContactID);
+                        break;
+                    }
+                }
+                   
+                if(globalContactID != "")
+                {
+                sforce.connection.sessionId = '{!$Api.Session_ID}';
+                
+                //query customer contact record to grab their name
+                var contactResult = sforce.connection.query("SELECT id, Name FROM Contact WHERE id = '" + globalContactID + "' LIMIT 1");
+                var contactRecords = contactResult.getArray("records");
+                                
+                //only populate contact variables IF there were any results to the query
+                if (contactRecords[0] != null)
+                {
+                    contactName = contactRecords[0].Name;
+                }
+                
+                hasCon = "true";
+                
+                console.log("(OB:onCtiDataUpdate) Contact Name: " + contactName);
+                console.log("(OB:onCtiDataUpdate) Full Contact Record: " + contactRecords[0]);
+                
+                //Open outbound screenpop
+                var agentConsoleURL = '/apex/AgentConsoleLandingPage?cid=' + globalContactID;
+                sforce.console.openPrimaryTab(null, agentConsoleURL, true, contactName, globalContactID);
+                
+                //Setting this variable to false ensures that the screenpop is only opened once per call
+                //This gets set back to True once the agents selects a status from wrap-up
+                obFirstRun = "false";
+                }    
+            }
+        }
+        
+    };
+    
+    //formats phone number to match the (XXX) XXX-XXXX format
+    function phoneFormat(phone) 
+    {
+        phone = phone.replace(/[^0-9]/g, '');
+        phone = phone.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+        return phone;
+	}
+    
+    //Formats date and time to match the SF date/time format (1999-01-01T23:01:01+01:00)
+    function getDateTime()
+    {
+        var now = new Date();
+        var hourz = now.customFormat("#hhh#");
+        
+        //The customFormat function doe not put a '0' in front of single digit hours which causes an error on update.
+        //Here we check to make sure the hour value has 2 digits
+        if(hourz.length < 2)
+        {
+         	hourz = "0" + hourz   
+        }
+        
+        var formattedTime = now.customFormat( "#YYYY#-#MM#-#DD#T" + hourz + ":#mm#:#ss#-06:00" );
+        return formattedTime;
+    }
+    
+    //Formats date for the Task subject field
+    function getSubject()
+    {
+    	var now = new Date();
+        var formattedTime = now.customFormat("#YYYY#-#MM#-#DD# #hhh#:#mm#:#ss#");
+        return formattedTime;   
+    }
+    
+    
+    
+    //Support function for getDateTime and getSubject. Details for this function han be found at the URL below.
+    //http://stackoverflow.com/questions/4673527/converting-milliseconds-to-a-date-jquery-js
+    Date.prototype.customFormat = function(formatString)
+    {
+        var YYYY,YY,MMMM,MMM,MM,M,DDDD,DDD,DD,D,hhh,hh,h,mm,m,ss,s,ampm,AMPM,dMod,th;
+        var dateObject = this;
+        YY = ((YYYY=dateObject.getFullYear())+"").slice(-2);
+        MM = (M=dateObject.getMonth()+1)<10?('0'+M):M;
+        MMM = (MMMM=["January","February","March","April","May","June","July","August","September","October","November","December"][M-1]).substring(0,3);
+        DD = (D=dateObject.getDate())<10?('0'+D):D;
+        DDD = (DDDD=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][dateObject.getDay()]).substring(0,3);
+        th=(D>=10&&D<=20)?'th':((dMod=D%10)==1)?'st':(dMod==2)?'nd':(dMod==3)?'rd':'th';
+        formatString = formatString.replace("#YYYY#",YYYY).replace("#YY#",YY).replace("#MMMM#",MMMM).replace("#MMM#",MMM).replace("#MM#",MM).replace("#M#",M).replace("#DDDD#",DDDD).replace("#DDD#",DDD).replace("#DD#",DD).replace("#D#",D).replace("#th#",th);
+    
+        h=(hhh=dateObject.getHours());
+        if (h==0) h=24;
+        if (h>12) h-=12;
+        hh = h<10?('0'+h):h;
+        AMPM=(ampm=hhh<12?'am':'pm').toUpperCase();
+        mm=(m=dateObject.getMinutes())<10?('0'+m):m;
+        ss=(s=dateObject.getSeconds())<10?('0'+s):s;
+        return formatString.replace("#hhh#",hhh).replace("#hh#",hh).replace("#h#",h).replace("#mm#",mm).replace("#m#",m).replace("#ss#",ss).replace("#s#",s).replace("#ampm#",ampm).replace("#AMPM#",AMPM);
+    }
+    
+    function getRecordingId(taskID)
+    {
+    	Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.NNA_EyeQRecordingSearch.remoteRecordingId}',
+            taskID, 
+            function(result, event)
+            {
+                if(event.status)
+                {
+                    //alert("success");   
+                }
+            }
+        );		    
+    }
+    
+    //Creates a record in the DebugCallEndTime__c object to capture errors generated by code 
+    //that runs in the onActivitySave event.
+    /*function saveToDebug(tId, saveStatus, errorMsg)
+    {
+        var debugRecords = [];
+        var debugRecord = new sforce.SObject("DebugCallEndTime__c"); 
+        debugRecord.Task_Record_ID__c = tId; 
+        debugRecord.Event_Outcome__c = saveStatus;
+        debugRecord.eventDateTime__c = getDateTime();
+        debugRecord.EventNameDescription__c = errorMsg;
+        debugRecords.push(debugRecord);
+        var results = sforce.connection.create(debugRecords); 
+        
+        if (results[0].getBoolean("success")) 
+        { 
+        	console.log("new debug created with id " + results[0].id); 
+        } 
+        else 
+        { 
+        	console.log("failed to create debug " + results[0]); 
+        } 
+    }*/
+    
+    function getConIdArray(conRecords)
+    {
+    	var idArray = "(";
+        var commaCode = conRecords.length - 1;
+        
+        for(i = 0; i < conRecords.length; i++)
+        {
+        	idArray += "'" + conRecords[i].Id + "'";
+            
+            if(i != commaCode)
+            {
+               idArray += ","; 
+            }
+        }
+        
+        idArray += ")"
+        return idArray;
+    }
+    
+ </script>
+</apex:page>

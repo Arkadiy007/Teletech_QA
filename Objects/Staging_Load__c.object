@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Case_Ids__c</fullName>
+        <description>Comma Separated Ids to be loaded for Batch Jobs</description>
+        <externalId>false</externalId>
+        <label>Case Ids</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Staging Load</label>
+    <visibility>Public</visibility>
+</CustomObject>

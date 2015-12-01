@@ -1,0 +1,148 @@
+<apex:page controller="SurveyBuilderController" showHeader="false" standardStylesheets="true" sidebar="false">
+ <apex:outputPanel rendered="{!!isComplete}">
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  </apex:outputPanel>
+
+<apex:outputPanel rendered="{!isNissan}">
+    <style>
+    .logo_header { background: url("{!URLFOR($Resource.nissanlogo)}") no-repeat;    height: 163px; width: 400px;}
+    </style>
+</apex:outputPanel>
+<apex:outputPanel rendered="{!isInfiniti}">
+    <style>
+    .logo_header { background: url("{!URLFOR($Resource.infinitilogo)}") no-repeat; height: 163px; width: 400px;}
+    </style>
+</apex:outputPanel>
+<apex:outputPanel rendered="{!!isInfiniti && !isNissan}">
+    <style>
+    .logo_header {background: url("{!URLFOR($Resource.bothlogo)}") no-repeat; height: 163px; width: 400px;}
+    </style>
+</apex:outputPanel>
+
+<style>
+
+.liststyle { width: 100%; max-width: 600px; margin: auto; padding: 0px;  }
+.list-row { width: 100%; display:inline-block;}
+.list-left { width:50%;padding:0px;float:left; }
+.list-right { width: 45%; padding:0px;float:right;}
+.list-span { width: 100%;padding:0px;float:left;}
+
+</style>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+<apex:form >
+<apex:outputPanel id="bigoutputpanel">
+<apex:pageBlock >
+
+<div style="width: 100%;">
+<div class="liststyle">
+<div style="width: 100%;" class="logo_header"></div>
+
+<br /><br />
+<apex:pageMessages ></apex:pageMessages>
+<h2><i><font size='4'>{!s.surveyTitle}</font></i></h2>
+<br /><br />
+<apex:repeat value="{!surveyQuestions}" var="thisquestion" id="theRepeat">
+<apex:outputPanel rendered="{!thisquestion.isCheckbox && !isComplete && thisquestion.isRendered}">
+<div class="list-row"><div class="list-left">{!thisquestion.questionText}</div><div class="list-right">
+<apex:inputCheckbox value="{!thisquestion.questionAnswer}" required="{!thisquestion.isRequired}" label="{!thisquestion.questionText}">   <apex:actionSupport event="onchange" action="{!partialSave}" rerender="bigoutputpanel" /></apex:inputCheckbox>    </div></div><br /><br />
+</apex:outputPanel>
+<apex:outputPanel rendered="{!thisquestion.isText && !isComplete && thisquestion.isRendered}">
+<div class="list-row"><div class="list-left">{!thisquestion.questionText}</div><div class="list-right">
+<apex:inputText value="{!thisquestion.questionAnswer}" required="{!thisquestion.isRequired}" label="{!thisquestion.questionText}"/></div></div><br /><br />
+</apex:outputPanel>
+<apex:outputPanel rendered="{!thisquestion.isTextArea && !isComplete && thisquestion.isRendered}">
+<div class="list-row"><div class="list-left">{!thisquestion.questionText}</div><div class="list-right">
+<apex:inputTextArea style="width: 100%; height: 40px;"  value="{!thisquestion.questionAnswer}" label="{!thisquestion.questionText}" required="{!thisquestion.isRequired}" /></div></div><br /><br />
+</apex:outputPanel>
+<apex:outputPanel rendered="{!thisquestion.isChoice && !isComplete && thisquestion.isRendered}">
+    <div class="list-row"><div class="list-left">{!thisquestion.questionText}</div><div class="list-right">
+     <apex:selectList value="{!thisquestion.questionAnswer}" label="{!thisquestion.questionText}" required="{!thisquestion.isRequired}" size="1">
+        <apex:actionSupport event="onchange" action="{!partialSave}" rerender="bigoutputpanel" />
+       <apex:selectOptions value="{!thisquestion.qChoices}" />
+    </apex:selectList>
+     </div></div><br /><br />
+</apex:outputPanel>
+<apex:outputPanel rendered="{!thisquestion.isRadioChoice && !isComplete && thisquestion.isRendered}">
+    <div class="list-row"><div class="list-left">{!thisquestion.questionText}</div><div class="list-right">
+     <apex:selectRadio value="{!thisquestion.questionAnswer}" label="{!thisquestion.questionText}" required="{!thisquestion.isRequired}">
+     <apex:actionSupport event="onchange" action="{!partialSave}" rerender="bigoutputpanel" />
+       <apex:selectOptions value="{!thisquestion.qChoices}" />
+    </apex:selectRadio>
+    </div></div><br /><br />
+</apex:outputPanel>
+<apex:outputPanel rendered="{!thisquestion.isVerticalRadioChoice && !isComplete && thisquestion.isRendered}">
+    <div class="list-row"><div class="list-left">{!thisquestion.questionText}</div><div class="list-right">
+     <apex:selectRadio layout="pageDirection" value="{!thisquestion.questionAnswer}" label="{!thisquestion.questionText}" required="{!thisquestion.isRequired}">
+   <apex:actionSupport event="onchange" action="{!partialSave}" rerender="bigoutputpanel" />
+       <apex:selectOptions value="{!thisquestion.qChoices}" />
+    </apex:selectRadio>
+    </div></div><br /><br />
+</apex:outputPanel>
+<apex:outputPanel rendered="{!thisquestion.isYesNo && !isComplete && thisquestion.isRendered}">
+    <div class="list-row"><div class="list-left">{!thisquestion.questionText}</div><div class="list-right">
+    <apex:selectRadio value="{!thisquestion.questionAnswer}" label="{!thisquestion.questionText}" required="{!thisquestion.isRequired}">   <apex:actionSupport event="onchange" action="{!partialSave}" rerender="bigoutputpanel" /><apex:selectOption itemValue="Yes" itemLabel="Yes"/><apex:selectOption itemValue="No" itemLabel="No"/></apex:selectRadio></div></div><br /><br />
+</apex:outputPanel>
+
+
+<apex:outputPanel rendered="{!thisquestion.isInformation && !isComplete && thisquestion.isRendered}">
+    <div class="list-row"><div class="list-span"><apex:outputText escape="false" value="{!thisquestion.questionText}"/></div></div><br /><br />
+</apex:outputPanel>
+
+<apex:outputPanel rendered="{!thisquestion.isSlider && !isComplete && thisquestion.isRendered}">
+<script>
+$(document).ready(function(){
+  $(function() {
+    $( "#slider{!thisquestion.questionNumber}" ).slider({
+      range: "max",min: 1, max: 10,value: 1,
+      slide: function( event, ui ) {
+       $(".inp{!thisquestion.questionNumber}").val( ui.value );
+      }
+    });
+    $(".inp{!thisquestion.questionNumber}").val(1); 
+  });
+  
+  });
+  </script>
+<div class="list-row"><div class="list-left">{!thisquestion.questionText}</div><div class="list-right"><apex:inputText label="{!thisquestion.questionText}" required="{!thisquestion.isRequired}" size="2" style="border:0; font-weight:bold;" styleClass="inp{!thisquestion.questionNumber}" value="{!thisquestion.questionAnswer}" />
+   <div id="slider{!thisquestion.questionNumber}"></div></div></div><br/><br />
+</apex:outputPanel>
+
+<apex:outputPanel rendered="{!thisquestion.isFinish && isComplete && thisquestion.isRendered}">
+    <div class="list-row"><div class="list-span"><apex:outputText escape="false" value="{!thisquestion.questionText}" /></div></div><br /><br />
+</apex:outputPanel>
+
+
+<apex:outputPanel rendered="{!thisquestion.isDate && !isComplete}">
+<script>
+$(document).ready(function(){ 
+
+$(function() {  $( ".inp{!thisquestion.questionNumber}" ).datepicker();  
+ $( ".inp{!thisquestion.questionNumber}").datepicker( "option", "dateFormat",'yy-mm-dd' );
+ });   
+ 
+
+
+});
+  </script>
+<div class="list-row"><div class="list-left">{!thisquestion.questionText}</div><div class="list-right"><apex:inputText label="{!thisquestion.questionText}" required="{!thisquestion.isRequired}" styleClass="inp{!thisquestion.questionNumber}" value="{!thisquestion.questionAnswer}" />
+   </div></div><br/><br />
+</apex:outputPanel>
+</apex:repeat>
+
+
+<apex:pageBlockButtons location="bottom" rendered="{!!isComplete}" >
+<apex:commandButton action="{!save}" value="Submit">
+</apex:commandButton>
+</apex:pageBlockButtons>
+
+</div>
+</div>
+
+</apex:pageBlock>
+</apex:outputPanel>
+
+</apex:form>
+
+</apex:page>

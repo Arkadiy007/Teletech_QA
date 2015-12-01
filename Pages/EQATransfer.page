@@ -1,0 +1,11 @@
+<apex:page controller="EQATransferController" action="{!changeOwner}">
+    <apex:form rendered="{!isSuccess}">
+        <script type="text/javascript">
+              window.location="{!redirectString}";
+        </script>
+    </apex:form>
+
+    <apex:form rendered="{!!isSuccess}">
+        <apex:pageMessages />
+    </apex:form>
+</apex:page>

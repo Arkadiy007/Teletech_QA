@@ -1,0 +1,76 @@
+<apex:page controller="Controller_PreCall_Forms_Finish" showHeader="false" id="page">  
+    <style type="text/css" >
+
+        .bPageBlock {
+            background-image: url('{!$Resource.PreCall_Forms_Background_2}') !important;
+            background-position: top !important;
+            width: 650px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            min-height: 810px;
+        }
+    
+        .pbHeader {
+            margin-top: 100px !important;
+        }
+        .btn {
+            width: 175px;
+            text-decoration:none; 
+            width: 175px; float: right;  
+            text-align: center;
+        }
+        .pbTitle {
+            width: 50% !important;
+        }
+        .p_Header {
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 22px;
+        }
+        .p_Header_red {
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 22px;
+            color: red;
+        }
+    </style>
+
+  <apex:form enctype="multipart/form-data" id="form">
+      <apex:pageMessages />
+      <apex:pageBlock >
+          <apex:facet name="header">
+              <p1 class="p_Header">
+                  Your case number is {!warCaseRecordName}
+              </p1> <br/>
+              <p1 class="p_Header_red">
+                     Please call Service Contract Pre-Approvals (855-456-9544).
+              </p1>
+          </apex:facet>
+
+          
+          <apex:pageBlockSection columns="1">
+              <apex:pageBlockSectionItem >
+                  <apex:outputText style="color: red; font-weight: bold; font-size: 14px;" value="Please keep this case number for your reference. This is not an approval."/>
+              </apex:pageBlockSectionItem>
+           
+          </apex:pageBlockSection>
+            
+          <apex:pageBlockSection columns="3">
+              <apex:pageBlockSectionItem >
+                <apex:commandLink value="Print The Pre-call Form PDF" action="{!redirectToPDF}" styleClass="btn" immediate="true"
+                target="_blank"  style="font-size: 14px;"/>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem >
+                <apex:commandLink styleClass="btn" action="{!new_PreCall_Form}" value="New PreCall Form" style="font-size: 14px;"/>   
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem >
+                <apex:commandLink styleClass="btn" action="{!finish}" value="Exit" style="font-size: 14px;"/>   
+            </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+   
+      </apex:pageBlock>
+
+  </apex:form>
+</apex:page>

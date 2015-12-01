@@ -1,0 +1,23 @@
+<apex:page standardController="Account" extensions="Controller_Customer_Journey" sidebar="false" showHeader="false" >
+    <apex:form >
+        <apex:sectionHeader title="Select Users of Leaf Customer Journey"/>
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Close Window" onclick="window.top.close()"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!LCJUserNames}" var="u">
+                <apex:column headerValue="Open LCJ">
+                    <apex:commandLink value="{!u.Portal_User_Name__c}" action="{!gotoCJTargetURL}">
+                        <apex:param name="userId" value="{!u.ID}" assignTo="{!SelectedUserNameID}"/>
+                    </apex:commandLink>
+                </apex:column>
+
+                <apex:column value="{!u.Portal_Link__c}" />
+                <apex:column value="{!u.Person_Hash_ID__c}" />
+                <apex:column value="{!u.Integration_Id__c}" />
+                <apex:column value="{!u.ReservationID__c}" />
+                <apex:column value="{!u.CreatedDate}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

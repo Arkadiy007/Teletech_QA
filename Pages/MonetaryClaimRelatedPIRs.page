@@ -1,0 +1,40 @@
+<apex:page standardcontroller="Monetary_Claim__c" extensions="MCRelatedPIRsExtension" sidebar="false" showheader="false">
+<apex:form >
+    <apex:actionfunction name="refreshrows" action="{!refresh}" status="fetchStatus" rerender=""/>
+    
+
+    <apex:pageblock rendered="{!relatedRecordsAvailable}" id="pb">
+        <apex:pageblocktable id="tblAccounts" value="{!sortingReportItems}" var="sortingReportItem" >                    
+            <apex:column headervalue="Sorting Report Item">
+                <a href="/{!sortingReportItem.Id}" target="_blank">{!sortingReportItem.Name}</a>
+            </apex:column>
+            <apex:column value="{!sortingReportItem.PIR_Number__c}" />
+            <apex:column value="{!sortingReportItem.Reason__c}" />
+            <apex:column value="{!sortingReportItem.Reworked__c}" />
+            <apex:column value="{!sortingReportItem.No_Good__c}" />
+            <apex:column value="{!sortingReportItem.Sorting_Costs__c}" />
+            <apex:column value="{!sortingReportItem.Rework_Costs__c}" />
+            <apex:column value="{!sortingReportItem.No_Good_Material_Costs__c}" />
+            <apex:column value="{!sortingReportItem.PIR_Part_Number__c}" />
+            <apex:column value="{!sortingReportItem.PIR_Customer__c}" />
+         </apex:pageblocktable>
+         <apex:panelgrid columns="8">
+             <apex:commandbutton status="fetchStatus" rerender="pb" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page" />
+             <apex:commandbutton status="fetchStatus" rerender="pb" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page" />
+             <apex:commandbutton status="fetchStatus" rerender="pb" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page" />
+             <apex:commandbutton status="fetchStatus" rerender="pb" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page" />
+            
+              
+             <apex:outputtext >Page {!pageNumber} of {!noOfPages}, </apex:outputtext>
+             <apex:outputtext >Showing Records {!(pageNumber * size)+1-size}-{!IF((pageNumber * size)>noOfRecords, noOfRecords,(pageNumber * size))} of {!noOfRecords}</apex:outputtext>
+             
+             <apex:outputpanel style="color:#4AA02C;font-weight:bold">
+                                        <apex:actionstatus id="fetchStatus" starttext="Fetching..." stoptext="" />
+             </apex:outputpanel>
+                               
+        </apex:panelgrid>
+
+        
+    </apex:pageblock>
+</apex:form>
+</apex:page>

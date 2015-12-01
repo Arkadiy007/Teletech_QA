@@ -1,0 +1,433 @@
+<apex:page controller="MaritzCaseMappingController" id="page_id" action="{!recalcDependValues}">
+
+   <style>
+    .statusImage {
+      float: left;
+      margin-right: 10px;
+    }
+    .mappingArea {
+        height: 300px;
+        overflow: auto;
+    }
+    #objMapping {
+      margin-bottom: 20px;
+    }
+    .objMapping {
+        margin-bottom: 20px;
+    }
+    .popup {
+      z-index: 9998;
+      left: 50%;
+      padding: 10px;
+      position: absolute;
+      
+      /* These are the 3 css properties you will need to change so the popup
+        displays in the center of the screen. First set the width. Then set
+        margin-left to negative half of what the width is. You can add
+        the height property for a fixed size pop up if you want. */
+      width: 800px;
+      margin-left: -400px;
+      top: 100px;
+    }
+    .logs {
+    }
+    .mappings {
+    }
+    .popupBackground {
+      background-color: black;
+      opacity: 0.20;
+      filter: alpha(opacity = 20);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 9997;
+    }
+    .centered {
+      text-align: center;
+    }
+    .err {
+      font-weight: bold;
+      color: #990000 !important;
+    }
+    .configPage_Header {
+       margin-bottom: 32px;
+    }
+    .configPage_Header_Icon {
+       margin-top: 5px;
+       width: 32px;
+       height: 32px;
+       float: left;
+    }
+    .configPage_Header_Title {
+        font-size: 1.3em; 
+        margin: 13px 0 0 10px;
+        display: inline-block;
+    }
+    .popupHeader {
+        font-size:18pt; 
+        font-weight:lighter; 
+        padding-bottom: 5pt; 
+        text-align: center
+    }
+    #blockbckanim
+    {
+        background: rgba(0, 0, 0, 0.2);
+        width:100%;
+        height:100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 9999;
+        rgba(0, 0, 0, 0.71);
+        cursor: wait;
+    }
+    #apimgld
+    {
+        top:49%;
+        left:45%;
+        position:fixed;
+        border-radius: 2px;
+        -webkit-border-radius: 2px ;
+        -moz-border-radius: 2px ;
+    }
+    #blockmainanim
+    {
+        background: rgba(0, 0, 0, 0.2);
+        width:100%;
+        height:100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 9999;
+        rgba(0, 0, 0, 0.71);
+        cursor: wait;
+    }
+    #blockmainimg
+    {
+        top:49%;
+        left:45%;
+        position:fixed;
+        border-radius: 2px;
+        -webkit-border-radius: 2px ;
+        -moz-border-radius: 2px ;
+    }
+    .additionalMappingSection {
+        display:block !important;
+    }
+
+    .recTypeOutputText {
+        width:400px;
+    }
+  </style>
+
+  <script type="text/javascript" language="javascript">
+  function ShowLoading() {
+    document.getElementById('blockbckanim').style.display="block";
+  }
+  function HideLoading() {
+    document.getElementById('blockbckanim').style.display="none";
+  }
+  function ShowMainLoading() {
+    document.getElementById('blockmainanim').style.display="block";
+  }
+  function HideMainLoading() {
+    document.getElementById('blockmainanim').style.display="none";
+  }
+  </script>
+
+ <apex:actionStatus id="processingStatus" onStart="ShowLoading();" onstop="HideLoading();" />
+ <apex:outputPanel id="tstpopup">
+    
+        <apex:form >
+        <div id="blockbckanim" style="display:none">
+            <img id="apimgld" style="" src="/img/loading32.gif" />
+        </div>
+
+        <!--Template Selector-->
+        <apex:pageBlock id="TemplatePanel">
+            <apex:pageblocksection >
+                <apex:selectlist label="Choose template" value="{!selectedTemplate}" size="1">
+                    <apex:selectoptions value="{!templateOptions}" />
+                    <apex:actionsupport event="onchange" status="processingStatus" action="{!recalcDependValues}" rerender="tstpopup" />
+                </apex:selectlist>
+
+                <apex:outputtext value="{!IF(true = isActiveSelectedTemplate, 'Active', 'Inactive')} Template" />
+                <apex:commandlink action="{!activateTemplate}" status="processingStatus" rerender="TemplatePanel" rendered="{!AND(NOT(isActiveSelectedTemplate), selectedTemplate != 'New')}">
+                    Apply Template
+                </apex:commandlink>
+            </apex:pageblocksection>
+        </apex:pageBlock>
+
+        <!--Mapping panel-->
+        <apex:pageBlock >
+          <div class="popupHeader">Field Mappings For {!mappingObject}</div>         
+          <apex:pageBlockButtons location="bottom">
+            <apex:commandbutton action="{!saveMappings}" status="processingStatus" value="Save" rerender="templatePopup, tstpopup" id="saveMappingButton" />
+            <apex:commandbutton action="{!showTemplateNamePopup}" status="processingStatus" value="Save as New" rerender="templatePopup" id="saveNewMappingButton" onclick="window.scroll(0, 0);" rendered="{!selectedTemplate != 'New'}" />
+            <apex:commandButton action="{!cleareMappings}" status="processingStatus" value="Cleare Mappings" rerender="tstpopup"  id="cleareMappings"/>
+            <apex:commandButton action="{!mappingsPreview}" status="processingStatus" value="Mappings Preview" rerender="summeryPopup" />
+              <apex:commandbutton action="{!checkIfTemplateActive}" status="processingStatus" value="Delete Mapping Template" rerender="tstpopup, setActivePopup" onclick="window.scroll(0, 0);" />
+            <apex:commandButton action="{!cancelMappings}" status="processingStatus" value="Cancel" rerender="tstpopup" /> <!--immediate="true"/>-->
+          </apex:pageBlockButtons>
+
+          <apex:outputPanel layout="block" styleClass="objMapping">
+              <div>
+                <apex:outputText value="{!mappingObject}"/>  should be mapped with Adhoc Campaign
+                <div id="blockbckanim" style="display:none">
+                    <img id="apimgld" style="" src="/img/loading32.gif" />
+                </div>
+                
+              </div>
+
+          </apex:outputPanel>
+            
+          <!-- Field-to-Field Mapping section -->
+          <div class="mappingArea">  
+              <apex:pageMessages />
+              <div>1) Select the mapping for each {!mappingObject} field. "Match" fields will be used to match new data to existing records in Salesforce.</div>
+              <apex:pageBlockTable value="{!mappings}" var="i" id="theTable2" rowClasses="odd,even" styleClass="tableClass">
+                <apex:column headerValue="Case field" value="{!mappingLabels[i.Target_field__c]}"/>
+                <apex:column headerValue="Selected object field">
+                    <apex:SelectList value="{!i.Source_field__c}" size="1" style="width:100%" >
+                      <apex:selectOptions value="{!mappingFields}" />
+                      <apex:actionSupport event="onchange" reRender="saveMappingButton" action="{!fieldMappingChanged}"/>
+                    </apex:SelectList>
+                </apex:column>
+              </apex:pageBlockTable>
+
+          </div> <br/>
+
+          
+          <!-- Record Type section -->
+          <div>
+              <div>2) Please choose record type of {!mappingObject} object:</div>
+
+              <apex:SelectList value="{!recordTypeMapping.Record_Type_Name__c}" size="1">
+                  <apex:selectOptions value="{!recordTypeSO}" />
+                  <apex:actionSupport event="onchange" reRender="" />
+              </apex:SelectList>
+              <br />
+
+          </div> <br />
+          
+          <!-- Lookup section -->
+          <div class="mappingArea">
+              <div>
+                  3) Please select External Id field of the object in Case lookup field and appropriate field of AdHoc Campaign object.
+              </div>
+
+              <apex:pageBlockTable value="{!lookupEntytyMapping}" var="i">
+                  <apex:column headerValue="Case lookup" value="{!i.targetLookupFieldLabel}"/>
+
+                  <apex:column headerValue="Field of the related object">
+                        <apex:SelectList value="{!i.externalIdsOfTheRelateedObject}" size="1">
+                          <apex:selectOptions value="{!i.externalIdsOfTheRelateedObjectSO}" />
+                          <apex:actionSupport event="onchange" reRender=""  />
+                      </apex:SelectList>
+                  </apex:column>
+
+                  <apex:column headerValue="Record Type of the related object">
+                        <apex:SelectList value="{!i.recordTypeOfTheRelatedObject}" size="1">
+                          <apex:selectOptions value="{!i.recordTypeOfTheRelatedObjectSO}" />
+                          <apex:actionSupport event="onchange" reRender="" />
+                      </apex:SelectList>
+                  </apex:column>
+
+                  <apex:column headerValue="Selected object field">
+                        <apex:SelectList value="{!i.fieldOfIntermediateObject}" size="1">
+                          <apex:selectOptions value="{!i.fieldsOfIntermediateObjectSO}" />
+                          <apex:actionSupport event="onchange" reRender="" />
+                      </apex:SelectList>
+                  </apex:column>
+
+              </apex:pageBlockTable>
+              <br />
+
+          </div>
+          
+          <!-- Static Values section -->
+          <div style="display=block;   margin-top: 20px;">
+                  <div>
+                    <div>4) Please input values for the following fields of {!mappingObject} object manually. Push 'Add Field Mapping' button to add row for mapping to the table below. </div>
+                        <div>
+                            <apex:commandButton value="Add Field Mapping" action="{!addAdditionalMappingRow}" status="processingStatus" rerender="theTable3">
+                            </apex:commandButton>
+                        </div>
+                    </div>
+                  <apex:pageBlockTable value="{!mappingsAdditional}" var="i" id="theTable3" rowClasses="odd,even" styleClass="tableClass">
+                    <apex:variable value="{!0}" var="cnt"/>
+                    <apex:column headerValue="Case field">
+                        <apex:SelectList value="{!i.Target_field__c}" size="1" style="width:100%" >
+                          <apex:selectOptions value="{!targetMappingFieldsSO}" />
+                          <apex:actionSupport event="onchange" reRender="" /> 
+                        </apex:SelectList>
+
+                    </apex:column>
+
+                    <apex:column headerValue="Value of the field">
+                        <apex:outputPanel styleClass="{!IF(mappingFieldRequiredAdditional[i.Target_field__c],'requiredInput','')}" layout="block">
+                        <apex:outputPanel styleClass="{!IF(mappingFieldRequiredAdditional[i.Target_field__c],'requiredBlock','')}"/>
+                        <apex:inputText value="{!i.Value_of_the_target_field__c}">
+                        </apex:inputText>
+                      </apex:outputPanel>
+                    </apex:column>
+                     <apex:column headervalue="Action">
+                          <apex:commandlink value="Remove" action="{!removeMapping}" immediate="true" rerender="tstpopup" status="processingStatus">
+
+                              <apex:param name="index" value="{!cnt}"/>
+                          </apex:commandlink> 
+                          <apex:variable var="cnt" value="{!cnt+1}"/>              
+                      </apex:column>  
+                  </apex:pageBlockTable>
+          </div> <br />
+
+          <!-- Ownership section -->
+          <div>
+              <div>5) Please select type of owner and input owner name for mapped {!mappingObject} records. </div>
+
+              <apex:inputText value="{!targetOwnerMapping.Owner_Name__c}"/>
+
+              <apex:selectRadio value="{!targetOwnerMapping.Type_Of_Ownership__c}">
+                <apex:selectOptions value="{!ownerTypeSO}"/>
+              </apex:selectRadio>
+
+          </div>
+        </apex:pageBlock>
+      </apex:form>
+  </apex:outputPanel> 
+
+    <!---------------Summery Popup--------------->
+    <apex:outputPanel id="summeryPopup">
+        <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displaySummeryPopup}"/>
+        <apex:outputPanel styleClass="mappings popup" layout="block" rendered="{!displaySummeryPopup}">
+            <apex:form >
+            <div id="blockbckanim" style="display:none">
+                <img id="apimgld" style="" src="/img/loading32.gif" />
+            </div>
+            <apex:pageBlock >
+                <!-- Field-to-Field Mapping section -->
+              <div class="mappingArea">  
+                  <apex:pageMessages />
+                  <div>1) Selected mappings for each {!mappingObject} field:</div>
+                  <apex:pageBlockTable value="{!mappingsPreview}" var="i" id="theTable2" rowClasses="odd,even" styleClass="tableClass">
+                    <apex:column headerValue="Case field" value="{!i.Target_field__c}"/>
+                    <apex:column headerValue="Selected object field" value="{!i.Source_field__c}"/>
+                  </apex:pageBlockTable>
+
+              </div> <br/>
+
+          
+              <!-- Record Type section -->
+              <div>
+                  <div>2) Chosen record type of {!mappingObject} object:</div>
+
+                  <apex:OutputText value="{!recordTypeMappingPreview}"/>
+                  <br />
+
+              </div> <br />
+          
+              <!-- Lookup section -->
+              <div class="mappingArea">
+                  <div>
+                      3) Selected External Id field of the object in Case lookup field and appropriate field of AdHoc Campaign object:
+                  </div>
+
+                  <apex:pageBlockTable value="{!lookupEntytyMappingPreview}" var="i">
+                      <apex:column headerValue="Case lookup" value="{!i.targetLookupFieldLabel}"/>
+
+                      <apex:column headerValue="Field of the related object" value="{!i.externalIdsOfTheRelateedObject}"/>
+
+                      <apex:column headerValue="Record Type of the related object">
+                          <apex:SelectList value="{!i.recordTypeOfTheRelatedObject}" size="1" disabled="true">
+                              <apex:selectOptions value="{!i.recordTypeOfTheRelatedObjectSO}" />
+                              <apex:actionSupport event="onchange" reRender="" />
+                          </apex:SelectList>
+                      </apex:column>
+
+                      <apex:column headerValue="Selected object field" value="{!i.fieldOfIntermediateObject}"/>
+
+                  </apex:pageBlockTable>
+                  <br />
+
+              </div>
+          
+              <!-- Static Values section -->
+              <div style="display=block;   margin-top: 20px;">
+                      
+                        <div>4) Inputed values for the following fields of {!mappingObject} object: </div>
+
+                      <apex:pageBlockTable value="{!mappingsAdditionalPreview}" var="i" id="theTable3" rowClasses="odd,even" styleClass="tableClass">
+                        <apex:column headerValue="Case field" value="{!i.Target_field__c}"/>
+
+                        <apex:column headerValue="Value of the field" value="{!i.Value_of_the_target_field__c}"/>
+
+                      </apex:pageBlockTable>
+              </div> <br />
+
+              <!-- Ownership section -->
+              <div>
+                  <div>5) Selected type of owner and input owner name for mapped {!mappingObject} records: </div>
+
+                  <apex:outputLabel value="Name: ">
+                      {!targetOwnerMappingPreview.Owner_Name__c}
+                  </apex:outputLabel>  
+                  <br />
+                  <apex:outputLabel value="Type:">
+                      {!targetOwnerMappingPreview.Type_Of_Ownership__c}
+                  </apex:outputLabel>
+
+              </div>
+              
+            <apex:pageBlockButtons location="bottom">
+            <apex:commandButton action="{!closeMappingsPreview}" status="processingStatus" value="Close" rerender="summeryPopup" />
+            </apex:pageBlockButtons>  
+            </apex:pageBlock>
+        </apex:form>
+        </apex:outputPanel>
+    </apex:outputPanel>
+
+    <!--Save as New Template-->
+    <apex:outputpanel id="templatePopup">
+        <apex:outputpanel styleclass="popupBackground" layout="block" rendered="{!displaySetTemplateNamePopup}" />
+        <apex:outputpanel styleclass="mappings popup" layout="block" rendered="{!displaySetTemplateNamePopup}">
+            <apex:form >
+                <apex:pageblock >
+                    <div class="popupHeader">Set Template Name</div>
+                    <apex:pagemessages id="errorMsgs" escape="false" />
+                    <apex:pageblockbuttons location="bottom">
+                        <apex:commandbutton action="{!saveAsNewMappings}" status="processingStatus" value="Save" rerender="templatePopup, tstpopup" />
+                        <apex:commandbutton action="{!closeTemplateNamePopup}" value="Close" rerender="templatePopup" immediate="true" />
+                    </apex:pageblockbuttons>
+                    <apex:pageblocksection >
+                        <apex:inputtext label="Template Name" value="{!templateName}" />
+                    </apex:pageblocksection>
+                </apex:pageblock>
+            </apex:form>
+        </apex:outputpanel>
+    </apex:outputpanel>
+
+    <!--Set Active Template before delete the old one-->
+    <apex:outputpanel id="setActivePopup">
+        <apex:outputpanel styleclass="popupBackground" layout="block" rendered="{!displaySetActivatePopup}" />
+        <apex:outputpanel styleclass="mappings popup" layout="block" rendered="{!displaySetActivatePopup}">
+            <apex:form >
+                <apex:pageblock >
+                    <div class="popupHeader">Set Active Template before deletion of the old one</div>
+                    <apex:pagemessages id="errorMsgs" escape="false" />
+                    <apex:pageblockbuttons location="bottom">
+                        <apex:commandbutton action="{!activateNewTemplateAndDelete}" status="processingStatus" value="Save" rerender="setActivePopup, tstpopup" />
+                        <apex:commandbutton action="{!closeSetActivePopup}" status="processingStatus"  value="Close" rerender="setActivePopup, tstpopup" immediate="true" />
+                    </apex:pageblockbuttons>
+                    <apex:pageblocksection >
+                        <apex:selectlist label="Choose template" value="{!newActiveTemplate}" size="1">
+                            <apex:selectoptions value="{!templateOptions}" />
+                            <!--<apex:actionsupport event="onchange" status="processingStatus" action="{!recalcDependValues}" rerender="tstpopup" />-->
+                        </apex:selectlist>
+                    </apex:pageblocksection>
+                </apex:pageblock>
+            </apex:form>
+        </apex:outputpanel>
+    </apex:outputpanel>
+</apex:page>

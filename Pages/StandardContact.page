@@ -1,0 +1,3 @@
+<apex:page standardController="Contact" extensions="Controller_AgentConsoleLandingPage" >
+<apex:detail subject="{!Contact.id}"/>
+</apex:page>

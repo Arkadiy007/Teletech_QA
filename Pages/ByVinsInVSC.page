@@ -1,0 +1,5 @@
+<apex:page standardController="Vehicle_Service_Contract__c" extensions="Controller_ByVinsInAccount_VSC" action="{!doSearch}">
+	<apex:form >
+        <apex:outputText value="{!ResponseOutput}" />
+    </apex:form>
+</apex:page>

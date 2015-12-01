@@ -1,0 +1,378 @@
+<apex:page standardController="Contact" extensions="Controller_AgentConsole" action="{!checkLatestTask}">
+<a name="Top"/>
+    <title>Agent Console</title> 
+    <apex:form >
+     <apex:pageMessages /> 
+        <apex:pageBlock >
+        <div style="font-face:verdana; font-size:20px; font-weight:bold;"> 
+        {!Header}<br/>
+        </div>
+            <apex:pageBlockButtons >
+                <apex:commandButton id="saveButton" action="{!customSave}" value="Save"/>
+            </apex:pageBlockButtons>
+Contact Name:  {!Account.FirstName} {!Account.LastName}             
+            <apex:pageBlockSection title="Disposition" collapsible="false" columns="3" >
+                <apex:inputField value="{!ThisCall.CallDisposition__c}" id="CallDispo"/>    
+                <apex:outputField id="callAttempt" value="{!CampMemb.Call_Attempt_Number__c}"/>
+                <apex:inputField id="description" value="{!ThisCall.Description}" style="width:363px; height:50px;"/>
+                      
+           
+                <apex:inputField value="{!ThisCall.Question_1__c}" />
+                <apex:inputField value="{!ThisCall.Question_2__c}"/>
+                <apex:inputField value="{!ThisCall.Satisfaction__c}"/>
+               
+                <apex:inputField value="{!ThisCall.Service_Description__c}" style="width:235px; height:50px;"/> 
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Comment Audience"/>
+                    <apex:selectList id="comaud" value="{!ThisCall.Comment_Audience__c}" size="1">
+                        <apex:selectOptions value="{!commaudTypeValues}"/>
+                    </apex:selectList> 
+                </apex:pageBlockSectionItem>
+                <apex:inputField value="{!ThisCall.Customer_Experience__c}"/>
+            </apex:pageBlockSection>
+              
+            <!--  5 cols -->
+            <apex:pageBlockSection collapsible="true" showheader="false" columns="5">
+             
+                <apex:outputLink value="#CustomerProfile" id="CustomerProfilelink">Customer Profile</apex:outputLink>
+                <apex:outputLink value="#DealerInfo" id="dealerinfolink">Dealer Info</apex:outputLink>
+                <apex:outputLink value="#AppointmentInfo" id="AppointmentInfo">Appointment Info</apex:outputLink>
+                <apex:outputLink value="#CallBackInfo" id="CallBackInfo">Call Back Info</apex:outputLink>
+                <apex:outputLink value="#VehicleInfo" id="VehicleInfoLink">Vehicle Info</apex:outputLink>
+          
+            </apex:pageBlockSection>             
+            <!-- <flow:interview name="Service_Marketing_US"/> -->
+            <apex:iframe src="{!ScriptURL}" scrolling="false" id="scriptFrame" height="440px"/>
+            <!--  put in header change  -->
+            <apex:outputLink value="apex/createnewtmscontact">
+                     Change Contact
+            <apex:param name="callId" value="{!ThisCall.id}"/>
+            <apex:param name="campId" value="{!Campmemb.id}"/>
+            <apex:param name="cId" value="{!Campmemb.Contactid}"/>
+             </apex:outputLink>
+             
+             <a name="CustomerProfile"/>
+            <apex:pageBlockSection title="Customer Profile" columns="4" id="CustomerProfileSection">
+                
+                <!-- need to add tms salu vals to picklist on p.52 -->
+                <apex:inputField id="salutation" value="{!Account.Salutation}"/>
+                <apex:inputField id="firstName" value="{!Account.FirstName}"/>
+                <apex:inputField id="middleName" value="{!Account.MiddleName__c}"/>
+                <apex:inputField id="lastName" value="{!Account.LastName}"/>
+                <apex:inputField id="language" value="{!CampMemb.Language__c}"/> 
+                <apex:inputField id="personHomePhone" value="{!Account.PersonHomePhone}"/>
+            
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Home Phone Do Not Call"/>
+                 <apex:selectList id="homePhoneDoNotCall" value="{!Account.Home_Phone_Do_Not_Call__c}"  size="1">
+                <apex:selectOptions value="{!consentValues}"/>
+                </apex:selectList> 
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageblocksectionItem id="PageBlockSectionHPSeq">
+                
+                <!--  need to put in validatin for seq and put every phone in 1 col and dnc call to picklist -->
+                <apex:OutputText value="Home Phone Sequence"/>
+                <apex:selectList id="homePhoneSequence" value="{!Account.Home_Phone_Sequence__c}" size="1" >
+                <apex:selectOptions value="{!phoneSequences}"/>
+                </apex:selectList>
+                </apex:pageblocksectionItem>
+
+                <apex:inputField id="personOtherPhone" value="{!Account.PersonOtherPhone}"/> 
+                <apex:inputField id="otherPhoneExtension" value="{!Account.Other_Phone_Extension__c}"/>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Other Phone Do Not Call"/>
+                <apex:selectList id="otherPhoneDoNotCall" value="{!Account.Other_Phone_Do_Not_Call_In__c}" size="1">
+                <apex:selectOptions value="{!consentValues}"/>
+                </apex:selectList> 
+                </apex:pageBlockSectionItem>
+                
+                
+                
+                <apex:pageblocksectionItem id="PageBlockSectionWPSeq">
+                <apex:OutputText value="Work Phone Sequence"/>
+                <apex:selectList id="workPhoneSequence" value="{!Account.Other_Phone_Sequence__c}" size="1" >
+                <apex:selectOptions value="{!workPhoneSequences}"/>
+                </apex:selectList>
+                </apex:pageblocksectionItem>
+                
+                <apex:inputField id="personPhoneMobile" value="{!Account.PersonMobilePhone}"/> 
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Mobile Phone Do Not Call"/>
+                 <apex:selectList id="mobileDoNotCall" value="{!Account.Mobile_Phone_Do_Not_Call_Indicator__c}"  size="1">
+                <apex:selectOptions value="{!consentValues}"/>
+                </apex:selectList> 
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageblocksectionItem id="PageBlockSectionMPSeq">
+                <apex:OutputText value="Mobile Phone Sequence"/>
+                <apex:selectList id="mobilePhoneSequence" value="{!Account.Mobile_Phone_Sequence__c}" size="1" >
+                <apex:selectOptions value="{!mobilePhoneSequences}"/>
+                </apex:selectList>
+                </apex:pageblocksectionItem>
+               
+            </apex:pageBlockSection>
+               
+                <apex:pageBlockSection columns="4" id="contactsection">
+                <apex:inputField id="preferredCallTime" value="{!CampMemb.Preferred_Call_Time__c}"/>
+                <apex:inputField id="personEmail" value="{!Account.PersonEmail}"/>   
+           
+                
+                <apex:pageblocksectionItem id="emailtype1">
+                <apex:OutputText value="Email Type 1"/>
+                <apex:selectList id="emailType1" value="{!Account.Email_Type_1__c}" size="1" >
+                <apex:selectOptions value="{!emailTypeValues}"/>
+                </apex:selectList>
+                </apex:pageblocksectionItem>
+                
+                
+                <apex:inputField id="emailOptOut" value="{!Account.PersonHasOptedOutOfEmail}"/> 
+                </apex:pageBlockSection>
+                
+                <apex:PageBlockSection columns="4" id="emailfields">
+             
+             <!-- 
+                <apex:inputField id="altEmail" value="{!Account.Alternate_Email__c}"/>
+                <apex:inputField id="doNotEmail" value="{!Account.Do_Not_Email_In__c}"/> 
+                <apex:inputField id="street" value="{!Account.PersonMailingStreet}"/>
+                <apex:inputField id="city" value="{!Account.PersonMailingCity}"/>
+                <apex:inputField id="country" value="{!Account.PersonMailingCountry}"/>
+                </apex:PageBlockSection>
+                <apex:PageBlockSection id="mailfields">
+                <apex:inputField id="zipCode" value="{!Account.PersonMailingPostalCode}"/>
+                <apex:inputField id="state" value="{!Account.PersonMailingState}"/> 
+                <apex:inputField id="preferredMailType" value="{!CampMemb.Preferred_Mail_Type__c}"/>
+                <apex:inputField id="tempAwayStartDate" value="{!ThisCall.Temp_Away_Start_Date__c}"/>
+                <apex:inputField id="tempAwayEndDate" value="{!ThisCall.Temp_Away_End_Date__c}"/>
+                <apex:inputField id="mailStopStartDate" value="{!ThisCall.Mail_Stop_Start_Date__c}"/>
+                <apex:inputField id="mailStopEndDate" value="{!ThisCall.Mail_Stop_End_Date__c}"/>
+             -->
+                <apex:inputField value="{!Account.Alternate_Email__c}"/>
+              <!-- <apex:inputField value="{!Account.Do_Not_Email_In__c}"/>  -->
+            
+               <apex:pageblocksectionItem id="EmailType2">
+                <apex:OutputText value="Email Type 2"/>
+                <apex:selectList id="emailType1" value="{!Account.Email_Type_2__c}" size="1" >
+                <apex:selectOptions value="{!emailTypeValues}"/>
+                </apex:selectList>
+                </apex:pageblocksectionItem>
+            
+              
+                <apex:inputField value="{!Account.PersonMailingStreet}"/>
+                <apex:inputField value="{!Account.PersonMailingCity}"/>
+                <apex:inputField value="{!Account.PersonMailingCountry}"/>
+                </apex:PageBlockSection>
+                <apex:PageBlockSection columns="4" id="mailfields">
+                <apex:inputField value="{!Account.PersonMailingPostalCode}"/>
+                <apex:pageBlockSectionItem >
+                  <apex:outputText value="Mailing State/Province"/>
+                  <apex:selectList value="{!Account.PersonMailingState}" size="1">
+                    <apex:selectOption itemValue="AL" itemLabel="Alabama"/>
+                    <apex:selectOption itemValue="AK" itemLabel="Alaska"/>
+                    <apex:selectOption itemValue="AZ" itemLabel="Arizona"/>
+                    <apex:selectOption itemValue="AR" itemLabel="Arkansas"/>
+                    <apex:selectOption itemValue="CA" itemLabel="California"/>
+                    <apex:selectOption itemValue="CO" itemLabel="Colorado"/>
+                    <apex:selectOption itemValue="CT" itemLabel="Connecticut"/>
+                    <apex:selectOption itemValue="DE" itemLabel="Delaware"/>
+                    <apex:selectOption itemValue="DC" itemLabel="District of Columbia"/>
+                    <apex:selectOption itemValue="FL" itemLabel="Florida"/>
+                    <apex:selectOption itemValue="GA" itemLabel="Georgia"/>
+                    <apex:selectOption itemValue="HI" itemLabel="Hawaii"/>
+                    <apex:selectOption itemValue="ID" itemLabel="Idaho"/>
+                    <apex:selectOption itemValue="IL" itemLabel="Illinois"/>
+                    <apex:selectOption itemValue="IN" itemLabel="Indiana"/>
+                    <apex:selectOption itemValue="IA" itemLabel="Iowa"/>
+                    <apex:selectOption itemValue="KS" itemLabel="Kansas"/>
+                    <apex:selectOption itemValue="KY" itemLabel="Kentucky"/>
+                    <apex:selectOption itemValue="LA" itemLabel="Louisiana"/>
+                    <apex:selectOption itemValue="ME" itemLabel="Maine"/>
+                    <apex:selectOption itemValue="MD" itemLabel="Maryland"/>
+                    <apex:selectOption itemValue="MA" itemLabel="Massachusetts"/>
+                    <apex:selectOption itemValue="MI" itemLabel="Michigan"/>
+                    <apex:selectOption itemValue="MN" itemLabel="Minnesota"/>
+                    <apex:selectOption itemValue="MS" itemLabel="Mississippi"/>
+                    <apex:selectOption itemValue="MO" itemLabel="Missouri"/>
+                    <apex:selectOption itemValue="MT" itemLabel="Montana"/>
+                    <apex:selectOption itemValue="NE" itemLabel="Nebraska"/>
+                    <apex:selectOption itemValue="NV" itemLabel="Nevada"/>
+                    <apex:selectOption itemValue="NH" itemLabel="New Hampshire"/>
+                    <apex:selectOption itemValue="NJ" itemLabel="New Jersey"/>
+                    <apex:selectOption itemValue="NM" itemLabel="New Mexico"/>
+                    <apex:selectOption itemValue="NY" itemLabel="New York"/>
+                    <apex:selectOption itemValue="NC" itemLabel="North Carolina"/>
+                    <apex:selectOption itemValue="ND" itemLabel="North Dakota"/>
+                    <apex:selectOption itemValue="OH" itemLabel="Ohio"/>
+                    <apex:selectOption itemValue="OK" itemLabel="Oklahoma"/>
+                    <apex:selectOption itemValue="OR" itemLabel="Oregon"/>
+                    <apex:selectOption itemValue="PA" itemLabel="Pennsylvania"/>
+                    <apex:selectOption itemValue="RI" itemLabel="Rhode Island"/>
+                    <apex:selectOption itemValue="SC" itemLabel="South Carolina"/>
+                    <apex:selectOption itemValue="SD" itemLabel="South Dakota"/>
+                    <apex:selectOption itemValue="TN" itemLabel="Tennessee"/>
+                    <apex:selectOption itemValue="TX" itemLabel="Texas"/>
+                    <apex:selectOption itemValue="UT" itemLabel="Utah"/>
+                    <apex:selectOption itemValue="VT" itemLabel="Vermont"/>
+                    <apex:selectOption itemValue="VA" itemLabel="Virginia"/>
+                    <apex:selectOption itemValue="WA" itemLabel="Washington"/>
+                    <apex:selectOption itemValue="WV" itemLabel="West Virginia"/>
+                    <apex:selectOption itemValue="WI" itemLabel="Wisconsin"/>
+                    <apex:selectOption itemValue="WY" itemLabel="Wyoming"/>
+                    <apex:selectOption itemValue="GU" itemLabel="Guam"/>
+                    <apex:selectOption itemValue="PR" itemLabel="Puerto Rico"/>
+                    <apex:selectOption itemValue="VI" itemLabel="Virgin Islands"/>
+                    <apex:selectOption itemValue="AB" itemLabel="Alberta"/>
+                    <apex:selectOption itemValue="BC" itemLabel="British Columbia"/>
+                    <apex:selectOption itemValue="MB" itemLabel="Manitoba"/>
+                    <apex:selectOption itemValue="NB" itemLabel="New Brunswick"/>
+                    <apex:selectOption itemValue="NL" itemLabel="Newfoundland and Labrador"/>
+                    <apex:selectOption itemValue="NT" itemLabel="Northwest Territories"/>
+                    <apex:selectOption itemValue="NS" itemLabel="Nova Scotia"/>
+                    <apex:selectOption itemValue="NU" itemLabel="Nunavut"/>
+                    <apex:selectOption itemValue="ON" itemLabel="Ontario"/>
+                    <apex:selectOption itemValue="PE" itemLabel="Prince Edward Island"/>
+                    <apex:selectOption itemValue="QC" itemLabel="Quebec"/>
+                    <apex:selectOption itemValue="PQ" itemLabel="Quebec (Old)"/>
+                    <apex:selectOption itemValue="SK" itemLabel="Saskatchewan"/>
+                    <apex:selectOption itemValue="YT" itemLabel="Yukon"/>
+                  </apex:selectList> 
+                </apex:pageBlockSectionItem>
+                <apex:inputField value="{!CampMemb.Preferred_Mail_Type__c}"/>
+                <apex:inputField value="{!ThisCall.Temp_Away_Start_Date__c}"/>
+                <apex:inputField value="{!ThisCall.Temp_Away_End_Date__c}"/>
+                <apex:inputField value="{!ThisCall.Mail_Stop_Start_Date__c}"/>
+                <apex:inputField value="{!ThisCall.Mail_Stop_End_Date__c}"/>
+            
+                </apex:PageBlockSection>
+                
+             <!-- </apex:pageBlockSection> -->
+          
+         
+            
+        
+            <apex:outputLink value="#Top" id="toplink1">^Top</apex:outputLink>
+            <apex:pageBlockSection title="TMS Webservice" columns="3" rendered="{!IF(CallCentreID != 4, true, false)}">
+            <apex:commandLink action="{!PaasParams}" target="_blank" value="Communication History" id="CommunicationLink">
+                <apex:param value="GetCommunicationHistory" name="api" assignto="{!apiName}"/>
+            </apex:commandLink>
+            <apex:commandLink action="{!PaasParams}" target="_blank" value="Associated Customers" id="AssociatedCcommandLink">
+                <apex:param value="GetAssociatedCustomers" name="api" assignto="{!apiName}"/>
+            </apex:commandLink>
+            <apex:commandLink action="{!PaasParams}" target="_blank" value="Search Dealer" id="thecommandLink">
+                <apex:param value="SearchDealer" name="api" assignto="{!apiName}"/>
+            </apex:commandLink>
+            <apex:commandLink action="{!PaasParams}"  target="_blank" value="Dealer Info"  id="theButton">
+                <apex:param value="GetDealerInfo" name="api" assignto="{!apiName}"/>
+            </apex:commandLink>
+            <apex:commandLink action="{!PaasParams}" target="_blank" value="Services Due" id="ServiceDueLink">
+                <apex:param value="GetServicesDue" name="api" assignto="{!apiName}"/>
+            </apex:commandLink>
+            <apex:commandLink action="{!PaasParams}" target="_blank" value="Primary Contact Info" id="PcInfocommandLink">
+                <apex:param value="GetPrimaryContactInfo" name="api" assignto="{!apiName}"/>
+            </apex:commandLink>
+            <apex:commandLink action="{!PaasParams}" target="_blank" value="Service History" id="theScommandLink">
+                <apex:param value="GetServiceHistory" name="api" assignto="{!apiName}"/>
+            </apex:commandLink>
+            <apex:commandLink action="{!PaasParams}" target="_blank" value="Associated DCNO ID" id="AssociatedcommandLink">
+                <apex:param value="Getassociated_dcno_id" name="api" assignto="{!apiName}"/>
+            </apex:commandLink>
+            <apex:commandLink action="{!PaasParams}" target="_blank" value="XTime Appointment" id="button1" rendered="{!IF(IsXTimeDealer == true, true, false)}">
+                <apex:param value="GetAppointmentSubscribeURL" name="api" assignto="{!apiName}"/>
+            </apex:commandLink>
+            <apex:commandLink action="{!PaasParamsforDate}" target="_blank" value="Check Appointment" id="CheckApp">
+                <apex:param value="CheckAppointment" name="api" assignto="{!apiName}"/>
+            </apex:commandLink>
+            <apex:commandLink action="{!PaasParamsforDateTime}" target="_blank" value="Check Appointment Time" id="CheckAppTime">
+                <apex:param value="CheckAppointmentTime" name="api" assignto="{!apiName}"/>
+            </apex:commandLink>
+            
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="TMS Webservice" columns="3" rendered="{!IF(CallCentreID == 4, true, false)}">
+                <apex:commandLink action="{!PaasParams}" target="_blank" value="Communication History" id="CommunicationLinkNCI">
+                    <apex:param value="GetCommunicationHistory" name="api" assignto="{!apiName}"/>
+                </apex:commandLink>
+                <apex:commandLink action="{!PaasParams}" target="_blank" value="Associated Customers" id="AssociatedCcommandLinkNCI">
+                    <apex:param value="GetAssociatedCustomers" name="api" assignto="{!apiName}"/>
+                </apex:commandLink>
+                <apex:commandLink action="{!PaasParams}" target="_blank" value="Search Dealer" id="thecommandLinkNCI">
+                    <apex:param value="SearchDealer" name="api" assignto="{!apiName}"/>
+                </apex:commandLink>
+                <apex:commandLink action="{!PaasParams}"  target="_blank" value="Dealer Info"  id="theButtonNCI">
+                    <apex:param value="GetDealerInfo" name="api" assignto="{!apiName}"/>
+                </apex:commandLink>
+                <apex:commandLink action="{!PaasParams}" target="_blank" value="Services Due" id="ServiceDueLinkNCI">
+                    <apex:param value="GetServicesDue" name="api" assignto="{!apiName}"/>
+                </apex:commandLink>
+                <apex:commandLink action="{!PaasParams}" target="_blank" value="Primary Contact Info" id="PcInfocommandLinkNCI">
+                    <apex:param value="GetPrimaryContactInfo" name="api" assignto="{!apiName}"/>
+                </apex:commandLink>
+                <apex:commandLink action="{!PaasParams}" target="_blank" value="Service History" id="theScommandLinkNCI">
+                    <apex:param value="GetServiceHistory" name="api" assignto="{!apiName}"/>
+                </apex:commandLink>
+                <apex:commandLink action="{!PaasParams}" target="_blank" value="Associated DCNO ID" id="AssociatedcommandLinkNCI">
+                    <apex:param value="Getassociated_dcno_id" name="api" assignto="{!apiName}"/>
+                </apex:commandLink>
+                <apex:commandLink action="{!PaasParams}" target="_blank" value="XTime Appointment" id="button1" rendered="{!IF(IsXTimeDealer == true, true, false)}">
+                    <apex:param value="GetAppointmentSubscribeURLNCI" name="api" assignto="{!apiName}"/>
+                </apex:commandLink>
+                <apex:commandLink action="{!PaasParamsforDate}" target="_blank" value="Check Appointment" id="CheckAppNCI">
+                    <apex:param value="CheckAppointment" name="api" assignto="{!apiName}"/>
+                </apex:commandLink>
+                <apex:commandLink action="{!PaasParamsforDateTime}" target="_blank" value="Check Appointment Time" id="CheckAppTimeNCI">
+                    <apex:param value="CheckAppointmentTime" name="api" assignto="{!apiName}"/>
+                </apex:commandLink>
+            </apex:pageBlockSection>
+             
+             <a name="DealerInfo" />
+                <apex:outputLink value="#Top" id="toplink2">^Top</apex:outputLink>
+            <apex:pageBlockSection title="Dealer Info" columns="2">
+                <apex:inputField id="preferredDealer" value="{!Account.Preferred_Dealer_Id__c}"/>
+                <apex:outputField id="dealerCode" value="{!Dealer.Dealer_Code__c}"/>  
+                <apex:inputField id="preferredDealerChangeReason" value="{!ThisCall.Preferred_Dealer_Change_Reason__c}"/> 
+                 <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Express Service" for="isExpressServce"/>
+                    <apex:outputText value="{!IsExpressDealer}" id="isExpressServce"/>
+                </apex:pageBlockSectionItem>
+             </apex:pageBlockSection>
+             <a name="AppointmentInfo" columns="4"/>
+               <apex:pageBlockSection title="Appoinment Info" columns="3">                     
+                <apex:inputField id="requestDate" value="{!ThisCall.Request_Date__c}"/> 
+                <apex:inputField id="requestTime" value="{!ThisCall.Request_Time__c}"/> 
+                <apex:inputField id="actionType" value="{!ThisCall.Action_Type__c}"/> 
+                <apexPageBlockSectionItem rendered="{!DisplaySendEmailCheckbox}">
+                    <apex:inputField id="sendEmailRequestIndicator" value="{!ThisCall.Send_Email_Request_Indicator__c}" rendered="{!DisplaySendEmailCheckbox}"/>
+                </apexPageBlockSectionItem>
+            </apex:pageBlockSection>
+            <a name="CallBackInfo" />
+            <apex:outputLink value="#Top" id="toplink3">^Top</apex:outputLink>
+            <apex:pageBlockSection title="Call Back Info" columns="3">
+                <apex:inputField id="callBackPhone" value="{!ThisCall.Call_Back_Phone__c}"/>
+                <apex:inputField id="callBackDaytimeIndicator" value="{!ThisCall.Call_Back_Daytime_Indicator__c}"/>
+                <apex:inputField id="callBackTime" value="{!ThisCall.Call_Back_Time__c}"/>
+            </apex:pageBlockSection>
+            <a name="VehicleInfo" />
+            <apex:outputLink value="#Top" id="toplink4">^Top</apex:outputLink>
+            <apex:pageBlockSection title="Vehicle Info" columns="3">
+                <apex:outputField id="vehicleMake" value="{!CampMemb.Vehicle_Make__c}"/>
+                <apex:inputField id="vehicleMileage" value="{!Vehicle.Latest_Recorded_Mileage_Number__c}"/>
+                <apex:outputField id="vin" value="{!CampMemb.Vehicle_Identification_Number__c}"/>
+                <apex:outputField id="vehicleYear" value="{!CampMemb.Vehicle_Year__c}"/>
+                <apex:inputField id="vehicleMileageUnits" value="{!Vehicle.Latest_Recorded_Mileage_Units__c}"/>
+                <apex:inputField id="pmgType" value="{!Vehicle.PMG_Type__c}"/>
+                <apex:outputField id="vehicleModel" value="{!CampMemb.VehicleModel__c}"/>
+                <apex:pageBlockSectionItem />
+                <apex:outputLink id="vehicleUsage" onclick="window.open( '{!$Label.VehicleUsageLink}' , 'vehicleUsageScript', 'height=700, width=1000, scrollbars=yes');return false;">{!$Label.VehicleUsageLinkText}</apex:outputLink>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable id="callList" value="{!CallList}" var="cl" width="100%" >
+                <apex:column value="{!cl.Call_Start_Time__c}"/> 
+                <apex:column value="{!cl.Call_End_Time__c}"/>
+                <apex:column value="{!cl.Call_Back_Time__c}"/> 
+                 <apex:column value="{!cl.CallDisposition__c}"/>
+                <apex:column value="{!cl.Description}"/> 
+            </apex:pageBlockTable>  
+        </apex:pageBlock> 
+    </apex:form>
+
+</apex:page>

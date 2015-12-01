@@ -1,0 +1,64 @@
+<apex:page controller="Controller_CACaseSearch">
+    <apex:sectionHeader title="CA Case Search"/>
+    <apex:form >
+        <apex:pageBlock mode="edit" >
+            <apex:pageBlockButtons location="bottom" >
+                <apex:commandButton value="Search" status="stSearchStatus" action="{!searchAction}" reRender="lstResult"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" title="Search By" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Case Number" for="txtCaseNumber"></apex:outputLabel>
+                    <apex:inputText id="txtCaseNumber" size="20" value="{!caseNumber}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="First Name" for="txtFirstName"></apex:outputLabel>
+                    <apex:inputText id="txtFirstName" size="20" value="{!firstName}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Last Name" for="txtLastName"></apex:outputLabel>
+                    <apex:inputText id="txtLastName" size="20" value="{!lastName}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="City" for="txtCity"></apex:outputLabel>
+                    <apex:inputText id="txtCity" size="20" value="{!city}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="State" for="txtState"></apex:outputLabel>
+                    <apex:inputText id="txtState" size="20" value="{!state}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Zip Code" for="txtZip"></apex:outputLabel>
+                    <apex:inputText id="txtZip" size="20" value="{!zip}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="VIN" for="txtVehicle"></apex:outputLabel>
+                    <apex:inputText id="txtVehicle" size="60" value="{!vehicle}"/>
+                </apex:pageBlockSectionItem>
+                <apex:inputField value="{!inputCase.Date_Email_Received__c}" label="Start Date" required="true"/>
+                <apex:inputField value="{!inputCase.Date_Email_Responded__c}" label="End Date" required="true"/>
+           </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock id="lstResult" title="Search Results" >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:actionStatus id="stSearchStatus" startText="Processing...">
+                <apex:facet name="stop">
+                    <apex:pageBlockTable value="{!SearchResults}" var="case" rendered="{!ShowResultList}">
+                        <apex:column headerValue="Case Number">
+                            <apex:outputLink value="{!$Site.Prefix}/{!case.Id}">{!case.CaseNumber}</apex:outputLink>
+                        </apex:column>
+
+                        <apex:column headerValue="First Name" value="{!case.Account.FirstName}"/>
+                        <apex:column headerValue="Last Name" value="{!case.Account.LastName}"/>
+                        <apex:column headerValue="City" value="{!case.Account.PersonMailingCity}"/>
+                        <apex:column headerValue="State" value="{!case.Account.PersonMailingState}"/>
+                        <apex:column headerValue="Zip Code" value="{!case.Account.PersonMailingPostalCode}"/>
+                        <apex:column headerValue="VIN" value="{!case.Vehicle_Name__r.Name}"/>
+                    </apex:pageBlockTable>
+                </apex:facet>
+            </apex:actionStatus>
+
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

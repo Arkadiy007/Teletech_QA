@@ -1,0 +1,168 @@
+<apex:page controller="LiveAgent_PreChat" showHeader="false" id="page">
+    <apex:stylesheet value="{!URLFOR($Resource.NissanStyle, 'NissanStyle.css')}" />
+    <script type="text/javascript">
+    (function() {
+        function handlePageLoad() {
+            var endpointMatcher = new RegExp("[\\?\\&]endpoint=([^&#]*)");
+            setToAction = endpointMatcher.exec(document.location.search)[1];
+        } 
+        if (window.addEventListener) {
+            window.addEventListener('load', handlePageLoad, false);
+        } else { 
+            window.attachEvent('onload', handlePageLoad, false);
+        }
+    })();
+    
+    function setAction() {
+        document.getElementById('page:preChatForm').setAttribute('action', decodeURIComponent(setToAction));
+        document.forms["page:preChatForm"].submit();
+    }
+    
+    </script>
+    <apex:form id="preChatForm">
+        <apex:actionFunction name="submitForm" action="{!submitForm}" />
+        <div style="width: 100%;" class="livechat_infiniti_header">
+
+            <div class="infiniti_livechat_endsession"
+                onclick="javascript:window.close()"></div>
+
+        </div>
+        <div Class="livechat_infiniti_bg">
+            <apex:pageblock rendered="{!!isSuccess}">
+
+                <div style="height: 375px; padding-top: 10px;">
+                    <div class="livechat_txt">
+                        We're ready to chat. Please fill out the form below. <span
+                            style="color: #C00 !important;">*</span> = Required Field.
+                    </div>
+
+                    <div
+                        style="text-align: center; padding-bottom: 20px; padding-top: 10px;">
+                        <apex:pageblockSection collapsible="false" columns="1">
+
+                            <apex:pageblockSectionItem >
+                                <apex:outputLabel value="First Name *" />
+                                <apex:inputText value="{!firstName}" maxlength="30"
+                                    style="width:260px;" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem >
+                                <apex:outputLabel value="Last Name" />
+                                <apex:inputText value="{!lastName}" maxlength="30"
+                                    style="width:260px;" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem >
+                                <apex:outputLabel value="Zip Code" />
+                                <apex:inputText value="{!zipCode}" maxlength="10"
+                                    style="width:260px;" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem >
+                                <apex:outputLabel value="Email" />
+                                <apex:inputText value="{!emailAddress}" maxlength="80"
+                                    style="width:260px;" />
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem >
+                                <apex:outputLabel value="Phone" />
+                                <apex:inputText value="{!phone}" maxlength="25"
+                                    style="width:260px;" />
+                            </apex:pageblockSectionItem>
+                        </apex:pageblockSection>
+                    </div>
+
+                    <apex:outputLabel value="{!errorMessage}"
+                        style="margin-left:215px;color:red; font-weight:bold; font-family:Verdana, Geneva, sans-serif;"
+                        rendered="{!showErrorMessage}" />
+
+
+                    <table width="90%" align="center">
+                        <tr>
+                            <td width="60%" class="livechat_txt" style="text-align: left;">
+                                <b>Thank you.</b> An Infiniti Representative will be right with
+                                you.</td>
+                            <td style="text-align: right;"><apex:commandButton action="{!submitForm}" reRender="preChatForm"
+                                    styleClass="infiniti-btn-startchat">
+                                    <apex:param assignTo="{!isInfiniti}" value="true" />
+                                </apex:commandButton>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <table width="90%" align="center">
+                    <tr>
+                        <td class="livechat_footer_txt" valign="top">For additional
+                            assistance, please contact us at 800.662.6200 or visit <a
+                            href="http://www.infinitiusa.com/iapps/contactus" target="_blank"
+                            style="color: white">www.infinitiusa.com/iapps/contactus</a>
+                        </td>
+                        <!-- 
+                        <td class="livechat_footer_txt" valign="top">If you have a
+                            concern or issue with your Infiniti vehicle that you would like
+                            us to address, we want to help, but we cannot help you from this
+                            forum.</td>
+                        <td class="livechat_footer_txt" valign="top"
+                            style="padding-left: 20px;">Please contact us at
+                            800.662.6200 or visit: <a
+                            href="http://www.infinitiusa.com/iapps/contactus" target="_blank"
+                            style="color: white">www.infinitiusa.com/iapps/contactus</a>
+                        </td>
+                        -->
+                    </tr>
+                </table>
+
+
+            </apex:pageblock>
+        </div>
+        <apex:outputPanel rendered="{!isSuccess}">
+            <script>
+                setAction();
+            </script>
+
+            <input type='hidden' name='liveagent.prechat:First Name'
+                value="{!firstName}" />
+            <input type="hidden" name="liveagent.prechat.save:First Name"
+                value="First_Name__c" />
+            <input type='hidden' name='liveagent.prechat:Last Name'
+                value="{!lastName}" />
+            <input type="hidden" name="liveagent.prechat.save:Last Name"
+                value="Last_Name__c" />
+            <input type='hidden' name='liveagent.prechat:Zip Code'
+                value="{!zipCode}" />
+            <input type="hidden" name="liveagent.prechat.save:Zip Code"
+                value="Zip_Code__c" />
+            <input type='hidden' name='liveagent.prechat:Email'
+                value="{!emailAddress}" />
+            <input type="hidden" name="liveagent.prechat.save:Email"
+                value="Email__c" />
+            <input type='hidden' name='liveagent.prechat:Phone' value="{!phone}" />
+            <input type="hidden" name="liveagent.prechat.save:Phone"
+                value="Phone__c" />
+
+            <input type='hidden' name='liveagent.prechat.name' id='prechat_field'
+                value="{!CompletedName}" />
+
+            <input type='hidden' name='liveagent.prechat:Pre Chat Data Id'
+                value="{!preChatDataId}" />
+            <input type="hidden" name="liveagent.prechat.save:Pre Chat Data Id"
+                value="Pre_Chat_Data__c" />
+            <input type="hidden" name="liveagent.prechat.query:Pre Chat Data Id"
+                value="Pre_Chat_Data__c,Pre_Chat_Data__c.Id" />
+
+            <apex:outputPanel rendered="{!contactId != null}">
+                <input type='hidden' name='liveagent.prechat:Contact Id'
+                    value="{!contactId}" />
+                <input type="hidden" name="liveagent.prechat.save:Contact Id"
+                    value="Contact" />
+
+                <input type='hidden' name='liveagent.prechat:Account Id'
+                    value="{!accountId}" />
+                <input type="hidden" name="liveagent.prechat.save:Account Id"
+                    value="Account" />
+                <!-- 
+                <input type="hidden" name="liveagent.prechat.query:Account Id"
+                    value="Account,Account.Id" /> -->
+            </apex:outputPanel>
+
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

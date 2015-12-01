@@ -1,0 +1,2866 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Allows user to enter information to submit for a check to be created from the record</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Address__c</fullName>
+        <description>The receiving address of the Payee</description>
+        <externalId>false</externalId>
+        <label>Mail to Address</label>
+        <length>35</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Indicator__c</fullName>
+        <description>Indicates if the Check Request has been approved.  Defaults to &quot;N&quot;. Approval process auto-updates to &apos;Y&apos;.</description>
+        <externalId>false</externalId>
+        <label>Approval Indicator</label>
+        <picklist>
+            <picklistValues>
+                <fullName>N</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Approved_By_ID__c</fullName>
+        <description>Mainframe/HOST User ID of last Check Request approver</description>
+        <externalId>false</externalId>
+        <label>Approved By ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approved_By_SFID__c</fullName>
+        <description>The Salesforce User ID of the person that Approved the Check Request</description>
+        <externalId>false</externalId>
+        <label>Approved By SFID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approved_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Approved By</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approving_Manager_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Approving Manager ID</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approving_Manager_Name__c</fullName>
+        <description>Indicates who Approved the Check Request.  This is updated by a Field Update in the Approval Process or fed from the HOST integration.</description>
+        <externalId>false</externalId>
+        <label>Approving Manager</label>
+        <length>21</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Name_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Name 1</label>
+        <length>35</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Name_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Name 2</label>
+        <length>35</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Buyback__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Related Buyback record</description>
+        <externalId>false</externalId>
+        <label>Support Record</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The case linked to the support record must match the case linked to the check request.</errorMessage>
+            <filterItems>
+                <field>Buyback__c.Case__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Case__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Buyback__c</referenceTo>
+        <relationshipLabel>Check Requests</relationshipLabel>
+        <relationshipName>Check_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CSM_Email__c</fullName>
+        <description>Used with Workflow to populate the Email Address of the Check Request&gt; Case&gt; Case Servicing Dealer&gt; CSM.</description>
+        <externalId>false</externalId>
+        <label>CSM Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_DocumentID__c</fullName>
+        <externalId>false</externalId>
+        <label>Case DocumentID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.CaseNumber</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <description>The Case related to this Check Request</description>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Check Activity</relationshipLabel>
+        <relationshipName>Check_Requests</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Channel_Designation_Code__c</fullName>
+        <description>Retrieves the Vehicle make from the Case displaying N for Nissan, I for Infiniti, or blank for null</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Case__r.Channel_Designation_Code__c)</formula>
+        <label>Channel Designation Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Check_Amount__c</fullName>
+        <description>The total dollar amount to pay to the Individual or Organization with the related Check</description>
+        <externalId>false</externalId>
+        <label>Check Amount</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Check_Number__c</fullName>
+        <description>The SAP Check Number generated originating from this Check Request</description>
+        <externalId>false</externalId>
+        <label>Check Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Check_Remark__c</fullName>
+        <description>Check remark prints on the check and is used by the business to link the check request to the case, agent, and for sorting.</description>
+        <externalId>false</externalId>
+        <formula>&quot;RE: &quot; &amp; Case_Number__c &amp; &quot;-&quot; &amp;  LEFT(CreatedBy.LastName,3) &amp; &quot;-&quot; &amp;  LEFT(CreatedBy.UserRole.Name,6) &amp; &quot;-&quot; &amp; RIGHT(VIN__c,6)&amp; LEFT(Case__r.Vehicle_Name__r.Make_Name__c,1)&amp; &quot;-&quot; &amp; MID( GL_Value_Code__c , 4, 2)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Check Remark</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Check_Type__c</fullName>
+        <description>Indicates type of Payee for Check</description>
+        <externalId>false</externalId>
+        <label>Check Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attorney</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lienholder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NNA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <description>The receiving address city of the Payee</description>
+        <externalId>false</externalId>
+        <label>Mail to City</label>
+        <length>35</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cost_Center__c</fullName>
+        <externalId>false</externalId>
+        <formula>GL_Code__r.Cost_Center__c</formula>
+        <label>Cost Center</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Mail To Country</label>
+        <picklist>
+            <picklistValues>
+                <fullName>US</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Current_Mileage__c</fullName>
+        <description>Retrieves current mileage as reported on the Case</description>
+        <externalId>false</externalId>
+        <formula>Case__r.Current_Mileage__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Mileage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <description>Retrieves the Person Account associated to the related Case</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; Case__r.Account.Id ,    Case__r.Contact.FirstName &amp;  &quot; &quot; &amp; Case__r.Contact.LastName    )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Approved__c</fullName>
+        <description>Date that the Check Request was Approved</description>
+        <externalId>false</externalId>
+        <label>Date Approved</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Requested__c</fullName>
+        <description>For displaying to the users only.  Can be replaced with &quot;Submitted Date&quot; once HOST is removed.  Shows either the &quot;Request Date&quot; or the &quot;Submitted Date&quot;, whichever is populated.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Request_Date__c), Submitted_Date__c, DATEVALUE(Request_Date__c))</formula>
+        <inlineHelpText>Date the Check Request was Submitted for Approval</inlineHelpText>
+        <label>Date Requested</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Denied_Reason__c</fullName>
+        <description>The reason that the Check Request is denied.  120310 JS: removed from CA page layout as this is tracked in the related Approval Process instead of on the Check Request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Need to confirm if this field is needed and if so, these values with CA</inlineHelpText>
+        <label>Denied Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Documentation Problem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Valid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Document_ID__c</fullName>
+        <description>Hidden string that mimics a Case number so that the Mainframe can create a CAR/Case related to this Check Request</description>
+        <displayFormat>CA9{000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Document ID</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>GL_Account__c</fullName>
+        <description>Secondary code retrieved from Code object.  JS, 1/6/12: this is currently a placeholder until we get the secondary code field on the Code object built in once Greg &amp; Bryan approve it.</description>
+        <externalId>false</externalId>
+        <formula>GL_Code__r.Secondary_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GL Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GL_Code_Description__c</fullName>
+        <description>Retrieves the GL Code Description from the related GL Code lookup</description>
+        <externalId>false</externalId>
+        <formula>GL_Code__r.Description__c</formula>
+        <label>GL Code Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GL_Code__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Code object to select the relevant GL Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Type CODE to view complete list</inlineHelpText>
+        <label>GL Code</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>You must select a GL Code</errorMessage>
+            <filterItems>
+                <field>Code__c.Type__c</field>
+                <operation>equals</operation>
+                <value>GL_Code</value>
+            </filterItems>
+            <filterItems>
+                <field>Code__c.Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <infoMessage>Type &quot;CODE&quot; to view complete list of options</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Code__c</referenceTo>
+        <relationshipLabel>Check Requests</relationshipLabel>
+        <relationshipName>Check_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GL_Value_Code__c</fullName>
+        <description>Retrieves the actual GL Code from the related GL Code lookup</description>
+        <externalId>false</externalId>
+        <formula>GL_Code__r.Code__c</formula>
+        <label>GL Value Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Internal_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>GL_Code__r.Internal_Order_Number__c</formula>
+        <label>Internal Order Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Issue_Date__c</fullName>
+        <description>The Date that the SAP Check was generated or issued</description>
+        <externalId>false</externalId>
+        <label>Issue Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_GL_Account_Program__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy GL Account Program</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_GL_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy GL Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mailing_Address_Verified__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Requires user to acknowledge that the mailing address has been verified with the customer prior to submitting check request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Have you verified the mailing address with the customer?</inlineHelpText>
+        <label>Mailing Address Verified</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Manually_Added_VIN__c</fullName>
+        <description>Checks Case related Vehicle&apos;s record type. If Vehicle record type is &quot;User Created&quot;, yields &quot;Y&quot;, else &quot;N&quot;.</description>
+        <externalId>false</externalId>
+        <formula>IF(Case__r.Vehicle_Name__r.RecordTypeId = &quot;012F0000000yCuR&quot;,
+&quot;Y&quot;,
+&quot;N&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Manually Added VIN</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Memo__c</fullName>
+        <description>An identifying message to include for the Check Request</description>
+        <externalId>false</externalId>
+        <label>Memo</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mileage__c</fullName>
+        <description>Vehicle Mileage listed on Repair Order</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Vehicle Mileage listed on Repair Order</inlineHelpText>
+        <label>Mileage of RO</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Mail_To_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>PC Mail To Address</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Mail_To_City__c</fullName>
+        <externalId>false</externalId>
+        <label>PC Mail To City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Mail_To_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>PC Mail To Country</label>
+        <picklist>
+            <picklistValues>
+                <fullName>US</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PC_Mail_To_Name1__c</fullName>
+        <externalId>false</externalId>
+        <label>PC Mail To Name1</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Mail_To_Name_2__c</fullName>
+        <externalId>false</externalId>
+        <label>PC Mail To Name 2</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Mail_To_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>PC Mail To Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Mail_To_State__c</fullName>
+        <externalId>false</externalId>
+        <label>PC Mail To State</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Mail_To_Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>PC Mail To Zip</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Phone_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>PC Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PC_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>PC Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Address too long</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Certified Mail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Federal Express</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>International address</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Check</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payable_To_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Payable To First Name</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payable_To_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Do not enter more than 3 words</inlineHelpText>
+        <label>Payable To Last Name</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payable_To_Middle_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Payable To Middle Name</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Documents__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>All necessary payment documents have been attached to Case.</inlineHelpText>
+        <label>Payment Documents</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Verification__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>All necessary payment verification has been documented in Case Comments.</inlineHelpText>
+        <label>Payment Verification</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Profit_Center__c</fullName>
+        <externalId>false</externalId>
+        <formula>GL_Code__r.Profit_Center__c</formula>
+        <label>Profit Center</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RO_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>RO Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <description>Region of Case&apos;s Servicing Dealer</description>
+        <externalId>false</externalId>
+        <formula>Case__r.Servicing_Dealer_Region__c</formula>
+        <inlineHelpText>Case Servicing Dealer Region</inlineHelpText>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reimbursement_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(GL_Code__r.Indicator__c=&quot;Y&quot;,&quot;Y&quot;,&quot;N&quot;)</formula>
+        <label>Reimbursement Formula</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reimbursement_Indicator__c</fullName>
+        <description>Indicates if the Check Request is a Reimbursement</description>
+        <externalId>false</externalId>
+        <label>Reimbursement</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Repair_Order__c</fullName>
+        <description>Repair Order number related to this check request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>These 3 Repair Order fields are only required for Campaign Reimbursements</inlineHelpText>
+        <label>RO #</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Request_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Requested_ID__c</fullName>
+        <description>The ZCA ID of the user that Submitted the Check for Approval.  This is updated by a Field Update in the Approval Process or fed from the HOST integration.</description>
+        <externalId>false</externalId>
+        <label>Requested By ID</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requestor_Name__c</fullName>
+        <description>Indicates who Submitted the Check for Approval.  This is updated by a Field Update in the Approval Process or fed from the HOST integration.</description>
+        <externalId>false</externalId>
+        <label>Requested By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requestor_Terminal_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Requestor Terminal ID</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Segment__c</fullName>
+        <description>Retrieves the first character of the Created By User&apos;s Segment__c. This is used in the Approval Process to route the Check Request to the correct Approval Queue.</description>
+        <externalId>false</externalId>
+        <formula>LEFT(TEXT(CreatedBy.Segment__c), 1)</formula>
+        <inlineHelpText>For routing to the correct Approval Queue: A = Nissan Assist, C = CRR, D = DRT, E = Electric Vehicle, F = Franklin, R = RCAS/Universal</inlineHelpText>
+        <label>Segment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Special_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Comments</label>
+        <length>14898</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Stage_Status__c</fullName>
+        <description>The status of the record that determines whether it needs to be processed by a batch job to populate the Stage_Case object for backfeed to ZCA1.</description>
+        <externalId>false</externalId>
+        <label>Stage Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Add Processing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Update Processing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Done Processing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Processing Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Never Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <description>The receiving address state of the Payee</description>
+        <externalId>false</externalId>
+        <label>Mail to State</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>The current stage of the Check Request</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Submitted</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal Repurchase Check</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Adjustment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Stop_Payment_Void_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Stop Payment / Void By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Check_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Stop_Payment_Void_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Stop Payment / Void Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer states check was not received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer changed mind</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect amount</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect payee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expired Check</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DRT-Surrender Canceled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DRT-Transaction Type Changed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DRT-Repurchase Calculations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Stop_Payment_Void_Req_Action__c</fullName>
+        <externalId>false</externalId>
+        <label>Stop Payment / Void Req Action</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Stop Payment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Void</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Check Trace</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Stop_Payment_Void_Request_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Stop Payment / Void Request Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Submitted_By_ID__c</fullName>
+        <description>Mainframe/HOST User ID &quot;ZCA ID&quot; that Submitted the Check Request for Approval</description>
+        <externalId>false</externalId>
+        <label>Submitted By ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitted_By_SFID__c</fullName>
+        <description>The Salesforce ID of the User that submitted the Check Request for Approval</description>
+        <externalId>false</externalId>
+        <label>Submitted By SFID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitted_By__c</fullName>
+        <description>User that Submitted the Check Request for Approval</description>
+        <externalId>false</externalId>
+        <label>Submitted By</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitted_Date__c</fullName>
+        <description>Date that the Check Request was Submitted</description>
+        <externalId>false</externalId>
+        <label>Submitted Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>User_Defined_Date_1__c</fullName>
+        <externalId>false</externalId>
+        <label>User Defined Date 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>User_Defined_Number_1__c</fullName>
+        <externalId>false</externalId>
+        <label>User Defined Number 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Defined_Text_1__c</fullName>
+        <externalId>false</externalId>
+        <label>User Defined Text 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Defined_Text_2__c</fullName>
+        <externalId>false</externalId>
+        <label>User Defined Text 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Defined_Text_3__c</fullName>
+        <externalId>false</externalId>
+        <label>User Defined Text 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VIN__c</fullName>
+        <description>Retrieves the Vehicle Identification Number that is related to the Case</description>
+        <externalId>false</externalId>
+        <formula>Case__r.Vehicle_Name__r.Vehicle_identification_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>VIN</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip__c</fullName>
+        <description>The receiving address postal code of the Payee</description>
+        <externalId>false</externalId>
+        <label>Mail to Zip</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Check Request</label>
+    <listViews>
+        <fullName>CR_Pending</fullName>
+        <columns>Date_Requested__c</columns>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Status__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>GL_Account__c</columns>
+        <columns>Segment__c</columns>
+        <columns>Buyback__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Check_Number__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <label>Check Requests Not Processed</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CAManager</group>
+            <group>CA_DRT_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Check_Request_Approval_Queue</fullName>
+        <columns>Segment__c</columns>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Buyback__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Status__c</columns>
+        <columns>GL_Code__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>GL_Value_Code__c</columns>
+        <columns>Request_Date__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Approving_Manager_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Date_Approved__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <label>Check Request Approval Queue</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CAManager</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Check_Request_Approved</fullName>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Segment__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Date_Requested__c</columns>
+        <columns>Approving_Manager_Name__c</columns>
+        <columns>Date_Approved__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Payable_To_First_Name__c</columns>
+        <columns>Payable_To_Last_Name__c</columns>
+        <columns>Business_Name_1__c</columns>
+        <columns>Business_Name_2__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>Check Request Approved</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CAManager</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Check_Request_Not_Submitted</fullName>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Date_Requested__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Payable_To_First_Name__c</columns>
+        <columns>Payable_To_Last_Name__c</columns>
+        <columns>Business_Name_1__c</columns>
+        <columns>Business_Name_2__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Requestor_Name__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Approved</value>
+        </filters>
+        <label>Check Request Not Submitted</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CAManager</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Check_Request_Submitted</fullName>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Date_Requested__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Payable_To_First_Name__c</columns>
+        <columns>Payable_To_Last_Name__c</columns>
+        <columns>Business_Name_1__c</columns>
+        <columns>Business_Name_2__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <label>Check Request Submitted</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CAManager</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Check_Request_Today</fullName>
+        <columns>Segment__c</columns>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Buyback__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Status__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>GL_Value_Code__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Approving_Manager_Name__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Check Requests Today</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CAManager</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Check_Requests_Not_Processed</fullName>
+        <columns>Date_Requested__c</columns>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Status__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>GL_Account__c</columns>
+        <columns>Segment__c</columns>
+        <columns>Buyback__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Check_Number__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <label>Check Requests Not Processed</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CAManager</group>
+            <group>CA_DRT_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Check_Requests_Not_Processed_DRT</fullName>
+        <columns>NAME</columns>
+        <columns>Date_Requested__c</columns>
+        <columns>Case__c</columns>
+        <columns>Status__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>GL_Account__c</columns>
+        <columns>Segment__c</columns>
+        <columns>Buyback__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Check_Number__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>Segment__c</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </filters>
+        <label>Check Requests Not Processed (DRT)</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CAManager</group>
+            <group>CA_DRT_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Checks</fullName>
+        <columns>NAME</columns>
+        <columns>Check_Number__c</columns>
+        <columns>Issue_Date__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Check_Type__c</columns>
+        <columns>Date_Approved__c</columns>
+        <columns>Approving_Manager_Name__c</columns>
+        <columns>Case__c</columns>
+        <columns>Channel_Designation_Code__c</columns>
+        <columns>GL_Account__c</columns>
+        <columns>GL_Code__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>GL_Value_Code__c</columns>
+        <columns>Date_Requested__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Date_Approved__c</field>
+            <operation>equals</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <label>*CA Yesterday&apos;s Approved Checks</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+            <group>ManagementUsers</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Denied_Check_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Check_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Denied_Reason__c</columns>
+        <columns>Approving_Manager_Name__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Memo__c</columns>
+        <columns>Case__c</columns>
+        <columns>Buyback__c</columns>
+        <columns>Customer__c</columns>
+        <columns>VIN__c</columns>
+        <columns>Submitted_By__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Denied</value>
+        </filters>
+        <label>Denied Check Requests</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CAManager</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Check_Requests_All</fullName>
+        <columns>NAME</columns>
+        <columns>Check_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Approved_By__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Memo__c</columns>
+        <columns>Case__c</columns>
+        <columns>Buyback__c</columns>
+        <columns>Customer__c</columns>
+        <columns>VIN__c</columns>
+        <columns>GL_Account__c</columns>
+        <columns>GL_Code__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>Submitted_By__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Check Requests All</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CAEmailAgent</role>
+            <role>CAManager</role>
+            <role>CA_CRR</role>
+            <role>CA_CRR_Team_Lead</role>
+            <role>CA_DRT</role>
+            <role>CA_DRT_Support</role>
+            <role>CA_DRT_Support_Team_Lead</role>
+            <role>CA_DRT_Team_Lead</role>
+            <role>CA_RCAS</role>
+            <role>CA_RCAS_Team_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Check_Requests_Approved</fullName>
+        <columns>NAME</columns>
+        <columns>Check_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Approved_By__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Memo__c</columns>
+        <columns>Case__c</columns>
+        <columns>Buyback__c</columns>
+        <columns>Customer__c</columns>
+        <columns>VIN__c</columns>
+        <columns>GL_Account__c</columns>
+        <columns>GL_Code__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>Submitted_By__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>My Approved Check Requests</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CAEmailAgent</role>
+            <role>CAManager</role>
+            <role>CA_CRR</role>
+            <role>CA_CRR_Team_Lead</role>
+            <role>CA_DRT</role>
+            <role>CA_DRT_Support</role>
+            <role>CA_DRT_Support_Team_Lead</role>
+            <role>CA_DRT_Team_Lead</role>
+            <role>CA_RCAS</role>
+            <role>CA_RCAS_Team_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Denied_Check_Requests_2</fullName>
+        <columns>NAME</columns>
+        <columns>Check_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Denied_Reason__c</columns>
+        <columns>Approving_Manager_Name__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Memo__c</columns>
+        <columns>Case__c</columns>
+        <columns>Buyback__c</columns>
+        <columns>Customer__c</columns>
+        <columns>VIN__c</columns>
+        <columns>Submitted_By__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Denied</value>
+        </filters>
+        <label>My Denied Check Requests</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CAEmailAgent</role>
+            <role>CAManager</role>
+            <role>CA_CRR</role>
+            <role>CA_CRR_Team_Lead</role>
+            <role>CA_DRT</role>
+            <role>CA_DRT_Support</role>
+            <role>CA_DRT_Support_Team_Lead</role>
+            <role>CA_DRT_Team_Lead</role>
+            <role>CA_RCAS</role>
+            <role>CA_RCAS_Team_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Not_Submitted_Check_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Check_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Approved_By__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Memo__c</columns>
+        <columns>Case__c</columns>
+        <columns>Buyback__c</columns>
+        <columns>Customer__c</columns>
+        <columns>VIN__c</columns>
+        <columns>GL_Account__c</columns>
+        <columns>GL_Code__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>Submitted_By__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Not Submitted</value>
+        </filters>
+        <label>My Not Submitted Check Requests</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CAEmailAgent</role>
+            <role>CAManager</role>
+            <role>CA_CRR</role>
+            <role>CA_CRR_Team_Lead</role>
+            <role>CA_DRT</role>
+            <role>CA_DRT_Support</role>
+            <role>CA_DRT_Support_Team_Lead</role>
+            <role>CA_DRT_Team_Lead</role>
+            <role>CA_RCAS</role>
+            <role>CA_RCAS_Team_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Submitted_Check_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Check_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Approved_By__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Memo__c</columns>
+        <columns>Case__c</columns>
+        <columns>Buyback__c</columns>
+        <columns>Customer__c</columns>
+        <columns>VIN__c</columns>
+        <columns>GL_Account__c</columns>
+        <columns>GL_Code__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>Submitted_By__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <label>My Submitted Check Requests Not Reviewed</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CAEmailAgent</role>
+            <role>CAManager</role>
+            <role>CA_CRR</role>
+            <role>CA_CRR_Team_Lead</role>
+            <role>CA_DRT</role>
+            <role>CA_DRT_Support</role>
+            <role>CA_DRT_Support_Team_Lead</role>
+            <role>CA_DRT_Team_Lead</role>
+            <role>CA_RCAS</role>
+            <role>CA_RCAS_Team_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Teams_check_Requests_DeOcampo</fullName>
+        <booleanFilter>2 AND 3  AND (1 OR 4)</booleanFilter>
+        <columns>Segment__c</columns>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Status__c</columns>
+        <columns>GL_Code__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>GL_Value_Code__c</columns>
+        <columns>Request_Date__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Approving_Manager_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approving_Manager_Name__c</field>
+            <operation>contains</operation>
+            <value>De Ocampo</value>
+        </filters>
+        <filters>
+            <field>GL_Code__c</field>
+            <operation>equals</operation>
+            <value>CODE-7844</value>
+        </filters>
+        <filters>
+            <field>Requestor_Name__c</field>
+            <operation>equals</operation>
+            <value>Janice Gupo</value>
+        </filters>
+        <filters>
+            <field>Approving_Manager_Name__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>My Teams Check Requests - DeOcampo</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CA_CRR_TL_DeOcampo</group>
+            <role>ManagedServices</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Teams_check_Requests_Fontanilla</fullName>
+        <booleanFilter>2 AND 3  AND (1 OR 4)</booleanFilter>
+        <columns>Segment__c</columns>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Status__c</columns>
+        <columns>GL_Code__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>GL_Value_Code__c</columns>
+        <columns>Request_Date__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Approving_Manager_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approving_Manager_Name__c</field>
+            <operation>contains</operation>
+            <value>Pacaldo,Fontanil</value>
+        </filters>
+        <filters>
+            <field>GL_Code__c</field>
+            <operation>equals</operation>
+            <value>CODE-7844</value>
+        </filters>
+        <filters>
+            <field>Requestor_Name__c</field>
+            <operation>equals</operation>
+            <value>Pamela Faye De Ocampo,Janice Gupo</value>
+        </filters>
+        <filters>
+            <field>Approving_Manager_Name__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>My Teams Check Requests - Fontanilla</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CA_CRR_TL_Fontanilla</group>
+            <role>ManagedServices</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Teams_check_Requests_Pacaldo</fullName>
+        <booleanFilter>2 AND 3  AND (1 OR 4)</booleanFilter>
+        <columns>Segment__c</columns>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Buyback__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Status__c</columns>
+        <columns>GL_Code__c</columns>
+        <columns>GL_Code_Description__c</columns>
+        <columns>GL_Value_Code__c</columns>
+        <columns>Request_Date__c</columns>
+        <columns>Requested_ID__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Approving_Manager_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approving_Manager_Name__c</field>
+            <operation>equals</operation>
+            <value>,Jane Pacaldo,John Michael Fontanilla</value>
+        </filters>
+        <filters>
+            <field>GL_Code__c</field>
+            <operation>equals</operation>
+            <value>CODE-7844</value>
+        </filters>
+        <filters>
+            <field>Requestor_Name__c</field>
+            <operation>equals</operation>
+            <value>Pamela Faye De Ocampo</value>
+        </filters>
+        <filters>
+            <field>Approving_Manager_Name__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>My Teams Check Requests - Pacaldo</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CA_CRR_TL_Fontanilla</group>
+            <role>ManagedServices</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Tier_1A_Nissan_Assist_Submitted</fullName>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Date_Requested__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Payable_To_First_Name__c</columns>
+        <columns>Payable_To_Last_Name__c</columns>
+        <columns>Business_Name_1__c</columns>
+        <columns>Business_Name_2__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>Segment__c</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </filters>
+        <filters>
+            <field>Requestor_Name__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Check_Amount__c</field>
+            <operation>lessOrEqual</operation>
+            <value>1600</value>
+        </filters>
+        <label>Tier 1A Nissan Assist - Submitted</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CA_Check_Approvers_Tier_1A_Nissan_Assist</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Tier_1C_CRR_Submitted</fullName>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Date_Requested__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Payable_To_First_Name__c</columns>
+        <columns>Payable_To_Last_Name__c</columns>
+        <columns>Business_Name_1__c</columns>
+        <columns>Business_Name_2__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>Segment__c</field>
+            <operation>equals</operation>
+            <value>C</value>
+        </filters>
+        <filters>
+            <field>Requestor_Name__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Check_Amount__c</field>
+            <operation>lessOrEqual</operation>
+            <value>1600</value>
+        </filters>
+        <label>Tier 1C CRR - Submitted</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CA_Check_Approvers_Tier_1C_CRR</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Tier_1D_DRT_Submitted</fullName>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Date_Requested__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Payable_To_First_Name__c</columns>
+        <columns>Payable_To_Last_Name__c</columns>
+        <columns>Business_Name_1__c</columns>
+        <columns>Business_Name_2__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>Segment__c</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </filters>
+        <filters>
+            <field>Requestor_Name__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Tier 1D DRT - Submitted</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CA_Check_Approvers_Tier_1D_DRT</group>
+            <group>CA_DRT_Management</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Tier_1E_Electric_Vehicles_Submitted</fullName>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Date_Requested__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Payable_To_First_Name__c</columns>
+        <columns>Payable_To_Last_Name__c</columns>
+        <columns>Business_Name_1__c</columns>
+        <columns>Business_Name_2__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>Segment__c</field>
+            <operation>equals</operation>
+            <value>E</value>
+        </filters>
+        <filters>
+            <field>Requestor_Name__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Tier 1E Electric Vehicles - Submitted</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Check_Approvers_Tier_1E_Electric_Vehicle</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Tier_1F_Franklin_Submitted</fullName>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Date_Requested__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Payable_To_First_Name__c</columns>
+        <columns>Payable_To_Last_Name__c</columns>
+        <columns>Business_Name_1__c</columns>
+        <columns>Business_Name_2__c</columns>
+        <columns>GL_Value_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>Segment__c</field>
+            <operation>equals</operation>
+            <value>F</value>
+        </filters>
+        <filters>
+            <field>Requestor_Name__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Check_Amount__c</field>
+            <operation>lessOrEqual</operation>
+            <value>1600</value>
+        </filters>
+        <label>Tier 1F Franklin - Submitted</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CA_Check_Approvers_Tier_1F_Franklin</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Tier_1R_RCAS_Universal_Submitted</fullName>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Date_Requested__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Payable_To_First_Name__c</columns>
+        <columns>Payable_To_Last_Name__c</columns>
+        <columns>Business_Name_1__c</columns>
+        <columns>Business_Name_2__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>Segment__c</field>
+            <operation>equals</operation>
+            <value>R</value>
+        </filters>
+        <filters>
+            <field>Requestor_Name__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Check_Amount__c</field>
+            <operation>lessOrEqual</operation>
+            <value>1600</value>
+        </filters>
+        <label>Tier 1R RCAS &amp; Universal - Submitted</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CA_Check_Approvers_Tier_1R_RCAS_Unvrsl</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Tier_2_Review_Submitted</fullName>
+        <columns>Region__c</columns>
+        <columns>NAME</columns>
+        <columns>Case__c</columns>
+        <columns>Check_Amount__c</columns>
+        <columns>Requestor_Name__c</columns>
+        <columns>Date_Requested__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Payable_To_First_Name__c</columns>
+        <columns>Payable_To_Last_Name__c</columns>
+        <columns>Business_Name_1__c</columns>
+        <columns>Business_Name_2__c</columns>
+        <columns>GL_Value_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>Requestor_Name__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Segment__c</field>
+            <operation>notEqual</operation>
+            <value>D</value>
+        </filters>
+        <filters>
+            <field>Check_Amount__c</field>
+            <operation>greaterThan</operation>
+            <value>1600</value>
+        </filters>
+        <label>Tier 2 Review - Submitted</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CA_Check_Approvers_Tier_2</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>CR{0000000}</displayFormat>
+        <label>CR</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Check Requests</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Check_Request</fullName>
+        <active>true</active>
+        <description>Check Requests related to Cases</description>
+        <label>Check Request</label>
+        <picklistValues>
+            <picklist>Approval_Indicator__c</picklist>
+            <values>
+                <fullName>N</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Check_Type__c</picklist>
+            <values>
+                <fullName>Attorney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lienholder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Country__c</picklist>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Denied_Reason__c</picklist>
+            <values>
+                <fullName>Documentation Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Valid</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Mail_To_Country__c</picklist>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason__c</picklist>
+            <values>
+                <fullName>Address too long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certified Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Express</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International address</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage_Status__c</picklist>
+            <values>
+                <fullName>Add Processing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Done Processing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Processing Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Submitted</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stop_Payment_Void_Reason__c</picklist>
+            <values>
+                <fullName>Customer changed mind</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer states check was not received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRT-Repurchase Calculations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRT-Surrender Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRT-Transaction Type Changed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expired Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect payee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stop_Payment_Void_Req_Action__c</picklist>
+            <values>
+                <fullName>Check Trace</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stop Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Void</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Settlement</fullName>
+        <active>true</active>
+        <description>Check Requests related to DRT Resolution</description>
+        <label>DRT Resolution</label>
+        <picklistValues>
+            <picklist>Approval_Indicator__c</picklist>
+            <values>
+                <fullName>N</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Check_Type__c</picklist>
+            <values>
+                <fullName>Attorney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lienholder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NNA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Country__c</picklist>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Denied_Reason__c</picklist>
+            <values>
+                <fullName>Documentation Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Valid</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Mail_To_Country__c</picklist>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason__c</picklist>
+            <values>
+                <fullName>Address too long</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certified Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Express</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International address</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage_Status__c</picklist>
+            <values>
+                <fullName>Add Processing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Done Processing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Processing Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Adjustment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal Repurchase Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Submitted</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stop_Payment_Void_Reason__c</picklist>
+            <values>
+                <fullName>Customer changed mind</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer states check was not received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRT-Repurchase Calculations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRT-Surrender Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRT-Transaction Type Changed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expired Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect payee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stop_Payment_Void_Req_Action__c</picklist>
+            <values>
+                <fullName>Check Trace</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stop Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Void</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Case__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Check_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Issue_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Check_Amount__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Buyback__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Case__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Check_Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Approval_Indicator__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Approving_Manager_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Submitted_By__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Submitted_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Issue_Date__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Case__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Check_Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Issue_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Check_Number__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Can_Not_Edit_Submitted_Apprvd_Denied_CRs</fullName>
+        <active>true</active>
+        <description>Prevents users from editing a Submitted, Approved, or Denied Check Request</description>
+        <errorConditionFormula>OR(
+ISPICKVAL(Status__c, &quot;Submitted&quot;),
+ISPICKVAL(Status__c, &quot;Approved&quot;),
+ISPICKVAL(Status__c, &quot;Denied&quot;),
+ISPICKVAL(PRIORVALUE(Status__c), &quot;Submitted&quot;),
+ISPICKVAL(PRIORVALUE(Status__c), &quot;Approved&quot;),
+ISPICKVAL(PRIORVALUE(Status__c), &quot;Denied&quot;)
+)
+&amp;&amp;
+OR(
+ISCHANGED( Check_Amount__c ), 
+ISCHANGED( Memo__c ), 
+ISCHANGED( GL_Code__c ), 
+ISCHANGED( Repair_Order__c ), 
+ISCHANGED( RO_Date__c ), 
+ISCHANGED( Mileage__c ), 
+ISCHANGED( Check_Type__c ),
+ISCHANGED( Payable_To_First_Name__c ), 
+ISCHANGED( Payable_To_Last_Name__c ), 
+ISCHANGED( Business_Name_1__c ),  
+ISCHANGED( Business_Name_2__c ),  
+ISCHANGED( Address__c ), 
+ISCHANGED( City__c ), 
+ISCHANGED( State__c ), 
+ISCHANGED( Zip__c ), 
+ISCHANGED( Mailing_Address_Verified__c )
+)</errorConditionFormula>
+        <errorMessage>You may not edit a Submitted, Approved, or Denied Check Request</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Amount_Cannot_Equal_Zero</fullName>
+        <active>true</active>
+        <description>Rule stating the check amount cannot be zero upon saving a check request</description>
+        <errorConditionFormula>ISNULL(Check_Amount__c )</errorConditionFormula>
+        <errorDisplayField>Check_Amount__c</errorDisplayField>
+        <errorMessage>The Check Amount cannot be blank or equal to zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Amount_EV_not_greater_than_1k</fullName>
+        <active>true</active>
+        <description>Can not enter amount greater than $1,000 if User&apos;s Segment = E - Electric Vehicle</description>
+        <errorConditionFormula>Check_Amount__c &gt; 1000 &amp;&amp;  ISPICKVAL($User.Segment__c, &apos;E - Electric Vehicle&apos;)</errorConditionFormula>
+        <errorDisplayField>Check_Amount__c</errorDisplayField>
+        <errorMessage>You can not enter an amount greater than your authorized limit. Please reduce the Check Amount or discuss with your Supervisor.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Amount_Greater_Than_Zero</fullName>
+        <active>true</active>
+        <description>Requires Check Request Amount field to be greater than zero</description>
+        <errorConditionFormula>OR(
+Check_Amount__c &lt;= 0 
+&amp;&amp;  
+AND(
+NOT(ISPICKVAL(Status__c , &quot;Adjustment&quot;)),
+NOT(ISPICKVAL(Status__c , &quot;Cancelled&quot;))
+)
+,
+ISBLANK(Check_Amount__c)
+)</errorConditionFormula>
+        <errorDisplayField>Check_Amount__c</errorDisplayField>
+        <errorMessage>You MUST enter a value greater than zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Amount_not_greater_than_85k</fullName>
+        <active>true</active>
+        <description>Can not enter amount greater than $85,000</description>
+        <errorConditionFormula>Check_Amount__c &gt; 85000</errorConditionFormula>
+        <errorDisplayField>Check_Amount__c</errorDisplayField>
+        <errorMessage>You can not enter an amount greater than your authorized limit. Please reduce the Check Amount or discuss with your Supervisor.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Recipient_can_not_be_Blank</fullName>
+        <active>true</active>
+        <description>Requires either the Payable to Last Name or the Business Name 1 field to be populated</description>
+        <errorConditionFormula>AND ( 
+OR(ISBLANK( Payable_To_First_Name__c ), 
+ISBLANK( Payable_To_Last_Name__c )) 
+, 
+ISBLANK( Business_Name_1__c ) 
+)</errorConditionFormula>
+        <errorMessage>You MUST enter the check recipient either in the &apos;Payable To&apos; fields or in the &apos;Business Name 1&apos; field</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Failure_Rule_for_NNAETL</fullName>
+        <active>false</active>
+        <errorConditionFormula>$User.LastName  = &apos;NNAETL&apos;</errorConditionFormula>
+        <errorMessage>NNAETL is not allowed to update check requests.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>GL_Code_can_not_be_Blank</fullName>
+        <active>true</active>
+        <description>Requires a GL code in the check request before submitting for approval.</description>
+        <errorConditionFormula>ISBLANK( GL_Code__c )</errorConditionFormula>
+        <errorDisplayField>GL_Code__c</errorDisplayField>
+        <errorMessage>You MUST enter a GL Code to save this Check Request.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mail_To_Zip_Minimum_5_Digits</fullName>
+        <active>false</active>
+        <description>120730 JS: This was deactivated at some point by Dev team because it was preventing of check update from HOST.  
+
+Zip Code must be at least 5 digits.</description>
+        <errorConditionFormula>LEN( Zip__c ) &lt; 5</errorConditionFormula>
+        <errorDisplayField>Zip__c</errorDisplayField>
+        <errorMessage>You must enter at least 5 digits for the Mail to Zip</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mailing_Address_Verified_Must_Be_Checked</fullName>
+        <active>true</active>
+        <description>The &apos;Mailing Address Verified&apos; checkbox must be checked</description>
+        <errorConditionFormula>Mailing_Address_Verified__c &lt;&gt; TRUE</errorConditionFormula>
+        <errorDisplayField>Mailing_Address_Verified__c</errorDisplayField>
+        <errorMessage>You MUST verify the Mailing Address and check this box to save this Check Request</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PC_Zip_Code</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+NOT(REGEX(PC_Mail_To_Zip__c, &quot;(\\d{5}(-\\d{4})?)?&quot;)), 
+ISPICKVAL (PC_Mail_To_Country__c, &apos;US&apos;) 
+)</errorConditionFormula>
+        <errorMessage>Please enter a Valid PC Zip Code (99999 or 99999-9999).</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PC_Zip_Code_Canada</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(PC_Mail_To_Country__c,&apos;CA&apos;), 
+NOT(REGEX(PC_Mail_To_Zip__c, &quot;(((?i)[ABCEGHJKLMNPRSTVXY]\\d[A-Z]?\\s?\\d[A-Z]\\d)?)?&quot;)) 
+)</errorConditionFormula>
+        <errorMessage>Please enter a Valid PC Zip Code (6 alpha-numeric characters).</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Payment_Documents_and_Verification</fullName>
+        <active>true</active>
+        <description>One of the Payment Verification checkboxes (Payment Documents or Payment Verification) MUST be checked before saving this Check Request.</description>
+        <errorConditionFormula>AND( 
+Payment_Documents__c &lt;&gt; TRUE 
+, 
+Payment_Verification__c &lt;&gt; TRUE 
+)</errorConditionFormula>
+        <errorMessage>One of the Payment Validation checkboxes (Payment Documents or Payment Verification) MUST be checked before saving this Check Request.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RO_Fields_for_Certain_GL_Codes</fullName>
+        <active>false</active>
+        <description>130304JS: This was the original Check Request validation rule. Deactivated, can be deleted.
+
+3 Repair Order fields are required for certain GL Codes. For this type of Check Request, you MUST populate the Repair Order, RO Date, and Mileage of RO fields.</description>
+        <errorConditionFormula>RIGHT(GL_Code_Description__c , 1) = &quot;Y&quot;
+&amp;&amp;
+OR(
+ISBLANK(Repair_Order__c)
+,
+ISBLANK( RO_Date__c )
+,
+ISBLANK( Mileage__c )
+)</errorConditionFormula>
+        <errorDisplayField>Approval_Indicator__c</errorDisplayField>
+        <errorMessage>For this type of Campaign Reimbursement, you must populate all 3 Repair Order fields</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Reimbursement_requires_Fields_Populated</fullName>
+        <active>true</active>
+        <description>Validation rule is if the Reimbursement flag field is Y then make the population of RO Date, Mileage and RO Number required.</description>
+        <errorConditionFormula>Reimbursement_Formula__c = &quot;Y&quot; 
+&amp;&amp; 
+OR( 
+ISBLANK( RO_Date__c ) 
+, 
+ISBLANK( Mileage__c ) 
+, 
+ISBLANK( Repair_Order__c ) 
+)</errorConditionFormula>
+        <errorMessage>For Reimbursements you MUST populate RO #, RO Date, and Mileage of RO</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Vehicle_can_not_be_User_Created</fullName>
+        <active>false</active>
+        <description>120827: Deactivating this due to CA request along with change in Approval Processes to accommodate this. ***Vehicle records are either system created or User Created.  User Created Vehicle records can not have Check Requests.</description>
+        <errorConditionFormula>Case__r.Vehicle_Name__r.RecordTypeId   = &quot;012F0000000yCuR&quot;</errorConditionFormula>
+        <errorMessage>You may not submit a Check Request for this Vehicle. Please tell your Team Lead that this Vehicle is not available for Check Requests..</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Vehicle_must_be_Populated</fullName>
+        <active>true</active>
+        <description>The Vehicle formula field must be populated, requires editing Case to add it if necessary.</description>
+        <errorConditionFormula>ISBLANK( Case__r.Vehicle_Name__c )</errorConditionFormula>
+        <errorMessage>The related Case must have a Vehicle entered to create this Check Request.  Edit the Case to add the Vehicle, then save the Case and initiate the Check Request again.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Zip_Code</fullName>
+        <active>true</active>
+        <description>Validates that the Zip/Postal Code is in 99999 or 99999-9999 for US.</description>
+        <errorConditionFormula>AND( 
+NOT(REGEX(Zip__c, &quot;(\\d{5}(-\\d{4})?)?&quot;)), 
+ISPICKVAL (Country__c, &apos;US&apos;) 
+)</errorConditionFormula>
+        <errorMessage>Please enter a Valid Zip Code (99999 or 99999-9999).</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Zip_Code_Canada</fullName>
+        <active>true</active>
+        <description>Validates that the Zip/Postal Code for Canada</description>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Country__c ,&apos;CA&apos;), 
+NOT(REGEX(Zip__c, &quot;(((?i)[ABCEGHJKLMNPRSTVXY]\\d[A-Z]?\\s?\\d[A-Z]\\d)?)?&quot;))
+)</errorConditionFormula>
+        <errorMessage>Please enter a Valid Zip Code (6 alpha-numeric characters).</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>CloneCA</fullName>
+        <availability>online</availability>
+        <description>Clones a Check Request with most values defaulted from original check request</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if (typeof(srcUp) == &apos;function&apos;) {
+   srcUp(&apos;/a0m/e?retURL=/{!Case.Id}&amp;RecordType={!Check_Request__c.RecordTypeId}&amp;CF00NF0000008NeHQ={!Case.CaseNumber}&amp;CF00NF0000008NeHQ_lkid={!Case.Id}&amp;00NF0000008NeKp={!Case.Account}&amp;CF00NZ0000000TCdD={!Case.Vehicle_Name__c}&amp;CF00NZ0000000TCdD_lkid={!Case.Vehicle_NameId__c}&amp;00NF0000008NeKx={!Contact.FirstName}&amp;00NF0000008NeKy={!Contact.LastName}&amp;00NF0000008NeKb={!Account.PersonMailingStreet}&amp;00NF0000008NeKn={!Account.PersonMailingCity}&amp;00NF0000008NeL6={!Account.PersonMailingState} &amp;00NF0000008NeLB={!LEFT(Account.PersonMailingPostalCode,5)}&amp;00NF0000008NeL7=&quot;Not Submitted&quot;&amp;00NF0000008NeKl={!Check_Request__c.Check_Amount__c}&amp;00NF0000008NeKv={!Check_Request__c.Memo__c}&amp;CF00NF0000008ODqb={!Check_Request__c.GL_Code__c}&amp;CF00NF0000008ODqb_lkid={!Check_Request__c.GL_CodeId__c}&amp;00NF0000008NeKg={!Check_Request__c.Business_Name_1__c}&amp;00NF0000008NeKh={!Check_Request__c.Business_Name_2__c}&amp;00NZ0000000KbcW={!Check_Request__c.Repair_Order__c}&amp;00NF0000008NeL0={!Check_Request__c.RO_Date__c}&amp;00NF0000008NeKw={!Check_Request__c.Mileage__c}&amp;CF00NF0000008NeKi={!Check_Request__c.Buyback__c}&amp;CF00NF0000008NeKi_lkid={!Check_Request__c.BuybackId__c}&apos;);
+}
+else {
+   window.open(&apos;/a0m/e?retURL=/{!Case.Id}&amp;RecordType={!Check_Request__c.RecordTypeId}&amp;CF00NF0000008NeHQ={!Case.CaseNumber}&amp;CF00NF0000008NeHQ_lkid={!Case.Id}&amp;00NF0000008NeKp={!Case.Account}&amp;CF00NZ0000000TCdD={!Case.Vehicle_Name__c}&amp;CF00NZ0000000TCdD_lkid={!Case.Vehicle_NameId__c}&amp;00NF0000008NeKx={!Contact.FirstName}&amp;00NF0000008NeKy={!Contact.LastName}&amp;00NF0000008NeKb={!Account.PersonMailingStreet}&amp;00NF0000008NeKn={!Account.PersonMailingCity}&amp;00NF0000008NeL6={!Account.PersonMailingState} &amp;00NF0000008NeLB={!LEFT(Account.PersonMailingPostalCode,5)}&amp;00NF0000008NeL7=&quot;Not Submitted&quot;&amp;00NF0000008NeKl={!Check_Request__c.Check_Amount__c}&amp;00NF0000008NeKv={!Check_Request__c.Memo__c}&amp;CF00NF0000008ODqb={!Check_Request__c.GL_Code__c}&amp;CF00NF0000008ODqb_lkid={!Check_Request__c.GL_CodeId__c}&amp;00NF0000008NeKg={!Check_Request__c.Business_Name_1__c}&amp;00NF0000008NeKh={!Check_Request__c.Business_Name_2__c}&amp;00NZ0000000KbcW={!Check_Request__c.Repair_Order__c}&amp;00NF0000008NeL0={!Check_Request__c.RO_Date__c}&amp;00NF0000008NeKw={!Check_Request__c.Mileage__c}&amp;CF00NF0000008NeKi={!Check_Request__c.Buyback__c}&amp;CF00NF0000008NeKi_lkid={!Check_Request__c.BuybackId__c}&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>NewCheckRequest_LEAF</fullName>
+        <availability>online</availability>
+        <description>LEAF PreSales tool for creating Check Requests related to LEAF PreSales Cases. Their access to Check Requests is enabled by a Permission Set only.
+
+Opens new Check Request record from the Case page layout, used in Check Activity related list on Case.
+
+Validates:
+A&gt;User has Profile of LEAF/Teletmatics Manager, LEAF/Telematics User, or System Admin Config or System Administrator.
+Else displays alert and does nothing.
+
+B&gt;Case.Vehicle != BLANK
+If ISBLANK, displays alert and does nothing.
+
+If NOT(ISBLANK), opens new Check Request with defaults:
+&gt;CR.RecordType = Check Request
+&gt;CR.Case = Initiating Case #
+&gt;CR.Mail to fields = Case.PersonAccount&apos;s Mailing Address
+&gt;CR.Status = Not Submitted
+&gt;CR.Vehicle = Case.Vehicle
+
+*Note that Mailing Street is Javascript Encoded for removing characters that are not URL compatible.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Check Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)};
+
+var vehicle = &apos;{!Case.Vehicle_NameId__c}&apos;;
+var street = &apos;{!JSENCODE(Account.PersonMailingStreet)}&apos;;
+street=street.replace(&quot;\r\n&quot;,&quot; &quot;);
+var profile = &apos;{!User.ProfileId}&apos;;
+
+if( profile != &quot;00eA0000000e2pA&quot; &amp;&amp; profile != &quot;00eA0000000e2pB&quot; &amp;&amp; profile != &quot;00eF0000000eFZO&quot; &amp;&amp; profile !=&quot;00eA0000000OSON&quot;) 
+{ 
+alert(&apos;You do not have permission to create Check Requests.&apos;);
+} 
+
+else if ( vehicle.length &gt; 0 )
+{
+function redirect()
+{
+parent.frames.location.replace(&quot;/a0m/e?retURL=/{!Case.Id}&amp;RecordType=012F0000000yCuK&amp;CF00NF0000008NeHQ={!Case.CaseNumber}&amp;CF00NF0000008NeHQ_lkid={!Case.Id}&amp;00NF0000008NeKp={!Case.Account}&amp;CF00NZ0000000TCdD={!Case.Vehicle_Name__c}&amp;CF00NZ0000000TCdD_lkid={!Case.Vehicle_NameId__c}&amp;00NF0000008NeKx={!Contact.FirstName}&amp;00NF0000008NeKy={!Contact.LastName}&amp;00NF0000008NeKb=&quot; + street + &quot;&amp;00NF0000008NeKn={!Account.PersonMailingCity}&amp;00NF0000008NeL6={!Account.PersonMailingState}&amp;00NF0000008NeLB={!LEFT(Account.PersonMailingPostalCode,5)}&amp;00NF0000008NeL7=Not+Submitted&quot;);
+}
+
+redirect();
+}
+
+else
+{
+alert(&apos;You must have a Vehicle related to this Case to create a Check Request.&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Stop_Payment_Void</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Stop Payment / Void</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://cs16.salesforce.com/flow/Stop_Payment_Void?varCheckRequestId={!Check_Request__c.Id}&amp;retURL={!Check_Request__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Pull_Check</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Pull Check</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/apex.js&quot;)} 
+
+var retStr; 
+
+retStr = sforce.apex.execute(&quot;PullCheckRequest&quot;, &quot;validatePullCheck&quot;, {chkId:&apos;{!Check_Request__c.Id}&apos;}); 
+
+if(retStr == &quot;OK&quot;){
+   parent.window.location = &apos;/apex/PullCheckRequest?id={!Check_Request__c.Id}&apos;;
+}else{
+   alert(retStr);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Settlement_New_Check_Request</fullName>
+        <availability>online</availability>
+        <description>Creates a new check request from the CST/Buyback page layout related to the Case and CST/Buyback</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Check Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/23.0/connection.js&quot;)} 
+
+var bbtype = &apos;{!Buyback__c.Transaction_Type__c}&apos;; 
+var caseObj = new sforce.SObject(&quot;Case&quot;); 
+caseObj.Id = &apos;{!Case.Id}&apos;; 
+var street = &apos;{!JSENCODE(Account.PersonMailingStreet)}&apos;;
+street=street.replace(&quot;\r\n&quot;,&quot; &quot;);
+
+if ( bbtype.length == 0  ) 
+
+{ 
+alert(&apos;You must select a Transaction Type before you can create a Check Request.&apos;) 
+} 
+
+else 
+{ 
+window.parent.location.href = &quot;/a0m/e?retURL=/{!Case.Id}&amp;RecordType=012F0000000yCuL&amp;CF00NF0000008NeHQ={!Case.CaseNumber}&amp;CF00NF0000008NeHQ_lkid={!Case.Id}&amp;00NF0000008NeKp={!Case.Account}&amp;CF00NF0000008NeKi={!Buyback__c.Name}&amp;CF00NF0000008NeKi_lkid={!Buyback__c.Id}&amp;CF00NZ0000000TCdD={!Case.Vehicle_Name__c}&amp;CF00NZ0000000TCdD_lkid={!Case.Vehicle_NameId__c}&amp;00NF0000008NeKx={!Contact.FirstName}&amp;00NF0000008NeKy={!Contact.LastName}&amp;00NF0000008NeKb=&quot; +street+ &quot;&amp;00NF0000008NeKn={!Account.PersonMailingCity}&amp;00NF0000008NeL6={!Account.PersonMailingState}&amp;00NF0000008NeLB={!LEFT(Account.PersonMailingPostalCode,5)}&amp;00NF0000008NeL7=Not Submitted&quot;;
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Stop_Payment_or_Void</fullName>
+        <availability>online</availability>
+        <description>Sends an Email related to Case to the Accounts Payable team to indicate that this Check needs to be Voided and/or Reissued</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Stop Payment or Void</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var sapNo = &apos;{!Check_Request__c.Check_Number__c}&apos;;
+
+var reqAction = &apos;{!Check_Request__c.Stop_Payment_Void_Req_Action__c}&apos;;
+
+if(sapNo == &quot;&quot;){
+  alert(&apos;Check Number does not exist on this Check Request. Unable to request Stop Payment /Void / Check Trace&apos;);
+}else if (reqAction != &quot;&quot;){
+   alert(&apos;Stop Payment/Void/Check Trace information has already been entered. No additional requests are allowed.&apos;);
+}else{
+  window.location.href=&apos;/apex/StopCheckPayment?id={!Check_Request__c.Id}&apos;;
+
+}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Is_User_Validation_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to turn off logic inside Task_Before trigger, comes as replacement to USER_ROLE_CHECK_ENABLED custom label.</description>
+        <externalId>false</externalId>
+        <label>Is User Validation Enabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>User Role Check Enabled</label>
+    <visibility>Public</visibility>
+</CustomObject>

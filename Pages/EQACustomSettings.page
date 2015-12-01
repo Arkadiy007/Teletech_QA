@@ -1,0 +1,245 @@
+<apex:page controller="EQACS_Controller" doctype="html-5.0">
+
+        <style>
+              body.wait, body.wait * {
+                  cursor: wait !important;
+              }
+        </style>
+          
+        <!--<script type="text/javascript" language="javascript" src="{!URLFOR($Resource.jQueryDataTables, 'js/jquery.js')}"></script>-->
+        <apex:includescript id="jquery" value="{!URLFOR($Resource.Charts, 'jquery.min.js')}" />
+        <script type="text/javascript" language="javascript">
+
+          var j$ = jQuery.noConflict();
+
+          var busyCursorOn = function() {
+            j$('.button').attr("disabled", "disabled");
+            j$('body').addClass('wait');
+          };
+
+          var busyCursorOff = function() {
+            j$('.button').removeAttr('disabled');
+            j$('body').removeClass('wait');
+          };
+    
+        </script>
+
+    <apex:actionstatus id="busyCursor" onstart="busyCursorOn()" onstop="busyCursorOff()" />
+
+    <apex:tabpanel switchtype="client" selectedtab="EQAQuickReportsFields" id="theTabPanel">
+        <apex:tab label="EQA Quick Reports Fields" name="EQAQuickReportsFields" id="EQAQuickReportsFields_Tab">
+                 <apex:form >
+                     <apex:pageblock title="EQA Quick Reports Fields" id="EQAQuickReportsFields_pgblock">
+                         <apex:pagemessages />
+                         <apex:pageblocktable value="{! EQAQuickReportsFieldsCS_Wrapped }" var="cs" id="EQAQuickReportsFields_table">
+                             <apex:column >
+                                 <apex:commandlink action="{!Del}" value="delete" rerender="EQAQuickReportsFields_pgblock" onclick="if(!confirm('Are you sure?')){return};" status="busyCursor">
+                                     <apex:param name="CSId_toDel" value="{!cs.csid}" assignto="{!CSId_toDel}" />
+                                     <apex:param name="CSName_toDel" value="{!cs.name}" assignto="{!CSName_toDel}" />
+                                     <apex:param name="csType1" value="EQA_Quick_Reports_Fields__c" assignto="{!csType}" />
+                                 </apex:commandlink>
+                             </apex:column>
+
+                             <apex:column headervalue="Field API Name">
+                                 <apex:input type="text" value="{!cs.fieldAPIName }" />
+                             </apex:column>
+                             <apex:column headervalue="Field Label">
+                                 <apex:input type="text" value="{!cs.fieldLabel }" />
+                             </apex:column>
+                             <apex:column headervalue="Report Name">
+                                 <apex:selectlist value="{!cs.reportNameList}" multiselect="true">
+                                     <apex:selectoptions value="{!reportNamePickList}" />
+                                 </apex:selectlist>
+                                 <!--<apex:input type="text" value="{!cs.reportName }" />-->
+                             </apex:column>
+
+                             <apex:column headervalue="isDisplayable">
+                                 <apex:inputcheckbox label="isDisplayable" value="{!cs.isDisplayable}" />
+                             </apex:column>
+                             <apex:column headervalue="isLookup">
+                                 <apex:inputcheckbox label="isLookup" value="{!cs.isLookup}" />
+                             </apex:column>
+                             <apex:column headervalue="isReportable">
+                                 <apex:inputcheckbox label="isReportable" value="{!cs.isReportable}" />
+                             </apex:column>
+                         </apex:pageblocktable>
+                         <apex:pageblockbuttons >
+                             <apex:commandbutton value="Add" action="{!Add_EQAQuickReportsFields}" rerender="EQAQuickReportsFields_table" status="busyCursor" />
+                             <apex:commandbutton value="Save" action="{!Save_EQAQuickReportsFields}" rerender="EQAQuickReportsFields_pgblock" status="busyCursor" />
+                             <apex:commandbutton value="Cancel" action="{!Cancel}" immediate="true" rerender="EQAQuickReportsFields_pgblock" status="busyCursor" />
+                         </apex:pageblockbuttons>
+                     </apex:pageblock>
+                </apex:form>
+        </apex:tab>
+        <apex:tab label="EQA Quick Reports Filters" name="EQAQuickReportsFilters">            
+            <apex:form >
+                <apex:pageblock title="EQA Quick Reports Filters" id="EQAQuickReportsFilters_pgblock">
+                    <apex:pagemessages />
+                    <apex:pageblocktable value="{! EQAQuickReportsFiltersCS_Wrapped }" var="cs" id="EQAQuickReportsFilters_table">
+                        <apex:column >
+                            <apex:commandlink action="{!Del}" value="delete" rerender="EQAQuickReportsFilters_pgblock" onclick="if(!confirm('Are you sure?')){return};" status="busyCursor">
+                                <apex:param name="CSId_toDel" value="{!cs.csid}" assignto="{!CSId_toDel}" />
+                                <apex:param name="CSName_toDel" value="{!cs.name}" assignto="{!CSName_toDel}" />
+                                <apex:param name="csType2" value="EQA_Quick_Reports_Filters__c" assignto="{!csType}" />
+                            </apex:commandlink>
+                        </apex:column>
+                        <apex:column headervalue="Field API Name">
+                            <apex:input type="text" value="{!cs.fieldAPIName }" />
+                        </apex:column>
+                        <apex:column headervalue="Field Label">
+                            <apex:input type="text" value="{!cs.fieldLabel }" />
+                        </apex:column>
+                        <apex:column headervalue="Report Name">
+                            <!--<apex:input type="text" value="{!cs.reportName }" />-->
+                            <apex:selectlist value="{!cs.reportNameList}" multiselect="true">
+                                <apex:selectoptions value="{!reportNamePickList}" />
+                            </apex:selectlist>
+                        </apex:column>
+                        <apex:column headervalue="Type">
+                            <apex:selectlist value="{!cs.type}" size="1">
+                                <apex:selectoptions value="{!typePickList}" />
+                            </apex:selectlist>
+                            <!--<apex:input type="text" value="{!cs.type }" />-->
+                        </apex:column>
+                    </apex:pageblocktable>
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Add" action="{!Add_EQAQuickReportsFilters}" rerender="EQAQuickReportsFilters_table" status="busyCursor" />
+                        <apex:commandbutton value="Save" action="{!Save_EQAQuickReportsFilters}" rerender="EQAQuickReportsFilters_pgblock" status="busyCursor" />
+                        <apex:commandbutton value="Cancel" action="{!Cancel}" immediate="true" rerender="EQAQuickReportsFilters_pgblock" status="busyCursor" />
+                    </apex:pageblockbuttons>
+                </apex:pageblock>
+            </apex:form>                
+        </apex:tab>
+        <apex:tab label="EQA Quick Reports API Names" name="EQAQuickReportsAPINames">
+            <apex:form >
+                <apex:pageblock title="EQA Quick Reports API Names" id="EQAQuickReportsAPINames_pgblock">
+                    <apex:pagemessages />
+                    <apex:pageblocktable value="{! EQAQuickReportsAPINamesCS_Wrapped }" var="cs" id="EQAQuickReportsAPINames_table">
+                        <apex:column >
+                            <apex:commandlink action="{!Del}" value="delete" rerender="EQAQuickReportsAPINames_pgblock" onclick="if(!confirm('Are you sure?')){return};" status="busyCursor">
+                                <apex:param name="CSId_toDel" value="{!cs.csid}" assignto="{!CSId_toDel}" />
+                                <apex:param name="CSName_toDel" value="{!cs.name}" assignto="{!CSName_toDel}" />
+                                <apex:param name="csType3" value="EQA_Quick_Reports_API_Names__c" assignto="{!csType}" />
+                            </apex:commandlink>
+                        </apex:column>
+                        <apex:column headervalue="Report Name">
+                            <apex:input type="text" value="{!cs.reportName }" />
+                        </apex:column>
+                        <apex:column headervalue="Object API Name">
+                            <apex:input type="text" value="{!cs.objectAPIName }" />
+                        </apex:column>
+                    </apex:pageblocktable>
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Add" action="{!Add_EQAQuickReportsAPINames}" rerender="EQAQuickReportsAPINames_table" status="busyCursor" />
+                        <apex:commandbutton value="Save" action="{!Save_EQAQuickReportsAPINames}" rerender="EQAQuickReportsAPINames_pgblock" status="busyCursor" />
+                        <apex:commandbutton value="Cancel" action="{!Cancel}" immediate="true" rerender="EQAQuickReportsAPINames_pgblock" status="busyCursor" />
+                    </apex:pageblockbuttons>
+                </apex:pageblock>
+            </apex:form>
+        </apex:tab>        
+        <apex:tab label="EQA Profiles Custom Setting" name="EQA Profiles" id="EQA_Profiles_Tab">
+            <apex:form >
+                <apex:pageblock title="EQA Profiles Custom Setting" id="EQA_Profiles_pgblock">
+                    <apex:pagemessages />
+                    <apex:pageblocktable value="{! eqaProfilesList }" var="profile_cs" id="profiles_table">
+                        <apex:column headervalue="Profile Name">
+                            <apex:outputtext value="{!profile_cs.profileName}">
+                            </apex:outputtext>
+                        </apex:column>
+                        <apex:column headervalue="Validation Rules">
+                            <apex:inputcheckbox label="Validation Rules" value="{!profile_cs.validationRules}">
+                            </apex:inputcheckbox>
+                        </apex:column>
+                        <apex:column headervalue="Validation Rules for MC">
+                            <apex:inputcheckbox label="Validation Rules for MC" value="{!profile_cs.validationRulesMc }" />
+                        </apex:column>
+                    </apex:pageblocktable>
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Save" action="{!SaveEqaProfiles}" rerender="EQA_Profiles_pgblock" status="busyCursor" />
+                    </apex:pageblockbuttons>
+                </apex:pageblock>
+            </apex:form>
+        </apex:tab>
+        <apex:tab label="EQA Notification Custom Settings" name="eqaNotificationsSettings" id="eqaNotificationsSettings_Tab">
+            <apex:form >
+                <apex:pageblock title="EQA Notification Custom Settings" id="eqaNotificationsSettings_pgblock">
+                    <apex:pagemessages />
+                    <apex:outputpanel >
+                        <apex:outputlabel value="Hours To Send Idle Notification: " />
+                        <br />
+                        <apex:inputfield label="Hours To Send Idle Notification" value="{!eqaNotificationCS.Hours_To_Send_Idle_Notification__c}" />
+
+                    </apex:outputpanel>
+                    <br />
+                    <br />
+                    <apex:outputpanel >
+                        <apex:outputlabel value="Include Name for Notification Email: " />
+                        <br />
+                        <apex:inputcheckbox label="Include Name for Notification Email" value="{!eqaNotificationCS.Include_Name_for_Notification_Email__c}" />
+                    </apex:outputpanel>
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Save" action="{!SaveEqaNotificationsSettings}" rerender="eqaNotificationsSettings_pgblock" status="busyCursor" />
+                    </apex:pageblockbuttons>
+                </apex:pageblock>
+            </apex:form>
+        </apex:tab>
+        <apex:tab label="EQA Escalation Custom Settings" name="eqaEscalationSettings" id="eqaEscalationSettings_Tab">
+            <apex:form >
+                <apex:pageblock title="EQA Escalation Custom Settings" id="eqaEscalationSettings_pgblock">
+                    <apex:pagemessages />
+                    <apex:outputlabel value="EQA Internal Portal Account ID: " /><apex:inputfield label="EQA Internal Portal Account ID" value="{!eqaEscalationCS.Portal_Account_ID__c}" />
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Save" action="{!SaveEqaEscalationSettings}" rerender="eqaEscalationSettings_pgblock" status="busyCursor" />
+                    </apex:pageblockbuttons>
+                </apex:pageblock>
+            </apex:form>
+        </apex:tab>
+        <apex:tab label="Notification Custom Settings" name="notificationSettings" id="notificationSettings_Tab">
+            <apex:form >
+                <apex:pageblock title="Notification Custom Settings" id="notificationSettings_pgblock">
+                    <apex:pagemessages />
+                    <apex:outputlabel value="Track All Fields: " /><apex:inputcheckbox label="Track All Fields" value="{!notificationCs.Track_All_Fields__c}" />
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Save" action="{!SaveNotificationsSettings}" rerender="notificationSettings_pgblock" status="busyCursor" />
+                    </apex:pageblockbuttons>
+                </apex:pageblock>
+            </apex:form>
+        </apex:tab>
+        <apex:tab label="EQA Current Owner Rules" name="EQA_Current_Owner_Rules" id="EQA_Current_Owner_Rules_Tab">
+            <apex:form >
+                <apex:pageblock title="EQA Current Owner Rules" id="eqaCOR">
+                    <apex:pagemessages />
+                    <apex:pageblocktable value="{!eqaOwnerRulesList}" var="item" id="EQA_Current_Owner_Rules_Table">
+                        <apex:column >
+                            <apex:commandlink action="{!delEqaCor}" value="delete" rerender="eqaCOR" onclick="if(!confirm('Are you sure?')){return};" status="busyCursor">
+                                <apex:param name="eqaCorCSId_toDel" value="{!item.csid}" assignto="{!CSId_toDel}" />
+                                <apex:param name="eqaCorCSName_toDel" value="{!item.csname}" assignto="{!CSName_toDel}" />
+                                <apex:param name="eqacsType" value="EQA_Owner_Rules__c" assignto="{!csType}" />
+                            </apex:commandlink>
+                        </apex:column>
+                        <apex:column headervalue="Profile Id">
+                            <!--<apex:inputtext value="{!item.profileId}" />-->
+                            <apex:selectlist value="{!item.profileId}" size="1">
+                                <apex:selectoptions value="{!profilePickList}" />
+                            </apex:selectlist>
+                        </apex:column>
+                        <apex:column headervalue="Has Edit Access">
+                            <apex:inputcheckbox value="{!item.edit}" />
+                        </apex:column>
+                        <apex:column headervalue="Current Owner">
+                            <!--<apex:inputtext value="{!item.CurrentOwner}" />-->
+                            <apex:selectlist value="{!item.CurrentOwner}" size="1">
+                                <apex:selectoptions value="{!currentOwnerPickList}" />
+                            </apex:selectlist>
+                        </apex:column>
+                    </apex:pageblocktable>
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Add" action="{!addEqaCor}" rerender="EQA_Current_Owner_Rules_Table" status="busyCursor" />
+                        <apex:commandbutton value="Save" action="{!SaveEqaCor}" rerender="eqaCOR" status="busyCursor" />
+                        <apex:commandbutton value="Cancel" action="{!Cancel}" immediate="true" rerender="EQA_Current_Owner_Rules_Table" status="busyCursor" />
+                    </apex:pageblockbuttons>
+                </apex:pageblock>
+            </apex:form>
+        </apex:tab>
+    </apex:tabpanel>          
+</apex:page>

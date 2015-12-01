@@ -1,0 +1,2 @@
+<apex:page standardController="Account" extensions="ACALPEvaluation" action="{!Redirect}">
+</apex:page>

@@ -1,0 +1,1870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_PD__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( Account__r.Preferred_Dealer_Id__r.Id ,
+			Account__r.Preferred_Dealer_Id__r.Name )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account PD</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Preferred_Dealer__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Account__r.Preferred_Dealer_Id__c &lt;&gt; &quot; &quot;, HYPERLINK(Account__r.Preferred_Dealer_Id__c, Account__r.Preferred_Dealer_Id__r.Name) , &quot; &quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Preferred Dealer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Dealer Quotes Requests</relationshipLabel>
+        <relationshipName>Dealer_Quotes_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActionFlag__c</fullName>
+        <externalId>false</externalId>
+        <label>Action Flag</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Action_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Action Plan</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Billing_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Resolving_Dealer__r.BillingStreet</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_City__c</fullName>
+        <externalId>false</externalId>
+        <formula>Resolving_Dealer__r.BillingCity</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>Resolving_Dealer__r.BillingState</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Zip__c</fullName>
+        <externalId>false</externalId>
+        <formula>Resolving_Dealer__r.BillingPostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Zip</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CDI_ID__c</fullName>
+        <description>Experian CDI ID</description>
+        <externalId>false</externalId>
+        <label>CDI ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Dealer Quotes Requests</relationshipLabel>
+        <relationshipName>Dealer_Quotes_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contacted_by_Dealer__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Were you contacted by the Dealer?</inlineHelpText>
+        <label>Contacted by Dealer</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Contacted__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Contacted</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DQR_Dealer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>DQR Dealer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Dealer Quotes Requests (DQR Dealer)</relationshipLabel>
+        <relationshipName>Dealer_Quotes_Requests3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DQR_Disposition__c</fullName>
+        <externalId>false</externalId>
+        <label>DQR Disposition</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Bought NNA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bought Competitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Longer in Market</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Dealer_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Resolving_Dealer__r.Dealer_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Dealer Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Follow_Up_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Follow Up Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Action Taken</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Action Will Be Taken</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Can&apos;t/Won&apos;t Take Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Dealer_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Internet_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Internet Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Dealer_Main_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Main Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Dealer_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>District_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>District Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FFScore__c</fullName>
+        <externalId>false</externalId>
+        <label>FF Score</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FirstName__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Action__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow Up Action</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Call__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow Up Call</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow Up Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Yet Opened</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer Contacted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Contacted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disqualified by Team Lead</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>InternalFerretID__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Ferret ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key__c</fullName>
+        <externalId>false</externalId>
+        <label>Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LastName__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LeadProviderNameTranslated__c</fullName>
+        <description>Translates the Lead_Provider_Name__c field to a code.</description>
+        <externalId>false</externalId>
+        <formula>CASE( Lead_ProviderName__c ,
+&quot;AOL&quot;,&quot;110&quot;,
+&quot;AOL Autos&quot;,&quot;111&quot;,
+&quot;Autobytel.com&quot;,&quot;120&quot;,
+&quot;automotive&quot;,&quot;130&quot;,
+&quot;Automotive&quot;,&quot;131&quot;,
+&quot;Automotive.com&quot;,&quot;132&quot;,
+&quot;AutoTrader&quot;,&quot;140&quot;,
+&quot;AutoTrader.com&quot;,&quot;141&quot;,
+&quot;CarDomain&quot;,&quot;150&quot;,
+&quot;CarLocate.com&quot;,&quot;160&quot;,
+&quot;Cars.com&quot;,&quot;170&quot;,
+&quot;CarsDirect&quot;,&quot;180&quot;,
+&quot;CarsDirect Dealer Select&quot;,&quot;181&quot;,
+&quot;CarsDirect.com&quot;,&quot;182&quot;,
+&quot;CLS&quot;,&quot;190&quot;,
+&quot;Craigslist&quot;,&quot;200&quot;,
+&quot;Dealix&quot;,&quot;210&quot;,
+&quot;Dealix_INV&quot;,&quot;211&quot;,
+&quot;DPN&quot;,&quot;220&quot;,
+&quot;DTX&quot;,&quot;230&quot;,
+&quot;eBay&quot;,&quot;240&quot;,
+&quot;eBayMotors&quot;,&quot;241&quot;,
+&quot;Edmunds&quot;,&quot;250&quot;,
+&quot;Edmunds.com&quot;,&quot;251&quot;,
+&quot;Intelliprice&quot;,&quot;260&quot;,
+&quot;KBB&quot;,&quot;270&quot;,
+&quot;Kelley Blue Book&quot;,&quot;271&quot;,
+&quot;MSN&quot;,&quot;280&quot;,
+&quot;MSN Autos&quot;,&quot;281&quot;,
+&quot;NADAGuides&quot;,&quot;290&quot;,
+&quot;NADAguides.com&quot;,&quot;291&quot;,
+&quot;newcars&quot;,&quot;300&quot;,
+&quot;NewCars.com&quot;,&quot;301&quot;,
+&quot;Reply.com&quot;,&quot;310&quot;,
+&quot;Vehix&quot;,&quot;320&quot;,
+&quot;VER&quot;,&quot;330&quot;,
+&quot;Yahoo&quot;,&quot;340&quot;,
+&quot;Yahoo Autos&quot;,&quot;341&quot;,
+&quot; &quot;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Provider Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Comments</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Lead_PD__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Lead__r.Preferred_Dealer__r.Id ,
+			Lead__r.Preferred_Dealer__r.Name )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead PD</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Pref_Dealer__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Lead__r.Preferred_Dealer__c &lt;&gt; &quot; &quot;, HYPERLINK(Lead__r.Preferred_Dealer__c, Lead__r.Preferred_Dealer__r.Name ) , &quot; &quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Preferred Dealer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Preferred_Dealer__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Lead__r.Preferred_Dealer__c &lt;&gt; &quot; &quot;,
+			HYPERLINK(Lead__r.Preferred_Dealer__c,
+			Lead__r.Preferred_Dealer__r.Name ) , &quot; &quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Preferred Dealer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_ProviderName__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Provider Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_ProviderService__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Provider Service</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Provider_Detail__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Provider Detail</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Dealer Quotes Requests</relationshipLabel>
+        <relationshipName>Dealer_Quotes_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Likely_To_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <label>Likely To Purchase</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPSBand__c</fullName>
+        <externalId>false</externalId>
+        <label>NPS Band</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Detractor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Promoter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Net_Promoter_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Net Promoter Score</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Dealer__c</fullName>
+        <externalId>false</externalId>
+        <label>New Dealer</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PostalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>PostalCode</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pref_Dealer__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Account__r.Preferred_Dealer_Id__c &lt;&gt; &quot; &quot;,
+			HYPERLINK(Account__r.Preferred_Dealer_Id__c,
+			Account__r.Preferred_Dealer_Id__r.Name) , &quot; &quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Preferred Dealer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Preferred_Dealer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Preferred Dealer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Dealer Quotes Requests</relationshipLabel>
+        <relationshipName>Dealer_Quotes_Requests1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Priority 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Priority 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Priority 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RawDataID__c</fullName>
+        <externalId>false</externalId>
+        <label>RawDataID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Region Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Resolving_Dealer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Resolving Dealer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Dealer</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>DQR Resolving Dealer</relationshipLabel>
+        <relationshipName>Dealer_Quotes_Requests2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Resolving_Phone__c</fullName>
+        <externalId>false</externalId>
+        <formula>Resolving_Dealer__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Resolving Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q11__c</fullName>
+        <description>Please select which Dealer you would like to be contacted by</description>
+        <externalId>false</externalId>
+        <label>S2_q11</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q12ai__c</fullName>
+        <externalId>false</externalId>
+        <label>S2_q12ai</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q12bi__c</fullName>
+        <externalId>false</externalId>
+        <label>S2_q12bi</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q12ci__c</fullName>
+        <externalId>false</externalId>
+        <label>S2_q12ci</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q12di__c</fullName>
+        <externalId>false</externalId>
+        <label>S2_q12di</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q12ei__c</fullName>
+        <externalId>false</externalId>
+        <label>S2_q12ei</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q12fi__c</fullName>
+        <externalId>false</externalId>
+        <label>S2_q12fi</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q13__c</fullName>
+        <description>Comments</description>
+        <externalId>false</externalId>
+        <label>S2_q13</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q19__c</fullName>
+        <externalId>false</externalId>
+        <label>S2_q19</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q1_March2011__c</fullName>
+        <externalId>false</externalId>
+        <label>S2_q1_March2011</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q2_March2011__c</fullName>
+        <externalId>false</externalId>
+        <label>S2_q2_March2011</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2_q7__c</fullName>
+        <description>What would you like us to do?  Follow up action</description>
+        <externalId>false</externalId>
+        <label>S2_q7</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sale_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Sale Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Salutation__c</fullName>
+        <externalId>false</externalId>
+        <label>Salutation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SentimentBandRow__c</fullName>
+        <externalId>false</externalId>
+        <label>Sentiment Band Row</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Extremely Positive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very Positive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very Negative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extremely Negative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Spare3__c</fullName>
+        <externalId>false</externalId>
+        <label>Spare3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Yet Opened</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer Contacted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Contacted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disqualified by Team Lead</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VPP_Claim_Code__c</fullName>
+        <description>VPP CLaim Code from the Maritz DQR Lead Stage table</description>
+        <externalId>false</externalId>
+        <label>VPP Claim Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Verbatim_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Survey Verbatim</label>
+        <length>3000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Vin_Purchased__c</fullName>
+        <externalId>false</externalId>
+        <label>Vin Purchased</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>area__c</fullName>
+        <externalId>false</externalId>
+        <label>Area</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>brand__c</fullName>
+        <externalId>false</externalId>
+        <label>brand</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>contact_us_address__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Us Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>contact_us_email__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Us Email</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>contact_us_phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Us Phone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_vehicle_bodystyle__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Vehicle Bodystyle</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_vehicle_doors__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Vehicle Doors</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_vehicle_exterior_color__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Vehicle Exterior Color</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_vehicle_interior_color__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Vehicle Interior Color</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_vehicle_model__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Vehicle Model</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_vehicle_model_year__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Vehicle Model Year</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_vehicle_odometer__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Vehicle Odometer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_vehicle_stock__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Vehicle Stock</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_vehicle_transmission__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Vehicle Transmission</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_vehicle_trim__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Vehicle Trim</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_vehicle_vin__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Vehicle VIN</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>lead_category__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>lead_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>lead_id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>DQR ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>preferred_method__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Method</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>privacy_link__c</fullName>
+        <externalId>false</externalId>
+        <label>Privacy Link</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>purchase_timeframe__c</fullName>
+        <externalId>false</externalId>
+        <label>Purchase Timeframe</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>signature_name__c</fullName>
+        <externalId>false</externalId>
+        <label>Signature Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>signature_title__c</fullName>
+        <externalId>false</externalId>
+        <label>Signature Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>spanish_lead__c</fullName>
+        <externalId>false</externalId>
+        <label>Spanish Lead</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>survey_response_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Response Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>survey_sent_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Sent Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>survey_status__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>time_zone__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Zone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>vehicle_image__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Image</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Dealer Quotes Request</label>
+    <listViews>
+        <fullName>Action_Taken</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>interest_vehicle_model_year__c</columns>
+        <columns>Division__c</columns>
+        <columns>interest_vehicle_model__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>interest_vehicle_model__c</field>
+            <operation>equals</operation>
+            <value>Altima</value>
+        </filters>
+        <filters>
+            <field>lead_date__c</field>
+            <operation>greaterThan</operation>
+            <value>04/01/2012</value>
+        </filters>
+        <label>Action Taken</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Action_Will_Be_Taken</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>interest_vehicle_model_year__c</columns>
+        <columns>Division__c</columns>
+        <columns>interest_vehicle_model__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Dealer_Follow_Up_Status__c</field>
+            <operation>equals</operation>
+            <value>Action Will Be Taken</value>
+        </filters>
+        <label>Action Will Be Taken</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Lead__c</columns>
+        <columns>FirstName__c</columns>
+        <columns>LastName__c</columns>
+        <columns>Customer_ID__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>lead_id__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Bought_Competitor</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>interest_vehicle_model_year__c</columns>
+        <columns>Division__c</columns>
+        <columns>interest_vehicle_model__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DQR_Disposition__c</field>
+            <operation>equals</operation>
+            <value>Bought Competitor</value>
+        </filters>
+        <label>Bought Competitor</label>
+    </listViews>
+    <listViews>
+        <fullName>Bought_NNA</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>interest_vehicle_model_year__c</columns>
+        <columns>Division__c</columns>
+        <columns>interest_vehicle_model__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DQR_Disposition__c</field>
+            <operation>equals</operation>
+            <value>Bought NNA</value>
+        </filters>
+        <label>Bought NNA</label>
+    </listViews>
+    <listViews>
+        <fullName>Can_t_Won_t_Take_Action</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>interest_vehicle_model_year__c</columns>
+        <columns>Division__c</columns>
+        <columns>interest_vehicle_model__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Dealer_Follow_Up_Status__c</field>
+            <operation>equals</operation>
+            <value>Can&apos;t/Won&apos;t Take Action</value>
+        </filters>
+        <label>Can&apos;t/Won&apos;t Take Action</label>
+    </listViews>
+    <listViews>
+        <fullName>DB_Reassigned_Leads</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>Barngraff</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <label>DB Reassigned Leads</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagementUsers</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Dealer_Follow_Up_Can_t_Won_t_Take_Action</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>interest_vehicle_model_year__c</columns>
+        <columns>Division__c</columns>
+        <columns>interest_vehicle_model__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Dealer_Follow_Up_Status__c</field>
+            <operation>equals</operation>
+            <value>Can&apos;t/Won&apos;t Take Action</value>
+        </filters>
+        <label>Dealer Follow Up Can&apos;t/Won&apos;t Take Action</label>
+    </listViews>
+    <listViews>
+        <fullName>JX_View1</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Phone__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>interest_vehicle_model__c</field>
+            <operation>equals</operation>
+            <value>JX</value>
+        </filters>
+        <filters>
+            <field>Lead_ProviderService__c</field>
+            <operation>equals</operation>
+            <value>Contact Dlr - Preorder</value>
+        </filters>
+        <label>My JX Dealer Quotes Requests</label>
+        <sharedTo>
+            <group>CCCUsers</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_CLOSED_Dealer_Quote_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>FirstName__c</columns>
+        <columns>LastName__c</columns>
+        <columns>Customer_ID__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>interest_vehicle_model_year__c</columns>
+        <columns>Division__c</columns>
+        <columns>interest_vehicle_model__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </filters>
+        <label>My CLOSED Dealer Quote Requests</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CCCUsers</group>
+            <group>ManagementUsers</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_DQRs</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Lead__c</columns>
+        <columns>FirstName__c</columns>
+        <columns>LastName__c</columns>
+        <columns>Customer_ID__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>interest_vehicle_model_year__c</columns>
+        <columns>Division__c</columns>
+        <columns>interest_vehicle_model__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Dealer Quote Requests</label>
+        <sharedTo>
+            <group>CCCUsers</group>
+            <group>ManagementUsers</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_OPEN_Dealer_Quote_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>FirstName__c</columns>
+        <columns>LastName__c</columns>
+        <columns>Customer_ID__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>interest_vehicle_model_year__c</columns>
+        <columns>Division__c</columns>
+        <columns>interest_vehicle_model__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Dealer Contacted,Customer Contacted</value>
+        </filters>
+        <label>My OPEN Dealer Quote Requests</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CCCUsers</group>
+            <group>ManagementUsers</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>No_Longer_in_Market</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <columns>interest_vehicle_model_year__c</columns>
+        <columns>Division__c</columns>
+        <columns>interest_vehicle_model__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DQR_Disposition__c</field>
+            <operation>equals</operation>
+            <value>No Longer in Market</value>
+        </filters>
+        <label>No Longer in Market</label>
+    </listViews>
+    <listViews>
+        <fullName>SentimentBandRow</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Lead__c</columns>
+        <columns>FirstName__c</columns>
+        <columns>LastName__c</columns>
+        <columns>Customer_ID__c</columns>
+        <columns>Dealer_Name__c</columns>
+        <columns>lead_date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SentimentBandRow__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>SentimentBandRow</label>
+    </listViews>
+    <nameField>
+        <label>Dealer Quote Request</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Dealer Quotes Requests</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Dealer_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>lead_date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>interest_vehicle_model_year__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Division__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>interest_vehicle_model__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Dealer_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>lead_date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>interest_vehicle_model_year__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Division__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>interest_vehicle_model__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>Customer_ID__c</searchFilterFields>
+        <searchFilterFields>Dealer_Name__c</searchFilterFields>
+        <searchFilterFields>lead_date__c</searchFilterFields>
+        <searchFilterFields>interest_vehicle_model_year__c</searchFilterFields>
+        <searchFilterFields>Division__c</searchFilterFields>
+        <searchFilterFields>interest_vehicle_model__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Customer_ID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Dealer_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>lead_date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>interest_vehicle_model_year__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Division__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>interest_vehicle_model__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>DQR_Closed_Requires_DQR_Disposition</fullName>
+        <active>true</active>
+        <description>If DQR Status changes to Closed, user MUST select a DQR Disposition</description>
+        <errorConditionFormula>ISPICKVAL( Status__c , &quot;Closed&quot;) &amp;&amp; ISCHANGED( Status__c ) &amp;&amp; ISPICKVAL( DQR_Disposition__c , &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>DQR_Disposition__c</errorDisplayField>
+        <errorMessage>You MUST select a DQR Disposition if you are closing this DQR</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Phone_Survey</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Phone Survey</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/19.0/connection.js&quot;)}; 
+
+var aid = &apos;{!Dealer_Quotes_Request__c.Id}&apos;;
+
+var queryResults = sforce.connection.query(&quot;select Id, Account__c, Division__c, Account__r.PersonContactId from Dealer_Quotes_Request__c where Id = \&apos;&quot; + aid + &quot;\&apos;&quot;); 
+
+var record = queryResults.getArray(&apos;records&apos;)[0]; 
+
+var sidNissan = &apos;{!$Label.SurveyID_DQR_Nissan}&apos;;
+var sidInfiniti = &apos;{!$Label.SurveyID_DQR_Infiniti}&apos;;
+
+var make = &apos;&apos;;
+if (record.Division__c != null)
+	make = record.Division__c.toLowerCase();
+
+if (record.Account__r == null || record.Account__r.PersonContactId == null)
+	alert(&quot;You can not conduct a Phone Survey because there is no Account/Customer listed on this Dealer Quote Request record&quot;);
+else if (make == &apos;nissan&apos;)
+	window.open(&quot;http://nna.force.com/survey/TakeSurvey?id=&quot; + sidNissan + &quot;&amp;cId=&quot; + record.Account__r.PersonContactId + &quot;&amp;caId=none&quot;);
+else if (make == &apos;infiniti&apos;)
+	window.open(&quot;http://nna.force.com/survey/TakeSurvey?id=&quot; + sidInfiniti + &quot;&amp;cId=&quot; + record.Account__r.PersonContactId + &quot;&amp;caId=none&quot;);
+else
+	alert(&quot;You can not conduct a Phone Survey because there is no Division (Nissan or Infiniti) listed on this Dealer Quote Request record&quot;);</url>
+    </webLinks>
+</CustomObject>

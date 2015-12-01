@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Preview</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Category</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Greetings</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intro/Greeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aftrmkt solutions,3rd party vendors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA Number/Contact Us Link Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>End of Lease/Customer Relations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gas Mileage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General for Infiniti Intouch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General for Infiniti Owners Portal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General for LEAF - New 12-JUN-12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General for Nissan Owner Portal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hold for Research</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti Connection Features and Price</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Info Gathering/Account Creation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Customer Response</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Owners</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recalls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sensitive Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spanish Responses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre-Close</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Channel</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Live Agent</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Support</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infiniti CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Message</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <recordTypes>
+        <fullName>CA_Quick_Text</fullName>
+        <active>true</active>
+        <label>CA Quick Text</label>
+        <picklistValues>
+            <picklist>Category</picklist>
+            <values>
+                <fullName>Aftrmkt solutions%2C3rd party vendors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA Number%2FContact Us Link Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End of Lease%2FCustomer Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gas Mileage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greetings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Hold for Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Info Gathering%2FAccount Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intro%2FGreeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Customer Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sensitive Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warning</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel</picklist>
+            <values>
+                <fullName>Infiniti CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live Agent</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MCC_Quick_Text</fullName>
+        <active>true</active>
+        <label>MCC Quick Text</label>
+        <picklistValues>
+            <picklist>Category</picklist>
+            <values>
+                <fullName>Aftrmkt solutions%2C3rd party vendors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA Number%2FContact Us Link Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End of Lease%2FCustomer Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gas Mileage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greetings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Hold for Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Info Gathering%2FAccount Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intro%2FGreeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Customer Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sensitive Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warning</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel</picklist>
+            <values>
+                <fullName>Live Agent</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>MCC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Social_Quick_Text</fullName>
+        <active>true</active>
+        <label>Social Quick Text</label>
+        <picklistValues>
+            <picklist>Category</picklist>
+            <values>
+                <fullName>Aftrmkt solutions%2C3rd party vendors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA Number%2FContact Us Link Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End of Lease%2FCustomer Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gas Mileage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hold for Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Info Gathering%2FAccount Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intro%2FGreeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Customer Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sensitive Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warning</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel</picklist>
+            <values>
+                <fullName>Live Agent</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Social Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>VCS_Quick_Text</fullName>
+        <active>true</active>
+        <label>VCS Quick Text</label>
+        <picklistValues>
+            <picklist>Category</picklist>
+            <values>
+                <fullName>Aftrmkt solutions%2C3rd party vendors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA Number%2FContact Us Link Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End of Lease%2FCustomer Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gas Mileage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General for Infiniti Intouch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General for Infiniti Owners Portal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General for LEAF - New 12-JUN-12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General for Nissan Owner Portal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greetings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Hold for Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiniti Connection Features and Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Info Gathering%2FAccount Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intro%2FGreeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Customer Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sensitive Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spanish Responses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warning</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel</picklist>
+            <values>
+                <fullName>Live Agent</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>VCS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Message</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Category</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Message</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Category</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Message</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Category</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Message</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Category</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

@@ -1,0 +1,252 @@
+<apex:page controller="SearchSideBar" showHeader="false" sidebar="false">
+    <apex:stylesheet value="{!URLFOR($Resource.SearchStyle, 'SearchStyle.css')}" />
+    <apex:includeScript value="/support/console/22.0/integration.js" />
+    <script type="text/javascript">
+    function RedirectPage(itemId, title) {
+        sforce.console.openPrimaryTab(null,'/' + itemId, false, title);
+    }
+    
+    function EnabledContent() {
+        var img = document.getElementById("divWait");
+        img.style.display = 'block';
+    }
+    
+    function DisabledContent() {
+        var img = document.getElementById("divWait");
+        img.style.display = 'none';
+    }
+    </script>
+    <apex:form >
+        <div class="customsearch_bg">
+            <apex:pageBlock id="pbMain">
+                <!-- <apex:pageMessages id="msgMain" escape="false" /> -->
+                <div id="divWait" class="WaitDiv">
+                    <span>Searching...</span>
+                </div>
+                <div style="width: 140px;">
+                    <apex:tabPanel switchType="client" value="{!selectedTab}"
+                        rendered="{!showTabs}">
+
+                        <apex:tab label="Cases" name="Cases">
+                            <apex:pageBlockSection columns="1">
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Number" />
+                                    <apex:inputText value="{!caseNumber}" style="width:100px;" />
+                                </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                            <div
+                                style="width: 100%; text-align: center; padding-bottom: 10px">
+                                <br /> <br />
+                                <apex:commandButton value="Search" action="{!searchCases}"
+                                    status="counterStatus" reRender="pbMain" />
+                            </div>
+                        </apex:tab>
+
+                        <apex:tab label="Accounts" name="Accounts">
+                            <apex:pageBlockSection columns="1">
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="First Name" />
+                                    <apex:inputText value="{!firstName}" style="width:110px;" />
+                                </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Last Name" />
+                                    <apex:inputText value="{!lastName}" style="width:110px;" />
+                                </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Zip" />
+                                    <apex:inputText value="{!zip}" style="width:110px;" />
+                                </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="State" />
+                                    <apex:selectList value="{!state}" size="1" style="width:116px;">
+                                        <apex:selectOption itemValue="None" itemLabel="None" />
+                                        <apex:selectOption itemValue="AL" itemLabel="Alabama" />
+                                        <apex:selectOption itemValue="AK" itemLabel="Alaska" />
+                                        <apex:selectOption itemValue="AZ" itemLabel="Arizona" />
+                                        <apex:selectOption itemValue="AR" itemLabel="Arkansas" />
+                                        <apex:selectOption itemValue="CA" itemLabel="California" />
+                                        <apex:selectOption itemValue="CO" itemLabel="Colorado" />
+                                        <apex:selectOption itemValue="CT" itemLabel="Connecticut" />
+                                        <apex:selectOption itemValue="DE" itemLabel="Delaware" />
+                                        <apex:selectOption itemValue="DC"
+                                            itemLabel="District of Columbia" />
+                                        <apex:selectOption itemValue="FL" itemLabel="Florida" />
+                                        <apex:selectOption itemValue="GA" itemLabel="Georgia" />
+                                        <apex:selectOption itemValue="HI" itemLabel="Hawaii" />
+                                        <apex:selectOption itemValue="ID" itemLabel="Idaho" />
+                                        <apex:selectOption itemValue="IL" itemLabel="Illinois" />
+                                        <apex:selectOption itemValue="IN" itemLabel="Indiana" />
+                                        <apex:selectOption itemValue="IA" itemLabel="Iowa" />
+                                        <apex:selectOption itemValue="KS" itemLabel="Kansas" />
+                                        <apex:selectOption itemValue="KY" itemLabel="Kentucky" />
+                                        <apex:selectOption itemValue="LA" itemLabel="Louisiana" />
+                                        <apex:selectOption itemValue="ME" itemLabel="Maine" />
+                                        <apex:selectOption itemValue="MD" itemLabel="Maryland" />
+                                        <apex:selectOption itemValue="MA" itemLabel="Massachusetts" />
+                                        <apex:selectOption itemValue="MI" itemLabel="Michigan" />
+                                        <apex:selectOption itemValue="MN" itemLabel="Minnesota" />
+                                        <apex:selectOption itemValue="MS" itemLabel="Mississippi" />
+                                        <apex:selectOption itemValue="MO" itemLabel="Missouri" />
+                                        <apex:selectOption itemValue="MT" itemLabel="Montana" />
+                                        <apex:selectOption itemValue="NE" itemLabel="Nebraska" />
+                                        <apex:selectOption itemValue="NV" itemLabel="Nevada" />
+                                        <apex:selectOption itemValue="NH" itemLabel="New Hampshire" />
+                                        <apex:selectOption itemValue="NJ" itemLabel="New Jersey" />
+                                        <apex:selectOption itemValue="NM" itemLabel="New Mexico" />
+                                        <apex:selectOption itemValue="NY" itemLabel="New York" />
+                                        <apex:selectOption itemValue="NC" itemLabel="North Carolina" />
+                                        <apex:selectOption itemValue="ND" itemLabel="North Dakota" />
+                                        <apex:selectOption itemValue="OH" itemLabel="Ohio" />
+                                        <apex:selectOption itemValue="OK" itemLabel="Oklahoma" />
+                                        <apex:selectOption itemValue="OR" itemLabel="Oregon" />
+                                        <apex:selectOption itemValue="PA" itemLabel="Pennsylvania" />
+                                        <apex:selectOption itemValue="RI" itemLabel="Rhode Island" />
+                                        <apex:selectOption itemValue="SC" itemLabel="South Carolina" />
+                                        <apex:selectOption itemValue="SD" itemLabel="South Dakota" />
+                                        <apex:selectOption itemValue="TN" itemLabel="Tennessee" />
+                                        <apex:selectOption itemValue="TX" itemLabel="Texas" />
+                                        <apex:selectOption itemValue="UT" itemLabel="Utah" />
+                                        <apex:selectOption itemValue="VT" itemLabel="Vermont" />
+                                        <apex:selectOption itemValue="VA" itemLabel="Virginia" />
+                                        <apex:selectOption itemValue="WA" itemLabel="Washington" />
+                                        <apex:selectOption itemValue="WV" itemLabel="West Virginia" />
+                                        <apex:selectOption itemValue="WI" itemLabel="Wisconsin" />
+                                        <apex:selectOption itemValue="WY" itemLabel="Wyoming" />
+                                        <apex:selectOption itemValue="GU" itemLabel="Guam" />
+                                        <apex:selectOption itemValue="PR" itemLabel="Puerto Rico" />
+                                        <apex:selectOption itemValue="VI" itemLabel="Virgin Islands" />
+                                        <apex:selectOption itemValue="AB" itemLabel="Alberta" />
+                                        <apex:selectOption itemValue="BC" itemLabel="British Columbia" />
+                                        <apex:selectOption itemValue="MB" itemLabel="Manitoba" />
+                                        <apex:selectOption itemValue="NB" itemLabel="New Brunswick" />
+                                        <apex:selectOption itemValue="NL"
+                                            itemLabel="Newfoundland and Labrador" />
+                                        <apex:selectOption itemValue="NT"
+                                            itemLabel="Northwest Territories" />
+                                        <apex:selectOption itemValue="NS" itemLabel="Nova Scotia" />
+                                        <apex:selectOption itemValue="NU" itemLabel="Nunavut" />
+                                        <apex:selectOption itemValue="ON" itemLabel="Ontario" />
+                                        <apex:selectOption itemValue="PE"
+                                            itemLabel="Prince Edward Island" />
+                                        <apex:selectOption itemValue="QC" itemLabel="Quebec" />
+                                        <apex:selectOption itemValue="PQ" itemLabel="Quebec (Old)" />
+                                        <apex:selectOption itemValue="SK" itemLabel="Saskatchewan" />
+                                        <apex:selectOption itemValue="YT" itemLabel="Yukon" />
+                                    </apex:selectList>
+                                </apex:pageBlockSectionItem>
+
+                            </apex:pageBlockSection>
+                            <div
+                                style="width: 100%; text-align: center; padding-bottom: 10px">
+                                <br /> <br />
+                                <apex:commandButton value="Search" action="{!searchAccounts}"
+                                    status="counterStatus" reRender="pbMain" />
+                            </div>
+                        </apex:tab>
+
+                        <apex:tab label="Vehicles" name="Vehicles">
+                            <apex:pageBlockSection columns="1">
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="VIN" />
+                                    <apex:inputText value="{!vin}" style="width:110px;" />
+                                </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                            <div
+                                style="width: 100%; text-align: center; padding-bottom: 10px">
+                                <br /> <br />
+                                <apex:commandButton value="Search" action="{!searchVehicles}"
+                                    status="counterStatus" reRender="pbMain" />
+                            </div>
+
+                        </apex:tab>
+
+                    </apex:tabPanel>
+
+                    <apex:outputPanel rendered="{!showAccounts}" style="font-size:10px">
+                        <apex:pageblockTable id="pbtResults" value="{!accountList}"
+                            var="al">
+                            <apex:column width="300px" headerClass="alignCenter"
+                                title="{!al.PersonMailingCity + IF(al.PersonEmail == null, '', ' - ' + al.PersonEmail) + IF(al.PersonHomePhone == null, '', ' - ' + al.PersonHomePhone)}">
+                                <apex:facet name="header">Name</apex:facet>
+                                <apex:outputLink value="{!redirectUrl + al.Id}"
+                                    onclick="RedirectPage('{!al.Id}','{!al.Name}')">{!al.Name}</apex:outputLink>
+                            </apex:column>
+                            <apex:column value="{!al.PersonMailingState}" headerValue="State"
+                                width="25px" headerClass="alignCenter" styleClass="alignCenter" />
+                        </apex:pageblockTable>
+                        <br />
+                        <div style="width: 100%; text-align: center;">
+                            <apex:outputPanel rendered="{!showRefineSearch}">
+                                <apex:outputText value="...more found please refine search" />
+                            </apex:outputPanel>
+                        </div>
+                        <br />
+                        <div
+                            style="width: 100%; text-align: center; padding-bottom: 10px; font-size: 12px">
+                            <apex:commandButton value="Back" action="{!backToSearch}"
+                                reRender="pbMain" />
+                        </div>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel rendered="{!showVehicles}" style="font-size:10px">
+                        <apex:pageblockTable value="{!vehicleList}" var="vl">
+                            <apex:column width="100%" headerClass="alignCenter"
+                                title="{!vl.Vehicle_identification_Number__c}">
+                                <apex:facet name="header">Vehicle</apex:facet>
+                                <apex:outputLink value="{!redirectUrl + vl.Id}"
+                                    onclick="RedirectPage('{!vl.Id}', '{!vl.Vehicle_identification_Number__c}')">{!vl.Vehicle_identification_Number__c + ' ' + vl.Make_Model__c}</apex:outputLink>
+                            </apex:column>
+                        </apex:pageblockTable>
+                        <br />
+                        <div style="width: 100%; text-align: center;">
+                            <apex:outputPanel rendered="{!showRefineSearch}">
+                                <apex:outputText value="...more found please refine search" />
+                            </apex:outputPanel>
+                        </div>
+                        <br />
+                        <div
+                            style="width: 100%; text-align: center; padding-bottom: 10px; font-size: 12px">
+                            <apex:commandButton value="Back" action="{!backToSearch}"
+                                reRender="pbMain" />
+                        </div>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel rendered="{!showCases}" style="font-size:10px">
+                        <apex:pageblockTable rendered="{!showCases}" value="{!caseList}"
+                            var="cl">
+                            <apex:column width="20%" headerClass="alignCenter">
+                                <apex:facet name="header">Case</apex:facet>
+                                <apex:outputLink value="{!redirectUrl + cl.Id}"
+                                    onclick="RedirectPage('{!cl.Id}','{!cl.CaseNumber}')">{!cl.CaseNumber}</apex:outputLink>
+                            </apex:column>
+                            <apex:column width="80%" value="{!cl.CustomerNameFormula__c}"
+                                headerValue="Customer" headerClass="alignCenter" />
+                        </apex:pageblockTable>
+                        <br />
+                        <div style="width: 100%; text-align: center;">
+                            <apex:outputPanel rendered="{!showRefineSearch}">
+                                <apex:outputText value="...more found please refine search" />
+                            </apex:outputPanel>
+                        </div>
+                        <br />
+                        <div
+                            style="width: 100%; text-align: center; padding-bottom: 10px; font-size: 12px">
+                            <apex:commandButton value="Back" action="{!backToSearch}"
+                                reRender="pbMain" />
+                        </div>
+                    </apex:outputPanel>
+                    <br />
+
+                    <div style="width: 100%; text-align: center;">
+                        <apex:outputPanel rendered="{!showNoRecords}">
+                            <apex:outputText value="* No records found" />
+                        </apex:outputPanel>
+                    </div>
+                </div>
+
+                <apex:actionStatus id="counterStatus" onstart="EnabledContent()"
+                    onstop="DisabledContent()" />
+            </apex:pageBlock>
+        </div>
+    </apex:form>
+</apex:page>

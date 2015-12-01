@@ -1,0 +1,23 @@
+<apex:page controller="Controller_VehicleServiceContractComment" title="Vehicle Service Contract Comments">
+    <apex:sectionHeader title="Vehicle Service Contract Comments"/>
+    <apex:form >
+    	<apex:pageMessages />
+        <apex:pageBlock id="vehicleServiceContractComments" mode="edit" >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!doSaveCommentLines}" disabled="{!lastLineNumber >= maxLines}"/>
+                <apex:commandButton value="Cancel" action="{!doCancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection columns="1" title="Comments">
+            	<apex:pageBlockSectionItem >
+            		<apex:outputLabel value="Existing Comments" for="existingComments"/>
+					<apex:inputTextArea id="existingComments" value="{!existingComments}" cols="{!lineLength + 20}" rows="10" disabled="true"/>
+				</apex:pageBlockSectionItem>
+            	<apex:pageBlockSectionItem >
+            		<apex:outputLabel value="New Comments" for="newComments"/>
+					<apex:inputTextArea id="newComments" value="{!newComments}" cols="{!lineLength}" rows="10" disabled="{!lastLineNumber >= maxLines}"/>
+				</apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

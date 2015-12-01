@@ -1,0 +1,1477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>MCEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>MCEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>Customer_Information</fullName>
+        <description>User to determine, what fields are available for customer to edit (for Notification purposes)</description>
+        <displayedFields>
+            <field>Customer__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Plant__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Monetary_Claim_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Part_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Supplier_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Global_Supplier_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Explanation__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Sorting_Report__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Part_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Supplier_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Customer Information</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Fields_Tracked_Per_Update</fullName>
+        <description>Fields, that will be tracking via object history</description>
+        <displayedFields>
+            <field>OwnerId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Account_Coding__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Current_Owner__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Part_Incident_Report__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Reworked_Costs__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Wrong_Part_Costs__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Reworked_Quantity__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Wrong_Part__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Amount_Rejected__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Reason_for_Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Quantity_Sorted__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>No_Good_Material_Costs__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Form_Approved_by_NEC__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Create_Debit_to_Supplier_Submit_to_AP__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Supplier_Response__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Total_Other__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Name_of_Responder__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Amount_Accepted__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Intercompany_Approval_Generated_and_Sent__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Form_Approved_By_Country__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Claim_Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Form_Sent_For_Invoice_Credit_Memo__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Send_Invoice_Credit_Memo_to_Customer__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Fields Tracked Per Update</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Supplier_Information</fullName>
+        <description>Used for notifications (to customer, if any field from this fieldset are changed)</description>
+        <displayedFields>
+            <field>Supplier_Response__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Amount_Accepted__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Reason_for_Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Account_Coding__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Cost_Center__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Name_of_Responder__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Amount_Rejected__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Total_Supplier_Amount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Supplier Information</label>
+    </fieldSets>
+    <fields>
+        <fullName>Account_Coding__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Coding</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount_Accepted__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount Accepted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Amount_Rejected__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount Rejected</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Claim_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Closed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Closed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Cost_Center__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Center</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Create_Debit_to_Supplier_Submit_to_AP__c</fullName>
+        <externalId>false</externalId>
+        <label>Create Debit to Supplier &amp; Submit to AP</label>
+        <length>16</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Owner__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Owner</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supplier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EQA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Customer__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Customer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Plant</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Monetary Claims</relationshipLabel>
+        <relationshipName>Monetary_Claims</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Days_Open__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(  Claim_Status__c  , &quot;Closed&quot;), Closed_Date__c - DATEVALUE(CreatedDate) , now() - CreatedDate )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days_Open</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Explanation__c</fullName>
+        <externalId>false</externalId>
+        <label>Explanation</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Form_Approved_By_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Form Approved By Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Form_Approved_by_NEC__c</fullName>
+        <externalId>false</externalId>
+        <label>Form Approved by NEC</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Form_Sent_For_Invoice_Credit_Memo__c</fullName>
+        <externalId>false</externalId>
+        <label>Form Sent For Invoice/Credit Memo</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Global_Supplier_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( RecordType.Name , 
+&quot;Sorting Report&quot;, Sorting_Report__r.Global_Supplier_Number__c , 
+&quot;PIR&quot;, Part_Incident_Report__r.Global_Supplier_Number__c , 
+&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Global Supplier Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Intercompany_Approval_Generated_and_Sent__c</fullName>
+        <externalId>false</externalId>
+        <label>Intercompany Approval Generated and Sent</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Modified_By_Customer__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Modified By Customer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Modified_By_Supplier__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Modified By Supplier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Legal_Hold__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Legal Hold</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mixed_Part_Costs__c</fullName>
+        <externalId>false</externalId>
+        <label>Mixed Part Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mixed_Part__c</fullName>
+        <externalId>false</externalId>
+        <label>Mixed Part</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monetary_Claim_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Monetary Claim Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Name_of_Responder__c</fullName>
+        <externalId>false</externalId>
+        <label>Name of Responder</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Good_Material_Costs__c</fullName>
+        <externalId>false</externalId>
+        <label>No Good Material Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>No_Good_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>No Good Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Days_Flag__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Days_Open__c &lt;= 30, 
+IMAGE(&quot;/img/samples/flag_green.gif&quot;, &quot;Green&quot;) , 
+IF(AND(Days_Open__c &gt;= 31,Days_Open__c &lt;= 45) , 
+IMAGE(&quot;/img/samples/flag_yellow.gif&quot;, &quot;Yellow&quot;), 
+IF(Days_Open__c &gt;= 46,IMAGE(&quot;/img/samples/flag_red.gif&quot;, &quot;Red&quot;), &apos;&apos;) ) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open Days Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Incident_Report__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Part Incident Report</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Part_Incident_Report__c.Supplier_Response__c</field>
+                <operation>equals</operation>
+                <value>Accept</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Part_Incident_Report__c</referenceTo>
+        <relationshipLabel>Monetary Claims</relationshipLabel>
+        <relationshipName>Monetary_Claims</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Part_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( RecordType.Name , 
+&quot;Sorting Report&quot;, Sorting_Report__r.Part_Name__c , 
+&quot;Incident Claim&quot;, Part_Incident_Report__r.Part_Name__c , 
+&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Part Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( RecordType.Name , 
+&quot;Sorting Report&quot;, Sorting_Report__r.Part_Number__c , 
+&quot;Incident Claim&quot;,  Part_Incident_Report__r.Part_Number__c ,
+&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Part Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plant__c</fullName>
+        <externalId>false</externalId>
+        <label>Plant</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premium_Freight__c</fullName>
+        <externalId>false</externalId>
+        <label>Premium Freight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Quantity_Sorted__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity Sorted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Reopen_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Re-open Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requires_Sending__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Requires Sending</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reworked_Costs__c</fullName>
+        <externalId>false</externalId>
+        <label>Reworked Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Reworked_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Reworked Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Save_And_Send_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Save And Send Flag</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Send_Invoice_Credit_Memo_to_Customer__c</fullName>
+        <externalId>false</externalId>
+        <label>Send Invoice/Credit Memo to Customer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sorting_Costs__c</fullName>
+        <externalId>false</externalId>
+        <label>Sorting Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sorting_Report__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sorting Report</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Sorting_Report__c.Supplier_Response__c</field>
+                <operation>equals</operation>
+                <value>Accept, Partial Acceptance</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Sorting_Report__c</referenceTo>
+        <relationshipLabel>Monetary Claims</relationshipLabel>
+        <relationshipName>Monetary_Claims</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Supplier_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( RecordType.Name , 
+&quot;Sorting Report&quot;, Sorting_Report__r.Supplier_Code__c , 
+&quot;Incident Claim&quot;, Part_Incident_Report__r.Supplier_Code__c , 
+&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Supplier Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( RecordType.Name , 
+&quot;Sorting Report&quot;, Sorting_Report__r.Supplier_Name__c , 
+&quot;Incident Claim&quot;, Part_Incident_Report__r.Supplier_Name__c , 
+&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Supplier Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier_Response__c</fullName>
+        <externalId>false</externalId>
+        <label>Supplier Response</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Accept</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partial Acceptance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Total_Claim_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Sorting_Costs__c +  Total_Rework_Costs__c +  Total_No_Good_Material_Costs__c +  Total_Other_Costs__c + Premium_Freight__c +  Total_Wrong_Part_Costs__c +  Total_Mixed_Part_Costs__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Claim Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Mixed_Part_Costs__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( RecordType.Name &lt;&gt; &quot;Sorting Report&quot;,  Mixed_Part_Costs__c  , Sorting_Report__r.Total_Mixed_Part_Costs__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Mixed Part Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Mixed_Part__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( RecordType.Name &lt;&gt; &quot;Sorting Report&quot;, Mixed_Part__c  , Sorting_Report__r.Total_Mixed_Part__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Mixed Part</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_No_Good_Material_Costs__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( RecordType.Name &lt;&gt; &quot;Sorting Report&quot;,   No_Good_Material_Costs__c   , Sorting_Report__r.Total_No_Good_Material_Costs__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total No Good Material Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_No_Good__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( RecordType.Name &lt;&gt; &quot;Sorting Report&quot;,  No_Good_Quantity__c  , Sorting_Report__r.Total_No_Good__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total No Good</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Other_Costs__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Other Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Other</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Quantity_Parts__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Reworked__c +  Total_No_Good__c +  Total_Other__c +  Total_Mixed_Part__c +  Total_Wrong_Part__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Quantity Parts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Quantity_Sorted__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( RecordType.Name &lt;&gt; &quot;Sorting Report&quot;,  Quantity_Sorted__c , Sorting_Report__r.Total_Quantity_Sorted__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Quantity Sorted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Rework_Costs__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( RecordType.Name &lt;&gt; &quot;Sorting Report&quot;,  Reworked_Costs__c  , Sorting_Report__r.Total_Rework_Costs__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Rework Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Reworked__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( RecordType.Name &lt;&gt; &quot;Sorting Report&quot;,  Reworked_Quantity__c  , Sorting_Report__r.Total_Reworked__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Reworked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Sorting_Costs__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( RecordType.Name &lt;&gt; &quot;Sorting Report&quot;,  Sorting_Costs__c , Sorting_Report__r.Total_Sorting_Costs__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Sorting Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Supplier_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Amount_Accepted__c +  Amount_Rejected__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Supplier Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Wrong_Part_Costs__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( RecordType.Name &lt;&gt; &quot;Sorting Report&quot;,  Wrong_Part_Costs__c  , Sorting_Report__r.Total_Wrong_Part_Costs__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Wrong Part Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Wrong_Part__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( RecordType.Name &lt;&gt; &quot;Sorting Report&quot;,  Wrong_Part__c  , Sorting_Report__r.Total_Wrong_Part__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Wrong Part</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wrong_Part_Costs__c</fullName>
+        <externalId>false</externalId>
+        <label>Wrong Part Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Wrong_Part__c</fullName>
+        <externalId>false</externalId>
+        <label>Wrong Part</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Monetary Claim</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Monetary_Claim_Number__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Claim_Status__c</columns>
+        <columns>Supplier_Code__c</columns>
+        <columns>Supplier_Response__c</columns>
+        <columns>Send_Invoice_Credit_Memo_to_Customer__c</columns>
+        <columns>Current_Owner__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Closed</fullName>
+        <columns>NAME</columns>
+        <columns>Monetary_Claim_Number__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Claim_Status__c</columns>
+        <columns>Supplier_Code__c</columns>
+        <columns>Supplier_Response__c</columns>
+        <columns>Send_Invoice_Credit_Memo_to_Customer__c</columns>
+        <columns>Current_Owner__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Claim_Status__c</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </filters>
+        <label>Closed</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Needs_response</fullName>
+        <columns>NAME</columns>
+        <columns>Monetary_Claim_Number__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Claim_Status__c</columns>
+        <columns>Supplier_Code__c</columns>
+        <columns>Supplier_Response__c</columns>
+        <columns>Send_Invoice_Credit_Memo_to_Customer__c</columns>
+        <columns>Current_Owner__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Claim_Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <label>Needs response</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Open</fullName>
+        <columns>NAME</columns>
+        <columns>Monetary_Claim_Number__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Claim_Status__c</columns>
+        <columns>Supplier_Code__c</columns>
+        <columns>Supplier_Response__c</columns>
+        <columns>Send_Invoice_Credit_Memo_to_Customer__c</columns>
+        <columns>Current_Owner__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Claim_Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <label>Open</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Monetary Claim Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Monetary Claims</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Incident_Claim</fullName>
+        <active>true</active>
+        <label>Incident Claim</label>
+        <picklistValues>
+            <picklist>Claim_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Current_Owner__c</picklist>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EQA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplier</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Supplier_Response__c</picklist>
+            <values>
+                <fullName>Accept</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial Acceptance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Monetary_Claim</fullName>
+        <active>true</active>
+        <label>Monetary Claim</label>
+        <picklistValues>
+            <picklist>Claim_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Current_Owner__c</picklist>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EQA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplier</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Supplier_Response__c</picklist>
+            <values>
+                <fullName>Accept</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial Acceptance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sorting_Report</fullName>
+        <active>true</active>
+        <label>Sorting Report</label>
+        <picklistValues>
+            <picklist>Claim_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Current_Owner__c</picklist>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EQA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplier</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Supplier_Response__c</picklist>
+            <values>
+                <fullName>Accept</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial Acceptance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Monetary_Claim_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Part_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Part_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Supplier_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Supplier_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Supplier_Response__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Send_Invoice_Credit_Memo_to_Customer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Current_Owner__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Monetary_Claim_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Part_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Part_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Supplier_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Supplier_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Supplier_Response__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Send_Invoice_Credit_Memo_to_Customer__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Current_Owner__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Monetary_Claim_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Part_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Part_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Supplier_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Supplier_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Supplier_Response__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Send_Invoice_Credit_Memo_to_Customer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Current_Owner__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Check_owner_of_MC</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( 
+$Setup.EQA_Profiles__c.Validation_Rules__c , 
+$User.Id &lt;&gt; PRIORVALUE(OwnerId )
+)</errorConditionFormula>
+        <errorMessage>Only the owner can update the Monetary Claim.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Dates_Required_Before_Closing</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+  $Setup.EQA_Profiles__c.Validation_Rules_for_MC__c ,
+ ISPICKVAL(Claim_Status__c, &apos;Closed&apos;),
+OR(
+ ISBLANK(Intercompany_Approval_Generated_and_Sent__c), 
+ ISBLANK(Form_Approved_By_Country__c ),
+ ISBLANK(Form_Approved_by_NEC__c ),
+ ISBLANK(Form_Sent_For_Invoice_Credit_Memo__c), 
+ ISBLANK(Create_Debit_to_Supplier_Submit_to_AP__c), 
+ ISBLANK(Send_Invoice_Credit_Memo_to_Customer__c) 
+)
+)</errorConditionFormula>
+        <errorMessage>All Dates Required before Claim Status can be set to Closed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>If_Accepted_Nothing_in_Rejected_Amount</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL( Supplier_Response__c , &apos;Accept&apos;),
+OR(
+Amount_Rejected__c &lt;&gt; 0
+)
+)</errorConditionFormula>
+        <errorMessage>Amount rejected must be 0 or blank if Supplier Response is Accept.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>If_Rejected_Nothing_in_Accepted_Amount</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL( Supplier_Response__c , &apos;Reject&apos;),
+OR(
+Amount_Accepted__c &lt;&gt; 0
+)
+)</errorConditionFormula>
+        <errorMessage>Amount Accepted must be 0 or blank if Supplier Response is Reject.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Changes_After_Supplier_Accepts</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR(
+ ISPICKVAL( Supplier_Response__c , &apos;Accept&apos;),
+ ISPICKVAL( Supplier_Response__c , &apos;Partial Acceptance&apos;)
+),
+OR(
+ ISCHANGED(Total_Other__c),
+ ISCHANGED(Total_Other_Costs__c), 
+ ISCHANGED(Premium_Freight__c), 
+ ISCHANGED(Quantity_Sorted__c), 
+ ISCHANGED(Sorting_Costs__c), 
+ ISCHANGED(Reworked_Costs__c), 
+ ISCHANGED(Reworked_Quantity__c), 
+ ISCHANGED(No_Good_Material_Costs__c), 
+ ISCHANGED(No_Good_Quantity__c), 
+ ISCHANGED(Wrong_Part__c), 
+ ISCHANGED(Wrong_Part_Costs__c), 
+ ISCHANGED(Mixed_Part__c),
+ ISCHANGED(Mixed_Part_Costs__c)
+)
+)</errorConditionFormula>
+        <errorMessage>Quantities and Costs can&apos;t be changed if Supplier Response is Accept.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Account_Coding_and_Cost_Center</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( Supplier_Code__c  = &apos;2000100&apos;,
+$Profile.Id = &apos;00e18000000Ls4c&apos;, 
+OR( ISBLANK(Account_Coding__c ),
+ISBLANK( Cost_Center__c )
+)
+)</errorConditionFormula>
+        <errorMessage>If Supplier is NNA-SMYRNA/DECHERD/CANTON, Account Coding and Cost Center are required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Supplier_Response_Can_Not_Change</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+$Setup.EQA_Profiles__c.Validation_Rules__c , 
+ISCHANGED(Supplier_Response__c), 
+PRIORVALUE(Supplier_Response__c) &lt;&gt; &apos;&apos; 
+)</errorConditionFormula>
+        <errorMessage>Supplier Response can not change.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Validate_Total_Supplier_Amount</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Id = &apos;00e18000000Ls4c&apos;,
+Total_Supplier_Amount__c &lt;&gt;  Total_Claim_Amount__c
+)</errorConditionFormula>
+        <errorMessage>Total Supplier Amount must equal the Total Claim Amount.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Escalate</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Escalate</masterLabel>
+        <openType>noSidebar</openType>
+        <page>MCEscalate</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Transfer_to_Customer</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Transfer to Customer</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&apos;{!$Site.Prefix}/apex/EQATransfer?id={!Monetary_Claim__c.Id}&amp;owner=Customer&apos;, &apos;_self&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Transfer_to_Supplier</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Transfer to Supplier</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&apos;{!$Site.Prefix}/apex/EQATransfer?id={!Monetary_Claim__c.Id}&amp;owner=Supplier&apos;, &apos;_self&apos;);</url>
+    </webLinks>
+</CustomObject>

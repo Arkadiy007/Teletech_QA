@@ -1,0 +1,290 @@
+<apex:page doctype="html-5.0" controller="Maritz_custom_settings_Controller" tabStyle="Account">
+    <style>
+        .statusImage {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .popup {
+            z-index: 9998;
+            left: 50%;
+            padding: 10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup
+                displays in the center of the screen. First set the width. Then set
+                margin-left to negative half of what the width is. You can add
+                the height property for a fixed size pop up if you want. */
+            width: 400px;
+            margin-left: -200px;
+            top: 100px;
+        }
+
+        .popupBackground {
+            background-color: black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9997;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .popupHeader {
+            font-size: 18pt;
+            font-weight: lighter;
+            padding-bottom: 5pt;
+            text-align: center;
+        }
+
+        #blockmainanim {
+            background-color: rgba(0,0,0,0.2);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+        }
+
+        #blockmainimg {
+            top: 49%;
+            left: 45%;
+            position: fixed;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+        }
+
+        body.wait, body.wait * {
+            cursor: wait !important;
+        }
+    </style>
+
+    <apex:includescript id="jquery" value="{!URLFOR($Resource.Charts, 'jquery.min.js')}" />
+    <script type="text/javascript" language="javascript">
+          var j$ = jQuery.noConflict();
+
+          var busyCursorOn = function() {
+            j$('.button').attr("disabled", "disabled");
+            j$('body').addClass('wait');
+          };
+
+          var busyCursorOff = function() {
+            j$('.button').removeAttr('disabled');
+            j$('body').removeClass('wait');
+          };
+
+          function processingStatusOn() {
+            document.getElementById('blockmainanim').style.display="block";
+          }
+          function processingStatusOff() {
+            document.getElementById('blockmainanim').style.display="none";
+          }
+    </script>
+
+    <div id="blockmainanim" style="display:none">
+        <img id="blockmainimg" style="" src="/img/loading32.gif" width="25" height="25" />
+    </div>
+
+    <apex:actionstatus id="busyCursor" onstart="busyCursorOn()" onstop="busyCursorOff()" />
+    <apex:actionstatus id="processingStatus" onstart="processingStatusOn();" onstop="processingStatusOff();" />
+
+    <apex:tabpanel switchtype="client" selectedtab="BackfeedRT">        
+        <apex:tab id="BackfeedRT" name="BackfeedRT" label="Maritz Backfeed RT">
+            <apex:form >
+                <apex:pageblock title="Maritz Backfeed Record Types" id="BackfeedRTBlock">
+                    <apex:pagemessages />
+                    <apex:pageblocktable value="{!BackfeedRTRecords}" var="item">
+                        <apex:column >
+                            <apex:commandlink action="{!Del}" value="delete" rerender="BackfeedRTBlock" onclick="if(!confirm('Are you sure?')){return};" status="busyCursor">
+                                <apex:param name="bfrtCSId_toDel" value="{!item.id}" assignto="{!CSId_toDel}" />
+                                <apex:param name="bfrtCSName_toDel" value="{!item.name}" assignto="{!CSName_toDel}" />
+                                <apex:param name="csType2" value="BackfeedRT" assignto="{!csType}" />
+                            </apex:commandlink>
+                        </apex:column>
+                        <apex:column headervalue="Object Name">
+                            <apex:selectlist value="{!item.ObjectName}" size="1">
+                                <apex:selectoptions value="{!ObjectNameList}" />
+                                <apex:actionsupport event="onchange" rerender="recordTypes" />
+                            </apex:selectlist>
+                        </apex:column>
+                        <apex:column headervalue="Record Type Name">
+                            <apex:selectlist id="recordTypes" value="{!item.RecordTypeName}" size="1">
+                                <apex:selectoptions value="{!RecordTypeMap[item.ObjectName]}" />
+                            </apex:selectlist>
+                        </apex:column>
+                    </apex:pageblocktable>
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Add" action="{!AddBackfeedRT}" rerender="BackfeedRTBlock" status="busyCursor" />
+                        <apex:commandbutton value="Save" action="{!SaveBackfeedRT}" rerender="BackfeedRTBlock" status="busyCursor" />
+                        <apex:commandbutton value="Cancel" action="{!Cancel}" immediate="true" rerender="BackfeedRTBlock" status="busyCursor" />
+                    </apex:pageblockbuttons>
+                </apex:pageblock>
+            </apex:form>
+        </apex:tab>
+        <apex:tab id="BackfeedProfiles" name="BackfeedProfiles" label="Maritz Backfeed Profiles">
+            <apex:form >
+                <apex:pageblock title="Maritz Backfeed Profiles" id="BackfeedProfileBlock">
+                    <apex:pagemessages />
+                    <apex:pageblocktable value="{!BackfeedProfileRecords}" var="item">
+                        <apex:column >
+                            <apex:commandlink action="{!Del}" value="delete" rerender="BackfeedProfileBlock" onclick="if(!confirm('Are you sure?')){return};" status="busyCursor">
+                                <apex:param name="bfprCSId_toDel" value="{!item.id}" assignto="{!CSId_toDel}" />
+                                <apex:param name="bfprCSName_toDel" value="{!item.name}" assignto="{!CSName_toDel}" />
+                                <apex:param name="csType2" value="BackfeedProfiles" assignto="{!csType}" />
+                            </apex:commandlink>
+                        </apex:column>
+                        <apex:column headervalue="Profile Name">
+                            <apex:selectlist value="{!item.ProfileId}" size="1">
+                                <apex:selectoptions value="{!profilesByIdList}" />
+                            </apex:selectlist>
+                        </apex:column>
+                    </apex:pageblocktable>
+                    <apex:pageblockbuttons >
+                        <apex:commandbutton value="Add" action="{!AddProfile}" rerender="BackfeedProfileBlock" status="busyCursor" />
+                        <apex:commandbutton value="Save" action="{!SaveProfile}" rerender="BackfeedProfileBlock" status="busyCursor" />
+                        <apex:commandbutton value="Cancel" action="{!Cancel}" immediate="true" rerender="BackfeedProfileBlock" status="busyCursor" />
+                    </apex:pageblockbuttons>
+                </apex:pageblock>
+            </apex:form>
+        </apex:tab>
+        <apex:tab id="BackfeedTrigger" name="BackfeedTrigger" label="Maritz Backfeed Trigger Enabled">
+            <apex:form >
+                <apex:pageblock title="Maritz Backfeed Trigger Enabled for:" id="TriggerBlock">
+                    <apex:pagemessages />
+                    <table>
+                        <tr>
+                            <td><apex:outputlabel value="Call " /></td>
+                            <td style="padding-left: 30px;"><apex:inputcheckbox label="Enable for Call" value="{!BackfeedTriggerRecords.EnabledForCall}" /></td>
+                        </tr>
+                        <tr>
+                            <td><apex:outputlabel value="Task " /></td>
+                            <td style="padding-left: 30px;"><apex:inputcheckbox label="Enable for Task" value="{!BackfeedTriggerRecords.EnabledForTask}" /></td>
+                        </tr>
+                        <tr>
+                            <td><apex:outputlabel value="Email " /></td>
+                            <td style="padding-left: 30px;"><apex:inputcheckbox label="Enable for Email" value="{!BackfeedTriggerRecords.EnabledForEmail}" /></td>
+                        </tr>
+                        <tr>
+                            <td><apex:outputlabel value="Chat " /></td>
+                            <td style="padding-left: 30px;"><apex:inputcheckbox label="Enable for Chat" value="{!BackfeedTriggerRecords.EnabledForChat}" /></td>
+                        </tr>
+                    </table>                    
+                    <apex:pageBlockButtons >                        
+                            <apex:commandbutton value="Save" action="{!SaveTrigger}" rerender="TriggerBlock" status="busyCursor"/>                        
+                    </apex:pageBlockButtons>                    
+                </apex:pageblock>
+            </apex:form>
+        </apex:tab>
+        <apex:tab id="Businessrules" name="Businessrules" label="Maritz Business Rules">
+            <apex:form >
+                <apex:pageblock title="Maritz Business Rules" id="BusinessRulesTable">
+                    <apex:pagemessages rendered="{!NOT(displayPopup)}" />
+                    <apex:pageblocksection title="Rule and Activity Type" id="filters">
+                        <apex:outputlabel value="Business rule"></apex:outputlabel>
+                        <apex:selectlist value="{!selectedBusinessRulesOptions}" size="1">
+                            <apex:actionsupport event="onchange" action="{!ruleChanged}" rerender="BusinessRulesTable" status="busyCursor" />
+                            <apex:selectoptions value="{!businessRulesOptions}" />
+                        </apex:selectlist>
+                        <apex:outputlabel value="Activity Type"></apex:outputlabel>
+                        <apex:selectlist value="{!selectedBusinessRulesActitivyOptions}" size="1">
+                            <apex:actionsupport event="onchange" action="{!ruleChanged}" rerender="BusinessRulesTable" status="busyCursor" />
+                            <apex:selectoptions value="{!businessRulesActitivyOptions}" />
+                        </apex:selectlist>
+                    </apex:pageblocksection>
+                        
+                        <apex:repeat value="{!DisplayedMaritzBusinessRules}" var="ruleName">
+                            <apex:pageblocksection >
+                                <apex:facet name="header">
+                                    <apex:outputpanel >
+                                        {!ruleName}&nbsp;
+                                        <apex:commandlink action="{!DeleteBrGroup}" value="Delete" onclick="if(!confirm('Are you sure?')){return};" rerender="BusinessRulesTable" status="busyCursor">
+                                            <apex:param name="BusinessGroup" value="{!ruleName}" assignto="{!businesRuleName}" />
+                                        </apex:commandlink>
+                                    </apex:outputpanel>
+                                </apex:facet> 
+                                <apex:variable value="{!0}" var="index">
+                                    <apex:variable value="{!DisplayedMaritzBusinessRules[ruleName]}" var="rulesList" />
+                                    <apex:pageblocktable value="{!rulesList}" var="item">
+                                        <apex:column >
+                                            <apex:commandlink action="{!Del}" value="delete" rerender="BusinessRulesTable" onclick="if(!confirm('Are you sure?')){return};" status="busyCursor">
+                                                <apex:param name="RulePosToDel" value="{!index}" assignto="{!DeleteRulePos}" />
+                                                <apex:param name="mbrCSId_toDel" value="{!item.id}" assignto="{!CSId_toDel}" />
+                                                <apex:param name="csType2" value="MaritzBusinessRule" assignto="{!csType}" />
+                                                <apex:param name="BusinessGroup" value="{!ruleName}" assignto="{!businesRuleName}" />
+                                            </apex:commandlink>
+                                            <apex:variable value="{!index + 1}" var="index" />
+                                        </apex:column>
+                                        <apex:column headervalue="Object">
+                                            <apex:selectlist value="{!item.ObjectName}" size="1">
+                                                <apex:actionsupport event="onchange" rerender="BusinessRulesTable" status="busyCursor" />
+                                                <apex:selectoptions value="{!objectsByIdList}" />
+                                            </apex:selectlist>
+                                        </apex:column>
+                                        <apex:column headervalue="Field">
+                                            <apex:selectlist value="{!item.FieldAPIName}" size="1" style="width:300px">
+                                                <apex:selectoptions value="{!fieldsByIdList[item.ObjectName]}" />
+                                            </apex:selectlist>
+                                        </apex:column>
+                                        <apex:column headervalue="Operator">
+                                            <apex:selectlist value="{!item.Operator}" size="1">
+                                                <apex:selectoptions value="{!operatorByIdList}" />
+                                            </apex:selectlist>
+                                        </apex:column>
+                                        <apex:column headervalue="Value">
+                                            <apex:inputtext value="{!item.FieldValue}" style="width:300px"></apex:inputtext>
+                                        </apex:column>
+                                        <apex:facet name="footer">
+                                            <apex:outputpanel layout="block" style="color: gray;font: normal 11px Arial,Helvetica,sans-serif;" rendered="{!rulesList.SIZE = 0}">
+                                                No records to display. "{!IF(ISBLANK(DisplayedMaritzBusinessRules[ruleName]), false, true)}"
+                                            </apex:outputpanel>
+                                        </apex:facet>
+                                    </apex:pageblocktable>
+                                </apex:variable>
+                            </apex:pageblocksection>
+                            <apex:commandlink action="{!AddBusinessRule}" value="Add record" rerender="BusinessRulesTable" status="busyCursor" >
+                                <apex:param name="BusinessGroup" value="{!ruleName}" assignto="{!businesRuleName}" />
+                            </apex:commandlink>
+                        </apex:repeat>
+                        <apex:pageblockbuttons >
+                            <apex:commandbutton value="Add Business Rule" action="{!ShowPopup}" rerender="tstpopup" status="busyCursor" />
+                            <apex:commandbutton value="Add Business Rule Group" action="{!AddBusinesGroup}" rerender="BusinessRulesTable" status="busyCursor"/>
+                            <apex:commandbutton value="Save" action="{!SaveMaritzBusinessRule}" rerender="BusinessRulesTable" status="busyCursor"/>
+                            <apex:commandbutton value="Cancel" action="{!Cancel}" immediate="true" rerender="BusinessRulesTable" status="busyCursor"/>
+                        </apex:pageblockbuttons>
+</apex:pageblock>
+            </apex:form>
+        </apex:tab>
+    </apex:tabpanel>
+
+    <!--New User Popup-->
+    <apex:outputpanel id="tstpopup">
+        <apex:outputpanel styleclass="popupBackground" layout="block" rendered="{!displayPopup}" />
+        <apex:outputpanel styleclass="mappings popup" layout="block" rendered="{!displayPopup}">
+            <apex:form >
+                <apex:pageblock >
+                    <div class="popupHeader">Create new group name</div>
+                    <apex:pageblockbuttons location="bottom">
+                        <apex:commandbutton action="{!AddBusinessGroupName}" status="processingStatus" value="Add" rerender="BusinessRulesTable, tstpopup" />
+                        <apex:commandbutton action="{!ClosePopup}" status="processingStatus" value="Close" rerender="tstpopup" immediate="true" />
+                    </apex:pageblockbuttons>
+                    <apex:outputpanel layout="block" styleclass="objMapping">
+                        <apex:pagemessages id="errorMsgs" escape="false" />
+                        <apex:pageblock >
+                            <apex:pageblocksection >
+                                <apex:outputlabel value="Business rule name" />
+                                <apex:inputtext value="{!BusinessRuleName}" />
+                            </apex:pageblocksection>
+                        </apex:pageblock>
+                    </apex:outputpanel>
+                </apex:pageblock>
+            </apex:form>
+        </apex:outputpanel>
+    </apex:outputpanel>
+</apex:page>

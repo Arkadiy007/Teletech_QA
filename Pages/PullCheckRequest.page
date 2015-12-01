@@ -1,0 +1,79 @@
+<apex:page standardController="Check_Request__c" extensions="PullCheckRequestExtensions">
+ <apex:form >
+     <apex:pageblock id="mainblock">
+      <apex:pageMessages id="pgMsg" />
+         <apex:pageBlockSection columns="1" id="mainPBS" rendered="{!!hasError}">
+             <apex:pageblockSection >                 
+                <apex:inputField id="PCReasonId" value="{!chk.PC_Reason__c}" required="true"/>
+             </apex:pageblockSection>
+             
+             <apex:pageBlockSection id="mainPanel" columns="2">
+                 <apex:pageBlockSection title="Check Request Address" columns="1" id="chkAddpbs">
+                      <apex:pageblockSectionItem >
+                         <apex:outputLabel id="MailtoNamelbl" value="Mail To Name" for="mailToNameVal"></apex:outputLabel>
+                         <apex:outputText id="mailToNameVal" value="{!mailToName}"/>
+                      </apex:pageblockSectionItem>
+                      <apex:pageblockSectionItem >
+                         <apex:outputLabel id="MailtoName1lbl" value="Mail To Name1" for="mailToName1Val"></apex:outputLabel>
+                         <apex:outputText id="mailToName1Val" value="{!mailToName1}"/>
+                      </apex:pageblockSectionItem>
+                      <apex:pageblockSectionItem >
+                         <apex:outputLabel id="MailtoName2lbl" value="Mail To Name2" for="mailToName2Val"></apex:outputLabel>
+                         <apex:outputText id="mailToName2Val" value="{!mailToName2}"/>
+                      </apex:pageblockSectionItem>
+                      <apex:pageblockSectionItem >
+                         <apex:outputLabel id="MailtoAddresslbl" value="Mail To Address" for="addressVal"></apex:outputLabel>
+                         <apex:outputField id="addressVal" value="{!chk.Address__c}"/>
+                      </apex:pageblockSectionItem>
+                       <apex:pageblockSectionItem >
+                         <apex:outputLabel id="MailtoCitylbl" value="Mail To City" for="cityVal"></apex:outputLabel>
+                         <apex:outputField id="cityVal" value="{!chk.City__c}"/>
+                      </apex:pageblockSectionItem>
+                       <apex:pageblockSectionItem >
+                         <apex:outputLabel id="Mailtotatelbl" value="Mail To State" for="stateVal"></apex:outputLabel>
+                         <apex:outputField id="stateVal" value="{!chk.State__c}"/>
+                      </apex:pageblockSectionItem>
+                       <apex:pageblockSectionItem >
+                         <apex:outputLabel id="MailtoZiplbl" value="Mail To Zip" for="zipVal"></apex:outputLabel>
+                         <apex:outputField id="zipVal" value="{!chk.Zip__c}"/>
+                      </apex:pageblockSectionItem>
+                      <br/>  
+                      <apex:pageblockSectionItem >                      
+                         <apex:inputCheckbox id="existChk" value="{!useExistingAddressChk}" label="Use Existing Check Request Address">
+                             <apex:actionsupport id="existChkSupportId" event="onchange" action="{!evaluatePCFields}" rerender="mainPBS, pgMsg" status="counterStatus"/> 
+                         </apex:inputCheckbox>
+                         <apex:outputLabel id="useExistChklbl" value="Use Existing Check Request Address" for="existChk"></apex:outputLabel>
+                      </apex:pageblockSectionItem>               
+                 </apex:pageBlockSection>
+                 <apex:pageBlockSection title="Pull Check Address" columns="1" id="PCpbs">                  
+                         <apex:inputField id="pcmailToNameVal" value="{!tempChk.PC_Mail_To_Name__c}"/>
+                         <apex:inputField id="pcmailToName1Val" value="{!tempChk.PC_Mail_To_Name1__c}"/>
+                         <apex:inputField id="pcmailToName2Val" value="{!tempChk.PC_Mail_To_Name_2__c}"/>
+                         <apex:inputField id="pcmailToAddressVal" value="{!tempChk.PC_Mail_To_Address__c}"/>
+                         <apex:inputField id="pcmailToCityVal" value="{!tempChk.PC_Mail_To_City__c}"/>
+                         <apex:inputField id="pcmailToStateVal" value="{!tempChk.PC_Mail_To_State__c}"/>
+                         <apex:inputField id="pcmailToCountryVal" value="{!tempChk.PC_Mail_To_Country__c}"/>
+                         <apex:inputField id="pcmailToZipVal" value="{!tempChk.PC_Mail_To_Zip__c}"/>  
+                         <apex:inputField id="pcPhoneNumber" value="{!tempChk.PC_Phone_Number__c}"/>                 
+                 </apex:pageBlockSection>
+             </apex:pageBlockSection>
+         </apex:pageBlockSection>
+         <apex:pageBlockButtons location="bottom">
+             <apex:commandButton id="saveId" value="Save" action="{!save}" rendered="{!!hasError}"/>
+             <apex:commandButton id="cancelId" value="Cancel" action="{!cancel}"/>
+         </apex:pageBlockButtons>
+     </apex:pageblock>
+      <apex:actionStatus id="counterStatus">                   
+      <apex:facet name="start">
+          <div class="waitingSearchDiv waitingSearchDivOpacity" style="width: 100%; height: 100%; display: block;opacity: 0.60;"/>
+          <div id="loading_image" class="waitingSearchDiv" style="width: 100%; height: 100%; display: block;">
+          <div class="waitingHolder" style="top: 85px; width: 20px;background:#fff;">
+              <img class="waitingImage" src="/img/loading.gif" style="background:#fff;"/>
+              <span class="waitingDescription">Loading...</span>
+          </div>
+          </div>
+      </apex:facet>
+      <apex:facet name="stop"/>
+    </apex:actionStatus>
+ </apex:form>
+</apex:page>

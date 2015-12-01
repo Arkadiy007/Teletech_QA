@@ -1,0 +1,50 @@
+<apex:page controller="CaseCommentsExportController" tabStyle="Case">
+  <apex:form >    
+     <apex:pageBlock id="mainblock">
+     <apex:pageMessages ></apex:pageMessages>
+      <apex:inputCheckbox value="{!verbiageSearch}" label="Verbiage Search">
+          <apex:actionSupport action="{!checkCommentsVerbiage}" event="onclick" reRender="mainblock" status="counterStatus"/>
+      </apex:inputCheckbox>
+         <apex:outputLabel value="Comments Verbiage Search"></apex:outputLabel> <br/><br/>
+               
+         <apex:pageblockSection title="Search Case Numbers" rendered="{!!verbiageSearch}">             
+             <apex:inputTextarea cols="120" rows="10" label="Case Numbers (comma seperated) :" value="{!caseNumbers}"/>
+         </apex:pageblockSection>
+         <apex:pageblockSection title="Comments Verbiage Search" rendered="{!verbiageSearch}">
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel id="fDate" value="From Date"></apex:outputLabel>
+                 <apex:inputField id="fDateId" value="{!fromCont.BirthDate}"/>
+             </apex:pageBlockSectionItem>  
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel id="toDate" value="To Date"></apex:outputLabel>
+                 <apex:inputField id="toDateId" value="{!toCont.BirthDate}"/>
+             </apex:pageBlockSectionItem>  
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel id="RecordtypeId" value="Record Type"></apex:outputLabel>
+                 <apex:selectList id="sel1" value="{!selectedVal}" multiselect="true" size="5">
+                    <apex:selectOptions value="{!recordTypevalues}" />
+                 </apex:selectList>
+             </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel id="comm" value="Comment Verbiage"></apex:outputLabel>
+                 <apex:inputText id="commId" value="{!commVerbage}"/>
+             </apex:pageBlockSectionItem>
+         </apex:pageblockSection>
+         <apex:pageblockButtons location="bottom">
+             <apex:commandButton id="SearchId" value="Submit" action="{!submitJob}" status="counterStatus" reRender="mainblock"/>
+         </apex:pageblockButtons>
+     </apex:pageBlock>
+      <apex:actionStatus id="counterStatus">                   
+          <apex:facet name="start">
+              <div class="waitingSearchDiv waitingSearchDivOpacity" style="width: 100%; height: 100%; display: block;opacity: 0.60;"/>
+              <div id="loading_image" class="waitingSearchDiv" style="width: 100%; height: 100%; display: block;">
+              <div class="waitingHolder" style="top: 85px; width: 20px;background:#fff;">
+                  <img class="waitingImage" src="/img/loading.gif" style="background:#fff;"/>
+                  <span class="waitingDescription">Loading...</span>
+              </div>
+              </div>
+          </apex:facet>
+      <apex:facet name="stop"/>
+    </apex:actionStatus>      
+ </apex:form>
+</apex:page>

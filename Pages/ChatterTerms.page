@@ -1,0 +1,114 @@
+<apex:page controller="Controller_ChatterTerms" title="Nissan User Guidelines for Salesforce.com Chatter">
+    <apex:form >
+        <apex:pageBlock id="textBlock">
+<div style="background-color: white; padding: 20px 20px 20px 20px;">
+            <apex:image id="logo" value="{!$Resource.NissanWordmark_ChatterTerms}"/>
+<h2><center>Nissan User Guidelines for Salesforce.com Chatter</center></h2>
+<br/>
+As a licensed user of Salesforce.com, you will have access to the internal collaboration tool, Chatter, effective December 17, 2012.  The tool is designed to improve cross functional collaboration and allows us to engage with subject matter experts throughout our organization.
+<br/><br/>
+Belonging to the Chatter community carries important responsibilities for the type and content of your posts.  Each user is responsible for his/her own content and conduct within this electronic community. 
+<br/><br/>
+Each user must sign and return these guidelines to their manager in order to use Chatter.
+<br/><br/>
+
+<ol style="font-weight: bold;">
+  <li>Follow Nissan Policies<span style="font-weight: normal;"> – Chatter activity is governed by existing Nissan policies, including but not limited to the Global Code of Conduct and Ethics, Non-Discrimination Policies, Confidentiality policies, Electronic Communication policies, Security policies and Records Retention policies. The internal and informal nature of the Chatter community does not lessen the need to follow established policies.</span></li>
+  <li>Business Use Only<span style="font-weight: normal;"> – Chatter is provided and may be used only for Nissan business purposes.  All Chatter content is the property of Nissan and Nissan reserves the right to edit or remove all content.</span></li>
+  <li>Keep it Confidential<span style="font-weight: normal;"> - Protect the privacy of Nissan, our employees and our customers.  These are guidelines and not meant to include every instance of confidentiality:</span>
+    <ol type="a">
+      <li><span style="font-weight: normal;">Never discuss or disclose Nissan or customer confidential or personal information.</span></li>
+      <li><span style="font-weight: normal;">Restrict any customer-related information to be in generic or general terms. Do not mention specific customers by name, VIN, or other identifying characteristics.</span></li>
+      <li><span style="font-weight: normal;">Do not attach confidential or restricted documents to your post and do not cut/paste confidential or restricted information out of Chatter.</span></li>
+      <li><span style="font-weight: normal;">If you have any question about the confidentiality – DO NOT POST.</span></li>
+    </ol>
+  </li>
+  <li>Follow Nissan’s legal requirements<span style="font-weight: normal;"> – Chatter information may be subject to production in litigation. Care should therefore be taken to ensure that posts not only comply with these guidelines, but also are accurate, complete, and do not contain statements, speculation, or unnecessary commentary that could cause potential prejudice or legal risk to Nissan. Further, Chatter should not be used for customer-specific or issue-specific discussion.  Such issues are best handled through existing means and processes. In this regard:</span>
+
+    <ol type="a">
+      <li><span style="font-weight: normal;">Do not discuss or comment on potential safety, TREAD, or vehicle repair issues in Chatter, even in general terms.  This includes inquiries as to whether other Chatter users have recent experience with a particular vehicle issue, or commenting on the frequency of a particular complaint or issue.</span></li>
+      <li><span style="font-weight: normal;">Questions, comments, discussion of pending or threatened litigation or the specifics relating to a particular dispute should never to be discussed in Chatter.</span></li>
+    </ol>
+  </li>
+  <li>Keep it Professional<span style="font-weight: normal;"> - Nissan’s values demand that workplace communication - whether by Chatter email or in person - be respectful, accurate, and professional.  Do not antagonize, make jokes, use “inside” or improper language or embarrass someone. </span></li>
+  <li>Add Value<span style="font-weight: normal;"> – Chatter has a distinct use – adding value and enriching dialogue within the business.  Do not post simply to post. </span></li>
+  <li>Balance<span style="font-weight: normal;"> – Chatter can be a tool to enhance your job, but should not become your job.  Do not allow Chatter to become a competing priority and/or distraction. </span></li>
+  <li>Don’t Handle/Discuss HR Matters<span style="font-weight: normal;"> – Chatter is not the proper forum for any discussion of personnel, HR matters.  Do not discuss your employees or co-workers, their performance or any other related matters.</span></li>
+  <li>Know your audience<span style="font-weight: normal;"> - Chatter is made up of both public and private groups.</span>
+    <ol type="a">
+      <li><span style="font-weight: normal;">Any Nissan Chatter user can see the content of a public group.  Only members of private groups see the postings to the private group. </span></li>
+      <li><span style="font-weight: normal;">Even in a private group it may not be appropriate for all group members to have access to certain confidential information. Understand the groups to which you belong and the groups to which you are posting.</span></li>
+      <li><span style="font-weight: normal;">Users shall not create groups – only administrators can.</span></li>
+    </ol>
+  </li>
+   <li>Keep it Virus Free<span style="font-weight: normal;"> – Do not post an attachment unless it has been checked for viruses.  Generally – post only from a computer or device connected to the Nissan or Teletech network.</span></li>
+  <li>Report Abuse<span style="font-weight: normal;"> – Each user is responsible for monitoring content.  If you see posts that you believe are improper or violate Nissan’s policies or customer confidentiality please report immediately to your manager or team lead.</span></li>
+</ol>
+<b>
+I understand and consent that Nissan reserves the right to monitor Chatter postings and investigate any potentially inappropriate use of Chatter and may edit or remove any content that does not comply with these guidelines.  Users who fail to follow the Guidelines may be removed from Chatter and subject to disciplinary action, up to and including termination for violation of Nissan policies.
+<br/><br/>
+These Guidelines are intended to comply with applicable laws and regulations in all locations where Nissan does business.  In the event of a conflict between a provision of the Guidelines and applicable law in your area, applicable law applies.
+<br/><br/>
+I understand and accept the User Guidelines.
+</b>
+<br/><br/>
+<apex:commandButton action="{!acceptTerms}" value="Accept User Guidelines" id="acceptTermsButton" status="closer" rerender="buttons"/>
+<apex:actionStatus startText="(Saving...)" stopText="" onStop="window.close();" id="closer"/>
+<br/><br/>
+<h2><div style="text-align:center;">EXAMPLE FEED POSTS</div></h2>
+<br/>
+<span style="font-weight:bold; text-decoration:underline;">Good Contribution:</span>
+<br/><br/>
+<ul style="font-weight: bold; margin:0; padding:0;">
+  <li>“What have you done this week to improve customer satisfaction? Any good tips or tricks that customer seem to respond positively to?”
+    <ul style="font-weight:normal;">
+      <li>Motivating/challenging team communication.</li>
+    </ul>
+  </li>
+  <li>“Are paint codes found in the Product Guides ok to share with customers of is that restricted information?”
+    <ul style="font-weight:normal;">
+      <li>Reaching out for expertise and information.</li>
+    </ul>
+  </li>
+  <li>“Has everyone seen the new Knowledge eLearning module on Virtual Academy? It has some best practices in there for searching quickly that really helped me. ”
+    <ul style="font-weight:normal;">
+      <li>Providing useful information for other customer-facing agents.</li>
+    </ul>
+  </li>
+</ul>
+<br/>
+<span style="font-weight:bold; text-decoration:underline;">Off Topic Contribution:</span>
+<br/><br/>
+<ul style="font-weight: bold; margin:0; padding:0;">
+  <li>“Keep Jane in your prayers – she was recently diagnosed with breast cancer.”  
+    <ul style="font-weight:normal;">
+      <li>Lovely sentiment but sharing confidential medical information may violate the law.</li>
+    </ul>
+  </li>
+  <li>“Dealer ABC is going out of business and customer ABC wants to know if her service contract will change as a result.”
+    <ul style="font-weight:normal;">
+      <li>Valid question but is not appropriate for Chatter – keep it generic without mentioning specific dealer or customer names.</li>
+    </ul>
+  </li>
+  <li>“There’s an article published in the XYZ publication with a quote from an executive.  I can’t believe that’s really Nissan’s position on the topic.”
+    <ul style="font-weight:normal;">
+      <li>Reporting on business information but expresses opinion that is negative and embarrassing.</li>
+    </ul>
+  </li>
+</ul>
+<br/><br/>
+<h2><div style="text-align:center;">EXAMPLE FILE/DOCUMENT POSTS</div></h2>
+<br/>
+<span style="font-weight:bold; text-decoration:underline;">Good File Contribution on Chatter:</span>
+<ul style="margin:0; padding:0;">
+  <li>News article link</li>
+  <li>Industry or trend report </li>
+  <li>Internal process or template</li>
+  <li>Status report requiring comments/input</li>
+  <li>Sales collateral or case study</li>
+  <li>Competitive intelligence</li>
+</ul>
+</div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

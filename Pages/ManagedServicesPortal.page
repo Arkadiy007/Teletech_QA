@@ -1,0 +1,5 @@
+<apex:page >
+<script lang="JavaScript">
+openPopupFocus('/sserv/login.jsp?orgId=00Df0000003cEO6', 'ManagedServicesPortal', 850, 600, 'width=850,height=600,resizable=yes,toolbar=no,status=yes,scrollbars=yes,menubar=no,directories=no,location=no,dependant=no', false, false);
+</script>
+</apex:page>

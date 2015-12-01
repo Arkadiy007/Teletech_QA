@@ -1,0 +1,408 @@
+<apex:page docType="html-5.0" controller="LiveAgent_Direct_Complete" showHeader="false"
+    sidebar="false" title="Infiniti Chat" Id="thePage">
+    
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+
+     <script type="text/javascript">
+                     var loaded=false;
+        var bypass=false;
+        var lastResize;
+        var timer = null;
+        var counter = 0;
+        var flag = false;
+        var widthDiff =0;
+        var heightDiff=0;
+        
+        document.onreadystatechange = function(e)
+        {
+            if (document.readyState === 'interactive')
+            {
+                initResize();
+            }
+        };
+        
+        function initResize() {
+            if (window.outerWidth==0 || window.outerHeight==0)
+                setTimeout(initResize,50);
+            else {
+                loaded=true;
+                bypass=true;                
+                widthDiff = eval('window.outerWidth - window.innerWidth');
+                heightDiff = eval('window.outerHeight - window.innerHeight');
+                resize(500,516);
+            }
+        }
+
+
+        window.onresize = function()
+        {
+            if (!loaded)
+                return;
+
+                if (flag) {
+                    flag = false; return; }
+
+                if (timer==null)
+                {
+                    flag = false;
+                    counter=0;
+                    if (bypass) 
+                    {
+                        bypass=false;
+                        delayResize();
+                    } else {
+                        timer = setTimeout(function(){delayResize();}, 200);
+                    }
+                    
+                } else {
+                    counter++;
+                }
+        };   
+
+        function delayResize() {
+            timer = null;
+            if (counter==0) {
+                flag=true;
+                if (!resize(500,516))
+                    flag = false;
+            } else {
+                    flag = false;
+                    counter=0;
+                    timer = setTimeout(function(){delayResize();}, 200);
+            }
+        }
+
+        function resize(width, height) {
+            var innerWidth = document.documentElement.clientWidth || window.innerWidth || document.body.clientWidth;
+            var innerHeight = document.documentElement.clientHeight || window.innerHeight || document.body.clientHeight;
+            var targetWidth = width;
+            var targetHeight = height;
+            var heightBy = targetHeight-innerHeight;
+            var widthBy = targetWidth-innerWidth;
+
+            if (widthBy == 0 && heightBy==0)
+            {
+                return false;
+            }
+            else
+            {
+                if (window.outerWidth==innerWidth)
+                {
+                    widthBy+=widthDiff;
+                    heightBy+=heightDiff-(window.outerHeight - window.innerHeight);
+                }
+                
+                window.resizeBy(widthBy, heightBy);
+                return true;
+            }
+        }
+    </script>
+
+    <apex:stylesheet value="{!URLFOR($Resource.NissanStyleUpdated, 'NewInfiniti_m.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.LiveAgent_PreChat_Style, 'NewInfiniti_Adaptive.css')}" />
+
+    <style>
+        .bPageBlock .labelCol, body .print .topics-label {
+            padding-right: 2px;
+        }
+
+        .radioButtonPositionDesktop {
+            left: 0px;
+        }
+
+        .selectRadio {
+            width: 320px;
+        }
+
+        .error_message {
+            top: 360px !important;
+        }
+
+        .selectRadio {
+            margin-left: -17px !important;
+        }
+
+        .radioButtonPositionDesktop {
+            padding-left: 0px !important;
+        }
+
+        .buttonPosition {
+            left: 320px;
+        }
+
+        .pleaseWaitPosition {
+            left: 320px;
+        }
+
+    </style>
+
+    <apex:form id="frmMain">
+        <apex:inputHidden id="parentSiteName" value="{!parentSiteURL}" />
+        <apex:actionFunction name="doProcessParentSiteInformation" action="{!processParentSiteInformation}" rerender=""/>
+        <script>
+               window.onload=function()
+               { 
+                 try {  
+                     var parentSite =  window.opener;
+                     var parentSiteName = document.getElementById('thePage:frmMain:parentSiteName');
+
+                     parentSiteName.value = parentSite.location.href;
+                 } catch (e) {
+                 }
+                 doProcessParentSiteInformation();
+               };
+        </script>
+        <apex:pageMessages escape="false" />
+        <div class="livechat_header"></div>
+
+        <div class="livechat_bg" style="height: 418px;">
+            <apex:pageblock >
+
+                <div class="inputAreaContainer" style="height: 375px; padding-top: 15px;">
+                    <div style="padding-left: 120px;" class="livechat_txt">
+                        *required</div>
+
+                    <div class="inputAreaDesktop" style="padding-top: 5px; padding-left: 10px; width: 470px;">
+                        <apex:pageblockSection collapsible="false" columns="1">
+                            <apex:pageblockSectionItem labelStyle="text-align:left;">
+                                <apex:outputLabel value="First Name *" style="white-space: nowrap;"/>
+                                <apex:input type="text" id="inputTextField" value="{!firstName}"
+                                    style=" background-color:#E2E2E2; border: 0px solid; font-size:14px; height:25px;" 
+                                    html-placeholder="First Name"/>
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem labelStyle="text-align:left;">
+                                <apex:outputLabel value="Last Name" />
+                                <apex:input type="text" id="inputTextField" value="{!lastName}" 
+                                    style=" background-color:#E2E2E2; border: 0px solid; font-size:14px; height:25px;" 
+                                    html-placeholder="Last Name"/>
+                            </apex:pageblockSectionItem>
+                            <apex:pageblockSectionItem labelStyle="text-align:left;">
+                                <apex:outputLabel value="ZIP Code" />
+                                <apex:input type="text" id="inputTextField" value="{!zipCode}" 
+                                    style=" background-color:#E2E2E2; border: 0px solid; font-size:14px; height:25px;" 
+                                    html-placeholder="12345"/>
+                            </apex:pageblockSectionItem>
+                        </apex:pageblockSection>
+
+                    </div>
+
+                    <div class="radioButtonPositionDesktop">
+                        <apex:pageblockSection >
+                            <apex:selectRadio styleClass="selectRadio" value="{!selectedDepartment}"
+                                layout="pageDirection" >
+                                <apex:selectoption itemvalue="{!$Label.LiveAgent_NewInfiniti_m_RadioButton1_Value}"
+                                                   itemlabel="{!$Label.LiveAgent_NewInfiniti_m_RadioButton1_Label}"
+                                                   itemescaped="false" />
+                                <apex:selectOption itemValue="InfinitiConnection"
+                                    itemLabel="Infiniti Connection or Infiniti InTouch<br/><span style='font-size:10px; padding-left:25px;'>Mon-Sat  7:00am-11:00pm CT<br/></span>"
+                                    itemEscaped="false" />
+                                <apex:selectOption itemValue="InfinitiCA"
+                                    itemLabel="My Current Infiniti Vehicle<br/><span style='font-size:10px; padding-left:25px;'>Mon-Sat 7:00am-7:00pm CT<br/></span>"
+                                    itemEscaped="false" />
+                                <apex:selectOption itemValue="{!$Label.LiveAgent_NewInfiniti_RadioButton4_Value}"
+                                    itemLabel="{!$Label.LiveAgent_NewInfiniti_RadioButton4_Label}"
+                                    itemEscaped="false" />
+                            </apex:selectRadio>
+                        </apex:pageblockSection>
+                    </div>
+
+                    <apex:outputPanel id="opErrorMessage" styleclass="livechat_txt error_message"
+                        style="position: absolute; top: 395px; left: 280px;">
+                        <apex:outputLabel value="{!errorMessage}"
+                            rendered="{!showErrorMessage}" />
+                    </apex:outputPanel>
+
+                    <div class="pleaseWaitPosition">
+                        Please wait...</div>
+
+
+                    <div class="buttonPosition">
+                        <!-- Department 1 - chat button -->
+                        <div id="liveagent_button_online_{!buttonId}"
+                            style="display: none;">
+                            <apex:commandButton action="{!submitForm}"
+                                reRender="opErrorMessage,opSuccess" styleClass="btn-startchat">
+                                <apex:param value="button1" assignTo="{!chatButtonPressed}" />
+                            </apex:commandButton>
+                        </div>
+
+
+                        <!-- Department 2 - chat button -->
+                        <div id="divSkill2" style="display: none;">
+                            <div id="liveagent_button_online_{!infinitiButtonId2}"
+                                style="display: none;">
+                                <apex:commandButton action="{!submitForm}"
+                                    reRender="opErrorMessage,opSuccess" styleClass="btn-startchat">
+                                    <apex:param value="button2" assignTo="{!chatButtonPressed}" />
+                                </apex:commandButton>
+                            </div>
+
+                            <!-- Department 3 - chat button -->
+                            <div id="divSkill3" style="display: none;">
+                                <div id="liveagent_button_online_{!infinitiButtonId3}"
+                                    style="display: none;">
+                                    <apex:commandButton action="{!submitForm}"
+                                        reRender="opErrorMessage,opSuccess" styleClass="btn-startchat">
+                                        <apex:param value="button3" assignTo="{!chatButtonPressed}" />
+                                    </apex:commandButton>
+                                </div>
+
+                                <!-- Offline Div -->
+                                <div id="liveagent_button_offline_{!infinitiButtonId3}"
+                                    style="display: none;">
+                                    <apex:commandButton action="{!showClosedMessage}"
+                                        reRender="opErrorMessage,opSuccess" styleClass="btn-startchat">
+                                        <apex:param value="buttonError"
+                                            assignTo="{!chatButtonPressed}" />
+                                    </apex:commandButton>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="livechat_footer_txt_Table" width="480px" align="left">
+                    <tr>
+                        <td class="livechat_footer_txt" valign="top"
+                            style="padding-left: 5px;">If you have a concern or issue with your Infiniti vehicle that you would like us to address, 
+                            we want to help, but we cannot help you from this forum. 
+                            Please contact us at (800) 662-6200 Mon-Fri 7am - 7pm CT or 
+                            <a href="http://www.infinitiusa.com/iapps/contactus" target="_blank">
+                                visit us here
+                            </a>.
+                            <!-- <apex:outputText escape="false" value="{!bottomMessage}" />  -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="livechat_footer_txt livechat_footer_txt_policy" valign="top" align="right"
+                            style="padding-left: 10px;">
+                            <a href="http://www.Infinitiusa.com/global/privacy.html" target="_blank">Privacy Policy</a>
+                        </td>
+                    </tr>
+                </table>
+
+            </apex:pageblock>
+        </div>
+        
+        <apex:outputPanel id="opSuccess">
+            <script>
+                if ({!isSuccess}) {
+                    switch('{!chatButtonPressed}') {
+                        case 'button1':
+                            liveagent.startChatWithWindow('{!buttonId}', window.name);
+                            break;
+                        case 'button2':
+                            liveagent.startChatWithWindow('{!infinitiButtonId2}', window.name);
+                            break;
+                        case 'button3':
+                            liveagent.startChatWithWindow('{!infinitiButtonId3}', window.name);
+                            break;
+                        case '{!$Label.LiveAgent_NewInfiniti_RadioButton4_Value}':
+                            var liveAgentLink = getSiteURL();
+                            document.location.href = liveAgentLink + "livechat/LiveAgent_NewInfiniti_IFS" + "?routingGroup=" + "{!$Label.LiveAgent_NewInfiniti_RadioButton4_Value}";
+                            break;
+                    }
+                }
+
+                function getSiteURL() {
+                    var url = "{!$Label.LiveAgent_SiteURL}";
+                    if (!strEndsWith(url,'/')) {
+                        url = url +'/';
+                    }
+                    return url;
+                } 
+                
+                function strEndsWith(str, suffix) {
+                    return str.match(suffix+"$")==suffix;
+                }
+            </script>
+        </apex:outputPanel>
+        </apex:form>
+            <!-- Operation Hours Message -->
+            <div id="divOperationHours" style="display: none;">
+                <div class="divOperationHoursArea" 
+                    style="opacity: 0.8; filter: alpha(opacity = 80); background-color: #F0F0F0 !important; height: 100%; width: 100%; position: absolute; z-index: 5 !important; top: 0px; left: 0px;">
+                </div>
+                <div class="divOperationHoursText" 
+                    style="text-align: center !important; z-index: 6 !important; color: #09C; font: bold 14px Arial !important; width: 370px; background-color: #d7e3ec !important; position: absolute; top: 115px; left: 55px; padding: 15px 10px 5px 10px;">
+                    <apex:outputText escape="false" value="{!afterHoursMessage}" />
+                </div>
+            </div>
+
+            <!-- Agents "away" status but still in HOOP -->
+            <div id="divAwayMessage" style="display: none;">
+                <div
+                    style="opacity: 0.8; filter: alpha(opacity = 80); background-color: #F0F0F0 !important; height: 100%; width: 100%; position: absolute; z-index: 5 !important; top: 0px; left: 0px;">
+                </div>
+                <div
+                    style="text-align: center !important; z-index: 6 !important; color: #09C; font: bold 14px Arial !important; width: 70%; background-color: #404040 !important; position: absolute; top: 160px; left: 75px;">
+                    <apex:outputText escape="false" value="{!awayAgentsMessage}" />
+                </div>
+            </div>
+
+       <script type="text/javascript">
+                if (!{!isDepartmentOpen}) {
+                    var divOH = document.getElementById("divOperationHours");
+                    divOH.style.display = 'block';
+                }
+                
+                if ({!showAwayMessage}) {
+                    var divOH = document.getElementById("divAwayMessage");
+                    divOH.style.display = 'block';
+                }
+        </script>
+
+    <!-- Initialization Code -->
+    <script type="text/javascript">
+        if('{!buttonId}' != '') {
+            if (!window._laq) { window._laq = []; }
+            window._laq.push(function(){
+                liveagent.showWhenOnline('{!buttonId}', document.getElementById('liveagent_button_online_{!buttonId}'));
+                liveagent.showWhenOffline('{!buttonId}', document.getElementById('divSkill2'));
+            });
+        }
+        else {
+            document.getElementById('divSkill2').style.display = 'block';
+        }
+        
+        if('{!infinitiButtonId2}' != '') { 
+            if (!window._laq) { window._laq = []; }
+            window._laq.push(function(){
+                liveagent.showWhenOnline('{!infinitiButtonId2}', document.getElementById('liveagent_button_online_{!infinitiButtonId2}'));
+                liveagent.showWhenOffline('{!infinitiButtonId2}', document.getElementById('divSkill3'));
+            });
+        }
+        else {
+            document.getElementById('divSkill3').style.display = 'block';
+        }
+        
+        if('{!infinitiButtonId3}' != '') {
+            if (!window._laq) { window._laq = []; }
+            window._laq.push(function(){
+                liveagent.showWhenOnline('{!infinitiButtonId3}', document.getElementById('liveagent_button_online_{!infinitiButtonId3}'));
+                liveagent.showWhenOffline('{!infinitiButtonId3}', document.getElementById('liveagent_button_offline_{!infinitiButtonId3}'));
+            });
+        }
+        else {
+            document.getElementById('liveagent_button_offline_{!infinitiButtonId3}').style.display = 'block';
+        }
+    </script>
+
+    <script type='text/javascript'
+        src='https://c.la8cs.salesforceliveagent.com/content/g/deployment.js'>
+    </script>
+    <script type='text/javascript'>
+        window.name = 'LiveAgent';
+        document.title = 'Infiniti Chat';
+        
+        if ({!isSandbox}) {
+            liveagent.init('{!$Label.LiveAgentInit_Dev}', '{!deploymentId}', '{!$Organization.Id}'.substring(0,15));
+        } else {
+            liveagent.init('{!$Label.LiveAgentInit_Prod}', '{!deploymentId}', '{!$Organization.Id}'.substring(0,15));
+        }
+        
+        liveagent.addCustomDetail('CustomSessionId','{!customSessionId}').map('Pre_Chat_Data__c','Session_Id__c',true,true,false).saveToTranscript('Session_Id__c');
+    </script>
+</apex:page>

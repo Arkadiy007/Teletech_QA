@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Determine the user for who notification record should be attached when case owner is changes. Determine list of users last names who is ignored when case is updated.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Attach_To_New_Owner__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>If it is checked then new Notification will be attached to new owner of Case record if someone changes owner of the record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If it is checked then new Notification will be attached to new owner of Case record if someone changes owner of the record.</inlineHelpText>
+        <label>Attach To New Owner</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Attach_To_Previous_Owner__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>If it is checked then new Notification will be attached to previous owner of Case record if someone changes owner of the record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If it is checked then new Notification will be attached to previous owner of Case record if someone changes owner of the record.</inlineHelpText>
+        <label>Attach To Previous Owner</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Create_Notification_On_Update__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>It specifies Notification is created only when user replies on email or when Case record is updated too.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>It specifies Notification is created only when user replies on email or when Case record is updated too.</inlineHelpText>
+        <label>Create Notification On Update</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ignored_Users_2__c</fullName>
+        <defaultValue>&quot;&quot;</defaultValue>
+        <description>It&apos;s the second part of &apos;Ignored Users&apos; field to make possible adding more users in ignore list. Names of users should be listed separated by comma without spaces. The users will be ignored if they make case object update and notification will not be created.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Names of users should be listed separated by comma without spaces. The users will be ignored if they make case object update and notification will not be created.</inlineHelpText>
+        <label>Ignored Users 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ignored_Users__c</fullName>
+        <defaultValue>&quot;Managed Services,System Account NNAINT,NNAETL&quot;</defaultValue>
+        <description>Names of users should be listed separated by comma without spaces.  The users will be ignored if they make case object update and notification will not be created.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Names of users should be listed separated by comma without spaces.  The users will be ignored if they make case object update and notification will not be created.</inlineHelpText>
+        <label>Ignored Users</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notify_On_Any_Field_Update__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>If it&apos;s checked then all field changes will be tracked and Notification will be sent if any case field is updated. If it&apos;s unchecked then Notification will be created only if tracked fields are changed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If it&apos;s checked then all field changes will be tracked and Notification will be sent if any case field is updated. If it&apos;s unchecked then Notification will be created only if tracked fields are changed.</inlineHelpText>
+        <label>Notify On Any Field Update</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Field_History__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>If it&apos;s checked Notification will show the fields which were changed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If it&apos;s checked Notification will show the fields which were changed.</inlineHelpText>
+        <label>Show Field History</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Case Notification Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,48 @@
+<apex:page standardController="Li_Community_User__c" Extensions="LithiumUserDetialsExtCls">
+	<apex:outputPanel rendered="{!hasDetail}">
+	<div class="individualPalette">
+	<div class="Custom5Block">
+	<div class="bPageBlock apexdefaultpageblock" style="border: 0 none; background-color: #fff">
+	<div>
+	<div>
+	<div class="pbSubsection">
+	<table class="detailList" border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+			<tr>
+				<td class="labelCol  first  last "><span>
+				<table>
+					<tbody>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+				</span></td>
+				<td class="dataCol  first  last ">
+				<span id="j_id0:j_id1:j_id2:j_id3:j_id6">
+				<table>
+					<tbody>
+						<tr>
+							<td class="labelCol" style="color: #4A4A56; font-weight: bold; font-size: 11px;">User Avatar</td>
+							<td class="dataCol"><img src="{!iconUrl}" /></td>
+						</tr>
+						<tr>
+							<td colspan="2">&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+				</span>
+				</td>
+				<td class="dataCol empty">&nbsp;</td>
+				<td class="dataCol empty">&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</apex:outputPanel>
+</apex:page>

@@ -1,0 +1,28 @@
+<apex:page showheader="false" sidebar="false" standardstylesheets="false">
+    <table class="table">
+        <tr>
+            <th>PIR</th>
+            <th>PIR Number</th>
+            <th>Part Number</th>
+            <th>Part Name</th>
+            <th>Supplier Code</th>
+            <th>Supplier Name</th>
+        </tr>
+        <tr class="link" id="PIR-0000000011">
+            <td>PIR-0000000011</td>
+            <td>TESTDFD</td>
+            <td>870044AM1AEM</td>
+            <td>SEAT LEATHER, SEAT</td>
+            <td>2000222</td>
+            <td>EAGLE OTTAWA</td>
+        </tr>
+        <tr class="link" id="W-12-615-Z2">
+            <td>W-12-615-Z2</td>
+            <td>W-12-615-Z2</td>
+            <td>465013TD0AWW</td>
+            <td>COMPL-BRAKE,W/</td>
+            <td>1000301</td>
+            <td>YOROZU</td>
+        </tr>
+    </table>
+</apex:page>

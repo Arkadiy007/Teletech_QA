@@ -1,0 +1,265 @@
+<apex:page standardcontroller="Part_Incident_Report__c" extensions="PIREditController" sidebar="false">
+ 
+    <apex:sectionheader title="Part Incident Report Edit" subtitle="{!Part_Incident_Report__c.name}" />
+  
+  
+
+    <apex:form id="frm" rendered="{!!showRestrictedMessage}" >
+
+        <apex:pageblock title="Part Incident Report Edit" id="thePageBlock" mode="edit">
+            <apex:pagemessages />
+            <!-- Buttons-->
+            <apex:pageblockbuttons >
+                <apex:commandbutton value="Save" action="{!save}"/>
+                <apex:commandbutton value="Save And Send" action="{!saveAndSend}" />
+                <apex:commandbutton value="Save, Send & New" action="{!saveSendAndNew}"  rendered="{!!isGoldPartner}"/>
+                <apex:commandbutton value="Save And New" action="{!saveAndNew}" rendered="{!!isGoldPartner}" />
+                <apex:commandbutton value="Cancel" action="{!cancel}" />
+            </apex:pageblockbuttons>
+            <apex:actionregion >
+                    
+                <!-- Record information-->
+                <apex:pageblocksection columns="2">
+                    <apex:outputfield value="{!Part_Incident_Report__c.Name}" />
+                    <apex:outputfield value="{!Part_Incident_Report__c.OwnerId}" />
+                    <apex:outputText value="" label=""/>
+                    <apex:outputText value="" label=""/>
+
+                    <apex:inputfield value="{!Part_Incident_Report__c.Closed_Date__c}"/>
+                    <apex:outputText value="" label=""/>
+
+                    <apex:outputfield value="{!Part_Incident_Report__c.Days_Open__c}"/>
+                    <apex:outputText value="" label=""/>
+
+                    <apex:inputfield value="{!Part_Incident_Report__c.Open_Days_Flag__c}" />
+                </apex:pageblocksection>
+
+                 <!-- Customer information, that are shown to everyone-->
+                <apex:pageblocksection title="Customer Information" columns="2" rendered="{!!isCustomerLayout}">
+                    <apex:inputfield value="{!Part_Incident_Report__c.Customer__c}" required="true" rendered="{!isSupplierLayout}"/>
+                    
+                    <apex:pageBlockSectionItem rendered="{!OR(AND(ISBLANK(selectedPlant), isCustomerLayout), !isSupplierLayout)}">
+                        <apex:outputLabel value="Customer" />
+                            <apex:actionRegion >
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                <div class="requiredBlock"></div>
+                                <apex:selectList value="{!customerId}" size="1" label="Customer" required="true" >
+                                 <apex:selectOptions value="{!customersToSelect}"/>
+                                    <apex:actionSupport event="onchange" action="{!repopulatePlantsForCustomer}" reRender="plantPicklist"/>
+                                </apex:selectList> 
+                        </apex:outputPanel>
+                            </apex:actionRegion> 
+                    </apex:pageBlockSectionItem>
+  
+                    <apex:outputfield value="{!Part_Incident_Report__c.Customer__c}" rendered="{!isCustomerLayout}" />
+
+                    <apex:outputtext value="{!selectedPlant}" label="Plant" rendered="{!AND(!ISBLANK(selectedPlant), AND(!isSupplierLayout, isCustomerLayout))}"/>
+                       <apex:outputtext value="{!selectedPlant}" label="Plant" rendered="{!isSupplierLayout}"/>
+                 <!---->
+                    <apex:pageBlockSectionItem rendered="{!OR(AND(ISBLANK(selectedPlant), isCustomerLayout), AND(!isSupplierLayout, !isCustomerLayout))}">
+                        <apex:outputLabel value="Plant" />
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                <div class="requiredBlock"></div>
+                                <apex:actionRegion >
+                                <apex:selectList value="{!selectedPlant}" size="1" label="Plant" required="true" id="plantPicklist">
+                                  <apex:selectOptions value="{!plantsToSelect}"/>
+                                </apex:selectList> 
+                                </apex:actionRegion>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+
+
+                    <apex:inputfield value="{!Part_Incident_Report__c.PIR_Number__c}" required="true" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.PIR_Status__c}" required="true" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Part__c}" Id="Part" required="true" />
+                    
+                    <apex:outputfield value="{!Part_Incident_Report__c.Part_Name__c}" />
+                    <apex:outputfield value="{!Part_Incident_Report__c.Supplier_Code__c}" />
+                    <apex:inputtext value="{!Part_Incident_Report__c.RAN_Number__c}" maxlength="15" style="text-transform:uppercase;" onkeyup="var u=this.value.toUpperCase();if(this.value!=u){this.value=u;}" rendered="{!isCustomerLayout}"/>
+                    <apex:outputtext value="{!Part_Incident_Report__c.RAN_Number__c}" rendered="{!!isCustomerLayout}"/> 
+                   
+                    <apex:outputfield value="{!Part_Incident_Report__c.Supplier_Name__c}" />
+                    <apex:outputText value="" label=""/>
+                    
+                    <apex:inputfield value="{!Part_Incident_Report__c.Issue_Type__c}" required="true" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Model_Code__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Production_Line_Stoppage_Risk__c}" />
+                    <apex:outputText value="" label=""/>
+
+                    <apex:inputfield value="{!Part_Incident_Report__c.Sorting_Required__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Reason_for_Defect__c}" />
+          
+                    <apex:inputfield value="{!Part_Incident_Report__c.Quantity_Inspected__c}" required="true"/>
+                    <apex:inputfield value="{!Part_Incident_Report__c.Frequency_of_Issue__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Quantity_Reworked__c}" required="true"/>
+                    <apex:inputfield value="{!Part_Incident_Report__c.Quantity_No_Good__c}" required="true"/>
+                    <apex:inputfield value="{!Part_Incident_Report__c.Rework_Time__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Average_Sort_Time_Per_Part__c}" />         
+                    <apex:inputfield value="{!Part_Incident_Report__c.Carrier__c}" />
+
+                    <apex:inputfield value="{!Part_Incident_Report__c.Tracking_Number__c}" />
+                </apex:pageblocksection>
+
+                
+                 <!-- Customer information, that are shown to everyone-->
+                <apex:pageblocksection title="Customer Information" columns="2"  rendered="{!AND(isCustomerLayout, !Part_Incident_Report__c.Lock_Fields__c)}">
+                    <apex:inputfield value="{!Part_Incident_Report__c.Customer__c}" required="true" rendered="{!AND(!isCustomerLayout, isGoldPartner)}" />
+     
+                    <apex:outputfield value="{!Part_Incident_Report__c.Customer__c}" rendered="{!isCustomerLayout}" />
+
+                    <apex:outputtext value="{!selectedPlant}" label="Plant" rendered="{!!ISBLANK(selectedPlant)}"/>
+              
+                    <!---->
+                    <apex:pageBlockSectionItem id="plantPicklist"  rendered="{!OR(AND(ISBLANK(selectedPlant), isCustomerLayout), isSupplierLayout)}">
+                        <apex:outputLabel value="Plant" />
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                <div class="requiredBlock"></div>
+                                <apex:selectList value="{!selectedPlant}" size="1" label="Plant" required="true">
+                                  <apex:selectOptions value="{!plantsToSelect}"/>
+                                </apex:selectList> 
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+
+                   
+                    <apex:inputfield value="{!Part_Incident_Report__c.PIR_Number__c}" required="true" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.PIR_Status__c}" required="true" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Part__c}" Id="Part" required="true" />
+                    
+                    <apex:outputfield value="{!Part_Incident_Report__c.Part_Name__c}" />
+                    <apex:outputfield value="{!Part_Incident_Report__c.Supplier_Code__c}" />
+                    <apex:inputtext value="{!Part_Incident_Report__c.RAN_Number__c}" maxlength="15" style="text-transform:uppercase;" onkeyup="var u=this.value.toUpperCase();if(this.value!=u){this.value=u;}" rendered="{!isCustomerLayout}"/>
+                    <apex:outputtext value="{!Part_Incident_Report__c.RAN_Number__c}" rendered="{!!isCustomerLayout}"/> 
+                   
+                    <apex:outputfield value="{!Part_Incident_Report__c.Supplier_Name__c}" />
+                    <apex:outputText value="" label=""/>
+                    
+                    <apex:inputfield value="{!Part_Incident_Report__c.Issue_Type__c}" required="true" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Model_Code__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Production_Line_Stoppage_Risk__c}" />
+                    <apex:outputText value="" label=""/>
+
+                    <apex:inputfield value="{!Part_Incident_Report__c.Sorting_Required__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Reason_for_Defect__c}" />
+          
+                    <apex:inputfield value="{!Part_Incident_Report__c.Quantity_Inspected__c}" required="true"/>
+                    <apex:inputfield value="{!Part_Incident_Report__c.Frequency_of_Issue__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Quantity_Reworked__c}" required="true"/>
+                    <apex:inputfield value="{!Part_Incident_Report__c.Quantity_No_Good__c}" required="true"/>
+                    <apex:inputfield value="{!Part_Incident_Report__c.Rework_Time__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Average_Sort_Time_Per_Part__c}" />         
+                    <apex:inputfield value="{!Part_Incident_Report__c.Carrier__c}" />
+
+                    <apex:inputfield value="{!Part_Incident_Report__c.Tracking_Number__c}" />
+                </apex:pageblocksection>
+
+                  <!-- Customer information, that are shown after sending-->
+                <apex:pageblocksection title="Customer Information" columns="2" rendered="{!AND(isCustomerLayout, Part_Incident_Report__c.Lock_Fields__c)}">
+                    <apex:outputfield value="{!Part_Incident_Report__c.Customer__c}" />
+
+                    <apex:outputtext value="{!selectedPlant}" label="Plant"/>
+
+                    <apex:outputfield value="{!Part_Incident_Report__c.PIR_Number__c}"  />
+                    <apex:inputfield value="{!Part_Incident_Report__c.PIR_Status__c}" required="true" />
+                    <apex:outputfield value="{!Part_Incident_Report__c.Part__c}" Id="Part" />
+                    
+                    <apex:outputfield value="{!Part_Incident_Report__c.Part_Name__c}" />
+                    <apex:outputfield value="{!Part_Incident_Report__c.Supplier_Code__c}" />
+                    <apex:outputfield value="{!Part_Incident_Report__c.RAN_Number__c}"/> 
+                   
+                    <apex:outputfield value="{!Part_Incident_Report__c.Supplier_Name__c}" />
+                    <apex:outputText value="" label=""/>
+                    
+                    <apex:outputfield value="{!Part_Incident_Report__c.Issue_Type__c}"/>
+                    <apex:outputfield value="{!Part_Incident_Report__c.Model_Code__c}" />
+                    <apex:outputfield value="{!Part_Incident_Report__c.Production_Line_Stoppage_Risk__c}" />
+                    <apex:outputText value="" label=""/>
+
+                    <apex:outputfield value="{!Part_Incident_Report__c.Sorting_Required__c}" />
+                    <apex:outputfield value="{!Part_Incident_Report__c.Reason_for_Defect__c}" />
+          
+                    <apex:outputfield value="{!Part_Incident_Report__c.Quantity_Inspected__c}" />
+                    <apex:outputfield value="{!Part_Incident_Report__c.Frequency_of_Issue__c}" />
+                    <apex:outputfield value="{!Part_Incident_Report__c.Quantity_Reworked__c}" />
+                    <apex:outputfield value="{!Part_Incident_Report__c.Quantity_No_Good__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Rework_Time__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Average_Sort_Time_Per_Part__c}" />         
+                    <apex:inputfield value="{!Part_Incident_Report__c.Carrier__c}" />
+
+                    <apex:inputfield value="{!Part_Incident_Report__c.Tracking_Number__c}" />
+                </apex:pageblocksection>
+
+
+                <!-- Supplier Info, that are shown to the supplier-->
+                <apex:pageblocksection title="Supplier Information" columns="2" rendered="{!isSupplierLayout}">
+                    <apex:inputfield value="{!Part_Incident_Report__c.Supplier_Response__c}" required="true"/>
+                    <apex:inputfield value="{!Part_Incident_Report__c.Name_of_Responder__c}" required="true" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Do_you_want_the_material_returned__c}" required="true" />
+                    <apex:outputText value="" label=""/>
+
+                    <apex:inputfield value="{!Part_Incident_Report__c.Disposition_of_Parts__c}" required="true" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.If_rework_use_following__c}" required="true" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Reason_for_Status__c}" required="true" />
+                    <apex:outputText value="" label=""/>
+
+                    <apex:inputfield value="{!Part_Incident_Report__c.Certified_Supplier_RAN_Number__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Ship_Date__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Last_Suspect_RAN__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Future_Shipment_RAN__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.X8D__c}" />
+                </apex:pageblocksection>
+
+                <!-- Supplier Info, that are shown to everyone else-->
+                <apex:pageblocksection title="Supplier Information" columns="2" rendered="{!!isSupplierLayout}">
+                    <apex:inputfield value="{!Part_Incident_Report__c.Supplier_Response__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Name_of_Responder__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Do_you_want_the_material_returned__c}" />
+                    <apex:outputText value="" label=""/>
+                    
+                    <apex:inputfield value="{!Part_Incident_Report__c.Disposition_of_Parts__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.If_rework_use_following__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Reason_for_Status__c}" />
+                    <apex:outputText value="" label=""/>
+
+                    <apex:inputfield value="{!Part_Incident_Report__c.Certified_Supplier_RAN_Number__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Ship_Date__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Last_Suspect_RAN__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.Future_Shipment_RAN__c}" />
+                    <apex:inputfield value="{!Part_Incident_Report__c.X8D__c}" />
+                </apex:pageblocksection>
+
+            </apex:actionregion>
+            
+            <!-- NEC (EQA?) information - editable only to EQA -->
+            <apex:pageblocksection title="NEC Information" columns="2">
+                <apex:inputfield value="{!Part_Incident_Report__c.Export_EQA_Response__c}" />
+                <apex:inputfield value="{!Part_Incident_Report__c.NEC_Sorting__c}" />
+                <apex:inputfield value="{!Part_Incident_Report__c.Average_time_for_sort__c}" />
+                <apex:outputText value="" label=""/>
+
+                <apex:inputfield value="{!Part_Incident_Report__c.Responsibility__c}" />
+                <apex:inputfield value="{!Part_Incident_Report__c.NEC_Ship_Date__c}" />
+                <apex:inputfield value="{!Part_Incident_Report__c.Reason__c}" />
+                <apex:inputfield value="{!Part_Incident_Report__c.Explanation__c}" />
+                <apex:inputfield value="{!Part_Incident_Report__c.Technical_Issue_Location__c}" />
+                <apex:inputfield value="{!Part_Incident_Report__c.Quantities_Locked__c}" />
+                <apex:inputfield value="{!Part_Incident_Report__c.Legal_Hold__c}" />
+
+            </apex:pageblocksection>
+        
+            <apex:pageblocksection title="Comments" columns="1" >
+                <apex:inputtextarea value="{!comments}" label="Comments" style=" width: 620px; height: 120px;" />
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+    <apex:form rendered="{!showRestrictedMessage}">
+    <apex:pageBlock >
+          <apex:pageMessage summary=" {!$Label.EQA_Wrong_Owner_Message}" severity="warning" strength="3" />
+
+          <apex:pageblockbuttons >
+                <apex:commandbutton value="Back" action="{!cancel}" />
+            </apex:pageblockbuttons>
+       
+    </apex:pageBlock>
+    </apex:form>
+   
+</apex:page>

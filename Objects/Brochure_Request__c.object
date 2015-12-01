@@ -1,0 +1,3208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>LiteratureRequestLandingPage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>LiteratureRequestLandingPage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Customer requests marketing materials or vehicle documentation to be mailed</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Customer&apos;s Person Account Record</description>
+        <externalId>false</externalId>
+        <label>Account Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Brochure_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <description>Defaults to Customer&apos;s Person Account Email Address</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Infiniti_Model_1__c</fullName>
+        <description>Indicates the first Infiniti vehicle for which the Customer requested a brochure</description>
+        <externalId>false</externalId>
+        <label>1st Infiniti Model</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2011 Infiniti Brand</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 EX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 FX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 G Convertible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 G Coupe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 G Sedan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 M</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 QX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PreOwned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2000 Infiniti TOE w/ TOE Package</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 G Convertible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 G Coupe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 EX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 QX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013 JX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 G Sedan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 G Coupe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 G Convertible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Infiniti_Model_2__c</fullName>
+        <description>Indicates the second Infiniti vehicle for which the Customer requested a brochure</description>
+        <externalId>false</externalId>
+        <label>2nd Infiniti Model</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2011 Infiniti Brand</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 EX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 FX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 G Convertible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 G Coupe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 G Sedan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 M</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 QX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PreOwned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2000 Infiniti TOE w/ TOE Package</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 G Convertible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 G Coupe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 EX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 QX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013 JX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 G Sedan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 G Coupe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 G Convertible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Infiniti_Requests__c</fullName>
+        <description>Tallies the number of brochures requested for Infiniti vehicles on this record</description>
+        <externalId>false</externalId>
+        <formula>IF(text(Infiniti_Model_2__c) &lt;&gt;&quot;&quot;, 2,  IF( text( Infiniti_Model_1__c) &lt;&gt; &quot;&quot; , 1, 0) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label># Infiniti Requests</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Description__c</fullName>
+        <description>Auto-populates the Literature Description of the selected Literature Requested</description>
+        <externalId>false</externalId>
+        <formula>Literature_Requested__r.Item_Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Number__c</fullName>
+        <description>Auto-populates the Literature Inventory Control Number of the selected Literature Requested</description>
+        <externalId>false</externalId>
+        <formula>Literature_Requested__r.Item_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item__c</fullName>
+        <description>Returns &quot;Marketing Brochure&quot; for Brochure Requests or Item Description of Literature Requests</description>
+        <externalId>false</externalId>
+        <formula>IF( RecordTypeId = &quot;012A0000000wu0J&quot;, &quot;Marketing Brochure&quot;,  Item_Description__c )</formula>
+        <label>Item</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Keep_me_informed_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>110927 JS: This field is not used.</description>
+        <externalId>false</externalId>
+        <label>Keep me informed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Keep_me_informed_Infiniti_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicate if the Customer would like to be mailed updates from Infiniti</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Send me future product news and Infiniti announcements via Mail</inlineHelpText>
+        <label>Keep me informed Infiniti</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Keep_me_informed_Nissan_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicate if the Customer would like to be mailed updates from Nissan</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Send me future product news and Nissan announcements via Mail</inlineHelpText>
+        <label>Keep me informed Nissan</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Lead_Name__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>110927 JS: This field is not used.</description>
+        <externalId>false</externalId>
+        <label>Lead Name</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipName>Brochure_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Literature_Requested__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Allows selecting of Literature with matching Make, Model and Year</description>
+        <externalId>false</externalId>
+        <label>Literature Requested</label>
+        <referenceTo>Literature__c</referenceTo>
+        <relationshipName>LiteratureRequests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Literature_Table_Quantity__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Hidden field to indicate how many literature items are requested. (? check w Yuli to verify)</description>
+        <externalId>false</externalId>
+        <label>Literature Table Quantity</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mailing_City__c</fullName>
+        <description>Customer&apos;s Mailing City; Defaults to Customer Person Account Mailing City</description>
+        <externalId>false</externalId>
+        <label>Mailing City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mailing_State_Province__c</fullName>
+        <description>Customer&apos;s Mailing State/Province; Defaults to Customer Person Account Mailing State/Province</description>
+        <externalId>false</externalId>
+        <label>Mailing State/Province</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mailing_Street__c</fullName>
+        <description>Customer&apos;s Mailing Street; Defaults to Customer Person Account Mailing Street</description>
+        <externalId>false</externalId>
+        <label>Mailing Street</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mailing_Zip__c</fullName>
+        <description>Customer&apos;s Mailing Zip/Postal Code; Defaults to Customer Person Account Mailing Zip/Postal Code</description>
+        <externalId>false</externalId>
+        <label>Mailing Zip/Postal Code</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Nissan_Model_1__c</fullName>
+        <description>Indicates the first Nissan vehicle for which the Customer requested a brochure</description>
+        <externalId>false</externalId>
+        <label>1st Nissan Model</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2010 Nissan Leaf</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 Z Nismo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima Coupe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima Coupe Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima Hybrid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima Hybrid Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Armada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Armada Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Cube</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Cube Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Frontier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Frontier Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 GT-R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 GT-R Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Juke</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Juke Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Maxima</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Maxima Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Murano</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Murano Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Murano CrossCabriolet Convertible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Pathfinder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Quest</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Quest Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Rogue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Rogue Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Sentra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Sentra Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Titan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Titan Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Versa Sedan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Versa Sedan Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Xterra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Xterra Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Z</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Z Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Z Roadster</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Security Plus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 GT-R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 GT-R Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 Cube</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 Cube Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Versa Hatchback</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Versa Hatchback Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Nissan Leaf</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 cube</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 cube Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Juke</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Juke Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Maxima</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Maxima Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Pathfinder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Rogue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Rogue Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Xterra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Xterra Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Z Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Nissan_Model_2__c</fullName>
+        <description>Indicates the second Nissan vehicle for which the Customer requested a brochure</description>
+        <externalId>false</externalId>
+        <label>2nd Nissan Model</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2010 Nissan Leaf</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 Z Nismo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima Coupe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima Coupe Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima Hybrid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Altima Hybrid Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Armada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Armada Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Cube</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Cube Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Frontier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Frontier Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 GT-R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 GT-R Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Juke</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Juke Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Maxima</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Maxima Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Murano</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Murano Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Murano CrossCabriolet Convertible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Pathfinder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Quest</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Quest Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Rogue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Rogue Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Sentra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Sentra Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Titan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Titan Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Versa Sedan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Versa Sedan Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Xterra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Xterra Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Z</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Z Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Z Roadster</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Security Plus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 GT-R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 GT-R Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 Cube</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010 Cube Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Versa Hatchback</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Versa Hatchback Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Nissan Leaf</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 cube</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 cube Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Juke</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Juke Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Maxima</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Maxima Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Pathfinder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Rogue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Rogue Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Xterra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012 Xterra Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Z Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Nissan_Requests__c</fullName>
+        <description>Tallies the number of brochures requested for Nissan vehicles on this record</description>
+        <externalId>false</externalId>
+        <formula>IF(text( Nissan_Model_2__c ) &lt;&gt;&quot;&quot;, 2,  IF( text(  Nissan_Model_1__c ) &lt;&gt; &quot;&quot; , 1, 0) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label># Nissan Requests</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Processed_Successfully__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field to indicate that the request was successfully submitted to the fulfillment vendor</description>
+        <externalId>false</externalId>
+        <label>Processed Successfully</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_Timeframe__c</fullName>
+        <description>Prospective customer&apos;s intended time to purchase the vehicle</description>
+        <externalId>false</externalId>
+        <label>Purchase Timeframe</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2-4 Weeks</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2-3 Months</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4-6 Months</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Just Looking</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Request_Status__c</fullName>
+        <description>It saves the status of the call to the web service when a Brochure request is submitted.</description>
+        <externalId>false</externalId>
+        <label>Request Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Failed</fullName>
+                <color>#CC0000</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Successful</fullName>
+                <color>#33CC00</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress (please refresh)</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Item__c</fullName>
+        <description>Identifies which items were requested from either requests</description>
+        <externalId>false</externalId>
+        <formula>Item_Description__c &amp;  TEXT(Nissan_Model_1__c) &amp; &quot; &quot; &amp;  TEXT(Nissan_Model_2__c)  &amp; &quot; &quot; &amp;   TEXT(Infiniti_Model_1__c) &amp; &quot; &quot; &amp;   TEXT(Infiniti_Model_2__c)</formula>
+        <label>Requested Item</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Resend_Request_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicate if the Customer has already requested this literature but not yet received it</description>
+        <externalId>false</externalId>
+        <label>This is a Resend Request</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Send_Infiniti_Email_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicate if the Customer would like to be emailed updates from Infiniti</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Send me future product news and Infiniti announcements via email</inlineHelpText>
+        <label>Send Infiniti Email</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Send_Nissan_Email_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicate if the Customer would like to be emailed updates from Nissan</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Send me future product news and Nissan announcements via email</inlineHelpText>
+        <label>Send Nissan Email</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Shipped_By__c</fullName>
+        <description>The Shipping Vendor for this Literature</description>
+        <externalId>false</externalId>
+        <label>Shipped By</label>
+        <picklist>
+            <picklistValues>
+                <fullName>UPS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FedEx</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USPS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DHL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Tracking_Number__c</fullName>
+        <description>The Shipping Vendor tracking identification number</description>
+        <externalId>false</externalId>
+        <label>Tracking #</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Use_this_to_Update_Customer_s_Info__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicate if the Customer would like to make the Mailing information entered in this record as the permanent Mailing information on the Person Account record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If you entered a NEW Mailing Address or Email on this page, does the Customer want this new information to be saved as the primary contact information?  If yes, check this box.  If this is a one-time send to this address, do not check this box.</inlineHelpText>
+        <label>Use this to Update Customer&apos;s Info</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Identification_Number__c</fullName>
+        <description>The VIN that this Roadside Assistance card request is related to</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only required for Roadside Assistance card request</inlineHelpText>
+        <label>Vehicle Identification Number</label>
+        <length>17</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Product_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>110927 JS: This field is not used. Obsolete.</description>
+        <externalId>false</externalId>
+        <label>Vehicle Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipName>Brochure_Requests1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Literature Request</label>
+    <listViews>
+        <fullName>All_Active_Brochure_Requests</fullName>
+        <booleanFilter>1 AND (2 OR 3 OR 4 OR 5)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Account_Name__c</columns>
+        <columns>Infiniti_Model_1__c</columns>
+        <columns>Nissan_Model_1__c</columns>
+        <columns>Infiniti_Model_2__c</columns>
+        <columns>Nissan_Model_2__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>8/24/2012 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Camisha Becerra,Taylor Bell,Robert Bentley,Lauren Brown,Jonathan Decker</value>
+        </filters>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Tamera Freeman,Jesus Gomes,Michael Heier,Brandon Hrubetz,Jesus Maldonaldo</value>
+        </filters>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Christofer Paes,Cynthia Perez,Luke Peters,Christina Roe,Malcolm Starr</value>
+        </filters>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Chrystie Ward</value>
+        </filters>
+        <label>All Active Brochure Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Brochure_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Name__c</columns>
+        <columns>Infiniti_Model_1__c</columns>
+        <columns>Nissan_Model_1__c</columns>
+        <columns>Infiniti_Model_2__c</columns>
+        <columns>Nissan_Model_2__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Brochure Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Literature_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Literature_Requested__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Mailing_State_Province__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Literature Requests</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CCCAgent</role>
+            <role>CCCManager</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Assigned_Brochure_Follow_Ups</fullName>
+        <columns>NAME</columns>
+        <columns>Item__c</columns>
+        <columns>Email__c</columns>
+        <columns>Literature_Requested__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>Bentley</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>8/26/2012 12:00 AM</value>
+        </filters>
+        <label>Assigned Brochure Follow Ups</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CCCAgent</role>
+            <role>CCCManager</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Literature_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Literature_Requested__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Mailing_State_Province__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>8/24/12</value>
+        </filters>
+        <label>My Literature Requests</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CCCAgent</role>
+            <role>CCCManager</role>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>BR-{0000000}</displayFormat>
+        <label>Request #</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Literature Requests</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Customer</fullName>
+        <active>true</active>
+        <description>Brochure Request</description>
+        <label>Brochure Request</label>
+        <picklistValues>
+            <picklist>Infiniti_Model_1__c</picklist>
+            <values>
+                <fullName>2000 Infiniti TOE w%2F TOE Package</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 EX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 FX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Infiniti Brand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 QX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 EX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 QX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013 JX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PreOwned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infiniti_Model_2__c</picklist>
+            <values>
+                <fullName>2000 Infiniti TOE w%2F TOE Package</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 EX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 FX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Infiniti Brand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 QX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 EX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 QX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013 JX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PreOwned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Nissan_Model_1__c</picklist>
+            <values>
+                <fullName>2010 Nissan Leaf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Z Nismo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Juke</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Juke Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Maxima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Nissan Leaf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Rogue Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Xterra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 cube</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 cube Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Cube</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Cube Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 GT-R Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Juke</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Juke Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Maxima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Murano CrossCabriolet Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Rogue Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Hatchback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Hatchback Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Xterra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Z Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Plus</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Nissan_Model_2__c</picklist>
+            <values>
+                <fullName>2010 Nissan Leaf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Z Nismo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Juke</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Juke Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Maxima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Nissan Leaf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Rogue Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Xterra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 cube</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 cube Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Cube</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Cube Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 GT-R Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Juke</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Juke Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Maxima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Murano CrossCabriolet Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Rogue Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Hatchback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Hatchback Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Xterra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Z Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Plus</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purchase_Timeframe__c</picklist>
+            <values>
+                <fullName>2-3 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2-4 Weeks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4-6 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Just Looking</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Shipped_By__c</picklist>
+            <values>
+                <fullName>DHL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FedEx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USPS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Lead</fullName>
+        <active>false</active>
+        <label>Lead</label>
+        <picklistValues>
+            <picklist>Infiniti_Model_1__c</picklist>
+            <values>
+                <fullName>2011 FX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Infiniti Brand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 EX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 QX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PreOwned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infiniti_Model_2__c</picklist>
+            <values>
+                <fullName>2011 FX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Infiniti Brand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 EX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 G Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 QX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PreOwned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Nissan_Model_1__c</picklist>
+            <values>
+                <fullName>2010 Cube</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Cube Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Z Nismo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 GT-R Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Juke</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Juke Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Nissan Leaf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Maxima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Rogue Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Xterra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Plus</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Nissan_Model_2__c</picklist>
+            <values>
+                <fullName>2010 Cube</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Cube Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Z Nismo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 GT-R Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Juke</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Juke Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Nissan Leaf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Maxima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Rogue Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Xterra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Plus</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purchase_Timeframe__c</picklist>
+            <values>
+                <fullName>2-3 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2-4 Weeks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4-6 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Just Looking</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Literature_Request</fullName>
+        <active>true</active>
+        <description>Literature Request</description>
+        <label>Literature Request</label>
+        <picklistValues>
+            <picklist>Infiniti_Model_1__c</picklist>
+            <values>
+                <fullName>2000 Infiniti TOE w%2F TOE Package</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 EX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 FX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Infiniti Brand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 QX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PreOwned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Infiniti_Model_2__c</picklist>
+            <values>
+                <fullName>2000 Infiniti TOE w%2F TOE Package</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 EX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 FX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 G Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Infiniti Brand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 QX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PreOwned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Nissan_Model_1__c</picklist>
+            <values>
+                <fullName>2010 Cube</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Cube Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Nissan Leaf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Z Nismo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 GT-R Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Maxima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Rogue Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Xterra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Cube</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Cube Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 GT-R Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Juke</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Juke Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Murano CrossCabriolet Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Hatchback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Hatchback Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Z Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Plus</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Nissan_Model_2__c</picklist>
+            <values>
+                <fullName>2010 Cube</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Cube Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Nissan Leaf</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Nissan Leaf Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010 Z Nismo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 GT-R Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Maxima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Murano Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Pathfinder Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Quest Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Rogue Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Xterra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011 Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Coupe Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Hybrid Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Altima Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Armada Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Cube</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Cube Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Frontier Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 GT-R Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Juke</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Juke Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Murano CrossCabriolet Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Sentra Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Titan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Hatchback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Hatchback Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Versa Sedan Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Z Roadster Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012 Z Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Plus</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purchase_Timeframe__c</picklist>
+            <values>
+                <fullName>2-3 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2-4 Weeks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4-6 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Just Looking</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Shipped_By__c</picklist>
+            <values>
+                <fullName>DHL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FedEx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USPS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Infiniti_Model_1__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Nissan_Model_1__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Infiniti_Model_2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Nissan_Model_2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Infiniti_Model_1__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Nissan_Model_1__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Infiniti_Model_2__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Nissan_Model_2__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Account_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Infiniti_Model_1__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Nissan_Model_1__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Infiniti_Model_2__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Nissan_Model_2__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CREATED_DATE</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account_Name__c</searchFilterFields>
+        <searchFilterFields>Infiniti_Model_1__c</searchFilterFields>
+        <searchFilterFields>Nissan_Model_1__c</searchFilterFields>
+        <searchFilterFields>Infiniti_Model_2__c</searchFilterFields>
+        <searchFilterFields>Nissan_Model_2__c</searchFilterFields>
+        <searchFilterFields>CREATED_DATE</searchFilterFields>
+        <searchResultsAdditionalFields>Account_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Infiniti_Model_1__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Nissan_Model_1__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Infiniti_Model_2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Nissan_Model_2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Account_Address_Must_be_Valid</fullName>
+        <active>true</active>
+        <description>Check that the Account Address field is valid</description>
+        <errorConditionFormula>$RecordType.Name == &apos;Brochure Request&apos;  &amp;&amp; Account_Name__r.Undeliverable_Address_Indicator__c</errorConditionFormula>
+        <errorMessage>The Account Address is set to Undeliverable. You cannot create this request until this address has been validated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_account_info_while_saving_Brochure</fullName>
+        <active>true</active>
+        <errorConditionFormula>$RecordType.Name = &apos;Brochure Request&apos; &amp;&amp; Account_Name__r.Undeliverable_Address_Indicator__c == TRUE &amp;&amp;  ISBLANK( Account_Name__r.BillingStreet ) &amp;&amp; ISBLANK( Account_Name__r.BillingCity )  &amp;&amp; ISBLANK( Account_Name__r.BillingState) &amp;&amp;  ISBLANK( Account_Name__r.BillingPostalCode )</errorConditionFormula>
+        <errorMessage>Either Account Address is set to Undeliverable or Address Field is Empty. You cannot create this request until this address has been validated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Email_Updates_Require_Email_Address</fullName>
+        <active>true</active>
+        <description>If the Nissan or Infiniti email update checkboxes are checked, the related account or lead must have a valid email address.</description>
+        <errorConditionFormula>(Send_Nissan_Email_Indicator__c = true || Send_Infiniti_Email_Indicator__c = true) &amp;&amp; (Account_Name__r.PersonEmail = null)</errorConditionFormula>
+        <errorMessage>There must be an email address present on the related Account when requesting email updates</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Infiniti_Brochure_1_Before_Brochure_2</fullName>
+        <active>true</active>
+        <description>A request for a second Infiniti brochure cannot be made without making a request for a first Infiniti brochure.</description>
+        <errorConditionFormula>$RecordType.Name = &apos;Brochure Request&apos; &amp;&amp; NOT(ISPICKVAL(Infiniti_Model_2__c, &apos;&apos;)) &amp;&amp; ISPICKVAL(Infiniti_Model_1__c, &apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Infiniti_Model_2__c</errorDisplayField>
+        <errorMessage>2nd Infiniti Model cannot be requested without a 1st Infiniti Model</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Infiniti_Brochures_Must_Be_Different</fullName>
+        <active>true</active>
+        <description>If requests for 1st and 2nd Infiniti model brochures are made, they must be for different Infiniti Models.</description>
+        <errorConditionFormula>$RecordType.Name = &apos;Brochure Request&apos; &amp;&amp; NOT(ISPICKVAL(Infiniti_Model_1__c, &apos;&apos;)) &amp;&amp; NOT(ISPICKVAL(Infiniti_Model_2__c, &apos;&apos;)) &amp;&amp; TEXT(Infiniti_Model_1__c) = TEXT(Infiniti_Model_2__c)</errorConditionFormula>
+        <errorDisplayField>Infiniti_Model_2__c</errorDisplayField>
+        <errorMessage>1st Infiniti Model and 2nd Infiniti Model cannot be the same</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_Request_a_Brochure</fullName>
+        <active>true</active>
+        <description>At least 1 brochure must be requested</description>
+        <errorConditionFormula>$RecordType.Name = &apos;Brochure Request&apos; &amp;&amp;
+ISPICKVAL(Infiniti_Model_1__c, &apos;&apos;)  &amp;&amp;  ISPICKVAL(Nissan_Model_1__c, &apos;&apos;) &amp;&amp; ISPICKVAL(Infiniti_Model_2__c, &apos;&apos;)  &amp;&amp;  ISPICKVAL(Nissan_Model_2__c, &apos;&apos;)</errorConditionFormula>
+        <errorMessage>At least 1 vehicle brochure must be selected</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Nissan_Brochure_1_Before_Brochure_2</fullName>
+        <active>true</active>
+        <description>A request for a second Nissan brochure cannot be made without making a request for a first Nissan brochure.</description>
+        <errorConditionFormula>$RecordType.Name = &apos;Brochure Request&apos; &amp;&amp; NOT(ISPICKVAL(Nissan_Model_2__c, &apos;&apos;)) &amp;&amp; ISPICKVAL(Nissan_Model_1__c, &apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Nissan_Model_2__c</errorDisplayField>
+        <errorMessage>2nd Nissan Model cannot be requested without a 1st Nissan Model</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Nissan_Brochures_Must_Be_Different</fullName>
+        <active>true</active>
+        <description>If requests for 1st and 2nd Nissan model brochures are made, they must be for different Nissan Models.</description>
+        <errorConditionFormula>$RecordType.Name = &apos;Brochure Request&apos; &amp;&amp; NOT(ISPICKVAL(Nissan_Model_1__c, &apos;&apos;)) &amp;&amp; NOT(ISPICKVAL(Nissan_Model_2__c, &apos;&apos;)) &amp;&amp; TEXT(Nissan_Model_1__c) = TEXT(Nissan_Model_2__c)</errorConditionFormula>
+        <errorDisplayField>Nissan_Model_2__c</errorDisplayField>
+        <errorMessage>1st Nissan Model and 2nd Nissan Model cannot be the same</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Record_Type_Must_be_Maritz</fullName>
+        <active>true</active>
+        <description>Brochure Requests can only be created for NNA U.S. Customers and Leads. Please select a valid U.S. Person Account to save this Brochure Request</description>
+        <errorConditionFormula>$RecordType.Name = &apos;Brochure Request&apos; &amp;&amp; Account_Name__r.RecordTypeId  &lt;&gt; &quot;012A0000000wu5h&quot;</errorConditionFormula>
+        <errorDisplayField>Account_Name__c</errorDisplayField>
+        <errorMessage>Brochure Requests can only be created for NNA U.S. Customers and Leads. Please select a valid U.S. Person Account to save this Brochure Request</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Roadside_Assistance_Card_Requires_VIN</fullName>
+        <active>true</active>
+        <description>If the Infiniti option for Roadside Assistance Card is selected, a VIN must be provided.</description>
+        <errorConditionFormula>$RecordType.Name = &apos;Brochure Request&apos; &amp;&amp; 
+(ISPICKVAL(Infiniti_Model_1__c, &apos;2000 Infiniti TOE w/ TOE Package&apos;) || ISPICKVAL(Infiniti_Model_2__c, &apos;2000 Infiniti TOE w/ TOE Package&apos;)) &amp;&amp; Vehicle_Identification_Number__c = null</errorConditionFormula>
+        <errorDisplayField>Vehicle_Identification_Number__c</errorDisplayField>
+        <errorMessage>VIN must be entered if Infiniti Model &apos;Roadside Assistance Card&apos; is selected</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>State_can_not_include_APO_or_AE</fullName>
+        <active>false</active>
+        <description>Only accepts US states. No P.O. Boxes, No Military (APO/FPO) addresses, No address outside the U.S.A., No U.S. territory addresses</description>
+        <errorConditionFormula>AND(
+RecordTypeId = &quot;012F0000000yBJL&quot;,
+(1 &gt; (CASE(UPPER(Mailing_State_Province__c),
+&quot;AL&quot;,1,
+&quot;AK&quot;,1,
+&quot;AZ&quot;,1,
+&quot;AR&quot;,1,
+&quot;CA&quot;,1,
+&quot;CO&quot;,1,
+&quot;CT&quot;,1,
+&quot;DE&quot;,1,
+&quot;DC&quot;,1,
+&quot;FL&quot;,1,
+&quot;GA&quot;,1,
+&quot;HI&quot;,1,
+&quot;ID&quot;,1,
+&quot;IL&quot;,1,
+&quot;IN&quot;,1,
+&quot;IA&quot;,1,
+&quot;KS&quot;,1,
+&quot;KY&quot;,1,
+&quot;LA&quot;,1,
+&quot;ME&quot;,1,
+&quot;MD&quot;,1,
+&quot;MA&quot;,1,
+&quot;MI&quot;,1,
+&quot;MN&quot;,1,
+&quot;MS&quot;,1,
+&quot;MO&quot;,1,
+&quot;MT&quot;,1,
+&quot;NE&quot;,1,
+&quot;NV&quot;,1,
+&quot;NH&quot;,1,
+&quot;NJ&quot;,1,
+&quot;NM&quot;,1,
+&quot;NY&quot;,1,
+&quot;NC&quot;,1,
+&quot;ND&quot;,1,
+&quot;OH&quot;,1,
+&quot;OK&quot;,1,
+&quot;OR&quot;,1,
+&quot;PA&quot;,1,
+&quot;RI&quot;,1,
+&quot;SC&quot;,1,
+&quot;SD&quot;,1,
+&quot;TN&quot;,1,
+&quot;TX&quot;,1,
+&quot;UT&quot;,1,
+&quot;VT&quot;,1,
+&quot;VA&quot;,1,
+&quot;WA&quot;,1,
+&quot;WV&quot;,1,
+&quot;WI&quot;,1,
+0
+))))</errorConditionFormula>
+        <errorDisplayField>Mailing_State_Province__c</errorDisplayField>
+        <errorMessage>We only ship to U.S. states. No Territories or Foreign Countries.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Street_can_not_include_PO_Box</fullName>
+        <active>true</active>
+        <description>Can not include the term PO Box in Mailing Street</description>
+        <errorConditionFormula>AND(
+RecordTypeId = &quot;012F0000000yBJL&quot;,
+(
+OR
+(
+CONTAINS(UPPER(Mailing_Street__c), &quot;PO BOX&quot;),
+CONTAINS(UPPER(Mailing_Street__c), &quot;P.O. BOX&quot;),
+CONTAINS(UPPER(Mailing_Street__c), &quot;PO. BOX&quot;),
+CONTAINS(UPPER(Mailing_Street__c), &quot;P.O BOX&quot;)
+)
+)
+)</errorConditionFormula>
+        <errorDisplayField>Mailing_Street__c</errorDisplayField>
+        <errorMessage>We do not send literature to PO Boxes</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Brochure_Request</fullName>
+        <availability>online</availability>
+        <description>New Brochure Request - Marketing Brochures by Vehicle</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Brochure Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>if (typeof(srcUp) == &apos;function&apos;) {
+   srcUp(&apos;/a0N/e?retURL=/{!Account.Id}&amp;saveURL=/{!Account.Id}&amp;RecordType=012A0000000wu0J&amp;AccountId={!Account.Id}&apos;);
+}
+else {
+   window.open(&apos;/a0N/e?retURL=/{!Account.Id}&amp;saveURL=/{!Account.Id}&amp;RecordType=012A0000000wu0J&amp;AccountId={!Account.Id}&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Owner_Literature</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Owner Literature</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>if (typeof(srcUp) == &apos;function&apos;) {
+   srcUp(&apos;/a0N/e?retURL=/{!Account.Id}&amp;saveURL=/{!Account.Id}&amp;RecordType=012F0000000yBJL&amp;AccountId={!Account.Id}&apos;);
+}
+else {
+   window.open(&apos;/a0N/e?retURL=/{!Account.Id}&amp;saveURL=/{!Account.Id}&amp;RecordType=012F0000000yBJL&amp;AccountId={!Account.Id}&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_Record</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Submit Record</masterLabel>
+        <openType>newWindow</openType>
+        <page>BrochureRequest_WebService</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+</CustomObject>

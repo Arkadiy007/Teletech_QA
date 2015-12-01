@@ -1,0 +1,247 @@
+﻿<apex:page standardController="Pre_Chat_Data__c"
+    extensions="LiveAgent_ViewPreChatData">
+    <apex:stylesheet value="{!URLFOR($Resource.NissanStyle, 'ChatData.css')}" />
+    <apex:includeScript value="/support/console/22.0/integration.js" />
+    <script type="text/javascript">
+        function initialActions() {
+            //Set the default tab title
+            sforce.console.setTabTitle('Chat Data');
+            
+            //popUp the Account tab if this page has been open from the Console
+            if (typeof(srcUp) == 'function') {
+                accountId = '{!currentPreChatDataObject.AccountId__c}';
+                if (accountId != '') {
+                    srcUp('/' + accountId);
+                }
+            }
+        }
+        
+        function EnabledContent() 
+        {
+            var img = document.getElementById("divWait");
+            img.style.display = 'block';
+        }
+        
+        function DisabledContent() 
+        {
+            var img = document.getElementById("divWait");
+            img.style.display = 'none';
+        }
+          
+        ﻿var pageLoad = window.onload;
+        ﻿window.onload = function() {
+            ﻿if (pageLoad) {
+                pageLoad();
+            ﻿}
+            
+            initialActions();
+        }
+     </script>
+
+    <apex:sectionHeader title="Live Agent" subtitle="Chat Data" />
+    <apex:form id="frmMain">
+        <apex:pageBlock id="pbCustomerData" title="Customer Data">
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save"
+                    rendered="{!showSaveButton}" reRender="pbCustomerData" />
+                <apex:commandButton action="{!edit}" value="Edit"
+                    rendered="{!!showSaveButton}" reRender="frmMain" />
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection id="pbs">
+                <apex:outputField value="{!Pre_Chat_Data__c.First_Name__c}" />
+                <apex:outputField value="{!Pre_Chat_Data__c.Last_Name__c}" />
+                <apex:outputField value="{!Pre_Chat_Data__c.Email_Address__c}" />
+                <apex:outputField value="{!Pre_Chat_Data__c.Phone__c}" />
+                <apex:outputField value="{!Pre_Chat_Data__c.Zip_Code__c}" />
+                <apex:outputField value="{!Pre_Chat_Data__c.Live_Chat_Transcript__c}" />
+                <apex:outputField value="{!Pre_Chat_Data__c.AccountId__c}" />
+                
+                <apex:inputField value="{!Pre_Chat_Data__c.RecordTypeId}"
+                    rendered="{!showSaveButton}">
+                    <apex:actionSupport event="onchange" reRender="ifDisposition, pbs"
+                        action="{!changeRecordType}" />
+                </apex:inputField>
+                <apex:outputField value="{!Pre_Chat_Data__c.RecordTypeId}"
+                    rendered="{!!showSaveButton}" />
+                <apex:outputField value="{!Pre_Chat_Data__c.Error_Code__c}" />
+                
+                <apex:inputField value="{!Pre_Chat_Data__c.Preferred_Dealer__c}" rendered="{!showSaveButton && !hideMCCFields}"/>
+                <apex:outputField value="{!Pre_Chat_Data__c.Preferred_Dealer__c}"
+                    rendered="{!!showSaveButton && !hideMCCFields}" />
+
+                <apex:outputField value="{!Pre_Chat_Data__c.Disposition_Code__c}"
+                    rendered="{!!showSaveButton && !hideMCCFields}" />
+                <apex:inputField id="ifDisposition"
+                    value="{!Pre_Chat_Data__c.Disposition_Code__c}"
+                    rendered="{!showSaveButton && !hideMCCFields}" />
+                    
+                <apex:outputField value="{!Pre_Chat_Data__c.Dealer_Code__c}"
+                    rendered="{!Pre_Chat_Data__c.Dealer_Code__c != null}" />
+
+                <apex:inputField value="{!Pre_Chat_Data__c.Make__c}" rendered="{!showSaveButton}"/>
+                <apex:outputField value="{!Pre_Chat_Data__c.Make__c}"
+                    rendered="{!!showSaveButton}" />
+                <apex:inputField value="{!Pre_Chat_Data__c.Model__c}" rendered="{!showSaveButton}"/>
+                <apex:outputField value="{!Pre_Chat_Data__c.Model__c}"
+                    rendered="{!!showSaveButton}" />
+                <apex:inputField value="{!Pre_Chat_Data__c.Year__c}" rendered="{!showSaveButton}"/>
+                <apex:outputField value="{!Pre_Chat_Data__c.Year__c}"
+                    rendered="{!!showSaveButton}" />
+
+                <!-- 
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Attachment URL" />
+                    <apex:outputText value="{!attachmentUrl}" />
+                </apex:pageBlockSectionItem>
+                 -->
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock id="pbSearch" rendered="{!showSearchBlock}">
+            <div id="divWait" class="WaitDiv">
+                <span>Searching...</span>
+            </div>
+            <apex:pageBlockSection title="Account Search" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="First Name" />
+                    <apex:inputText value="{!firstName}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Last Name" />
+                    <apex:inputText value="{!lastName}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Email" />
+                    <apex:inputText value="{!email}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="City" />
+                    <apex:inputText value="{!city}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="State" />
+                    <apex:selectList value="{!state}" size="1">
+                        <apex:selectOption itemValue="None" itemLabel="None" />
+                        <apex:selectOption itemValue="AL" itemLabel="Alabama" />
+                        <apex:selectOption itemValue="AK" itemLabel="Alaska" />
+                        <apex:selectOption itemValue="AZ" itemLabel="Arizona" />
+                        <apex:selectOption itemValue="AR" itemLabel="Arkansas" />
+                        <apex:selectOption itemValue="CA" itemLabel="California" />
+                        <apex:selectOption itemValue="CO" itemLabel="Colorado" />
+                        <apex:selectOption itemValue="CT" itemLabel="Connecticut" />
+                        <apex:selectOption itemValue="DE" itemLabel="Delaware" />
+                        <apex:selectOption itemValue="DC" itemLabel="District of Columbia" />
+                        <apex:selectOption itemValue="FL" itemLabel="Florida" />
+                        <apex:selectOption itemValue="GA" itemLabel="Georgia" />
+                        <apex:selectOption itemValue="HI" itemLabel="Hawaii" />
+                        <apex:selectOption itemValue="ID" itemLabel="Idaho" />
+                        <apex:selectOption itemValue="IL" itemLabel="Illinois" />
+                        <apex:selectOption itemValue="IN" itemLabel="Indiana" />
+                        <apex:selectOption itemValue="IA" itemLabel="Iowa" />
+                        <apex:selectOption itemValue="KS" itemLabel="Kansas" />
+                        <apex:selectOption itemValue="KY" itemLabel="Kentucky" />
+                        <apex:selectOption itemValue="LA" itemLabel="Louisiana" />
+                        <apex:selectOption itemValue="ME" itemLabel="Maine" />
+                        <apex:selectOption itemValue="MD" itemLabel="Maryland" />
+                        <apex:selectOption itemValue="MA" itemLabel="Massachusetts" />
+                        <apex:selectOption itemValue="MI" itemLabel="Michigan" />
+                        <apex:selectOption itemValue="MN" itemLabel="Minnesota" />
+                        <apex:selectOption itemValue="MS" itemLabel="Mississippi" />
+                        <apex:selectOption itemValue="MO" itemLabel="Missouri" />
+                        <apex:selectOption itemValue="MT" itemLabel="Montana" />
+                        <apex:selectOption itemValue="NE" itemLabel="Nebraska" />
+                        <apex:selectOption itemValue="NV" itemLabel="Nevada" />
+                        <apex:selectOption itemValue="NH" itemLabel="New Hampshire" />
+                        <apex:selectOption itemValue="NJ" itemLabel="New Jersey" />
+                        <apex:selectOption itemValue="NM" itemLabel="New Mexico" />
+                        <apex:selectOption itemValue="NY" itemLabel="New York" />
+                        <apex:selectOption itemValue="NC" itemLabel="North Carolina" />
+                        <apex:selectOption itemValue="ND" itemLabel="North Dakota" />
+                        <apex:selectOption itemValue="OH" itemLabel="Ohio" />
+                        <apex:selectOption itemValue="OK" itemLabel="Oklahoma" />
+                        <apex:selectOption itemValue="OR" itemLabel="Oregon" />
+                        <apex:selectOption itemValue="PA" itemLabel="Pennsylvania" />
+                        <apex:selectOption itemValue="RI" itemLabel="Rhode Island" />
+                        <apex:selectOption itemValue="SC" itemLabel="South Carolina" />
+                        <apex:selectOption itemValue="SD" itemLabel="South Dakota" />
+                        <apex:selectOption itemValue="TN" itemLabel="Tennessee" />
+                        <apex:selectOption itemValue="TX" itemLabel="Texas" />
+                        <apex:selectOption itemValue="UT" itemLabel="Utah" />
+                        <apex:selectOption itemValue="VT" itemLabel="Vermont" />
+                        <apex:selectOption itemValue="VA" itemLabel="Virginia" />
+                        <apex:selectOption itemValue="WA" itemLabel="Washington" />
+                        <apex:selectOption itemValue="WV" itemLabel="West Virginia" />
+                        <apex:selectOption itemValue="WI" itemLabel="Wisconsin" />
+                        <apex:selectOption itemValue="WY" itemLabel="Wyoming" />
+                        <apex:selectOption itemValue="GU" itemLabel="Guam" />
+                        <apex:selectOption itemValue="PR" itemLabel="Puerto Rico" />
+                        <apex:selectOption itemValue="VI" itemLabel="Virgin Islands" />
+                        <apex:selectOption itemValue="AB" itemLabel="Alberta" />
+                        <apex:selectOption itemValue="BC" itemLabel="British Columbia" />
+                        <apex:selectOption itemValue="MB" itemLabel="Manitoba" />
+                        <apex:selectOption itemValue="NB" itemLabel="New Brunswick" />
+                        <apex:selectOption itemValue="NL"
+                            itemLabel="Newfoundland and Labrador" />
+                        <apex:selectOption itemValue="NT"
+                            itemLabel="Northwest Territories" />
+                        <apex:selectOption itemValue="NS" itemLabel="Nova Scotia" />
+                        <apex:selectOption itemValue="NU" itemLabel="Nunavut" />
+                        <apex:selectOption itemValue="ON" itemLabel="Ontario" />
+                        <apex:selectOption itemValue="PE" itemLabel="Prince Edward Island" />
+                        <apex:selectOption itemValue="QC" itemLabel="Quebec" />
+                        <apex:selectOption itemValue="PQ" itemLabel="Quebec (Old)" />
+                        <apex:selectOption itemValue="SK" itemLabel="Saskatchewan" />
+                        <apex:selectOption itemValue="YT" itemLabel="Yukon" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Zip" />
+                    <apex:inputText value="{!zip}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Case Number" />
+                    <apex:inputText value="{!caseNumber}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <div style="width: 100%; text-align: center">
+                <apex:commandButton value="Search" action="{!searchAccount}"
+                    status="counterStatus" reRender="pbSearch" />
+            </div>
+            <br />
+            <br />
+            <apex:pageblockTable rendered="{!showResults}" value="{!accountList}"
+                var="al">
+                <apex:column width="10%" headerClass="alignCenter"
+                    styleClass="alignCenter">
+                    <apex:facet name="header">Action</apex:facet>
+                    <apex:commandLink action="{!associateAccount}" reRender="frmMain">
+                        <apex:param assignTo="{!selectedAccountId}" value="{!al.Id}"
+                            name="assignvalue" />
+                  Associate </apex:commandLink>
+                </apex:column>
+                <apex:column value="{!al.FirstName}" headerValue="First Name"
+                    headerClass="alignCenter" styleClass="alignCenter" width="20%" />
+                <apex:column value="{!al.LastName}" headerValue="Last Name"
+                    headerClass="alignCenter" styleClass="alignCenter" width="20%" />
+                <apex:column value="{!al.PersonEmail}" headerValue="Email"
+                    headerClass="alignCenter" styleClass="alignCenter" width="10%" />
+                <apex:column value="{!al.PersonMailingCity}" headerValue="City"
+                    headerClass="alignCenter" styleClass="alignCenter" width="20%" />
+                <apex:column value="{!al.PersonMailingState}" headerValue="State"
+                    headerClass="alignCenter" styleClass="alignCenter" width="10%" />
+                <apex:column value="{!al.PersonMailingPostalCode}" headerValue="Zip"
+                    headerClass="alignCenter" styleClass="alignCenter" width="10%" />
+            </apex:pageblockTable>
+
+            <apex:outputPanel rendered="{!showNoRecords}">
+                <apex:outputText value="No records found" />
+            </apex:outputPanel>
+
+            <apex:actionStatus id="counterStatus" onstart="EnabledContent()"
+                onstop="DisabledContent()" />
+
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

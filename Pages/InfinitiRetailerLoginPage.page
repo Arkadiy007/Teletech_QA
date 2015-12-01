@@ -1,0 +1,8 @@
+<apex:page id="loginPage" controller="InfinitiSiteLoginController" showHeader="false" title="{!$Label.site.site_login}" action="{!redirectIfLoggedIn}">
+	<body style="background-image:url('{!$Resource.JXBackdrop}');background-repeat:no-repeat;">
+		<apex:outputText style="font-size:200%;color:white" value="Infiniti Retailer Login"/>
+		<br/><br/>
+		<apex:outputText style="color:white" value="Please enter your User Name"/>
+		<c:InfinitiSiteLogin id="infinitiSiteLogin"/>
+	</body>
+</apex:page>

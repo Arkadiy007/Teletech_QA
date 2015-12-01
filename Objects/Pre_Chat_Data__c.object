@@ -1,0 +1,3962 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>LiveAgent_ViewPreChatData</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stored the entered information in the pre-chat form for the live agent feature</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AccountId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Pre_Chat_Data</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Already_Used__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field used as a flag for marking the records that has been used by the Pre Chat form</description>
+        <externalId>false</externalId>
+        <label>Already Used</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Browser__c</fullName>
+        <externalId>false</externalId>
+        <label>Browser</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Chat Data</relationshipLabel>
+        <relationshipName>Chat_Data</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Clicked_Chat_Button__c</fullName>
+        <description>It stores the chat button id that has been clicked for starting the chat session</description>
+        <externalId>false</externalId>
+        <label>Clicked Chat Button</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_IP__c</fullName>
+        <description>Field used for retrieving the filled fields in the chat form from the PreChat screen in order to show these fields in the hover</description>
+        <externalId>false</externalId>
+        <label>Client IP</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Department</label>
+        <picklist>
+            <picklistValues>
+                <fullName>NNA CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NCI CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DTS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TECH LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal MS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Device__c</fullName>
+        <externalId>false</externalId>
+        <label>Device</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disposition_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Disposition Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>All Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brochure Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Dropped Chat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer Related Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>E-mail transfer to Dealer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Escalate to RCAS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Product Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Product Inquiry - Post-sale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Product Inquiry - Pre-sale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Goodwill Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Literature Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non Nissan/Infiniti request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spam/Abusive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer or refer to LCN/RA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to MCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Nissan CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to NMAC/IFS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Other Department</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Owner Services/Vehicle Connected Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to Roadside Assistance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to VCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unrelated Subject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VSC Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Email_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Email Address</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Error_Code__c</fullName>
+        <description>It is an error code informed by the  Owner Portal and shown to the agent</description>
+        <externalId>false</externalId>
+        <label>Error Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Issue_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Issue Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Issue_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Issue Details</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New Salesforce User Setup</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Password Reset Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>User is Locked Out</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change a User&apos;s Settings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deactivate a User</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Chat User Setup</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training Environment User Setup</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change Permissions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Create New Dealer Account</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Correct Dealer Account Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactivate Dealer Account</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Merge Dealer Contacts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Merge Person Account Records</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Create New Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Edit Existing Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Schedule Report Delivery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Create a New Dashboard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Edit an Existing Dashboard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Create a New Email Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Edit an Existing Email Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Create a New List View</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Edit an Existing List View</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Create a New Field</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Edit a Field</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Edit a Page Layout</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Edit an Existing Vehicle Record</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Create a New Campaign</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Edit an Existing Campaign</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request Training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request Training Documentation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not able to Access Data</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Error Message</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Data Missing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System Down</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Data Error</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Edit Existing Functionality</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Add New Functionality</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Close Case(s)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delete Record(s)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mass Transfer Record Owner(s)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Create New Record(s)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Edit Existing Record(s)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Portal User Access</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Portal User Setup</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Portal Data Access</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Portal Question</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spam / AutoReply / Mass Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Chatter Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chatter Group Owner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chatter Group Settings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chatter Profile Settings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chatter Question</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chatter Problem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Issue_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Issue Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Manage Users</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer Portal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request a Change/Addition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Add/Edit a Record</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Report a Bug</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suggest a New Feature</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Support &amp; Training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chatter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Issue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enhancement Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Analysis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spam/Corporate Communications/Duplicate Case</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QUICK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MINI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FULL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Chat_Transcript__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Live Chat Transcript</label>
+        <referenceTo>LiveChatTranscript</referenceTo>
+        <relationshipName>Pre_Chat_Data</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Make__c</fullName>
+        <externalId>false</externalId>
+        <label>Make</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Infiniti</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nissan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Model</label>
+        <picklist>
+            <controllingField>Make__c</controllingField>
+            <picklistValues>
+                <fullName>370Z Coupe</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>370Z Roadster</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Altima Coupe</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Altima Sedan</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Armada</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>cube</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Frontier</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GT-R</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JUKE</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LEAF</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maxima</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Murano</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NV200 Compact Cargo</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NV200 Taxi</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NV 2500</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NV 3500</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NV Passenger</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pathfinder</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q30</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q40</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q50</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q50 Hybrid</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q60 Convertible</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q60 Coupe</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q60 IPL Convertible</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q70</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q70 Hybrid</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q70L</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quest</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QX30 - Concept</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QX50</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QX60</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QX60 Hybrid</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QX70</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QX80</fullName>
+                <controllingFieldValues>Infiniti</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rogue</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rogue Select</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sentra</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Titan</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Versa Note</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Versa Sedan</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Xterra</fullName>
+                <controllingFieldValues>Nissan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Model_of_Interest__c</fullName>
+        <description>what is the model of interest for the customer?</description>
+        <externalId>false</externalId>
+        <label>Model of Interest</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Murano</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Titan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maxima</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Nissan_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Nissan Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.Account.Name</field>
+                <operation>equals</operation>
+                <value>Nissan Internal Account</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Chat Data</relationshipLabel>
+        <relationshipName>Chat_Data</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OS__c</fullName>
+        <externalId>false</externalId>
+        <label>OS</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Preferred_Dealer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Preferred Dealer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Dealer</value>
+            </filterItems>
+            <infoMessage>Please select a preferred dealer</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Chat Data (Preferred Dealer)</relationshipLabel>
+        <relationshipName>Chat_Data</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Session_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Session Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Chat Data</label>
+    <listViews>
+        <fullName>All_With_Created_Date</fullName>
+        <columns>NAME</columns>
+        <columns>AccountId__c</columns>
+        <columns>Disposition_Code__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All With Created Date</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Chat Data</pluralLabel>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>CA</fullName>
+        <active>true</active>
+        <label>CA</label>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>DTS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCI CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NNA CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TECH LINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WCC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disposition_Code__c</picklist>
+            <values>
+                <fullName>Customer Dropped Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalate to RCAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to NMAC%2FIFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Owner Services%2FVehicle Connected Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Details__c</picklist>
+            <values>
+                <fullName>Add New Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Permissions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change a User%27s Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Group Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Group Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Profile Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close Case%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correct Dealer Account Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Dealer Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Email Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New List View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Missing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivate a User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delete Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit a Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit a Page Layout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Email Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing List View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Vehicle Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactivate Dealer Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mass Transfer Record Owner%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merge Dealer Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merge Person Account Records</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Chat User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Chatter Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Portal User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Salesforce User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not able to Access Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Password Reset Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal Data Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal User Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Training Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schedule Report Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam %2F AutoReply %2F Mass Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Down</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Environment User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User is Locked Out</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Type__c</picklist>
+            <values>
+                <fullName>Add%2FEdit a Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer Portal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FULL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MINI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manage Users</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QUICK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report a Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request a Change%2FAddition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam%2FCorporate Communications%2FDuplicate Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suggest a New Feature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support %26 Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Make__c</picklist>
+            <values>
+                <fullName>Infiniti</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model__c</picklist>
+            <values>
+                <fullName>370Z Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>370Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altima Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JUKE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LEAF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV Passenger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV200 Compact Cargo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV200 Taxi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versa Note</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cube</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model_of_Interest__c</picklist>
+            <values>
+                <fullName>Murano</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Year__c</picklist>
+            <values>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DPIC</fullName>
+        <active>true</active>
+        <label>DPIC</label>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>DTS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCI CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NNA CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TECH LINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WCC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disposition_Code__c</picklist>
+            <values>
+                <fullName>All Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brochure Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campaign Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Dropped Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer Related Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-mail transfer to Dealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalate to RCAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Product Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Product Inquiry - Post-sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Product Inquiry - Pre-sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Goodwill Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Nissan%2FInfiniti request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam%2FAbusive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer or refer to LCN%2FRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to MCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to NMAC%2FIFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Nissan CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Other Department</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Owner Services%2FVehicle Connected Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Roadside Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to VCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unrelated Subject</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VSC Inquiry</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Details__c</picklist>
+            <values>
+                <fullName>Add New Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Permissions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change a User%27s Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Group Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Group Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Profile Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close Case%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correct Dealer Account Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Dealer Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Email Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New List View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Missing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivate a User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delete Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit a Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit a Page Layout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Email Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing List View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Vehicle Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactivate Dealer Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mass Transfer Record Owner%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merge Dealer Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merge Person Account Records</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Chat User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Chatter Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Portal User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Salesforce User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not able to Access Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Password Reset Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal Data Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal User Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Training Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schedule Report Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam %2F AutoReply %2F Mass Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Down</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Environment User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User is Locked Out</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Type__c</picklist>
+            <values>
+                <fullName>Add%2FEdit a Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer Portal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FULL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MINI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manage Users</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QUICK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report a Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request a Change%2FAddition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam%2FCorporate Communications%2FDuplicate Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suggest a New Feature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support %26 Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Make__c</picklist>
+            <values>
+                <fullName>Infiniti</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model__c</picklist>
+            <values>
+                <fullName>370Z Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>370Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altima Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JUKE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LEAF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV Passenger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV200 Compact Cargo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV200 Taxi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versa Note</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cube</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model_of_Interest__c</picklist>
+            <values>
+                <fullName>Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Titan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Year__c</picklist>
+            <values>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MCC</fullName>
+        <active>true</active>
+        <label>MCC</label>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>DTS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCI CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NNA CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TECH LINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WCC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disposition_Code__c</picklist>
+            <values>
+                <fullName>All Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brochure Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Dropped Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-mail transfer to Dealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Product Inquiry - Post-sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Product Inquiry - Pre-sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer or refer to LCN%2FRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to NMAC%2FIFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Nissan CA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Details__c</picklist>
+            <values>
+                <fullName>Add New Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Permissions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change a User%27s Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Group Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Group Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Profile Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close Case%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correct Dealer Account Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Dealer Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Email Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New List View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Missing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivate a User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delete Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit a Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit a Page Layout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Email Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing List View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Vehicle Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactivate Dealer Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mass Transfer Record Owner%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merge Dealer Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merge Person Account Records</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Chat User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Chatter Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Portal User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Salesforce User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not able to Access Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Password Reset Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal Data Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal User Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Training Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schedule Report Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam %2F AutoReply %2F Mass Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Down</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Environment User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User is Locked Out</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Type__c</picklist>
+            <values>
+                <fullName>Add%2FEdit a Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer Portal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FULL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MINI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manage Users</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QUICK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report a Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request a Change%2FAddition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam%2FCorporate Communications%2FDuplicate Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suggest a New Feature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support %26 Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Make__c</picklist>
+            <values>
+                <fullName>Infiniti</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model__c</picklist>
+            <values>
+                <fullName>370Z Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>370Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altima Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JUKE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LEAF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV 2500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV 3500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV Passenger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV200 Compact Cargo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV200 Taxi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q40</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q50 Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q60 Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q60 Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q60 IPL Convertible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q70</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q70 Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q70L</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QX30 - Concept</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QX50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QX60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QX60 Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QX70</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QX80</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rogue Select</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versa Note</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cube</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model_of_Interest__c</picklist>
+            <values>
+                <fullName>Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Titan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Year__c</picklist>
+            <values>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Managed_Services</fullName>
+        <active>true</active>
+        <label>Managed Services</label>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>DTS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCI CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NNA CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TECH LINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WCC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disposition_Code__c</picklist>
+            <values>
+                <fullName>All Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brochure Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campaign Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Dropped Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer Related Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-mail transfer to Dealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalate to RCAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Product Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Product Inquiry - Post-sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Product Inquiry - Pre-sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Goodwill Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Nissan%2FInfiniti request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam%2FAbusive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer or refer to LCN%2FRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to MCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to NMAC%2FIFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Nissan CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Other Department</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Owner Services%2FVehicle Connected Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Roadside Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to VCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unrelated Subject</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VSC Inquiry</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Details__c</picklist>
+            <values>
+                <fullName>Add New Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Permissions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change a User%27s Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Group Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Group Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Profile Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close Case%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correct Dealer Account Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Dealer Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Email Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New List View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Missing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivate a User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delete Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit a Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit a Page Layout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Email Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing List View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Vehicle Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactivate Dealer Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mass Transfer Record Owner%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merge Dealer Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merge Person Account Records</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Chat User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Chatter Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Portal User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Salesforce User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not able to Access Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Password Reset Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal Data Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal User Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Training Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schedule Report Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam %2F AutoReply %2F Mass Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Down</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Environment User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User is Locked Out</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Type__c</picklist>
+            <values>
+                <fullName>Add%2FEdit a Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer Portal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FULL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MINI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manage Users</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QUICK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report a Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request a Change%2FAddition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam%2FCorporate Communications%2FDuplicate Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suggest a New Feature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support %26 Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Make__c</picklist>
+            <values>
+                <fullName>Infiniti</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model__c</picklist>
+            <values>
+                <fullName>370Z Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>370Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altima Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JUKE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LEAF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV Passenger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV200 Compact Cargo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV200 Taxi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versa Note</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cube</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model_of_Interest__c</picklist>
+            <values>
+                <fullName>Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Titan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Year__c</picklist>
+            <values>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>VCS</fullName>
+        <active>true</active>
+        <label>VCS</label>
+        <picklistValues>
+            <picklist>Department__c</picklist>
+            <values>
+                <fullName>DTS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCI CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NNA CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TECH LINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WCC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disposition_Code__c</picklist>
+            <values>
+                <fullName>Customer Dropped Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer Related Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Product Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non Nissan%2FInfiniti request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Other Department</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Roadside Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unrelated Subject</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Details__c</picklist>
+            <values>
+                <fullName>Add New Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Permissions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change a User%27s Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Group Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Group Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Profile Settings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close Case%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correct Dealer Account Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Dealer Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create New Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Email Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create a New List View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Missing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivate a User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delete Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Record%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit Existing Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit a Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit a Page Layout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Email Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing List View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit an Existing Vehicle Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactivate Dealer Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mass Transfer Record Owner%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merge Dealer Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merge Person Account Records</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Chat User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Chatter Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Portal User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Salesforce User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not able to Access Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Password Reset Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal Data Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal User Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Training Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schedule Report Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam %2F AutoReply %2F Mass Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Down</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Environment User Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User is Locked Out</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Type__c</picklist>
+            <values>
+                <fullName>Add%2FEdit a Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer Portal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FULL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MINI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manage Users</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QUICK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report a Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request a Change%2FAddition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spam%2FCorporate Communications%2FDuplicate Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suggest a New Feature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support %26 Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Make__c</picklist>
+            <values>
+                <fullName>Infiniti</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nissan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model__c</picklist>
+            <values>
+                <fullName>370Z Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>370Z Roadster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altima Coupe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Altima Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Armada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frontier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GT-R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JUKE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LEAF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maxima</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murano</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV Passenger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV200 Compact Cargo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV200 Taxi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pathfinder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rogue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sentra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Titan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versa Note</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Versa Sedan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xterra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cube</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model_of_Interest__c</picklist>
+            <values>
+                <fullName>Murano</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Year__c</picklist>
+            <values>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

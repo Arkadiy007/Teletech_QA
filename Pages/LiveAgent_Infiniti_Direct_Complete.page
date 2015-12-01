@@ -1,0 +1,280 @@
+<apex:page controller="LiveAgent_Direct_Complete" showHeader="false"
+	sidebar="false" title="Nissan Chat">
+	<apex:stylesheet value="{!URLFOR($Resource.NissanStyle, 'NissanStyle.css')}" />
+
+
+	<apex:form id="frmMain">
+		<apex:pageMessages escape="false" />
+		<div style="width: 100%;" class="livechat_infiniti_header">
+
+			<div class="infiniti_livechat_endsession"
+				onclick="javascript:window.close()"></div>
+
+		</div>
+		<div Class="livechat_infiniti_bg">
+			<apex:pageblock >
+
+				<div style="height: 375px; padding-top: 10px;">
+					<div class="livechat_txt">
+						We're ready to chat. Please fill out the form below. <span
+							style="color: #C00 !important;">*</span> = Required Field.
+					</div>
+
+					<div
+						style="text-align: center; padding-bottom: 0px; padding-top: 10px;">
+						<apex:pageblockSection collapsible="false" columns="1">
+
+							<apex:pageblockSectionItem >
+								<apex:outputLabel value="First Name *" />
+								<apex:inputText value="{!firstName}" maxlength="30"
+									style="width:260px;" />
+							</apex:pageblockSectionItem>
+							<apex:pageblockSectionItem >
+								<apex:outputLabel value="Last Name" />
+								<apex:inputText value="{!lastName}" maxlength="30"
+									style="width:260px;" />
+							</apex:pageblockSectionItem>
+							<apex:pageblockSectionItem >
+								<apex:outputLabel value="Zip Code" />
+								<apex:inputText value="{!zipCode}" maxlength="10"
+									style="width:260px;" />
+							</apex:pageblockSectionItem>
+							<apex:pageblockSectionItem >
+								<apex:outputLabel value="Email" />
+								<apex:inputText value="{!emailAddress}" maxlength="80"
+									style="width:260px;" />
+							</apex:pageblockSectionItem>
+							<apex:pageblockSectionItem >
+								<apex:outputLabel value="Phone" />
+								<apex:inputText value="{!phone}" maxlength="25"
+									style="width:260px;" />
+							</apex:pageblockSectionItem>
+
+
+							<apex:pageblockSectionItem >
+								<apex:outputLabel value="Call Reason" />
+								<apex:selectRadio value="{!selectedDepartment}"
+									layout="pageDirection">
+									<apex:selectOption itemValue="MCC_Infiniti"
+										itemLabel="A new Infiniti Vehicle or current offers" />
+									<apex:selectOption itemValue="VCS_Infiniti"
+										itemLabel="Infiniti Connection or Infiniti InTouch" />
+									<apex:selectOption itemValue="CA_Infiniti"
+										itemLabel="My current Infiniti Vehicle" />
+								</apex:selectRadio>
+							</apex:pageblockSectionItem>
+
+						</apex:pageblockSection>
+
+					</div>
+
+					<apex:outputPanel id="opErrorMessage"
+						style="position: absolute; top: 383px; left: 25px;">
+						<apex:outputLabel value="{!errorMessage}"
+							style="color:red; font-weight:bold; font-family:Verdana, Geneva, sans-serif;"
+							rendered="{!showErrorMessage}" />
+					</apex:outputPanel>
+
+					<div style="position: absolute; top: 388px; left: 25px; text-align: left;"
+						class="livechat_txt">
+						<b>Thank you.</b> An Infiniti Product Specialist <br />will be
+						right with you.
+					</div>
+
+					<div
+						style="position: absolute; top: 395px; left: 330px; color: #666666 !important; font-style: italic;">
+						Please wait...</div>
+
+					<div style="position: absolute; top: 390px; left: 330px;">
+						<!-- Skill with Priority 1 -->
+						<div id="liveagent_button_online_{!buttonId}"
+							style="display: none">
+							<!-- skill 1  -->
+							<apex:commandButton action="{!submitForm}"
+								reRender="opErrorMessage,opSuccess"
+								styleClass="infiniti-btn-startchat">
+								<apex:param value="button1" assignTo="{!chatButtonPressed}" />
+							</apex:commandButton>
+						</div>
+
+
+						<!-- Skill with Priority 2 -->
+						<div id="divSkill2" style="display: none;">
+							<div id="liveagent_button_online_{!buttonId2}"
+								style="display: none">
+								<!-- skill 2  -->
+								<apex:commandButton action="{!submitForm}"
+									reRender="opErrorMessage,opSuccess"
+									styleClass="infiniti-btn-startchat">
+									<apex:param value="button2" assignTo="{!chatButtonPressed}" />
+								</apex:commandButton>
+							</div>
+
+							<!-- Skill with Priority 3 -->
+							<div id="divSkill3" style="display: none;">
+								<div id="liveagent_button_online_{!buttonId3}"
+									style="display: none">
+									<!-- skill 3  -->
+									<apex:commandButton action="{!submitForm}"
+										reRender="opErrorMessage,opSuccess"
+										styleClass="infiniti-btn-startchat">
+										<apex:param value="button3" assignTo="{!chatButtonPressed}" />
+									</apex:commandButton>
+								</div>
+
+
+								<!-- Skill for the Queue -->
+								<div id="divQueue" style="display: none;">
+									<div id="liveagent_button_online_{!buttonIdQueue}"
+										style="display: none">
+										<!-- Queue  -->
+										<apex:commandButton action="{!submitForm}"
+											reRender="opErrorMessage,opSuccess"
+											styleClass="infiniti-btn-startchat">
+											<apex:param value="buttonQueue"
+												assignTo="{!chatButtonPressed}" />
+										</apex:commandButton>
+									</div>
+
+									<!-- Offline Div -->
+									<div id="liveagent_button_offline_{!buttonIdQueue}"
+										style="opacity: 0.8; filter: alpha(opacity = 80); display: none; background-color: #F0F0F0 !important; text-align: center !important; height: 100%; width: 100%; position: fixed !important; z-index: 1 !important; top: 0px !important; left: 0px !important;">
+										<div
+											style="color: #09C; font: bold 14px Arial !important; padding-top: 200px;">
+											Sorry, there are no available agents</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<table width="90%" align="center">
+					<tr>
+						<td class="livechat_footer_txt" valign="top"
+							style="padding-left: 20px;"><apex:outputText escape="false"
+								value="{!bottomMessage}" />
+						</td>
+					</tr>
+				</table>
+
+			</apex:pageblock>
+		</div>
+
+		<apex:outputPanel id="opSuccess">
+			<script>
+				if ({!isSuccess}) {
+					switch('{!chatButtonPressed}') {
+						case 'button1': 
+							liveagent.startChatWithWindow('{!buttonId}', window.name);
+							break;
+						case 'button2': 
+							liveagent.startChatWithWindow('{!buttonId2}', window.name);
+							break;
+						case 'button3': 
+							liveagent.startChatWithWindow('{!buttonId3}', window.name);
+							break;
+						case 'buttonQueue': 
+							liveagent.startChatWithWindow('{!buttonIdQueue}', window.name);
+							break;
+					}
+				}
+			</script>
+		</apex:outputPanel>
+
+	</apex:form>
+
+	<!-- Operation Hours Message -->
+	<div id="divOperationHours" style="display: none;">
+		<div
+			style="opacity: 0.8; filter: alpha(opacity = 80); background-color: #F0F0F0 !important; height: 100%; width: 100%; position: absolute; z-index: 5 !important; top: 0px; left: 0px;">
+		</div>
+		<div
+			style="text-align: center !important; z-index: 6 !important; color: #09C; font: bold 14px Arial !important; width: 70%; background-color: #404040 !important; position: absolute; top: 160px; left: 75px;">
+			<apex:outputText escape="false" value="{!afterHoursMessage}" />
+		</div>
+	</div>
+
+
+	<!-- Initialization Code -->
+	<script type="text/javascript">
+		if (!{!isDepartmentOpen}) {
+			var divOH = document.getElementById("divOperationHours");
+			divOH.style.display = 'block';
+		}
+		else {
+			if('{!buttonId}' != '') {
+				if (!window._laq) { window._laq = []; }
+				window._laq.push(function(){
+					liveagent.showWhenOnline('{!buttonId}', document.getElementById('liveagent_button_online_{!buttonId}'));
+					liveagent.showWhenOffline('{!buttonId}', document.getElementById('divSkill2'));
+				});
+			}
+			else {
+				document.getElementById('divSkill2').style.display = 'block';
+			}
+			
+			if('{!buttonId2}' != '') { 
+				if (!window._laq) { window._laq = []; }
+				window._laq.push(function(){
+					liveagent.showWhenOnline('{!buttonId2}', document.getElementById('liveagent_button_online_{!buttonId2}'));
+					liveagent.showWhenOffline('{!buttonId2}', document.getElementById('divSkill3'));
+				});
+			}
+			else {
+				document.getElementById('divSkill3').style.display = 'block';
+			}
+			
+			if('{!buttonId3}' != '') {
+				if (!window._laq) { window._laq = []; }
+				window._laq.push(function(){
+					liveagent.showWhenOnline('{!buttonId3}', document.getElementById('liveagent_button_online_{!buttonId3}'));
+					liveagent.showWhenOffline('{!buttonId3}', document.getElementById('divQueue'));
+				});
+			}
+			else {
+				document.getElementById('divQueue').style.display = 'block';
+			}
+			
+			if('{!buttonIdQueue}' != '') {
+				if (!window._laq) { window._laq = []; }
+				window._laq.push(function(){
+					liveagent.showWhenOnline('{!buttonIdQueue}', document.getElementById('liveagent_button_online_{!buttonIdQueue}'));
+					liveagent.showWhenOffline('{!buttonIdQueue}', document.getElementById('liveagent_button_offline_{!buttonIdQueue}'));
+				});
+			}
+			else {
+				document.getElementById('liveagent_button_offline_{!buttonIdQueue}').style.display = 'block';
+			}
+		}
+	</script>
+ 
+	<script type='text/javascript'
+		src='https://c.la8cs.salesforceliveagent.com/content/g/deployment.js'>
+    </script>
+	<script type='text/javascript'>
+		window.name = 'LiveAgent';
+		document.title = '{!chatWindowTitle}';
+		var routingGroup = getUrlVars()["routingGroup"];
+		
+		liveagent.init('https://d.la8cs.salesforceliveagent.com/chat', '{!deploymentId}', '{!$Organization.Id}'.substring(0,15));
+		
+        liveagent.addCustomDetail('CustomSessionId','{!customSessionId}').map('Pre_Chat_Data__c','Session_Id__c',true,true,false);
+        liveagent.addCustomDetail('Routing Group', routingGroup);
+        
+        // Read a page's GET URL variables and return them as an associative array.
+		function getUrlVars()
+		{
+		    var vars = [], hash;
+		    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		    for(var i = 0; i < hashes.length; i++)
+		    {
+		        hash = hashes[i].split('=');
+		        vars.push(hash[0]);
+		        vars[hash[0]] = hash[1];
+		    }
+		    return vars;
+		}
+    </script>
+</apex:page>

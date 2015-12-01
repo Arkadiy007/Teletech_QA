@@ -1,0 +1,20 @@
+<apex:page standardcontroller="PIR_Comment__c" extensions="PIRCommentEditExtension" sidebar="false">
+    <apex:sectionheader title="PIR Comment Edit" subtitle="{!PIR_Comment__c.name}" />
+    <apex:form >
+        <apex:pageblock title="PIR Comment Edit" id="thePageBlock" mode="edit">
+            <apex:pagemessages />
+            <apex:pageblockbuttons >
+                <apex:commandbutton value="Save" action="{!save}" />
+                <apex:commandbutton value="Save And New" action="{!saveAndNew}" />
+                <apex:commandbutton value="Cancel" action="{!cancel}" />
+            </apex:pageblockbuttons>
+            <apex:pageblocksection title="Information" columns="2">
+                <apex:inputtextarea value="{!PIR_Comment__c.Comment__c}" style="width: 400px; height: 100px; resize: none;"/>
+            </apex:pageblocksection>
+            <apex:pageblocksection title="System Information" columns="2">
+                <apex:outputfield value="{!PIR_Comment__c.Part_Inquiry_Request__c}" />
+            </apex:pageblocksection>
+
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

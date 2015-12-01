@@ -1,0 +1,221 @@
+<apex:page standardcontroller="Sorting_Report__c" extensions="SREditExtension" sidebar="false">
+  
+    <apex:sectionheader title="Sorting Report Edit" subtitle="{!Sorting_Report__c.name}" />
+    <apex:form rendered="{!!showRestrictedMessage}">
+        <apex:pageblock title="Sorting Report Edit" id="thePageBlock" mode="edit">
+            <apex:pagemessages />
+
+            <!-- Buttons-->
+            <apex:pageblockbuttons >
+                <apex:commandbutton value="Save" action="{!save}" />
+                <apex:commandbutton value="Save And Send" action="{!saveAndSend}" />
+                <apex:commandbutton value="Save, Send & New" action="{!saveSendAndNew}" rendered="{!!isGoldPartner}" />
+                <apex:commandbutton value="Save And New" action="{!saveAndNew}" rendered="{!!isGoldPartner}"  />
+                <apex:commandbutton value="Cancel" action="{!cancel}" />
+            </apex:pageblockbuttons>
+            <apex:actionregion >
+
+                <!-- Record information-->
+                <apex:pageblocksection columns="2" title="Information">
+                    <apex:outputfield value="{!Sorting_Report__c.Name}" />
+                    <apex:outputfield value="{!Sorting_Report__c.OwnerId}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Closed_Date__c}"/>
+                    <apex:outputtext value="" label="" />        
+                    <apex:inputfield value="{!Sorting_Report__c.Reopen_Count__c}"/>
+                    <apex:outputtext value="" label="" />
+                    <apex:inputfield value="{!Sorting_Report__c.Open_Days_Flag__c}" />
+                </apex:pageblocksection>
+
+                <!-- Customer information that are shown to everybody except customer (he need to see fields as a required)-->
+                <apex:pageblocksection title="Customer Information" columns="2" rendered="{!!isCustomerLayout}">
+                       <apex:inputfield value="{!Sorting_Report__c.Customer__c}" required="true" rendered="{!AND(!isCustomerLayout, isSupplierLayout)}" />
+                    
+                    <apex:pageBlockSectionItem rendered="{!OR(AND(ISBLANK(selectedPlant), isCustomerLayout), !isSupplierLayout)}">
+                        <apex:outputLabel value="Customer" />
+                            <apex:actionRegion >
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                <div class="requiredBlock"></div>
+                                <apex:selectList value="{!customerId}" size="1" label="Customer" required="true" >
+                                 <apex:selectOptions value="{!customersToSelect}"/>
+                                    <apex:actionSupport event="onchange" action="{!repopulatePlantsForCustomer}" reRender="plantPicklist"/>
+                                </apex:selectList> 
+                        </apex:outputPanel>
+                            </apex:actionRegion> 
+                    </apex:pageBlockSectionItem>
+  
+                    <apex:outputfield value="{!Sorting_Report__c.Customer__c}" rendered="{!isCustomerLayout}" />
+
+                    <apex:outputtext value="{!selectedPlant}" label="Plant" rendered="{!AND(!ISBLANK(selectedPlant), AND(!isSupplierLayout, isCustomerLayout))}"/>
+                    <apex:outputtext value="{!selectedPlant}" label="Plant" rendered="{!isSupplierLayout}"/>
+                    <apex:pageBlockSectionItem rendered="{!OR(AND(ISBLANK(selectedPlant), isCustomerLayout), AND(!isSupplierLayout, !isCustomerLayout))}">          
+                        <apex:outputLabel value="Plant" />
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                <div class="requiredBlock"></div>
+                             <apex:actionRegion >
+                                <apex:selectList value="{!selectedPlant}" size="1" label="Plant" required="true" id="plantPicklist" >
+                                  <apex:selectOptions value="{!plantsToSelect}" />
+                                </apex:selectList> 
+                                  </apex:actionRegion>
+                        </apex:outputPanel>               
+                    </apex:pageBlockSectionItem>
+
+
+                    <apex:inputfield value="{!Sorting_Report__c.Part__c}" id="Part"/>
+                    <apex:inputfield value="{!Sorting_Report__c.Sorting_Report_Number__c}" required="true"/>
+                    <apex:outputfield value="{!Sorting_Report__c.Part_Number__c}"/>
+                    <apex:outputfield value="{!Sorting_Report__c.Part_Name__c}"/>
+                    <apex:outputfield value="{!Sorting_Report__c.Global_Supplier_Number__c}"/>
+                    <apex:inputfield value="{!Sorting_Report__c.Status__c}" />
+                    
+                    <apex:outputText value="" label=""/>
+                    <apex:inputfield value="{!Sorting_Report__c.Total_Quantity_Sorted__c}" required="true" />                    
+                    <apex:inputfield value="{!Sorting_Report__c.Average_Sort_Time_Per_Part__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Sorting_Costs__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Reworked__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Rework_Costs__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_No_Good__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_No_Good_Material_Costs__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Mixed_Part__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Mixed_Part_Costs__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Wrong_Part__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Wrong_Part_Costs__c}" />
+                    <apex:outputText value="" label=""/>
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Costs__c}" />
+                </apex:pageblocksection>
+
+                <!-- Customer information that are shown to customer on record until sending-->
+                <apex:pageblocksection title="Customer Information" columns="2" rendered="{!AND(isCustomerLayout, !Sorting_Report__c.Lock_Fields__c)}"> 
+
+                    <apex:inputfield value="{!Sorting_Report__c.Customer__c}" required="true" rendered="{!AND(!isCustomerLayout, isGoldPartner)}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Customer__c}" required="true" rendered="{!!isGoldPartner}">
+                        <apex:actionsupport event="onchange" rerender="plantPicklist" action="{!repopulatePlantsForCustomer}" />
+                    </apex:inputfield>
+                    <apex:outputfield value="{!Sorting_Report__c.Customer__c}" rendered="{!isCustomerLayout}" />
+                    <apex:outputtext value="{!selectedPlant}" label="Plant" rendered="{!!ISBLANK(selectedPlant)}" />
+
+                   
+                    <apex:pageBlockSectionItem rendered="{!OR(AND(ISBLANK(selectedPlant), isCustomerLayout), isSupplierLayout)}">
+                        <apex:outputlabel value="Plant" />
+                        <apex:outputpanel layout="block" styleclass="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:selectlist value="{!selectedPlant}" size="1" label="Plant" required="true" >
+                                <apex:selectoptions value="{!plantsToSelect}" />
+                            </apex:selectlist>
+                        </apex:outputpanel>
+                    </apex:pageblocksectionitem>
+
+                    <apex:inputfield value="{!Sorting_Report__c.Part__c}" required="true" id="Part" />
+                    <apex:inputfield value="{!Sorting_Report__c.Sorting_Report_Number__c}" required="true" />
+                    <apex:outputfield value="{!Sorting_Report__c.Part_Number__c}"/>
+                    <apex:outputfield value="{!Sorting_Report__c.Part_Name__c}"/>
+                    <apex:outputfield value="{!Sorting_Report__c.Global_Supplier_Number__c}"/>
+                    
+                    <apex:inputfield value="{!Sorting_Report__c.Status__c}" required="true" />
+                    <apex:outputText value="" label=""/>
+                    
+
+                    <apex:inputfield value="{!Sorting_Report__c.Total_Quantity_Sorted__c}" required="true" />                    
+                    <apex:inputfield value="{!Sorting_Report__c.Average_Sort_Time_Per_Part__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Sorting_Costs__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Reworked__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Rework_Costs__c}"  />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_No_Good__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_No_Good_Material_Costs__c}"  />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Mixed_Part__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Mixed_Part_Costs__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Wrong_Part__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Wrong_Part_Costs__c}" />
+                    <apex:outputText value="" label=""/>
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Costs__c}" />
+                </apex:pageblocksection>
+
+                 <!-- Customer information that are shown to customer on record after sending-->
+                <apex:pageblocksection title="Customer Information" columns="2" rendered="{!AND(isCustomerLayout, Sorting_Report__c.Lock_Fields__c)}">
+                    <apex:outputfield value="{!Sorting_Report__c.Customer__c}" />
+                    <apex:outputtext value="{!selectedPlant}" label="Plant" rendered="{!OR(!ISBLANK(selectedPlant), !isCustomerLayout)}" />
+
+                    <apex:outputfield value="{!Sorting_Report__c.Part__c}" id="Part" />
+                    <apex:outputfield value="{!Sorting_Report__c.Sorting_Report_Number__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Part_Number__c}"/>
+                    <apex:outputfield value="{!Sorting_Report__c.Part_Name__c}"/>
+                    <apex:outputfield value="{!Sorting_Report__c.Global_Supplier_Number__c}"/>
+                    
+                    <apex:inputfield value="{!Sorting_Report__c.Status__c}" required="true" />
+                    <apex:outputText value="" label=""/>
+                    
+
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Quantity_Sorted__c}" />                    
+                    <apex:outputfield value="{!Sorting_Report__c.Average_Sort_Time_Per_Part__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Sorting_Costs__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Reworked__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Rework_Costs__c}"  />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_No_Good__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_No_Good_Material_Costs__c}"/>
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Mixed_Part__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Mixed_Part_Costs__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Wrong_Part__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Wrong_Part_Costs__c}" />
+                    <apex:outputText value="" label=""/>
+                    <apex:outputfield value="{!Sorting_Report__c.Total_Costs__c}" />
+                </apex:pageblocksection>
+
+                <!-- Supplier information that is shown to a supplier-->
+                <apex:pageblocksection title="Supplier Information" columns="2" rendered="{!isSupplierLayout}">
+                    <apex:outputfield value="{!Sorting_Report__c.Supplier_Code__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Supplier_Name__c}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Supplier_Response__c}" required="true"/>
+                    <apex:inputfield value="{!Sorting_Report__c.Name_of_Responder__c}" required="true" />
+                    <apex:inputfield value="{!Sorting_Report__c.Reason_for_Status__c}" required="true" />
+                     <apex:outputText value="" label=""/>
+                    
+                    <apex:inputfield value="{!Sorting_Report__c.Certified_Supplier_RAN_Number__c}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Ship_Date__c}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Last_Suspect_RAN__c}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Future_Shipment_RAN__c}" />
+                </apex:pageblocksection>
+
+                 <!-- Supplier information that is shown to a customer-->
+                <apex:pageblocksection title="Supplier Information" columns="2" rendered="{!!isSupplierLayout}">
+                    <apex:outputfield value="{!Sorting_Report__c.Supplier_Code__c}" />
+                    <apex:outputfield value="{!Sorting_Report__c.Supplier_Name__c}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Supplier_Response__c}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Name_of_Responder__c}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Reason_for_Status__c}" />
+                    <apex:outputText value="" label=""/>
+                    
+                    <apex:inputfield value="{!Sorting_Report__c.Certified_Supplier_RAN_Number__c}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Ship_Date__c}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Last_Suspect_RAN__c}" />
+                    <apex:inputfield value="{!Sorting_Report__c.Future_Shipment_RAN__c}" />
+                </apex:pageblocksection>
+
+            </apex:actionregion>
+
+            <!-- NEC (EQA?) information - editable only to EQA -->
+            <apex:pageblocksection title="NEC Information" columns="2">
+                <apex:inputfield value="{!Sorting_Report__c.NEC_Sort_Required__c}" />
+                <apex:outputText value="" label=""/>
+                <apex:inputfield value="{!Sorting_Report__c.Issue_Type__c}" />
+                <apex:inputfield value="{!Sorting_Report__c.Reason__c}" />
+                <apex:inputfield value="{!Sorting_Report__c.Technical_Issue_Location__c}" />
+                <apex:inputfield value="{!Sorting_Report__c.Explanation__c}" />
+                <apex:inputfield value="{!Sorting_Report__c.Certified_NEC_RAN__c}" />
+                <apex:inputfield value="{!Sorting_Report__c.NEC_Ship_Date__c}" />
+                <apex:inputfield value="{!Sorting_Report__c.EQA_Average_Sort_Time_Per_Part__c}" />
+                <apex:inputfield value="{!Sorting_Report__c.Legal_Hold__c}" />
+            </apex:pageblocksection>
+
+        </apex:pageblock>
+    </apex:form>
+
+    <apex:form rendered="{!showRestrictedMessage}">
+    <apex:pageBlock >
+          <apex:pageMessage summary=" {!$Label.EQA_Wrong_Owner_Message}" severity="warning" strength="3" />
+
+          <apex:pageblockbuttons >
+                <apex:commandbutton value="Back" action="{!cancel}" />
+            </apex:pageblockbuttons>
+       
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:component >
+    <apex:attribute name="displText" description="This is the value for the component." type="String" required="true"/>
+    <apex:image url="{!URLFOR($Resource.CommonIcons, 'exclamation-point.png')}" width="30" height="30" />
+    <apex:outputText value="{!displText}" style="font-size:medium; color:red; font-weight:bold" />
+</apex:component>

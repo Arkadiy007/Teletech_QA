@@ -1,0 +1,160 @@
+<apex:page id="loginPage" controller="NNAPortalLogin" showHeader="false" title="NNA Portal Login" standardStylesheets="false">
+
+    <head>
+        
+        <style type="text/css">
+       html {
+            height: 100%;
+                }
+        body {
+            width: 100%;
+            background: linear-gradient(to left top, #dfdfdf, #fbfbfb); 
+                }
+        .Welcome{
+            background-image:url('https://c.na10.content.force.com/servlet/servlet.ImageServer?id=015F0000002Ivj1&amp;oid=00DA00000009j8L&amp;lastMod=1396037004000'); 
+            background-repeat:no-repeat;
+            background-position:center top;
+            width:100%;
+            height: 500px;
+            margin-right:auto;
+            margin-left:auto;
+            overflow:hidden;
+            z-index: -1000;
+                }
+        table.WelcomeText {
+            border-width: 1px;
+            border-spacing: 0px;
+            border-style: none;
+            border-color: gray;
+            border-collapse: separate;
+            border-collapse:collapse;
+            margin-left:auto; 
+            margin-right:auto;
+            margin-top:-400px;
+            height: 300px;
+            overflow:hidden;
+                }
+
+             fieldset.login {
+                background-color: rgba(250,250,250,0.75);
+                border: none;
+                border-radius: 5px 5px 5px 5px;
+                font-family: "Arial","sans-serif";
+                margin-top: 20px;
+                margin-right: auto;
+                margin-left: auto;
+                padding: 10px;
+                color:white;
+                height:250px;
+               
+            }
+ 
+            fieldset.login label {
+                clear: both;
+                color: #434343;
+                display: block;
+                font-size: 12px;
+                font-weight: bold;
+                padding-top: 20px;
+            }
+ 
+            fieldset.login input.text {
+                border: 1px solid #AAAAAA;
+                color: #5E5E5E;
+                float: left;
+                padding: 5px;
+                width: 320px;
+            }
+ 
+            .clear {
+                clear: both;
+            }
+ 
+            .content {
+            float:right;
+                margin-top:auto;
+                margin-bottom:auto;
+                margin-right:auto;
+                margin-left:auto;
+                width: 400px;
+            }
+            
+
+        </style>
+    </head>
+    <script type='text/javascript'>
+        function noenter(ev)  {
+            if (window.event && window.event.keyCode == 13 || ev.which == 13) {
+                javascriptLogin();
+                return false;
+             } else {
+                  return true;
+             }
+         }
+        </script>
+    <body>
+
+    <div class="Welcome" style="margin-left:auto; margin-left:auto"  >
+    <table align="center">
+    <tr>
+    <td>
+    <div style="font-size:14px;font-weight:bold"><apex:pageMessages id="error" /></div>
+    </td>
+    </tr>
+    </table>
+    </div>
+
+<table class="WelcomeText">
+
+<tr valign="top">
+
+    <td width="100%" style="marin-right:auto; margin-left:auto">
+    <div style="marin-right:auto; margin-left:auto;z-index: 1000;">
+     
+                <apex:form id="loginForm" forceSSL="true">
+                    <apex:actionFunction name="javascriptLogin" action="{!login}" />
+ 
+                    <fieldset class="login">
+                    
+                        <apex:outputText value="NNA Portal Login" style="Text-weight:bold;font-size:26px;color:#e00024;"/>
+                        <apex:outputLabel styleClass="label"
+                            value="{!$Label.site.username}" for="username" />
+                        <apex:inputText styleClass="text" id="username"
+                            value="{!username}" />
+                        <apex:outputLabel styleClass="label"
+                            value="{!$Label.site.password}" for="password" />
+                        <apex:inputSecret styleClass="text" id="password"
+                            value="{!password}" onkeypress="return noenter(event);" />
+ 
+                        <br/><br/>
+                        <p>
+                         <apex:outputLink value="{!$Page.NNAForgotPassword}" style="color:#434343; font-size:12px">
+                        {!$Label.site.forgot_your_password_q}
+                    </apex:outputLink>
+                          </p>
+                        
+                        <p>
+                            <apex:commandButton value="Login" style="width:55px; background-color:#e00024; color:white"
+                                action="{!login}" id="submitbutton" />
+                                
+                        </p>
+                        
+                    </fieldset>
+                  </apex:form>
+            </div>
+        </td>
+
+    </tr>
+    <tr>
+        <td align="center" style="font-family:Arial,sans-serif;">
+             <apex:outputText escape="false" value="This page is for Nissan Employees only. <br/>If you have reached this page in error, please click " style="color:#434343; font-size:12px; align:center;"/>
+                <apex:outputLink value="http://www.nissanusa.com" style="text-decoration:none;"><apex:outputText value="here." style="color:#e00024; font-size:12px;"/></apex:outputlink>
+            
+        </td>
+    </tr>
+</table>
+
+</body>
+
+
+</apex:page>

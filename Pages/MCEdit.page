@@ -1,0 +1,174 @@
+<apex:page standardcontroller="Monetary_Claim__c" extensions="MCEditExtension" sidebar="false">
+    <apex:sectionheader title="Monetary Claim Edit" subtitle="{!Monetary_Claim__c.name}" />
+    <apex:form rendered="{!!showRestrictedMessage}">
+        <apex:pageblock title="Monetary Claim Edit" id="thePageBlock" mode="edit">
+            <apex:pagemessages />
+            <apex:pageblockbuttons >
+                <apex:commandbutton value="Save" action="{!save}" />
+                <apex:commandbutton value="Save And Send" action="{!saveAndSend}" />
+                <apex:commandbutton value="Save, Send & New" action="{!saveSendAndNew}" rendered="{!!isGoldPartner}"   />
+                <apex:commandbutton value="Save And New" action="{!saveAndNew}" rendered="{!!isGoldPartner}"   />
+                <apex:commandbutton value="Cancel" action="{!cancel}" />
+            </apex:pageblockbuttons>
+            <apex:actionregion >
+                <apex:pageblocksection columns="2" title="Information" >
+                    <apex:outputfield value="{!Monetary_Claim__c.Name}" />
+                    <apex:outputfield value="{!Monetary_Claim__c.OwnerId}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Closed_Date__c}"/>
+                    <apex:outputtext value="" label="" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Reopen_Count__c}" />
+                    <apex:outputtext value="" label="" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Open_Days_Flag__c}" />
+                   
+                </apex:pageblocksection>
+                <apex:pageblocksection title="Customer Information" columns="2">
+                    <apex:pageBlockSectionItem rendered="{!OR(AND(ISBLANK(selectedPlant), isCustomerLayout), AND(!isSupplierLayout, !isCustomerLayout))}">
+                        <apex:outputLabel value="Customer" />
+                            <apex:actionRegion >
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                <div class="requiredBlock"></div>
+                                <apex:selectList value="{!customerId}" size="1" label="Customer" required="true" >
+                                 <apex:selectOptions value="{!customersToSelect}"/>
+                                    <apex:actionSupport event="onchange" action="{!repopulatePlantsForCustomer}" reRender="plantPicklist"/>
+                                </apex:selectList> 
+                        </apex:outputPanel>
+                            </apex:actionRegion> 
+                    </apex:pageBlockSectionItem>
+  
+                    <apex:outputfield value="{!Monetary_Claim__c.Customer__c}" rendered="{!OR(isCustomerLayout, isSupplierLayout)}" />
+                     <apex:outputtext value="{!selectedPlant}" label="Plant" rendered="{!isSupplierLayout}"/>
+                    <apex:outputtext value="{!selectedPlant}" label="Plant" rendered="{!AND(!ISBLANK(selectedPlant), AND(!isSupplierLayout, isCustomerLayout))}"/>
+              <!---->
+                    <apex:pageBlockSectionItem rendered="{!OR(AND(ISBLANK(selectedPlant), isCustomerLayout), AND(!isSupplierLayout, !isCustomerLayout))}">          
+                        <apex:outputLabel value="Plant" />
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                <div class="requiredBlock"></div>
+                             <apex:actionRegion >
+                                <apex:selectList value="{!selectedPlant}" size="1" label="Plant" required="true" id="plantPicklist" >
+                                  <apex:selectOptions value="{!plantsToSelect}" />
+                                </apex:selectList> 
+                                  </apex:actionRegion>
+                        </apex:outputPanel>               
+                    </apex:pageBlockSectionItem>
+
+
+                    <apex:inputfield value="{!Monetary_Claim__c.Monetary_Claim_Number__c}" required="true" rendered="{!!isCustomerLayout}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Monetary_Claim_Number__c}" required="true" rendered="{!isCustomerLayout}" />
+                    <apex:outputtext value="" label="" rendered="{!AND(NOT(isSortingReportRecordType),NOT(isIncidentClaimRecordType))}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Sorting_Report__c}" required="true" rendered="{!isSortingReportRecordType}"/>
+
+                    <apex:inputfield value="{!Monetary_Claim__c.Part_Incident_Report__c}" required="true" rendered="{!isIncidentClaimRecordType}"/>
+                    <apex:inputfield value="{!Monetary_Claim__c.Part_Number__c}" /> 
+                    <apex:inputfield value="{!Monetary_Claim__c.Part_Name__c}" />                     
+                    <apex:inputfield value="{!Monetary_Claim__c.Supplier_Code__c}"  />
+                    <apex:inputfield value="{!Monetary_Claim__c.Supplier_Name__c}"  />
+                    <apex:outputtext value="" label="" rendered="{!isSortingReportRecordType}" />
+
+                     <apex:inputfield value="{!Monetary_Claim__c.Quantity_Sorted__c}" rendered="{!!isSortingReportRecordType}" />
+                    <apex:outputtext value="" label="" rendered="{!!isSortingReportRecordType}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Reworked_Quantity__c}" rendered="{!!isSortingReportRecordType}" />
+                        <apex:inputfield value="{!Monetary_Claim__c.Reworked_Costs__c}" rendered="{!!isSortingReportRecordType}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.No_Good_Quantity__c}" rendered="{!!isSortingReportRecordType}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.No_Good_Material_Costs__c}" rendered="{!!isSortingReportRecordType}" />
+                       
+                    <apex:inputfield value="{!Monetary_Claim__c.Wrong_Part__c}" rendered="{!!isSortingReportRecordType}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Wrong_Part_Costs__c}" rendered="{!!isSortingReportRecordType}" />
+                        
+                    <apex:inputfield value="{!Monetary_Claim__c.Mixed_Part__c}" rendered="{!!isSortingReportRecordType}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Mixed_Part_Costs__c}" rendered="{!!isSortingReportRecordType}" />
+
+                        
+                        
+                    <apex:outputtext value="" label="" />
+                    
+                    <apex:inputfield value="{!Monetary_Claim__c.Global_Supplier_Number__c}" rendered="{!isSortingReportRecordType}" />
+                    <apex:outputtext value="" label="" />
+                        <apex:inputfield value="{!Monetary_Claim__c.Explanation__c}" required="false" rendered="{!!isCustomerLayout}" />
+                        <apex:inputfield value="{!Monetary_Claim__c.Explanation__c}" required="true" rendered="{!isCustomerLayout}"/>
+                </apex:pageblocksection>
+                <apex:pageblocksection title="Customer Totals" columns="2">
+                    <apex:outputfield value="{!Monetary_Claim__c.Total_Quantity_Sorted__c}"  />
+                    <apex:outputtext value="" label="" rendered="{!!isSortingReportRecordType}" />
+                    <apex:outputfield value="{!Monetary_Claim__c.Total_Sorting_Costs__c}" rendered="{!isSortingReportRecordType}" />
+                    <apex:outputfield value="{!Monetary_Claim__c.Total_Reworked__c}" />
+                    <apex:outputfield value="{!Monetary_Claim__c.Total_Rework_Costs__c}"  />
+
+                    <apex:outputfield value="{!Monetary_Claim__c.Total_No_Good__c}" />
+                    <apex:outputfield value="{!Monetary_Claim__c.Total_No_Good_Material_Costs__c}" />
+                    <apex:outputfield value="{!Monetary_Claim__c.Total_Wrong_Part__c}"  />
+                   
+
+                    <apex:inputfield value="{!Monetary_Claim__c.Total_Other_Costs__c}" />
+
+                    <apex:inputfield value="{!Monetary_Claim__c.Total_Mixed_Part__c}" />
+
+                    <apex:outputfield value="{!Monetary_Claim__c.Total_Wrong_Part_Costs__c}" />
+
+                    <apex:inputfield value="{!Monetary_Claim__c.Total_Other__c}" />
+                  
+                    <apex:inputfield value="{!Monetary_Claim__c.Total_Mixed_Part_Costs__c}" /> <br />
+
+                    <apex:inputfield value="{!Monetary_Claim__c.Premium_Freight__c}" />
+
+                    <apex:outputfield value="{!Monetary_Claim__c.Total_Quantity_Parts__c}" />
+                    <apex:outputfield value="{!Monetary_Claim__c.Total_Claim_Amount__c}"  />
+              
+
+                </apex:pageblocksection>
+                <apex:pageblocksection title="Supplier Information" columns="2" rendered="{!isSupplierLayout}">
+                    <apex:inputfield value="{!Monetary_Claim__c.Supplier_Response__c}" required="true"/>
+                    <apex:inputfield value="{!Monetary_Claim__c.Name_of_Responder__c}" required="true" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Amount_Accepted__c}" required="true" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Amount_Rejected__c}" required="true" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Reason_for_Status__c}" required="true" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Total_Supplier_Amount__c}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Account_Coding__c}" />
+                    <apex:outputtext value="" label="" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Cost_Center__c}" />
+                    
+                </apex:pageblocksection>
+
+                <apex:pageblocksection title="Supplier Information" columns="2" rendered="{!!isSupplierLayout}">
+                    <apex:inputfield value="{!Monetary_Claim__c.Supplier_Response__c}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Name_of_Responder__c}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Amount_Accepted__c}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Amount_Rejected__c}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Reason_for_Status__c}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Total_Supplier_Amount__c}" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Account_Coding__c}" />
+                    <apex:outputtext value="" label="" />
+                    <apex:inputfield value="{!Monetary_Claim__c.Cost_Center__c}" />
+                    
+                </apex:pageblocksection>
+
+            </apex:actionregion>
+            <apex:pageblocksection title="Accounting Information" columns="1">
+                <apex:inputfield value="{!Monetary_Claim__c.Intercompany_Approval_Generated_and_Sent__c}" />
+                <apex:inputfield value="{!Monetary_Claim__c.Form_Approved_By_Country__c}" />
+                <apex:inputfield value="{!Monetary_Claim__c.Form_Approved_by_NEC__c}" />
+                <apex:inputfield value="{!Monetary_Claim__c.Form_Sent_For_Invoice_Credit_Memo__c}" />
+                <apex:inputfield value="{!Monetary_Claim__c.Create_Debit_to_Supplier_Submit_to_AP__c}" />
+                <apex:inputfield value="{!Monetary_Claim__c.Send_Invoice_Credit_Memo_to_Customer__c}" />
+                <apex:inputfield value="{!Monetary_Claim__c.Claim_Status__c}" />
+                <apex:inputfield value="{!Monetary_Claim__c.Comments__c}" />
+                <apex:inputfield value="{!Monetary_Claim__c.Legal_Hold__c}" />
+            </apex:pageblocksection>
+           
+            <apex:pageblocksection title="System Information" columns="2" >
+                <apex:outputfield value="{!Monetary_Claim__c.RecordTypeId}" />
+            </apex:pageblocksection>
+            
+        </apex:pageblock>
+    </apex:form>
+
+    <apex:form rendered="{!showRestrictedMessage}">
+    <apex:pageBlock >
+          <apex:pageMessage summary=" {!$Label.EQA_Wrong_Owner_Message}" severity="warning" strength="3" />
+
+          <apex:pageblockbuttons >
+                <apex:commandbutton value="Back" action="{!cancel}" />
+            </apex:pageblockbuttons>
+       
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

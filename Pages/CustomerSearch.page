@@ -1,0 +1,193 @@
+<apex:page controller="Controller_CustomerSearch" tabStyle="Search_Create__tab">
+    <apex:sectionHeader title="{!$Label.sfTitle}" subtitle="{!$Label.sfSubTitle}" description="{!$Label.sfTitleDescription}"/>
+    <apex:outputPanel id="errorPanel">
+    <apex:pageMessages />
+    
+        <apex:pageMessage strength="2" title="{!errorTitle}" summary="{!errorMessage}" severity="{!errorSeverity}" rendered="{!errorShow}" />
+    </apex:outputPanel>
+    <apex:outputPanel id="searchPanel" styleClass="searchFilterFields">
+    <apex:form id="searchForm">
+    <div class="searchFilterFieldsHolder">
+        <table class="searchFilterFields" width="100%">
+        <tr>
+            <td width="250px">
+            <table width="100%">
+            <tr>
+                <td>
+                    <apex:outputLabel value="{!$Label.sfCustomerId}" for="searchCustomerID"/>
+                </td>
+                <td width="100%">
+                    <apex:inputText value="{!searchCustomerId}" id="searchCustomerID" required="false"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <apex:outputLabel value="{!$Label.sfFirstName}" for="searchFirstName"/>
+                </td>
+                <td width="100%">
+                    <apex:inputText value="{!searchFirstName}" id="searchFirstName" required="false"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <apex:outputLabel value="{!$Label.sfLastName}" for="searchLastName"/>
+                </td>
+                <td width="100%">
+                    <apex:inputText value="{!searchLastname}" id="searchLastName" required="false"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <apex:outputLabel value="Address Line 1" for="addressLine1"/>
+                </td>
+                <td width="100%">
+                    <apex:inputText value="{!searchAddr1}" id="addressLine1" required="false"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <apex:outputLabel value="Zip" for="zip"/>
+                </td>
+                <td width="100%">
+                    <apex:inputText value="{!searchZip}" id="zip" required="false"/>
+                </td>
+            </tr>
+
+ 
+<!-- string ReservationId
+ //Not sure what ReservationId is for
+ -->
+
+            <tr>
+                <td>
+                    <apex:outputLabel value="{!$Label.sfPhone}" for="searchdPhone"/>
+                </td>
+                <td width="100%">
+                    <apex:inputText value="{!searchPhone}" id="searchPhone" required="false"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <apex:outputLabel value="{!$Label.sfEmail}" for="searchEmail"/>
+                </td>
+                <td width="100%">
+                    <apex:inputText value="{!searchEmail}" id="searchEmail" required="false"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td width="100%">
+                    <apex:commandButton value="{!$Label.btnSearch}" action="{!search}" rerender="resultPanel,errorPanel" styleClass="searchFilterButton" status="processingStatus"/>
+                    &nbsp;
+                    <apex:commandButton value="{!$Label.btnReset}" action="{!reset}" rerender="searchPanel,resultPanel,errorPanel" styleClass="searchFilterButton"/>
+                    &nbsp;
+                    <apex:commandButton value="Search Maritz" action="{!searchMaritz}" rerender="resultPanel,errorPanel" styleClass="searchFilterButton" status="processingStatus"/>
+                </td>
+            </tr>
+        </table>
+        </td>
+        <td align="center" valign="middle">
+        <table style="font-size:80%;">
+        <!--            
+            <tr><td width="20%" align="right"><strong>{!$Label.sfAsterik}</strong></td>
+                <td width="80%">{!$Label.sfAsterikText}</td>
+            </tr>
+            <tr><td width="20%" align="right"><strong>{!$Label.sfQuestionmark}</strong></td>
+                <td width="80%">{!$Label.sfQuestionmarkText}</td></tr>
+        -->    
+                </table>
+                </td>
+            </tr>
+        
+        </table>
+    </div>
+    </apex:form>
+    <center><apex:actionStatus id="processingStatus" startText="{!$Label.sfProcessRequest}"/></center>
+    </apex:outputPanel>
+    <br/>
+    <apex:outputPanel id="resultPanel">
+        <apex:form id="resultForm">
+        <apex:pageBlock id="leadresultPanel" title="{!$Label.sfLeads}{!If(numLeads > 0,' [' & text(numLeads) & ']',' [0]')}">
+            <apex:pageMessage strength="2" severity="info" summary="{!$Label.sfNoLeadResultWarning}" rendered="{!noLeadResult}" />
+            <apex:pageBlockSection title="{!$Label.sfMatchingLeads}" collapsible="true" columns="1" rendered="{!NOT(emptyLeadList)}">
+                <apex:pageBlockTable value="{!resultListLeads}" var="leadItem">
+                    <apex:column >
+                        <apex:facet name="header">{!$Label.sfLeadName}</apex:facet>
+                        <apex:outputLink value="{!URLFOR($Action.Lead.View, leadItem.Id)}">{!leadItem.Firstname}&nbsp;{!leadItem.Lastname}</apex:outputLink>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">{!$Label.sfLeadCompany}</apex:facet>
+                        <apex:outputLink value="{!URLFOR($Action.Lead.View, leadItem.Id)}">{!leadItem.Company}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!leadItem.Phone}"/>
+                    <apex:column value="{!leadItem.Email}"/>
+                    <apex:column value="{!leadItem.Status}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:commandButton id="createNewLead" value="{!$Label.btnNew}" action="{!createNewLead}"/>
+        </apex:pageBlock>
+
+        <apex:pageBlock id="accountresultPanel" title="{!$Label.sfPersonAccounts}{!If(numAccounts > 0,' [' & text(numAccounts) & ']',' [0]')}" tabStyle="Account">
+            <apex:pageMessage strength="2" severity="info" summary="{!$Label.sfNoAccountResultWarning}" rendered="{!noAccountResult}" />
+            <apex:pageBlockSection title="{!$Label.sfMatchingAccounts}" collapsible="true" columns="1" rendered="{!NOT(emptyAccountList)}">
+                <apex:pageBlockTable value="{!resultListAccounts}" var="accountItem">
+                    <apex:column >
+                        <apex:facet name="header">{!$Label.sfAccountName}</apex:facet>
+                        <apex:outputLink value="{!URLFOR($Action.Account.View, accountItem.Id)}">{!accountItem.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!accountItem.Phone}"/>
+                    <apex:column value="{!accountItem.Type}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:commandButton id="createNewAccount" value="{!$Label.btnNew}" action="{!createNewAccount}"/>
+        </apex:pageBlock>
+ 
+ <!-- Maritz Results -->
+         <apex:pageBlock id="MaritzResults" title="{!$Label.sfMaritz}{!If(numMaritz > 0,' [' & text(numMaritz) & ']',' [0]')}" tabStyle="Contact">
+            <apex:pageMessage strength="2" severity="info" summary="{!$Label.sfmaritzNoResults}" rendered="{!noMaritzResults}" />
+            <apex:pageMessage strength="2" severity="info" summary="{!$Label.sfmaritzTooManyResults}" rendered="{!TooManyMaritzResults}" />
+            <apex:pageMessage strength="2" severity="info" summary="{!$Label.sfmaritzOtherWarning}" rendered="{!OtherMaritzResults}" />
+            <apex:pageBlockSection title="{!$Label.sfMatchingContacts}" collapsible="true" columns="1" rendered="{!not(emptyMaritzList)}"><!--  -->
+                <apex:pageBlockTable value="{!resultListMaritz}" var="contactItem">
+                    <apex:column >
+                        <apex:commandButton id="selectMaritzAccount" value="{!$Label.btnSelect}" action="{!useExisting}" rerender="hiddenBlock">
+                            <apex:param name="{!$Label.sfCustomerIdField}" value="{!contactItem.ContactId}" assignTo="{!selectedCustomer}"/>
+                        </apex:commandButton>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">{!$Label.sfContactName}</apex:facet>
+                            {!contactItem.FirstName} {!contactItem.LastName}
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Address Line 1</apex:facet>
+                        {!contactItem.Line1}
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">State</apex:facet>
+                        {!contactItem.State}
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Zip</apex:facet>
+                        {!contactItem.ZipCode}
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Phone</apex:facet>
+                        {!contactItem.Phone}
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Email</apex:facet>
+                        {!contactItem.Email}
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:commandButton id="createNewMAccount" value="{!$Label.btnNew}" action="{!createNewContact}"/>
+        </apex:pageBlock>
+        </apex:form>
+    </apex:outputPanel>
+    <apex:pageBlock id="hiddenBlock" rendered="false"></apex:pageBlock>
+</apex:page>

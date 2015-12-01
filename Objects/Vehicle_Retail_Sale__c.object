@@ -1,0 +1,1510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Action_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Action Plan</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Customer_Disposition__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Disposition</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer Now Satisfied</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Not Satisfied - Dealer Contacted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Not Satisfied - Dealer Never Contacted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Escalated to LPM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Escalated to CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Email__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>As provided by Customer in Survey</inlineHelpText>
+        <label>Customer Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Phone__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>As provided by Customer on Survey</inlineHelpText>
+        <label>Customer Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Dealer_Follow_Up_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Follow Up Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Action Taken</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Action Will Be Taken</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Can&apos;t / Won&apos;t Take Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Disposed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Disposed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Disposed_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Disposed Status</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Excellent_Overall_Experience__c</fullName>
+        <externalId>false</externalId>
+        <label>Excellent Overall Experience</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes_But</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Response</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>External_Owner_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>External Owner Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_Selling_Dealer_Name__c</fullName>
+        <externalId>true</externalId>
+        <label>External_Selling Dealer Name</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_Vehicle_Identification_Number__c</fullName>
+        <externalId>true</externalId>
+        <label>External Vehicle Identification Number</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FF_Score__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Feedback Ferret Score</inlineHelpText>
+        <label>FF Score</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Call__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Action Flag</inlineHelpText>
+        <label>Follow Up Call</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes_But</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow Up Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Hot Alert</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hot Alert Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hot Alert No Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow Up Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Yet Opened</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer Contacted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Contacted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disqualified by Team Lead</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Household_Identifier__c</fullName>
+        <description>The Household Identifier of the Vehicle Retail Sales indicated Owner.</description>
+        <externalId>false</externalId>
+        <formula>Owner_Id__r.Household_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Household Identifier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Integration_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Integration ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Internal_Ferret_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Ferret ID</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Used_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <label>New Or Used</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Owner</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Vehicle Retail Sales</relationshipLabel>
+        <relationshipName>Vehicle_Retail_Sales2</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Purchase Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Rewind_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Rewind Indicator</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sale_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Sale Type</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Salesperson__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Salesperson</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.Selling_Dealer_Name__c</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Vehicle Retail Sales</relationshipLabel>
+        <relationshipName>Vehicle_Retail_Sales</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Satisfaction__c</fullName>
+        <externalId>false</externalId>
+        <label>Satisfaction</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Satisfied_with_Sales_Experience__c</fullName>
+        <externalId>false</externalId>
+        <label>Satisfied with Sales Experience</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes_But</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes (with positive comment)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes, but (Yes with negative comment only)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes, but (Yes with positive and negative comment)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No (with negative comment)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t Know</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Response</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refused</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Selling_Dealer_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Selling Dealer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Vehicle Retail Sales</relationshipLabel>
+        <relationshipName>Vehicle_Retail_Sales</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sentiment_Band_Row__c</fullName>
+        <externalId>false</externalId>
+        <label>Sentiment Band Row</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Extremely Positive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very Positive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very Negative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extremely Negative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Spare1__c</fullName>
+        <externalId>false</externalId>
+        <label>Spare1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Spare2__c</fullName>
+        <externalId>false</externalId>
+        <label>NNAnet Status at Start</label>
+        <picklist>
+            <picklistValues>
+                <fullName>NP No Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IP In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CL Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Spare3__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Did the Customer request that the Dealer call them?</inlineHelpText>
+        <label>Requested Dealer Call</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Response</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t Know</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refuse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Survey_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer First Name</inlineHelpText>
+        <label>Survey First Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_ID__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Survey Number</inlineHelpText>
+        <label>Survey ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Last Name</inlineHelpText>
+        <label>Survey Last Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Return_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Return Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Survey_System_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Survey System ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Verbatim__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer comments collected from the Survey</inlineHelpText>
+        <label>Survey Verbatim</label>
+        <length>6000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VIN__c</fullName>
+        <externalId>false</externalId>
+        <formula>Vehicle_Identification_Number__r.Vehicle_identification_Number__c</formula>
+        <label>VIN</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Identification_Number__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Vehicle</label>
+        <referenceTo>Vehicle__c</referenceTo>
+        <relationshipLabel>Vehicle Retail Sales</relationshipLabel>
+        <relationshipName>Vehicle_Retail_Sales</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Info__c</fullName>
+        <description>Retrieves Model Name from related Vehicle record (concatenation with no spaces).</description>
+        <externalId>false</externalId>
+        <formula>Vehicle_Identification_Number__r.Model_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Vehicle Info</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Model__c</fullName>
+        <description>Retrieves Vehicle Model Line from related Vehicle record.</description>
+        <externalId>false</externalId>
+        <formula>Vehicle_Identification_Number__r.Model_Line_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Vehicle Model</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Vehicle Retail Sale</label>
+    <listViews>
+        <fullName>FUSNot_Yet_Opened</fullName>
+        <columns>NAME</columns>
+        <columns>Follow_Up_Status__c</columns>
+        <columns>VIN__c</columns>
+        <columns>Customer_Disposition__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Follow_Up_Status__c</field>
+            <operation>equals</operation>
+            <value>Not Yet Opened</value>
+        </filters>
+        <label>VRS by Follow Up Status NYO</label>
+        <sharedTo>
+            <roleAndSubordinates>CCCManager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Vehicle_Retail_Sales</fullName>
+        <columns>NAME</columns>
+        <columns>Owner_Id__c</columns>
+        <columns>Survey_First_Name__c</columns>
+        <columns>Survey_Last_Name__c</columns>
+        <columns>Follow_Up_Status__c</columns>
+        <columns>Customer_Disposition__c</columns>
+        <columns>Vehicle_Info__c</columns>
+        <columns>Purchase_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Vehicle Retail Sales</label>
+        <sharedTo>
+            <group>CCCUsers</group>
+            <group>ManagementUsers</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Recent_Vehicle_Retail_Sales</fullName>
+        <columns>NAME</columns>
+        <columns>Owner_Id__c</columns>
+        <columns>Purchase_Date__c</columns>
+        <columns>Sale_Type__c</columns>
+        <columns>Selling_Dealer_Name__c</columns>
+        <columns>VIN__c</columns>
+        <columns>Vehicle_Model__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>4/7/2015 12:00 AM</value>
+        </filters>
+        <label>Recent Vehicle Retail Sales</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Rewound</fullName>
+        <columns>NAME</columns>
+        <columns>Follow_Up_Status__c</columns>
+        <columns>VIN__c</columns>
+        <columns>Customer_Disposition__c</columns>
+        <columns>Rewind_Indicator__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Rewind_Indicator__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Rewound</label>
+        <sharedTo>
+            <roleAndSubordinates>CCCManager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>VRS_FUS_Closed</fullName>
+        <columns>NAME</columns>
+        <columns>Follow_Up_Status__c</columns>
+        <columns>VIN__c</columns>
+        <columns>Customer_Disposition__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Follow_Up_Status__c</field>
+            <operation>equals</operation>
+            <value>Closed,Disqualified by Team Lead</value>
+        </filters>
+        <label>VRS FUS Closed</label>
+        <sharedTo>
+            <roleAndSubordinates>CCCManager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>VRS_Hot_Alert</fullName>
+        <columns>NAME</columns>
+        <columns>Follow_Up_Status__c</columns>
+        <columns>VIN__c</columns>
+        <columns>Customer_Disposition__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Follow_Up_Reason__c</field>
+            <operation>equals</operation>
+            <value>Hot Alert</value>
+        </filters>
+        <label>0. VRS Hot Alert</label>
+        <sharedTo>
+            <group>CCCUsers</group>
+            <group>ManagementUsers</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>VRS_Hot_Alert_Action</fullName>
+        <columns>NAME</columns>
+        <columns>Follow_Up_Status__c</columns>
+        <columns>VIN__c</columns>
+        <columns>Customer_Disposition__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Follow_Up_Reason__c</field>
+            <operation>equals</operation>
+            <value>Hot Alert Action</value>
+        </filters>
+        <filters>
+            <field>Follow_Up_Status__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>1. VRS Hot Alert Action</label>
+        <sharedTo>
+            <group>CCCUsers</group>
+            <group>ManagementUsers</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>VRS_byFollowUpStatus</fullName>
+        <columns>NAME</columns>
+        <columns>Follow_Up_Status__c</columns>
+        <columns>VIN__c</columns>
+        <columns>Customer_Disposition__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Follow_Up_Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Dealer Contacted,Customer Contacted,Closed</value>
+        </filters>
+        <label>VRS by Follow Up Status</label>
+        <sharedTo>
+            <roleAndSubordinates>CCCManager</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>VRS-{00000000}</displayFormat>
+        <label>Vehicle_Retail_Sale Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Vehicle Retail Sales</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>RDR</fullName>
+        <active>true</active>
+        <label>RDR</label>
+        <picklistValues>
+            <picklist>Customer_Disposition__c</picklist>
+            <values>
+                <fullName>Customer Not Satisfied - Dealer Contacted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Not Satisfied - Dealer Never Contacted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Now Satisfied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated to CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated to LPM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dealer_Follow_Up_Status__c</picklist>
+            <values>
+                <fullName>Action Taken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Action Will Be Taken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Can%27t %2F Won%27t Take Action</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Excellent_Overall_Experience__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes_But</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_Up_Call__c</picklist>
+            <values>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes_But</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_Up_Reason__c</picklist>
+            <values>
+                <fullName>Hot Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hot Alert Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hot Alert No Action</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_Up_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Contacted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer Contacted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disqualified by Team Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Yet Opened</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Satisfaction__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Satisfied_with_Sales_Experience__c</picklist>
+            <values>
+                <fullName>Don%27t Know</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No %28with negative comment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refused</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes %28with positive comment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C but %28Yes with negative comment only%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C but %28Yes with positive and negative comment%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sentiment_Band_Row__c</picklist>
+            <values>
+                <fullName>Extremely Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extremely Positive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Positive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spare2__c</picklist>
+            <values>
+                <fullName>CL Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IP In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NP No Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spare3__c</picklist>
+            <values>
+                <fullName>Don%27t Know</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refuse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Survey_Return_Type__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Resale</fullName>
+        <active>true</active>
+        <label>Resale</label>
+        <picklistValues>
+            <picklist>Customer_Disposition__c</picklist>
+            <values>
+                <fullName>Customer Not Satisfied - Dealer Contacted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Not Satisfied - Dealer Never Contacted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Now Satisfied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated to CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated to LPM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dealer_Follow_Up_Status__c</picklist>
+            <values>
+                <fullName>Action Taken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Action Will Be Taken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Can%27t %2F Won%27t Take Action</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Excellent_Overall_Experience__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes_But</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_Up_Call__c</picklist>
+            <values>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes_But</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_Up_Reason__c</picklist>
+            <values>
+                <fullName>Hot Alert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hot Alert Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hot Alert No Action</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Follow_Up_Status__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Contacted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dealer Contacted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disqualified by Team Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Yet Opened</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Satisfaction__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Satisfied_with_Sales_Experience__c</picklist>
+            <values>
+                <fullName>Don%27t Know</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No %28with negative comment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refused</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes %28with positive comment%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C but %28Yes with negative comment only%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C but %28Yes with positive and negative comment%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sentiment_Band_Row__c</picklist>
+            <values>
+                <fullName>Extremely Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extremely Positive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Positive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spare2__c</picklist>
+            <values>
+                <fullName>CL Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IP In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NP No Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spare3__c</picklist>
+            <values>
+                <fullName>Don%27t Know</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refuse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Survey_Return_Type__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>VIN__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Owner_Id__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Purchase_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Disposed_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Disposed_Status__c</customTabListAdditionalFields>
+        <searchFilterFields>OBJECT_ID</searchFilterFields>
+        <searchFilterFields>Survey_ID__c</searchFilterFields>
+        <searchFilterFields>Survey_System_ID__c</searchFilterFields>
+        <searchResultsAdditionalFields>VIN__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Purchase_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Disposed_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Disposed_Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>VRS_Closed_Requires_Customer_Disposition</fullName>
+        <active>true</active>
+        <description>If VRS Follow Up Status changes to Closed, user MUST select a Customer Disposition</description>
+        <errorConditionFormula>ISPICKVAL(Follow_Up_Status__c , &quot;Closed&quot;) &amp;&amp; ISCHANGED( Follow_Up_Status__c ) &amp;&amp; ISPICKVAL(Customer_Disposition__c, &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Customer_Disposition__c</errorDisplayField>
+        <errorMessage>You MUST select a Customer Disposition if you are closing this VRS</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Phone_Survey</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Phone Survey</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/19.0/connection.js&quot;)}; 
+
+var aid = &apos;{!Vehicle_Retail_Sale__c.Id}&apos;;
+
+var queryResults = sforce.connection.query(&quot;select Id, Owner_Id__c, Vehicle_Identification_Number__c, Vehicle_Identification_Number__r.Make_Name__c, Owner_Id__r.PersonContactId from Vehicle_Retail_Sale__c where Id = \&apos;&quot; + aid + &quot;\&apos;&quot;);
+
+var record = queryResults.getArray(&apos;records&apos;)[0]; 
+
+var sidNissan = &apos;{!$Label.SurveyID_VRS_Nissan}&apos;;
+var sidInfiniti = &apos;{!$Label.SurveyID_VRS_Infiniti}&apos;;
+
+var make = &apos;&apos;;
+if (record.Vehicle_Identification_Number__r != null &amp;&amp; record.Vehicle_Identification_Number__r.Make_Name__c != null)
+	make = record.Vehicle_Identification_Number__r.Make_Name__c.toLowerCase();
+
+if (record.Owner_Id__r == null || record.Owner_Id__r.PersonContactId == null)
+	alert(&apos;You can not conduct a Phone Survey because there is no Vehicle Owner listed on this Vehicle Retail Sale record.&apos;);
+else if (make == &apos;nissan&apos;) {
+
+   if (typeof(srcUp) == &apos;function&apos;) {
+      srcUp(&apos;http://nna.force.com/survey/TakeSurvey?id=&quot; + sidNissan + &quot;&amp;cId=&quot; + record.Owner_Id__r.PersonContactId + &quot;&amp;caId=none&apos;);
+   }
+   else {
+      window.open(&quot;http://nna.force.com/survey/TakeSurvey?id=&quot; + sidNissan + &quot;&amp;cId=&quot; + record.Owner_Id__r.PersonContactId + &quot;&amp;caId=none&quot;);
+   }
+}
+else if (make == &apos;infiniti&apos;) {
+   if (typeof(srcUp) == &apos;function&apos;) {
+      srcUp(&apos;http://nna.force.com/survey/TakeSurvey?id=&quot; + sidInfiniti + &quot;&amp;cId=&quot; + record.Owner_Id__r.PersonContactId + &quot;&amp;caId=none&apos;);
+   }
+   else {
+      window.open(&quot;http://nna.force.com/survey/TakeSurvey?id=&quot; + sidInfiniti + &quot;&amp;cId=&quot; + record.Owner_Id__r.PersonContactId + &quot;&amp;caId=none&quot;);
+   }
+}
+else
+	alert(&quot;You can not conduct a Phone Survey because there is no Make (Nissan or Infiniti) listed on the Vehicle related to this Vehicle Retail Sales record&quot;);</url>
+    </webLinks>
+</CustomObject>

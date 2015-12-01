@@ -1,0 +1,10 @@
+<apex:page controller="TestingCookies">
+	<apex:form id="frmMain">
+		<apex:pageMessages id="pmMain" escape="false" />
+		Cookies page
+		<br />
+		<apex:commandButton action="{!createCookie}" value="Create Cookie" />
+		<br />
+		<apex:commandButton action="{!retrieveCookie}" value="Retrieve Cookie" />
+	</apex:form>
+</apex:page>

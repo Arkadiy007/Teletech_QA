@@ -1,0 +1,6 @@
+<apex:page standardController="Sorting_Report__c" extensions="SREscalateExtension" action="{!escalate}">
+  <apex:form >
+      <apex:pageMessages /><br/>
+      <apex:commandButton value="Back" action="{!back}"/>
+  </apex:form>
+</apex:page>

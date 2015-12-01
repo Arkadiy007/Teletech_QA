@@ -1,0 +1,174 @@
+<apex:page standardController="Account" extensions="Customer_Loyalty_Component" title="Customer Loyalty Component">
+    <apex:includeScript id="jquery" value="{!URLFOR($Resource.Charts, 'jquery.min.js')}"/>
+    <script type="text/javascript">
+    $.noConflict();
+    jQuery( document ).ready(function( $ ) {
+       initializeComponent($);
+    });
+    var paper;
+    var logos = {
+        "nissan": {url:"{!URLFOR($Resource.Customer_Loyalty_Component, 'Nissan_Emblem_Logo.gif')}"},
+        "infiniti": {url:"{!URLFOR($Resource.Customer_Loyalty_Component, 'Infiniti_Emblem.png')}"},
+        "leaf": {url:"{!URLFOR($Resource.Customer_Loyalty_Component, 'zeroEmissionwhite.png')}"}
+    }
+    
+    var hasNissan = "{!hasNissan}";
+    var hasInfiniti = "{!hasInfiniti}";
+    var hasLeaf = "{!hasLeaf}";
+    
+    var offsets = {
+        "{!URLFOR($Resource.Customer_Loyalty_Component, 'Nissan_Emblem_Logo.gif')}":0,
+        "{!URLFOR($Resource.Customer_Loyalty_Component, 'Infiniti_Emblem.png')}":-10,
+        "{!URLFOR($Resource.Customer_Loyalty_Component, 'zeroEmissionwhite.png')}":-12
+    }
+    
+    var nissan;
+        var inifiniti;
+        var leaf;
+    var centerHeight;
+    
+    function positionLogo(logo)
+    {
+        var x = 0;
+        var height = logo.attrs.height;
+        var url = logo.attrs.src;
+        var offset = 0;
+        if(typeof offsets[url] != "undefined")
+        {
+            offset = offsets[url];
+        }
+        
+        var y = Math.round(centerHeight-(height/2))+offset;
+        logo.transform(getNewTranslation(logo.matrix.toTransformString(), "t" + x + "," + y, "", "", ""));
+    }
+    
+    function initializeComponent($)
+    {
+        paper = new Raphael("component", 825, 225)
+        var textAttrs = {font: "15px Helvetica", opacity: 1, color:"#000", "text-anchor": "start"};
+        var flags = [{"lbl":"Repeat Customer", value: "{!reapeatCustomer}"},
+                     {"lbl":"NMAC", value: "{!NMACCustomer}"},
+                     {"lbl":"NESNA", value: "{!NESNACustomer}"},
+                     {"lbl":"NOTOR", value: "{!NOTORCustomer}"},
+                     {"lbl":"VPP", value: "{!VPPCustomer}"},
+                     {"lbl":"Social Influencer", value: "{!SocialCustomer}"},
+                     {"lbl":"Warranty History", value: "{!WarrantyCustomer}"},
+                     {"lbl":"TECH LINE", value: "{!TechlineCustomer}"},
+                     {"lbl":"Certified Pre-Owned", value: "{!PreOwnedCustomer}"},
+                     {"lbl":"Customer Pay", value: "{!CustomerPayCustomer}"}
+                     //,{"lbl":"Propensity to Re-Purchase", value: "{!Repurchase}"},
+                     //{"lbl":"Propensity to Defect", value: "{!Defect}"}
+                     ];
+        
+        var cols = 2;
+        var itemsPerCol = Math.ceil(flags.length/cols);
+        var colWidth = 150;
+        var radius = 10;
+        var circleWidth = (radius*2)+5;
+        var colPadding = 30;
+        var rowHeight = 25;
+        var rowPadding = 10;
+        var startIndex = 30;
+        var lastIndex = startIndex;
+        var colOffset = 30;
+        var lineWidth = 2;
+        var linePaddingStart = 6;
+        var linePaddingEnd = 6;
+        var lineShort = -6;
+        var fills = 
+            {
+                "true": {"fill":"green", "fill-opacity": .8},
+                "false": {"fill":"red", "fill-opacity": .8}
+            }
+        var maxWidth = 0;
+        var text;
+        
+        var lineAttrs = {stroke: "#000", "stroke-width": 2, "stroke-opacity": .35};
+        
+        var totalColumnHeight = 0;
+        
+        for(var i=0, len=flags.length;i<len;i++)
+        {
+            if(i!=0 && (i % itemsPerCol) == 0)
+            {
+                if(totalColumnHeight==0)
+                {
+                    totalColumnHeight = lastIndex;
+                }
+                colOffset += maxWidth + circleWidth + Math.ceil(colPadding/2);
+                maxWidth = 0;
+                lastIndex = startIndex;
+                paper.path("M " + (colOffset + linePaddingStart) + "," + (startIndex + lineShort) + " L " + (colOffset + linePaddingStart) + "," + (totalColumnHeight-lineShort)).attr(lineAttrs);
+                colOffset=(colOffset + linePaddingStart) + lineWidth + Math.ceil(colPadding/2) + linePaddingEnd;
+            }
+            
+            paper.circle(colOffset, lastIndex + rowPadding, radius).attr(fills[flags[i].value]);
+            text = paper.text(colOffset + colPadding, lastIndex + rowPadding, flags[i].lbl).attr(textAttrs);
+            if(text[0].clientWidth>maxWidth)
+            {
+                maxWidth = text[0].clientWidth;
+            }
+            lastIndex+=rowHeight;
+        }
+        
+        if(totalColumnHeight==0)
+        {
+            totalColumnHeight = lastIndex;
+        }
+        
+        colOffset += maxWidth + circleWidth + colPadding;
+        var imagePadding = 135;
+
+        if(totalColumnHeight==0)            
+        {
+            totalColumnHeight = paper.height;
+        }
+        
+        centerHeight = (totalColumnHeight+startIndex)/2;
+        nissan = paper.image(logos.nissan.url, colOffset, 0,false,false, positionLogo);
+        if(hasNissan=="false")
+        {
+            nissan.attr({"opacity":0.4});
+        }
+        
+        colOffset += imagePadding;
+        
+        inifiniti = paper.image(logos.infiniti.url, colOffset, 10,false,false, positionLogo);
+        if(hasInfiniti=="false")
+        {
+            inifiniti.attr({"opacity":0.4});
+        }
+        
+        colOffset += imagePadding;
+        
+        leaf = paper.image(logos.leaf.url, colOffset, 10,false,false, positionLogo);
+        if(hasLeaf=="false")
+        {
+            leaf.attr({"opacity":0.4});
+        }
+        
+        colOffset += imagePadding;
+        
+        var rect = paper.rect(startIndex-20,startIndex-20,colOffset-10,totalColumnHeight+5).attr({"stroke-width":2, color:"#000000"}).toBack();
+        paper.setSize(colOffset+25, totalColumnHeight+25);
+        
+        /*paper.text(30,30, "Repeat Customer").attr(textAttrs); 
+        paper.text(30,40, "NMAC").attr(textAttrs);
+        paper.text(30,50, "NESNA").attr(textAttrs);
+        paper.text(30,60, "NOTOR").attr(textAttrs);
+        paper.text(30,70, "VPP").attr(textAttrs);
+        paper.text(30,80, "Social Influencer").attr(textAttrs);*/
+        
+        //jQuery(text[0]).css("text-anchor", "left !important");
+    }
+    
+    
+    </script>
+    <apex:includeScript id="svgjs" value="{!URLFOR($Resource.Charts, 'raphael.min.js')}"/>
+    <div id="component" style="position:absolute;top:0px;left:0px;right:0px;bottom:0px;width: 900px;">
+        
+    </div>
+    <!--apex:image url="{!URLFOR($Resource.Customer_Loyalty_Component, 'Nissan_Emblem_Logo.gif')}" alt="Nissan" height="125"/>                                                                
+    <apex:image url="{!URLFOR($Resource.Customer_Loyalty_Component, 'Infiniti_Emblem.png')}" alt="Infiniti" height="125"/>
+    <apex:image url="{!URLFOR($Resource.Customer_Loyalty_Component, 'zeroEmissionwhite.png')}" alt="Leaf" height="125"/-->
+</apex:page>

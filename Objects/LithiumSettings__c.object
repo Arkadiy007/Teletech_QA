@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Lithium Settings for Lithium-SFDC integration</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Base_URL__c</fullName>
+        <description>The Lithium community&apos;s base URL</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the Lithium base URL to be used in Lithium API callouts</inlineHelpText>
+        <label>Base URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Create_New_Contact_record__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If set, creates new Contact record during user sync if one is not found with same email address as the community user record being created/edited</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check to create new Contact record if one is not found with the same email address as the community user record during user sync</inlineHelpText>
+        <label>Create New Person Account record</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Password__c</fullName>
+        <description>Lithium password to be used while making call outs to the REST API</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a password for the Lithium username to be used in Lithium API callouts</inlineHelpText>
+        <label>Lithium Password</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Person_Account_Record_Type_Name__c</fullName>
+        <description>The Record Type name of PersonAccount to be created.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the RecordType Name of PersonAccount. Usually &apos;PersonAccounts&apos;</inlineHelpText>
+        <label>Person Account Record Type Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sync_With_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If set, then contacts who have the same email address as a community user will be linked</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check to link contacts with community user based on email address</inlineHelpText>
+        <label>User Sync: Link with Person Account</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Username__c</fullName>
+        <description>Lithium username to be used while making call outs to the REST API</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the Lithium username to be used in Lithium API callouts</inlineHelpText>
+        <label>Lithium Login</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lithium Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

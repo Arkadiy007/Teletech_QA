@@ -1,0 +1,55 @@
+<apex:page >
+<table>
+<tr><td>Manual ID:</td><td><input type="text" id='thisone' value='00vf0000004SsuaAAC' /></td></tr>
+<tr><td>Campaign:</td><td><select id='thisdropdown'>
+<option value=''>Select one...</option>
+<option value='00vF0000016Y1ck'>Infiniti_Service_Marketing_NCI_Fr</option>
+<option value='00vf0000004SjQy'>Infiniti_Service_Marketing_US</option>
+<option value='00vf0000004SjR0'>Infiniti_Service_Marketing_US</option>
+<option value='00vF0000016XrJ6'>NCV_Service_Marketing_US</option>
+<option value='00vF0000016XqYZ'>Nissan_Service_Marketing_NCI_Fr</option>
+<option value='00vF0000016XqZ3'>Infiniti_Service_Marketing_NCI_En</option>
+<option value='00vF0000016Y5Xz'>Infiniti_Service_Marketing_US_Es</option>
+<option value='00vF0000016XqiY'>Nissan_Service_Marketing_NCI_En</option>
+<option value='00vF0000016Xqxq'>Nissan_Service_Marketing_US</option>
+<option value='00vf0000004SjQO'>Nissan_Service_Marketing_US_Es</option>
+</select>
+</td></tr>
+</table>
+
+ <apex:includeScript value="/soap/ajax/31.0/connection.js"/>
+ <apex:includeScript value="/support/console/32.0/integration.js"/>
+
+<input type="button" value="Launch" onclick='runit()' />
+<script>
+function runit() {
+if (document.getElementById('thisdropdown').selectedIndex != 0) {
+var agentConsoleURL = '/apex/AgentConsole_CM_LandingPage?id=' + document.getElementById('thisdropdown').options[document.getElementById('thisdropdown').selectedIndex].value;
+
+} else {
+var agentConsoleURL = '/apex/AgentConsole_CM_LandingPage?id=' + document.getElementById('thisone').value;
+
+}
+
+                        sforce.console.openPrimaryTab(null, agentConsoleURL, true, 'Testing CTI...', 'salesforceTab');
+                       
+                       }
+function runit2() {
+    window.open('http://www.nissan.ca/nissandealers/locate');
+   //  sforce.console.openPrimaryTab(null, agentConsoleURL, true, 'Testing CTI...', 'salesforceTab');
+                       
+}
+function runit3() {
+     sforce.console.openPrimaryTab(null, 'https://www.infinitiusa.com/infinitiretailers/locate/index', true, 'Testing CTI...', 'salesforceTab');
+                       
+}
+                        </script>
+                        
+<br /><br /><input type="button" value='test dealer' onClick='runit2()'/><br />
+<input type="button" value='test dealer2' onClick='runit3()'/>
+
+                        
+                        
+                        
+                        
+</apex:page>

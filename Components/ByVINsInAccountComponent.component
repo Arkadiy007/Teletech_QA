@@ -1,0 +1,26 @@
+<apex:component controller="Controller_ByVinsInAccountComponent" allowDML="true" >
+	<apex:attribute name="PageController" assignTo="{!ByVinsInAccountController}" type="Controller_ByVinsInAccount" description="The parent controller: Controller_ByVinsInAccount."/>
+	<apex:attribute name="BatchNumber" assignTo="{!BatchNumber}" type="Integer" description="Batch Number."/>
+	<apex:form >
+        <apex:actionFunction action="{!doSearch}" name="search" status="stSearchStatus" reRender="lstResult"></apex:actionFunction>
+        <apex:actionStatus id="stSearchStatus" startText="Loading...">
+            <apex:facet name="start">
+                <apex:panelGroup layout="block" styleClass="loading" style="width:95%" >
+                    <apex:image url="/img/loading.gif" alt="Processing..." width="16" height="16" title="Processing..." />
+                    <span class="loadingText">Loading...</span>
+                </apex:panelGroup>
+            </apex:facet> 
+            
+            <apex:facet name="stop">
+                <apex:panelGroup id="lstResult">
+                    <apex:outputText value="{!ResponseOutput}" />
+                </apex:panelGroup>
+            </apex:facet>
+        </apex:actionStatus>
+    </apex:form>
+    <script type="text/javascript">
+    window.onload=function() {
+        search();
+    }
+    </script>
+</apex:component>

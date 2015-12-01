@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS boa Document */
+
+/* ------------------LOGO------------------------ */
+.main-logo {
+	background-image:url(img/InfinitiLogo.png);
+	background-position: 0 0!important;
+	width:130px;
+	height:86px;
+	border:none!important;
+}

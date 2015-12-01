@@ -1,0 +1,8 @@
+<apex:page id="loginPage" controller="NissanSiteLoginController" showHeader="false" title="{!$Label.site.site_login}" action="{!redirectIfLoggedIn}">
+	<body style="background-image:url('{!$Resource.AltimaBackdrop}');background-repeat:no-repeat;">
+		<apex:outputText style="font-size:200%" value="Nissan Dealer Login"/>
+		<br/><br/>
+		<apex:outputText value="Please enter your User Name"/>
+		<c:NissanSiteLogin id="nissanSiteLogin"/>
+	</body>
+</apex:page>

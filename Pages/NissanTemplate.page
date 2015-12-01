@@ -1,0 +1,10 @@
+<apex:page showHeader="false" id="NissanTemplate">
+  <apex:stylesheet value="{!URLFOR($Resource.SiteSamples, 'SiteStyles.css')}"/>
+  <body style="background-image:url('{!$Resource.AltimaBackdrop}');background-repeat:no-repeat;">
+  <apex:insert name="header">
+  </apex:insert>
+  <apex:insert name="body"/>
+  <apex:insert name="footer">
+  </apex:insert>
+  </body>
+</apex:page>

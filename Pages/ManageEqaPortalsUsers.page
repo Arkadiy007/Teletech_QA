@@ -1,0 +1,191 @@
+<apex:page controller="ManageEqaPortalUsersController" tabstyle="Account">
+    <style>
+        .statusImage {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .popup {
+            z-index: 9998;
+            left: 50%;
+            padding: 10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup
+                displays in the center of the screen. First set the width. Then set
+                margin-left to negative half of what the width is. You can add
+                the height property for a fixed size pop up if you want. */
+            width: 800px;
+            margin-left: -400px;
+            top: 100px;
+        }
+
+        .popupBackground {
+            background-color: black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9997;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .popupHeader {
+            font-size: 18pt;
+            font-weight: lighter;
+            padding-bottom: 5pt;
+            text-align: center;
+        }
+
+        #blockmainanim {
+            background-color: rgba(0,0,0,0.2);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+        }
+
+        #blockmainimg {
+            top: 49%;
+            left: 45%;
+            position: fixed;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+        }
+    </style>
+
+    <script type="text/javascript" language="javascript">
+      function busyCursorOn() {
+        document.getElementById('blockmainanim').style.display="block";
+      }
+      function busyCursorOff() {
+        document.getElementById('blockmainanim').style.display="none";
+      }
+    </script>
+    
+    <div id="blockmainanim" style="display:none">
+        <img id="blockmainimg" style="" src="/img/loading32.gif" width="25" height="25" />
+    </div>
+
+    <apex:form id="frm">
+        <apex:pagemessages id="errorMsgs"/>
+
+        <apex:actionstatus id="processingStatus" onstart="busyCursorOn();" onstop="busyCursorOff();" />
+
+        <apex:pageblock title="Manage the EQA Portal users">
+            <!--Profile Selector-->
+            <apex:pageblocksection title="EQA Portal Profile" collapsible="false" columns="2">
+                <apex:selectlist value="{!selectedProfile}" label="Profile Name" multiselect="false" size="1" id="profileOptions">
+                    <apex:selectoptions value="{!eqaProfileOptions}" />
+                </apex:selectlist>
+                <apex:commandbutton value="Search" action="{!searchUsers}" status="processingStatus" rerender="frm" />
+            </apex:pageblocksection>
+
+            <!--User Manage Panel-->
+            <apex:pageblocksection title="Users" collapsible="false" id="userSections" columns="1" >
+                <apex:pageblocktable value="{!usersList}" var="u" id="users" rowclasses="odd,even" styleclass="tableClass">
+                    <apex:column headervalue="Action">
+                        <apex:commandlink action="{!enableDisableUser}" value="{!IF(u.isActive, 'Deactivate','Activate')}" status="processingStatus" rerender="userSections, errorMsgs">
+                            <apex:param name="selectedUserId" value="{!u.Id}" assignto="{!selectedUserId}" />
+                        </apex:commandlink>
+                    </apex:column>
+                    
+                    <apex:column headervalue="Name">
+                        <apex:outputlink value="/{!u.id}" target="_blank">{!u.Name}</apex:outputlink>
+                    </apex:column>
+
+                    <apex:column headervalue="Contact">
+                        <apex:outputfield value="{!u.ContactId}" />
+                    </apex:column>
+
+                    <apex:column headervalue="Account">
+                        <apex:outputfield value="{!u.Contact.AccountId}" />
+                    </apex:column>
+
+                    <apex:column headervalue="Active?">
+                        <apex:outputfield value="{!u.isActive}" />
+                    </apex:column>
+
+                    <apex:facet name="footer">
+                        <apex:outputpanel layout="block" rendered="{!usersList.SIZE = 0}">
+                            <apex:outputpanel style="color: gray;font: normal 11px Arial,Helvetica,sans-serif;">No records to display.</apex:outputpanel>
+                        </apex:outputpanel>
+                    </apex:facet>
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+
+            <apex:pageblockbuttons location="bottom" id="buttonsPanel">
+                <apex:commandbutton value="Create New User" action="{!showNewUserPopup}" rerender="tstpopup" rendered="{!isShowCreateButton}" />
+            </apex:pageblockbuttons>
+        </apex:pageblock>
+    </apex:form>
+
+    <!--New User Popup-->
+    <apex:outputpanel id="tstpopup">
+        <apex:outputpanel styleclass="popupBackground" layout="block" rendered="{!dispalyNewUserPopup}" />
+
+        <apex:outputpanel styleclass="mappings popup" layout="block" rendered="{!dispalyNewUserPopup}">
+            <apex:form >
+                <apex:pageblock >
+                    <div class="popupHeader">Create New EQA Portal User</div>
+                    <apex:pageblockbuttons location="bottom">
+                        <apex:commandbutton action="{!createUser}" status="processingStatus" value="Save" rerender="tstpopup, userSections" />
+                        <apex:commandbutton action="{!closeNewUserPopup}" value="Close" rerender="tstpopup" immediate="true" />
+                    </apex:pageblockbuttons>
+
+                    <apex:outputpanel layout="block" styleclass="objMapping">
+                        <apex:pagemessages id="errorMsgs" escape="false"/>
+                        <apex:pageblock >
+                            <apex:pageblockSection columns="1">
+                                <apex:inputfield value="{!newContact.AccountId}" required="true"/>
+                                <apex:inputfield value="{!newContact.FirstName}" id="firstname" />
+                                <apex:inputfield value="{!newContact.LastName}" required="true" id="lastname" onchange="setAlias('{!$Component.firstname}', '{!$Component.lastname}', '{!$Component.alias}')" />
+                                <apex:inputfield value="{!newUser.Alias}" required="true" id="alias" />
+                                <apex:inputfield value="{!newUser.Email}" required="true" id="email" onchange="setUserName('{!$Component.email}', '{!$Component.userName}', '{!$Component.nickName}')" />
+                                <apex:inputfield value="{!newUser.Username}" required="true" id="userName"/>
+                                <apex:inputfield value="{!newUser.CommunityNickname}" required="true" id="nickName"/>
+                                <apex:inputfield value="{!newUser.IsActive}" />
+                            </apex:pageblockSection>
+                        </apex:pageblock>
+
+                        <script type="text/javascript">
+                            function setAlias(firstNameId, lastNameId, aliasId) {
+                                var firstName = document.getElementById(firstNameId);
+                                var lastName = document.getElementById(lastNameId);
+                                var alias = document.getElementById(aliasId);
+
+                                if (0 === alias.value.length) {
+                                    alias.value = firstName.value.substring(0,1).toLowerCase()
+                                        + lastName.value.substring(0,4).toLowerCase();
+                                }
+                            }
+
+                            function setUserName(emailId, userNameId, nickNameId) {
+                                var emailField = document.getElementById(emailId);
+                                var userNameField = document.getElementById(userNameId);
+                                var communityNickName = document.getElementById(nickNameId);
+
+                                if (0 === userNameField.value.length) {
+                                    userNameField.value = emailField.value;
+                                }
+
+                                if (0 === communityNickName.value.length) {
+                                    var nick = emailField.value;
+                                    communityNickName.value = nick.substring(0, nick.indexOf("@"));
+                                }
+                            }
+                        </script>
+                    </apex:outputpanel>
+                </apex:pageblock>
+            </apex:form>
+        </apex:outputpanel>
+    </apex:outputpanel>
+</apex:page>

@@ -1,0 +1,56 @@
+<apex:page standardController="Case_Categorization__c" extensions="Controller_CaseCategorization" sidebar="false" title="Case Categorizations" showHeader="false">
+<c:LoadingBox />
+
+<script> 
+    function onChangingLineItemSlection(inProcess) {
+        var x = document.getElementsByTagName("select");
+        for (i =0; i < x.length; i++) {
+            x[i].disabled=inProcess;
+        }
+
+        document.getElementById('{!$Component.theForm.divCategorization.divButtonSection.btnSave}').disabled=inProcess;
+    }
+    </script>
+
+    <apex:sectionHeader title="Edit Case Categorization" subtitle="{!IF(ISBLANK(Case_Categorization__c.Case__c), '', 'Case - ' + theCase.CaseNumber)}" />
+    <apex:form id="theForm" style="width:1550px;">
+        <apex:pageMessages /> 
+        <apex:pageBlock id="divCategorization" mode="edit">
+            <apex:pageBlockButtons id="divButtonSection" >
+                <apex:commandButton id="btnSave" value="Save" action="{!doSaveCategorization}" disabled="{!NOT(lineItemsPopulated)}" status="loadStatus" rerender="theForm"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+            <apex:facet name="footer">
+                <apex:commandButton immediate="true" rendered="{!NumberOfMoreCategories > 0}" value="Add {!NumberOfMoreCategories} More Categories" action="{!doAddMoreCategories}" reRender="divCategorization"/>
+            </apex:facet>
+            
+            <apex:pageBlockSection columns="1">
+
+                <apex:inputField value="{!Case_Categorization__c.Case__c}" rendered="{!Case_Categorization__c.Case__c == null}">
+                    <apex:actionSupport event="onchange" action="{!resetCaseCategorizations}"/>
+                </apex:inputField>
+                <apex:panelGrid columns="9" >
+                    <!--<apex:outputLabel >Category: {!IF(ISBLANK(CaseCategorizationController.CaseCategorizations[Index].Name), Index+1, CaseCategorizationController.CaseCategorizations[Index].Name)}</apex:outputLabel>-->
+                    <apex:outputLabel style="display: block; width:80px;" />
+                    <apex:outputLabel value="Concern" style="display: block; width:256px;font-weight:bold" />
+                    <apex:outputLabel value="Category" style="display: block; width:252px;font-weight:bold" />
+                    <apex:outputLabel value="Subcategory" style="display: block; width:252px;font-weight:bold" />
+                    <apex:outputLabel value="Symptom" style="display: block; width:254px;font-weight:bold" />
+                    <apex:outputLabel value="Major Component Code" style="display: block; width:270px;font-weight:bold" />
+                    <apex:outputLabel value="Category Date" style="display: block; width:100px;font-weight:bold" />
+                    
+                </apex:panelGrid>
+                <c:CaseCategorizationLineItem allConcerns="{!AllConcerns}" index="0" rendered="{!CurrentLineCounts > 0}" caseCategorizationController="{!this}" testatr="divCategorization"></c:CaseCategorizationLineItem>
+                <c:CaseCategorizationLineItem allConcerns="{!AllConcerns}" index="1" rendered="{!CurrentLineCounts > 1}" caseCategorizationController="{!this}" testatr="divCategorization"></c:CaseCategorizationLineItem>
+                <c:CaseCategorizationLineItem allConcerns="{!AllConcerns}" index="2" rendered="{!CurrentLineCounts > 2}" caseCategorizationController="{!this}" testatr="divCategorization"></c:CaseCategorizationLineItem>
+                <c:CaseCategorizationLineItem allConcerns="{!AllConcerns}" index="3" rendered="{!CurrentLineCounts > 3}" caseCategorizationController="{!this}" testatr="divCategorization"></c:CaseCategorizationLineItem>
+                <c:CaseCategorizationLineItem allConcerns="{!AllConcerns}" index="4" rendered="{!CurrentLineCounts > 4}" caseCategorizationController="{!this}" testatr="divCategorization"></c:CaseCategorizationLineItem>
+                <c:CaseCategorizationLineItem allConcerns="{!AllConcerns}" index="5" rendered="{!CurrentLineCounts > 5}" caseCategorizationController="{!this}" testatr="divCategorization"></c:CaseCategorizationLineItem>
+                <c:CaseCategorizationLineItem allConcerns="{!AllConcerns}" index="6" rendered="{!CurrentLineCounts > 6}" caseCategorizationController="{!this}" testatr="divCategorization"></c:CaseCategorizationLineItem>
+                <c:CaseCategorizationLineItem allConcerns="{!AllConcerns}" index="7" rendered="{!CurrentLineCounts > 7}" caseCategorizationController="{!this}" testatr="divCategorization"></c:CaseCategorizationLineItem>
+                <c:CaseCategorizationLineItem allConcerns="{!AllConcerns}" index="8" rendered="{!CurrentLineCounts > 8}" caseCategorizationController="{!this}" testatr="divCategorization"></c:CaseCategorizationLineItem>
+                <c:CaseCategorizationLineItem allConcerns="{!AllConcerns}" index="9" rendered="{!CurrentLineCounts > 9}" caseCategorizationController="{!this}" testatr="divCategorization"></c:CaseCategorizationLineItem>               
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

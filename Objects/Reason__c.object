@@ -1,0 +1,2591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Error_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Error Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>BC419 PART AVG PRICE IS ZERO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BT001 BATTERY CCA RATING TOO HIGH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BT002 INCORRECT BATTERY RATING SYSTEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BT005 MIDTRONICS TESTER CD NOT ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BT007 NOT A WARRANTABLE BATTERY CLAIM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BT008 BATTERY CLM REQ FOM APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BT009 BATTERY LABOR OVERLAP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BT010 RCHRG/TEST N/A WITH CRACKED BATTERY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BT999 BAT/STR/ALT INVALID TEST CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM001 CAMPAIGN NUMBER IS INVALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM002 CAMPAIGN IS NOT YET EFFECTIVE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM004 VEHICLE IS NOT PART OF CAMPAIGN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM005 CAMPAIGN PROGRAM # IS INVALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM007 PART NOT VALID FOR CAMPAIGN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM008 CAMPAIGN INCOMPLETE-PART MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM010 OP(S) MISSING/INVALID COMBINATION</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM011 CAMPAIGN INCOMPLETE-OPER. MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM012 EXPENSE NOT VALID FOR CAMPAIGN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM013 CAMPAIGN INCOMPLETE-EXP. MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM015 PART QTY NOT VALID FOR CAMPAIGN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM017 RENTAL NOT VALID FOR CAMPAIGN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM018 TOWING NOT VALID FOR CAMPAIGN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM019 Z-PNC REQUIRES APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM033 CAMPAIGN PARTS MORE THAN ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM038 VIN NOT W/IN THE RECALL VIN RANGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM039 POSSIBLE CAMPAIGN CLAIM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM040 CS REIMBURSEMENT REVIEW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM054 WHOLESALE DATE NOT FOUND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM063 ONLY 9-15 MTH FR IN-SERV WB11-035</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM064 ONLY 21-27 MTH FR IN-SERV WB11-035</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV002 NO MAINTENANCE AGREEMENT ON VIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV004 MAINTENANCE AGREEMENT CANCELLED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV005 PROBABLE TRANSPORTATION CLAIM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV006 VEHICLE WARRANTY CANCELLED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV011 NO SERVICE CONTRACT ON VIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV013 VEHICLE WARRANTY COVERAGE EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV014 EMISSION COVERAGE EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV015 SEAT BELT WARRANTY EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV016 ACCESSORY WARRANTY EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV017 REPL. PARTS WARRANTY EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV018 POWERTRAIN WARRANTY EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV019 ADJUSTMENT COVERAGE EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV020 OUTER TRIM COVERAGE EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV025 REPAIR NOT COVERED BY SERV CNTRCT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV026 A/C RECHARGE COVERAGE EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV027 PERFORATION WARRANTY EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV028 ENGINE TUNE-UP NOT COVERED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV034 RENTAL OVER CONTRACT COVERAGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV035 TOWING OVER CONTRACT COVERAGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV036 GOODWILL RENTAL REQ. APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV042 *CLAIMS REVIEW-RAD EXTN $2500 DED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV043 *CLAIMS REVIEW-RAD EXTN $3000 DED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV054 GENERATED CODE NOT VALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV055 SCORED/SCRATCHED NOT WARRANTABLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV056 DLR INSTALLATION NOT WARRANTABLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV059 REPAIR EXCLUDED FROM WARRANTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV060 *APPROVED COVERAGE MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV062 NOT WARRANTABLE CONDITION-REVIEW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV063 MAINTENANCE ITEMS CVRG EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV064 REPAIR EXCLUDED FROM WARRANTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV068 WIPER BLADE/REFILL COVERAGE EXPIRED.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV114 TIRE NOT COVERED BY WARRANTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV115 BELT EXTENDER FORCE TO GOODWILL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV116 RENTAL NOT COVERED BY WARRANTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV120 NOT PARTS PROBLEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV121 NO DEFECT FOUND COVRG EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV124 FORCE GOODWILL CVRG CLM REVIEW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV131 REVIEW BULLETIN WBP/13-005</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV132 ALIGNMENT NOT ALLWD &lt; 100 MILES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV133 WHL BALANCE NOT ALLWD &lt; 100 MILES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DG001 DIAGNOSIS/REPAIR MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DG002 DIAGNOSIS CODE INVALID/OBSOLETE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX011 CUST. REIMBURSEMENT REQ APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX014 REQUIRED EXPENSE MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX019 EXPENSE CODE NOT ON TABLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX020 NOT A VALID PDI EXPENSE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX021 NOT A VALID OVER-THE-COUNTER EXP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX025 DUPLICATE DETAIL EXPENSE CODES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX026 VOR/CSC EXP REQUIRES A QTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX027 VOR/CSC EXP REQUIRES AN AMT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX029 NOT VOR, FIELDS SHOULD BE EMPTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX030 DUPLICATE VOR INVOICE NUMBERS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX033 EXPENSE COVRG CD NOT FND ON TABLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX037 EXP COVERAGE MISMATCH W/LINE CVG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX039 DUPL EXPENSE COVERAGE CODES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX040 ONE DTL EXPENSE COVRG CODE REQ&apos;RD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX045 *EXPENSE ALLWD AMT NOT DETERMINED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX049 ZERO AMOUNT FOR ADJUSTED REASON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX057 EXPENSE AMOUNT &gt; ALLOWED AMOUNT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX060 EXPENSE &gt; GUIDELINE REQ APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX074 HIGH TOW EXPENSE REQ APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX075 EXPENSE N/A FOR LINE TYPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX076 PAINT EXPENSE INVALID W/OP CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX077 A/C EXPENSE INCORRECT (R12/R134A)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX078 VOR INVOICE/PRT ON CLAIM MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX079 EXPENSE NOT COVERED BY WARRANTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX081 RENTAL NOT COVERED BY SC POLICY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX082 RENTAL NOT COVERED BY WARRANTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX089 RENTAL &gt; ALLOWED CAMPAIGN MAXIMUM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX090 TOWING &gt; ALLOWED CAMPAIGN MAXIMUM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX092 NO FREIGHT PAID/REIMBURSEMENT DUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX096 EXPENSE COVERAGE(SC) IS NOT VALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX097 EXP REQUIRES CALL CENTER APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX099 VOR HANDLING EXPENSE IS REQUIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX100 VOR HANDLING INVOICES MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX103 DTL CVRG FG &amp; SC N/A W/ EXPENSE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX104 EXPENSE 502 IS NOT ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX222 OIL EXP NOT VALID W/OIL PART #</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX223 OIL PART # NOT ALLOWED - SC CLAIM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FF001 SYMP/DIAG CODE DOES NOT APPLY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FF004 SYMPTOM/DIAGNOSIS N/A WITH REPAIR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FF005 STRAIGHT TIME NOT ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FR006 *MULTIPLE FRF&apos;S FOR OTC LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP002 *S/T OP RQSTD HRS EXCEED FRF CAP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP005 MULT. REPAIRS ON LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP008 CMB OP(S) ALONE NOT ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP013 MULTIPLE S/T OPS NOT ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP014 S.T./FLAT RATE OP MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP015 STRAIGHT TIME NOT ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP016 PFP/OP CODE MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP017 DUP MAIN/COMB OP NOT ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP018 MAIN OP CODE MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP020 FRONT/REAR REQUIRES TWO CLAIMS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP022 ADJUSTMENT INCL IN MAIN OP CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP026 SUBLET LABOR REQUIRES APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP027 OPERATION MAY NOT BE SUBLET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP028 STRAIGHT TIME CANNOT BE SUBLET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP038 LABOR HOURS MISSING-INVALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP040 OP CODE DOES NOT APPLY TO VEHICLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP041 OP CODE INVALID/OBSOLETE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP061 *FLAT RATE NOT IN TABLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP062 SUBLET OVER F/R TIME REQ APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP072 MAIN/COMB OP CODE MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP073 OP CODE INCLUDED IN LARGER OP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP074 OP CODE INVALID FOR REPAIR TYPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP075 *RPL PRT/OP NOT ON TBL-NAT&apos;L RVW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP076 *OP CODE FOR EXPENSE NOT ON TABLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP077 OP CODE &amp; EXPENSE NOT RELATED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP078 INVALID PRIMARY OPERATION CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP079 OPERATION CODE NOT YET EFFECTIVE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP082 MUST HAVE AT LEAST ONE OPERATION</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP085 PRIMARY OP MUST BE IN DETAIL LIST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP086 OP CODE MISMATCH W/OP CODE OR PFP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP088 OPERATION(S) N/A FOR PO LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP089 OP CODE/PFP MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP095 PFP/STRAIGHT TIME OP MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP099 OP COVERAGE CODE NOT FND ON TABLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP102 OPERATION AMOUNT IS ZERO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP103 DETAIL CVG MISMATCH W/LINE CVG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP105 DUPLICATE OPERATION COVERAGE CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP106 DETAIL COVERAGE CODE REQUIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP111 *PAINT TYPE CODE NOT FILE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP116 PARTIAL REPAIRS N/A W/NCLC OR FC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP117 ZZ99AA N.A. W/NON-PAINT &quot;Z&quot; OP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP118 PFP REQUIRES FLAT RATE OPERATION</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP120 OP NOT VALID FOR CAMPAIGN LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP121 OP NOT VALID FOR THE LINE TYPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP124 OP CODE REQ APPROVAL (DLR LEVEL)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP128 MAXIMUM HOURS EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP129 *FORCED COVERAGE - OPERATION(S)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP140 ALLOWED LABOR HOURS IS ZERO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP141 AMT NOT DETERMINED FOR OP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP144 RQSTD HRS &lt; COMPUTED HRS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP145 RQSTD HRS &gt; COMPUTED HRS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP148 ZZ99AA ALREADY ON ANOTHER LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP153 DUPLICATE OP CODE IN SAME WO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP154 RELATED/OVERLAP REPAIR IN SAME WO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP161 *LABOR AMOUNT ADJUSTMENT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP800 EV BATTERY CLAIM REVIEW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA951 NO VOR FREIGHT INVOICE FOUND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA952 W.O. CLOSE DATE &lt; INVOICE DATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA956 VOR/CSC INVOICE &gt; 60 DAYS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA958 VOR/CSC EXPENSE PAID ON PREV CLMS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PD001 DUPLICATE PDI CLAIM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PD002 PDI DATE BEFORE WHOLESALE DATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PD003 NO PDI PYMT DUE-NMC USA VEHICLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PD004 NO PORT PDI RECORD-Z98 OR Z99</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PD005 PDI PERFORMED BY VPC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PN002 **MULTIPLE PNCS FOUND FOR WOL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PN008 *CHECK APPLICATION</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PN010 OP CODE NOT APPLICABLE TO CHANNEL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PO001 OP CODE NOT FOR P. O. LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PP001 PFP DOES NOT MATCH W/ OP CODE(S)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PP002 PFP/OP CODE MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PP003 STRAIGHT TIME NOT ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PP004 PFP NOT FOUND ON FRF TABLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PP005 RESUBMIT AS PRIMARY OP LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT002 NOT A SERVICE PART</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT012 PART QUANTITY MORE THAN REQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT013 REPL PART/OP CODE MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT014 PART NUMBER MISSING-INVALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT015 PART QUANTITY MISSING/INVALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT025 ESTER OIL NOT ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT026 *OVER 12 PARTS CLAIMED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT031 BATTERY BEYOND PRO-RATA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT048 REQUIRED PART(S) MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT049 NOT A VALID PRIMARY FAILED PART</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT052 PART CANNOT BE REPEATED ON A LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT053 PART QTY MORE THAN ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT056 *PART NOT ON VA24/25</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT059 PART NOT FOUND FOR EXPENSE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT062 PART CATEGORY CODE IS INVALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT064 PART CATEGORY N/A WITH REPAIR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT066 PFP MISMATCH W/OP CODE(S)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT069 PRIMARY PART MISSING-INVALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT070 PFP/REPL PART MISMATCH (OTC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT072 PART COVERAGE CODE NOT ON TABLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT075 PART COVERAGE AMOUNT IS ZERO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT076 DETAIL CVG MISMATCH W/LINE CVG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT078 DUPLICATE PART COVERAGE CODES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT079 ONE DTL PART COVERAGE CODE REQ&apos;D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT085 PART REQUIRES APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT086 PART REQUIRES APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT088 ALLWD AMT FOR PART NOT DETERMINED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT093 PART AMOUNT REQUIRES APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT105 PART PRICE IS ZERO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT109 SHEET METAL PART N/A FOR PO LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT111 QUANTITY 99 AND $.01 NOT VALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT115 FLUID/VEHICLE MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT116 *PART PRICE CHECK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT122 VALUE ADVANTAGE INVALID PFP-FW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT123 VALUE ADVANTAGE INVALID - FW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT125 TEST SHOWED PT RPLCMNT NO REQ&apos;D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT126 TEST RESULT NOT SUBMITTED AS PRT#</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT128 PART REVIEW-CALL CLMS CALL CENTER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT134 PFP (AUTO TENSIONER) REVIEW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT135 AVM PART REVIEW(284F11BA3A)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT136 PRT NOT ALLWD/USE PRT CTGRY 772</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT137 PART NOT ALLWD FOR VEH MODEL YEAR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT139 PRT NOT ALLWD/DIRECT EXCHANGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT200 NOT ALLOWED/EXCHANGE UNIT AVAIL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT215 COMPLETE HOUSING ASSY-NOT ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT508 NATIONAL REVIEW-TOW/RENTAL CREDIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP001 REPL PART MILES MISSING-INVALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP002 REPL PART DATE MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP003 REPL PART DATE MISSING-INVALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP004 NOT REPL. PARTS WARRANTY ITEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP005 BATTERY REPL DATE MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP006 PART REPLACEMENT INFO IS REQUIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP007 PART PURCHASE DATE IS NOT VALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP008 PART PURCH DT IS &gt; WO OPEN DATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP009 PART PURCH MILEAGE IS NOT VALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP010 PART PURCH MLG IS &gt; CURRENT MLG.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP011 PROOF OF PURCHASE DOC# IS MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC013 PRE-OWNED REPAIR &lt; 90 DAYS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC016 REPAIR N/A WITH NO REPL PARTS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC019 SERVICE CONTRACT COVERAGE EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC020 REPAIR NOT COVERED BY SC POLICY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC021 SERVICE CONTRACT IS CANCELLED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC024 MAINT SCH PERFORMED IS NOT VALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC026 MAINTENANCE CONTRACT EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC032 POLICY NOT YET EFFECTIVE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC034 SERVICE WITHIN 30 DAYS &amp; 2,500 MI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC035 OP CODE(S) N/A PER PROGRAM RULES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC036 # OF SERVICES MORE THAN ALLOWED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC038 INVALID/INCLUSIVE COMB OF OP CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM001 SYMPTOM/REPAIR MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM002 MISSING PARTS NOT WARRANTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM003 SYMPTOM CODE MISSING ON CLAIM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM004 SYMPTOM CODE DOES NOT EXIST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM005 SYMPTOM CODE NOT YET EFFECTIVE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM006 SYMPTOM CODE IS EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM007 LINE TYPE/SYMPTOM CODE MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM008 WOL TYPE/SYMPTOM NOT EFFECTIVE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM009 WOL TYPE/SYMPTOM IS EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM010 SYMP OR DIAGNOSIS CD INVLD W/ PFP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM011 HZ INVALID-FAILED BATT. NOT IBSA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM012 SYMPTOM CODE REQ REPL. PARTS DATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM013 SYMPTOM CODE &quot;HZ&quot; IS INVALID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM014 EXPIRED ERROR FOR HZ SYMPTOM CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TR010 *MORE THAN 50 PARTS &amp; EXPENSES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TR011 *MORE THAN 5 OPERATION CODES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VN006 *VIN/6TH POS. TABLE MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VN013 WARRANTY CANCELLED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VN015 *VIN RESEARCH (ARCHIVE)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VN022 SALVAGE VIN-NO COVERAGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC100 CALL CCC - WARR CANCEL REVIEW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WH012 MILEAGE ERROR - DIFFERENT DEALER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WH016 TEST DATE NOT WITHIN RO DATES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WH025 OPEN DATE AFTER COMPLETION DATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WH027 W.O. CLOSE DATE &gt; SUBMISSION DATE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WH031 SERVICE FACILITY IS TERMINATED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WH033 VEHICLE MILEAGE MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WH035 MILEAGE PROGRESSION ERROR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WH061 W.O./VCAN MILEAGE MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WH062 W.O./VCAN OPEN DATE MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL013 *CLAIMS REVIEW (NATIONAL)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL062 TECH NOT ASSOCIATED WITH FACILITY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL076 PAINT/RUST MUST BE PO LINE TYPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL077 ADJUSTMENT IS PRIMARY OP LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL079 VCAN APPR&apos;D PARTS AMOUNT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL080 VCAN APPR&apos;D LABOR AMOUNT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL081 VCAN APPR&apos;D EXP. AMOUNT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL083 WO/VCAN PFP OR PO MISMATCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL085 CLAIM OVER 30 DAYS REQ APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL087 W.O. OPEN DATE &gt; 1 YEAR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL089 VCAN APPROVAL REVIEW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL090 INVALID SYMPTOM/DIAG COMBINATION</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL109 RENTAL EXPENSE IN REVIEW PROCESS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL110 TOWING COVERAGE EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL199 QUESTIONABLE MILEAGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL200 REPEAT REPAIR - SAME FACILITY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL201 RELATED REPAIR - SAME FACILITY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL202 REPEAT REPAIR - DIFF. FACILITY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL203 RELATED REPAIR - DIFF.FACILITY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL204 DUP CMP SAME WO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL205 DUPLICATE CAMPAIGN-SAME FACILITY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL206 DUPLICATE CAMPAIGN-DIFF. DEALER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL214 DUPLICATE PDI CLM - DIFF FACILITY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL217 DUPLICATE PART # IN WORK ORDER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL218 DUPLICATE PART CATEGORY CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL219 DUPLICATE TOWING EXPENSE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL221 SAME PFP USED ON A DIFF. LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL222 DUPLICATE PRIMARY OPERATION LINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL223 DUPL CAMPAIGN &amp; PROGRAM CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL224 DUPLICATE CAMPAIGN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL226 DUPL SCH MAINT - DIFF FACILITY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL246 CAMPAIGN PROGRAM HAS EXPIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL290 DUPLICATE REPL PARTS WRNTY CLAIM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL291 PARTS REPLACEMENT INFO REQUIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL300 REPAIR NOT DONE W/IN 36 MNTHS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL305 BRK JUDDER RPR HAS BEEN PERFORMED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL306 HEV CERTIFIED TECH ID NEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL307 OBD II CERTIFICATION REQUIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL310 VEHICLE IS NOT YET RETAILED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL315 NOT WITHIN SERVICE LIMIT (PB064)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL316 NOT WITHIN SERVICE LIMIT (PB065)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL317 NOT WITHIN SERVICE LIMIT (PB066)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL318 NOT WITHIN SERVICE LIMIT (PB067)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL320 UNAUTHORIZED GT-R DEALER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL321 TECH ID IS NOT CERTIFIED FOR GT-R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL335 MINIMUM SERV TRNG REQ NOT CMPLTD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL336 TECH ID MISSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL337 UNAUTHORIZED EV DEALER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL338 TECH ID IS NOT CERTIFIED FOR EV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL340 UNAUTHORIZED NCV DEALER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX001 EXCEEDS APPROVAL $ AMOUNT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX002 REGIONAL APPROVAL REQUIRED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX003 WARRANTY CLAIM $ LIMIT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX004 # OF TIRES LIMIT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX005 SERVICE CONTRACT CLAIM $ &gt; LIMIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX006 GOODWILL CLAIM $ LIMIT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX009 GOODWILL RENTAL $ LIMIT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX010 GOODWILL TOWING $ LIMIT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX011 GLASS CLAIM $ LIMIT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX012 SOFT TRIM CLAIM $ LIMIT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX013 ENVCN CLAIM $ LIMIT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX014 PAINT/RUST CLAIM $ LIMIT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX015 IN-STOCK VEHICLE REQ APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX016 GOODWILL TIME (MONTHS) &gt; LIMIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX017 GOODWILL MILEAGE LIMIT EXCEEDED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX018 STRAIGHT TIME HOURS &gt; LIMIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX019 ASSEMBLY REQUIRES APPROVAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX020 ARC REVIEW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Battery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bedliner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Call Center System Down</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaigns</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM P4213 Juke Timing Chain</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM P5216</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM PB023</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coding Assistance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CVT Warranty Extension</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DCAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Denial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Different Dept (QGP, C.A., etc)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow Up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Goodwill Consideration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GR8 Tester</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GT-R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hang Up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mailing Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NCI Coding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NNAnet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outbound Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paid Claim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parts Return</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PCC - CVT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PCC - ENG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PCC - Leaf Battery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post-Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre-Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected Claim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-1-S Manual Claim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-45-S</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Comm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Contracts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soft Trim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supervisor Call Back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suspended Claim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System Knowledge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TECH LINE Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Update Existing VCAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Verifying Coverages</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VIN Error</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Workload Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM R1413</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ARC Dealer Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PCC - CM P4235 Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reman Allowance Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subreason__c</fullName>
+        <externalId>false</externalId>
+        <label>Subreason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Adjustments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advised Dealer to contact Approvals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agent Following Up with Dealer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agent forwarded to leadership for review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amounts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AP Business Research</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved Rental on CM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approving errors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APRM assistance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assembly (Convertible roof, etc)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assisted dlr with rejected claim question</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Audio/Video Components</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Audio Core Return</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Audio Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auido Unit In-Stock</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Automatic Transmission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Basic Coverage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Branded Title</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Broken Stud</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bubbling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Coding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Explanation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Search</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA Warranty Extension Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CCC Service Comm Down</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change/Update Approval Status</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Check On Status</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Claim Debited Back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Claim Denied</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Claim Resubmitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Claims Submission assistance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Claim was charged back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clear Tag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM PB023 approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM - subsequential damage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coding Assistance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coding Information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coverage Search</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cracked/Leaking Battery Pre/Post Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Creating VCAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CVT Transmission Pre-approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DCAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer asked to be Debited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer called for preapproval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer Called To Check On Status</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dealer Service Comm Down</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>De-Archive VIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deductibles</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deductible Taken</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Denial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Determine if VIN applies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diagnosed while in Warranty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DLR did not know DCAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DLR Forgot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DLR Requested Call Back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DLR to Send Pictures</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSA Limits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Duplicate Claim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Duplicate CM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emissions Coverage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engine/Trans Pre-Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expense Codes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expense Documentation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expense Paid Less Than Expected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Explain Bulletins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Explain CM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Find Bulletin on NNAnet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow Up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow-up on Pictures</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow Up on Status of S45S Form</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>For Documentation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Further DIAG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>G37 Battery Claim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Email Address</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Question on F1 Claim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Glass</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GR8 Tester Down-Pre/Post Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GRT Not recommended, Contact Region</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HOST is down</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hyrbrid Related Components (NTB07-007)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Diagnosis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ineffective Repair</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In-Stock Vehicle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Key Fob Batteries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Labor Paid Less Than Expected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leadership Performed Call Back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leadership reviewed with Techline</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Locate APRM/FRM/DRG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Locate Bulletin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mailing Address</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maintenance Records</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manual Transmission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Message left for dealer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Navigate Assist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Navigate CPIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NNA Service Comm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Defect Paint Coding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No GR8 Tester</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No GR8 Tester Pre/Post Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Noisey Alternator Pre/Post Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Noisey Starter Pre/Post Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non Verified</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non Warrantable Failure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Paint Defect Coding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Warranty Defect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open Issue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Over DCAL Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Over Decal Limit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Over Flat Rate Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P.O.S. Assistance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paint Coding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paint Email Address</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part Not Valid for CM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parts Paid Less Than Expected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parts Return Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parts Warranty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PDI Question</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Perform Campaign – Repl Timing Chain</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PFP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Powertrain Coverage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre Approval (Service Desk)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PreApproval - Broken Timing Chain – Insp TC in new engine, repl TC in new engine &amp; repl Engine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PreApproval – Broken Timing Chain – Insp TC in new engine &amp; repl Engine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre Approval Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre Approval Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre Approval Failed KPA test</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre Approval Leaking/Cracked Battery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre Coding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prior Repair Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Procedure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Referred dlr to Rejected Claim Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected PDI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Repair Denied</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Replace Airbag Module &amp; Dash Pad needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Replace Airbag Module &amp; Dash Pad NOT needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Replace Dash Pad for previous repaired vehicle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Required Parts Missing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reviewing Pictures</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC &lt; 90 Days</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sealed Bag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seatbelt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seized Alternator Pre/Post Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seized Starter Pre/Post Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Contract Covereage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soft-Trim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spot CVT Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Straight Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supervisor Needs to review this claim before approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suspended Claim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suspended CVT Claim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System Down</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System Down - Unable to provide assistance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Towing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Towing Coverage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transferred Customer to Consumer Affairs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transferred Dealer to Quality Guard Plus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer VCAN notes to new RO/Line number</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Under DCAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Updated Mileage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Updated VCAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Update Existing VCAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Updating Existing CVT VCAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VCAN Approval Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Verified</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Verifying Coverage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VIN Alert documentation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warranty Extension</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warranty Flat Rate Manual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warranty Research</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WBP15-010 Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WCVT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Workload I77</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZN39N - Tires</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Case__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty Case</label>
+        <referenceTo>Warranty_Case__c</referenceTo>
+        <relationshipLabel>Reasons</relationshipLabel>
+        <relationshipName>Reasons</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Reason</label>
+    <nameField>
+        <displayFormat>R-{000000}</displayFormat>
+        <label>Reason Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Reasons</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>New_Reason</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Reason</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a1t/e?CF00NF000000Cepax={!Warranty_Case__c.Name}&amp;CF00NF000000Cepax_lkid={!Warranty_Case__c.Id}&amp;retURL=/{!Warranty_Case__c.Id}&amp;saveURL=/{!Warranty_Case__c.Id}</url>
+    </webLinks>
+</CustomObject>

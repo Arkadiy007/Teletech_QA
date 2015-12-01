@@ -1,0 +1,74 @@
+<apex:page controller="UtilsPartnerConversion"> 
+	<head></head>
+	<html>
+		<body>
+			<apex:outputText rendered="{!!PartnerEnabled}">
+				<h1>Partner Portal is not enabled in this environment.</h1>
+			</apex:outputText>		
+
+			<apex:outputText rendered="{!PartnerEnabled}">
+				<apex:outputPanel id="apex-page-message-panel">
+					<apex:messages />
+				</apex:outputPanel>
+				<h1>Select Accounts with Contacts that should be converted for Partner Portal access. </h1>	<br/><br/>
+			    <input class="btn" name="select" type="button" title="Select All" value="Select All" onclick="selectAll();"/>
+			    <input class="btn" name="deselect" type="button" title="De-select All"  value="De-select All" onclick="deselectAll();"/>
+			    <input class="btn" name="partnerfy" type="button" title="Partnerfy"  value="Partnerfy" onclick="partnerfyWrapper();"/>
+			    <apex:pageBlock >
+			        <apex:pageBlockTable value="{!accounts}" var="a">
+			            <apex:column width="20px">
+			            	<input id="{!a.id}" class="selector" type="checkbox"/>
+			            </apex:column>
+			            <apex:column value="{!a.name}" onclick="window.open('/{!a.id}');"/>
+			            <apex:column value="{!a.id}"/>
+			        </apex:pageBlockTable>
+			    </apex:pageBlock>
+				<apex:form >
+					<apex:actionFunction name="partnerfy" action="{!partnerfy}" status="partnerfy" rerender="apex-page-message-panel" oncomplete="enableButtons();">
+					    <apex:param value="" name="partnerIDs" />
+					</apex:actionFunction>
+				</apex:form>
+							
+				<script type="text/javascript" src="{!SUBSTITUTE(SUBSTITUTE(URLFOR($Resource.jquery162), '?isdtp=vw',''),'?isdtp=nv','')}"></script>
+				<script type="text/javascript">
+					function selectAll() {
+						jQuery('.selector').each(function() { 
+							this.checked = true;
+						});
+					}
+					
+					function deselectAll() {
+						jQuery('.selector').each(function() { 
+							this.checked = false;
+						});				
+					}
+					
+					function partnerfyWrapper() {
+						var selectedIDStr = '';
+						jQuery('.selector').each(function() { 
+							if(this.checked) {
+								selectedIDStr += (selectedIDStr.length == 0 ? this.id : ',' + this.id);
+							}
+						});
+						disableButtons();
+						partnerfy(selectedIDStr);
+					}
+					
+					function disableButtons() {
+						jQuery('.btn').each(function()  {
+							this.style.cssText = 'color:#B5B5B5;';
+							this.disabled = true;
+						});				
+					}
+					
+					function enableButtons() {
+						jQuery('.btn').each(function()  {
+							this.style.cssText = '';
+							this.disabled = false;					
+						});				
+					}
+				</script>
+			</apex:outputText>
+		</body>
+	</html>
+</apex:page>

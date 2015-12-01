@@ -1,0 +1,49 @@
+body {
+	background-color: #CFEEF8;
+}
+
+ul, ul li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	padding-bottom: 8px;
+}
+
+.sysstat-wrapper {
+	padding: 0 0 0px 0px;
+}
+
+.sysstat-system {
+	font-weight: bold;
+	font-size: 11px;
+	letter-spacing: 0.2px;
+}
+
+.secondary {
+	font-style: italic;
+	color: #4A4A56;
+}
+
+a { 
+	color: #1468B6;
+	text-decoration: none;
+}
+
+a:hover { 
+	text-decoration: underline;
+}
+
+.High a, .High a:hover {
+	color: #D64C0F;
+}
+
+.Medium a, .Medium a:hover {
+	color: #F5AB40;
+}
+
+.Low a, .Low a:hover {
+	color: #3E9C47;
+}

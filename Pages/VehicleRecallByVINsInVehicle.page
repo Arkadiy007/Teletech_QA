@@ -1,0 +1,28 @@
+<apex:page standardController="Vehicle__c" extensions="VehicleRecallInVehicleExtensions">
+<apex:form >
+<br/>
+<apex:image url="{!URLFOR($Resource.CommonIcons, 'exclamation-point.png')}" width="25" height="25" rendered="{!Vehicle__c.Open_Recall__c == true}"/>
+<apex:outputText value="{!$Label.Vehicle_Recall_Message_Vehicle}" style="font-size:medium; color:red; font-weight:bold" rendered="{!Vehicle__c.Open_Recall__c == true}" />
+<br/>
+<apex:outputPanel id="op1" rendered="{!showPowerCust}">
+    <apex:image url="{!URLFOR($Resource.CommonIcons, 'JDPowerLogo.png')}" width="25" height="25"/>
+    <apex:outputText value="{!$Label.Vehicle_Recall_Message2}" style="font-size:medium; color:red; font-weight:bold"/>
+    <br/>
+</apex:outputPanel>
+<apex:outputPanel id="pollPanel">
+<apex:outputPanel id="op2" rendered="{!(showBrandedMsg)}">
+    <apex:outputText value="{!brandedMsg}" style="font-size:medium; color:red; font-weight:bold"/> &nbsp;   
+</apex:outputPanel>
+<apex:actionPoller interval="5" reRender="pollPanel" action="{!pollAction}" enabled="{!startPolling}"/>  
+  <apex:outputPanel rendered="{!((startPolling) && NOT(showBrandedMsg) && (counter <= 1))}">
+          <div class="waitingSearchDiv waitingSearchDivOpacity" style="width: 60%; height: 5%; display: block;opacity: 0.60;"/>
+           <div id="loading_image" class="waitingSearchDiv" style="width: 60%; height: 5%; display: block;">
+              <div class="waitingHolder" style="top: 5px; width: 20px;background:#fff;">
+                  <img class="waitingImage" src="/img/loading.gif" style="background:#fff;"/>
+                  <span class="waitingDescription">Checking for Warranty Exclusions/ Branded VINs..</span>
+              </div>
+           </div>
+  </apex:outputPanel>             
+ </apex:outputPanel>
+</apex:form>
+</apex:page>

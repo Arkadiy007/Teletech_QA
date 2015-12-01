@@ -1,0 +1,49 @@
+<apex:page sidebar="false" standardController="Account" extensions="LithiumUserDetialsExtCls">
+    <apex:outputPanel rendered="{!hasDetail}" style="overflow:auto;relative:absolute;background-color:#F3F3EC;height:300px;width:100%">
+        <div class="bPageBlock" style="border:none;background-image:none;background-color: #F3F3EC;"  ><!--style="border:none;background-image:none;background-color: #F3F3EC;"-->
+            <div class="pbBody">
+                <div class="pbSubsection">
+                <b>User Metrics</b><br/>
+                    <table class="detailList" width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td class="labelCol">Message Posts</td>
+                            <td class="dataCol" id="posts"><apex:outputField value="{!liUser.Metric_Posts__c}"/>&nbsp;</td>
+                            <td class="labelCol" >Messages Read</td>
+                            <td class="dataCol" id="messagesRead"><apex:outputField value="{!liUser.Metric_Messages_Read__c}"/>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol">Logins</td>
+                            <td class="dataCol" id="logins"><apex:outputField value="{!liUser.Metric_Logins__c}"/>&nbsp;</td>
+                            <td class="labelCol">Page Views</td>
+                            <td class="dataCol" id="pageViews"><apex:outputField value="{!liUser.Metric_Page_Views__c}"/>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol">Minutes Online</td>
+                            <td class="dataCol" id="minutesOnline"><apex:outputField value="{!liUser.Metric_Minutes_Online__c}"/>&nbsp;</td>
+                            <td class="labelCol">Private Messages Sent</td>
+                            <td class="dataCol" id="privateMessagesSent"><apex:outputField value="{!liUser.Metric_Private_Messages_Sent__c}"/>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol last">Average Message Rating</td>
+                            <td class="dataCol last" id="avgMessageRating"><apex:outputField value="{!liUser.Metric_Average_Message_Rating__c}"/>&nbsp;</td>
+                            <td class="labelCol last">Private Messages Read</td>
+                            <td class="dataCol last" id="privateMessagesReceived"><apex:outputField value="{!liUser.Metric_Private_Messages_Received__c}"/>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div> 
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!NOT(hasDetail)}" style="overflow:auto;relative:absolute;background-color:#F3F3EC;height:300px;width:100%">
+        <div class="bPageBlock" style="border:none;background-image:none;background-color: #F3F3EC;"  ><!--style="border:none;background-image:none;background-color: #F3F3EC;"-->
+            <div class="pbBody">
+                <div class="pbSubsection">
+                    <b>User Details</b><br/>
+                    <center> <b> No Community User found</b> </center>
+                </div>
+            </div>
+        </div>  
+    </apex:outputPanel>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page showHeader="false" title="{!$Label.site.in_maintenance}" cache="false">
+  <apex:composition template="{!$Site.Template}">
+   <apex:define name="body">
+    <apex:outputText style="color:white" escape="false" styleClass="title" value="{!$Label.site.down_for_maintenance}">
+     <apex:param value="{!$Site.CurrentSiteUrl}"/>
+    </apex:outputText>
+    <br/>
+    <br/>
+    <apex:outputText style="color:white" value="{!$Label.site.sorry_for_inconvenience_back_shortly}"/>
+    <apex:outputText style="color:white" escape="false" value=" {!$Label.site.get_in_touch}">
+     <apex:param value="mailto:{!$Site.AdminEmailAddress}"/>
+     <apex:param value="{!$Label.site.email_us}"/>
+    </apex:outputText>
+   </apex:define>
+  </apex:composition>
+</apex:page>

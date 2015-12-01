@@ -1,0 +1,43 @@
+<apex:page standardController="Check_Request__c" extensions="StopCheckPaymentController">
+  <apex:form >      
+      <apex:pageBlock id="mainBlock" title="Stop Check Payment">
+      <apex:pageMessages id="pgMsg"></apex:pageMessages>
+          <apex:pageBlockSection rendered="{!!isSuccess}">
+           <apex:pageblockSectionItem >
+           <apex:outputLabel value="Requested Action" id="reqAct"></apex:outputLabel>
+              <apex:outputPanel layout="block" styleClass="requiredInput">                 
+                    <apex:selectRadio value="{!action}" layout="pageDirection" id="Action">
+                        <div class="requiredBlock"></div>
+                        <apex:selectOptions value="{!ReqActions}"/>
+                    </apex:selectRadio>
+              </apex:outputPanel>
+            </apex:pageblockSectionItem> <br/>
+            <apex:pageblockSectionItem /><br/>
+            <apex:pageblockSectionItem >
+                <apex:outputLabel value="Reason" id="reasonId" ></apex:outputLabel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                 <div class="requiredBlock"></div>
+                    <apex:selectList value="{!reason}" multiselect="false" size="1" id="reason">
+                        <apex:selectOptions value="{!ReasonItems}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:outputPanel>
+            </apex:pageblockSectionItem>            
+          </apex:pageBlockSection>
+          <apex:pageBlockSection id="readonlySection" rendered="{!isSuccess}">
+              <apex:pageblockSectionItem >
+                  <apex:outputLabel value="Requested Action"/>
+                  <apex:outputText value="{!action}"></apex:outputText>
+              </apex:pageblockSectionItem> <br/>
+              <apex:pageblockSectionItem >
+                  <apex:outputLabel value="Reason"/>
+                  <apex:outputText value="{!reason}"></apex:outputText>
+              </apex:pageblockSectionItem>
+          </apex:pageBlockSection>
+          <apex:pageBlockButtons location="bottom">
+              <apex:commandButton id="saveId" value="Save" action="{!saveChk}" rerender="mainBlock" status="loadStatus" rendered="{!!isSuccess}"/>
+              <apex:commandButton id="cancelId" value="{!IF(isSuccess, "Exit", "Cancel")}" action="{!cancel}"/>
+          </apex:pageBlockButtons>
+      </apex:pageBlock>
+      <c:LoadingBox ></c:LoadingBox>
+  </apex:form>
+</apex:page>

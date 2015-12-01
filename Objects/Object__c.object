@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Documentation of the Nissan NA Configurations within the Salesforce environment for standard and custom Objects.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>API_Name__c</fullName>
+        <description>The Salesforce Coded name for the object.</description>
+        <externalId>false</externalId>
+        <label>API Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Configurations__c</fullName>
+        <description>Tallies all Configuration records related to the Object.</description>
+        <externalId>false</externalId>
+        <label>Configurations</label>
+        <summaryForeignKey>Configuration__c.Object__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Custom_Fields__c</fullName>
+        <description>Tallies all related Field records on the Object.</description>
+        <externalId>false</externalId>
+        <label>Custom Fields</label>
+        <summaryFilterItems>
+            <field>Field__c.Custom_Field__c</field>
+            <operation>equals</operation>
+            <value>true</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Field__c.Object__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Custom__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the Object is a Custom Object, as opposed to a Salesforce Standard Object.</description>
+        <externalId>false</externalId>
+        <label>Custom</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Summary of the purpose of the Object</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Enable_Reports__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if Reports can be run for this Object.</description>
+        <externalId>false</externalId>
+        <label>Enable Reports</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Managed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the Object is part of a Managed Package or App from the AppExchange.</description>
+        <externalId>false</externalId>
+        <label>Managed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Object_Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates the object is currently Not Actively being utilized by NNA.</description>
+        <externalId>false</externalId>
+        <label>Object Inactive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Salesforce_ID__c</fullName>
+        <description>The 15 or 18 digit record identifier for the Object.</description>
+        <externalId>false</externalId>
+        <label>Salesforce ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Standard_Fields__c</fullName>
+        <description>Tallies all Field records with Custom_Field__c = FALSE related to the Object.</description>
+        <externalId>false</externalId>
+        <label>Standard Fields</label>
+        <summaryFilterItems>
+            <field>Field__c.Custom_Field__c</field>
+            <operation>equals</operation>
+            <value>false</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Field__c.Object__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Track_Activities__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the Open Activities and Activity History related lists can be attached to the Object.</description>
+        <externalId>false</externalId>
+        <label>Track Activities</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Track_Field_History__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the Object&apos;s Fields can be tracked for changes.</description>
+        <externalId>false</externalId>
+        <label>Track Field History</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Object</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Object_Inactive__c</columns>
+        <columns>Custom__c</columns>
+        <columns>Managed__c</columns>
+        <columns>Standard_Fields__c</columns>
+        <columns>Custom_Fields__c</columns>
+        <columns>Configurations__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Custom_Objects</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Custom__c</columns>
+        <columns>Managed__c</columns>
+        <columns>Standard_Fields__c</columns>
+        <columns>Custom_Fields__c</columns>
+        <columns>Configurations__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Custom__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Custom Objects</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Managed_Objects</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Custom__c</columns>
+        <columns>Managed__c</columns>
+        <columns>Standard_Fields__c</columns>
+        <columns>Custom_Fields__c</columns>
+        <columns>Configurations__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Managed__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Managed Objects</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Standard_Objects</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Custom__c</columns>
+        <columns>Managed__c</columns>
+        <columns>Standard_Fields__c</columns>
+        <columns>Custom_Fields__c</columns>
+        <columns>Configurations__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Custom__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Standard Objects</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Object</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Objects</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Custom__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Managed__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Standard_Fields__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Custom_Fields__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Configurations__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Custom__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Managed__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Description__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Custom__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Managed__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Custom__c</searchFilterFields>
+        <searchFilterFields>Managed__c</searchFilterFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Custom__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Managed__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Standard_Fields__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Custom_Fields__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Configurations__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Go_to_Object</fullName>
+        <availability>online</availability>
+        <description>Routes user to the Object in Setup. 
+
+1) If Object.Salesforce_ID is blank, alerts user there is nothing to link to. 
+2) If Object.Salesforce_ID is not blank, routes user to object in Salesforce setup</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Go to Object</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/23.0/connection.js&quot;)};
+
+var sfid = &apos;{!Object__c.Salesforce_ID__c}&apos;;
+
+if ( sfid.length == 0 )
+
+{
+alert(&quot;There is no Salesforce ID entered to route to.&quot;)
+}
+
+else
+{
+window.parent.location.href = &quot;/{!Object__c.Salesforce_ID__c}&quot;;
+}</url>
+    </webLinks>
+</CustomObject>

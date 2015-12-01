@@ -1,0 +1,79 @@
+<apex:page standardController="Case" doctype="html-5.0" extensions="PreviousSolutionsController">
+
+<script type="text/javascript" language="javascript">
+    function busyCursorOn() {
+         document.getElementById('blockbckanim').style.display="block";
+         document.getElementById('quickRepPage:page').style.cursor="wait";
+
+         j$('.btn').attr("disabled", "disabled");
+     }
+
+     function busyCursorOff() {
+         document.getElementById('blockbckanim').style.display="none";
+         document.getElementById('quickRepPage:page').style.cursor="auto";
+
+         j$('.btn').removeAttr("disabled");
+      }
+
+</script>
+
+
+<apex:form id="page">
+
+<apex:actionStatus id="busyCursor" onStart="busyCursorOn()" onStop="busyCursorOff()"/>
+
+<apex:pageblock id="searchParamsBlock" title="Search Parameters">
+      <apex:pageblocksection columns="2" collapsible="false" showheader="false" title="">
+        <apex:repeat value="{!stringFilters}" var="stringLabel">
+            <apex:inputText value="{!stringFilters[stringLabel]}" label="{!stringLabel}" size="20"/>  
+        </apex:repeat>
+      </apex:pageblocksection>
+     <apex:pageblocksection columns="2" collapsible="false" showheader="false" title="">
+          <apex:input label="Start Time Filter" value="{! startTimeFilter }" type="auto"/>
+          <apex:input label="End Time Filter" value="{! endTimeFilter }" type="auto"/>
+      </apex:pageblocksection>
+      <apex:commandbutton value="Search" title="Search" action="{!search}"  status="busyCursor"  style="width: 70px;" rerender="page"/>
+                       
+    </apex:pageblock>
+
+         
+            <div id="blockbckanim" style="width: 100%; height: 100%; display: none; position: relative; z-index: 5; ">
+                <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; margin: 0; text-align: center;">
+                    <img id="apimgld" style="" src="/img/loading32.gif" />
+                </div>
+            </div>
+<apex:pageBlock title="Previous Solutions">
+
+    <apex:pageMessages rendered="{!!relatedRecordsAvailable}" />
+    <apex:pageblockTable rendered="{!relatedRecordsAvailable}" value="{!relatedRecords}" var="caseWrapper" > 
+        <apex:column headerValue="Subject">
+           <apex:outputText value="{!caseWrapper.subject}" />
+        </apex:column>
+
+
+        <apex:column headerValue="Model Make">
+           <apex:outputText value="{!caseWrapper.make}"/>
+        </apex:column>
+
+        <apex:column headerValue="Model Line">
+           <apex:outputText value="{!caseWrapper.model_line}" />
+        </apex:column>
+
+        <apex:column headerValue="Model Year">
+           <apex:outputText value="{!caseWrapper.model_year}" />
+        </apex:column>
+
+         <apex:column headerValue="Region">
+           <apex:outputText value="{!caseWrapper.regiona}" />
+        </apex:column>
+
+         <apex:column headerValue="Dealer Code">
+           <apex:outputText value="{!caseWrapper.dealer_code}" />
+        </apex:column>
+
+       </apex:pageblockTable>
+    
+</apex:pageBlock>
+</apex:form>
+
+</apex:page>

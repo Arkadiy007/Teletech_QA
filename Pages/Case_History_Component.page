@@ -1,0 +1,110 @@
+<apex:page standardController="Account" extensions="Case_History_Component">
+    <style>
+        .pbTitle {width:100% !important}
+        .errorMsg {font-weight:bold; color:black;font-size:14pt;text-align:center}
+        .tdColumn {vertical-align:top;height:100% !important;position:relative}
+        .pager{
+        }
+        .inputField {font-weight:bold}
+        .column {vertical-align:top}
+        .pageColumn
+        {
+        line-height:25px;
+        }   
+        .pbHeader{display:none;}
+        .rowHidden{display:none;}
+    </style>
+    <apex:form id="pageForm">
+        <apex:actionFunction name="refreshrows" action="{!refresh}" status="fetchStatus"/>  
+        <apex:pageBlock id="pb" title="Case History" >    
+            <apex:pageBlockSection columns="1" collapsible="true" showHeader="false" title="" >
+                <apex:outputText rendered="{!recordsFound==false}"><div class="errorMsg">There is no case history for {!acc.Name}</div></apex:outputText>
+               <apex:outputPanel id="tblgrid" rendered="{!recordsFound==true}">
+                   <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                       <tbody>
+                           <tr>
+                               <td class="data2Col first" colspan="2">
+                                   
+                                   <table class="list" border="0" cellpadding="0" cellspacing="0">
+                                       <tbody>
+                                           <apex:repeat value="{!cases}" var="c">
+                                               <tr class="headerRow">
+                                                   <apex:repeat value="{!lstColumns}" var="column">
+                                                       <td class="headerRow" scope="col" colspan="1">
+                                                           <apex:commandLink value="{!column['label']}" action="{!sortCol}" rerender="pb">
+                                                               <apex:param name="sortField" value="{!column['name']}" assignTo="{!sortField}"/>
+                                                           </apex:commandLink>
+                                                       </td>
+                                                   </apex:repeat>
+                                               </tr>
+                                               <tr class="dataRow">
+                                                   <apex:repeat value="{!lstColumns}" var="column">
+                                                       <td class="dataCell">
+                                                           <apex:outputText value="{!c[column['name']]}" rendered="{!if(column['namefield']=='false' && column['name']!='CreatedBy__c' && column['type']!='DATE' && column['type']!='DATETIME', true, false)}"/>
+                                                           <apex:outputLink value="/{!c.Id}" rendered="{!if(column['namefield']=='true' && column['name']!='CreatedBy__c', true, false)}">
+                                                               {!c[column['name']]}                                                  
+                                                           </apex:outputLink>
+                                                           <apex:outputText value="{!c.CreatedBy.Name}" rendered="{!if(column['name']=='CreatedBy__c', true, false)}"/> 
+                                                           <apex:outputText value="{0,date,MM/dd/yyyy hh:mm:ss a z}" rendered="{!if(column['type']=='DATETIME', true, false)}">
+                                                           	<apex:param value="{!c[column['name']]}"/>
+                                                           </apex:outputText>
+                                                           <apex:outputText value="{0,date,MM/dd/yyyy}" rendered="{!if(column['type']=='DATE', true, false)}">
+                                                           	<apex:param value="{!c[column['name']]}"/>
+                                                           </apex:outputText>
+                                                       </td>
+                                                   </apex:repeat>
+                                               </tr>
+                                               <tr class="dataRow {!if(mapHasCaseComments[c.Id], "", "rowHidden")}">
+                                                   <td class="dataCell" colspan="{!numColumns}">
+                                                       <table class="list" border="0" cellpadding="0" cellspacing="0">
+                                                           <tbody>
+                                                               <tr class="headerRow">                                                                   
+                                                                   <td class="headerRow" scope="col" colspan="1">
+                                                                       Comments
+                                                                   </td>
+                                                               </tr>
+                                                               <apex:repeat value="{!mapCaseComments[c.Id]}" var="cc" rendered="{!mapHasCaseComments[c.Id]}">
+                                                                   <tr class="dataRow">
+                                                                       <td class="dataCell">
+                                                                           <b>Created Date</b>: 
+                                                                           <apex:outputText value="{0, date, MM/dd/yyyy hh:mm:ss a z}">
+                                                                               <apex:param value="{!cc.CreatedDate}"/>
+                                                                           </apex:outputText> <b>Created By</b>: {!cc.CreatedBy.Name}<br/><br/>
+                                                                           <apex:outputText value="{!cc.CommentBody}" escape="false"/>
+                                                                       </td>
+                                                                   </tr>
+                                                               </apex:repeat>
+                                                           </tbody>
+                                                       </table>
+                                                   </td>
+                                               </tr>                                               
+                                           </apex:repeat>
+                                       </tbody>
+                                   </table>
+                               </td> 
+                           </tr>
+                       </tbody>
+                   </table>
+                </apex:outputPanel>                
+                <apex:panelGrid columns="9" columnClasses="pageColumn" rendered="{!recordsFound}" styleClass="pager">
+                    <apex:commandButton status="fetchStatus" reRender="pb" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page"/>
+                    <apex:commandButton status="fetchStatus" reRender="pb" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page"/>
+                    <apex:commandButton status="fetchStatus" reRender="pb" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page"/>
+                    <apex:commandButton status="fetchStatus" reRender="pb" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page"/>
+                    <apex:selectList id="rows" value="{!size}" onchange="refreshrows()" size="1" style="margin-top:3px">
+                        <apex:selectOption itemLabel="5 Cases" itemValue="5" />
+                        <apex:selectOption itemLabel="10 Cases" itemValue="10" />
+                        <apex:selectOption itemLabel="15 Cases" itemValue="15" />
+                        <apex:selectOption itemLabel="All" itemValue="{!noOfRecords}" />
+                    </apex:selectList>
+                    <apex:outputText >Page {!pageNumber} of {!noOfPages}, </apex:outputText>
+                    <apex:outputText >Showing Records {!(pageNumber * size)+1-size}-{!IF((pageNumber * size)>noOfRecords, noOfRecords,(pageNumber * size))} of {!noOfRecords}</apex:outputText>
+                    <apex:commandButton status="fetchStatus" reRender="pb" value="Refresh" action="{!refresh}" title="Refresh Page" rendered="{!showRefresh}"/>
+                    <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                        <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                    </apex:outputPanel>
+                </apex:panelGrid>
+            </apex:pageBlockSection>            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Added_Date__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <externalId>false</externalId>
+        <label>Added Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Alert_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Alert Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Alert_Inactive_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Alert Inactive Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CPIA_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>CPIA ID</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Name_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Warranty_Case__r.Dealer__r.Name</formula>
+        <label>Dealer Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Dealer Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Dealer</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Dealer/VIN Alerts</relationshipLabel>
+        <relationshipName>Dealer_Alerts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Special_Instructions__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Instructions</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TECH_Line_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>TECH Line Case</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Value does not exist or does not match filter criteria. You MUST select a TECH LINE Case</errorMessage>
+            <filterItems>
+                <field>Case.Vehicle_Name__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.VIN__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Dealer/VIN Alerts</relationshipLabel>
+        <relationshipName>Dealer_VIN_Alerts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Dealer Comments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NESNA Dealer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>VIN__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>VIN</label>
+        <referenceTo>Vehicle__c</referenceTo>
+        <relationshipLabel>VIN Alerts</relationshipLabel>
+        <relationshipName>VIN_Alerts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Warranty Case</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>You MUST select a Warranty Case related to this VIN.</errorMessage>
+            <filterItems>
+                <field>Warranty_Case__c.Vehicle__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.VIN__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Warranty_Case__c</referenceTo>
+        <relationshipLabel>Dealer/VIN Alerts</relationshipLabel>
+        <relationshipName>Dealer_VIN_Alerts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Dealer/VIN Alert</label>
+    <listViews>
+        <fullName>Active_NESNA</fullName>
+        <columns>OBJECT_ID</columns>
+        <columns>NAME</columns>
+        <columns>Dealer__c</columns>
+        <columns>Added_Date__c</columns>
+        <columns>Alert_Comments__c</columns>
+        <columns>Alert_Inactive_Date__c</columns>
+        <columns>Special_Instructions__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>NESNA Dealer</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <label>Active NESNA</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Dealer_VIN_Alerts</fullName>
+        <columns>NAME</columns>
+        <columns>VIN__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Dealer_Name_Formula__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Added_Date__c</columns>
+        <columns>Alert_Inactive_Date__c</columns>
+        <columns>Warranty_Case__c</columns>
+        <columns>Alert_Comments__c</columns>
+        <columns>Special_Instructions__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <label>All Active Dealer/VIN Alerts</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Inactive_NESNA</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Added_Date__c</columns>
+        <columns>Alert_Comments__c</columns>
+        <columns>Alert_Inactive_Date__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Special_Instructions__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>NESNA Dealer</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Inactive</value>
+        </filters>
+        <label>Inactive NESNA</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ManagedServices</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>mkf</fullName>
+        <columns>NAME</columns>
+        <columns>VIN__c</columns>
+        <columns>Dealer__c</columns>
+        <columns>Dealer_Name_Formula__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Added_Date__c</columns>
+        <columns>Alert_Inactive_Date__c</columns>
+        <columns>Warranty_Case__c</columns>
+        <columns>Alert_Comments__c</columns>
+        <columns>Special_Instructions__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <filters>
+            <field>VIN__c</field>
+            <operation>equals</operation>
+            <value>1N4AA5AP9BC809546</value>
+        </filters>
+        <label>mkf</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>DVA-{0000}</displayFormat>
+        <label>Dealer/VIN Alert</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Dealer/VIN Alerts</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Dealer_Comments</fullName>
+        <active>true</active>
+        <label>Dealer Comments</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Dealer Comments</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NESNA_Alerts</fullName>
+        <active>true</active>
+        <label>NESNA Alerts</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>NESNA Dealer</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>VIN_Alert</fullName>
+        <active>true</active>
+        <label>VIN Alert</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>VIN</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Alert_Comments_and_Special_Instructions</fullName>
+        <active>true</active>
+        <description>Both &quot;Alert Comments&quot; and &quot;Special Instructions&quot; can never be empty.</description>
+        <errorConditionFormula>AND (
+ OR(RecordTypeId = &quot;012F0000000zfCj&quot;,RecordTypeId =&quot;012F0000000zfCt&quot;),
+ISBLANK(Alert_Comments__c),
+ISBLANK(Special_Instructions__c)
+    )</errorConditionFormula>
+        <errorMessage>Either &quot;Alert Comments&quot; or &quot;Special Instructions&quot; should be populated.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_CA_TECH_LINE_Dealer_VIN_Alert</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New VIN Alert</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a1n/e?CF00NF000000CeXcJ={!Case.CaseNumber}&amp;CF00NF000000CeXcJ_lkid={!Case.Id}&amp;RecordType=012F0000000zfCt&amp;
+CF00NF000000Ce2Jd={!Case.Servicing_Dealer__c}&amp;CF00NF000000Ce2Jd_lkid={!Case.Servicing_DealerId__c}&amp;
+CF00NF000000Ce2Jh={!Case.Vehicle_Name__c}&amp;CF00NF000000Ce2Jh_lkid={!Case.Vehicle_NameId__c}&amp;retURL=/{!Case.Id}&amp;saveURL=/{!Case.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Dealer_Comment</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Dealer Comment</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!URLFOR($Action.Dealer_VIN_Alerts__c.New)}&amp;Recordtype=012F0000000zfCj</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_TECH_LINE_Dealer_VIN_Alert</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New VIN Alert</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a1n/e?CF00NF000000CeXcJ={!Case.CaseNumber}&amp;CF00NF000000CeXcJ_lkid={!Case.Id}&amp;RecordType=012F0000000zfCt&amp;
+CF00NF000000Ce2Jh={!Case.Vehicle_Name__c}&amp;CF00NF000000Ce2Jh_lkid={!Case.Vehicle_NameId__c}&amp;
+CF00NF000000Ce2Jd={!Case.Dealer__c}&amp;CF00NF000000Ce2Jd_lkid={!Case.DealerId__c}&amp;retURL=/{!Case.Id}&amp;saveURL=/{!Case.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_VIN_Alert</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New VIN Alert</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!URLFOR($Action.Dealer_VIN_Alerts__c.New)}&amp;Recordtype=012F0000000zfCt</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Vehicle_VIN_Alert</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New VIN Alert</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/a1n/e?CF00NF000000Ce2Jh={!Vehicle__c.Name}&amp;CF00NF000000Ce2Jh_lkid={!Vehicle__c.Id}&amp;RecordType=012F0000000zfCt&amp;
+CF00NF000000Ce2Jh={!Vehicle__c.Name}&amp;CF00NF000000Ce2Jh_lkid={!Vehicle__c.Id}&amp;
+CF00NF000000Ce8cV={!Warranty_Case__c.Name}&amp;CF00NF000000Ce8cV_lkid={!Warranty_Case__c.Id}&amp;retURL=/{!Vehicle__c.Id}&amp;saveURL=/{!Vehicle__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Warranty_Dealer_VIN_Alert</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New VIN Alert</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a1n/e?CF00NF000000Ce8cV={!Warranty_Case__c.Name}&amp;CF00NF000000Ce8cV_lkid={!Warranty_Case__c.Id}&amp;RecordType=012F0000000zfCt&amp;
+CF00NF000000Ce2Jh={!Warranty_Case__c.Vehicle__c}&amp;CF00NF000000Ce2Jh_lkid={!Warranty_Case__c.VehicleId__c}&amp;
+CF00NF000000Ce8cV={!Warranty_Case__c.Name}&amp;CF00NF000000Ce8cV_lkid={!Warranty_Case__c.Id}&amp;
+CF00NF000000Ce2Jd={!Warranty_Case__c.Dealer__c}&amp;CF00NF000000Ce2Jd_lkid={!Warranty_Case__c.DealerId__c}&amp;retURL=/{!Warranty_Case__c.Id}&amp;saveURL=/{!Warranty_Case__c.Id}</url>
+    </webLinks>
+</CustomObject>

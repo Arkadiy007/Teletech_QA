@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>US523: EPIC-CA FDD#1617-View Service Contract
+
+Ability to view Service Contract headers on Vehicle Record and access detail on related Service Contract Record</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Account Id associated with Vehicle Service Contract</description>
+        <externalId>false</externalId>
+        <label>Current Owner</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Vehicle Service Contracts</relationshipLabel>
+        <relationshipName>Vehicle_Service_Contracts1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Action_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Action Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Added_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Added Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agreement_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Agreement Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Batch_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Batch Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Batch_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Batch Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Batch_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Batch Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CancelMileage__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE( Cancel_Mileage__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cancel Mileage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cancel_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancel Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cancel_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancel Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cancel_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancel Fee</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cancel_Mileage__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancel Mileage</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cancel_Refund_Percent__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancel Refund Percent</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cancel_Requested_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancel Requested By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContractTypeTranslated__c</fullName>
+        <description>Translates the VSC Contract Type from the HOST provided value to a term that is clear to users. If VSC Effective Date is before 5/1/12, values are different than after was changed on 5/1/12.</description>
+        <externalId>false</externalId>
+        <formula>IF( Effective_Date__c &lt; DATEVALUE(&quot;2012-05-01&quot;) &amp;&amp;  OR(Product__c = &quot;SC&quot;, Product__c = &quot;MB&quot;, Product__c = &quot;MC&quot;),
+CASE(Contract_Type__c ,
+&quot;A&quot;, &quot;New Bronze&quot;,
+&quot;B&quot;, &quot;New Silver&quot;,
+&quot;C&quot;, &quot;New Gold&quot;,
+&quot;L&quot;, &quot;Pre-Owned&quot;,
+&quot;N&quot;, &quot;Pre-Owned+Plus&quot;,
+&quot;O&quot;, &quot;Premium&quot;,
+&quot;Q&quot;, &quot;Schedule 2&quot;,
+&quot;T&quot;, &quot;Schedule 1&quot;,
+&quot; &quot;)
+,
+(IF( Effective_Date__c &lt; DATEVALUE(&quot;2012-05-01&quot;) &amp;&amp;  Product__c = &quot;RS&quot;,
+CASE(Contract_Type__c ,
+&quot;B&quot;, &quot;New Silver Preferred&quot;,
+&quot;C&quot;, &quot;New Gold Preferred&quot;,
+&quot;M&quot;, &quot;Pre-Owned Preferred&quot;,
+&quot; &quot;)
+,
+(IF( Effective_Date__c  &gt;= DATEVALUE(&quot;2012-05-01&quot;),
+CASE(Contract_Type__c ,
+&quot;A&quot;, &quot;New Powertrain Preferred&quot;,
+&quot;B&quot;, &quot;New Silver Preferred&quot;,
+&quot;C&quot;, &quot;New Gold Preferred&quot;,
+&quot;G&quot;, &quot;Pre-Owned Gold Preferred&quot;,
+&quot;L&quot;, &quot;Pre-Owned Powertrain Preferred&quot;,
+&quot;N&quot;, &quot;Pre-Owned Silver Preferred&quot;,
+&quot; &quot;)
+,
+&quot; &quot;
+)))))</formula>
+        <label>Contract Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomerName__c</fullName>
+        <description>Concatenation of Claim Customer First Name &amp; Claim Customer Last Name</description>
+        <externalId>false</externalId>
+        <formula>Customer_First_Name__c &amp; &quot; &quot; &amp; Customer_Last_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomerNetRefund__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE( Customer_Net_Refund__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Net Refund</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Email</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>VSC First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>VSC Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Middle_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Middle Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Net_Refund__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Net Refund</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Primary_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Primary Phone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Secondary_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Secondary Phone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Zip</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DealerNetRefund__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE( Dealer_Net_Refund__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Dealer Net Refund</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Dealer_Net_Refund__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Net Refund</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Dealer State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dealer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Dealer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Vehicle Service Contracts (Dealer)</relationshipLabel>
+        <relationshipName>Vehicle_Service_Contracts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DeductibleDollars__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE( Deductible_Amount__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Deductible</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Deductible_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Deductible</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End_Odometer__c</fullName>
+        <description>Created for NCI</description>
+        <externalId>false</externalId>
+        <label>End Odometer</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpireMileage__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE( Expire_Mileage__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expire Mileage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expire_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Expire Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expire_Mileage__c</fullName>
+        <externalId>false</externalId>
+        <label>Expire Mileage</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Finance_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>Finance Term</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Transaction_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Transaction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Lienholder_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Lienholder City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lienholder_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Lienholder Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lienholder_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Lienholder State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lienholder_Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Lienholder Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lienholder_Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Lienholder Zip</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Odometer__c</fullName>
+        <externalId>false</externalId>
+        <label>Odometer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Oil_Change__c</fullName>
+        <externalId>false</externalId>
+        <label>Oil Change</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Owner Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Vehicle Service Contracts (Owner Name)</relationshipLabel>
+        <relationshipName>Vehicle_Service_Contracts2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Paid_to_Date__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Paid to Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Plan_Code_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Plan Code Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plan_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Plan Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plan_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Plan Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plan_Features__c</fullName>
+        <description>Coverage_Component__c+ &quot;,&quot; +Oil_Chngs_Maint__c+ &quot;,&quot; + Rental__c+ &quot;,&quot; + Towing__c+ &quot;,&quot; + Tire__c+ &quot;,&quot; + Roadside__c</description>
+        <externalId>false</externalId>
+        <label>Plan Features</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plan_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>Plan Term</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plan_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Plan Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Policy_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Policy Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Price_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Price Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Printed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Printed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PurchasePrice__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE(Purchase_Price__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Purchase Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Purchase Price</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Request_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Received Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Odometer__c</fullName>
+        <description>Created for NCI</description>
+        <externalId>false</externalId>
+        <label>Start Odometer</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transaction_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Transaction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Transfer_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Transfer Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VIN__c</fullName>
+        <externalId>false</externalId>
+        <label>VIN</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Vehicle that the Vehicle Service Contract applies to.</description>
+        <externalId>false</externalId>
+        <label>VSC VIN</label>
+        <referenceTo>Vehicle__c</referenceTo>
+        <relationshipLabel>Vehicle Service Contracts</relationshipLabel>
+        <relationshipName>Vehicle_Service_Contracts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Option__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Option</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Price</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Who_Processed_Cancel__c</fullName>
+        <externalId>false</externalId>
+        <label>Who Processed Cancel</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Who_Received_Refund__c</fullName>
+        <externalId>false</externalId>
+        <label>Who Received Refund</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Vehicle Service Contract</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Vehicle_Type__c</columns>
+        <columns>NAME</columns>
+        <columns>Customer_Last_Name__c</columns>
+        <columns>Customer_First_Name__c</columns>
+        <columns>Contract_Type__c</columns>
+        <columns>Deductible_Amount__c</columns>
+        <columns>Effective_Date__c</columns>
+        <columns>Expire_Date__c</columns>
+        <columns>Expire_Mileage__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Policy #</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Vehicle Service Contracts</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Customer_Last_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer_First_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ContractTypeTranslated__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Deductible_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Effective_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Expire_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ExpireMileage__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Vehicle_Type__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Customer_First_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Customer_Last_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_Id__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Customer_Primary_Phone__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ContractTypeTranslated__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Deductible_Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Effective_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Expire_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ExpireMileage__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Policy_Number__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Account_Id__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ContractTypeTranslated__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Deductible_Amount__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Effective_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Expire_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ExpireMileage__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Plan_Type__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Customer_First_Name__c</searchFilterFields>
+        <searchFilterFields>Customer_Last_Name__c</searchFilterFields>
+        <searchFilterFields>Account_Id__c</searchFilterFields>
+        <searchFilterFields>Customer_Primary_Phone__c</searchFilterFields>
+        <searchFilterFields>ContractTypeTranslated__c</searchFilterFields>
+        <searchFilterFields>Deductible_Amount__c</searchFilterFields>
+        <searchFilterFields>Effective_Date__c</searchFilterFields>
+        <searchFilterFields>Expire_Date__c</searchFilterFields>
+        <searchFilterFields>ExpireMileage__c</searchFilterFields>
+        <searchResultsAdditionalFields>Customer_First_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Customer_Last_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Deductible_Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Effective_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Expire_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ExpireMileage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Cancel_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Vehicle_Service_Contract_Comments</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Vehicle Service Contract Comments</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if (typeof(srcUp) == &apos;function&apos;) {
+   srcUp(&apos;/apex/VehicleServiceContractComment?VSCId={!Vehicle_Service_Contract__c.Id}&apos;);
+}
+else {
+   window.open(&apos;/apex/VehicleServiceContractComment?VSCId={!Vehicle_Service_Contract__c.Id}&apos;);
+}</url>
+    </webLinks>
+</CustomObject>

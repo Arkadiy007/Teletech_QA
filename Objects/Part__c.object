@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Abolish_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Abolish Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Base_Part_Number__c</fullName>
+        <description>base part number</description>
+        <externalId>false</externalId>
+        <label>Base Part Number</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>NBA – BRAZIL (306, 309)
+NMEX (72, 73, 107, 301)
+NMGR – RUSSIA (294)
+NMISA – SPAIN (198, 283)
+NML – JAPAN (75)
+RDBA - RENAULT DO BRAZIL (143)
+NMUK (290,299)
+NMT – THAILAND (235)
+RSM – KOREA (307)
+DFXLY – CHINA (320)</inlineHelpText>
+        <label>Customer Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Destination_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Destination Country</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Global_Supplier_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Supplier__r.Global_Supplier_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Global Supplier Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HARM_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>HARM Code</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Origin_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Origin Country</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Part Name</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Part Number</description>
+        <externalId>true</externalId>
+        <label>Part Number</label>
+        <length>12</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Supplier__r.Supplier_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Supplier Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Supplier Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Supplier</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Parts</relationshipLabel>
+        <relationshipName>Parts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Part</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Part_Number__c</columns>
+        <columns>Part_Name__c</columns>
+        <columns>Customer_Number__c</columns>
+        <columns>Supplier_Code__c</columns>
+        <columns>Supplier__c</columns>
+        <columns>Origin_Country__c</columns>
+        <columns>Destination_Country__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Part</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Parts</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Part_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Part_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Supplier_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Supplier__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Origin_Country__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Destination_Country__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Part_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Part_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Customer_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Supplier_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Supplier__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>Part_Number__c</lookupFilterFields>
+        <lookupFilterFields>Part_Name__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>Part_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Part_Number__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Part_Name__c</searchFilterFields>
+        <searchFilterFields>Part_Number__c</searchFilterFields>
+        <searchResultsAdditionalFields>Part_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Part_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Customer_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Supplier_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Supplier__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Origin_Country__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Destination_Country__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

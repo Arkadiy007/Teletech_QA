@@ -1,0 +1,33 @@
+<apex:component controller="Controller_CaseCategorizationLineItem" >
+
+    <apex:attribute name="allConcerns" type="SelectOption[]" assignTo="{!Concerns}" description="The case object that is associated with this set of categorization."/>
+    <apex:attribute name="caseCategorizationController" assignTo="{!CaseCategorizationController}" type="Controller_CaseCategorization" description="The parent controller: Controller_CaseCategorization."/>
+    <apex:attribute name="index" type="Integer" assignTo="{!Index}" description="The Index of the input CaseCategorizations list from Controller_CaseCategorization."/>
+    <apex:attribute name="testatr" type="String" assignTo="{!TestAtr}" description="The name of component to be rerendered when picklist values are changed."/>
+
+    <apex:actionStatus id="status" onstart="onChangingLineItemSlection(true);" onstop="onChangingLineItemSlection(false);"/>
+    
+    <apex:panelGrid columns="9" >
+        <!--<apex:outputLabel >Category: {!IF(ISBLANK(CaseCategorizationController.CaseCategorizations[Index].Name), Index+1, CaseCategorizationController.CaseCategorizations[Index].Name)}</apex:outputLabel>-->
+        <apex:outputLabel value="Category: {!Index+1}" style="display: block; width:80px;" />
+        <apex:selectList size="1" value="{!selectedConcern}" style="width:250px;">
+            <apex:selectOptions value="{!Concerns}"></apex:selectOptions>
+            <apex:actionSupport event="onchange" action="{!onSelectedConcernChanged}" reRender="cmbCategory, cmbSubCategory, cmbSymptom,{!TestAtr}" status="status"/>
+        </apex:selectList>
+        <apex:selectList id="cmbCategory" size="1" value="{!selectedCategory}" style="width:250px;" >
+            <apex:selectOptions value="{!Categories}"></apex:selectOptions>
+            <apex:actionSupport event="onchange" action="{!onSelectedCategoryChanged}" reRender="cmbSubCategory, cmbSymptom,{!TestAtr}" status="status"/>
+        </apex:selectList>
+        <apex:selectList id="cmbSubCategory" size="1" value="{!selectedSubcategory}" style="width:250px;" >
+            <apex:selectOptions value="{!Subcategories}"></apex:selectOptions>
+            <apex:actionSupport event="onchange" action="{!onSelectedSubcategoryChanged}" reRender="cmbSymptom,{!TestAtr}" status="status"/>
+        </apex:selectList>
+        <apex:selectList id="cmbSymptom" value="{!selectedSymptom}" size="1"  style="width:250px;">
+            <apex:selectOptions value="{!Symptoms}" ></apex:selectOptions>
+            <apex:actionSupport event="onchange" action="{!populateEntries}" status="status" reRender="{!TestAtr}" />
+        </apex:selectList>
+        <apex:outputText id="txtMajorComponentCodeValue" value="{!MajorComponentCode} " style="color:blue;display: block; width:20px;" rendered="{!NOT(ISBLANK(MajorComponentCode))}"/>
+        <apex:outputText id="txtMajorComponentCodeDescription" value="{!CodeDescription}" rendered="{!NOT(ISBLANK(MajorComponentCode))}" style="color:blue;display: block; width:250px;"/>
+        <apex:outputText id="txtCategoryDateValue" value="{!CategoryDate}" style="color:blue;display: block; width:90px;" rendered="{!NOT(ISBLANK(MajorComponentCode))}"/>
+    </apex:panelGrid>
+</apex:component>

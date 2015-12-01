@@ -1,0 +1,365 @@
+  /* Descktop (portrait and landscape) ----------- */
+       @media screen 
+        
+        {
+            [id*=inputTextField] {
+                max-width: 200px !important;
+                width:200px !important; 
+                background-color:#E2E2E2 !important; 
+                border: 0px solid !important; 
+                font-size:14px !important; 
+                height:25px !important;
+
+            }
+            .bPageBlock .labelCol, body .print .topics-label {
+            padding-right: 2px;
+            }
+            /*Buttons*/
+            .buttonPosition {
+                position: absolute; 
+                top: 390px; 
+                left: 290px;
+            }
+            .pleaseWaitPosition {
+                position: absolute; 
+                top: 390px; 
+                left: 290px; 
+                color: #666666 !important; 
+                font-style: italic;
+            }
+            /**/
+            .contentInputLable {
+                height: 305px; 
+                padding-top: 35px;
+            }
+            /*Texts*/
+            .livechat_footer_txt {
+                position:absolute;
+                top: 440px;
+                text-align:left; 
+                width:470px;
+            }
+            .livechat_footer_txt_policy {
+                position:absolute;
+                top: 480px;
+                text-align:right; 
+                width:465px;
+            }
+            .livechat_txt_required {
+                padding-top: 25px;
+            }
+            /*Div*/
+            .inputAreaDesktop {
+                display: block;
+            }
+            body {
+                overflow: hidden;
+                touch-action: pan-y;
+            }
+            .radioButtonPositionDesktop {
+                padding-left: 70px; 
+                padding-top: 5px;
+            }
+            .selectRadio {
+                width:300px; 
+                font: 13px Verdana!important;
+            }
+            .btn-startchat {
+                text-indent:-9999px;
+            }
+            .inputAreaContainer {
+                height: 325px; 
+                padding-top: 35px;
+            }
+        }
+
+        /* Smartphones (landscape) ----------- */
+        @media screen 
+        and (min-aspect-ratio: 1/1)
+        and (min-device-width : 605px)
+        and (max-device-width : 640px),
+             
+        screen and (min-aspect-ratio: 1/1)
+        and (max-device-width : 599px)   
+        {
+            [id*=inputTextField] {
+                max-width: 170px !important;
+                width:170px !important;
+            }
+            
+            .bPageBlock .labelCol, body .print .topics-label {
+                padding-right: 2px;
+            }
+            .data2Coll {
+                padding-left: 0px !important;
+            }
+            
+             /*Buttons*/
+            .buttonPosition {
+                position: absolute; 
+                top: 90px; 
+                left: 315px;
+            }
+            
+            .pleaseWaitPosition {
+                position: absolute; 
+                top: 90px; 
+                left: 315px; 
+                color: #666666 !important; 
+                font-style: italic;
+            }
+            
+            /**/
+            .livechat_header {
+                background: url(img/NewInfiniti_header_Mobile_cuted.png) no-repeat !important;
+                height:67px !important;
+                width:100%;
+                text-align:right;
+            }
+            /**/
+            .contentInputLable {
+                height: 305px; 
+                padding-top: 0px;
+            }
+            /*Texts*/
+            .livechat_footer_txt {
+                position:absolute !important;
+                top: 140px !important;
+                left:295px !important;
+                text-align:center !important; 
+                width:150px !important;
+            }
+            .livechat_txt {
+                padding-top:0px !important;
+                padding-bottom:0px !important;
+            }
+			.error_message {
+				top: 290px !important; 
+				left: 25px !important;
+			}
+            .livechat_txt_required {
+                padding-top: 0px !important;
+            }
+            .bPageBlock .labelCol { /*overwrite standart*/
+                text-align: left;
+                padding-left: 0px;
+            }
+            .bPageBlock .detailList .labelCol { /*overwrite standart*/
+                width: 19%!important;
+            }
+            .bPageBlock .detailList .data2Col { /*overwrite standart*/
+                padding-left: 0px;
+            }
+            .radioButtonPositionDesktop {
+                position:absolute !important;
+                top:104px !important;
+                left:295px !important;
+                padding-left: 0px !important;
+            }
+            .selectRadio {
+                width:180px !important;
+                font: 13px Verdana !important;
+            }
+            
+            .livechat_footer_txt_Rejection {
+                -webkit-text-size-adjust: 100%;
+                display:block !important;
+                text-align: center;
+                width: 440px;
+                padding-left:20px !important;
+                /*font: Verdana, Geneva, sans-serif;*/
+                font-family: Verdana, Geneva, sans-serif;
+                font-size:9px !important;
+                vertical-align:text-top;
+            }
+            .livechat_footer_txt_policy {
+                display:block !important;  
+                position: absolute !important;
+                left: 325px !important;
+                top:250px !important;       
+                text-align: center;
+                width: 100px !important;
+                font: Verdana, Geneva, sans-serif;
+                font-size:9px ;
+                vertical-align:text-top;
+                padding-left:0px !important;
+            }
+            
+            .livechat_footer_txt_Table {
+                display:block !important;
+            }
+            
+            /*Div*/
+            .inputAreaDesktop {
+                padding-top: 0px;
+                display:block !important;
+                width:480px !important;
+            }
+
+            .livechat_bg{
+                background:none !important;
+                width:100%;
+                height:100px !important;
+            }
+            .inputAreaContainer{
+                padding-top: 0px !important;
+                height: auto !important;
+            }
+            .divOperationHoursArea {
+                height: 380px !important;
+                width: 500px !important;
+            }
+            .divOperationHoursText {
+                -webkit-text-size-adjust: 100%;
+                width: 435px !important;
+                left: 15px !important;
+            }
+            .btn-startchat {
+                text-indent:-9999px;
+            }
+			body {
+                overflow: visible !important;
+            }
+        }      
+        
+        /* Smartphones (portrait) ----------- */
+        @media screen  
+        and (min-width : 320px)
+        and (max-width : 479px)
+        {
+            [id*=inputTextField] {
+                width: 175px !important;
+                max-width: 175px !important;
+            }
+            
+            .bPageBlock .labelCol, body .print .topics-label {
+                padding-right: 2px;
+            }
+            .bPageBlock .detailList .dataCol {
+                width:90%;
+            }
+
+            /*Buttons*/
+            .buttonPosition {
+                position: absolute !important; 
+                top: 330px !important; 
+                left: 100px !important;
+            }
+             
+            .pleaseWaitPosition {
+                position:absolute !important;
+                left:100px !important;
+                top:330px !important;
+                color: #666666 !important; 
+                font-style: italic;
+            }
+            
+            .livechat_header {
+                background: url(img/NewInfiniti_header_Mobile.png) no-repeat !important;
+                height:97px;
+                width:100%;
+                text-align:right;
+            }
+            /**/
+            .contentInputLable {
+                height: auto; 
+                padding-top: 35px;
+            }
+            /*Texts*/
+            .livechat_txt {
+                padding-top:0px !important;
+                padding-bottom:0px !important;
+            }
+            .livechat_footer_txt {
+                position:absolute !important;
+                top:370px !important;
+                left:10px !important;
+                text-align:center !important; 
+                width:280px !important;
+                
+            }
+			.error_message {
+				top: 310px !important; 
+				left: 25px !important;
+				padding-top: 0px !important;
+			}
+            .livechat_txt_required {
+                padding-top: 0px !important;
+            }
+            .radioButtonPositionDesktop {
+                position:absolute !important;
+                top:300px !important;
+                left:30px !important;
+                padding-left: 0px !important;
+            }
+            .selectRadio {
+                width:270px !important;
+                font: 13px Verdana!important;
+            }
+            .bPageBlock .detailList .labelCol { /*increase standart width of input labels*/
+                width: 20% !important;
+            }
+            .bPageBlock .detailList .dataCol {
+                width: 100%;
+            }
+            
+            .livechat_footer_txt_Rejection {
+                -webkit-text-size-adjust: 100%;
+                display:block !important;
+                position:absolute !important;
+                top:460px !important;
+                left:15px !important;
+                text-align: center;
+                width: 300px !important;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size:9px !important; 
+				padding-bottom:0px !important;
+                padding-left:0px !important;				
+            }
+
+            .livechat_footer_txt_policy {
+                display:block !important;
+                position:absolute;
+                top:430px !important;
+                left:115px !important;
+                text-align: center;
+                width: 100px !important;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size:9px !important;
+                padding-bottom:0px !important;
+                padding-left:0px !important;
+            }
+            .livechat_footer_txt_Table {
+                display:block !important;
+                width: auto !important;
+            }
+            /*Div*/
+            .inputAreaDesktop {
+                display:block !important;
+                width:320px !important;
+            }
+
+            .livechat_bg{
+                background:none !important;
+                width:100%;
+                height:100px;
+            }
+            .inputAreaContainer{
+                padding-top: 0px !important;
+                height: auto !important;
+            }
+            .divOperationHoursArea {
+                height: 550px !important;
+                width: 340px !important;
+            }
+            .divOperationHoursText {
+                width: 270px !important;
+                left: 15px !important;
+            }
+            .btn-startchat {
+                text-indent:-9999px;
+            }
+			body {
+                overflow: visible !important;
+            }
+        }

@@ -1,0 +1,40 @@
+<apex:page controller="NCI_DealerCreditsSearch" showheader="false" title="NCI Dealer Search">
+   <div style="padding-top:10px;padding-left:10px;">
+       <div class="headertext" style="float:left;">
+           <apex:outputText style="font-size:18pt" value="NCI Dealer Search"/>
+           <br/><br/> 
+       </div>    
+   </div>
+
+   <div style="padding:10px;">                 
+       <div>                
+           <apex:pageBlock title="Dealer Info">
+           <apex:variable var="v" value="'{!dealersCredits}'"/>
+           <apex:variable var="v2" value="'[]'"/>
+                   <apex:form >
+                      <apex:outputLabel value="Dealer Code: "></apex:outputLabel>
+                      <apex:inputText value="{!dealercode}"></apex:inputText>
+                      <apex:commandButton action="{!search}" value="Search"/>
+                      <apex:commandButton action="{!addcredit}" value="New customer service credit"/>
+                   </apex:form>
+                   <apex:outputLabel value="Unable to locate a dealer with code '{!dealercode}'" rendered="{!IF(v == v2 && hasSearchBeenPerformed ,true,false)}"></apex:outputLabel>
+                   <apex:repeat value="{!dealersCredits}" var="dealer">
+                       <apex:pageBlockSection collapsible="true" title="Dealer Name: {!dealer.dealer.Name}" columns="1">
+                           <apex:pageblockTable value="{!dealer.lstCredits}" var="credit" >            
+                               <apex:column headerValue="Customer Name" value="{!credit.Customer_Name_Formula__c}"/>
+                               <apex:column headerValue="VIN" value="{!credit.VIN_Formula__c}"/>
+                               <apex:column headerValue="Amount" value="{!credit.Amount__c}"/>
+                               <apex:column headerValue="Plus Taxes" value="{!credit.Plus_Taxes__c}"/>
+                               <apex:column headerValue="G/L" value="{!credit.G_L__c}"/>
+                               <apex:column headerValue="Cost Centre" value="{!credit.Cost_Centre__c}"/>
+                               <apex:column headerValue="Debit or Credit" value="{!credit.Debit_or_Credit__c}"/>
+                               <apex:column headerValue="Reference Text" value="{!credit.Reference_Text__c}"/>
+                               <apex:column headerValue="Requested By" value="{!credit.Requested_By__c}"/>
+                               <apex:column headerValue="Date" value="{!credit.Requested_Date__c}"/>                                
+                       </apex:pageblockTable>
+                       </apex:pageBlockSection>
+               </apex:repeat>
+           </apex:pageBlock>
+       </div>  
+   </div>            
+</apex:page>

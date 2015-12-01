@@ -1,0 +1,23 @@
+<apex:page controller="ClaimFormThankYouController" id="thePage" showHeader="false" sidebar="false">
+<script type = "text/javascript" >
+    history.pushState(null, null, 'thePage');
+    window.addEventListener('popstate', function(event) {
+    history.pushState(null, null, 'thePage');
+    });
+</script>
+ <center>
+        <apex:image url="{!URLFOR($Resource.NissanGreyLogo)}" width="50" height="50"/> 
+        <apex:outputLabel style="font-size: 20px; ">
+          <p><strong>  Nissan Versa Model Year 2007 to 2011 Sedan and <br/>
+            2007 to 2012 Hatchback Front Coil Spring <br/>
+            Safety Recall Campaign
+            Claim Form </strong> </p>
+        </apex:outputLabel>
+    </center>
+  <apex:pageBlock id="thankYouMsg" rendered="{!isSuccess}">
+       Thank you for your submission. Your case number is <font color="red"> {!caseNumber}</font>. <br/> <br/>
+       
+       Please remember the estimated processing time is within 30 days from the date Nissan receives the request.
+   
+   </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,70 @@
+<apex:page showHeader="false" sidebar="false" title="Infiniti Chat">
+	<script type="text/javascript">
+	function openPopup() {
+		var url = 'http://nna.force.com/livechat/'; //PROD
+		var branding = getUrlVars()["branding"];
+		var routingGroup = getUrlVars()["routingGroup"];
+		var height = 516;
+		switch(branding) {
+			case 'Nissan': 
+				url += 'LiveAgent_Nissan_Direct';
+                height = 526;
+				break;
+            case 'NCV': 
+				url += 'LiveAgent_NCV';
+                height = 526;
+				break;                
+            case 'NewNissan':
+                url += 'LiveAgent_NewNissan';
+                height = 526;
+				break;	
+            case 'NewInfiniti':
+                url += 'LiveAgent_NewInfiniti';
+                height = 536;
+				break;	
+            case 'DPIC_Nissan': 
+				url += 'LiveAgent_DPIC_Nissan';
+                height = 526;
+				break;	
+			case 'Infiniti': 
+				url += 'LiveAgent_Infiniti_Direct';
+                height = 536;
+				break;				
+			case 'Leaf': 
+				url += 'LiveAgent_NewLeafDirect';
+                height = 526;
+				break;
+            case 'LeafComplete': 
+                url += 'LiveAgent_Leaf_Direct_Complete';
+                height = 526;
+                break;
+		}
+		
+		url += '?routingGroup=' + routingGroup;
+		
+		window.open(url,'LiveAgent','scrollbars=no,resizable=no,width=500,height=516');
+	}
+	
+	// Read a page's GET URL variables and return them as an associative array.
+	function getUrlVars()
+	{
+	    var vars = [], hash;
+	    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+	    for(var i = 0; i < hashes.length; i++)
+	    {
+	        hash = hashes[i].split('=');
+	        vars.push(hash[0]);
+	        vars[hash[0]] = hash[1];
+	    }
+	    return vars;
+	}
+	
+	setTimeout("openPopup()",500);
+	</script>
+
+	<div>
+		Please, check that the chat popup is not being blocked by your
+		browser, or click <a href="#" onclick="openPopup();">here</a>
+	</div>
+
+</apex:page>

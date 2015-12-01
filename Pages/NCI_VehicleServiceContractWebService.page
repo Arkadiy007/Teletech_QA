@@ -1,0 +1,7 @@
+<apex:page standardController="Vehicle__c" extensions="NCI_VehicleServiceContractWebService" action="{!initialize}">
+
+ <apex:form >   
+    <apex:outputLabel value="{!responseJSON}"/>
+ </apex:form>
+
+</apex:page>
